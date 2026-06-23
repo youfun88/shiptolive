@@ -1,0 +1,36 @@
+# Ship to Live — by Yufan Chen
+
+> Ship to Live is the studio of Yufan Chen, an independent app, website, and AI developer based in San Diego, California. I design, build, and ship mobile apps, business websites, AI workflow tools, and SEO/GEO — taking projects end-to-end from first sketch to a live product. Bilingual in English and Traditional Chinese (中文), serving clients across the United States and Taiwan. Website: https://shiptolive.com/
+
+## What I do
+
+- **Mobile apps** — iOS, Android, and Mac apps from one codebase (Flutter, React Native), including onboarding, payments, and App Store submission.
+- **Websites & landing pages** — fast, SEO-ready marketing sites and product pages, bilingual (English / 中文) when needed.
+- **AI in your workflow** — assistants and automations that work from your own documents, data, and processes to cut repetitive work.
+- **SEO & GEO** — Search Engine Optimization to rank on Google, plus Generative Engine Optimization (GEO) so AI engines like ChatGPT, Perplexity, and Google AI Overviews understand, trust, and recommend your business.
+
+## Proof of work
+
+- **Tally** (https://www.tallybillable.com/) — time-tracking & invoicing app for lawyers and freelancers. iOS, Mac. Built with Flutter.
+- **Tadapop** (https://tadapop.app/) — gamified daily-habit tracker. iOS, Android. Built with React Native / Expo.
+- **Daily Log** — published Chrome extension for capturing a daily log in the browser.
+- **Wu Law Group** (https://wulawintl.com/) — cross-border legal consulting website (Taiwan, US, China).
+- **QY Property** (https://qyproperty.com/) — cross-border real-estate advisory website for San Diego property.
+- **SHX Training** (https://shxtraining.com/) — corporate ESG training website (Taiwan & California).
+- **TalentSmartEQ** (team) — built EQ assessments including EQ 360 and the Emotional Intelligence Appraisal – Self Edition, taken by over a million people.
+- **Get Real Gifts** (https://www.getrealgifts.com/) (main developer) — built a gifting widget that serves millions of users.
+- **LEADx** (https://leadx.org/) (team) — leadership micro-coaching platform.
+
+## About
+
+- Brand: Ship to Live (https://shiptolive.com/)
+- Name: Yufan Chen
+- Role: App, website & AI developer; independent product builder
+- Location: San Diego, California, USA
+- Languages: English, Traditional Chinese (中文)
+- Education: University of California, San Diego (UC San Diego)
+
+## Contact
+
+- Email: yufanchen@gmail.com
+- LinkedIn: https://www.linkedin.com/in/yufanchen8/

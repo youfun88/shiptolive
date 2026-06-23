@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Domain: shiptolive.com (used in canonical, OG, JSON-LD, sitemap.xml,
+       robots.txt, llms.txt). Buy it, then deploy this folder to it. -->
+  <title>Ship to Live — Apps, Websites & AI by Yufan Chen | San Diego</title>
+  <meta name="description" content="Ship to Live is the studio of Yufan Chen, an app, website, and AI developer in San Diego. I design, build, and ship mobile apps, business websites, AI workflow tools, and SEO/GEO so AI engines recommend your business. Bilingual — English & 中文." />
+  <meta name="keywords" content="app developer San Diego, website developer San Diego, AI developer, RAG agent developer, SEO GEO consultant, Flutter developer, React Native developer, bilingual web developer Chinese English, freelance product builder" />
+  <meta name="author" content="Yufan Chen" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#0d0e1a" />
+  <link rel="canonical" href="https://shiptolive.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ship to Live" />
+  <meta property="og:title" content="Ship to Live — Apps, Websites & AI by Yufan Chen" />
+  <meta property="og:description" content="I design, build, and ship mobile apps, business websites, and AI built into your workflow — plus SEO/GEO so AI engines recommend your business. Bilingual, end-to-end." />
+  <meta property="og:url" content="https://shiptolive.com/" />
+  <meta property="og:image" content="https://shiptolive.com/assets/img/founder.jpg" />
+  <meta property="og:image:width" content="400" />
+  <meta property="og:image:height" content="400" />
+  <meta property="og:image:alt" content="Yufan Chen — app, website & AI developer" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="zh_TW" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ship to Live — Apps, Websites & AI by Yufan Chen" />
+  <meta name="twitter:description" content="Mobile apps, business websites, AI workflow tools, and SEO/GEO — designed, built, and shipped end-to-end. Bilingual (English & 中文)." />
+  <meta name="twitter:image" content="https://shiptolive.com/assets/img/founder.jpg" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/img/founder.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Structured data: who I am, what I offer, and the site itself.
+       This is core GEO — it lets Google and AI engines understand and cite me. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://shiptolive.com/#yufan",
+        "name": "Yufan Chen",
+        "jobTitle": "App, Website & AI Developer",
+        "description": "Independent product builder in San Diego who designs, builds, and ships mobile apps, business websites, AI workflow tools, and SEO/GEO.",
+        "url": "https://shiptolive.com/",
+        "image": "https://shiptolive.com/assets/img/founder.jpg",
+        "email": "mailto:yufanchen@gmail.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/yufanchen8/",
+          "https://www.tallybillable.com/",
+          "https://tadapop.app/"
+        ],
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of California, San Diego" },
+        "knowsLanguage": ["English", "Chinese (Traditional)"],
+        "address": { "@type": "PostalAddress", "addressLocality": "San Diego", "addressRegion": "CA", "addressCountry": "US" },
+        "knowsAbout": ["Mobile app development", "Web development", "AI agents", "Retrieval-augmented generation (RAG)", "SEO", "Generative Engine Optimization (GEO)", "Flutter", "React Native"]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://shiptolive.com/#service",
+        "name": "Ship to Live",
+        "alternateName": "Ship to Live — by Yufan Chen",
+        "slogan": "I design, build & ship apps and websites that go live.",
+        "founder": { "@id": "https://shiptolive.com/#yufan" },
+        "url": "https://shiptolive.com/",
+        "image": "https://shiptolive.com/assets/img/founder.jpg",
+        "areaServed": ["United States", "Taiwan"],
+        "availableLanguage": ["English", "Chinese"],
+        "address": { "@type": "PostalAddress", "addressLocality": "San Diego", "addressRegion": "CA", "addressCountry": "US" },
+        "description": "End-to-end development of mobile apps, business websites, AI workflow tools, and SEO/GEO that gets businesses recommended by AI engines.",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile app development (iOS, Android, Mac)" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website & landing page development" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI workflow tools & agents" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & GEO (Generative Engine Optimization)" } }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://shiptolive.com/#website",
+        "url": "https://shiptolive.com/",
+        "name": "Ship to Live",
+        "publisher": { "@id": "https://shiptolive.com/#yufan" },
+        "inLanguage": "en"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#work">Skip to content</a>
+  <div class="bg-orbs" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="top">
+    <a class="brand" href="#top" aria-label="Ship to Live, by Yufan Chen — home">
+      <img class="brand-mark-img" src="assets/favicon.svg" alt="" width="34" height="34" aria-hidden="true" />
+      <span class="brand-text">
+        <span class="brand-name">Ship to Live</span>
+        <span class="brand-by">by Yufan Chen</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#next">AI for business</a>
+      <a href="#seo">Get found by AI</a>
+      <a href="#about">About</a>
+      <a class="nav-cta" href="#contact">Let's talk</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <p class="eyebrow">Independent product builder · San Diego</p>
+      <h1>
+        I design, build &amp; ship<br />
+        <span class="grad">apps and websites</span><br />
+        that go live.
+      </h1>
+      <p class="lede">
+        Not mockups. Not slide decks. Real products on the App Store and the open web —
+        designed, coded, and shipped end-to-end. Apps, business websites, and
+        <strong>AI built into your workflow</strong> so it actually saves you time.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#work">See the work →</a>
+        <a class="btn btn-ghost" href="#contact">Start a project</a>
+      </div>
+      <ul class="stat-strip">
+        <li><strong>1M+</strong><span>took an assessment I built</span></li>
+        <li><strong>3</strong><span>apps &amp; tools shipped</span></li>
+        <li><strong>3</strong><span>businesses online</span></li>
+        <li><strong>EN&nbsp;/&nbsp;中文</strong><span>bilingual, cross-border</span></li>
+      </ul>
+    </section>
+
+    <!-- WORK -->
+    <section class="section" id="work">
+      <div class="section-head">
+        <p class="kicker">Selected work</p>
+        <h2>Shipped, not theoretical.</h2>
+        <p class="sub">Each of these is live right now. Tap through and use them.</p>
+      </div>
+
+      <h3 class="group-label">📱 Apps &amp; tools I built &amp; launched</h3>
+      <div class="cards cards-3">
+        <article class="card">
+          <a class="card-shot" href="https://www.tallybillable.com/" target="_blank" rel="noopener">
+            <img src="assets/img/tally-og.png" alt="Tally — billable time tracker" loading="lazy" />
+          </a>
+          <div class="card-body">
+            <div class="card-top">
+              <h4>Tally</h4>
+              <span class="tag">iOS · Mac · Flutter</span>
+            </div>
+            <p>A warm, one-tap time tracker &amp; invoicing app for lawyers and freelancers who bill by the hour. Built from a single Flutter codebase, shipped to the App Store and the Mac App Store.</p>
+            <div class="card-links">
+              <a href="https://www.tallybillable.com/" target="_blank" rel="noopener">Visit site ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card-shot dark" href="https://tadapop.app/" target="_blank" rel="noopener">
+            <img src="assets/img/tadapop-og.png" alt="Tadapop — gamified habit tracker" loading="lazy" />
+          </a>
+          <div class="card-body">
+            <div class="card-top">
+              <h4>Tadapop</h4>
+              <span class="tag">iOS · Android · React Native</span>
+            </div>
+            <p>A gamified daily-habit tracker with a mission-control soul. Streaks, points, a year-long heatmap, and private friends-only competition in the Arena. Built with Expo / React Native.</p>
+            <div class="card-links">
+              <a href="https://tadapop.app/" target="_blank" rel="noopener">Visit site ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card-shot card-fallback daily" href="https://chromewebstore.google.com/detail/daily-log/ajcpkhmnkjgppefondfgbicddaoifkda" target="_blank" rel="noopener">
+            <span>Daily&nbsp;Log</span>
+          </a>
+          <div class="card-body">
+            <div class="card-top">
+              <h4>Daily Log</h4>
+              <span class="tag">Chrome Extension</span>
+            </div>
+            <p>A lightweight Chrome extension for capturing your daily log right in the browser — published and live on the Chrome Web Store.</p>
+            <div class="card-links">
+              <a href="https://chromewebstore.google.com/detail/daily-log/ajcpkhmnkjgppefondfgbicddaoifkda" target="_blank" rel="noopener">View on Chrome Web Store ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="group-label">🌐 Businesses I put online</h3>
+      <div class="cards cards-3">
+        <article class="card">
+          <a class="card-shot" href="https://wulawintl.com/" target="_blank" rel="noopener">
+            <img src="assets/img/wulaw-og.jpg" alt="Wu Law Group" loading="lazy" />
+          </a>
+          <div class="card-body">
+            <div class="card-top"><h4>Wu Law Group</h4></div>
+            <p>Cross-border legal consulting across Taiwan · US · China — foreign investment, immigration, and inheritance.</p>
+            <div class="card-links"><a href="https://wulawintl.com/" target="_blank" rel="noopener">Visit site ↗</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card-shot card-logo qy-brand" href="https://qyproperty.com/" target="_blank" rel="noopener">
+            <img src="assets/img/qy-icon.svg" alt="QY Property logo" width="96" height="96" loading="lazy" />
+            <span class="logo-word">QY Property</span>
+          </a>
+          <div class="card-body">
+            <div class="card-top"><h4>QY Property</h4></div>
+            <p>Cross-border real-estate advisory helping Taiwanese families invest in San&nbsp;Diego homes — bilingual, end-to-end.</p>
+            <div class="card-links"><a href="https://qyproperty.com/" target="_blank" rel="noopener">Visit site ↗</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card-shot" href="https://shxtraining.com/" target="_blank" rel="noopener">
+            <img src="assets/img/shx-og.png" alt="SHX Training" loading="lazy" />
+          </a>
+          <div class="card-body">
+            <div class="card-top"><h4>SHX Training</h4></div>
+            <p>Corporate ESG training (夏恆企業顧問) — modular sustainability, leadership, and resilience programs in Taiwan &amp; California.</p>
+            <div class="card-links"><a href="https://shxtraining.com/" target="_blank" rel="noopener">Visit site ↗</a></div>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="group-label">🤝 Products I helped build with teams</h3>
+      <div class="cards cards-3">
+        <article class="card">
+          <a class="card-shot card-fallback gift" href="https://www.getrealgifts.com/" target="_blank" rel="noopener">
+            <span>Get Real<br />Gifts</span>
+          </a>
+          <div class="card-body">
+            <div class="card-top"><h4>Get Real Gifts</h4></div>
+            <p>A social gifting platform that makes it effortless to give and receive the things people actually want. As a <strong>main developer</strong>, I built the gifting <strong>widget that serves millions of users</strong> (also at gift.me).</p>
+            <div class="card-links">
+              <a href="https://www.getrealgifts.com/" target="_blank" rel="noopener">Visit site ↗</a>
+              <a href="https://gift.me/" target="_blank" rel="noopener">gift.me ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card-shot card-fallback eq" href="https://www.talentsmarteq.com/" target="_blank" rel="noopener">
+            <span>TalentSmart<br />EQ</span>
+          </a>
+          <div class="card-body">
+            <div class="card-top"><h4>TalentSmartEQ</h4></div>
+            <p>The world's leading provider of emotional-intelligence assessments. On the team, I built EQ assessments including <strong>EQ 360</strong> and the <strong>Emotional Intelligence Appraisal – Self Edition</strong> — taken by <strong>over a million people</strong>.</p>
+            <div class="card-links"><a href="https://www.talentsmarteq.com/" target="_blank" rel="noopener">Visit site ↗</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card-shot" href="https://leadx.org/" target="_blank" rel="noopener">
+            <img src="assets/img/leadx-og.png" alt="LEADx" loading="lazy" />
+          </a>
+          <div class="card-body">
+            <div class="card-top"><h4>LEADx</h4></div>
+            <p>A leadership micro-coaching platform that scales and sustains leadership behaviors with hyper-personalized nudges, micro-coaching, and micro-learning.</p>
+            <div class="card-links"><a href="https://leadx.org/" target="_blank" rel="noopener">Visit site ↗</a></div>
+          </div>
+        </article>
+      </div>
+
+      <p class="more-work">
+        More builds:
+        <a href="https://www.azwrealty.com/" target="_blank" rel="noopener">Azure Waves Realty</a>
+        <a href="https://ilsolutions.com.tw/" target="_blank" rel="noopener">睿律 · IL Solutions</a>
+      </p>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section section-alt" id="services">
+      <div class="section-head">
+        <p class="kicker">How I can help</p>
+        <h2>One partner. The whole stack.</h2>
+        <p class="sub">You bring the idea or the business. I handle design, build, ship, and the boring parts in between.</p>
+      </div>
+      <div class="cards cards-3">
+        <article class="svc">
+          <div class="svc-ico">📱</div>
+          <h4>Mobile apps</h4>
+          <p>iOS, Android, and Mac apps from one codebase — Flutter or React Native. Onboarding, payments, the App Store submission, all of it.</p>
+        </article>
+        <article class="svc">
+          <div class="svc-ico">🌐</div>
+          <h4>Websites &amp; landing pages</h4>
+          <p>Fast, beautiful, SEO-ready marketing sites and product pages. Bilingual EN&nbsp;/&nbsp;中文 when you sell across borders.</p>
+        </article>
+        <article class="svc">
+          <div class="svc-ico">🤖</div>
+          <h4>AI in your workflow <span class="pill-new">new</span></h4>
+          <p>Assistants and automations that work from <em>your</em> documents, data, and processes — cutting the busywork out of how your business already runs.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- AI FOR BUSINESS -->
+    <section class="section" id="next">
+      <div class="next-wrap">
+        <div class="next-copy">
+          <p class="kicker">AI for your business</p>
+          <h2>Bring AI into your workflow.</h2>
+          <p>
+            Most businesses are sitting on hours of repetitive work — answering the same
+            questions, digging through documents, copying data between tools. <strong>That's
+            exactly what AI is good at.</strong>
+          </p>
+          <p>
+            I help you find where AI actually fits in how your business already runs, then build
+            it — an assistant that knows your documents, an automation that clears the busywork,
+            a workflow that just moves faster. Practical, grounded in your real data, and built to
+            ship. <strong>Tell me where the bottleneck is and I'll show you what's possible.</strong>
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact">Talk to me about AI →</a>
+          </div>
+        </div>
+        <ul class="next-list">
+          <li><span>01</span><div><strong>Answer from your docs</strong>An assistant that responds from your own files, policies, and data — not the open web.</div></li>
+          <li><span>02</span><div><strong>Automate the busywork</strong>Cut the repetitive copy-paste and lookups your team does every day.</div></li>
+          <li><span>03</span><div><strong>Fit your real workflow</strong>AI dropped into the tools and steps you already use, not a separate thing to manage.</div></li>
+          <li><span>04</span><div><strong>Built to ship</strong>A working result you can use, not a proof-of-concept that sits in a slide.</div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SEO / GEO -->
+    <section class="section section-alt" id="seo">
+      <div class="next-wrap reverse">
+        <ul class="next-list">
+          <li><span>01</span><div><strong>Rank in search</strong>Technical SEO, fast pages, the right keywords, and content that earns its place on Google.</div></li>
+          <li><span>02</span><div><strong>Get cited by AI</strong>Structured data, clear answers, and an <code>llms.txt</code> content layer that AI engines can read and quote.</div></li>
+          <li><span>03</span><div><strong>Build trust signals</strong>Reviews, mentions, and authority that tell both Google and AI you're the real thing.</div></li>
+          <li><span>04</span><div><strong>Local &amp; bilingual</strong>Show up for "near me" searches and across languages — EN&nbsp;/&nbsp;中文 — wherever your customers look.</div></li>
+        </ul>
+        <div class="next-copy">
+          <p class="kicker">SEO &amp; GEO</p>
+          <h2>Get found — by Google and by AI.</h2>
+          <p>
+            Search isn't just Google anymore. Your next customer is just as likely to ask
+            ChatGPT, Perplexity, or Google's AI overview <em>"who's the best [your business]
+            for this?"</em> — and the answer is decided long before they ever click a link.
+          </p>
+          <p>
+            I make sure your business is the one that gets named. Classic <strong>SEO</strong> so
+            you rank in search, plus <strong>GEO</strong> (Generative Engine Optimization) —
+            structuring your content, data, and reputation so AI engines understand, trust, and
+            recommend you. It's the same playbook I use to rank my own apps.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact">Get recommended by AI →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="about-wrap">
+        <div class="about-photo">
+          <img src="assets/img/founder.jpg" alt="Yufan Chen" />
+        </div>
+        <div class="about-copy">
+          <p class="kicker">About</p>
+          <h2>Hi, I'm Yufan.</h2>
+          <p>
+            I'm an independent developer based in San Diego and a UC&nbsp;San&nbsp;Diego grad.
+            What I really love is <strong>solving problems</strong> — taking something messy or
+            manual and turning it into a tool people actually enjoy using: warm instead of
+            corporate, fast instead of fiddly, then shipped all the way to real people. That's
+            the whole idea behind <strong>Ship&nbsp;to&nbsp;Live</strong>.
+          </p>
+          <p>
+            I work end-to-end: design, code, App Store, deploy, and the cross-border bits
+            (in English and Traditional Chinese, across the US and Taiwan). When I'm not building,
+            I'm out surfing, biking, running, snowboarding, or hiking — because the best tools come
+            from people who'd rather be living their life than fighting their software.
+          </p>
+          <div class="card-links">
+            <a href="https://www.linkedin.com/in/yufanchen8/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="https://www.tallybillable.com/" target="_blank" rel="noopener">Tally ↗</a>
+            <a href="https://tadapop.app/" target="_blank" rel="noopener">Tadapop ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-alt" id="faq" aria-labelledby="faq-h">
+      <div class="section-head">
+        <p class="kicker">FAQ</p>
+        <h2 id="faq-h">Questions people ask before we start</h2>
+        <p class="sub">Straight answers — for you and for the AI assistants your customers ask.</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>What does Yufan Chen do?</summary>
+          <div class="faq-a"><p>Yufan Chen is an independent developer in San Diego who designs, builds, and ships mobile apps, business websites, AI workflow tools, and SEO/GEO. I take a project end-to-end — from the first sketch to a live product on the App Store or the open web.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>What can you build for my business?</summary>
+          <div class="faq-a"><p>Four things: (1) mobile apps for iOS, Android, and Mac; (2) fast, SEO-ready websites and landing pages; (3) AI assistants and automations built into your existing workflow; and (4) SEO &amp; GEO so both Google and AI engines like ChatGPT and Perplexity recommend your business.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>What is GEO, and how is it different from SEO?</summary>
+          <div class="faq-a"><p>SEO (Search Engine Optimization) helps you rank in search results. GEO (Generative Engine Optimization) makes sure AI assistants understand, trust, and recommend your business when someone asks them a question. I do both — structured data, clear answers, an <code>llms.txt</code> content layer, and the trust signals AI engines look for.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Have you shipped real products?</summary>
+          <div class="faq-a"><p>Yes. I built and launched two App Store apps (Tally and Tadapop) and a Chrome extension (Daily Log), put three businesses online (Wu Law Group, QY Property, SHX Training), and on product teams I built an EQ assessment taken by over a million people and a gifting widget that serves millions of users.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Do you work in Chinese as well as English?</summary>
+          <div class="faq-a"><p>Yes — I work in both English and Traditional Chinese (中文), across the United States and Taiwan, which is ideal for cross-border businesses that need bilingual apps, websites, and marketing.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Where are you based, and do you work remotely?</summary>
+          <div class="faq-a"><p>I'm based in San Diego, California, and I work with clients remotely across the US and Taiwan. The best way to start is the contact form below or an email to yufanchen@gmail.com.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="contact-card">
+        <p class="kicker">Let's build something</p>
+        <h2>Got an app or website in mind?</h2>
+        <p class="sub">Tell me what you're trying to make. I read and reply to every real message — in English or 中文.</p>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="Jane Doe" required />
+            </div>
+            <div class="field">
+              <label for="email">Your email</label>
+              <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="topic">What do you need?</label>
+            <select id="topic" name="topic">
+              <option>A mobile app (iOS / Android)</option>
+              <option>A website or landing page</option>
+              <option>AI in my business workflow</option>
+              <option>SEO / GEO — get found by AI</option>
+              <option>An assessment or quiz</option>
+              <option>Not sure yet — let's talk</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Tell me about it</label>
+            <textarea id="message" name="message" placeholder="What are you trying to build, and what's the goal? A rough budget or timeline helps too." required></textarea>
+          </div>
+
+          <!-- honeypot: bots fill this, humans never see it -->
+          <div class="hp" aria-hidden="true">
+            <label for="company">Company (leave this blank)</label>
+            <input id="company" name="_honey" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="send-row">
+            <button class="btn btn-primary" id="send" type="submit">Send message →</button>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/yufanchen8/" target="_blank" rel="noopener">Or connect on LinkedIn</a>
+          </div>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© <span id="year"></span> Ship to Live · Yufan Chen — app, website &amp; AI developer in San Diego, CA</span>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="https://www.linkedin.com/in/yufanchen8/" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </footer>
+
+  <!-- FAQ structured data — lets AI engines quote these answers directly. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What does Yufan Chen do?", "acceptedAnswer": { "@type": "Answer", "text": "Yufan Chen is an independent developer in San Diego who designs, builds, and ships mobile apps, business websites, AI workflow tools, and SEO/GEO, taking projects end-to-end from sketch to a live product on the App Store or the open web." } },
+      { "@type": "Question", "name": "What can you build for my business?", "acceptedAnswer": { "@type": "Answer", "text": "Mobile apps for iOS, Android, and Mac; fast SEO-ready websites and landing pages; AI assistants and automations built into your existing workflow; and SEO & GEO so both Google and AI engines like ChatGPT and Perplexity recommend your business." } },
+      { "@type": "Question", "name": "What is GEO, and how is it different from SEO?", "acceptedAnswer": { "@type": "Answer", "text": "SEO (Search Engine Optimization) helps you rank in search results. GEO (Generative Engine Optimization) makes sure AI assistants understand, trust, and recommend your business through structured data, clear answers, an llms.txt content layer, and trust signals." } },
+      { "@type": "Question", "name": "Have you shipped real products?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Two App Store apps (Tally and Tadapop), a Chrome extension (Daily Log), three business websites (Wu Law Group, QY Property, SHX Training), plus an EQ assessment taken by over a million people and a gifting widget that serves millions of users." } },
+      { "@type": "Question", "name": "Do you work in Chinese as well as English?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Yufan works in both English and Traditional Chinese across the United States and Taiwan, ideal for cross-border businesses needing bilingual apps, websites, and marketing." } },
+      { "@type": "Question", "name": "Where are you based, and do you work remotely?", "acceptedAnswer": { "@type": "Answer", "text": "Yufan is based in San Diego, California, and works remotely with clients across the US and Taiwan. Start with the contact form or email yufanchen@gmail.com." } }
+    ]
+  }
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

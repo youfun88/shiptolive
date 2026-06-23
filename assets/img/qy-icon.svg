@@ -1,0 +1,9 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="48" height="48" rx="11" fill="#0b1c30"/>
+  <!-- Q ring -->
+  <circle cx="24" cy="23" r="13" stroke="#d4af37" stroke-width="2.6"/>
+  <!-- Q gold tail -->
+  <path d="M31 30 L37 36" stroke="#d4af37" stroke-width="3.4" stroke-linecap="round"/>
+  <!-- Y monogram -->
+  <path d="M18 16 L24 23.5 L30 16 M24 23.5 L24 31" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
