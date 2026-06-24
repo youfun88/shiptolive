@@ -133,16 +133,16 @@ img { display: block; max-width: 100%; }
   filter: blur(10px); z-index: 0;
 }
 .cover {
-  position: relative; z-index: 1; width: min(340px, 80%);
+  position: relative; z-index: 1; width: min(320px, 78%);
   border-radius: 6px;
   box-shadow:
     0 2px 0 rgba(0,0,0,0.05),
     0 40px 70px -24px rgba(24, 29, 58, 0.55),
     -14px 14px 40px -20px rgba(24, 29, 58, 0.35);
-  transform: perspective(1400px) rotateY(-12deg) rotateX(3deg);
+  transform: perspective(1600px) rotateY(-8deg) rotateX(2deg);
   transition: transform 0.5s cubic-bezier(.2,.7,.2,1);
 }
-.cover-stage:hover .cover { transform: perspective(1400px) rotateY(-6deg) rotateX(1deg) translateY(-6px); }
+.cover-stage:hover .cover { transform: perspective(1600px) rotateY(-4deg) rotateX(1deg) translateY(-6px); }
 .cover-badge {
   position: absolute; z-index: 2; bottom: -14px; right: 4%;
   background: var(--card); border: 1px solid var(--line);
@@ -361,7 +361,8 @@ img { display: block; max-width: 100%; }
 @media (max-width: 940px) {
   .hero-grid { grid-template-columns: 1fr; gap: 2.6rem; }
   .cover-stage { order: -1; }
-  .cover { transform: none; }
+  .cover-stage::before { inset: 2% 18% 6%; }
+  .cover { transform: none; width: min(232px, 60%); }
   .skills { grid-template-columns: repeat(2, 1fr); }
   .features { grid-template-columns: 1fr; }
   .about-grid, .about-hero-grid { grid-template-columns: 1fr; gap: 2.2rem; }
