@@ -134,7 +134,7 @@ img { display: block; max-width: 100%; }
 }
 .cover {
   position: relative; z-index: 1;
-  width: min(330px, 82%); height: auto;
+  width: min(420px, 95%); height: auto;
   filter: drop-shadow(-10px 18px 28px rgba(24, 29, 58, 0.38));
   transition: transform 0.5s cubic-bezier(.2,.7,.2,1);
 }
@@ -394,7 +394,7 @@ img { display: block; max-width: 100%; }
   .hero-grid { grid-template-columns: 1fr; gap: 2.6rem; }
   .cover-stage { order: -1; }
   .cover-stage::before { inset: 2% 14% 6%; }
-  .cover { width: min(240px, 62%); }
+  .cover { width: min(300px, 78%); }
   .skills { grid-template-columns: repeat(2, 1fr); }
   .features { grid-template-columns: 1fr; }
   .about-grid, .about-hero-grid { grid-template-columns: 1fr; gap: 2.2rem; }
