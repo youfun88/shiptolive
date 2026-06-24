@@ -53,13 +53,16 @@
   <!-- NAV -->
   <header class="nav" id="top">
     <a class="brand" href="index.html" aria-label="Dr. Travis Bradberry — home">
-      <img src="assets/favicon.svg" alt="" width="36" height="36" />
+      <img src="assets/logo.svg" alt="" width="40" height="40" />
       <span class="brand-text">
         <span class="brand-name">Travis Bradberry</span>
         <span class="brand-sub">PhD · Emotional Intelligence</span>
       </span>
     </a>
-    <nav class="nav-links" aria-label="Primary">
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="primary-nav" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="index.html#book">The Book</a>
       <a href="about.html" class="active">About Me</a>
@@ -149,16 +152,13 @@
           <p class="kicker">Free weekly newsletter</p>
           <h2>Sharpen your emotional intelligence</h2>
           <p>Join more than 1 million subscribers to Dr. Travis Bradberry's free weekly newsletter. You'll receive great tips for increasing your emotional intelligence.</p>
-          <form class="subscribe-form" id="subscribeForm" novalidate>
+          <form class="subscribe-form" novalidate>
             <div class="subscribe-row">
-              <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" aria-label="Your email address" required />
-              <button class="btn btn-gold" id="subBtn" type="submit">Subscribe</button>
+              <input type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" aria-label="Your email address" required />
+              <button class="btn btn-gold" type="submit">Subscribe</button>
             </div>
-            <div class="hp" aria-hidden="true">
-              <label for="company">Company (leave blank)</label>
-              <input id="company" name="_honey" type="text" tabindex="-1" autocomplete="off" />
-            </div>
-            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            <div class="hp" aria-hidden="true"><input type="text" name="_honey" tabindex="-1" autocomplete="off" /></div>
+            <p class="form-status" role="status" aria-live="polite"></p>
             <p class="fineprint">No spam. Unsubscribe anytime.</p>
           </form>
         </div>
