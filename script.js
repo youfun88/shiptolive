@@ -21,29 +21,22 @@ document.querySelectorAll('.card, .svc, .next-list li, .contact-card, .about-wra
 
 // ---------- Contact form ----------
 // No backend: posts to FormSubmit (https://formsubmit.co), which relays the
-// message to my inbox. Falls back to a prefilled email if the request fails.
+// message to my inbox. The email address is not displayed anywhere on the page.
+// TO FULLY HIDE IT FROM SOURCE TOO: after activating FormSubmit, it gives you a
+// random alias for your address — swap the line below to that alias, e.g.
+//   const ENDPOINT = 'https://formsubmit.co/ajax/abcdef123456';
+// so the raw email no longer appears in this file either.
 (function () {
   const form = document.getElementById('contactForm');
   if (!form) return;
 
-  const TO_EMAIL = 'yufanchen@gmail.com';
-  const ENDPOINT = 'https://formsubmit.co/ajax/' + TO_EMAIL;
+  const ENDPOINT = 'https://formsubmit.co/ajax/yufanchen@gmail.com';
   const btn = document.getElementById('send');
   const statusEl = document.getElementById('formStatus');
 
   function setStatus(msg, kind) {
     statusEl.textContent = msg;
     statusEl.className = 'form-status' + (kind ? ' ' + kind : '');
-  }
-
-  function mailtoFallback(d) {
-    const subject = 'Project inquiry — ' + d.topic;
-    const body =
-      'Name: ' + d.name + '\nEmail: ' + d.email + '\nNeed: ' + d.topic + '\n\n' + d.message;
-    window.location.href =
-      'mailto:' + TO_EMAIL +
-      '?subject=' + encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent(body);
   }
 
   form.addEventListener('submit', function (e) {
@@ -92,8 +85,7 @@ document.querySelectorAll('.card, .svc, .next-list li, .contact-card, .about-wra
         setStatus("Thanks, " + d.name.split(' ')[0] + "! Your message is on its way — I'll reply within 1–2 days.", 'ok');
       })
       .catch(function () {
-        setStatus("Couldn't send through the form — opening your email app instead…", 'err');
-        mailtoFallback(d);
+        setStatus("Sorry — that didn't go through. Please reach out via the LinkedIn button instead.", 'err');
       })
       .finally(function () {
         btn.disabled = false;
