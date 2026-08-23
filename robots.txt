@@ -1,5 +1,4 @@
 # Yufan Chen — robots.txt
-# Set your real domain in the Sitemap line once you've bought it.
 
 User-agent: *
 Allow: /
