@@ -30,7 +30,7 @@ document.querySelectorAll('.card, .svc, .next-list li, .contact-card, .about-wra
   const form = document.getElementById('contactForm');
   if (!form) return;
 
-  const ENDPOINT = 'https://formsubmit.co/ajax/yufanchen@gmail.com';
+  const ENDPOINT = 'https://formsubmit.co/ajax/yufan@shiptolive.com';
   const btn = document.getElementById('send');
   const statusEl = document.getElementById('formStatus');
 
