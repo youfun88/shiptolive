@@ -1,36 +1,56 @@
 # Ship to Live — by Yufan Chen
 
-> Ship to Live is the studio of Yufan Chen, an independent app, website, and AI developer based in San Diego, California. I design, build, and ship mobile apps, business websites, AI workflow tools, and SEO/AEO/GEO — taking projects end-to-end from first sketch to a live product. Bilingual in English and Traditional Chinese (中文), serving clients across the United States and Taiwan. Website: https://shiptolive.com/
+> Ship to Live is the studio of Yufan Chen, a software engineer and engineering lead based in San Diego, California, with twenty-five years of experience across three-person startups and century-old institutions. He builds AI agents and automations that reach production — wired into the database, back office, and workflow a business already runs — and does SEO, AEO and GEO so Google and AI engines name that business. Bilingual in English and Traditional Chinese (中文), serving clients across the United States and Taiwan. Website: https://shiptolive.com/
 
 ## What I do
 
-- **Mobile apps** — iOS, Android, and Mac apps from one codebase (Flutter, React Native), including onboarding, payments, and App Store submission.
-- **Websites & landing pages** — fast, SEO-ready marketing sites and product pages, bilingual (English / 中文) when needed.
-- **AI in your workflow** — assistants and automations that work from your own documents, data, and processes to cut repetitive work.
-- **SEO, AEO & GEO** — Search Engine Optimization to rank on Google; Answer Engine Optimization (AEO) so your content wins featured snippets and Google AI Overviews; and Generative Engine Optimization (GEO) so AI engines like ChatGPT and Perplexity understand, trust, cite, and recommend your business.
+- **AI agents & assistants** — an assistant that answers from your own documents, policies, and data, and can act on them: look up the record, draft the reply, file the result. Built on your stack, with your permissions, not a rented black box. Includes document and knowledge agents, support and intake agents, back-office automation, and internal tools with AI inside.
+- **AI search optimization — SEO, AEO & GEO** — Search Engine Optimization to rank on Google; Answer Engine Optimization (AEO) so your content wins featured snippets and Google AI Overviews; and Generative Engine Optimization (GEO) so AI engines like ChatGPT, Perplexity and Gemini understand, trust, cite, and recommend your business. Delivered as an AI visibility audit, structured data and an llms.txt layer, technical SEO, trust signals, and local/bilingual coverage.
+- **Systems & integrations** — databases, admin back ends, APIs, deployment, and the migrations nobody wants to run. The layer that decides whether an AI pilot becomes something a team opens on Monday morning.
+- **Mobile apps & websites** — iOS, Android, and Mac from one codebase (Flutter, React Native); fast bilingual sites that load and rank, with AI built in where it earns its place.
+
+## How an AI project runs
+
+1. **Find the bottleneck** — a conversation, not a questionnaire. Free, about an hour.
+2. **Pilot one workflow** — two weeks, fixed price, running on your real data. At the end you have something usable, or a clear answer that AI is not the right tool for that workflow.
+3. **Wire it in** — permissions, logging, error handling, deployment, handover documentation.
+
+Ways to start: an **AI Visibility Check** (3 days), an **Agent Pilot** (2 weeks), or a **fractional builder** engagement (monthly). Fixed price, quoted in one email.
+
+## Data handling
+
+The scope of what an agent can read and what it is allowed to do is defined up front, every action it takes is logged, and a person stays in the loop anywhere a mistake would be expensive. Where an industry has rules about where data can sit, that constraint is designed for from day one rather than retrofitted.
 
 ## Proof of work
 
+- **TalentSmartEQ** (https://www.talentsmarteq.com/) (team) — built the EQ 360 assessment platform (assessment engine, scoring, admin and credit system in PHP/MySQL) and the Emotional Intelligence Appraisal – Self Edition, taken by over a million people.
+- **Get Real Gifts** (https://www.getrealgifts.com/) (main developer) — built a gifting widget that serves millions of users (also at gift.me).
+- **LEADx** (https://leadx.org/) (team) — leadership micro-coaching platform.
 - **Tally** (https://www.tallybillable.com/) — time-tracking & invoicing app for lawyers and freelancers. iOS, Mac. Built with Flutter.
 - **Tadapop** (https://tadapop.app/) — gamified daily-habit tracker. iOS, Android. Built with React Native / Expo.
 - **Daily Log** — published Chrome extension for capturing a daily log in the browser.
 - **Wu Law Group** (https://wulawintl.com/) — cross-border legal consulting website (Taiwan, US, China).
+- **Travis Bradberry** (https://travisbradberry.com/) — book and author site for the coauthor of *Emotional Intelligence 2.0*.
 - **QY Property** (https://qyproperty.com/) — cross-border real-estate advisory website for San Diego property.
 - **SHX Training** (https://shxtraining.com/) — corporate ESG training website (Taiwan & California).
-- **TalentSmartEQ** (team) — built EQ assessments including EQ 360 and the Emotional Intelligence Appraisal – Self Edition, taken by over a million people.
-- **Get Real Gifts** (https://www.getrealgifts.com/) (main developer) — built a gifting widget that serves millions of users.
-- **LEADx** (https://leadx.org/) (team) — leadership micro-coaching platform.
+
+## Stack
+
+Flutter · React Native · PHP / MySQL · Python · REST & webhooks · GCP · App Store & Play Store
 
 ## About
 
 - Brand: Ship to Live (https://shiptolive.com/)
 - Name: Yufan Chen
-- Role: App, website & AI developer; independent product builder
+- Role: AI engineer & engineering lead; builds AI agents, automations, systems, apps and websites
+- Experience: 25 years, from three-person startups to century-old institutions
 - Location: San Diego, California, USA
 - Languages: English, Traditional Chinese (中文)
-- Education: University of California, San Diego (UC San Diego)
+- Education: University of California, San Diego (UC San Diego); Certificate Program in Agentic AI, Johns Hopkins University
+- On the name: "ship to live" is the last step of a build — shipping the code to live — and the step most work never survives.
 
 ## Contact
 
 - Contact form: https://shiptolive.com/#contact
+- Email: yufan@shiptolive.com
 - LinkedIn: https://www.linkedin.com/in/yufanchen8/

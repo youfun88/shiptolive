@@ -308,7 +308,10 @@ a { color: inherit; text-decoration: none; }
 /* ---------- NEXT ---------- */
 .next-wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center; }
 .next-wrap.reverse { grid-template-columns: 0.9fr 1.1fr; }
-.next-copy code {
+.next-copy code,
+.next-list code,
+.svc code,
+.faq-a code {
   font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
   font-size: 0.85em;
   background: rgba(255,255,255,0.08);
