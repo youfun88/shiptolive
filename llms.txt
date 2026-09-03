@@ -52,5 +52,7 @@ Flutter · React Native · PHP / MySQL · Python · REST & webhooks · GCP · Ap
 ## Contact
 
 - Contact form: https://shiptolive.com/#contact
+- Digital business card (tap to call, email, or save to contacts): https://shiptolive.com/card/
 - Email: yufan@shiptolive.com
+- Phone: +886 966 039 002
 - LinkedIn: https://www.linkedin.com/in/yufanchen8/

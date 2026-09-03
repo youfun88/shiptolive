@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Yufan Chen — AI Engineer &amp; Engineering Lead | Ship to Live</title>
+  <meta name="description" content="Digital business card for Yufan Chen — AI engineer and engineering lead in San Diego. Builds AI agents and automations wired into the systems you already run. Tap to call, email, or save to your contacts. EN / 中文." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0d0e1a" />
+  <link rel="canonical" href="https://shiptolive.com/card/" />
+
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Ship to Live" />
+  <meta property="og:title" content="Yufan Chen — AI Engineer &amp; Engineering Lead" />
+  <meta property="og:description" content="AI agents, automation and systems engineering in San Diego. Tap to call, email, or save to your contacts." />
+  <meta property="og:url" content="https://shiptolive.com/card/" />
+  <meta property="og:image" content="https://shiptolive.com/assets/img/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Yufan Chen — AI Engineer &amp; Engineering Lead" />
+  <meta name="twitter:image" content="https://shiptolive.com/assets/img/og.png" />
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://shiptolive.com/#yufan",
+    "name": "Yufan Chen",
+    "jobTitle": "AI Engineer & Engineering Lead",
+    "telephone": "+886966039002",
+    "email": "mailto:yufan@shiptolive.com",
+    "url": "https://shiptolive.com/",
+    "image": "https://shiptolive.com/assets/img/founder.jpg",
+    "worksFor": { "@type": "ProfessionalService", "name": "Ship to Live", "url": "https://shiptolive.com/" },
+    "address": { "@type": "PostalAddress", "addressLocality": "San Diego", "addressRegion": "CA", "addressCountry": "US" },
+    "knowsLanguage": ["English", "Chinese (Traditional)"],
+    "sameAs": [
+      "https://www.linkedin.com/in/yufanchen8/",
+      "https://www.tallybillable.com/",
+      "https://tadapop.app/"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0d0e1a;
+      --panel: #1a1d35;
+      --panel-2: #14162a;
+      --ink: #eef0ff;
+      --ink-dim: #a7abce;
+      --ink-faint: #6f74a0;
+      --line: rgba(255, 255, 255, 0.09);
+      --grad-a: #7c5cff;
+      --grad-b: #2dd4bf;
+      --radius: 18px;
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+      --serif: 'Fraunces', Georgia, serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font);
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      justify-content: center;
+      padding: 2rem 1.1rem 3rem;
+    }
+
+    /* soft brand glow behind the card */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(38rem 26rem at 50% -6%, rgba(124, 92, 255, 0.22), transparent 70%),
+        radial-gradient(30rem 22rem at 50% 108%, rgba(45, 212, 191, 0.13), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrap { position: relative; z-index: 1; width: 100%; max-width: 27rem; }
+
+    .card {
+      background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 2.2rem 1.6rem 1.8rem;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      text-align: center;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--ink-dim);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
+    }
+    .brand img { width: 26px; height: 26px; }
+
+    .portrait {
+      width: 108px;
+      height: 108px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 0 0 6px rgba(124, 92, 255, 0.12);
+      display: block;
+      margin: 0 auto 1.1rem;
+    }
+
+    .name {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 2.05rem;
+      line-height: 1.1;
+      margin: 0 0 0.45rem;
+      letter-spacing: -0.01em;
+    }
+
+    .role {
+      margin: 0 0 0.15rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      background: linear-gradient(90deg, var(--grad-a), var(--grad-b));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .org { margin: 0 0 1rem; font-size: 0.82rem; color: var(--ink-faint); letter-spacing: 0.06em; text-transform: uppercase; }
+
+    .tagline {
+      margin: 0 auto 1.6rem;
+      max-width: 21rem;
+      font-size: 0.94rem;
+      line-height: 1.6;
+      color: var(--ink-dim);
+    }
+    .tagline strong { color: var(--ink); font-weight: 600; }
+
+    .save-row { display: flex; gap: 0.6rem; }
+
+    .save {
+      flex: 1 1 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.9rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.92rem;
+      white-space: nowrap;
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.04);
+      transition: transform 0.18s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+    .save:hover { transform: translateY(-2px); border-color: rgba(124, 92, 255, 0.6); background: rgba(124, 92, 255, 0.12); }
+
+    /* the platform the visitor is actually on gets the gradient */
+    .save.is-primary {
+      color: #0d0e1a;
+      border-color: transparent;
+      background: linear-gradient(90deg, var(--grad-a), var(--grad-b));
+      box-shadow: 0 10px 26px rgba(124, 92, 255, 0.32);
+    }
+    .save.is-primary:hover { box-shadow: 0 14px 32px rgba(124, 92, 255, 0.42); background: linear-gradient(90deg, var(--grad-a), var(--grad-b)); }
+
+    .save-note { margin: 0.7rem 0 1.6rem; font-size: 0.78rem; color: var(--ink-faint); }
+
+    .rows { display: flex; flex-direction: column; gap: 0.5rem; text-align: left; }
+
+    .row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.9rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.025);
+      text-decoration: none;
+      color: var(--ink);
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    a.row:hover { border-color: rgba(124, 92, 255, 0.5); background: rgba(124, 92, 255, 0.08); }
+
+    .row-k {
+      flex: 0 0 5.4rem;
+      white-space: nowrap;
+      font-size: 0.7rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+    .row-v { font-size: 0.95rem; line-height: 1.45; word-break: break-word; }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+    .links a {
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: var(--ink-dim);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.4rem 0.9rem;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .links a:hover { color: var(--ink); border-color: rgba(45, 212, 191, 0.55); }
+
+    /* ---- QR ---- */
+    .qr-block {
+      margin-top: 1.8rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      text-align: left;
+    }
+    .qr-tile {
+      flex: 0 0 auto;
+      background: #fff;
+      padding: 8px;
+      border-radius: 12px;
+      line-height: 0;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    }
+    .qr-svg { display: block; width: 108px; height: 108px; shape-rendering: crispEdges; }
+    .qr-copy h2 { margin: 0 0 0.3rem; font-family: var(--serif); font-size: 1.05rem; font-weight: 600; }
+    .qr-copy p { margin: 0; font-size: 0.82rem; line-height: 1.55; color: var(--ink-dim); }
+    .qr-copy a { color: var(--grad-b); text-decoration: none; }
+    .qr-copy a:hover { text-decoration: underline; }
+
+    .foot {
+      margin: 1.4rem 0 0;
+      text-align: center;
+      font-size: 0.75rem;
+      line-height: 1.6;
+      color: var(--ink-faint);
+    }
+    .foot a { color: var(--ink-faint); }
+
+    :focus-visible { outline: 2px solid var(--grad-b); outline-offset: 3px; }
+
+    @media (max-width: 25rem) {
+      .card { padding: 1.8rem 1.15rem 1.5rem; }
+      .name { font-size: 1.8rem; }
+      .qr-block { flex-direction: column; text-align: center; gap: 0.9rem; }
+    }
+
+    @media print {
+      body { background: #fff; color: #000; padding: 0; }
+      body::before { display: none; }
+      .card { box-shadow: none; border-color: #ccc; background: #fff; }
+      .name, .row-v, .qr-copy h2 { color: #000; }
+      .role { -webkit-text-fill-color: #000; color: #000; }
+      .save, .save-note { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <article class="card">
+      <a class="brand" href="https://shiptolive.com/">
+        <img src="../assets/favicon.svg" alt="" width="26" height="26" />
+        Ship to Live
+      </a>
+
+      <img class="portrait" src="../assets/img/founder.jpg" alt="Yufan Chen" width="108" height="108" />
+
+      <h1 class="name">Yufan Chen</h1>
+      <p class="role">AI Engineer &amp; Engineering Lead</p>
+      <p class="org">Ship to Live · San Diego</p>
+
+      <p class="tagline">
+        <strong>I build AI that actually goes live.</strong>
+        Agents and automations wired into the database, back office and workflow you already run —
+        on twenty-five years of production systems.
+      </p>
+
+      <div class="save-row">
+        <!-- iOS: no download attr — Safari hands the vCard straight to Contacts. -->
+        <a class="save" id="saveIos" href="./yufan-chen.vcf" type="text/vcard">
+          <span aria-hidden="true">↓</span> Save to iPhone
+        </a>
+        <!-- Android: download attr — Chrome saves the file, then Contacts imports it. -->
+        <a class="save" id="saveAndroid" href="./yufan-chen.vcf" type="text/vcard" download="yufan-chen.vcf">
+          <span aria-hidden="true">↓</span> Save to Android
+        </a>
+      </div>
+      <p class="save-note">Same contact card either way — adds Yufan to your phone's address book</p>
+
+      <div class="rows">
+        <a class="row" href="tel:+886966039002">
+          <span class="row-k">Phone</span>
+          <span class="row-v">+886 966 039 002</span>
+        </a>
+        <a class="row" href="mailto:yufan@shiptolive.com">
+          <span class="row-k">Email</span>
+          <span class="row-v">yufan@shiptolive.com</span>
+        </a>
+        <a class="row" href="https://shiptolive.com/">
+          <span class="row-k">Web</span>
+          <span class="row-v">shiptolive.com</span>
+        </a>
+        <div class="row">
+          <span class="row-k">Based in</span>
+          <span class="row-v">San Diego, California · working across the US &amp; Taiwan</span>
+        </div>
+        <div class="row">
+          <span class="row-k">Languages</span>
+          <span class="row-v">English · 中文</span>
+        </div>
+      </div>
+
+      <nav class="links" aria-label="Elsewhere">
+        <a href="https://shiptolive.com/#ai-agents">AI agents</a>
+        <a href="https://www.linkedin.com/in/yufanchen8/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.tallybillable.com/" target="_blank" rel="noopener">Tally</a>
+        <a href="https://tadapop.app/" target="_blank" rel="noopener">Tadapop</a>
+        <a href="https://shiptolive.com/#contact">Contact form</a>
+      </nav>
+
+      <div class="qr-block">
+        <div class="qr-tile">
+          <svg class="qr-svg" role="img" aria-label="QR code linking to shiptolive.com/card" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37"><path fill="#fff" d="M0 0h37v37h-37z"/><path stroke="#0d0e1a" d="M2 2.5h7m1 0h2m1 0h1m1 0h1m2 0h1m2 0h2m1 0h1m1 0h1m1 0h7m-33 1h1m5 0h1m4 0h1m2 0h4m1 0h1m2 0h1m1 0h1m1 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m2 0h2m2 0h3m3 0h1m1 0h2m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m2 0h1m2 0h2m1 0h2m1 0h1m2 0h1m1 0h1m2 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h1m4 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m4 0h2m1 0h1m6 0h1m4 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-25 1h4m3 0h1m3 0h1m2 0h1m1 0h1m-20 1h2m2 0h1m1 0h6m2 0h2m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m-33 1h2m1 0h1m1 0h1m2 0h2m1 0h3m1 0h2m2 0h5m1 0h1m1 0h4m-29 1h5m4 0h2m1 0h2m4 0h1m1 0h1m4 0h1m1 0h3m-30 1h4m6 0h2m2 0h4m1 0h1m1 0h1m3 0h1m2 0h3m-27 1h1m6 0h2m3 0h2m1 0h1m2 0h1m1 0h4m1 0h2m-32 1h2m1 0h1m3 0h2m1 0h2m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h6m1 0h1m-33 1h1m1 0h1m3 0h2m3 0h1m2 0h3m1 0h1m3 0h1m2 0h4m1 0h2m-32 1h1m3 0h1m4 0h1m2 0h1m3 0h3m4 0h1m1 0h1m1 0h1m2 0h2m-31 1h3m2 0h2m1 0h2m1 0h1m1 0h2m1 0h1m2 0h1m2 0h1m1 0h1m1 0h2m1 0h1m1 0h1m-33 1h1m1 0h1m1 0h2m1 0h1m3 0h2m1 0h1m2 0h2m1 0h2m1 0h2m1 0h2m4 0h1m-29 1h5m4 0h1m1 0h1m1 0h1m3 0h3m1 0h2m2 0h2m1 0h1m-33 1h4m1 0h1m3 0h1m2 0h3m1 0h1m1 0h1m3 0h4m3 0h2m1 0h1m-32 1h2m1 0h1m1 0h1m1 0h3m4 0h2m1 0h2m2 0h1m1 0h1m3 0h2m-30 1h2m1 0h1m4 0h2m5 0h2m2 0h2m4 0h4m-29 1h1m5 0h1m1 0h1m2 0h2m2 0h7m1 0h2m5 0h2m-32 1h1m1 0h2m1 0h1m1 0h2m2 0h1m1 0h1m1 0h1m3 0h2m1 0h2m4 0h3m1 0h1m-33 1h2m3 0h2m1 0h6m1 0h1m4 0h1m3 0h6m2 0h1m-25 1h1m1 0h2m2 0h1m2 0h2m1 0h1m1 0h1m1 0h1m3 0h2m1 0h2m-33 1h7m2 0h2m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m2 0h1m-32 1h1m5 0h1m1 0h1m3 0h6m1 0h2m3 0h1m3 0h4m-32 1h1m1 0h3m1 0h1m2 0h2m1 0h1m2 0h1m2 0h2m1 0h1m2 0h5m2 0h2m-33 1h1m1 0h3m1 0h1m2 0h1m5 0h1m2 0h8m1 0h2m1 0h2m-32 1h1m1 0h3m1 0h1m3 0h2m2 0h1m1 0h2m1 0h1m8 0h5m-33 1h1m5 0h1m2 0h1m1 0h1m3 0h1m1 0h3m2 0h1m2 0h1m4 0h1m-31 1h7m2 0h1m1 0h2m1 0h3m3 0h1m1 0h3m5 0h2"/></svg>
+        </div>
+        <div class="qr-copy">
+          <h2>Scan to open this card</h2>
+          <p>Point a camera at the code, then tap <strong>Save to Contacts</strong>. Or share
+            <a href="https://shiptolive.com/card/">shiptolive.com/card</a>.</p>
+        </div>
+      </div>
+    </article>
+
+    <p class="foot">
+      © <span id="year">2026</span> Ship to Live · Yufan Chen —
+      AI agents, automation &amp; systems engineering, San Diego, CA
+    </p>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Highlight the button matching the visitor's platform. Both always work and
+    // stay clickable — this only decides which one gets the filled treatment.
+    (function () {
+      var ua = navigator.userAgent || '';
+      var isIos = /iPad|iPhone|iPod/.test(ua) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); // iPadOS
+      var isAndroid = /Android/.test(ua);
+      var id = isIos ? 'saveIos' : isAndroid ? 'saveAndroid' : null;
+      // On desktop neither is "the" platform — fill the iPhone one so the row
+      // still has a clear primary action.
+      document.getElementById(id || 'saveIos').classList.add('is-primary');
+    })();
+  </script>
+</body>
+</html>
