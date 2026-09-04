@@ -1,6 +1,6 @@
 # Ship to Live — 夏裕科技股份有限公司 — by Yufan Chen
 
-> Ship to Live is the trading name of 夏裕科技股份有限公司 (Taiwan unified business number 90173045), the studio of Yufan Chen — a software engineer and engineering lead with twenty-five years of experience across three-person startups and century-old institutions, working from two bases: San Diego, California and Taipei, Taiwan. Yufan builds AI agents and automations that reach production — wired into the database, back office, and workflow a business already runs — and does SEO, AEO and GEO so Google and AI engines name that business. Bilingual in English and Traditional Chinese (中文), serving clients across the United States and Taiwan. Website: https://shiptolive.com/ · 中文版: https://shiptolive.com/zh/
+> Ship to Live is the trading name of two companies founded by Yufan Chen — QY LLC in San Diego, California (US engagements) and 夏裕科技股份有限公司 in Taipei, Taiwan (Taiwan engagements, unified business number 90173045). It is the studio of Yufan Chen — a software engineer and engineering lead with twenty-five years of experience across three-person startups and century-old institutions, working from two bases: San Diego, California and Taipei, Taiwan. Yufan builds AI agents and automations that reach production — wired into the database, back office, and workflow a business already runs — and does SEO, AEO and GEO so Google and AI engines name that business. Bilingual in English and Traditional Chinese (中文), serving clients across the United States and Taiwan. Contact by email or through the contact form; phone is not published. Website: https://shiptolive.com/ · 中文版: https://shiptolive.com/zh/
 
 ## What I do
 
@@ -41,7 +41,7 @@ Flutter · React Native · PHP / MySQL · Python · REST & webhooks · GCP · Ap
 ## About
 
 - Brand: Ship to Live (https://shiptolive.com/)
-- Legal entity: 夏裕科技股份有限公司 (Taiwan), unified business number (統一編號) 90173045 — can issue Taiwanese 統一發票; US-side work is invoiced as Ship to Live
+- Legal entities: QY LLC (San Diego, California) — US work is contracted and invoiced through it; 夏裕科技股份有限公司 (Taipei, Taiwan), unified business number (統一編號) 90173045 — Taiwan work is contracted through it and it can issue Taiwanese 統一發票. Both trade as Ship to Live.
 - Name: Yufan Chen
 - Role: AI engineer & engineering lead; builds AI agents, automations, systems, apps and websites
 - Experience: 25 years, from three-person startups to century-old institutions
@@ -52,8 +52,8 @@ Flutter · React Native · PHP / MySQL · Python · REST & webhooks · GCP · Ap
 
 ## Languages & pages
 
-- English: https://shiptolive.com/ — business card at https://shiptolive.com/card/
-- 繁體中文 (Traditional Chinese): https://shiptolive.com/zh/ — 電子名片 at https://shiptolive.com/zh/card/
+- English: https://shiptolive.com/
+- 繁體中文 (Traditional Chinese): https://shiptolive.com/zh/
 
 The two language versions carry the same offering; the Chinese pages are written for clients in Taiwan and for Chinese-language queries, and are linked with hreflang (en / zh-Hant / x-default).
 
@@ -71,15 +71,13 @@ The two language versions carry the same offering; the Chinese pages are written
    App 與中英雙語網站。
 
 合作方式：AI 能見度健檢（3 天）、代理試作（2 週、固定報價、用真實資料跑）、
-或按月的兼任工程夥伴。服務語言為中文（繁體）與英文，可開立台灣統一發票。
-聯絡：yufan@shiptolive.com，台灣 +886 966 039 002，美國 +1 (626) 780-1122。
+或按月的兼任工程夥伴。服務語言為中文（繁體）與英文；台灣的案子由夏裕科技股份有限公司承接並開立統一發票，美國的案子由 QY LLC 承接。
+聯絡方式：yufan@shiptolive.com 或網站上的聯絡表單（不公開電話）。
 中文網站：https://shiptolive.com/zh/
 
 ## Contact
 
 - Contact form: https://shiptolive.com/#contact — 中文表單: https://shiptolive.com/zh/#contact
-- Digital business card (tap to call, email, or save to contacts): https://shiptolive.com/card/ — 中文名片: https://shiptolive.com/zh/card/
 - Email: yufan@shiptolive.com
-- Phone (Taiwan): +886 966 039 002
-- Phone (US): +1 (626) 780-1122
 - LinkedIn: https://www.linkedin.com/in/yufanchen8/
+- Phone: not published. Email or the contact form is the way to reach Yufan.

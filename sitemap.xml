@@ -19,22 +19,4 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://shiptolive.com/card/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://shiptolive.com/card/" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://shiptolive.com/zh/card/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://shiptolive.com/card/" />
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://shiptolive.com/zh/card/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://shiptolive.com/card/" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://shiptolive.com/zh/card/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://shiptolive.com/card/" />
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
 </urlset>

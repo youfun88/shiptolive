@@ -6,7 +6,10 @@
 
   <title>Yufan Chen — AI Engineer &amp; Engineering Lead | Ship to Live</title>
   <meta name="description" content="Digital business card for Yufan Chen — AI engineer and engineering lead at Ship to Live / 夏裕科技股份有限公司, based in San Diego and Taipei. Builds AI agents and automations wired into the systems you already run. Tap to call, email, or save to your contacts. EN / 中文." />
-  <meta name="robots" content="index, follow" />
+  <!-- Private card: handed out deliberately via QR/link, not something to be
+       indexed, summarised by an AI engine, or linked from the public site. -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet" />
   <meta name="theme-color" content="#0d0e1a" />
   <link rel="canonical" href="https://shiptolive.com/card/" />
 
@@ -47,11 +50,13 @@
     "worksFor": {
       "@type": "ProfessionalService",
       "name": "Ship to Live",
-      "legalName": "夏裕科技股份有限公司",
-      "alternateName": "夏裕科技股份有限公司",
-      "taxID": "90173045",
+      "alternateName": ["夏裕科技股份有限公司", "QY LLC"],
       "url": "https://shiptolive.com/"
     },
+    "affiliation": [
+      { "@type": "Organization", "name": "QY LLC", "legalName": "QY LLC", "address": { "@type": "PostalAddress", "addressLocality": "San Diego", "addressRegion": "CA", "addressCountry": "US" } },
+      { "@type": "Organization", "name": "夏裕科技股份有限公司", "legalName": "夏裕科技股份有限公司", "taxID": "90173045", "address": { "@type": "PostalAddress", "addressLocality": "Taipei", "addressCountry": "TW" } }
+    ],
     "address": [
       { "@type": "PostalAddress", "addressLocality": "San Diego", "addressRegion": "CA", "addressCountry": "US" },
       { "@type": "PostalAddress", "addressLocality": "Taipei", "addressCountry": "TW" }
@@ -370,7 +375,8 @@
         </div>
         <div class="row">
           <span class="row-k">Company</span>
-          <span class="row-v"><span lang="zh-Hant">夏裕科技股份有限公司</span> · <span class="muted">統一編號 90173045</span></span>
+          <span class="row-v">QY LLC — San Diego, CA<br />
+            <span lang="zh-Hant">夏裕科技股份有限公司</span> · <span class="muted">統一編號 90173045</span></span>
         </div>
       </div>
 

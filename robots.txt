@@ -3,35 +3,68 @@
 User-agent: *
 Allow: /
 
-# AI / generative engines — explicitly welcome
+# The digital business cards are shared deliberately, by QR or link.
+# They carry direct phone numbers, so they are not for indexing or for
+# training/answer crawlers. Search engines are left able to fetch them so
+# they can see the noindex tag on the pages themselves.
+
+# AI / generative engines — welcome on the site, not on the cards
 User-agent: GPTBot
 Allow: /
+Disallow: /card/
+Disallow: /zh/card/
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /card/
+Disallow: /zh/card/
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /card/
+Disallow: /zh/card/
 User-agent: PerplexityBot
 Allow: /
+Disallow: /card/
+Disallow: /zh/card/
 User-agent: Google-Extended
 Allow: /
+Disallow: /card/
+Disallow: /zh/card/
 User-agent: ClaudeBot
 Allow: /
+Disallow: /card/
+Disallow: /zh/card/
 User-agent: Claude-Web
 Allow: /
+Disallow: /card/
+Disallow: /zh/card/
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /card/
+Disallow: /zh/card/
 User-agent: CCBot
 Allow: /
+Disallow: /card/
+Disallow: /zh/card/
 User-agent: Amazonbot
 Allow: /
+Disallow: /card/
+Disallow: /zh/card/
 User-agent: Meta-ExternalAgent
 Allow: /
+Disallow: /card/
+Disallow: /zh/card/
 User-agent: cohere-ai
 Allow: /
+Disallow: /card/
+Disallow: /zh/card/
 User-agent: Bytespider
 Allow: /
+Disallow: /card/
+Disallow: /zh/card/
 User-agent: PetalBot
 Allow: /
+Disallow: /card/
+Disallow: /zh/card/
 
 # Plain-text summary written for language models.
 # https://shiptolive.com/llms.txt

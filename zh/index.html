@@ -55,10 +55,9 @@
         "@id": "https://shiptolive.com/#yufan",
         "name": "Yufan Chen",
         "jobTitle": "AI 工程師與工程主管",
-        "description": "擁有二十五年軟體工程與工程領導經驗，往返美國聖地牙哥與台灣台北工作。夏裕科技股份有限公司（Ship to Live）創辦人。專長是把 AI 代理與自動化接進企業既有的資料庫、後台與工作流程，並以 SEO、AEO、GEO 讓企業被 AI 搜尋引擎點名。",
+        "description": "擁有二十五年軟體工程與工程領導經驗，往返美國聖地牙哥與台灣台北工作。夏裕科技股份有限公司（台灣）與 QY LLC（美國）創辦人，兩家公司均以 Ship to Live 為品牌名。專長是把 AI 代理與自動化接進企業既有的資料庫、後台與工作流程，並以 SEO、AEO、GEO 讓企業被 AI 搜尋引擎點名。",
         "url": "https://shiptolive.com/zh/",
         "email": "mailto:yufan@shiptolive.com",
-        "telephone": ["+16267801122", "+886966039002"],
         "image": "https://shiptolive.com/assets/img/founder.jpg",
         "sameAs": [
           "https://www.linkedin.com/in/yufanchen8/",
@@ -72,6 +71,10 @@
           "credentialCategory": "certificate",
           "recognizedBy": { "@type": "CollegeOrUniversity", "name": "約翰霍普金斯大學 (Johns Hopkins University)" }
         },
+        "worksFor": [
+          { "@id": "https://shiptolive.com/#entity-tw" },
+          { "@id": "https://shiptolive.com/#entity-us" }
+        ],
         "knowsLanguage": ["中文（繁體）", "English"],
         "address": [
           { "@type": "PostalAddress", "addressLocality": "San Diego", "addressRegion": "CA", "addressCountry": "US" },
@@ -87,10 +90,11 @@
         "@type": "ProfessionalService",
         "@id": "https://shiptolive.com/#service",
         "name": "夏裕科技股份有限公司",
-        "legalName": "夏裕科技股份有限公司",
-        "taxID": "90173045",
-        "identifier": { "@type": "PropertyValue", "propertyID": "TW-統一編號", "value": "90173045" },
-        "alternateName": ["Ship to Live", "夏裕科技"],
+        "alternateName": ["Ship to Live", "夏裕科技", "QY LLC"],
+        "parentOrganization": [
+          { "@id": "https://shiptolive.com/#entity-tw" },
+          { "@id": "https://shiptolive.com/#entity-us" }
+        ],
         "slogan": "讓 AI 真的上線。",
         "founder": { "@id": "https://shiptolive.com/#yufan" },
         "employee": { "@id": "https://shiptolive.com/#yufan" },
@@ -98,7 +102,6 @@
         "image": "https://shiptolive.com/assets/img/founder.jpg",
         "logo": "https://shiptolive.com/assets/favicon.svg",
         "email": "mailto:yufan@shiptolive.com",
-        "telephone": ["+16267801122", "+886966039002"],
         "areaServed": [
           { "@type": "Country", "name": "台灣" },
           { "@type": "Country", "name": "美國" }
@@ -113,18 +116,10 @@
           {
             "@type": "ContactPoint",
             "contactType": "業務洽詢",
-            "telephone": "+886966039002",
             "email": "yufan@shiptolive.com",
-            "areaServed": "TW",
+            "url": "https://shiptolive.com/zh/#contact",
+            "areaServed": ["TW", "US"],
             "availableLanguage": ["中文（繁體）", "English"]
-          },
-          {
-            "@type": "ContactPoint",
-            "contactType": "業務洽詢",
-            "telephone": "+16267801122",
-            "email": "yufan@shiptolive.com",
-            "areaServed": "US",
-            "availableLanguage": ["English", "中文（繁體）"]
           }
         ],
         "description": "夏裕科技股份有限公司（Ship to Live）把 AI 代理、自動化與系統整合做進企業既有的系統裡，並提供 SEO、AEO 與 GEO，讓企業在 Google 上被找到、在 AI 回答裡被引用——以及底下的 App、網站與後端。",
@@ -138,6 +133,31 @@
             { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://shiptolive.com/#svc-apps", "name": "App 與網站", "serviceType": "應用程式開發", "description": "一套程式碼同時上 iOS、Android 與 Mac；以及載入快、排得上去的中英雙語網站。", "provider": { "@id": "https://shiptolive.com/#service" } } }
           ]
         }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://shiptolive.com/#entity-tw",
+        "name": "夏裕科技股份有限公司",
+        "legalName": "夏裕科技股份有限公司",
+        "alternateName": "夏裕科技",
+        "taxID": "90173045",
+        "identifier": { "@type": "PropertyValue", "propertyID": "TW-統一編號", "value": "90173045" },
+        "description": "Ship to Live 在台灣的法人主體。台灣的專案由夏裕科技股份有限公司簽約並開立統一發票。",
+        "founder": { "@id": "https://shiptolive.com/#yufan" },
+        "url": "https://shiptolive.com/zh/",
+        "email": "mailto:yufan@shiptolive.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "台北", "addressCountry": "TW" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://shiptolive.com/#entity-us",
+        "name": "QY LLC",
+        "legalName": "QY LLC",
+        "description": "Ship to Live 在美國的法人主體。美國的專案由 QY LLC 簽約並開立英文 invoice。",
+        "founder": { "@id": "https://shiptolive.com/#yufan" },
+        "url": "https://shiptolive.com/",
+        "email": "mailto:yufan@shiptolive.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "San Diego", "addressRegion": "CA", "addressCountry": "US" }
       },
       {
         "@type": "WebSite",
@@ -600,8 +620,9 @@
             我承接的專案從架構一路做到部署，並在需要時把對的專業找進來。
           </p>
           <p>
-            Ship to Live 是工作室的名字，背後的公司是<strong>夏裕科技股份有限公司</strong>
-            （統一編號 90173045）。我在<strong>美國加州聖地牙哥</strong>與<strong>台灣台北</strong>兩地工作，
+            Ship to Live 是工作室的名字。台灣的案子由<strong>夏裕科技股份有限公司</strong>
+            （統一編號 90173045）承接，美國的案子則由美國公司 <strong>QY LLC</strong>（加州聖地牙哥）承接。
+            我在<strong>美國加州聖地牙哥</strong>與<strong>台灣台北</strong>兩地工作，
             所以跨境的專案是同一位工程師在兩個時區裡負責到底，而不是在兩邊之間交接。
           </p>
           <div class="card-links">
@@ -659,11 +680,11 @@
         </details>
         <details class="faq-item">
           <summary>你在哪裡？可以遠端合作嗎？</summary>
-          <div class="faq-a"><p>我有兩個據點：<strong>美國加州聖地牙哥</strong>與<strong>台灣台北</strong>——所以美國與台灣的客戶，都有一位在可以配合的時區裡的人。台灣聯絡電話 +886 966 039 002，美國 +1 (626) 780-1122。最好的開始方式是下面的聯絡表單，或在 LinkedIn 上留言給我。</p></div>
+          <div class="faq-a"><p>我有兩個據點：<strong>美國加州聖地牙哥</strong>與<strong>台灣台北</strong>——所以美國與台灣的客戶，都有一位在可以配合的時區裡的人。最好的開始方式是下面的聯絡表單，或在 LinkedIn 上留言給我。</p></div>
         </details>
         <details class="faq-item">
           <summary>可以開發票嗎？</summary>
-          <div class="faq-a"><p>可以。夏裕科技股份有限公司是在台灣正式登記的公司，統一編號 90173045，能開立台灣的統一發票；美國端的專案則以 Ship to Live 名義開立英文 invoice。</p></div>
+          <div class="faq-a"><p>可以。夏裕科技股份有限公司是在台灣正式登記的公司，統一編號 90173045，能開立台灣的統一發票；美國端的專案則透過美國公司 QY LLC（加州聖地牙哥）簽約與開立英文 invoice。</p></div>
         </details>
       </div>
     </section>
@@ -730,7 +751,6 @@
       <a href="#faq">常見問題</a>
       <a href="#contact">聯絡</a>
       <a href="https://www.linkedin.com/in/yufanchen8/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="/zh/card/">電子名片</a>
       <a href="/" hreflang="en" lang="en">English</a>
     </nav>
   </footer>
@@ -752,8 +772,8 @@
       { "@type": "Question", "name": "SEO、AEO、GEO 有什麼不一樣？", "acceptedAnswer": { "@type": "Answer", "text": "它們是三種被找到的方式，對應客戶會去看的三個不同地方。SEO（搜尋引擎最佳化）讓你的連結出現在 Google 的搜尋結果裡。AEO（答案引擎最佳化）讓你的內容被抓進答案框與快速 AI 回覆，也就是 Google 的精選摘要與 AI 概覽。GEO（生成式引擎最佳化）讓你的公司在 ChatGPT、Perplexity、Gemini 生成的完整回答裡被引用。夏裕科技三件都做——快速且結構清楚的頁面、明確的答案、llms.txt 內容層、結構化資料，以及每個引擎都在看的信任訊號。" } },
       { "@type": "Question", "name": "你真的有做出上線的產品嗎？", "acceptedAnswer": { "@type": "Answer", "text": "有。開發並上架了兩個 App Store 應用程式（Tally 與 Tadapop）和一個 Chrome 擴充功能（Daily Log），也把幾家企業放上網（Wu Law Group、Travis Bradberry、夏恆企業顧問）；在產品團隊裡打造了 EQ 360 評測平台與一個超過一百萬人做過的評量，以及一個服務數百萬使用者的送禮小工具。" } },
       { "@type": "Question", "name": "可以用中文合作嗎？", "acceptedAnswer": { "@type": "Answer", "text": "可以。工作語言是中文（繁體）與英文，客戶橫跨台灣與美國，特別適合需要中英雙語 AI 工具、App、網站與行銷的跨境企業。文件、會議與交接都可以全程中文進行。" } },
-      { "@type": "Question", "name": "你在哪裡？可以遠端合作嗎？", "acceptedAnswer": { "@type": "Answer", "text": "有兩個據點：美國加州聖地牙哥與台灣台北，所以美國與台灣的客戶都有一位在可以配合的時區裡的人。台灣聯絡電話 +886 966 039 002，美國 +1 (626) 780-1122。最好的開始方式是網站上的聯絡表單，或在 LinkedIn 上留言。" } },
-      { "@type": "Question", "name": "可以開發票嗎？", "acceptedAnswer": { "@type": "Answer", "text": "可以。夏裕科技股份有限公司是在台灣正式登記的公司，統一編號 90173045，能開立台灣的統一發票；美國端的專案則以 Ship to Live 名義開立英文 invoice。" } }
+      { "@type": "Question", "name": "你在哪裡？可以遠端合作嗎？", "acceptedAnswer": { "@type": "Answer", "text": "有兩個據點：美國加州聖地牙哥與台灣台北，所以美國與台灣的客戶都有一位在可以配合的時區裡的人。最好的開始方式是網站上的聯絡表單，或在 LinkedIn 上留言。" } },
+      { "@type": "Question", "name": "可以開發票嗎？", "acceptedAnswer": { "@type": "Answer", "text": "可以。夏裕科技股份有限公司是在台灣正式登記的公司，統一編號 90173045，能開立台灣的統一發票；美國端的專案則透過美國公司 QY LLC（加州聖地牙哥）簽約與開立英文 invoice。" } }
     ]
   }
   </script>
