@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>夏裕科技股份有限公司 — AI 代理、自動化與 AI 搜尋最佳化｜Yufan Chen．聖地牙哥 × 台北</title>
+  <meta name="description" content="二十五年正式上線系統的工程經驗，現在打造真的能上線的 AI 代理與自動化——直接接進你既有的資料庫、後台與工作流程。並提供 SEO、AEO、GEO，讓 ChatGPT、Perplexity 與 Google 在回答時點名你的公司。聖地牙哥 × 台北．中文／English。" />
+  <meta name="keywords" content="AI 代理, AI Agent 開發, AI 自動化, 企業 AI 導入, RAG 檢索增強生成, 生成式引擎最佳化, GEO, 答案引擎最佳化, AEO, SEO 搜尋引擎最佳化, 台北 AI 顧問, 系統整合, 資料庫設計, 後台系統, App 開發, 網站開發, Flutter, React Native, 中英雙語工程師, 夏裕科技股份有限公司, Ship to Live" />
+  <meta name="author" content="Yufan Chen" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="theme-color" content="#0d0e1a" />
+  <link rel="canonical" href="https://shiptolive.com/zh/" />
+
+  <link rel="alternate" hreflang="en" href="https://shiptolive.com/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://shiptolive.com/zh/" />
+  <link rel="alternate" hreflang="x-default" href="https://shiptolive.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ship to Live 夏裕科技" />
+  <meta property="og:title" content="讓 AI 真的上線。" />
+  <meta property="og:description" content="AI 代理、自動化與 AI 看得懂的網站，直接接進你既有的資料庫、後台與流程——建立在二十五年正式上線系統的經驗上。再加上 SEO、AEO、GEO，讓 AI 在回答時點名你。" />
+  <meta property="og:url" content="https://shiptolive.com/zh/" />
+  <meta property="og:image" content="https://shiptolive.com/assets/img/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Ship to Live 夏裕科技 — 讓 AI 真的上線。Yufan Chen，聖地牙哥 × 台北。" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="讓 AI 真的上線。" />
+  <meta name="twitter:description" content="AI 代理與自動化，接進你既有的系統；再加上 SEO／AEO／GEO，讓 ChatGPT 與 Google 點名你。二十五年上線經驗。中文／English。" />
+  <meta name="twitter:image" content="https://shiptolive.com/assets/img/og.png" />
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+
+  <!-- 結構化資料：我是誰、提供什麼、以及這個網站本身。
+       這是 GEO 的核心——讓 Google 與 AI 引擎看得懂、也引用得到。 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://shiptolive.com/#yufan",
+        "name": "Yufan Chen",
+        "jobTitle": "AI 工程師與工程主管",
+        "description": "擁有二十五年軟體工程與工程領導經驗，往返美國聖地牙哥與台灣台北工作。夏裕科技股份有限公司（Ship to Live）創辦人。專長是把 AI 代理與自動化接進企業既有的資料庫、後台與工作流程，並以 SEO、AEO、GEO 讓企業被 AI 搜尋引擎點名。",
+        "url": "https://shiptolive.com/zh/",
+        "email": "mailto:yufan@shiptolive.com",
+        "telephone": ["+16267801122", "+886966039002"],
+        "image": "https://shiptolive.com/assets/img/founder.jpg",
+        "sameAs": [
+          "https://www.linkedin.com/in/yufanchen8/",
+          "https://www.tallybillable.com/",
+          "https://tadapop.app/"
+        ],
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "加州大學聖地牙哥分校 (UC San Diego)" },
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Agentic AI 學程證書",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "CollegeOrUniversity", "name": "約翰霍普金斯大學 (Johns Hopkins University)" }
+        },
+        "knowsLanguage": ["中文（繁體）", "English"],
+        "address": [
+          { "@type": "PostalAddress", "addressLocality": "San Diego", "addressRegion": "CA", "addressCountry": "US" },
+          { "@type": "PostalAddress", "addressLocality": "台北", "addressCountry": "TW" }
+        ],
+        "workLocation": [
+          { "@type": "Place", "name": "美國加州聖地牙哥" },
+          { "@type": "Place", "name": "台灣台北" }
+        ],
+        "knowsAbout": ["AI 代理", "Agentic AI", "AI 自動化", "檢索增強生成 (RAG)", "系統整合", "資料庫設計", "後台系統", "搜尋引擎最佳化 (SEO)", "答案引擎最佳化 (AEO)", "生成式引擎最佳化 (GEO)", "App 開發", "網站開發", "Flutter", "React Native"]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://shiptolive.com/#service",
+        "name": "夏裕科技股份有限公司",
+        "legalName": "夏裕科技股份有限公司",
+        "taxID": "90173045",
+        "identifier": { "@type": "PropertyValue", "propertyID": "TW-統一編號", "value": "90173045" },
+        "alternateName": ["Ship to Live", "夏裕科技"],
+        "slogan": "讓 AI 真的上線。",
+        "founder": { "@id": "https://shiptolive.com/#yufan" },
+        "employee": { "@id": "https://shiptolive.com/#yufan" },
+        "url": "https://shiptolive.com/zh/",
+        "image": "https://shiptolive.com/assets/img/founder.jpg",
+        "logo": "https://shiptolive.com/assets/favicon.svg",
+        "email": "mailto:yufan@shiptolive.com",
+        "telephone": ["+16267801122", "+886966039002"],
+        "areaServed": [
+          { "@type": "Country", "name": "台灣" },
+          { "@type": "Country", "name": "美國" }
+        ],
+        "availableLanguage": ["中文（繁體）", "English"],
+        "knowsLanguage": ["zh-Hant", "en"],
+        "address": [
+          { "@type": "PostalAddress", "addressLocality": "台北", "addressCountry": "TW" },
+          { "@type": "PostalAddress", "addressLocality": "San Diego", "addressRegion": "CA", "addressCountry": "US" }
+        ],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "業務洽詢",
+            "telephone": "+886966039002",
+            "email": "yufan@shiptolive.com",
+            "areaServed": "TW",
+            "availableLanguage": ["中文（繁體）", "English"]
+          },
+          {
+            "@type": "ContactPoint",
+            "contactType": "業務洽詢",
+            "telephone": "+16267801122",
+            "email": "yufan@shiptolive.com",
+            "areaServed": "US",
+            "availableLanguage": ["English", "中文（繁體）"]
+          }
+        ],
+        "description": "夏裕科技股份有限公司（Ship to Live）把 AI 代理、自動化與系統整合做進企業既有的系統裡，並提供 SEO、AEO 與 GEO，讓企業在 Google 上被找到、在 AI 回答裡被引用——以及底下的 App、網站與後端。",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "服務項目",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://shiptolive.com/#svc-agents", "name": "以你自己的資料為基礎的 AI 代理與助理", "serviceType": "AI 代理開發", "description": "能根據你的文件、規章與資料回答，而且能實際動手的助理——查出那筆紀錄、擬好回覆、把結果歸檔。跑在你自己的系統上、依你設定的權限，不是租來的黑盒子。", "provider": { "@id": "https://shiptolive.com/#service" } } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://shiptolive.com/#svc-geo", "name": "AI 搜尋最佳化——SEO、AEO 與 GEO", "serviceType": "生成式引擎最佳化", "description": "結構化資料、llms.txt 內容層與技術 SEO，讓 Google 排到你、答案框引用你，並讓 ChatGPT、Perplexity、Gemini 在回答時點名你。", "provider": { "@id": "https://shiptolive.com/#service" } } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://shiptolive.com/#svc-systems", "name": "系統、後端與整合", "serviceType": "系統整合", "description": "資料庫、管理後台、API、部署與沒人想動的資料搬遷。這一層決定了一個 AI 試作，會不會變成同事星期一早上真的會打開的工具。", "provider": { "@id": "https://shiptolive.com/#service" } } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://shiptolive.com/#svc-apps", "name": "App 與網站", "serviceType": "應用程式開發", "description": "一套程式碼同時上 iOS、Android 與 Mac；以及載入快、排得上去的中英雙語網站。", "provider": { "@id": "https://shiptolive.com/#service" } } }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://shiptolive.com/#website-zh",
+        "url": "https://shiptolive.com/zh/",
+        "name": "Ship to Live 夏裕科技",
+        "publisher": { "@id": "https://shiptolive.com/#yufan" },
+        "inLanguage": "zh-Hant"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://shiptolive.com/zh/#webpage",
+        "url": "https://shiptolive.com/zh/",
+        "name": "夏裕科技股份有限公司 — AI 代理、自動化與 AI 搜尋最佳化",
+        "isPartOf": { "@id": "https://shiptolive.com/#website-zh" },
+        "about": { "@id": "https://shiptolive.com/#service" },
+        "mainEntity": { "@id": "https://shiptolive.com/zh/#faq" },
+        "primaryImageOfPage": "https://shiptolive.com/assets/img/og.png",
+        "inLanguage": "zh-Hant",
+        "datePublished": "2026-09-04",
+        "dateModified": "2026-09-04",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".hero h1", ".hero .lede", ".faq-a"]
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#work">跳至主要內容</a>
+  <div class="bg-orbs" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="top">
+    <a class="brand" href="#top" aria-label="Ship to Live 夏裕科技 — 首頁">
+      <img class="brand-mark-img" src="../assets/favicon.svg" alt="" width="34" height="34" aria-hidden="true" />
+      <span class="brand-text">
+        <span class="brand-name">Ship to Live</span>
+        <span class="brand-by">夏裕科技股份有限公司</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="主選單">
+      <a href="#ai-agents">AI 代理</a>
+      <a href="#seo">讓 AI 找到你</a>
+      <a href="#systems">系統整合</a>
+      <a href="#work">作品</a>
+      <a href="#start">怎麼開始</a>
+      <a class="nav-cta" href="#contact">聊聊看</a>
+      <span class="lang-switch" role="group" aria-label="語言">
+        <a href="/" hreflang="en" lang="en">EN</a>
+        <a href="/zh/" hreflang="zh-Hant" aria-current="true">中文</a>
+      </span>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <p class="eyebrow">AI 代理與正式上線系統 · 二十五年開發資歷 · 聖地牙哥 × 台北 · 中文&nbsp;/&nbsp;English</p>
+      <h1>
+        我做的 <span class="grad">AI</span><br />
+        是真的會上線的。
+      </h1>
+      <p class="lede">
+        不是聊天機器人展示，也不是一份簡報。是 AI 代理、自動化，以及 AI 讀得懂的網站，
+        直接接進你現在就在用的資料庫、後台與工作流程——<strong>從架構、開發到部署</strong>，
+        建立在二十五年、必須撐過每個星期一早上的正式系統經驗上。
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#work">看我做過什麼 →</a>
+        <a class="btn btn-ghost" href="#contact">約 20 分鐘聊聊</a>
+      </div>
+      <ul class="stat-strip">
+        <li><strong>100 萬+</strong><span>使用過我做的系統的人</span></li>
+        <li><strong>25 年</strong><span>開發與帶領工程團隊</span></li>
+        <li><strong>新創 → 百年企業</strong><span>兩種難法都待過</span></li>
+        <li><strong>中文&nbsp;/&nbsp;EN</strong><span>雙語、跨境</span></li>
+      </ul>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section section-alt" id="services">
+      <div class="section-head">
+        <p class="kicker">我能幫上什麼</p>
+        <h2>一個窗口。從模型一路管到它要碰的那個資料庫。</h2>
+        <p class="sub">你提出業務與卡住的地方，我從架構、開發、整合到部署一路負責到底；需要團隊的時候，再把對的專業找進來。</p>
+      </div>
+      <div class="cards cards-2">
+        <article class="svc">
+          <div class="svc-ico">🤖</div>
+          <h4>AI 代理與助理</h4>
+          <p>能根據你自己的文件、規章與資料回答，而且能實際動手的助理：查出那筆紀錄、擬好回覆、把結果歸檔。跑在你自己的系統上、用你設定的權限，不是租來的黑盒子。</p>
+        </article>
+        <article class="svc">
+          <div class="svc-ico">🔎</div>
+          <h4>讓 AI 引用你</h4>
+          <p>你的客戶現在會直接問 ChatGPT、Perplexity 和 Google AI 概覽：<em>「這種需求找誰最好？」</em>我的工作，是讓那個答案講出你的名字——透過結構化資料、<code>llms.txt</code> 內容層，以及底下的技術 SEO。</p>
+        </article>
+        <article class="svc">
+          <div class="svc-ico">🔌</div>
+          <h4>系統與整合</h4>
+          <p>資料庫、管理後台、API、部署，還有沒人想接的那次資料搬遷。這些不起眼的東西，決定了一個 AI 試作會不會變成同事每天真的會打開的工具。</p>
+        </article>
+        <article class="svc">
+          <div class="svc-ico">📱</div>
+          <h4>App 與網站</h4>
+          <p>一套程式碼同時上 iOS、Android 與 Mac。載入快、排得上去的中英雙語網站。AI 該用的地方就用，而不是放在首頁當裝飾。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- AI AGENTS -->
+    <section class="section" id="ai-agents">
+      <div class="section-head">
+        <p class="kicker">AI 代理與自動化</p>
+        <h2>你的 AI 專案缺的不是更強的模型，是水電工程。</h2>
+        <p class="sub">
+          大部分 AI 專案都卡在同一個地方：展示很成功，然後沒有人有辦法把它接上客戶資料庫、訂單系統，
+          或那個真正放著答案的共用資料夾。
+        </p>
+      </div>
+
+      <div class="next-wrap">
+        <div class="next-copy">
+          <h2>模型是簡單的那一半。</h2>
+          <p>
+            接起來這件事<strong>才是</strong>工作本身。而這也正是我做了很多年的事——
+            資料表結構、後端、API、部署——早在這些東西被叫做 AI 之前就在做了。
+          </p>
+          <p>
+            <strong>你的資料還是你的。</strong>我會明確界定代理能讀什麼、能做什麼，記錄它的每一個動作，
+            並在任何一出錯就代價很高的地方保留人工確認。如果你的產業對資料放在哪裡有規定，
+            我們一開始就照那個設計，而不是事後補。
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact">聊聊 AI 導入 →</a>
+          </div>
+        </div>
+        <ul class="next-list">
+          <li><span>01</span><div><strong>文件與知識庫代理</strong>從你的檔案、規章與過往案例找出答案，並附上出處，讓同事可以自己核對。</div></li>
+          <li><span>02</span><div><strong>客服與需求受理代理</strong>先處理掉你一週要回五十次的那些問題；其餘的，連同已經整理好的脈絡一起轉給真人。</div></li>
+          <li><span>03</span><div><strong>後台自動化</strong>兩套系統之間那個複製、貼上、再查一次的循環——沒人想負責的那一段。</div></li>
+          <li><span>04</span><div><strong>內建 AI 的內部工具</strong>同仁真的會登入的後台，繁瑣的部分交給模型，最後一步仍然由人拍板。</div></li>
+        </ul>
+      </div>
+
+      <h3 class="group-label">合作怎麼進行</h3>
+      <div class="cards cards-3">
+        <article class="svc">
+          <p class="kicker">第 01 步 · 免費，約一小時</p>
+          <h4>找出卡點</h4>
+          <p>是一場對話，不是問卷。哪些事情在你們公司一直重複發生？</p>
+        </article>
+        <article class="svc">
+          <p class="kicker">第 02 步 · 兩週，固定報價</p>
+          <h4>先試一個流程</h4>
+          <p>用你們真實的資料跑。結束時你手上會有一個能用的東西——或者一個明確的答案：這件事其實不該用 AI。早點知道，也是有價值的。</p>
+        </article>
+        <article class="svc">
+          <p class="kicker">第 03 步</p>
+          <h4>正式接進系統</h4>
+          <p>權限、日誌、錯誤處理、部署、交接文件。這是把試作變成基礎建設的那一段。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SYSTEMS -->
+    <section class="section section-alt" id="systems">
+      <div class="section-head">
+        <p class="kicker">系統與整合</p>
+        <h2>我不是 AI 顧問。我是負責讓它真的動起來的工程師。</h2>
+        <p class="sub">
+          會寫提示詞的人很多。但有二十五年經驗、打開別人家的資料庫、讀懂某個人 2016 年留下的資料表結構、
+          做出同仁真正需要的管理介面，再把整套東西放到一台不會掛掉的伺服器上——這種人少得多。
+        </p>
+      </div>
+      <div class="cards cards-2">
+        <article class="svc">
+          <div class="svc-ico">🏗️</div>
+          <h4>撐得住真實流量</h4>
+          <p>我做過<strong>超過一百萬人</strong>使用的情緒智商評測平台、服務數百萬人的送禮小工具，以及一般同仁每天自己操作、不用打電話問我的後台。AI 是疊在這些工作之上的新一層，不是它的替代品。</p>
+        </article>
+        <article class="svc">
+          <div class="svc-ico">🧰</div>
+          <h4>我慣用的技術</h4>
+          <p>Flutter · React Native · PHP&nbsp;/&nbsp;MySQL · Python · REST 與 Webhook · GCP · App Store 與 Google Play</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SEO / AEO / GEO -->
+    <section class="section" id="seo">
+      <div class="section-head">
+        <p class="kicker">SEO &middot; AEO &middot; GEO</p>
+        <h2>被找到——在 Google 上，<em>也</em>在 AI 的答案裡。</h2>
+        <p class="sub">
+          「搜尋」已經不只是一個框了。客戶還是會 Google 你，但他們也會直接問 ChatGPT 該找誰——
+          而那個答案，往往在客戶點進任何連結之前就已經決定了。三個不同的地方，各有各的做法。
+        </p>
+      </div>
+
+      <!-- 三種引擎 -->
+      <div class="engine-compare">
+        <article class="engine engine-seo">
+          <span class="engine-abbr">SEO</span>
+          <h3>搜尋引擎最佳化</h3>
+          <p class="engine-goal">讓你的<strong>連結</strong>出現在搜尋結果裡。</p>
+          <p class="engine-where">Google 與 Bing 上經典的那些藍色連結。</p>
+        </article>
+        <article class="engine engine-aeo">
+          <span class="engine-abbr">AEO</span>
+          <h3>答案引擎最佳化</h3>
+          <p class="engine-goal">讓你的<strong>內容</strong>被抓進答案框與快速 AI 回覆。</p>
+          <p class="engine-where">Google 精選摘要與 AI 概覽。</p>
+        </article>
+        <article class="engine engine-geo">
+          <span class="engine-abbr">GEO</span>
+          <h3>生成式引擎最佳化</h3>
+          <p class="engine-goal">讓你在 AI 生成的完整回答裡被<strong>引用</strong>。</p>
+          <p class="engine-where">ChatGPT、Perplexity 與 Gemini。</p>
+        </article>
+      </div>
+
+      <div class="next-wrap reverse">
+        <ul class="next-list">
+          <li><span>01</span><div><strong>AI 能見度健檢</strong>當有人問起像你這樣的公司，ChatGPT、Perplexity、Gemini 和 Google AI 概覽<em>今天</em>會怎麼回答——以及它們講的是誰的名字，而不是你的。</div></li>
+          <li><span>02</span><div><strong>結構化資料與 <code>llms.txt</code> 內容層</strong>讓 AI 引擎讀得懂、信得過、引用得到的內容——這是「在網路上」和「可被引用」之間的差別。</div></li>
+          <li><span>03</span><div><strong>技術 SEO</strong>快速的頁面、乾淨的標記，以及爬取與索引這些一切的地基。</div></li>
+          <li><span>04</span><div><strong>信任訊號</strong>評價、提及與引用，讓 Google 和模型都知道你是真的。</div></li>
+          <li><span>05</span><div><strong>在地與雙語</strong>「附近的」搜尋，以及中文&nbsp;/&nbsp;English——客戶實際上會去看的地方。</div></li>
+        </ul>
+        <div class="next-copy">
+          <p class="kicker">你會拿到什麼</p>
+          <h2>一套做法，三種引擎。</h2>
+          <p>
+            「我該找誰？」這個問題的答案，往往在客戶點進任何連結之前就決定了——
+            在一段摘要裡、一則 AI 概覽裡，或一次 ChatGPT 的回覆裡。如果你不在那些答案裡，
+            那你就是隱形的，不管你做得多好。
+          </p>
+          <p>
+            我的工作是讓被講出名字的那個是你。<strong>SEO</strong> 讓你排得上去、
+            <strong>AEO</strong> 讓你拿下答案框、<strong>GEO</strong> 讓 AI 助理理解你、信任你、推薦你。
+            這跟我讓自己的 App 被找到，用的是同一套做法。
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact">讓 AI 推薦你 →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- START -->
+    <section class="section section-alt" id="start">
+      <div class="section-head">
+        <p class="kicker">從哪裡開始</p>
+        <h2>三種開始方式——沒有一種要簽半年約。</h2>
+        <p class="sub">固定報價，一封 email 就能報。</p>
+      </div>
+      <div class="cards cards-3">
+        <article class="svc">
+          <div class="svc-ico">🔍</div>
+          <p class="kicker">3 天</p>
+          <h4>AI 能見度健檢</h4>
+          <p>你今天在 AI 答案裡的位置、被講出名字的是誰、以及能改變這件事的五個動作。一份簡短的報告，有沒有我都能拿去執行。</p>
+        </article>
+        <article class="svc">
+          <div class="svc-ico">🚀</div>
+          <p class="kicker">2 週</p>
+          <h4>代理試作</h4>
+          <p>一個流程，用你們真實的資料跑，結束時交到你手上。固定報價。如果結果是這個流程其實不該用 AI，我第一週就會告訴你。</p>
+        </article>
+        <article class="svc">
+          <div class="svc-ico">🗓️</div>
+          <p class="kicker">按月</p>
+          <h4>兼任工程夥伴</h4>
+          <p>給點子比工程人力多的團隊。每個月固定一段我的時間，用在當下最擋路的那件事上。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="section" id="work">
+      <div class="section-head">
+        <p class="kicker">精選作品</p>
+        <h2>都上線了，不是紙上談兵。</h2>
+        <p class="sub">以下每一個現在都還在線上。點進去，直接用用看。</p>
+      </div>
+
+      <h3 class="group-label">📱 我自己開發並上架的 App 與工具</h3>
+      <div class="cards cards-3">
+        <article class="card">
+          <a class="card-shot" href="https://www.tallybillable.com/" target="_blank" rel="noopener">
+            <img src="../assets/img/tally-og.png" alt="Tally — 計時計費工具" width="1200" height="630" loading="lazy" />
+          </a>
+          <div class="card-body">
+            <div class="card-top">
+              <h4>Tally</h4>
+              <span class="tag">iOS · Mac · Flutter</span>
+            </div>
+            <p>為律師與按時計費的自由工作者做的計時與開立帳單 App，一鍵開始、介面溫暖好用。單一 Flutter 程式碼庫，同時上架 App Store 與 Mac App Store。</p>
+            <div class="card-links">
+              <a href="https://www.tallybillable.com/" target="_blank" rel="noopener">前往網站 ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card-shot dark" href="https://tadapop.app/" target="_blank" rel="noopener">
+            <img src="../assets/img/tadapop-og.png" alt="Tadapop — 遊戲化習慣養成 App" width="1024" height="1024" loading="lazy" />
+          </a>
+          <div class="card-body">
+            <div class="card-top">
+              <h4>Tadapop</h4>
+              <span class="tag">iOS · Android · React Native</span>
+            </div>
+            <p>帶著任務控制中心氣味的遊戲化習慣追蹤 App。連續紀錄、積分、整年熱力圖，還有只有朋友看得到的競技場。以 Expo / React Native 開發。</p>
+            <div class="card-links">
+              <a href="https://tadapop.app/" target="_blank" rel="noopener">前往網站 ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card-shot card-fallback daily" href="https://chromewebstore.google.com/detail/daily-log/ajcpkhmnkjgppefondfgbicddaoifkda" target="_blank" rel="noopener">
+            <span>Daily&nbsp;Log</span>
+          </a>
+          <div class="card-body">
+            <div class="card-top">
+              <h4>Daily Log</h4>
+              <span class="tag">Chrome 擴充功能</span>
+            </div>
+            <p>一個輕巧的 Chrome 擴充功能，讓你直接在瀏覽器裡記下每日工作紀錄——已發佈上架於 Chrome 線上應用程式商店。</p>
+            <div class="card-links">
+              <a href="https://chromewebstore.google.com/detail/daily-log/ajcpkhmnkjgppefondfgbicddaoifkda" target="_blank" rel="noopener">在 Chrome 商店查看 ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="group-label">🌐 我幫忙上線的企業網站</h3>
+      <div class="cards cards-3">
+        <article class="card">
+          <a class="card-shot" href="https://wulawintl.com/" target="_blank" rel="noopener">
+            <img src="../assets/img/wulaw-og.jpg" alt="Wu Law Group" width="1200" height="630" loading="lazy" />
+          </a>
+          <div class="card-body">
+            <div class="card-top"><h4>Wu Law Group</h4></div>
+            <p>橫跨台灣、美國與中國的跨境法律諮詢——外人投資、移民與繼承。</p>
+            <div class="card-links"><a href="https://wulawintl.com/" target="_blank" rel="noopener">前往網站 ↗</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card-shot card-logo travis-brand" href="https://travisbradberry.com/" target="_blank" rel="noopener">
+            <img src="../assets/img/travis-logo.svg" alt="Travis Bradberry logo" width="96" height="96" loading="lazy" />
+            <span class="logo-word">Travis Bradberry</span>
+          </a>
+          <div class="card-body">
+            <div class="card-top"><h4>Travis Bradberry</h4></div>
+            <p>暢銷書《情商 2.0》共同作者 Travis&nbsp;Bradberry 博士的書籍與作者網站，介紹他的新書，並為超過一百萬名讀者提供每週 EQ 專欄。</p>
+            <div class="card-links">
+              <a href="https://travisbradberry.com/" target="_blank" rel="noopener">前往網站 ↗</a>
+              <a href="https://qyproperty.com/" target="_blank" rel="noopener">QY Property ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card-shot" href="https://shxtraining.com/" target="_blank" rel="noopener">
+            <img src="../assets/img/shx-og.png" alt="夏恆企業顧問 SHX Training" width="1200" height="630" loading="lazy" />
+          </a>
+          <div class="card-body">
+            <div class="card-top"><h4>夏恆企業顧問 SHX Training</h4></div>
+            <p>企業 ESG 培訓——模組化的永續、領導與韌性課程，服務台灣與加州的企業客戶。</p>
+            <div class="card-links"><a href="https://shxtraining.com/" target="_blank" rel="noopener">前往網站 ↗</a></div>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="group-label">🤝 我與團隊一起打造的產品</h3>
+      <div class="cards cards-3">
+        <article class="card">
+          <a class="card-shot card-fallback gift" href="https://www.getrealgifts.com/" target="_blank" rel="noopener">
+            <span>Get Real<br />Gifts</span>
+          </a>
+          <div class="card-body">
+            <div class="card-top"><h4>Get Real Gifts</h4></div>
+            <p>一個社群送禮平台，讓送禮與收禮都能真的送到心坎裡。我以<strong>主要開發者</strong>的身分，打造了<strong>服務數百萬使用者的送禮小工具</strong>（同時用於 gift.me）。</p>
+            <div class="card-links">
+              <a href="https://www.getrealgifts.com/" target="_blank" rel="noopener">前往網站 ↗</a>
+              <a href="https://gift.me/" target="_blank" rel="noopener">gift.me ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card-shot card-fallback eq" href="https://www.talentsmarteq.com/" target="_blank" rel="noopener">
+            <span>TalentSmart<br />EQ</span>
+          </a>
+          <div class="card-body">
+            <div class="card-top"><h4>TalentSmartEQ</h4></div>
+            <p>全球領先的情緒智商評測服務商。我打造了 <strong>EQ 360</strong> 平台——評測引擎、計分、管理後台與點數系統，以 PHP&nbsp;/&nbsp;MySQL 開發——以及<strong>超過一百萬人</strong>做過的 Self Edition 評量。當我說我能把 AI 放進一個已經承載真實流量的系統裡，指的就是這種規模。</p>
+            <div class="card-links"><a href="https://www.talentsmarteq.com/" target="_blank" rel="noopener">前往網站 ↗</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card-shot" href="https://leadx.org/" target="_blank" rel="noopener">
+            <img src="../assets/img/leadx-og.png" alt="LEADx" width="1200" height="675" loading="lazy" />
+          </a>
+          <div class="card-body">
+            <div class="card-top"><h4>LEADx</h4></div>
+            <p>一個領導力微教練平台，以高度個人化的提醒、微教練與微學習，規模化地養成並維持領導行為。</p>
+            <div class="card-links"><a href="https://leadx.org/" target="_blank" rel="noopener">前往網站 ↗</a></div>
+          </div>
+        </article>
+      </div>
+
+      <p class="more-work">
+        其他作品：
+        <a href="https://www.azwrealty.com/" target="_blank" rel="noopener">Azure Waves Realty</a>
+        <a href="https://ilsolutions.com.tw/" target="_blank" rel="noopener">睿律 · IL Solutions</a>
+      </p>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section section-alt" id="about">
+      <div class="about-wrap">
+        <div class="about-photo">
+          <img src="../assets/img/founder.jpg" alt="Yufan Chen" width="400" height="400" />
+        </div>
+        <div class="about-copy">
+          <p class="kicker">工程師與工程主管 · 25 年 · 聖地牙哥 × 台北 · UC San Diego · 約翰霍普金斯 Agentic AI 學程證書</p>
+          <h2>你好，我是 Yufan。</h2>
+          <p>
+            我寫了二十五年軟體——做過三個人的新創，也做過在軟體出現前一百年就存在的機構，
+            而這兩種失敗的方式完全不同：一種死於猶豫，一種死於流程。我在
+            UC&nbsp;San&nbsp;Diego 唸書，後來完成了約翰霍普金斯大學的 Agentic AI 學程，
+            主要是想把自己做了多年的事，補上底下的理論。
+          </p>
+          <p>
+            這段職涯大部分時間，花在軟體上線之後還得繼續運作的那個部分：資料表結構、後台、
+            系統整合、部署，還有那次沒人寫文件的資料搬遷。我帶過工程團隊走完這些，
+            也當過凌晨兩點被叫起來的那個人——沒做過後者，前者不可能做得好。
+          </p>
+          <p>
+            <strong>關於這個名字。</strong>「Ship to live」是最後一步的正式說法——把程式碼推上正式環境。
+            我用這一步當工作室的名字，因為它正是最多工作沒能撐過去的那一步。我看過很好的專案，
+            死在「在我電腦上可以跑」和「它上線了」之間，不是因為沒有才華，
+            而是沒有人想扛下中間那段不起眼的路。一個原型是一個主張；一個上線的系統是一個事實。
+          </p>
+          <p>
+            這也是我對自己的要求：這一頁上的每一樣東西，現在都是活的。App 在 App Store 上、
+            網站正在服務客戶，你可以自己去按按看。而同樣這道縫隙，現在正在工業級規模地吞掉 AI——
+            很精彩的展示，幾乎沒有東西真的上線。<strong>把它補起來，是我最喜歡的工作。</strong>
+          </p>
+          <p>
+            我承接的專案從架構一路做到部署，並在需要時把對的專業找進來。
+          </p>
+          <p>
+            Ship to Live 是工作室的名字，背後的公司是<strong>夏裕科技股份有限公司</strong>
+            （統一編號 90173045）。我在<strong>美國加州聖地牙哥</strong>與<strong>台灣台北</strong>兩地工作，
+            所以跨境的專案是同一位工程師在兩個時區裡負責到底，而不是在兩邊之間交接。
+          </p>
+          <div class="card-links">
+            <a href="https://www.linkedin.com/in/yufanchen8/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="https://www.tallybillable.com/" target="_blank" rel="noopener">Tally ↗</a>
+            <a href="https://tadapop.app/" target="_blank" rel="noopener">Tadapop ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-h">
+      <div class="section-head">
+        <p class="kicker">常見問題</p>
+        <h2 id="faq-h">合作前大家最常問的問題</h2>
+        <p class="sub">直接的答案——寫給你，也寫給你的客戶會去問的那些 AI 助理。</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>什麼是 AI 代理（AI Agent）？我的公司真的需要嗎？</summary>
+          <div class="faq-a"><p>AI 代理是一種會讀你的資料、然後替你完成一個步驟的軟體——找出那筆紀錄、擬好回覆、更新系統——而不只是跟你聊天。當同一件事一再發生、只是細節略有不同時，你就需要它。一年只發生兩次的工作不需要，我也會直接這樣告訴你。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>AI 可以根據我們公司自己的文件和資料回答嗎？</summary>
+          <div class="faq-a"><p>可以，而且這是我最常做的案子。你的檔案、規章、產品資料與過往案例，會成為助理回答時的依據，並附上回到原始文件的出處——所以答案反映的是你的公司，不是整個網路。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>怎麼讓 ChatGPT 在回答時提到我的公司？</summary>
+          <div class="faq-a"><p>靠三件事：讀得懂、引用得動、而且有第三方佐證。實務上就是：在你自己的網站上放清楚有結構的答案、加上 schema 標記與模型能解析的 <code>llms.txt</code> 內容層，再加上能佐證你說法的外部提及。這就是 GEO（生成式引擎最佳化）在做的事。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>一個 AI 專案要做多久？</summary>
+          <div class="faq-a"><p>單一流程的試作大約兩週。要好好接進你們的系統——權限、日誌、部署、交接——通常再兩到六週，取決於原本的系統有多整齊。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>我的資料安全嗎？</summary>
+          <div class="faq-a"><p>我會界定代理能讀什麼、能做什麼，記錄它的動作，並在任何一出錯就代價很高的地方保留人工確認。如果你的資料必須留在特定的地方，我們第一天就照那個限制設計，而不是事後再補。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>夏裕科技股份有限公司是做什麼的？</summary>
+          <div class="faq-a"><p>夏裕科技股份有限公司（統一編號 90173045，品牌名 Ship to Live）是 Yufan Chen 創立的軟體工程公司，在美國加州聖地牙哥與台灣台北兩地營運。主要提供三件事：一是把 AI 代理與自動化接進企業既有的資料庫、後台與工作流程；二是 SEO、AEO 與 GEO，讓企業在 Google 與 ChatGPT、Perplexity、Gemini 的回答裡被找到、被引用；三是底下的系統、App 與網站開發。服務語言為中文與英文，客戶橫跨台灣與美國。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>SEO、AEO、GEO 有什麼不一樣？</summary>
+          <div class="faq-a"><p>它們是三種被找到的方式，對應客戶會去看的三個不同地方。<strong>SEO</strong>（搜尋引擎最佳化）讓你的<em>連結</em>出現在 Google 的搜尋結果裡。<strong>AEO</strong>（答案引擎最佳化）讓你的<em>內容</em>被抓進答案框與快速 AI 回覆，也就是 Google 的精選摘要與 AI 概覽。<strong>GEO</strong>（生成式引擎最佳化）讓你的公司在 ChatGPT、Perplexity、Gemini 生成的完整回答裡被<em>引用</em>。這三件我都做——快速且結構清楚的頁面、明確的答案、<code>llms.txt</code> 內容層、結構化資料，以及每個引擎都在看的信任訊號。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>你真的有做出上線的產品嗎？</summary>
+          <div class="faq-a"><p>有。我開發並上架了兩個 App Store 應用程式（Tally 與 Tadapop）和一個 Chrome 擴充功能（Daily Log），也把幾家企業放上網（Wu Law Group、Travis Bradberry、夏恆企業顧問）；在產品團隊裡，我打造了 EQ 360 評測平台與一個超過一百萬人做過的評量，以及一個服務數百萬使用者的送禮小工具。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>可以用中文合作嗎？</summary>
+          <div class="faq-a"><p>可以。我的工作語言是中文（繁體）與英文，客戶橫跨台灣與美國，特別適合需要中英雙語 AI 工具、App、網站與行銷的跨境企業。文件、會議與交接都可以全程中文進行。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>你在哪裡？可以遠端合作嗎？</summary>
+          <div class="faq-a"><p>我有兩個據點：<strong>美國加州聖地牙哥</strong>與<strong>台灣台北</strong>——所以美國與台灣的客戶，都有一位在可以配合的時區裡的人。台灣聯絡電話 +886 966 039 002，美國 +1 (626) 780-1122。最好的開始方式是下面的聯絡表單，或在 LinkedIn 上留言給我。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>可以開發票嗎？</summary>
+          <div class="faq-a"><p>可以。夏裕科技股份有限公司是在台灣正式登記的公司，統一編號 90173045，能開立台灣的統一發票；美國端的專案則以 Ship to Live 名義開立英文 invoice。</p></div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="contact-card">
+        <p class="kicker">一起做點東西</p>
+        <h2>告訴我工作卡在哪裡。</h2>
+        <p class="sub">你不需要先想好要做什麼。描述一下你每週被吃掉最多時間的那一段，或者那些找不到你的客戶，我會直接告訴你 AI 幫不幫得上忙——中文或英文都可以。想直接寄信？<a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a></p>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="name">您的姓名</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="王小明" required />
+            </div>
+            <div class="field">
+              <label for="email">您的 Email</label>
+              <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="topic">您需要什麼？</label>
+            <select id="topic" name="topic">
+              <option>AI 代理或自動化</option>
+              <option>讓 AI 找到我 — SEO / AEO / GEO</option>
+              <option>系統、後端或整合</option>
+              <option>手機 App</option>
+              <option>網站或到達頁</option>
+              <option>還不確定，想先聊聊</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">說說您的情況</label>
+            <textarea id="message" name="message" placeholder="哪些工作一直在重複發生？大概的預算或時程也很有幫助。" required></textarea>
+          </div>
+
+          <!-- honeypot：機器人會填，真人看不到 -->
+          <div class="hp" aria-hidden="true">
+            <label for="company">Company (leave this blank)</label>
+            <input id="company" name="_honey" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="send-row">
+            <button class="btn btn-primary" id="send" type="submit">送出訊息 →</button>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/yufanchen8/" target="_blank" rel="noopener">或在 LinkedIn 上聯絡</a>
+          </div>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© <span id="year"></span> Ship to Live · 夏裕科技股份有限公司（統一編號 90173045）· AI 代理、自動化與系統工程，聖地牙哥 × 台北</span>
+    <nav class="foot-links" aria-label="頁尾">
+      <a href="#ai-agents">AI 代理</a>
+      <a href="#seo">讓 AI 找到你</a>
+      <a href="#work">作品</a>
+      <a href="#about">關於我</a>
+      <a href="#faq">常見問題</a>
+      <a href="#contact">聯絡</a>
+      <a href="https://www.linkedin.com/in/yufanchen8/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="/zh/card/">電子名片</a>
+      <a href="/" hreflang="en" lang="en">English</a>
+    </nav>
+  </footer>
+
+  <!-- FAQ 結構化資料 — 讓 AI 引擎可以直接引用這些答案。 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://shiptolive.com/zh/#faq",
+    "inLanguage": "zh-Hant",
+    "mainEntity": [
+      { "@type": "Question", "name": "什麼是 AI 代理（AI Agent）？我的公司真的需要嗎？", "acceptedAnswer": { "@type": "Answer", "text": "AI 代理是一種會讀你的資料、然後替你完成一個步驟的軟體——找出那筆紀錄、擬好回覆、更新系統——而不只是跟你聊天。當同一件事一再發生、只是細節略有不同時，你就需要它。一年只發生兩次的工作則不需要。" } },
+      { "@type": "Question", "name": "AI 可以根據我們公司自己的文件和資料回答嗎？", "acceptedAnswer": { "@type": "Answer", "text": "可以，這是夏裕科技最常做的案子。你的檔案、規章、產品資料與過往案例，會成為助理回答時的依據，並附上回到原始文件的出處，所以答案反映的是你的公司，不是整個網路。" } },
+      { "@type": "Question", "name": "怎麼讓 ChatGPT 在回答時提到我的公司？", "acceptedAnswer": { "@type": "Answer", "text": "靠三件事：讀得懂、引用得動、而且有第三方佐證。實務上是在自己的網站上放清楚有結構的答案、加上 schema 標記與模型能解析的 llms.txt 內容層，再加上能佐證說法的外部提及。這就是 GEO（生成式引擎最佳化）在做的事。" } },
+      { "@type": "Question", "name": "一個 AI 專案要做多久？", "acceptedAnswer": { "@type": "Answer", "text": "單一流程的試作大約兩週。要好好接進既有系統——權限、日誌、部署、交接——通常再兩到六週，取決於原本的系統有多整齊。" } },
+      { "@type": "Question", "name": "我的資料安全嗎？", "acceptedAnswer": { "@type": "Answer", "text": "會界定代理能讀什麼、能做什麼，記錄它的動作，並在任何一出錯就代價很高的地方保留人工確認。如果資料必須留在特定的地方，第一天就照那個限制設計，而不是事後再補。" } },
+      { "@type": "Question", "name": "夏裕科技股份有限公司是做什麼的？", "acceptedAnswer": { "@type": "Answer", "text": "夏裕科技股份有限公司（統一編號 90173045，品牌名 Ship to Live）是 Yufan Chen 創立的軟體工程公司，在美國加州聖地牙哥與台灣台北兩地營運。提供三件事：把 AI 代理與自動化接進企業既有的資料庫、後台與工作流程；SEO、AEO 與 GEO，讓企業在 Google 與 ChatGPT、Perplexity、Gemini 的回答裡被找到與被引用；以及底下的系統、App 與網站開發。服務語言為中文與英文，客戶橫跨台灣與美國。" } },
+      { "@type": "Question", "name": "SEO、AEO、GEO 有什麼不一樣？", "acceptedAnswer": { "@type": "Answer", "text": "它們是三種被找到的方式，對應客戶會去看的三個不同地方。SEO（搜尋引擎最佳化）讓你的連結出現在 Google 的搜尋結果裡。AEO（答案引擎最佳化）讓你的內容被抓進答案框與快速 AI 回覆，也就是 Google 的精選摘要與 AI 概覽。GEO（生成式引擎最佳化）讓你的公司在 ChatGPT、Perplexity、Gemini 生成的完整回答裡被引用。夏裕科技三件都做——快速且結構清楚的頁面、明確的答案、llms.txt 內容層、結構化資料，以及每個引擎都在看的信任訊號。" } },
+      { "@type": "Question", "name": "你真的有做出上線的產品嗎？", "acceptedAnswer": { "@type": "Answer", "text": "有。開發並上架了兩個 App Store 應用程式（Tally 與 Tadapop）和一個 Chrome 擴充功能（Daily Log），也把幾家企業放上網（Wu Law Group、Travis Bradberry、夏恆企業顧問）；在產品團隊裡打造了 EQ 360 評測平台與一個超過一百萬人做過的評量，以及一個服務數百萬使用者的送禮小工具。" } },
+      { "@type": "Question", "name": "可以用中文合作嗎？", "acceptedAnswer": { "@type": "Answer", "text": "可以。工作語言是中文（繁體）與英文，客戶橫跨台灣與美國，特別適合需要中英雙語 AI 工具、App、網站與行銷的跨境企業。文件、會議與交接都可以全程中文進行。" } },
+      { "@type": "Question", "name": "你在哪裡？可以遠端合作嗎？", "acceptedAnswer": { "@type": "Answer", "text": "有兩個據點：美國加州聖地牙哥與台灣台北，所以美國與台灣的客戶都有一位在可以配合的時區裡的人。台灣聯絡電話 +886 966 039 002，美國 +1 (626) 780-1122。最好的開始方式是網站上的聯絡表單，或在 LinkedIn 上留言。" } },
+      { "@type": "Question", "name": "可以開發票嗎？", "acceptedAnswer": { "@type": "Answer", "text": "可以。夏裕科技股份有限公司是在台灣正式登記的公司，統一編號 90173045，能開立台灣的統一發票；美國端的專案則以 Ship to Live 名義開立英文 invoice。" } }
+    ]
+  }
+  </script>
+
+  <script src="../script.js"></script>
+</body>
+</html>

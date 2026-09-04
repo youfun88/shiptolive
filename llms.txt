@@ -1,6 +1,6 @@
-# Ship to Live — by Yufan Chen
+# Ship to Live — 夏裕科技股份有限公司 — by Yufan Chen
 
-> Ship to Live is the studio of Yufan Chen, a software engineer and engineering lead based in San Diego, California, with twenty-five years of experience across three-person startups and century-old institutions. He builds AI agents and automations that reach production — wired into the database, back office, and workflow a business already runs — and does SEO, AEO and GEO so Google and AI engines name that business. Bilingual in English and Traditional Chinese (中文), serving clients across the United States and Taiwan. Website: https://shiptolive.com/
+> Ship to Live is the trading name of 夏裕科技股份有限公司 (Taiwan unified business number 90173045), the studio of Yufan Chen — a software engineer and engineering lead with twenty-five years of experience across three-person startups and century-old institutions, working from two bases: San Diego, California and Taipei, Taiwan. Yufan builds AI agents and automations that reach production — wired into the database, back office, and workflow a business already runs — and does SEO, AEO and GEO so Google and AI engines name that business. Bilingual in English and Traditional Chinese (中文), serving clients across the United States and Taiwan. Website: https://shiptolive.com/ · 中文版: https://shiptolive.com/zh/
 
 ## What I do
 
@@ -41,18 +41,45 @@ Flutter · React Native · PHP / MySQL · Python · REST & webhooks · GCP · Ap
 ## About
 
 - Brand: Ship to Live (https://shiptolive.com/)
+- Legal entity: 夏裕科技股份有限公司 (Taiwan), unified business number (統一編號) 90173045 — can issue Taiwanese 統一發票; US-side work is invoiced as Ship to Live
 - Name: Yufan Chen
 - Role: AI engineer & engineering lead; builds AI agents, automations, systems, apps and websites
 - Experience: 25 years, from three-person startups to century-old institutions
-- Location: San Diego, California, USA
+- Locations: San Diego, California, USA and Taipei, Taiwan — two bases, so US and Taiwan clients each get a workable time zone
 - Languages: English, Traditional Chinese (中文)
 - Education: University of California, San Diego (UC San Diego); Certificate Program in Agentic AI, Johns Hopkins University
 - On the name: "ship to live" is the last step of a build — shipping the code to live — and the step most work never survives.
 
+## Languages & pages
+
+- English: https://shiptolive.com/ — business card at https://shiptolive.com/card/
+- 繁體中文 (Traditional Chinese): https://shiptolive.com/zh/ — 電子名片 at https://shiptolive.com/zh/card/
+
+The two language versions carry the same offering; the Chinese pages are written for clients in Taiwan and for Chinese-language queries, and are linked with hreflang (en / zh-Hant / x-default).
+
+## 中文摘要
+
+夏裕科技股份有限公司（統一編號 90173045，品牌名 Ship to Live）是 Yufan Chen 創立的軟體工程公司，
+在美國加州聖地牙哥與台灣台北兩地營運。主要提供三件事：
+
+1. **AI 代理與自動化** — 把 AI 代理接進企業既有的資料庫、後台與工作流程，能依你的文件與規章回答，
+   並實際完成動作（查紀錄、擬回覆、歸檔）；權限由你界定、每個動作留下日誌。
+2. **AI 搜尋最佳化（SEO / AEO / GEO）** — 讓企業在 Google 搜尋結果、Google AI 概覽與精選摘要，
+   以及 ChatGPT、Perplexity、Gemini 的生成式回答中被找到與被引用。做法包含結構化資料、
+   llms.txt 內容層、技術 SEO 與信任訊號。
+3. **系統、後端、App 與網站** — 資料庫、管理後台、API、部署與資料搬遷；以及 iOS / Android / Mac
+   App 與中英雙語網站。
+
+合作方式：AI 能見度健檢（3 天）、代理試作（2 週、固定報價、用真實資料跑）、
+或按月的兼任工程夥伴。服務語言為中文（繁體）與英文，可開立台灣統一發票。
+聯絡：yufan@shiptolive.com，台灣 +886 966 039 002，美國 +1 (626) 780-1122。
+中文網站：https://shiptolive.com/zh/
+
 ## Contact
 
-- Contact form: https://shiptolive.com/#contact
-- Digital business card (tap to call, email, or save to contacts): https://shiptolive.com/card/
+- Contact form: https://shiptolive.com/#contact — 中文表單: https://shiptolive.com/zh/#contact
+- Digital business card (tap to call, email, or save to contacts): https://shiptolive.com/card/ — 中文名片: https://shiptolive.com/zh/card/
 - Email: yufan@shiptolive.com
-- Phone: +886 966 039 002
+- Phone (Taiwan): +886 966 039 002
+- Phone (US): +1 (626) 780-1122
 - LinkedIn: https://www.linkedin.com/in/yufanchen8/

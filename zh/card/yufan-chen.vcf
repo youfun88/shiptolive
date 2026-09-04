@@ -2,20 +2,21 @@ BEGIN:VCARD
 VERSION:3.0
 N:Chen;Yufan;;;
 FN:Yufan Chen
-ORG:Ship to Live (夏裕科技股份有限公司)
-TITLE:AI Engineer & Engineering Lead
-TEL;TYPE=CELL,VOICE,PREF:+16267801122
-TEL;TYPE=CELL,VOICE:+886966039002
+ORG:夏裕科技股份有限公司 (Ship to Live)
+TITLE:AI 工程師與工程主管
+TEL;TYPE=CELL,VOICE,PREF:+886966039002
+TEL;TYPE=CELL,VOICE:+16267801122
 EMAIL;TYPE=INTERNET,PREF:yufan@shiptolive.com
-ADR;TYPE=WORK,PREF:;;;San Diego;CA;;USA
-ADR;TYPE=WORK:;;;Taipei;;;Taiwan
-URL:https://shiptolive.com/
+ADR;TYPE=WORK,PREF:;;;台北;;;台灣
+ADR;TYPE=WORK:;;;San Diego;CA;;USA
+URL:https://shiptolive.com/zh/
 X-TW-BUSINESS-NUMBER:90173045
 X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/yufanchen8/
-NOTE:Builds AI agents and automations wired into the systems a business alr
- eady runs\, plus SEO/AEO/GEO so AI engines name your business. 25 years of
-  production engineering\, from startups to century-old institutions. Langu
- ages: English · 中文.
+NOTE:夏裕科技股份有限公司（統一編號 90173045）。把 AI 代
+ 理與自動化接進企業既有的資料庫、後台與工作流程，
+ 並提供 SEO／AEO／GEO，讓 AI 引擎在回答時點名你的公司。
+ 二十五年正式上線系統經驗，從新創到百年機構。據點
+ ：台北 · 聖地牙哥。語言：中文 · English。
 PHOTO;ENCODING=b;TYPE=JPEG:/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQF
  BQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2w
  BDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e

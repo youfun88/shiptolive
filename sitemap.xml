@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://shiptolive.com/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shiptolive.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://shiptolive.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shiptolive.com/" />
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://shiptolive.com/zh/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shiptolive.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://shiptolive.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shiptolive.com/" />
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://shiptolive.com/card/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shiptolive.com/card/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://shiptolive.com/zh/card/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shiptolive.com/card/" />
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://shiptolive.com/zh/card/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shiptolive.com/card/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://shiptolive.com/zh/card/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shiptolive.com/card/" />
+    <lastmod>2026-09-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>

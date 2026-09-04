@@ -15,6 +15,14 @@
   --serif: 'Fraunces', Georgia, serif;
 }
 
+html[lang^="zh"] {
+  --font: 'Inter', 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', 'Heiti TC', system-ui, sans-serif;
+  --serif: 'Fraunces', 'Noto Serif TC', 'Songti TC', 'PingFang TC', 'Microsoft JhengHei', Georgia, serif;
+}
+/* CJK has no ascenders/descenders to breathe against — give it a little more room. */
+html[lang^="zh"] body { line-height: 1.75; }
+html[lang^="zh"] h1, html[lang^="zh"] h2, html[lang^="zh"] h3 { line-height: 1.35; }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; }
@@ -85,6 +93,29 @@ a { color: inherit; text-decoration: none; }
   font-weight: 600;
 }
 .nav-cta:hover { background: rgba(255,255,255,0.12); }
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.1rem;
+  padding: 0.24rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+.lang-switch a {
+  padding: 0.34rem 0.62rem;
+  border-radius: 999px;
+  color: var(--ink-faint);
+}
+.lang-switch a:hover { color: var(--ink); }
+.lang-switch a[aria-current="true"] {
+  background: rgba(255, 255, 255, 0.09);
+  color: var(--ink);
+}
 
 /* ---------- HERO ---------- */
 .hero {
@@ -498,7 +529,8 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 860px) {
-  .nav-links a:not(.nav-cta) { display: none; }
+  .nav-links > a:not(.nav-cta) { display: none; }
+  .nav-links { gap: 0.7rem; }
   .cards-2, .cards-3 { grid-template-columns: 1fr; }
   .engine-compare { grid-template-columns: 1fr; }
   .next-wrap, .next-wrap.reverse, .about-wrap { grid-template-columns: 1fr; gap: 2rem; }

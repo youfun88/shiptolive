@@ -1,5 +1,6 @@
 // Footer year
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Reveal-on-scroll for cards & sections
 const io = new IntersectionObserver((entries) => {
@@ -31,6 +32,24 @@ document.querySelectorAll('.card, .svc, .next-list li, .contact-card, .about-wra
   if (!form) return;
 
   const ENDPOINT = 'https://formsubmit.co/ajax/yufan@shiptolive.com';
+
+  // Same form on /  and /zh/ — pick the copy off <html lang>.
+  const ZH = /^zh/i.test(document.documentElement.lang || '');
+  const T = ZH
+    ? {
+        bot: '謝謝！我會盡快與您聯絡。',
+        missing: '請填寫姓名、Email 與簡短說明。',
+        sending: '傳送中…',
+        ok: function (name) { return '謝謝您，' + name + '！訊息已送出，我會在 1–2 個工作天內回覆。'; },
+        err: '抱歉，訊息沒有送出成功。請改用下方的 LinkedIn 與我聯絡。',
+      }
+    : {
+        bot: "Thanks! I'll be in touch soon.",
+        missing: 'Please add your name, email, and a short message.',
+        sending: 'Sending…',
+        ok: function (name) { return 'Thanks, ' + name + "! Your message is on its way — I'll reply within 1–2 days."; },
+        err: "Sorry — that didn't go through. Please reach out via the LinkedIn button instead.",
+      };
   const btn = document.getElementById('send');
   const statusEl = document.getElementById('formStatus');
 
@@ -44,7 +63,7 @@ document.querySelectorAll('.card, .svc, .next-list li, .contact-card, .about-wra
 
     // honeypot — silently succeed for bots
     if (form.querySelector('[name="_honey"]').value) {
-      setStatus("Thanks! I'll be in touch soon.", 'ok');
+      setStatus(T.bot, 'ok');
       return;
     }
 
@@ -56,12 +75,12 @@ document.querySelectorAll('.card, .svc, .next-list li, .contact-card, .about-wra
     };
 
     if (!d.name || !d.email || !d.message) {
-      setStatus('Please add your name, email, and a short message.', 'err');
+      setStatus(T.missing, 'err');
       return;
     }
 
     btn.disabled = true;
-    setStatus('Sending…', null);
+    setStatus(T.sending, null);
 
     fetch(ENDPOINT, {
       method: 'POST',
@@ -82,10 +101,10 @@ document.querySelectorAll('.card, .svc, .next-list li, .contact-card, .about-wra
       })
       .then(function () {
         form.reset();
-        setStatus("Thanks, " + d.name.split(' ')[0] + "! Your message is on its way — I'll reply within 1–2 days.", 'ok');
+        setStatus(T.ok(ZH ? d.name : d.name.split(' ')[0]), 'ok');
       })
       .catch(function () {
-        setStatus("Sorry — that didn't go through. Please reach out via the LinkedIn button instead.", 'err');
+        setStatus(T.err, 'err');
       })
       .finally(function () {
         btn.disabled = false;
