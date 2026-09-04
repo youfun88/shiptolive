@@ -2,11 +2,13 @@ BEGIN:VCARD
 VERSION:3.0
 N:Chen;Yufan;;;
 FN:Yufan Chen
-ORG:Ship to Live
+ORG:Ship to Live (夏裕科技股份有限公司)
 TITLE:AI Engineer & Engineering Lead
+TEL;TYPE=CELL,VOICE,PREF:+16267801122
 TEL;TYPE=CELL,VOICE:+886966039002
 EMAIL;TYPE=INTERNET,PREF:yufan@shiptolive.com
-ADR;TYPE=WORK:;;;San Diego;CA;;USA
+ADR;TYPE=WORK,PREF:;;;San Diego;CA;;USA
+ADR;TYPE=WORK:;;;Taipei;;;Taiwan
 URL:https://shiptolive.com/
 X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/yufanchen8/
 NOTE:Builds AI agents and automations wired into the systems a business alr

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Yufan Chen — AI Engineer &amp; Engineering Lead | Ship to Live</title>
-  <meta name="description" content="Digital business card for Yufan Chen — AI engineer and engineering lead in San Diego. Builds AI agents and automations wired into the systems you already run. Tap to call, email, or save to your contacts. EN / 中文." />
+  <meta name="description" content="Digital business card for Yufan Chen — AI engineer and engineering lead at Ship to Live / 夏裕科技股份有限公司, based in San Diego and Taipei. Builds AI agents and automations wired into the systems you already run. Tap to call, email, or save to your contacts. EN / 中文." />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0d0e1a" />
   <link rel="canonical" href="https://shiptolive.com/card/" />
@@ -13,7 +13,7 @@
   <meta property="og:type" content="profile" />
   <meta property="og:site_name" content="Ship to Live" />
   <meta property="og:title" content="Yufan Chen — AI Engineer &amp; Engineering Lead" />
-  <meta property="og:description" content="AI agents, automation and systems engineering in San Diego. Tap to call, email, or save to your contacts." />
+  <meta property="og:description" content="AI agents, automation and systems engineering — San Diego &amp; Taipei. Tap to call, email, or save to your contacts." />
   <meta property="og:url" content="https://shiptolive.com/card/" />
   <meta property="og:image" content="https://shiptolive.com/assets/img/og.png" />
   <meta property="og:image:width" content="1200" />
@@ -36,12 +36,25 @@
     "@id": "https://shiptolive.com/#yufan",
     "name": "Yufan Chen",
     "jobTitle": "AI Engineer & Engineering Lead",
-    "telephone": "+886966039002",
+    "telephone": ["+16267801122", "+886966039002"],
     "email": "mailto:yufan@shiptolive.com",
     "url": "https://shiptolive.com/",
     "image": "https://shiptolive.com/assets/img/founder.jpg",
-    "worksFor": { "@type": "ProfessionalService", "name": "Ship to Live", "url": "https://shiptolive.com/" },
-    "address": { "@type": "PostalAddress", "addressLocality": "San Diego", "addressRegion": "CA", "addressCountry": "US" },
+    "worksFor": {
+      "@type": "ProfessionalService",
+      "name": "Ship to Live",
+      "legalName": "夏裕科技股份有限公司",
+      "alternateName": "夏裕科技股份有限公司",
+      "url": "https://shiptolive.com/"
+    },
+    "address": [
+      { "@type": "PostalAddress", "addressLocality": "San Diego", "addressRegion": "CA", "addressCountry": "US" },
+      { "@type": "PostalAddress", "addressLocality": "Taipei", "addressCountry": "TW" }
+    ],
+    "workLocation": [
+      { "@type": "Place", "name": "San Diego, California, USA" },
+      { "@type": "Place", "name": "Taipei, Taiwan" }
+    ],
     "knowsLanguage": ["English", "Chinese (Traditional)"],
     "sameAs": [
       "https://www.linkedin.com/in/yufanchen8/",
@@ -147,7 +160,8 @@
       color: transparent;
     }
 
-    .org { margin: 0 0 1rem; font-size: 0.82rem; color: var(--ink-faint); letter-spacing: 0.06em; text-transform: uppercase; }
+    .org { margin: 0 0 0.25rem; font-size: 0.82rem; color: var(--ink-faint); letter-spacing: 0.06em; text-transform: uppercase; }
+    .org-bases { margin: 0 0 1rem; font-size: 0.78rem; color: var(--ink-faint); letter-spacing: 0.11em; text-transform: uppercase; }
 
     .tagline {
       margin: 0 auto 1.6rem;
@@ -162,6 +176,7 @@
 
     .save {
       flex: 1 1 0;
+      min-width: 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -172,7 +187,6 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 0.92rem;
-      white-space: nowrap;
       color: var(--ink);
       background: rgba(255, 255, 255, 0.04);
       transition: transform 0.18s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
@@ -207,7 +221,7 @@
     a.row:hover { border-color: rgba(124, 92, 255, 0.5); background: rgba(124, 92, 255, 0.08); }
 
     .row-k {
-      flex: 0 0 5.4rem;
+      flex: 0 0 5.6rem;
       white-space: nowrap;
       font-size: 0.7rem;
       letter-spacing: 0.11em;
@@ -269,6 +283,11 @@
 
     :focus-visible { outline: 2px solid var(--grad-b); outline-offset: 3px; }
 
+    /* Side by side, "Save to Android" no longer fits inside a phone-width card. */
+    @media (max-width: 27rem) {
+      .save-row { flex-direction: column; }
+    }
+
     @media (max-width: 25rem) {
       .card { padding: 1.8rem 1.15rem 1.5rem; }
       .name { font-size: 1.8rem; }
@@ -297,7 +316,8 @@
 
       <h1 class="name">Yufan Chen</h1>
       <p class="role">AI Engineer &amp; Engineering Lead</p>
-      <p class="org">Ship to Live · San Diego</p>
+      <p class="org">Ship to Live · 夏裕科技股份有限公司</p>
+      <p class="org-bases">San Diego · Taipei</p>
 
       <p class="tagline">
         <strong>I build AI that actually goes live.</strong>
@@ -318,8 +338,12 @@
       <p class="save-note">Same contact card either way — adds Yufan to your phone's address book</p>
 
       <div class="rows">
+        <a class="row" href="tel:+16267801122">
+          <span class="row-k">US phone</span>
+          <span class="row-v">+1 (626) 780-1122</span>
+        </a>
         <a class="row" href="tel:+886966039002">
-          <span class="row-k">Phone</span>
+          <span class="row-k">TW phone</span>
           <span class="row-v">+886 966 039 002</span>
         </a>
         <a class="row" href="mailto:yufan@shiptolive.com">
@@ -332,7 +356,7 @@
         </a>
         <div class="row">
           <span class="row-k">Based in</span>
-          <span class="row-v">San Diego, California · working across the US &amp; Taiwan</span>
+          <span class="row-v">San Diego, California · Taipei, Taiwan</span>
         </div>
         <div class="row">
           <span class="row-k">Languages</span>
@@ -361,8 +385,8 @@
     </article>
 
     <p class="foot">
-      © <span id="year">2026</span> Ship to Live · Yufan Chen —
-      AI agents, automation &amp; systems engineering, San Diego, CA
+      © <span id="year">2026</span> Ship to Live · 夏裕科技股份有限公司 · Yufan Chen —
+      AI agents, automation &amp; systems engineering, San Diego &amp; Taipei
     </p>
   </main>
 
