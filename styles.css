@@ -461,6 +461,11 @@ a { color: inherit; text-decoration: none; }
 .about-photo img {
   width: 100%;
   max-width: 280px;
+  /* The width/height attributes on this <img> are there to reserve layout space
+     (CLS). Without height:auto the height attribute acts as a presentational
+     hint, so max-width clamped the width to 280 while the height stayed pinned
+     at 400 and squashed the square portrait. */
+  height: auto;
   border-radius: 20px;
   border: 1px solid var(--line);
   box-shadow: 0 30px 60px -30px rgba(0,0,0,0.9);
