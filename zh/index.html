@@ -38,10 +38,10 @@
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
   <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Fonts are self-hosted (see @font-face in styles.css). Preloading the two
+       latin files starts them in parallel with the stylesheet instead of after it. -->
+  <link rel="preload" as="font" type="font/woff2" href="../assets/fonts/fraunces-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="../assets/fonts/inter-latin.woff2" crossorigin />
   <link rel="stylesheet" href="../styles.css" />
 
   <!-- 結構化資料：我是誰、提供什麼、以及這個網站本身。
