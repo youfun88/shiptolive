@@ -365,6 +365,17 @@ a { color: inherit; text-decoration: none; }
 }
 .svc-ico { font-size: 1.9rem; margin-bottom: 0.8rem; }
 .svc h4 { font-size: 1.2rem; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.5rem; }
+
+/* Step cards: the number and the duration each get their own line, so all three
+   kickers are the same height and the headings below them line up. Previously
+   "Step 01 · free, about an hour" wrapped to two lines while "Step 03" sat on
+   one, and the titles landed at different heights. */
+.step-kicker span { display: block; }
+.step-kicker .step-when {
+  margin-top: 0.25rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.1em;
+}
 .svc p { color: var(--ink-dim); font-size: 0.95rem; }
 .pill-new {
   font-family: var(--font);
