@@ -44,6 +44,40 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   els.forEach(function (el) { io.observe(el); });
 })();
 
+// Count the hero numbers up once they scroll into view ("40M", "4,000 萬", "1M+").
+(function () {
+  const els = document.querySelectorAll('.stats strong');
+  if (!els.length || !('IntersectionObserver' in window) || document.visibilityState === 'hidden' ||
+      matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  function run(el) {
+    const m = el.textContent.match(/^([\d,]+)([\s\S]*)$/);
+    if (!m) return;
+    const end = parseInt(m[1].replace(/,/g, ''), 10);
+    if (end < 10) return; // "0M+" mid-count reads as a typo; small numbers just appear
+    const final = el.textContent;
+    // rAF stalls in background tabs — guarantee the real number lands regardless.
+    setTimeout(function () { el.textContent = final; }, 1300);
+    const commas = m[1].indexOf(',') !== -1;
+    const suffix = m[2];
+    const t0 = performance.now();
+    const dur = 1100;
+    (function tick(now) {
+      const p = Math.min(1, (now - t0) / dur);
+      const v = Math.round(end * (1 - Math.pow(1 - p, 3)));
+      el.textContent = (commas ? v.toLocaleString('en-US') : String(v)) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    })(t0);
+  }
+
+  const io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { run(e.target); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.6 });
+  els.forEach(function (el) { io.observe(el); });
+})();
+
 // ---------- Contact form ----------
 // No backend: posts to FormSubmit (https://formsubmit.co), which relays the
 // message to my inbox. The email address is not displayed anywhere on the page.

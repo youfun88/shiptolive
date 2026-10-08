@@ -39,7 +39,7 @@
   <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
 
   <link rel="preload" as="font" type="font/woff2" href="../assets/fonts/inter-latin.woff2" crossorigin />
-  <link rel="stylesheet" href="../styles.css?v=20261008b" />
+  <link rel="stylesheet" href="../styles.css?v=20261008d" />
   <script>document.documentElement.classList.add('js')</script>
 
   <!-- 結構化資料：我是誰、提供什麼、以及這個網站本身。
@@ -225,7 +225,7 @@
       <div class="wrap hero-grid">
         <div>
           <p class="status"><span class="dot" aria-hidden="true"></span>目前接案中 · 台灣與美國</p>
-          <h1>AI 代理、App 與網站，<br /><span class="soft">做到真的上線。</span></h1>
+          <h1>AI 代理、App 與網站，<br /><span class="soft">做到真的上線。</span><span class="live-dot" aria-hidden="true"></span></h1>
           <p class="lede">
             我是 Yufan Chen，工程主管、全端工程師。我先找出真正卡住的地方，再把解法做進你現在就在用的系統：
             AI 代理與自動化、手機 App、網站與後台——並且讓 Google 和 AI 搜尋找得到你。
@@ -237,25 +237,28 @@
           <p class="cta-note">固定報價 · 1–2 個工作天內回覆 · 中文或英文皆可 · 可開統一發票</p>
         </div>
 
-        <aside class="profile" aria-label="簡介">
-          <div class="profile-head">
-            <span class="monogram" aria-hidden="true">YC</span>
-            <div>
-              <p class="profile-name">Yufan Chen</p>
-              <p class="profile-role">Ship to Live 創辦人暨首席工程師</p>
-            </div>
-          </div>
-          <ul class="profile-list">
-            <li><svg aria-hidden="true"><use href="#i-brief"/></svg><span>前 TalentSmartEQ 技術長，測評服務遍及 26 國</span></li>
-            <li><svg aria-hidden="true"><use href="#i-cap"/></svg><span>約翰霍普金斯大學 Agentic AI 學程證書 · UC San Diego 資訊工程學士</span></li>
-            <li><svg aria-hidden="true"><use href="#i-pin"/></svg><span>台灣台北 × 美國加州聖地牙哥</span></li>
-            <li><svg aria-hidden="true"><use href="#i-lang"/></svg><span>中文、英文都能溝通</span></li>
-          </ul>
-        </aside>
+        <div class="deploy" role="img" aria-label="專案上線流程：診斷、開發、測試、部署、上線">
+          <div class="deploy-bar" aria-hidden="true"><i></i><i></i><i></i><span>ship-to-live — deploy</span></div>
+          <ol class="deploy-log" aria-hidden="true">
+            <li><span class="tick">✓</span><b>diagnose</b><em>找出真正卡住的地方</em></li>
+            <li><span class="tick">✓</span><b>build</b><em>AI 代理、App、系統整合</em></li>
+            <li><span class="tick">✓</span><b>test</b><em>用你的真實資料測試</em></li>
+            <li><span class="tick">✓</span><b>deploy</b><em>正式環境、有紀錄、有文件</em></li>
+            <li class="is-live"><span class="pulse"></span><b>live</b><em>在使用者手上跑起來</em></li>
+          </ol>
+          <p class="deploy-foot" aria-hidden="true"><span>$ ship --to live</span><span class="cursor"></span></p>
+        </div>
       </div>
 
       <div class="wrap">
-        <ul class="stats" aria-label="實績" style="margin-top: clamp(48px, 7vw, 80px);">
+        <ul class="trust" aria-label="背景">
+          <li><span>前技術長</span><b>TalentSmartEQ</b></li>
+          <li><span>企業測評入口</span><b>3M · Adobe</b></li>
+          <li><span>Agentic AI 學程證書</span><b>約翰霍普金斯大學</b></li>
+          <li><span>資訊工程學士</span><b>UC San Diego</b></li>
+          <li><span>工作據點</span><b>台北 · 聖地牙哥</b></li>
+        </ul>
+        <ul class="stats" aria-label="實績">
           <li><strong>4,000 萬</strong><span>我開發的送禮元件觸及的使用者</span></li>
           <li><strong>100 萬+</strong><span>做過我開發的測評的人</span></li>
           <li><strong>26 國</strong><span>我擔任技術長時平台服務的國家</span></li>
@@ -469,7 +472,7 @@
     </section>
 
     <!-- PROCESS -->
-    <section class="section" id="process">
+    <section class="section section-dark" id="process">
       <div class="wrap">
         <div class="section-head">
           <p class="kicker">合作流程</p>
@@ -656,6 +659,6 @@
   }
   </script>
 
-  <script src="../script.js?v=20261008b"></script>
+  <script src="../script.js?v=20261008d"></script>
 </body>
 </html>

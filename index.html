@@ -42,7 +42,7 @@
   <!-- Inter is self-hosted (see @font-face in styles.css); preloading starts it
        in parallel with the stylesheet instead of after it. -->
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin.woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=20261008b" />
+  <link rel="stylesheet" href="styles.css?v=20261008d" />
   <script>document.documentElement.classList.add('js')</script>
 
   <!-- Structured data: who I am, what I offer, and the site itself.
@@ -249,7 +249,7 @@
       <div class="wrap hero-grid">
         <div>
           <p class="status"><span class="dot" aria-hidden="true"></span>Taking new projects · US &amp; Taiwan</p>
-          <h1>AI agents, apps and websites — <span class="soft">built and shipped live.</span></h1>
+          <h1>AI agents, apps and websites — <span class="soft">built and shipped&nbsp;live.</span><span class="live-dot" aria-hidden="true"></span></h1>
           <p class="lede">
             I'm Yufan Chen, an engineering leader and full-stack engineer. I find what's actually in the way,
             then build the fix into the systems you already run: AI agents and automations, mobile apps,
@@ -262,25 +262,28 @@
           <p class="cta-note">Fixed-price quotes · replies within 1–2 business days · English or 中文</p>
         </div>
 
-        <aside class="profile" aria-label="At a glance">
-          <div class="profile-head">
-            <span class="monogram" aria-hidden="true">YC</span>
-            <div>
-              <p class="profile-name">Yufan Chen</p>
-              <p class="profile-role">Founder &amp; Principal Engineer, Ship to Live</p>
-            </div>
-          </div>
-          <ul class="profile-list">
-            <li><svg aria-hidden="true"><use href="#i-brief"/></svg><span>Former CTO, TalentSmartEQ — assessments delivered in 26 countries</span></li>
-            <li><svg aria-hidden="true"><use href="#i-cap"/></svg><span>Certificate in Agentic AI, Johns Hopkins · B.S. Computer Science, UC San Diego</span></li>
-            <li><svg aria-hidden="true"><use href="#i-pin"/></svg><span>San Diego, California &amp; Taipei, Taiwan</span></li>
-            <li><svg aria-hidden="true"><use href="#i-lang"/></svg><span>Works in English and Chinese</span></li>
-          </ul>
-        </aside>
+        <div class="deploy" role="img" aria-label="How a project ships: diagnose, build, test, deploy, live">
+          <div class="deploy-bar" aria-hidden="true"><i></i><i></i><i></i><span>ship-to-live — deploy</span></div>
+          <ol class="deploy-log" aria-hidden="true">
+            <li><span class="tick">✓</span><b>diagnose</b><em>found the real blocker</em></li>
+            <li><span class="tick">✓</span><b>build</b><em>agents, apps, integrations</em></li>
+            <li><span class="tick">✓</span><b>test</b><em>on your real data</em></li>
+            <li><span class="tick">✓</span><b>deploy</b><em>logged &amp; documented</em></li>
+            <li class="is-live"><span class="pulse"></span><b>live</b><em>running where people use it</em></li>
+          </ol>
+          <p class="deploy-foot" aria-hidden="true"><span>$ ship --to live</span><span class="cursor"></span></p>
+        </div>
       </div>
 
       <div class="wrap">
-        <ul class="stats" aria-label="Track record" style="margin-top: clamp(48px, 7vw, 80px);">
+        <ul class="trust" aria-label="Background">
+          <li><span>Former CTO</span><b>TalentSmartEQ</b></li>
+          <li><span>Enterprise portals for</span><b>3M · Adobe</b></li>
+          <li><span>Agentic AI certificate</span><b>Johns Hopkins</b></li>
+          <li><span>B.S. Computer Science</span><b>UC San Diego</b></li>
+          <li><span>Based in</span><b>San Diego · Taipei</b></li>
+        </ul>
+        <ul class="stats" aria-label="Track record">
           <li><strong>40M</strong><span>users reached by a gifting widget I built</span></li>
           <li><strong>1M+</strong><span>people took an assessment I built</span></li>
           <li><strong>26</strong><span>countries served by platforms I ran as CTO</span></li>
@@ -494,7 +497,7 @@
     </section>
 
     <!-- PROCESS -->
-    <section class="section" id="process">
+    <section class="section section-dark" id="process">
       <div class="wrap">
         <div class="section-head">
           <p class="kicker">How it works</p>
@@ -683,6 +686,6 @@
   }
   </script>
 
-  <script src="script.js?v=20261008b"></script>
+  <script src="script.js?v=20261008d"></script>
 </body>
 </html>
