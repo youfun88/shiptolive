@@ -1,54 +1,55 @@
 # Ship to Live — 夏裕科技股份有限公司 — by Yufan Chen
 
-> Ship to Live is the trading name of two companies founded by Yufan Chen — QY LLC in San Diego, California (US engagements) and 夏裕科技股份有限公司 in Taipei, Taiwan (Taiwan engagements, unified business number 90173045). It is the studio of Yufan Chen — a software engineer and engineering lead with twenty-five years of experience across three-person startups and century-old institutions, working from two bases: San Diego, California and Taipei, Taiwan. Yufan builds AI agents and automations that reach production — wired into the database, back office, and workflow a business already runs — and does SEO, AEO and GEO so Google and AI engines name that business. Bilingual in English and Traditional Chinese (中文), serving clients across the United States and Taiwan. Contact by email or through the contact form; phone is not published. Website: https://shiptolive.com/ · 中文版: https://shiptolive.com/zh/
+> Ship to Live is the trading name of two companies founded by Yufan Chen — QY LLC in San Diego, California (US engagements) and 夏裕科技股份有限公司 in Taipei, Taiwan (Taiwan engagements, unified business number 90173045). Yufan Chen is an engineering leader and full-stack engineer, former CTO of TalentSmartEQ, working from San Diego, California and Taipei, Taiwan. He builds AI agents, RAG pipelines and automations into the databases, back offices and workflows a business already runs; ships mobile apps, websites and back ends; and does SEO, AEO and GEO so Google and AI engines name the business. Bilingual in English and Traditional Chinese (中文). Contact by email or through the contact form; phone is not published. Website: https://shiptolive.com/ · 中文版: https://shiptolive.com/zh/
 
-## What I do
+## Services
 
-- **AI agents & assistants** — an assistant that answers from your own documents, policies, and data, and can act on them: look up the record, draft the reply, file the result. Built on your stack, with your permissions, not a rented black box. Includes document and knowledge agents, support and intake agents, back-office automation, and internal tools with AI inside.
-- **AI search optimization — SEO, AEO & GEO** — Search Engine Optimization to rank on Google; Answer Engine Optimization (AEO) so your content wins featured snippets and Google AI Overviews; and Generative Engine Optimization (GEO) so AI engines like ChatGPT, Perplexity and Gemini understand, trust, cite, and recommend your business. Delivered as an AI visibility audit, structured data and an llms.txt layer, technical SEO, trust signals, and local/bilingual coverage.
-- **Systems & integrations** — databases, admin back ends, APIs, deployment, and the migrations nobody wants to run. The layer that decides whether an AI pilot becomes something a team opens on Monday morning.
-- **Mobile apps & websites** — iOS, Android, and Mac from one codebase (Flutter, React Native); fast bilingual sites that load and rank, with AI built in where it earns its place.
+- **AI agents & assistants** — assistants and RAG pipelines that answer from a company's own documents and data, with sources attached, and can act on them: look up the record, draft the reply, file the result. LangChain, LangGraph, ChromaDB, OpenAI and Claude.
+- **Automation & integrations** — back-office automation, internal tools, admin consoles, APIs and webhooks (including Salesforce) connecting the systems a business already uses.
+- **Mobile apps** — iPhone, Android and Mac from one codebase with Flutter or React Native / Expo, taken through App Store release.
+- **Websites & web platforms** — bilingual (English / 中文) websites and PHP / Laravel platforms (memberships, checkout, assessments, reporting) on GCP Cloud Run with GitHub Actions CI/CD.
+- **Search visibility — SEO, AEO & GEO** — technical SEO, structured data (JSON-LD) and an llms.txt layer so Google ranks a business and ChatGPT, Perplexity and Gemini cite it.
+- **Technical leadership** — architecture, infrastructure and security ownership on a monthly retainer for teams without a senior engineer.
 
-## How an AI project runs
+## How a project runs
 
-1. **Find the bottleneck** — a conversation, not a questionnaire. Free, about an hour.
-2. **Pilot one workflow** — two weeks, fixed price, running on your real data. At the end you have something usable, or a clear answer that AI is not the right tool for that workflow.
-3. **Wire it in** — permissions, logging, error handling, deployment, handover documentation.
-
-Ways to start: an **AI Visibility Check** (3 days), an **Agent Pilot** (2 weeks), or a **fractional builder** engagement (monthly). Fixed price, quoted in one email.
+1. **Talk it through** — free first conversation.
+2. **Scope and quote** — a short written plan with a fixed price, quoted in one email. Larger AI projects start with a two-week pilot on real data.
+3. **Ship it live** — built, tested and deployed with permissions, logging and handover docs. The client owns the code and accounts.
 
 ## Data handling
 
-The scope of what an agent can read and what it is allowed to do is defined up front, every action it takes is logged, and a person stays in the loop anywhere a mistake would be expensive. Where an industry has rules about where data can sit, that constraint is designed for from day one rather than retrofitted.
+What an agent can read and do is scoped up front, every action it takes is logged, and a person stays in the loop anywhere a mistake would be expensive.
 
-## Proof of work
+## Experience
 
-- **TalentSmartEQ** (https://www.talentsmarteq.com/) (team) — built the EQ 360 assessment platform (assessment engine, scoring, admin and credit system in PHP/MySQL) and the Emotional Intelligence Appraisal – Self Edition, taken by over a million people.
-- **Get Real Gifts** (https://www.getrealgifts.com/) (main developer) — built a gifting widget that serves millions of users (also at gift.me).
-- **LEADx** (https://leadx.org/) (team) — leadership micro-coaching platform.
-- **Tally** (https://www.tallybillable.com/) — time-tracking & invoicing app for lawyers and freelancers. iOS, Mac. Built with Flutter.
-- **Tadapop** (https://tadapop.app/) — gamified daily-habit tracker. iOS, Android. Built with React Native / Expo.
-- **Daily Log** — published Chrome extension for capturing a daily log in the browser.
+- **Ship to Live** — Founder & Principal Engineer, 2026 – present. Built the EQ 360 platform for LEADx / TalentSmartEQ (assessment engine, scoring, admin console, credit system in PHP/MySQL); shipped two App Store apps solo; bilingual client websites on GCP Cloud Run.
+- **Get Real Gifts** (https://www.getrealgifts.com/) — Full-Stack Engineer, 2022 – 2026. Built the core gifting widget, embedded in a partner platform and used by 40 million members; built gift.me and led its SEO/GEO.
+- **TalentSmartEQ** (https://www.talentsmarteq.com/) — Programmer to Senior Programmer to Chief Technology Officer (2013 – 2021), 2005 – 2021. Owned architecture, infrastructure and security for 20+ online assessments in 26 countries and up to 26 languages; built the Emotional Intelligence Appraisal for *Emotional Intelligence 2.0*, taken by over 1 million people; enterprise portals for 3M and Adobe; Salesforce REST integration.
+
+## Products and client work
+
+- **Tally** (https://www.tallybillable.com/) — billable-time and invoicing app. iPhone & Mac, Flutter.
+- **Tadapop** (https://tadapop.app/) — social habit tracker with a private leaderboard. iOS & Android, React Native / Expo.
+- **LEADx** (https://leadx.org/) — EQ 360 assessment platform.
 - **Wu Law Group** (https://wulawintl.com/) — cross-border legal consulting website (Taiwan, US, China).
-- **Travis Bradberry** (https://travisbradberry.com/) — book and author site for the coauthor of *Emotional Intelligence 2.0*.
-- **QY Property** (https://qyproperty.com/) — cross-border real-estate advisory website for San Diego property.
+- **Travis Bradberry** (https://travisbradberry.com/) — author site for the coauthor of *Emotional Intelligence 2.0*.
 - **SHX Training** (https://shxtraining.com/) — corporate ESG training website (Taiwan & California).
+- **QY Property** (https://qyproperty.com/) — cross-border real-estate advisory website, San Diego.
+- **IL Solutions 睿律** (https://ilsolutions.com.tw/) — legal services website, Taiwan.
 
-## Stack
+## Skills
 
-Flutter · React Native · PHP / MySQL · Python · REST & webhooks · GCP · App Store & Play Store
+AI & agents: RAG, multi-agent orchestration, LangChain, LangGraph, ChromaDB, OpenAI API, Claude Code · Languages: PHP, Python, JavaScript, Dart, SQL, Solidity · Frameworks: Flutter, React Native / Expo, Laravel, REST APIs · Data & cloud: MySQL, MariaDB, GCP Cloud Run, GitHub Actions, Docker, nginx · Search: technical SEO, AEO, GEO, JSON-LD, llms.txt
 
 ## About
 
 - Brand: Ship to Live (https://shiptolive.com/)
-- Legal entities: QY LLC (San Diego, California) — US work is contracted and invoiced through it; 夏裕科技股份有限公司 (Taipei, Taiwan), unified business number (統一編號) 90173045 — Taiwan work is contracted through it and it can issue Taiwanese 統一發票. Both trade as Ship to Live.
-- Name: Yufan Chen
-- Role: AI engineer & engineering lead; builds AI agents, automations, systems, apps and websites
-- Experience: 25 years, from three-person startups to century-old institutions
-- Locations: San Diego, California, USA and Taipei, Taiwan — two bases, so US and Taiwan clients each get a workable time zone
+- Legal entities: QY LLC (San Diego, California) for US work; 夏裕科技股份有限公司 (Taipei, Taiwan), unified business number (統一編號) 90173045, for Taiwan work — it can issue Taiwanese 統一發票.
+- Education: B.S. Computer Science, University of California, San Diego; Certificate Program in Agentic AI, Johns Hopkins University (2026)
+- Locations: San Diego, California, USA and Taipei, Taiwan
 - Languages: English, Traditional Chinese (中文)
-- Education: University of California, San Diego (UC San Diego); Certificate Program in Agentic AI, Johns Hopkins University
-- On the name: "ship to live" is the last step of a build — shipping the code to live — and the step most work never survives.
+- On the name: "ship to live" is the last step of a build — shipping the code to production — and the step most projects never reach.
 
 ## Languages & pages
 
@@ -60,18 +61,17 @@ The two language versions carry the same offering; the Chinese pages are written
 ## 中文摘要
 
 夏裕科技股份有限公司（統一編號 90173045，品牌名 Ship to Live）是 Yufan Chen 創立的軟體工程公司，
-在美國加州聖地牙哥與台灣台北兩地營運。主要提供三件事：
+在台灣台北與美國加州聖地牙哥兩地營運。Yufan Chen 是工程主管與全端工程師，曾任 TalentSmartEQ 技術長。服務項目：
 
-1. **AI 代理與自動化** — 把 AI 代理接進企業既有的資料庫、後台與工作流程，能依你的文件與規章回答，
-   並實際完成動作（查紀錄、擬回覆、歸檔）；權限由你界定、每個動作留下日誌。
-2. **AI 搜尋最佳化（SEO / AEO / GEO）** — 讓企業在 Google 搜尋結果、Google AI 概覽與精選摘要，
-   以及 ChatGPT、Perplexity、Gemini 的生成式回答中被找到與被引用。做法包含結構化資料、
-   llms.txt 內容層、技術 SEO 與信任訊號。
-3. **系統、後端、App 與網站** — 資料庫、管理後台、API、部署與資料搬遷；以及 iOS / Android / Mac
-   App 與中英雙語網站。
+1. **AI 代理與助理** — 依企業自己的文件與資料回答並附出處，還能實際動手（查紀錄、擬回覆、歸檔）。
+2. **自動化與系統整合** — 內部工具、管理後台、API 與 webhook，把既有系統串起來。
+3. **手機 App** — 以 Flutter 或 React Native／Expo 開發 iPhone、Android、Mac App 並上架。
+4. **網站與網路平台** — 中英雙語網站與 PHP／Laravel 平台，部署於 GCP Cloud Run。
+5. **搜尋能見度（SEO / AEO / GEO）** — 讓企業在 Google 與 ChatGPT、Perplexity、Gemini 的回答中被找到與引用。
+6. **技術領導** — 按月負責架構、基礎設施與資安決策。
 
-合作方式：AI 能見度健檢（3 天）、代理試作（2 週、固定報價、用真實資料跑）、
-或按月的兼任工程夥伴。服務語言為中文（繁體）與英文；台灣的案子由夏裕科技股份有限公司承接並開立統一發票，美國的案子由 QY LLC 承接。
+合作流程：免費諮詢 → 書面規劃與固定報價 → 開發並正式上線。服務語言為中文（繁體）與英文；
+台灣的案子由夏裕科技股份有限公司承接並開立統一發票，美國的案子由 QY LLC 承接。
 聯絡方式：yufan@shiptolive.com 或網站上的聯絡表單（不公開電話）。
 中文網站：https://shiptolive.com/zh/
 

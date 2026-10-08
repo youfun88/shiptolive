@@ -2,23 +2,47 @@
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Reveal-on-scroll for cards & sections
-const io = new IntersectionObserver((entries) => {
-  for (const e of entries) {
-    if (e.isIntersecting) {
-      e.target.style.opacity = '1';
-      e.target.style.transform = 'none';
-      io.unobserve(e.target);
-    }
-  }
-}, { threshold: 0.12 });
+// Mobile menu + header border once the page scrolls
+(function () {
+  const nav = document.querySelector('.nav');
+  const btn = nav && nav.querySelector('.menu-btn');
+  if (!nav) return;
+  const ZH = /^zh/i.test(document.documentElement.lang || '');
 
-document.querySelectorAll('.card, .svc, .next-list li, .contact-card, .about-wrap > div').forEach((el, i) => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(18px)';
-  el.style.transition = `opacity 0.5s ease ${(i % 4) * 0.06}s, transform 0.5s ease ${(i % 4) * 0.06}s`;
-  io.observe(el);
-});
+  function setOpen(open) {
+    nav.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? (ZH ? '關閉選單' : 'Close menu') : (ZH ? '開啟選單' : 'Open menu'));
+  }
+  if (btn) {
+    btn.addEventListener('click', function () { setOpen(!nav.classList.contains('open')); });
+    nav.querySelectorAll('.nav-links a').forEach(function (a) {
+      a.addEventListener('click', function () { setOpen(false); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && nav.classList.contains('open')) { setOpen(false); btn.focus(); }
+    });
+  }
+
+  const onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 4); };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
+// Reveal-on-scroll. Elements start visible if JS or IntersectionObserver is missing.
+(function () {
+  const els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  const io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function (el) { io.observe(el); });
+})();
 
 // ---------- Contact form ----------
 // No backend: posts to FormSubmit (https://formsubmit.co), which relays the
