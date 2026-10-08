@@ -9,7 +9,7 @@
 - **Mobile apps** — iPhone, Android and Mac from one codebase with Flutter or React Native / Expo, taken through App Store release.
 - **Websites & web platforms** — bilingual (English / 中文) websites and PHP / Laravel platforms (memberships, checkout, assessments, reporting) on GCP Cloud Run with GitHub Actions CI/CD.
 - **Search visibility — SEO, AEO & GEO** — technical SEO, structured data (JSON-LD) and an llms.txt layer so Google ranks a business and ChatGPT, Perplexity and Gemini cite it.
-- **Technical leadership** — architecture, infrastructure and security ownership on a monthly retainer for teams without a senior engineer.
+- **Project rescue & modernization** — takes over stalled builds and aging systems (including legacy PHP): finds what is actually blocking them, then fixes, modernizes and ships them.
 
 ## How a project runs
 
@@ -68,7 +68,7 @@ The two language versions carry the same offering; the Chinese pages are written
 3. **手機 App** — 以 Flutter 或 React Native／Expo 開發 iPhone、Android、Mac App 並上架。
 4. **網站與網路平台** — 中英雙語網站與 PHP／Laravel 平台，部署於 GCP Cloud Run。
 5. **搜尋能見度（SEO / AEO / GEO）** — 讓企業在 Google 與 ChatGPT、Perplexity、Gemini 的回答中被找到與引用。
-6. **技術領導** — 按月負責架構、基礎設施與資安決策。
+6. **專案救援與系統翻新** — 接手卡住的專案與老舊系統，找出真正卡住的地方，修好、翻新並上線。
 
 合作流程：免費諮詢 → 書面規劃與固定報價 → 開發並正式上線。服務語言為中文（繁體）與英文；
 台灣的案子由夏裕科技股份有限公司承接並開立統一發票，美國的案子由 QY LLC 承接。
