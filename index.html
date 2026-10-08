@@ -23,7 +23,7 @@
   <meta property="og:title" content="Ship to Live — AI agents, apps and websites, built and shipped live" />
   <meta property="og:description" content="Yufan Chen builds AI agents, automations, apps and websites that plug into the systems you already run — and gets them found on Google and in AI answers. San Diego &amp; Taipei." />
   <meta property="og:url" content="https://shiptolive.com/" />
-  <meta property="og:image" content="https://shiptolive.com/assets/img/og.png" />
+  <meta property="og:image" content="https://shiptolive.com/assets/img/og.png?v=2" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Ship to Live — by Yufan Chen, San Diego &amp; Taipei." />
@@ -34,7 +34,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Ship to Live — AI agents, apps and websites, built and shipped live" />
   <meta name="twitter:description" content="AI agents, automations, apps and websites wired into the systems you already run, plus SEO / AEO / GEO. San Diego &amp; Taipei · EN / 中文." />
-  <meta name="twitter:image" content="https://shiptolive.com/assets/img/og.png" />
+  <meta name="twitter:image" content="https://shiptolive.com/assets/img/og.png?v=2" />
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
@@ -42,7 +42,7 @@
   <!-- Inter is self-hosted (see @font-face in styles.css); preloading starts it
        in parallel with the stylesheet instead of after it. -->
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin.woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=20261008e" />
+  <link rel="stylesheet" href="styles.css?v=20261008f" />
   <script>document.documentElement.classList.add('js')</script>
 
   <!-- Structured data: who I am, what I offer, and the site itself.
@@ -177,7 +177,7 @@
         "isPartOf": { "@id": "https://shiptolive.com/#website" },
         "about": { "@id": "https://shiptolive.com/#service" },
         "mainEntity": { "@id": "https://shiptolive.com/#faq" },
-        "primaryImageOfPage": "https://shiptolive.com/assets/img/og.png",
+        "primaryImageOfPage": "https://shiptolive.com/assets/img/og.png?v=2",
         "inLanguage": "en",
         "datePublished": "2026-06-24",
         "dateModified": "2026-10-08",
@@ -342,6 +342,23 @@
       </div>
     </section>
 
+    <!-- PROMO: AI Visibility Checker -->
+    <section class="promo-wrap" aria-labelledby="promo-h">
+      <div class="wrap">
+        <div class="promo reveal">
+          <div>
+            <span class="badge building"><span class="dot"></span>Free while in development</span>
+            <h2 id="promo-h">Does AI recommend your business?</h2>
+            <p>I'm building a checker that asks ChatGPT, Perplexity, Gemini and Claude what your customers ask, in English and 中文, and shows who gets named.</p>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="/?topic=visibility#contact">Request a free check <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost" href="/projects/ai-visibility-checker/">How it works</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- WORK -->
     <section class="section" id="work">
       <div class="wrap">
@@ -445,7 +462,7 @@
               <h3>Ship to Live</h3>
               <p class="t-role">Founder &amp; Principal Engineer</p>
               <ul>
-                <li>AI agents, automation and AI search optimization for US and Taiwan businesses.</li>
+                <li>Offers AI agents, automation and AI search optimization to US and Taiwan businesses.</li>
                 <li>Built the EQ 360 platform for LEADx / TalentSmartEQ: assessment engine, scoring, admin console and credit system.</li>
                 <li>Shipped two App Store apps solo: Tally (Flutter) and Tadapop (React Native / Expo).</li>
                 <li>Bilingual client websites on GCP Cloud Run with GitHub Actions CI/CD.</li>
@@ -538,8 +555,8 @@
           <p>
             I started as a programmer at TalentSmartEQ and finished there as CTO, running the platform behind
             assessments taken in 26 countries. Since then I've built a gifting widget used by 40 million people,
-            two App Store apps of my own, and AI agents for the businesses I work with. I completed Johns Hopkins'
-            Agentic AI certificate in 2026.
+            and two App Store apps of my own. I completed Johns Hopkins' Agentic AI certificate in 2026, and I'm
+            now building AI agents, starting with my own business.
           </p>
           <p>
             "Ship to live" is the last step of a build: shipping the code to production. Plenty of projects stall
@@ -576,7 +593,7 @@
           </details>
           <details class="faq-item">
             <summary>Can an AI agent answer from my company's own data? Is that safe?</summary>
-            <div class="faq-a"><p>Yes, and that's the most common thing I build. Your documents, policies and records become the source the assistant answers from, with citations back to the original. I set what the agent can read and do, log every action, and keep a person in the loop wherever a mistake would be costly.</p></div>
+            <div class="faq-a"><p>Yes. Retrieval-augmented generation (RAG) makes your documents, policies and records the source the assistant answers from, with citations back to the original. I built RAG and agent projects in the Johns Hopkins program, and the AI Visibility Checker uses the same approach. I set what the agent can read and do, log every action, and keep a person in the loop wherever a mistake would be costly.</p></div>
           </details>
           <details class="faq-item">
             <summary>SEO, AEO, GEO: what's the difference?</summary>
@@ -680,7 +697,7 @@
     "mainEntity": [
       { "@type": "Question", "name": "What services does Ship to Live offer?", "acceptedAnswer": { "@type": "Answer", "text": "AI agents and assistants, workflow automation and integrations, mobile apps (iPhone, Android, Mac), websites and web platforms, search visibility (SEO, AEO and GEO), and rescuing or modernizing stalled and aging projects. One person owns each project from architecture to deployment." } },
       { "@type": "Question", "name": "How does a project start, and how is it priced?", "acceptedAnswer": { "@type": "Answer", "text": "With a free conversation about what you need. Then you get a short written plan with a fixed price, quoted in one email. Larger AI projects start with a two-week pilot on one workflow, running on your real data." } },
-      { "@type": "Question", "name": "Can an AI agent answer from my company's own data? Is that safe?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, and it is the most common thing Yufan Chen builds. Your documents, policies and records become the source the assistant answers from, with citations back to the original. Yufan sets what the agent can read and do, logs every action, and keeps a person in the loop wherever a mistake would be costly." } },
+      { "@type": "Question", "name": "Can an AI agent answer from my company's own data? Is that safe?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Retrieval-augmented generation (RAG) makes your documents, policies and records the source the assistant answers from, with citations back to the original. Yufan Chen built RAG and agent projects in the Johns Hopkins Agentic AI program, and his AI Visibility Checker uses the same approach. Yufan sets what the agent can read and do, logs every action, and keeps a person in the loop wherever a mistake would be costly." } },
       { "@type": "Question", "name": "SEO, AEO, GEO: what's the difference?", "acceptedAnswer": { "@type": "Answer", "text": "SEO gets your link into Google and Bing results. AEO (answer engine optimization) gets your content into featured snippets and AI Overviews. GEO (generative engine optimization) gets your business cited in answers from ChatGPT, Perplexity and Gemini. All three rest on fast pages, clear answers, structured data and an llms.txt layer." } },
       { "@type": "Question", "name": "Who is Yufan Chen?", "acceptedAnswer": { "@type": "Answer", "text": "Yufan Chen is an engineering leader and full-stack engineer based in San Diego, California and Taipei, Taiwan, and the founder of Ship to Live. He was CTO of TalentSmartEQ, built a gifting widget used by 40 million people at Get Real Gifts, and holds a B.S. in Computer Science from UC San Diego and a Certificate in Agentic AI from Johns Hopkins." } },
       { "@type": "Question", "name": "Do you work in Chinese, and where are you based?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Yufan Chen works in English and Traditional Chinese, from San Diego and Taipei, so US and Taiwan clients each get a workable time zone. US projects are contracted through QY LLC; Taiwan projects through 夏裕科技股份有限公司." } }
@@ -688,6 +705,6 @@
   }
   </script>
 
-  <script src="script.js?v=20261008e"></script>
+  <script src="script.js?v=20261008f"></script>
 </body>
 </html>
