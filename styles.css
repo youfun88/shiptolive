@@ -178,7 +178,11 @@ strong { font-weight: 600; color: var(--ink); }
   background: #fff; box-shadow: var(--shadow);
 }
 .profile-head { display: flex; gap: 16px; align-items: center; }
-.profile-head img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; }
+.monogram {
+  flex: none; width: 56px; height: 56px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--ink); color: #fff; font-weight: 700; font-size: 18px; letter-spacing: 0.02em;
+}
 .profile-name { font-weight: 700; font-size: 18px; letter-spacing: -0.01em; }
 .profile-role { color: var(--muted); font-size: 14px; line-height: 1.45; }
 .profile-list { list-style: none; margin-top: 20px; border-top: 1px solid var(--line); }
@@ -326,8 +330,7 @@ html[lang^="zh"] .kicker { letter-spacing: 0.12em; }
 .skills b { display: block; color: var(--ink); font-weight: 600; font-size: 14px; margin-bottom: 2px; }
 
 /* ---------- ABOUT ---------- */
-.about { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: clamp(32px, 6vw, 72px); align-items: start; }
-.about-photo img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 20px; filter: grayscale(100%); }
+.about { max-width: 760px; }
 .about-copy h2 { margin-bottom: 20px; }
 .about-copy p { color: var(--ink-2); font-size: 16.5px; max-width: 62ch; }
 .about-copy p + p { margin-top: 14px; }
@@ -440,8 +443,6 @@ html[lang^="zh"] .kicker { letter-spacing: 0.12em; }
   .stats li:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
   .steps { grid-template-columns: 1fr; }
   .work-grid { grid-template-columns: 1fr; }
-  .about { grid-template-columns: 1fr; }
-  .about-photo { max-width: 200px; }
 }
 
 @media (max-width: 600px) {
