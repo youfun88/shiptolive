@@ -149,7 +149,7 @@ strong { font-weight: 600; color: var(--ink); }
 .nav .btn-sm:hover { background: #26262b; color: #fff; }
 
 /* ---------- HERO ---------- */
-.hero { padding: clamp(48px, 9vw, 112px) 0 clamp(48px, 7vw, 80px); }
+.hero { padding: clamp(32px, 5vw, 64px) 0 clamp(48px, 7vw, 80px); }
 .hero-grid {
   display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   gap: clamp(32px, 6vw, 72px); align-items: center;
