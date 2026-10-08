@@ -42,7 +42,7 @@
   <!-- Inter is self-hosted (see @font-face in styles.css); preloading starts it
        in parallel with the stylesheet instead of after it. -->
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin.woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=20261008b" />
   <script>document.documentElement.classList.add('js')</script>
 
   <!-- Structured data: who I am, what I offer, and the site itself.
@@ -526,9 +526,11 @@
     <!-- ABOUT -->
     <section class="section section-soft" id="about">
       <div class="wrap about">
-        <div class="about-copy reveal">
+        <div class="about-head reveal">
           <p class="kicker">About</p>
           <h2>Hi, I'm Yufan.</h2>
+        </div>
+        <div class="about-copy reveal">
           <p>
             I started as a programmer at TalentSmartEQ and finished there as CTO, running the platform behind
             assessments taken in 26 countries. Since then I've built a gifting widget used by 40 million people,
@@ -681,6 +683,6 @@
   }
   </script>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20261008b"></script>
 </body>
 </html>
