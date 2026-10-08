@@ -32,7 +32,8 @@ What an agent can read and do is scoped up front, every action it takes is logge
 - **Tally** (https://www.tallybillable.com/) — billable-time and invoicing app. iPhone & Mac, Flutter.
 - **Tadapop** (https://tadapop.app/) — social habit tracker with a private leaderboard. iOS & Android, React Native / Expo.
 - **LEADx** (https://leadx.org/) — EQ 360 assessment platform.
-- **Wu Law Group** (https://wulawintl.com/) — cross-border legal consulting website (Taiwan, US, China).
+- **WU LAW GROUP** (https://wulawintl.com/) — bilingual (English / Chinese) website for a New York–licensed attorney in Taipei handling US–Taiwan cross-border inheritance, investment and business law. Built by Ship to Live with SEO, AEO and GEO; the owner reports 20 consultations and 6 paying clients from the site, many from people who found the firm through Google or AI search.
+- **山行接駁 Go Hike** (https://gohike.tw/) — booking website for a Taiwan hiking shuttle service running from Taipei and Taichung to high-mountain trailheads, launched September 2026. Built by Ship to Live with SEO, AEO and GEO: 102 routes and prices and 22 FAQ answers in structured data, plus llms.txt.
 - **Travis Bradberry** (https://travisbradberry.com/) — author site for the coauthor of *Emotional Intelligence 2.0*.
 - **SHX Training** (https://shxtraining.com/) — corporate ESG training website (Taiwan & California).
 - **QY Property** (https://qyproperty.com/) — cross-border real-estate advisory website, San Diego.
