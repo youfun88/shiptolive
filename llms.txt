@@ -24,7 +24,7 @@ What an agent can read and do is scoped up front, every action it takes is logge
 ## Experience
 
 - **Ship to Live** — Founder & Principal Engineer, 2026 – present. Built the EQ 360 platform for LEADx / TalentSmartEQ (assessment engine, scoring, admin console, credit system in PHP/MySQL); shipped two App Store apps solo; bilingual client websites on GCP Cloud Run.
-- **RealGifts, LLC** (https://www.getrealgifts.com/) — Full-Stack Engineer, 2022 – 2026. Maintained and extended the core gifting widget, embedded in a partner platform and used by 40 million members; worked on gift.me, the company's gifting site, including its SEO/GEO.
+- **RealGifts, LLC** (https://www.getrealgifts.com/) — Full-Stack Engineer, 2022 – 2026. Maintained and extended the core gifting widget, embedded in a partner platform and used by 40 million members; worked on gift.me, the company's gifting site.
 - **TalentSmartEQ** (https://www.talentsmarteq.com/) — Programmer to Senior Programmer to Chief Technology Officer (2013 – 2021), 2005 – 2021. Owned architecture, infrastructure and security for 20+ online assessments in 26 countries and up to 26 languages; built the Emotional Intelligence Appraisal for *Emotional Intelligence 2.0*, taken by over 1 million people; enterprise portals for 3M and Adobe; Salesforce REST integration.
 
 ## Products and client work
