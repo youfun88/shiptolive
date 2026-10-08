@@ -108,6 +108,19 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
         ok: function (name) { return 'Thanks, ' + name + "! Your message is on its way — I'll reply within 1–2 days."; },
         err: "Sorry — that didn't go through. Please reach out via the LinkedIn button instead.",
       };
+  // Links like /?topic=visibility#contact (from the AI Visibility Checker page)
+  // arrive with the right option chosen and the message started.
+  const topic = new URLSearchParams(location.search).get('topic');
+  if (topic === 'visibility') {
+    const opt = Array.prototype.find.call(form.topic.options, function (o) { return /GEO/.test(o.text); });
+    if (opt) form.topic.value = opt.value;
+    if (!form.message.value) {
+      form.message.value = ZH
+        ? 'AI 能見度檢測申請\n公司名稱：\n網站：\n城市：\n客戶通常會找我們做什麼：'
+        : 'AI Visibility Check request\nBusiness name:\nWebsite:\nCity:\nWhat customers usually ask us for:';
+    }
+  }
+
   const btn = document.getElementById('send');
   const statusEl = document.getElementById('formStatus');
 

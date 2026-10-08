@@ -38,6 +38,12 @@ What an agent can read and do is scoped up front, every action it takes is logge
 - **QY Property** (https://qyproperty.com/) — cross-border real-estate advisory website, San Diego.
 - **IL Solutions 睿律** (https://ilsolutions.com.tw/) — legal services website, Taiwan.
 
+## Projects
+
+- **AI Visibility Checker** (in development) — https://shiptolive.com/projects/ai-visibility-checker/ — asks ChatGPT, Perplexity, Gemini and Claude the questions a business's customers ask, in English and Chinese, and reports whether the business is named, who is named instead, which sources the AI cites, and what to fix on the website (structured data, llms.txt, AI crawler access). Free early-access checks are available through the contact form.
+- **Lead intake agent** (planned) — drafts replies to new inquiries for human approval.
+- **AI assistant in Tally** (planned) — natural-language time entries and invoice drafts.
+
 ## Skills
 
 AI & agents: RAG, multi-agent orchestration, LangChain, LangGraph, ChromaDB, OpenAI API, Claude Code · Languages: PHP, Python, JavaScript, Dart, SQL, Solidity · Frameworks: Flutter, React Native / Expo, Laravel, REST APIs · Data & cloud: MySQL, MariaDB, GCP Cloud Run, GitHub Actions, Docker, nginx · Search: technical SEO, AEO, GEO, JSON-LD, llms.txt

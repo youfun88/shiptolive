@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Visibility Checker — does AI recommend your business? | Ship to Live</title>
+  <meta name="description" content="The AI Visibility Checker asks ChatGPT, Perplexity, Gemini and Claude the questions your customers ask, in English and Chinese, and shows whether your business is named, who is named instead, and what to fix." />
+  <meta name="author" content="Yufan Chen" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="canonical" href="https://shiptolive.com/projects/ai-visibility-checker/" />
+  <link rel="alternate" hreflang="en" href="https://shiptolive.com/projects/ai-visibility-checker/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://shiptolive.com/zh/projects/ai-visibility-checker/" />
+  <link rel="alternate" hreflang="x-default" href="https://shiptolive.com/projects/ai-visibility-checker/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ship to Live" />
+  <meta property="og:title" content="AI Visibility Checker — does AI recommend your business? | Ship to Live" />
+  <meta property="og:description" content="The AI Visibility Checker asks ChatGPT, Perplexity, Gemini and Claude the questions your customers ask, in English and Chinese, and shows whether your business is named, who is named instead, and what to fix." />
+  <meta property="og:url" content="https://shiptolive.com/projects/ai-visibility-checker/" />
+  <meta property="og:image" content="https://shiptolive.com/assets/img/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin />
+  <link rel="stylesheet" href="/styles.css?v=20261008e" />
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "AI Visibility Checker",
+  "alternateName": "AI 能見度檢測",
+  "url": "https://shiptolive.com/projects/ai-visibility-checker/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "The AI Visibility Checker asks ChatGPT, Perplexity, Gemini and Claude the questions your customers ask, in English and Chinese, and shows whether your business is named, who is named instead, and what to fix.",
+  "inLanguage": "en",
+  "creator": {
+    "@id": "https://shiptolive.com/#yufan"
+  },
+  "publisher": {
+    "@id": "https://shiptolive.com/#service"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Free early-access check"
+  }
+}
+  </script>
+</head>
+<body>
+  <!-- Icon sprite (Lucide, ISC licence). Referenced below with <use href="#i-…">. -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-bot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></symbol>
+      <symbol id="i-flow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+      <symbol id="i-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+      <symbol id="i-out" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-lang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></symbol>
+      <symbol id="i-brief" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="nav" id="top">
+    <div class="wrap nav-inner">
+      <a class="brand" href="/" aria-label="Ship to Live">
+        <img src="/assets/favicon.svg" alt="" width="30" height="30" />
+        <span>
+          <span class="brand-name">Ship to Live</span>
+          <span class="brand-by">by Yufan Chen</span>
+        </span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/#services">Services</a>
+        <a href="/#work">Work</a>
+        <a href="/projects/" aria-current="page">Projects</a>
+        <a href="/#experience">Experience</a>
+        <a href="/#faq">FAQ</a>
+        <span class="lang-switch" role="group" aria-label="Language">
+          <a href="/projects/ai-visibility-checker/" hreflang="en" lang="en" aria-current="true">EN</a>
+          <a href="/zh/projects/ai-visibility-checker/" hreflang="zh-Hant" lang="zh-Hant">中文</a>
+        </span>
+      </nav>
+      <a class="btn btn-primary btn-sm" href="/#contact">Contact</a>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="crumbs"><a href="/projects/">Projects</a> / AI Visibility Checker</p>
+          <p class="status"><span class="dot" aria-hidden="true"></span>In development</p>
+          <h1>Does AI recommend your business?</h1>
+          <p class="lede">Your customers now ask ChatGPT, Perplexity, Gemini and Claude who to hire. The AI Visibility Checker asks those same questions, in English and 中文, and shows whether your business gets named, and who gets named instead.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="/?topic=visibility#contact">Request a free early check <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost" href="#how">How it works</a>
+          </div>
+        </div>
+        <div>
+          <div class="mock" role="img" aria-label="Illustrative example — not real data.">
+            <div class="mock-head"><b>Your Business</b><span>Example report</span></div>
+            <p class="mock-q">› “best cross-border lawyer in Taipei?”</p>
+            <ul>
+            <li><span>ChatGPT</span><span class="yes">✓ Named · #2</span></li>
+            <li><span>Perplexity</span><span class="no">✕ Not named</span></li>
+            <li><span>Gemini</span><span class="yes">✓ Named · #1</span></li>
+            <li><span>Claude</span><span class="no">✕ Not named</span></li>
+            </ul>
+            <div class="mock-foot"><span>Visibility score</span><b>48 / 100</b></div>
+          </div>
+          <p class="mock-note">Illustrative example — not real data.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="wrap split">
+        <div class="section-head" style="margin-bottom:0">
+          <p class="kicker">The problem</p>
+          <h2>The new front page is an AI answer</h2>
+        </div>
+        <div class="prose reveal">
+          <p>More people now skip the search results and ask an AI assistant directly: “Who's the best accountant in San Diego?” The assistant replies with two or three names. If yours isn't one of them, that customer never reaches your website, however good it is.</p>
+          <p>Most businesses have no idea what these assistants say about them. Each engine searches differently, answers change from day to day, and they differ between English and Chinese. You can't fix what you can't see.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">How it works</p>
+          <h2>Four steps</h2>
+        </div>
+        <ol class="steps four">
+          <li class="step reveal">
+            <span class="step-n">1</span>
+            <span class="step-when">You</span>
+            <h3>Tell me about the business</h3>
+            <p>Name, website, what you do and where. That's all it needs.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-n">2</span>
+            <span class="step-when">Ask</span>
+            <h3>Ask like a customer</h3>
+            <p>About ten real customer questions in English and 中文, sent to ChatGPT, Perplexity, Gemini and Claude with live web search. Each one runs several times, because AI answers vary.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-n">3</span>
+            <span class="step-when">Read</span>
+            <h3>Read every answer</h3>
+            <p>Was your business named? In what position? Who was named instead, and which websites did the AI cite as its sources?</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-n">4</span>
+            <span class="step-when">Check</span>
+            <h3>Check your website</h3>
+            <p>Structured data, an llms.txt file, whether AI crawlers are blocked, page speed: the things AI engines rely on to understand and trust a site.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="wrap split">
+        <div class="section-head" style="margin-bottom:0">
+          <p class="kicker">What you get</p>
+          <h2>A report you can act on</h2>
+        </div>
+        <ul class="checklist reveal">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>A visibility score</b>: for each AI engine and each language, so you see where you're strong and where you're invisible.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>The exact questions and answers</b>: word for word, so nothing is a black box.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>Who gets named instead</b>: the competitors AI recommends when it doesn't recommend you.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>The sources AI trusts</b>: the directories, review sites and articles it cites. That's where you need to appear.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>Fixes, ranked by impact</b>: specific changes to your site and listings, most important first.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>A baseline to measure against</b>: run it again after the fixes and see what changed.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Why it matters</p>
+          <h2>Why it helps your business</h2>
+        </div>
+        <ul class="benefits">
+          <li class="benefit reveal"><h3>See what customers see</h3><p>Know what the answer is when someone asks AI for a business like yours, before it costs you customers.</p></li>
+          <li class="benefit reveal"><h3>Know who you're up against</h3><p>AI often recommends businesses you'd never think of as competitors. Now you'll know their names.</p></li>
+          <li class="benefit reveal"><h3>Fix the right things first</h3><p>A ranked list of changes, instead of guessing at “AI SEO” advice.</p></li>
+          <li class="benefit reveal"><h3>Reach both markets</h3><p>Checks English and Chinese separately. Many businesses show up in one language and vanish in the other.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">How to use it</p>
+          <h2>Early access, while I build it</h2>
+        </div>
+        <ol class="steps">
+          <li class="step reveal"><span class="step-n">1</span><h3 style="margin-top:16px">Send your business name and website</h3><p>Use the contact form. Include your city and what customers usually ask you for.</p></li>
+          <li class="step reveal"><span class="step-n">2</span><h3 style="margin-top:16px">I run the check and email you the report</h3><p>Usually within a few days, and free during early access.</p></li>
+          <li class="step reveal"><span class="step-n">3</span><h3 style="margin-top:16px">Fix it yourself, or with me</h3><p>The report is yours either way. If you want help, these fixes are the SEO / AEO / GEO work I do.</p></li>
+        </ol>
+        <p class="cta-note" style="margin-top:20px">A self-serve version, where you enter your business and get the report by email, is coming to this site.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split">
+        <div class="section-head" style="margin-bottom:0">
+          <p class="kicker">Under the hood</p>
+          <h2>Built like production software</h2>
+          <p class="sub">Python and LangGraph, calling each engine's own web-search API so the answers match what real users see. Every response is saved, every run logs its cost, and the scoring will be tested against businesses whose answers are already known.</p>
+        </div>
+        <ol class="roadmap reveal">
+            <li class="done"><span>Ask one engine one question and save the answer</span><small>Done</small></li>
+            <li class=""><span>Generate customer questions in English and 中文</span><small></small></li>
+            <li class=""><span>Add ChatGPT, Perplexity and Gemini in parallel</span><small></small></li>
+            <li class=""><span>Detect mentions, positions and competitors</span><small></small></li>
+            <li class=""><span>Check the website</span><small></small></li>
+            <li class=""><span>Score it and produce the report</span><small></small></li>
+            <li class=""><span>Test against known businesses; track cost</span><small></small></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="wrap cta-band">
+        <h2>Want to know what AI says about your business?</h2>
+        <p class="sub" style="margin-top:16px;max-width:60ch;font-size:17.5px">I'm running free early checks while I build this. Send your business name and website and I'll send you the report.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="/?topic=visibility#contact">Request a free check <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-ghost" href="mailto:yufan@shiptolive.com?subject=AI%20Visibility%20Check">Email me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <span>© <span id="year"></span> Ship to Live · QY LLC · <span lang="zh-Hant">夏裕科技股份有限公司</span></span>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="/#services">Services</a>
+        <a href="/#work">Work</a>
+        <a href="/projects/">Projects</a>
+        <a href="/#experience">Experience</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/zh/" hreflang="zh-Hant" lang="zh-Hant">中文</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="/script.js?v=20261008e"></script>
+</body>
+</html>
