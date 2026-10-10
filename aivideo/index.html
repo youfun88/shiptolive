@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Video in 30 Days | ShipToLive</title>
+<meta name="description" content="A 30-day, 2-hours-a-day plan for learning AI video production with Google Veo 3.1, Kling and a developer pipeline.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f4ef; --surface:#ffffff; --surface-2:#efece4; --ink:#16151a; --muted:#5d5a63;
+  --line:#dcd7cb; --accent:#e4572e; --accent-ink:#ffffff; --accent-soft:#fbe3da;
+  --w1:#2a7f62; --w2:#3a5ba0; --w3:#b5432b; --w4:#7a4bb0; --w5:#1c1b20;
+  --ok:#2a7f62; --radius:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121116; --surface:#1b1a20; --surface-2:#24232b; --ink:#f1efe9; --muted:#a6a2ad;
+    --line:#33313b; --accent:#ff6a3d; --accent-ink:#121116; --accent-soft:#3a2219;
+    --w1:#5cc49c; --w2:#7f9ee0; --w3:#f0846a; --w4:#b48ae6; --w5:#d8d5cf; --ok:#5cc49c;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121116; --surface:#1b1a20; --surface-2:#24232b; --ink:#f1efe9; --muted:#a6a2ad;
+  --line:#33313b; --accent:#ff6a3d; --accent-ink:#121116; --accent-soft:#3a2219;
+  --w1:#5cc49c; --w2:#7f9ee0; --w3:#f0846a; --w4:#b48ae6; --w5:#d8d5cf; --ok:#5cc49c;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:"Bricolage Grotesque",Inter,sans-serif;line-height:1.1;margin:0}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+
+/* hero */
+header.hero{padding:56px 0 32px;border-bottom:1px solid var(--line)}
+.kicker{display:inline-block;font:500 12px/1 "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.hero h1{font-size:clamp(40px,7vw,76px);font-weight:800;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.lede{max-width:640px;font-size:18px;color:var(--muted);margin:18px 0 0}
+.stats{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;min-width:140px}
+.stat b{display:block;font:700 26px/1.1 "Bricolage Grotesque",sans-serif}
+.stat span{font-size:13px;color:var(--muted)}
+
+/* progress */
+.progress-bar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.progress-inner{display:flex;align-items:center;gap:14px;padding:10px 0;flex-wrap:wrap}
+.track{flex:1;min-width:140px;height:8px;background:var(--surface-2);border-radius:99px;overflow:hidden}
+.fill{height:100%;width:0;background:var(--accent);transition:width .3s}
+.progress-inner .label{font:500 13px "JetBrains Mono",monospace;color:var(--muted)}
+.nav-weeks{display:flex;gap:6px;flex-wrap:wrap}
+.nav-weeks a{font:500 12px "JetBrains Mono",monospace;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:99px;padding:4px 10px;background:var(--surface)}
+.nav-weeks a:hover{border-color:var(--accent)}
+
+section{padding:44px 0 8px}
+section > h2{font-size:clamp(28px,4vw,40px);margin-bottom:8px}
+section > p.sub{color:var(--muted);margin:0 0 22px;max-width:680px}
+
+/* signups */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:8px}
+.card .tag{align-self:flex-start;font:500 11px "JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.06em;padding:3px 8px;border-radius:99px}
+.tag.req{background:var(--accent);color:var(--accent-ink)}
+.tag.free{background:var(--surface-2);color:var(--ink)}
+.tag.opt{border:1px dashed var(--muted);color:var(--muted)}
+.card h3{font-size:20px}
+.card .price{font:600 15px Inter,sans-serif}
+.card p{margin:0;font-size:14px;color:var(--muted)}
+.card .when{font-size:13px;color:var(--ink);border-top:1px solid var(--line);padding-top:8px;margin-top:auto}
+
+/* budget table */
+.table-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:520px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line)}
+th{font:500 12px "JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);background:var(--surface-2)}
+tr:last-child td{border-bottom:0}
+.callouts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:14px}
+.callout{background:var(--accent-soft);border-radius:var(--radius);padding:14px 16px;font-size:14px}
+.callout b{display:block;margin-bottom:2px}
+
+/* daily rhythm */
+.rhythm{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface)}
+.rhythm div{padding:16px;border-right:1px solid var(--line)}
+.rhythm div:last-child{border-right:0}
+.rhythm b{font:700 22px "Bricolage Grotesque",sans-serif;display:block}
+.rhythm span{font-size:14px;color:var(--muted)}
+
+/* weeks */
+.week{padding:44px 0 8px}
+.week-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.week-num{font:800 14px "JetBrains Mono",monospace;color:var(--wc);border:2px solid var(--wc);border-radius:8px;padding:2px 8px}
+.week-head h2{font-size:clamp(26px,4vw,36px)}
+.week > p.sub{color:var(--muted);margin:0 0 18px;max-width:700px}
+.days{display:grid;gap:10px}
+.day{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--wc);border-radius:var(--radius);padding:0;overflow:hidden}
+.day.done{opacity:.62}
+.day summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto auto 1fr auto;align-items:center;gap:12px;padding:14px 16px}
+.day summary::-webkit-details-marker{display:none}
+.day .dnum{font:700 13px "JetBrains Mono",monospace;color:var(--wc);min-width:50px}
+.day .dtitle{font-weight:600}
+.day .credits{font:500 12px "JetBrains Mono",monospace;color:var(--muted);white-space:nowrap}
+.check{appearance:none;width:22px;height:22px;border:2px solid var(--line);border-radius:6px;margin:0;cursor:pointer;display:grid;place-items:center;background:var(--surface)}
+.check:checked{background:var(--ok);border-color:var(--ok)}
+.check:checked::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.day .body{padding:0 16px 16px 16px;border-top:1px dashed var(--line)}
+.day .body ol{margin:12px 0 0;padding-left:20px}
+.day .body li{margin:4px 0}
+.day .body li .t{font:500 12px "JetBrains Mono",monospace;color:var(--muted);margin-right:6px}
+.deliv{margin-top:12px;font-size:14px;background:var(--surface-2);border-radius:10px;padding:10px 12px}
+.deliv b{font:500 11px "JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.06em;color:var(--wc);display:block}
+.chev{transition:transform .2s;color:var(--muted)}
+details[open] .chev{transform:rotate(90deg)}
+
+/* prompt formula */
+.formula{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 14px}
+.formula span{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font:500 13px "JetBrains Mono",monospace}
+.formula span.plus{border:0;background:none;padding:6px 0;color:var(--muted)}
+pre.example{background:var(--w5);color:var(--bg);border-radius:var(--radius);padding:16px;white-space:pre-wrap;font:500 13px/1.6 "JetBrains Mono",monospace;margin:0}
+
+footer{margin-top:56px;padding:28px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+.reset{background:none;border:1px solid var(--line);color:var(--muted);border-radius:99px;padding:4px 12px;font:500 12px "JetBrains Mono",monospace;cursor:pointer}
+.reset:hover{border-color:var(--accent);color:var(--accent)}
+
+@media (max-width:600px){
+  .day summary{grid-template-columns:auto 1fr auto;gap:10px}
+  .day .credits{display:none}
+  .rhythm div{border-right:0;border-bottom:1px solid var(--line)}
+  .rhythm div:last-child{border-bottom:0}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">ShipToLive · Learning Log</span>
+    <h1>AI Video in <em>30&nbsp;Days</em></h1>
+    <p class="lede">Two hours a day. From a first 8-second clip to a 60–90 second short drama episode, then an automated pipeline built on the APIs. No course fees, just tool credits.</p>
+    <div class="stats">
+      <div class="stat"><b>60 hrs</b><span>2 hours × 30 days</span></div>
+      <div class="stat"><b>~US$20–30</b><span>per month in tools</span></div>
+      <div class="stat"><b>3 episodes</b><span>finished by Day 30</span></div>
+      <div class="stat"><b>1 pipeline</b><span>script → clips → edit</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="progress-bar">
+  <div class="wrap progress-inner">
+    <span class="label" id="progLabel">0 / 30 days</span>
+    <div class="track"><div class="fill" id="progFill"></div></div>
+    <nav class="nav-weeks" aria-label="Jump to section">
+      <a href="#signup">Sign up</a><a href="#w1">W1</a><a href="#w2">W2</a><a href="#w3">W3</a><a href="#w4">W4</a><a href="#w5">Finale</a>
+    </nav>
+  </div>
+</div>
+
+<main class="wrap">
+
+<section id="signup">
+  <h2>What to sign up for</h2>
+  <p class="sub">Start on free tiers. Pay only once you've used the free credits for a week and know you want to continue.</p>
+  <div class="cards">
+    <div class="card">
+      <span class="tag req">Required · Day 8</span>
+      <h3>Google AI Pro</h3>
+      <div class="price">US$19.99 / month</div>
+      <p>Veo 3.1 in Google Flow (<a href="https://labs.google/flow" target="_blank" rel="noopener">labs.google/flow</a>) and the Gemini app. 1,000 Flow credits a month, plus 50 free credits every day. Also includes Nano Banana for keyframe images.</p>
+      <div class="when">Days 1–7: free 50 credits/day only. Subscribe on Day 8.</div>
+    </div>
+    <div class="card">
+      <span class="tag free">Free · Day 1</span>
+      <h3>Kling AI</h3>
+      <div class="price">Free tier: 66 credits / day</div>
+      <p><a href="https://klingai.com" target="_blank" rel="noopener">klingai.com</a>. A second model to compare against Veo, strong on motion and action. The free tier is enough for practice.</p>
+      <div class="when">Upgrade to Standard (US$10/mo, 660 credits) only if you need it in Week 3.</div>
+    </div>
+    <div class="card">
+      <span class="tag free">Free · Day 1</span>
+      <h3>CapCut</h3>
+      <div class="price">Free</div>
+      <p>Editing, subtitles, and 9:16 / 16:9 exports. DaVinci Resolve (free) is the alternative if you want more control.</p>
+      <div class="when">Used from Day 7 onward.</div>
+    </div>
+    <div class="card">
+      <span class="tag free">Free · Day 22</span>
+      <h3>YouTube channel</h3>
+      <div class="price">Free</div>
+      <p>A separate channel for publishing and measuring retention. Turn on the AI-content disclosure on every upload.</p>
+      <div class="when">Set up in Week 4.</div>
+    </div>
+    <div class="card">
+      <span class="tag opt">Optional · Day 23</span>
+      <h3>Gemini API key</h3>
+      <div class="price">Pay per second of video</div>
+      <p>Via <a href="https://aistudio.google.com" target="_blank" rel="noopener">Google AI Studio</a>. For calling Veo from code in Week 4. Set a budget alert in GCP before your first call.</p>
+      <div class="when">Billed separately from Google AI Pro.</div>
+    </div>
+    <div class="card">
+      <span class="tag opt">Optional · Day 20</span>
+      <h3>ElevenLabs</h3>
+      <div class="price">Free tier</div>
+      <p>Voice-over and dialogue when Veo's built-in audio isn't good enough. Try the free tier before paying.</p>
+      <div class="when">Only if Veo's native voices fall short.</div>
+    </div>
+  </div>
+</section>
+
+<section id="budget">
+  <h2>Credit budget</h2>
+  <p class="sub">Approximate cost per clip on the plans above, as of October 2026. Prices change often, so check the official pages before subscribing.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Tool · mode</th><th>Clip length</th><th>Credits</th><th>≈ Cost</th><th>Use it for</th></tr></thead>
+      <tbody>
+        <tr><td>Veo 3.1 Lite</td><td>8 s</td><td>10</td><td>~NT$6</td><td>Quick tests, prompt experiments</td></tr>
+        <tr><td>Veo 3.1 Fast</td><td>8 s</td><td>20</td><td>~NT$13</td><td>Everyday drafts (your default)</td></tr>
+        <tr><td>Veo 3.1 Quality</td><td>8 s</td><td>100</td><td>~NT$65</td><td>1–2 hero shots per episode</td></tr>
+        <tr><td>Kling 3.0 · 720p</td><td>5 s</td><td>30</td><td>~NT$15</td><td>Action and motion comparisons</td></tr>
+        <tr><td>Kling 3.0 · 1080p + audio</td><td>5 s</td><td>60</td><td>~NT$30</td><td>Final action shots</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callouts">
+    <div class="callout"><b>Set Flow to 1 output per prompt.</b>It defaults to 2 videos per request, which doubles your credit use.</div>
+    <div class="callout"><b>Credits don't roll over.</b>Daily credits reset each day; monthly credits expire. Use the free 50 every day.</div>
+    <div class="callout"><b>Budget 3–5 tries per kept clip.</b>A 60-second episode ≈ 8 clips ≈ 640 Fast credits.</div>
+  </div>
+</section>
+
+<section id="rhythm">
+  <h2>The daily 2 hours</h2>
+  <p class="sub">Same shape every day, so you spend the time making, not deciding what to do.</p>
+  <div class="rhythm">
+    <div><b>20 min</b><span>Learn: one technique, one tutorial or reference video</span></div>
+    <div><b>80 min</b><span>Make: generate, compare, iterate</span></div>
+    <div><b>20 min</b><span>Log: best prompt, what failed, credits spent</span></div>
+  </div>
+  <h3 style="margin-top:26px;font-size:20px">The prompt formula you'll practice all month</h3>
+  <div class="formula">
+    <span>Subject</span><span class="plus">+</span><span>Action</span><span class="plus">+</span><span>Setting</span><span class="plus">+</span><span>Camera</span><span class="plus">+</span><span>Lighting</span><span class="plus">+</span><span>Style</span><span class="plus">+</span><span>Audio</span>
+  </div>
+  <pre class="example">A tired night-shift nurse in her 30s leans against a vending machine,
+staring at her phone and slowly smiling. Empty hospital corridor at 3am.
+Slow dolly-in from medium shot to close-up. Cool fluorescent light with
+a warm glow from the phone screen. Realistic, 35mm film look, shallow
+depth of field. Audio: faint fluorescent hum, distant monitor beeps,
+she whispers "finally."</pre>
+</section>
+
+<div id="weeks"></div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Progress is saved in this browser only. <button class="reset" id="resetBtn" type="button">Reset progress</button></p>
+    <p>Prices and plan details were checked in October 2026 and change often. Confirm on each tool's official pricing page before subscribing.</p>
+    <p>© ShipToLive</p>
+  </div>
+</footer>
+
+<script>
+const WEEKS = [
+  {
+    id:"w1", label:"WEEK 1", color:"var(--w1)", title:"Foundations on free credits",
+    sub:"Learn how the models respond to prompts. Free tiers only: 50 Flow credits and 66 Kling credits a day.",
+    days:[
+      {t:"Set up and first clips", c:"40 Flow · 30 Kling", steps:[
+        ["20m","Create accounts: Google Flow (free), Kling (free), CapCut. Open Flow settings and set outputs to 1 per prompt."],
+        ["20m","Start a prompt log (Google Sheet): date, tool, mode, prompt, result 1–5, credits, notes."],
+        ["60m","Generate 2 Veo Fast clips and 1 Kling clip from simple text prompts. Watch each one three times."],
+        ["20m","Log what surprised you about each result."]],
+        d:"Three clips and a working prompt log."},
+      {t:"Prompt anatomy", c:"40 Flow · 60 Kling", steps:[
+        ["20m","Study the 7-part prompt formula above. Rewrite yesterday's prompts using all 7 parts."],
+        ["80m","Run the same prompt in Veo Fast and Kling. Then change one variable at a time (subject only, then setting only)."],
+        ["20m","Log which parts of the prompt each model actually follows."]],
+        d:"A side-by-side Veo vs Kling comparison."},
+      {t:"Camera language", c:"40 Flow · 60 Kling", steps:[
+        ["20m","Learn shot sizes (wide, medium, close-up) and moves (dolly, pan, tilt, orbit, handheld, crane)."],
+        ["80m","Keep one scene fixed and change only the camera direction across 4 generations."],
+        ["20m","Save the camera phrases that worked reliably into a 'camera cheat sheet' tab in your log."]],
+        d:"Your camera cheat sheet."},
+      {t:"Lighting and visual style", c:"40 Flow · 60 Kling", steps:[
+        ["20m","Learn lighting terms: golden hour, hard/soft light, neon, practical lights, backlight, low-key."],
+        ["80m","Same scene, 4 lighting setups. Then try 3 styles: realistic film, anime, documentary."],
+        ["20m","Add a 'lighting & style' tab to the cheat sheet."]],
+        d:"Lighting and style cheat sheet."},
+      {t:"Sound and dialogue in Veo", c:"50 Flow", steps:[
+        ["20m","Learn how Veo handles audio: put dialogue in quotes, describe ambience and sound effects separately."],
+        ["80m","Make 2 clips with one short line of dialogue each. Check lip-sync, accent and timing."],
+        ["20m","Note which phrasings gave clean dialogue and which caused garbled speech."]],
+        d:"Two talking clips and audio notes."},
+      {t:"Image-to-video", c:"50 Flow · 60 Kling", steps:[
+        ["20m","Learn why pros make a keyframe image first: more control over composition and character."],
+        ["40m","Generate 3 keyframe images with Nano Banana (in Flow or Gemini)."],
+        ["40m","Animate them with Flow 'Frames to Video' and Kling image-to-video. Compare against pure text-to-video."],
+        ["20m","Log which approach gave more control."]],
+        d:"Three animated keyframes."},
+      {t:"First edit and decision day", c:"50 Flow", steps:[
+        ["20m","CapCut basics: timeline, trimming, transitions, auto-captions, 9:16 export."],
+        ["80m","Cut your best 5–6 clips into a 20–30 second reel with music and captions."],
+        ["20m","Decide: still enjoying it? If yes, subscribe to Google AI Pro tomorrow."]],
+        d:"Reel #1 (private)."}
+    ]
+  },
+  {
+    id:"w2", label:"WEEK 2", color:"var(--w2)", title:"Consistency and a 30-second story",
+    sub:"Subscribe to Google AI Pro. The core skill this week is keeping the same character and look across shots.",
+    days:[
+      {t:"Subscribe and build a character", c:"~120 Flow", steps:[
+        ["10m","Subscribe to Google AI Pro. Confirm the 1,000 monthly credits appear in Flow."],
+        ["30m","Design one main character: a written description (age, face, hair, clothing, signature item)."],
+        ["60m","Create a character sheet with Nano Banana: front, side and 3/4 view, same outfit."],
+        ["20m","Save the exact description text. You'll paste it into every prompt."]],
+        d:"Character sheet + locked description."},
+      {t:"Same character, three places", c:"~120 Flow", steps:[
+        ["20m","Learn Flow 'Ingredients to Video' (reference images for character and setting)."],
+        ["80m","Put your character in 3 locations using the reference images. Fast mode."],
+        ["20m","Rate consistency 1–5 for face, outfit and proportions. Note what drifts."]],
+        d:"Three consistent clips."},
+      {t:"Start and end frames", c:"~100 Flow", steps:[
+        ["20m","Learn first-frame / last-frame control for precise transitions."],
+        ["80m","Create 2 transitions: character walks into a room; day changes to night."],
+        ["20m","Log which transitions looked natural."]],
+        d:"Two controlled transitions."},
+      {t:"Extending shots", c:"~120 Flow", steps:[
+        ["20m","Learn Flow's video extension to go beyond 8 seconds."],
+        ["80m","Build one continuous 16–24 second shot by extending a clip twice."],
+        ["20m","Check for visual drift at each extension point."]],
+        d:"One extended continuous shot."},
+      {t:"Write a 30-second micro-story", c:"0 credits", steps:[
+        ["20m","Learn the 3-beat structure: hook (first 3 s), turn, payoff."],
+        ["70m","Write 3 micro-stories with Claude, pick the best, and break it into a 4–5 shot list (shot size, action, camera, line of dialogue)."],
+        ["30m","Write the full prompt for every shot using the 7-part formula and your character description."]],
+        d:"Script + shot list + prompts."},
+      {t:"Produce the 30-second piece", c:"~250 Flow", steps:[
+        ["10m","Make keyframes for any shot that needs exact composition."],
+        ["90m","Generate every shot in Fast mode, 2–4 tries each. Keep the best take."],
+        ["20m","Log credits used per kept shot."]],
+        d:"All shots for the 30-second piece."},
+      {t:"Edit and review", c:"0 credits", steps:[
+        ["80m","Edit: timing, music, sound effects, captions. Export 9:16."],
+        ["20m","Show it to one person. Ask only: 'Where did you get bored?'"],
+        ["20m","Write down the 3 biggest weaknesses to fix next week."]],
+        d:"Finished 30-second story."}
+    ]
+  },
+  {
+    id:"w3", label:"WEEK 3", color:"var(--w3)", title:"A real short-drama episode",
+    sub:"Apply everything to one 60–90 second episode built like the short dramas that perform: a fast hook, a conflict, and a cliffhanger.",
+    days:[
+      {t:"Study what works", c:"0 credits", steps:[
+        ["60m","Watch 10 top-performing short dramas (YouTube Shorts / TikTok). For each, note what happens in the first 3 seconds and how it ends."],
+        ["40m","Write down the patterns: hook types, pacing, shots per minute, subtitle style."],
+        ["20m","Pick your genre and premise for Episode 1."]],
+        d:"Short-drama pattern notes + premise."},
+      {t:"Script Episode 1", c:"0 credits", steps:[
+        ["60m","Write a 60–90 second script with Claude: hook, conflict, twist, cliffhanger. 2 characters max."],
+        ["40m","Shot list of ~10 shots. Mark 1–2 'hero shots' for Quality mode."],
+        ["20m","Write the prompt for every shot. Create a sheet for the second character if needed."]],
+        d:"Script, 10-shot list, prompts."},
+      {t:"Keyframes", c:"~100 Flow", steps:[
+        ["100m","Generate keyframe images for all 10 shots with Nano Banana, using the character references."],
+        ["20m","Check every frame for consistency before spending video credits."]],
+        d:"Ten approved keyframes."},
+      {t:"Generate shots 1–5", c:"~250 Flow", steps:[
+        ["100m","Animate shots 1–5 in Fast mode. Max 4 tries per shot; if it still fails, rewrite the prompt."],
+        ["20m","Log credits and the reason for each retry."]],
+        d:"Shots 1–5 done."},
+      {t:"Shots 6–10 and hero shots", c:"~300 Flow", steps:[
+        ["80m","Animate shots 6–10 in Fast mode."],
+        ["30m","Re-render your 1–2 hero shots in Quality mode (100 credits each)."],
+        ["10m","If an action shot keeps failing in Veo, try it in Kling."]],
+        d:"All 10 shots done."},
+      {t:"Voice and audio pass", c:"~60 Flow", steps:[
+        ["20m","Listen to every line of dialogue. List anything off: voice, timing, accent."],
+        ["80m","Fix problem lines: regenerate in Veo, or record replacement voice-over with ElevenLabs (free tier)."],
+        ["20m","Pick music and sound effects."]],
+        d:"Clean audio for every shot."},
+      {t:"Edit Episode 1", c:"0 credits", steps:[
+        ["90m","Full edit. Burn in subtitles (Traditional Chinese + English). Export 9:16 and a 16:9 version."],
+        ["30m","Watch it with fresh eyes. Cut anything that slows the first 5 seconds."]],
+        d:"Episode 1, finished."}
+    ]
+  },
+  {
+    id:"w4", label:"WEEK 4", color:"var(--w4)", title:"Publish, measure, automate",
+    sub:"Put the work in front of real viewers, then use your developer advantage: turn the manual workflow into a pipeline.",
+    days:[
+      {t:"Launch the channel", c:"0 credits", steps:[
+        ["40m","Create the YouTube channel: name, banner, description. Read YouTube's rules on AI disclosure and reused content."],
+        ["50m","Upload Episode 1 with a strong title, thumbnail and the AI-content label turned on."],
+        ["30m","Write down your baseline: views, average view duration, % watched at 3 seconds."]],
+        d:"Episode 1 is live."},
+      {t:"Veo from code", c:"API · a few clips", steps:[
+        ["20m","Create a Gemini API key in Google AI Studio. Set a GCP budget alert first."],
+        ["80m","Generate one Veo 3.1 Fast clip from a script. Poll the job, download the file, record the actual cost."],
+        ["20m","Compare API cost per clip against Flow credits."]],
+        d:"Your first API-generated clip."},
+      {t:"Pipeline: script to shot list", c:"0 credits", steps:[
+        ["100m","Write a script that turns a story premise into a JSON shot list (shot, camera, prompt, duration, dialogue) with Claude, injecting your character description automatically."],
+        ["20m","Test it on two premises."]],
+        d:"script → shots.json"},
+      {t:"Pipeline: render and assemble", c:"API · ~10 clips", steps:[
+        ["80m","Loop over shots.json: generate each clip via the API with consistent file names."],
+        ["40m","Use ffmpeg to concatenate clips and burn in an .srt subtitle file."]],
+        d:"shots.json → rough-cut.mp4"},
+      {t:"Episode 2 with the pipeline", c:"~300 Flow or API", steps:[
+        ["100m","Produce Episode 2 using the pipeline for the rough cut. Re-do weak shots by hand in Flow."],
+        ["20m","Compare time spent vs Episode 1."]],
+        d:"Episode 2 rough cut."},
+      {t:"Finish and publish Episode 2", c:"~60 Flow", steps:[
+        ["70m","Polish in CapCut: audio, music, captions, hook. Upload."],
+        ["50m","Review Episode 1 analytics: where viewers dropped off. Write 3 changes for Episode 3."]],
+        d:"Episode 2 is live + analytics notes."},
+      {t:"Fix the weakest link", c:"~150 Flow · Kling", steps:[
+        ["20m","Look at your logs: what fails most? (character drift, hands, dialogue, motion)"],
+        ["100m","Spend the whole session improving that one problem. Try Kling for motion-heavy shots."]],
+        d:"A documented fix for your weakest area."}
+    ]
+  },
+  {
+    id:"w5", label:"FINALE", color:"var(--w5)", title:"Capstone and next steps",
+    sub:"Two days to pull it together and decide whether this becomes a channel, a service, or both.",
+    days:[
+      {t:"Capstone: Episode 3 or a client-style demo", c:"Remaining credits", steps:[
+        ["110m","Either produce Episode 3 with all three changes from your analytics, or make a 30-second promo for one of your own products as a portfolio sample."],
+        ["10m","Publish it."]],
+        d:"A finished piece you'd show a client."},
+      {t:"Retrospective", c:"0 credits", steps:[
+        ["40m","Total it up: hours, credits and money spent; cost per finished minute of video."],
+        ["40m","Compare the 3 episodes' retention. What actually moved the numbers?"],
+        ["40m","Decide next month: keep the channel, offer AI video as a service on ShipToLive, upgrade or cancel tools."]],
+        d:"Retrospective + plan for month 2."}
+    ]
+  }
+];
+
+const KEY = "aivideo-30day-progress";
+function load(){ try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ return {}; } }
+function save(s){ try { localStorage.setItem(KEY, JSON.stringify(s)); } catch(e){} }
+let state = load();
+
+const root = document.getElementById("weeks");
+let dayNo = 0;
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+
+WEEKS.forEach(w => {
+  const sec = document.createElement("section");
+  sec.className = "week"; sec.id = w.id; sec.style.setProperty("--wc", w.color);
+  let html = `<div class="week-head"><span class="week-num">${w.label}</span><h2>${esc(w.title)}</h2></div><p class="sub">${esc(w.sub)}</p><div class="days">`;
+  w.days.forEach(d => {
+    dayNo++;
+    const n = dayNo;
+    const done = !!state[n];
+    html += `<details class="day${done?" done":""}" data-day="${n}">
+      <summary>
+        <input type="checkbox" class="check" aria-label="Mark day ${n} done" data-day="${n}" ${done?"checked":""}>
+        <span class="dnum">DAY ${String(n).padStart(2,"0")}</span>
+        <span class="dtitle">${esc(d.t)}</span>
+        <span class="credits">${esc(d.c)} <span class="chev">›</span></span>
+      </summary>
+      <div class="body">
+        <ol>${d.steps.map(s=>`<li><span class="t">${s[0]}</span>${esc(s[1])}</li>`).join("")}</ol>
+        <div class="deliv"><b>Deliverable</b>${esc(d.d)}</div>
+      </div>
+    </details>`;
+  });
+  html += `</div>`;
+  sec.innerHTML = html;
+  root.appendChild(sec);
+});
+
+function updateProgress(){
+  const count = Object.values(state).filter(Boolean).length;
+  document.getElementById("progLabel").textContent = `${count} / ${dayNo} days`;
+  document.getElementById("progFill").style.width = (count / dayNo * 100) + "%";
+}
+root.addEventListener("click", e => {
+  if (e.target.classList.contains("check")) e.stopPropagation();
+});
+root.addEventListener("change", e => {
+  if (!e.target.classList.contains("check")) return;
+  const n = e.target.dataset.day;
+  state[n] = e.target.checked;
+  e.target.closest(".day").classList.toggle("done", e.target.checked);
+  save(state); updateProgress();
+});
+document.getElementById("resetBtn").addEventListener("click", () => {
+  if (!confirm("Reset all progress?")) return;
+  state = {}; save(state);
+  document.querySelectorAll(".check").forEach(c => { c.checked = false; c.closest(".day").classList.remove("done"); });
+  updateProgress();
+});
+updateProgress();
+</script>
+</body>
+</html>
