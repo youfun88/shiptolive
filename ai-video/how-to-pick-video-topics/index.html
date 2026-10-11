@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Pick Video Topics (短影音選題 · 對標選題) | ShipToLive</title>
+<meta name="description" content="How to pick short-video topics that are proven before you film: the 對標選題 method, six places to research demand, a 15-minute topic check, plus the 口播 format, business model, and an AI story-script method.">
+<link rel="canonical" href="https://shiptolive.com/ai-video/how-to-pick-video-topics/">
+<meta property="og:title" content="How to Pick Video Topics: 對標選題 before you film">
+<meta property="og:description" content="Research demand first, then film. Six sources for proven topics and a quick scoring checklist.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shiptolive.com/ai-video/how-to-pick-video-topics/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Pick Video Topics (對標選題)",
+  "inLanguage": ["en", "zh-TW"],
+  "author": {"@type": "Person", "name": "Yufan Chen"},
+  "publisher": {"@type": "Organization", "name": "ShipToLive", "url": "https://shiptolive.com"},
+  "datePublished": "2026-10-11",
+  "mainEntityOfPage": "https://shiptolive.com/ai-video/how-to-pick-video-topics/",
+  "isPartOf": {"@type": "WebPage", "name": "AI Video in 30 Days", "url": "https://shiptolive.com/ai-video/"}
+}
+</script>
+<style>
+:root {
+  --bg:#f6f4ef; --surface:#ffffff; --ink:#16151a; --muted:#5d5a63; --line:#dcd7cb;
+  --accent:#e4572e; --accent-soft:#fbe3da; --good:#2a7f62; --good-soft:#e2f1ea;
+  --warn-soft:#fbf1d9; --code-bg:#efece4; --shadow:none;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:#121116; --surface:#1b1a20; --ink:#f1efe9; --muted:#a6a2ad; --line:#33313b;
+    --accent:#ff6a3d; --accent-soft:#3a2219; --good:#5cc49c; --good-soft:#16271f;
+    --warn-soft:#2a2412; --code-bg:#24232b; --shadow:none;
+  }
+}
+:root[data-theme="dark"] {
+  --bg:#121116; --surface:#1b1a20; --ink:#f1efe9; --muted:#a6a2ad; --line:#33313b;
+  --accent:#ff6a3d; --accent-soft:#3a2219; --good:#5cc49c; --good-soft:#16271f;
+  --warn-soft:#2a2412; --code-bg:#24232b; --shadow:none;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.65 "Inter", "Noto Sans TC", system-ui, sans-serif;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 40px 16px 80px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+.crumb { font-size: 14px; color: var(--muted); margin-bottom: 28px; }
+.crumb a { color: var(--muted); }
+.kicker { font: 500 12px/1 "JetBrains Mono", monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 0 0 18px; }
+h1, h2, h3 { font-family: "Bricolage Grotesque", "Noto Sans TC", Georgia, serif; font-weight: 600; line-height: 1.2; }
+h1 { font-size: clamp(36px, 7vw, 60px); font-weight: 800; margin: 0 0 16px; letter-spacing: -.01em; }
+h1 em, h2 em { color: var(--accent); font-style: normal; }
+h2 { font-size: 28px; margin: 56px 0 12px; }
+h3 { font-size: 19px; margin: 0 0 6px; }
+.zh { font-family: "Noto Sans TC", sans-serif; font-weight: 500; }
+.lede { font-size: 18px; color: var(--muted); margin: 0 0 28px; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 28px 0; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; box-shadow: var(--shadow); }
+.stat b { display: block; font-family: "Bricolage Grotesque", serif; font-size: 24px; }
+.stat span { font-size: 13px; color: var(--muted); }
+.callout { background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; padding: 14px 18px; margin: 20px 0; }
+.callout.good { background: var(--good-soft); border-color: var(--good); }
+.callout.warn { background: var(--warn-soft); border-color: #ca8a04; }
+.callout p { margin: 0; }
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; box-shadow: var(--shadow); }
+.card .tag { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 99px; background: var(--code-bg); color: var(--muted); margin-bottom: 8px; }
+.card.win { border-color: var(--good); }
+.card.win .tag { background: var(--good-soft); color: var(--good); }
+.card ul { margin: 8px 0 0; padding-left: 18px; }
+.card li { margin: 2px 0; }
+.big { font-family: "Bricolage Grotesque", serif; font-size: 30px; font-weight: 600; }
+.tools { display: grid; gap: 12px; margin: 20px 0; counter-reset: tool; }
+.tool { display: grid; grid-template-columns: 40px 1fr; gap: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; box-shadow: var(--shadow); }
+.tool::before { counter-increment: tool; content: counter(tool); width: 34px; height: 34px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-weight: 600; display: grid; place-items: center; }
+.tool p { margin: 4px 0 0; }
+.tool .how { font-size: 15px; color: var(--muted); }
+.table-wrap { overflow-x: auto; margin: 20px 0; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 15px; min-width: 520px; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 13px; color: var(--muted); font-weight: 600; background: var(--code-bg); }
+tr:last-child td { border-bottom: 0; }
+ol.steps { padding-left: 20px; }
+ol.steps li { margin: 8px 0; }
+code { background: var(--code-bg); padding: 1px 6px; border-radius: 5px; font-size: 14px; }
+.checklist { list-style: none; padding: 0; margin: 16px 0; }
+.checklist li { display: flex; gap: 10px; align-items: flex-start; padding: 10px 0; border-bottom: 1px dashed var(--line); }
+.checklist input { margin-top: 5px; accent-color: var(--accent); width: 18px; height: 18px; flex: none; }
+.score { font-size: 14px; color: var(--muted); margin-top: 8px; }
+.back { display: inline-block; margin-top: 40px; font-weight: 500; }
+footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+@media (max-width: 560px) {
+  .stats { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .stat { padding: 10px; }
+  .stat b { font-size: 19px; }
+  .compare { grid-template-columns: 1fr; }
+  .tool { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+<nav class="crumb"><a href="/ai-video/">AI Video in 30 Days</a> › Picking topics</nav>
+
+<p class="kicker">ShipToLive · Learning Log</p>
+<h1>Know it works <em>before</em> you film</h1>
+<p class="lede">How I pick short-video topics now: <span class="zh">對標選題</span>. Find what an audience has already proven it wants, then make your version of it. Making the video is the expensive part; checking demand takes fifteen minutes. Further down: <a href="#secrets">the other three secrets</a> for format, business model, and AI.</p>
+
+<div class="stats">
+  <div class="stat"><b>6</b><span>places to find proven topics</span></div>
+  <div class="stat"><b>15 min</b><span>topic check before filming</span></div>
+  <div class="stat"><b>~50×</b><span>view gap in one real example</span></div>
+</div>
+
+<h2>The idea in one line</h2>
+<p><span class="zh">對標</span> means "benchmark against." Instead of guessing what might go viral, look for topics that have already performed well, more than once and for more than one creator, and make a better or more personal take on them.</p>
+<div class="callout">
+  <p><strong>Not copying.</strong> You borrow the <em>topic</em> and the question it answers, not someone's script, footage, or edit. The underlying logic is the same; your angle, voice, and examples are your own.</p>
+</div>
+
+<h2>A test I ran: <em>two</em> supermarkets</h2>
+<p>Same format, a supermarket haul / <span class="zh">開箱</span> video. Which one gets more views: a <span class="zh">全聯</span> haul or a city'super haul? I guessed city'super, since it's more novel. Then I searched YouTube.</p>
+
+<div class="compare">
+  <div class="card win">
+    <span class="tag">Winner</span>
+    <h3 class="zh">全聯開箱</h3>
+    <div class="big">113萬</div>
+    <span class="score">views on the top result</span>
+    <ul>
+      <li>Next results: 63萬 and 55萬</li>
+      <li>~1,260 stores in Taiwan</li>
+      <li>Over 11 million app members</li>
+    </ul>
+  </div>
+  <div class="card">
+    <span class="tag">Niche</span>
+    <h3>city'super 開箱</h3>
+    <div class="big">1.7萬</div>
+    <span class="score">views on the top result</span>
+    <ul>
+      <li>Next result: about 1,100</li>
+      <li>About 10 stores in Taiwan</li>
+      <li>Premium, imported groceries</li>
+    </ul>
+  </div>
+</div>
+
+<p>The lesson: <strong>audience size wins for reach.</strong> Almost everyone in Taiwan shops at <span class="zh">全聯</span>, so almost everyone can relate to the video. Novelty doesn't beat relevance.</p>
+
+<div class="callout warn">
+  <p><strong>But views aren't revenue.</strong> A smaller, wealthier audience (the city'super crowd) can be worth more if you're selling something premium or looking for leads. Pick by goal: big audience for reach and followers, niche audience for high-value customers.</p>
+</div>
+
+<h2>Six places to <em>find</em> proven topics</h2>
+
+<div class="callout good"><p><strong>Try it on your own product:</strong> the <a href="/tools/topic-finder/">Topic Finder</a> pulls live YouTube and Google searches for what you sell, opens all six places at once, and scores your options.</p></div>
+
+<div class="tools">
+  <div class="tool">
+    <div>
+      <h3>YouTube search</h3>
+      <p>The fastest demand check. Type the topic and look at view counts.</p>
+      <p class="how">Sort by view count. Compare views to the channel's subscriber count: 1M views on a 50K-subscriber channel means the topic carried the video. Check the upload dates, and search the Shorts tab separately.</p>
+    </div>
+  </div>
+  <div class="tool">
+    <div>
+      <h3>Google search</h3>
+      <p>Shows what people actually ask, in their own words.</p>
+      <p class="how">Read the autocomplete suggestions and the "People also ask" box. Each question there is a candidate video title.</p>
+    </div>
+  </div>
+  <div class="tool">
+    <div>
+      <h3>Keyword planning tools <span class="zh">關鍵字規劃工具</span></h3>
+      <p>Puts numbers on demand.</p>
+      <p class="how">Google Ads Keyword Planner (free) gives monthly search volume. Compare two phrasings of the same topic and use the bigger one in your title.</p>
+    </div>
+  </div>
+  <div class="tool">
+    <div>
+      <h3><span class="zh">抖音、小紅書</span></h3>
+      <p>An early look at what's trending.</p>
+      <p class="how">Formats and topics that are hot there often show up in Taiwan's Reels and Shorts later. Look for repeated patterns across many creators, not one lucky video.</p>
+    </div>
+  </div>
+  <div class="tool">
+    <div>
+      <h3>Customer FAQ <span class="zh">客戶 FAQ</span></h3>
+      <p>Questions your clients ask you again and again.</p>
+      <p class="how">If three clients asked it, thousands of strangers are searching it. These videos also bring in the right kind of viewer: future customers.</p>
+    </div>
+  </div>
+  <div class="tool">
+    <div>
+      <h3>Comments <span class="zh">留言選題</span></h3>
+      <p>Viewers tell you the next video.</p>
+      <p class="how">Read the comments on popular videos in your niche, and your own. Questions, complaints, and "can you do X?" requests are free topic research.</p>
+    </div>
+  </div>
+</div>
+
+<h2>The 15-minute <em>topic check</em></h2>
+<p>Run this before spending credits or filming time. Tick what's true; three or more ticks means film it.</p>
+
+<ul class="checklist" id="check">
+  <li><input type="checkbox" id="c1"><label for="c1">At least three videos on this topic have strong views, from <strong>different</strong> creators.</label></li>
+  <li><input type="checkbox" id="c2"><label for="c2">At least one of them comes from a <strong>small</strong> channel (views well above its subscriber count).</label></li>
+  <li><input type="checkbox" id="c3"><label for="c3">Some of the strong videos are from the <strong>last 12 months</strong>, so demand is still alive.</label></li>
+  <li><input type="checkbox" id="c4"><label for="c4">Google autocomplete or Keyword Planner shows people <strong>searching</strong> for it.</label></li>
+  <li><input type="checkbox" id="c5"><label for="c5">I have an <strong>angle</strong> the top videos don't: my experience, a test, a better example.</label></li>
+  <li><input type="checkbox" id="c6"><label for="c6">The audience matches my <strong>goal</strong> (reach, or the customers I want).</label></li>
+</ul>
+<p class="score" id="verdict" aria-live="polite">0 of 6 ticked.</p>
+
+<h2>How I'm <em>using</em> this</h2>
+<p>In my 30-day AI video plan, every episode now starts with this check. Before writing a prompt, I compare phrasings on YouTube and keep the one with proven demand:</p>
+
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Option A</th><th>Option B</th><th>What I'm checking</th></tr></thead>
+  <tbody>
+    <tr><td><code>AI 影片 教學</code></td><td><code>AI 做短影音 賺錢</code></td><td>"How-to" vs "make money" framing</td></tr>
+    <tr><td><code>Veo 3 教學</code></td><td><code>Kling 教學</code></td><td>Which tool people are searching for</td></tr>
+    <tr><td><code>AI 短劇</code></td><td><code>AI 動畫 故事</code></td><td>Format demand for the episode series</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="callout good">
+  <p><strong>Rule for the rest of the month:</strong> no topic gets filmed until it passes the check. The 80 minutes of "make" time each day goes to topics with evidence behind them.</p>
+</div>
+
+<h2 id="secrets">Topic is secret <em>one</em> of four</h2>
+<p>Picking the topic is the first step. The same 對標 logic (benchmark against what already works) applies to the whole process:</p>
+
+<div class="table-wrap">
+<table>
+  <thead><tr><th>#</th><th>Benchmark the…</th><th>In one line</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="zh">選題</span> topic</td><td>Know it will work before you film.</td></tr>
+    <tr><td>2</td><td><span class="zh">形式</span> format</td><td>Create the simplest way: <span class="zh">口播</span>.</td></tr>
+    <tr><td>3</td><td><span class="zh">商模</span> business model</td><td>Turn views into revenue, and keep the people.</td></tr>
+    <tr><td>4</td><td>AI</td><td>Let AI do the hard parts.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Secret 2: copy the <em>cheapest</em> proven format</h2>
+<p>Another A/B test: an on-location vlog (travel, several people, lots of shots) versus one person talking to a phone at night with a strong opening line. The talking-head video got about <strong>750K views</strong>, at a fraction of the effort.</p>
+<p>For most people, the best format is <span class="zh">口播</span>, talking straight to camera. The value is in what you say, so you can make it with a phone in minutes, and you can make it every week. A repeatable format beats a one-off hit.</p>
+
+<div class="compare">
+  <div class="card">
+    <span class="tag">You don't need</span>
+    <ul>
+      <li>Fancy filming techniques</li>
+      <li>Advanced editing skills</li>
+      <li>Lots of time per video</li>
+      <li>A hired strategist or ghost operator</li>
+    </ul>
+  </div>
+  <div class="card win">
+    <span class="tag">You do need</span>
+    <ul>
+      <li>A proven topic (Secret 1)</li>
+      <li>A hook in the first line</li>
+      <li>A phone and a teleprompter</li>
+      <li>To start small and keep going</li>
+    </ul>
+  </div>
+</div>
+
+<div class="callout">
+  <p><strong><span class="zh">萬事起頭難，起頭要簡單。</span></strong> Starting is the hard part, so make the start easy. My first video: 30–60 seconds, phone only, auto-subtitles, no AI clips. Publish it, don't perfect it.</p>
+</div>
+
+<p><strong>Apps:</strong> CapCut (<span class="zh">剪映</span> is the mainland version) for subtitles and quick cuts, and <span class="zh">開拍</span>, which is built for talking-head videos with a teleprompter.</p>
+
+<h2>Secret 3: copy a proven <em>business model</em></h2>
+<p>Don't invent a way to make money; find people like you who already do and copy the structure. Views alone pay little. The money comes after the video:</p>
+<ol class="steps">
+  <li><strong>Video</strong> answers a real question and earns attention.</li>
+  <li><strong>Free resource</strong> in the bio or comments: a checklist, a tool, a page like this one.</li>
+  <li><strong>Own the relationship</strong> (<span class="zh">把人留著</span>): a LINE OA or email list, so you aren't renting your audience from the algorithm.</li>
+  <li><strong>Paid step:</strong> a consultation, a product, or a service.</li>
+</ol>
+<p>To 對標 a business model, pick two or three creators in your field who sell through short video. Look at their bio link, what they give away free, and where the paid offer appears.</p>
+
+<h2>Secret 4: let AI <em>interview</em> you</h2>
+<p>The best demo of the night was a custom GPT that writes story scripts. It doesn't write right away. It interviews you first, so the script is built from your real experience instead of generic AI text. The method:</p>
+
+<ol class="steps">
+  <li><strong>Pick a script type:</strong> a story, a teaching video, or a personal-brand plan.</li>
+  <li><strong>Answer 8 questions by voice.</strong> Talk like you're telling a friend; messy is fine. They map to the arc: where you are now → setback → turning point → second setback → second turning point → lesson.</li>
+  <li><strong>Answer the follow-ups.</strong> It checks what's thin and asks for four details: a concrete <em>scene</em>, the exact <em>inner voice</em> sentence, the <em>lowest point</em>, and one <em>contrast number</em>.</li>
+  <li><strong>Get the one-line arc</strong>, five beats. If it doesn't fit on one line, it won't fit in 90 seconds.</li>
+  <li><strong>Get the script:</strong> one short line per breath, strongest moment first. Read it straight off the teleprompter.</li>
+</ol>
+
+<div class="callout good">
+  <p><strong>What makes the scripts work:</strong> a real quote from the low point, a fake-out where the comeback fails once more, hard numbers instead of "I'm successful," and an ending that turns to the viewer.</p>
+</div>
+
+<a class="back" href="/ai-video/">← Back to AI Video in 30 Days</a>
+
+<footer>
+  <p>Notes and examples in my own words, after attending 陳修平's free <span class="zh">短影音變現課</span> webinar (ShiFu, October 2026). View counts and store numbers were checked in October 2026 and will change.</p>
+  <p>© ShipToLive</p>
+</footer>
+
+</main>
+<script>
+(function () {
+  var KEY = 'stl-topic-check';
+  var boxes = document.querySelectorAll('#check input');
+  var verdict = document.getElementById('verdict');
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+  function update() {
+    var n = 0, state = {};
+    boxes.forEach(function (b) { if (b.checked) n++; state[b.id] = b.checked; });
+    verdict.textContent = n + ' of 6 ticked. ' + (n >= 3 ? 'Good to film.' : 'Keep researching, or pick another topic.');
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+  }
+  boxes.forEach(function (b) {
+    if (saved[b.id]) b.checked = true;
+    b.addEventListener('change', update);
+  });
+  update();
+})();
+</script>
+</body>
+</html>
