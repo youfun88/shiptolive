@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GLP-1 Protein Calculator: How Much Protein on Zepbound, Wegovy or Ozempic</title>
+  <meta name="description" content="Free calculator: find your daily protein target on a GLP-1 medication like Zepbound, Wegovy, Ozempic or Mounjaro, how much to eat at each meal, and a sample day of food that gets you there." />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="canonical" href="https://shiptolive.com/glp1-protein-calculator/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ship to Live" />
+  <meta property="og:title" content="GLP-1 Protein Calculator" />
+  <meta property="og:description" content="How much protein you need each day on Zepbound, Wegovy, Ozempic or Mounjaro, with a sample day of food." />
+  <meta property="og:url" content="https://shiptolive.com/glp1-protein-calculator/" />
+  <meta property="og:image" content="https://shiptolive.com/assets/img/og.png?v=2" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin />
+  <link rel="stylesheet" href="/styles.css?v=20261008h" />
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "GLP-1 Protein Calculator",
+      "url": "https://shiptolive.com/glp1-protein-calculator/",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@id": "https://shiptolive.com/#yufan" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much protein should I eat on Zepbound, Wegovy or Ozempic?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Mayo Clinic suggests 1.2 to 1.6 grams of protein per kilogram of body weight per day for people losing weight on a GLP-1 medication. For a 180 lb (82 kg) person that is about 98 to 131 grams a day. If you have a lot of weight to lose, many clinicians base the number on your goal weight instead of your current weight." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does protein matter on a GLP-1?",
+          "acceptedAnswer": { "@type": "Answer", "text": "GLP-1 medications cut appetite, so many people eat far less protein than before. Studies estimate that 15% to 45% of the weight lost on these drugs can be lean mass, including muscle. Eating enough protein and doing strength training helps keep more of it." }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I use my current weight or my goal weight?",
+          "acceptedAnswer": { "@type": "Answer", "text": "If you have a lot of weight to lose, using your current weight can give a number that is hard to eat, especially with a small appetite. This calculator uses your goal weight when you enter one, which is a common approach. Your doctor or dietitian can tell you which is right for you." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does protein still matter after I stop a GLP-1?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. In the STEP 1 trial extension, people regained about two-thirds of the weight they had lost within a year of stopping semaglutide, and studies suggest the regain is mostly fat. Keeping protein up and continuing strength training helps protect the muscle you kept." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this calculator medical advice?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. It gives a general starting point based on published guidance. If you have kidney disease, are pregnant, or follow a diet set by your care team, ask your doctor or a registered dietitian before changing how much protein you eat." }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5W92T6J80C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5W92T6J80C');
+  </script>
+  <style>
+    .calc { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 20px; align-items: start; }
+    .panel { border: 1px solid var(--line); border-radius: var(--radius); background: #fff; padding: 28px; }
+    .panel h2 { font-size: 20px; letter-spacing: -0.015em; font-weight: 650; }
+    .panel form { display: grid; gap: 18px; margin-top: 20px; }
+    .weight-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: end; }
+    .seg { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 10px; overflow: hidden; height: 48px; }
+    .seg button { border: 0; background: #fff; font: inherit; font-size: 14px; font-weight: 600; padding: 0 14px; cursor: pointer; color: var(--ink-2); }
+    .seg button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+    .hint { font-size: 13px; color: var(--muted); font-weight: 400; }
+    .checks { display: grid; gap: 10px; }
+    .check { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; color: var(--ink-2); cursor: pointer; }
+    .check input { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--ink); flex: none; }
+
+    .result { position: sticky; top: 88px; }
+    .result-main { background: var(--ink); color: #fff; border-radius: var(--radius); padding: 28px; }
+    .result-main .label { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #a1a1aa; }
+    .result-main .big { font-size: clamp(48px, 7vw, 72px); font-weight: 700; letter-spacing: -0.04em; line-height: 1; margin-top: 10px; }
+    .result-main .big small { font-size: .38em; letter-spacing: -0.01em; font-weight: 600; color: #d4d4d8; margin-left: 6px; }
+    .result-main p { margin-top: 12px; color: #c4c4cc; font-size: 15px; }
+    .result-main strong { color: #fff; }
+
+    /* Range bar: where the target sits inside 1.2–1.6 g/kg */
+    .range { margin-top: 22px; }
+    .range-track { position: relative; height: 8px; border-radius: 999px; background: #3f3f46; }
+    .range-mark { position: absolute; top: -5px; width: 18px; height: 18px; border-radius: 50%; background: #fff; border: 3px solid var(--ink); transform: translateX(-50%); transition: left .2s ease; }
+    .range-ends { display: flex; justify-content: space-between; margin-top: 10px; font-family: var(--mono); font-size: 12.5px; color: #a1a1aa; }
+
+    .meals { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2px; margin-top: 16px; border-radius: 12px; overflow: hidden; }
+    .meal { background: #fff; padding: 14px 12px; text-align: center; }
+    .meal b { display: block; font-size: 22px; letter-spacing: -0.02em; }
+    .meal span { font-size: 12.5px; color: var(--muted); }
+    .meals-wrap { margin-top: 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--line); padding: 2px; }
+    .meals-wrap .meals { margin-top: 0; }
+
+    .day { margin-top: 16px; }
+    .day ul { list-style: none; margin-top: 14px; }
+    .day li { display: grid; grid-template-columns: 6.5em minmax(0, 1fr) auto; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 15px; align-items: baseline; }
+    .day li:last-child { border-bottom: 0; }
+    .day .when { font-size: 13px; color: var(--muted); }
+    .day .g { font-family: var(--mono); font-size: 13.5px; font-weight: 600; }
+    .day .total { display: flex; justify-content: space-between; margin-top: 8px; padding-top: 12px; border-top: 2px solid var(--ink); font-weight: 650; }
+    .fine { margin-top: 12px; font-size: 13px; color: var(--muted); }
+
+    .tips { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; list-style: none; }
+    .tips li { border: 1px solid var(--line); border-radius: var(--radius); background: #fff; padding: 22px; }
+    .tips h3 { font-size: 16.5px; font-weight: 650; letter-spacing: -0.01em; }
+    .tips p { margin-top: 6px; font-size: 15px; color: var(--ink-2); }
+
+    .foods { width: 100%; border-collapse: collapse; font-size: 15px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+    .foods th, .foods td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+    .foods th { font-size: 13px; font-weight: 600; color: var(--muted); background: var(--bg-soft); }
+    .foods td:last-child, .foods th:last-child { text-align: right; font-family: var(--mono); }
+
+    .waitlist { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 56px); align-items: center; }
+    .waitlist form { display: grid; gap: 14px; }
+    .waitlist .send-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .section-dark .field label { color: #e4e4e7; }
+    .section-dark .field input, .section-dark .field select { background: #141416; border-color: #3f3f46; color: #fff; }
+    .section-dark .lede, .section-dark p { color: #c4c4cc; }
+    .section-dark .btn-primary { background: #fff; color: var(--ink); }
+    .section-dark .form-status.ok { color: #4ade80; }
+    .section-dark .form-status.err { color: #fca5a5; }
+
+    .faq-list { display: grid; gap: 0; max-width: 780px; }
+    .faq-list details { border-bottom: 1px solid var(--line); }
+    .faq-list summary { cursor: pointer; padding: 20px 0; font-weight: 600; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+    .faq-list summary::after { content: '+'; font-weight: 400; color: var(--muted); }
+    .faq-list details[open] summary::after { content: '−'; }
+    .faq-list details p { padding-bottom: 20px; color: var(--ink-2); }
+    .disclaimer { margin-top: 28px; font-size: 14px; color: var(--muted); max-width: 70ch; }
+
+    @media (max-width: 900px) {
+      .calc, .waitlist { grid-template-columns: minmax(0, 1fr); }
+      .result { position: static; }
+      .tips { grid-template-columns: minmax(0, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .panel, .result-main { padding: 20px; }
+      .meals { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .day li { grid-template-columns: minmax(0, 1fr) auto; }
+      .day .when { grid-column: 1 / -1; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="nav" id="top">
+    <div class="wrap nav-inner">
+      <a class="brand" href="/" aria-label="Ship to Live">
+        <img src="/assets/favicon.svg" alt="" width="30" height="30" />
+        <span>
+          <span class="brand-name">Ship to Live</span>
+          <span class="brand-by">by Yufan Chen</span>
+        </span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="#calculator">Calculator</a>
+        <a href="#foods">Foods</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-primary btn-sm" href="#plan">Get the plan</a>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="kicker">Free tool · For Zepbound, Wegovy, Ozempic &amp; Mounjaro</p>
+        <h1>GLP-1 protein calculator</h1>
+        <p class="lede">GLP-1 medications cut your appetite, and protein is usually the first thing to drop. Find out how much you need each day, how much to eat at each meal, and what a day of food looks like.</p>
+      </div>
+    </section>
+
+    <section class="section" id="calculator" style="padding-top:0">
+      <div class="wrap calc">
+        <div class="panel">
+          <h2>Your details</h2>
+          <form id="calcForm" novalidate>
+            <div class="weight-row">
+              <div class="field">
+                <label for="weight">Current weight</label>
+                <input id="weight" name="weight" type="number" inputmode="decimal" min="60" max="700" step="any" value="200" required />
+              </div>
+              <div class="seg" role="group" aria-label="Weight unit">
+                <button type="button" data-unit="lb" aria-pressed="true">lb</button>
+                <button type="button" data-unit="kg" aria-pressed="false">kg</button>
+              </div>
+            </div>
+            <div class="field">
+              <label for="goal">Goal weight <span class="hint">(optional)</span></label>
+              <input id="goal" name="goal" type="number" inputmode="decimal" min="60" max="700" step="any" placeholder="e.g. 160" />
+              <span class="hint">If you have a lot to lose, we base protein on your goal weight. That's a common approach and gives a number you can actually eat.</span>
+            </div>
+            <div class="field">
+              <label for="stage">Where you are</label>
+              <select id="stage" name="stage">
+                <option value="losing">On a GLP-1, still losing weight</option>
+                <option value="maintaining">On a GLP-1, at my goal</option>
+                <option value="stopping">Stopping or recently stopped</option>
+              </select>
+            </div>
+            <div class="checks">
+              <label class="check"><input type="checkbox" id="lifting" /> I do strength training, or plan to</label>
+              <label class="check"><input type="checkbox" id="older" /> I'm 65 or older</label>
+            </div>
+          </form>
+        </div>
+
+        <div class="result" aria-live="polite">
+          <div class="result-main">
+            <div class="label">Aim for each day</div>
+            <div class="big"><span id="target">125</span><small>g protein</small></div>
+            <p id="rangeText">Your range is <strong>109–145 g</strong> a day.</p>
+            <div class="range" aria-hidden="true">
+              <div class="range-track"><span class="range-mark" id="mark" style="left:50%"></span></div>
+              <div class="range-ends"><span id="lowEnd">1.2 g/kg</span><span id="highEnd">1.6 g/kg</span></div>
+            </div>
+            <p id="stageNote"></p>
+          </div>
+
+          <div class="meals-wrap">
+            <div class="meals" id="meals"></div>
+          </div>
+
+          <div class="panel day">
+            <h2>A sample day that gets you there</h2>
+            <ul id="dayList"></ul>
+            <div class="total"><span>Total</span><span id="dayTotal">0 g</span></div>
+            <p class="fine">Protein amounts are approximate. Check the label on what you buy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Why it matters</p>
+          <h2>On a GLP-1, the scale doesn't tell you what you're losing</h2>
+          <p class="sub">Studies estimate that 15% to 45% of the weight lost on these drugs can be lean mass, including muscle. Protein and strength training are the two things that help keep it.</p>
+        </div>
+        <ul class="tips">
+          <li class="reveal"><h3>Eat protein first</h3><p>With a small appetite, start each meal with the protein. If you get full, the vegetables and carbs are what get left behind.</p></li>
+          <li class="reveal"><h3>Spread it out</h3><p>Four smaller protein portions are easier than three big meals, especially on the days right after your shot.</p></li>
+          <li class="reveal"><h3>Drink some of it</h3><p>Shakes, milk and drinkable yogurt are easier when solid food feels like too much. A ready-made shake is often 25–30 g.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="foods">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Quick reference</p>
+          <h2>Easy high-protein foods</h2>
+          <p class="sub">Small portions with a lot of protein work best when your appetite is low.</p>
+        </div>
+        <table class="foods">
+          <thead><tr><th>Food</th><th>Portion</th><th>Protein</th></tr></thead>
+          <tbody id="foodTable"></tbody>
+        </table>
+        <p class="fine">Approximate values. Brands vary, so check labels.</p>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="plan">
+      <div class="wrap waitlist">
+        <div>
+          <p class="kicker">Coming soon</p>
+          <h2>Stopping a GLP-1? Get the 12-week plan</h2>
+          <p class="lede">Most people regain weight within a year of stopping. We're building a 12-week plan for that window: protein, short strength workouts, and weekly check-ins that warn you early if weight starts coming back. Join the list and we'll send it when it's ready.</p>
+        </div>
+        <form id="waitForm" novalidate>
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true" />
+          <div class="field">
+            <label for="wEmail">Email</label>
+            <input id="wEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+          </div>
+          <div class="field">
+            <label for="wStage">Where you are</label>
+            <select id="wStage" name="stage">
+              <option>On a GLP-1, still losing weight</option>
+              <option>On a GLP-1, at my goal</option>
+              <option>Stopping or recently stopped</option>
+              <option>Thinking about starting</option>
+            </select>
+          </div>
+          <div class="send-row">
+            <button class="btn btn-primary" type="submit" id="wSend">Join the list</button>
+            <span class="form-status" id="wStatus" role="status"></span>
+          </div>
+          <p class="fine" style="color:#a1a1aa">One email when the plan is ready. No spam, and we never share your email.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">FAQ</p>
+          <h2>Common questions</h2>
+        </div>
+        <div class="faq-list">
+          <details><summary>How much protein should I eat on Zepbound, Wegovy or Ozempic?</summary><p>Mayo Clinic suggests 1.2 to 1.6 grams of protein per kilogram of body weight per day for people losing weight on a GLP-1 medication. For a 180 lb (82 kg) person that is about 98 to 131 grams a day. If you have a lot of weight to lose, many clinicians base the number on your goal weight instead of your current weight.</p></details>
+          <details><summary>Why does protein matter on a GLP-1?</summary><p>GLP-1 medications cut appetite, so many people eat far less protein than before. Studies estimate that 15% to 45% of the weight lost on these drugs can be lean mass, including muscle. Eating enough protein and doing strength training helps keep more of it.</p></details>
+          <details><summary>Should I use my current weight or my goal weight?</summary><p>If you have a lot of weight to lose, using your current weight can give a number that is hard to eat, especially with a small appetite. This calculator uses your goal weight when you enter one, which is a common approach. Your doctor or dietitian can tell you which is right for you.</p></details>
+          <details><summary>Does protein still matter after I stop a GLP-1?</summary><p>Yes. In the STEP 1 trial extension, people regained about two-thirds of the weight they had lost within a year of stopping semaglutide, and studies suggest the regain is mostly fat. Keeping protein up and continuing strength training helps protect the muscle you kept.</p></details>
+          <details><summary>Is this calculator medical advice?</summary><p>No. It gives a general starting point based on published guidance. If you have kidney disease, are pregnant, or follow a diet set by your care team, ask your doctor or a registered dietitian before changing how much protein you eat.</p></details>
+        </div>
+        <p class="disclaimer">This tool is for general information and is not medical advice. It does not give advice about your medication or dose. Sources: <a href="https://store.mayoclinic.com/education/glp-1-medications-and-muscle-loss-what-to-know-about-nutrition-and-supplements/" rel="noopener">Mayo Clinic</a>, <a href="https://www.medscape.com/viewarticle/trevogrumab-curbs-muscle-loss-glp-1-aids-regain-after-2026a10011r8" rel="noopener">Medscape</a>, <a href="https://www.sciencedirect.com/science/article/pii/S2589537026002403" rel="noopener">eClinicalMedicine review</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <span>© <span id="year"></span> Ship to Live · QY LLC</span>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="#calculator">Calculator</a>
+        <a href="#faq">FAQ</a>
+        <a href="/">About Ship to Live</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    // Approximate protein per portion. Shown in the table and used to build the sample day.
+    var FOODS = [
+      { id: 'yogurt',  name: 'Plain Greek yogurt (nonfat)', portion: '1 cup', g: 23 },
+      { id: 'chicken', name: 'Chicken breast, cooked',      portion: '4 oz',  g: 35 },
+      { id: 'shake',   name: 'Ready-to-drink protein shake', portion: '1 bottle', g: 30 },
+      { id: 'salmon',  name: 'Salmon, cooked',              portion: '4 oz',  g: 25 },
+      { id: 'tuna',    name: 'Canned tuna, drained',        portion: '1 can (5 oz)', g: 25 },
+      { id: 'tofu',    name: 'Firm tofu',                   portion: '1/2 cup', g: 20 },
+      { id: 'lentils', name: 'Lentils, cooked',             portion: '1 cup', g: 18 },
+      { id: 'cottage', name: 'Cottage cheese (low-fat)',    portion: '1/2 cup', g: 13 },
+      { id: 'eggs',    name: 'Eggs',                        portion: '2 large', g: 12 },
+      { id: 'cheese',  name: 'String cheese',               portion: '1 stick', g: 7 }
+    ];
+    var byId = {}; FOODS.forEach(function (f) { byId[f.id] = f; });
+
+    // Order the sample day fills in, stopping once the target is reached.
+    var DAY = [
+      ['Breakfast', 'yogurt'], ['Lunch', 'chicken'], ['Dinner', 'salmon'],
+      ['Snack', 'shake'], ['Snack', 'cottage'], ['Breakfast', 'eggs'],
+      ['Snack', 'tuna'], ['Dinner', 'lentils']
+    ];
+    // Small top-ups for the last few grams, smallest first.
+    var TOPUPS = [['Snack', 'cheese'], ['Breakfast', 'eggs'], ['Snack', 'cottage']];
+
+    var form = document.getElementById('calcForm');
+    var unit = 'lb';
+    var LB = 2.20462;
+    var tracked = true; // set false after first render so only real use counts
+
+    function round5(n) { return Math.round(n / 5) * 5; }
+
+    function update() {
+      var w = parseFloat(form.weight.value);
+      var goal = parseFloat(form.goal.value);
+      if (!(w > 0)) return;
+      var kg = unit === 'lb' ? w / LB : w;
+      var goalKg = goal > 0 ? (unit === 'lb' ? goal / LB : goal) : 0;
+      // Base on goal weight when it's lower than current weight.
+      var refKg = goalKg > 0 && goalKg < kg ? goalKg : kg;
+      var usingGoal = refKg !== kg;
+
+      var stage = form.stage.value;
+      var perKg = 1.4;
+      if (document.getElementById('lifting').checked) perKg += 0.1;
+      if (document.getElementById('older').checked) perKg += 0.1;
+      if (stage === 'stopping') perKg += 0.1;
+      perKg = Math.min(perKg, 1.6);
+
+      var low = Math.round(refKg * 1.2), high = Math.round(refKg * 1.6);
+      var target = Math.min(Math.max(round5(refKg * perKg), low), high);
+
+      document.getElementById('target').textContent = target;
+      document.getElementById('rangeText').innerHTML =
+        'Your range is <strong>' + low + '–' + high + ' g</strong> a day, based on ' +
+        (usingGoal ? 'your goal weight' : 'your current weight') + ' (' + Math.round(unit === 'lb' ? refKg * LB : refKg) + ' ' + unit + ').';
+      document.getElementById('mark').style.left = ((perKg - 1.2) / 0.4 * 100) + '%';
+
+      var notes = {
+        losing: 'While you\'re losing weight, protein helps make sure more of what you lose is fat, not muscle.',
+        maintaining: 'At your goal, steady protein and strength training help you keep the muscle you have.',
+        stopping: 'After stopping, appetite usually comes back. Higher protein helps you feel full and protect muscle while your body adjusts.'
+      };
+      document.getElementById('stageNote').textContent = notes[stage];
+
+      // Four portions: breakfast, lunch, snack, dinner.
+      var per = Math.round(target / 4);
+      document.getElementById('meals').innerHTML = ['Breakfast', 'Lunch', 'Snack', 'Dinner'].map(function (m) {
+        return '<div class="meal"><b>' + per + ' g</b><span>' + m + '</span></div>';
+      }).join('');
+
+      var total = 0, rows = [], used = {};
+      function add(slot) {
+        var f = byId[slot[1]];
+        total += f.g; used[f.id] = true;
+        rows.push('<li><span class="when">' + slot[0] + '</span><span>' + f.name + ', ' + f.portion + '</span><span class="g">' + f.g + ' g</span></li>');
+      }
+      // Big portions while the gap is large, then the smallest top-up that closes it.
+      for (var i = 0; i < DAY.length && target - total > 15; i++) add(DAY[i]);
+      var guard = 0;
+      while (target - total > 4 && guard++ < 6) {
+        var gap = target - total, pick = null;
+        for (var k = 0; k < TOPUPS.length; k++) {
+          if (byId[TOPUPS[k][1]].g >= gap - 4 && !used[TOPUPS[k][1]]) { pick = TOPUPS[k]; break; }
+        }
+        add(pick || TOPUPS[TOPUPS.length - 1]);
+      }
+      document.getElementById('dayList').innerHTML = rows.join('');
+      document.getElementById('dayTotal').textContent = total + ' g';
+
+      if (!tracked && typeof gtag === 'function') {
+        tracked = true;
+        gtag('event', 'protein_calc_used', { stage: stage });
+      }
+    }
+
+    document.querySelectorAll('.seg button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (b.dataset.unit === unit) return;
+        var factor = b.dataset.unit === 'kg' ? 1 / LB : LB;
+        ['weight', 'goal'].forEach(function (n) {
+          var v = parseFloat(form[n].value);
+          if (v > 0) form[n].value = Math.round(v * factor);
+        });
+        unit = b.dataset.unit;
+        document.querySelectorAll('.seg button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+        form.goal.placeholder = unit === 'lb' ? 'e.g. 160' : 'e.g. 73';
+        update();
+      });
+    });
+    form.addEventListener('input', update);
+    form.addEventListener('change', update);
+    form.addEventListener('submit', function (e) { e.preventDefault(); });
+
+    document.getElementById('foodTable').innerHTML = FOODS.map(function (f) {
+      return '<tr><td>' + f.name + '</td><td>' + f.portion + '</td><td>' + f.g + ' g</td></tr>';
+    }).join('');
+
+    update();
+    tracked = false;
+
+    // Waitlist: same FormSubmit relay as the contact form on the home page.
+    var wf = document.getElementById('waitForm');
+    var ws = document.getElementById('wStatus');
+    var wb = document.getElementById('wSend');
+    wf.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (wf._honey.value) { ws.textContent = "Thanks, you're on the list."; ws.className = 'form-status ok'; return; }
+      var email = wf.email.value.trim();
+      if (!/^\S+@\S+\.\S+$/.test(email)) { ws.textContent = 'Please enter a valid email.'; ws.className = 'form-status err'; return; }
+      wb.disabled = true; ws.textContent = 'Sending…'; ws.className = 'form-status';
+      fetch('https://formsubmit.co/ajax/yufan@shiptolive.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          email: email, _replyto: email, stage: wf.stage.value,
+          target_g: document.getElementById('target').textContent,
+          _subject: 'GLP-1 plan waitlist: ' + wf.stage.value, _template: 'table'
+        })
+      })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function () {
+          wf.reset(); ws.textContent = "Thanks, you're on the list."; ws.className = 'form-status ok';
+          if (typeof gtag === 'function') gtag('event', 'glp1_waitlist_signup');
+        })
+        .catch(function () { ws.textContent = "Sorry, that didn't go through. Please try again."; ws.className = 'form-status err'; })
+        .finally(function () { wb.disabled = false; });
+    });
+  })();
+  </script>
+  <script src="/script.js?v=20261008f"></script>
+</body>
+</html>
