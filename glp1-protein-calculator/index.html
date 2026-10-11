@@ -465,26 +465,35 @@
     update();
     tracked = false;
 
-    // Waitlist: same FormSubmit relay as the contact form on the home page.
+    // Waitlist: saved to the shiptolive Supabase project, which also emails the
+    // owner. If that call fails, FormSubmit (same relay as the home page contact
+    // form) still gets the sign-up to the inbox, so none is lost.
+    var WAITLIST_API = 'https://jzvyyxcwsebftskfcimp.supabase.co/functions/v1/glp1-waitlist';
     var wf = document.getElementById('waitForm');
     var ws = document.getElementById('wStatus');
     var wb = document.getElementById('wSend');
+    function post(url, data) {
+      return fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(data)
+      }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
+    }
     wf.addEventListener('submit', function (e) {
       e.preventDefault();
       if (wf._honey.value) { ws.textContent = "Thanks, you're on the list."; ws.className = 'form-status ok'; return; }
       var email = wf.email.value.trim();
       if (!/^\S+@\S+\.\S+$/.test(email)) { ws.textContent = 'Please enter a valid email.'; ws.className = 'form-status err'; return; }
+      var stage = wf.stage.value;
+      var target = parseInt(document.getElementById('target').textContent, 10) || null;
       wb.disabled = true; ws.textContent = 'Sending…'; ws.className = 'form-status';
-      fetch('https://formsubmit.co/ajax/yufan@shiptolive.com', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          email: email, _replyto: email, stage: wf.stage.value,
-          target_g: document.getElementById('target').textContent,
-          _subject: 'GLP-1 plan waitlist: ' + wf.stage.value, _template: 'table'
+      post(WAITLIST_API, { email: email, stage: stage, target_g: target, source: location.pathname })
+        .catch(function () {
+          return post('https://formsubmit.co/ajax/yufan@shiptolive.com', {
+            email: email, _replyto: email, stage: stage, target_g: target,
+            _subject: 'GLP-1 plan waitlist (backup): ' + stage, _template: 'table'
+          });
         })
-      })
-        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
         .then(function () {
           wf.reset(); ws.textContent = "Thanks, you're on the list."; ws.className = 'form-status ok';
           if (typeof gtag === 'function') gtag('event', 'glp1_waitlist_signup');
