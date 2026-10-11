@@ -57,6 +57,15 @@ header.hero{padding:56px 0 32px;border-bottom:1px solid var(--line)}
 .nav-weeks a:hover{border-color:var(--accent)}
 
 section{padding:44px 0 8px}
+.sublinks{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding-top:32px}
+.sublink{display:flex;flex-direction:column;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;text-decoration:none;color:var(--ink);transition:border-color .15s ease,transform .15s ease}
+.sublink:hover{border-color:var(--accent);transform:translateY(-1px)}
+.sublink b{font-family:"Bricolage Grotesque",Inter,sans-serif;font-size:20px;line-height:1.25}
+.sublink > span:not(.sublink-tag):not(.sublink-go){color:var(--muted);font-size:15px}
+.sublink-tag{align-self:flex-start;font:500 11px "JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.06em;padding:3px 8px;border-radius:99px;background:var(--accent-soft);color:var(--accent)}
+.sublink-tag.tool{background:var(--surface-2);color:var(--ink)}
+.sublink-go{margin-top:auto;padding-top:6px;font-weight:600;color:var(--accent);font-size:15px}
+@media (max-width:640px){.sublinks{grid-template-columns:1fr}}
 section > h2{font-size:clamp(28px,4vw,40px);margin-bottom:8px}
 section > p.sub{color:var(--muted);margin:0 0 22px;max-width:680px}
 
@@ -166,6 +175,21 @@ footer{margin-top:56px;padding:28px 0 48px;border-top:1px solid var(--line);colo
 
 <main class="wrap">
 
+<nav class="sublinks" aria-label="Lessons and tools">
+  <a class="sublink" href="/aivideo/how-to-pick-video-topics/">
+    <span class="sublink-tag">Lesson</span>
+    <b>How to pick video topics <span class="zh">對標選題</span></b>
+    <span>Know a topic works before you film: six places to check demand, a 15-minute topic check, plus format, business model and AI.</span>
+    <span class="sublink-go">Read the lesson →</span>
+  </a>
+  <a class="sublink" href="/aivideo/topic-finder/">
+    <span class="sublink-tag tool">Tool</span>
+    <b>Topic Finder <span class="zh">對標選題</span></b>
+    <span>Say or type what you sell and your video idea. Get live YouTube and Google searches and pick the topic with proven demand.</span>
+    <span class="sublink-go">Open the tool →</span>
+  </a>
+</nav>
+
 <section id="signup">
   <h2>What to sign up for</h2>
   <p class="sub">Start on free tiers. Pay only once you've used the free credits for a week and know you want to continue.</p>
@@ -235,12 +259,6 @@ footer{margin-top:56px;padding:28px 0 48px;border-top:1px solid var(--line);colo
     <div class="callout"><b>Credits don't roll over.</b>Daily credits reset each day; monthly credits expire. Use the free 50 every day.</div>
     <div class="callout"><b>Budget 3–5 tries per kept clip.</b>A 60-second episode ≈ 8 clips ≈ 640 Fast credits.</div>
   </div>
-</section>
-
-<section id="lessons">
-  <h2>Lesson notes</h2>
-  <p class="sub">Before you film anything: <a href="/aivideo/how-to-pick-video-topics/">How to pick video topics (對標選題)</a>, plus the 口播 format, business model, and an AI story-script method.</p>
-  <p class="sub">Tool: <a href="/aivideo/topic-finder/">Topic Finder (對標選題)</a>. Enter what you sell and your video idea, and find the topic with proven demand.</p>
 </section>
 
 <section id="rhythm">
