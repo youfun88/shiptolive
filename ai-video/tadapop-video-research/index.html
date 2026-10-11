@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tadapop Video Research: What's Popular on YouTube | ShipToLive</title>
+<meta name="description" content="對標選題 for Tadapop, a habit tracker you use with friends: which YouTube searches have proven demand, which to skip, and the first video we're making from it.">
+<link rel="canonical" href="https://shiptolive.com/ai-video/tadapop-video-research/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#f6f4ef; --surface:#ffffff; --ink:#16151a; --muted:#5d5a63; --line:#dcd7cb;
+  --accent:#e4572e; --accent-soft:#fbe3da; --good:#2a7f62; --good-soft:#e2f1ea;
+  --warn-soft:#fbf1d9; --code-bg:#efece4; --shadow:none;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:#121116; --surface:#1b1a20; --ink:#f1efe9; --muted:#a6a2ad; --line:#33313b;
+    --accent:#ff6a3d; --accent-soft:#3a2219; --good:#5cc49c; --good-soft:#16271f;
+    --warn-soft:#2a2412; --code-bg:#24232b; --shadow:none;
+  }
+}
+:root[data-theme="dark"] {
+  --bg:#121116; --surface:#1b1a20; --ink:#f1efe9; --muted:#a6a2ad; --line:#33313b;
+  --accent:#ff6a3d; --accent-soft:#3a2219; --good:#5cc49c; --good-soft:#16271f;
+  --warn-soft:#2a2412; --code-bg:#24232b; --shadow:none;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.65 "Inter", "Noto Sans TC", system-ui, sans-serif;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 40px 16px 80px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+.crumb { font-size: 14px; color: var(--muted); margin-bottom: 28px; }
+.crumb a { color: var(--muted); }
+.kicker { font: 500 12px/1 "JetBrains Mono", monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 0 0 18px; }
+h1, h2, h3 { font-family: "Bricolage Grotesque", "Noto Sans TC", Georgia, serif; font-weight: 600; line-height: 1.2; }
+h1 { font-size: clamp(36px, 7vw, 60px); font-weight: 800; margin: 0 0 16px; letter-spacing: -.01em; }
+h1 em, h2 em { color: var(--accent); font-style: normal; }
+h2 { font-size: 28px; margin: 56px 0 12px; }
+h3 { font-size: 19px; margin: 0 0 6px; }
+.zh { font-family: "Noto Sans TC", sans-serif; font-weight: 500; }
+.lede { font-size: 18px; color: var(--muted); margin: 0 0 28px; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 28px 0; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; box-shadow: var(--shadow); }
+.stat b { display: block; font-family: "Bricolage Grotesque", serif; font-size: 24px; }
+.stat span { font-size: 13px; color: var(--muted); }
+.callout { background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; padding: 14px 18px; margin: 20px 0; }
+.callout.good { background: var(--good-soft); border-color: var(--good); }
+.callout.warn { background: var(--warn-soft); border-color: #ca8a04; }
+.callout p { margin: 0; }
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; box-shadow: var(--shadow); }
+.card .tag { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 99px; background: var(--code-bg); color: var(--muted); margin-bottom: 8px; }
+.card.win { border-color: var(--good); }
+.card.win .tag { background: var(--good-soft); color: var(--good); }
+.card ul { margin: 8px 0 0; padding-left: 18px; }
+.card li { margin: 2px 0; }
+.big { font-family: "Bricolage Grotesque", serif; font-size: 30px; font-weight: 600; }
+.tools { display: grid; gap: 12px; margin: 20px 0; counter-reset: tool; }
+.tool { display: grid; grid-template-columns: 40px 1fr; gap: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; box-shadow: var(--shadow); }
+.tool::before { counter-increment: tool; content: counter(tool); width: 34px; height: 34px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-weight: 600; display: grid; place-items: center; }
+.tool p { margin: 4px 0 0; }
+.tool .how { font-size: 15px; color: var(--muted); }
+.table-wrap { overflow-x: auto; margin: 20px 0; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 15px; min-width: 520px; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 13px; color: var(--muted); font-weight: 600; background: var(--code-bg); }
+tr:last-child td { border-bottom: 0; }
+ol.steps { padding-left: 20px; }
+ol.steps li { margin: 8px 0; }
+code { background: var(--code-bg); padding: 1px 6px; border-radius: 5px; font-size: 14px; }
+.checklist { list-style: none; padding: 0; margin: 16px 0; }
+.checklist li { display: flex; gap: 10px; align-items: flex-start; padding: 10px 0; border-bottom: 1px dashed var(--line); }
+.checklist input { margin-top: 5px; accent-color: var(--accent); width: 18px; height: 18px; flex: none; }
+.score { font-size: 14px; color: var(--muted); margin-top: 8px; }
+.back { display: inline-block; margin-top: 40px; font-weight: 500; }
+footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+@media (max-width: 560px) {
+  .stats { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .stat { padding: 10px; }
+  .stat b { font-size: 19px; }
+  .compare { grid-template-columns: 1fr; }
+  .tool { grid-template-columns: 1fr; }
+}
+</style>
+<style>
+tr.win td { background: var(--good-soft); }
+.idea-list { counter-reset: idea; list-style: none; padding: 0; margin: 16px 0; display: grid; gap: 10px; }
+.idea-list li { counter-increment: idea; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px 14px 52px; position: relative; }
+.idea-list li::before { content: counter(idea); position: absolute; left: 14px; top: 14px; width: 26px; height: 26px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-weight: 600; display: grid; place-items: center; font-size: 14px; }
+.idea-list li.chosen { border: 2px solid var(--good); }
+.idea-list .pick { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 99px; background: var(--good-soft); color: var(--good); margin-left: 6px; }
+.arc { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin: 16px 0; font-size: 13px; text-align: center; }
+.arc span { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 8px 4px; }
+@media (max-width: 560px) { .arc { grid-template-columns: repeat(3, 1fr); } }
+</style>
+</head>
+<body>
+<main class="wrap">
+<nav class="crumb"><a href="/ai-video/">AI Video in 30 Days</a> › Tadapop video research</nav>
+<p class="kicker">ShipToLive · Learning Log</p>
+<h1>What's popular for <em>Tadapop</em></h1>
+<p class="lede"><span class="zh">對標選題</span> for my own app. Tadapop is a habit tracker you use with friends: you compete on streaks and points on a private leaderboard and post proof check-ins. Before filming anything, I checked which YouTube searches already have proven demand.</p>
+
+<div class="stats">
+  <div class="stat"><b>16</b><span>search phrases checked in YouTube autocomplete</span></div>
+  <div class="stat"><b>12</b><span>with real view counts pulled</span></div>
+  <div class="stat"><b>412K</b><span>views on a 260-sub channel for my exact niche</span></div>
+</div>
+
+<h2>Search these on <em>YouTube</em></h2>
+<p>Real numbers from the <a href="/tools/topic-finder/">Topic Finder</a>, October 11, 2026. Best first.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Search</th><th>Top video</th><th>Why it matters for Tadapop</th></tr></thead>
+<tbody><tr class="win"><td><b>habit tracker with friends</b></td><td>412K views on a <b>260-sub</b> channel</td><td>Exactly what Tadapop is. Few channels own the phrase. <b>Best opening.</b></td></tr><tr><td><b>best habit tracker app</b></td><td>1.0M views on a <b>4K-sub</b> channel</td><td>App comparison videos do very well, even from small channels.</td></tr><tr><td><b>75 hard challenge</b></td><td>2.2M; 1.6M on a 68K-sub channel</td><td>A huge, current trend. Fits "do it with friends, with proof check-ins".</td></tr><tr><td><b>30 day challenge self improvement</b></td><td>2.2M; 1.3M on a 17K-sub channel</td><td>Strong and current. Challenges are Tadapop's core format.</td></tr><tr><td><b>21 day habit challenge</b></td><td>1.8M; 949K on a 22K-sub channel</td><td>Shorter challenges that small channels win.</td></tr><tr><td><b><span class="zh">30天挑戰</span></b></td><td>2.3M (<span class="zh">速食30天挑戰</span>)</td><td>Big in Chinese. "30-day challenge + what changed" works.</td></tr><tr><td><b>habit tracker app</b></td><td>1.9M; "I Tracked My Habits for 365 Days" 548K</td><td>Personal-results stories beat feature tours.</td></tr></tbody>
+</table></div>
+
+<div class="callout warn"><p><strong>Skip these.</strong> <b>"how to build habits"</b>: 17M views, but owned by TED and channels with millions of subscribers. <b>"accountability partner app"</b>: only 30K views at the top; a good concept, a bad title. <b>"streak"</b> and <b><span class="zh">自律</span></b>: the suggestions are about other things.</p></div>
+
+<h2>How to read the <em>results</em></h2>
+<ol class="steps">
+  <li>Sort by <strong>upload date</strong> as well as relevance. Videos from the last 12 months show current demand.</li>
+  <li>Compare <strong>views to subscribers</strong>. Far more views than subscribers means the topic did the work, not the channel.</li>
+  <li>Look for the same topic winning for <strong>several creators</strong>, not one lucky video.</li>
+</ol>
+
+<h2>Video <em>ideas</em> from the numbers</h2>
+<ol class="idea-list">
+  <li class="chosen"><strong>"I did a 30-day challenge with my friends. Loser pays."</strong> <span class="pick">Making this first</span><br>The challenge trend (millions of views) plus Tadapop's friends-and-leaderboard twist. Works as <span class="zh">30天挑戰</span> in Chinese too.</li>
+  <li><strong>"75 Hard with friends: we tracked it with proof check-ins."</strong><br>Rides the 75 Hard trend.</li>
+  <li><strong>"The habit tracker you use with friends."</strong> A short demo for a phrase almost nobody owns yet.</li>
+  <li><strong>Get into the "best habit tracker app" roundups.</strong> Several of those reviewers are small channels that would likely answer an email.</li>
+</ol>
+
+<h2>Writing video 1: let AI <em>interview</em> me</h2>
+<p>Same method as the class (<a href="/ai-video/how-to-pick-video-topics/#secrets">Secret 4</a>): answer 8 questions out loud, answer the follow-ups, get a one-line arc and five beats, then a 1-minute script read straight off the teleprompter. The questions follow the story arc:</p>
+<div class="arc"><span>Where I am now</span><span>Setback</span><span>Turning point</span><span>Second setback</span><span>Second turning point</span><span>Lesson</span></div>
+<p id="script-status" class="score">Script in progress. It will be added here once the interview is done.</p>
+
+<a class="back" href="/ai-video/">← Back to AI Video in 30 Days</a>
+<footer>ShipToLive · Learning Log · Numbers from YouTube via the Topic Finder, October 11, 2026.</footer>
+</main>
+</body>
+</html>
