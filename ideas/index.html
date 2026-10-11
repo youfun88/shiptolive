@@ -97,6 +97,15 @@
     .flow p { margin-top: 6px; font-size: 14.5px; color: var(--ink-2); }
 
     .caveat { margin-top: 18px; font-size: 14px; color: var(--muted); max-width: 70ch; }
+    /* Diverging bars: zero line sits at --zero; growth extends right, decline left. */
+    .div .bar-track { --zero: 11.9%; }
+    .div .bar-track::before { content: ''; position: absolute; left: var(--zero); top: -4px; bottom: -4px; width: 1px; background: var(--line-strong); }
+    .div .bar-fill { left: var(--zero); border-radius: 0 4px 4px 0; }
+    .div .bar.neg .bar-fill { left: calc(var(--zero) - var(--w)); border-radius: 4px 0 0 4px; }
+    .rising { list-style: none; margin-top: 18px; display: grid; gap: 8px; }
+    .rising li { display: flex; justify-content: space-between; gap: 12px; font-size: 14.5px; padding: 10px 0; border-bottom: 1px solid var(--line); color: var(--ink-2); }
+    .rising li:last-child { border-bottom: 0; }
+    .rising b { font-family: var(--mono); font-size: 13px; font-weight: 600; color: var(--ink); white-space: nowrap; }
     .sources { list-style: none; display: grid; gap: 8px; font-size: 14.5px; columns: 2; display: block; }
     .sources li { break-inside: avoid; margin-bottom: 8px; }
     .sources a { color: var(--ink-2); text-underline-offset: 3px; }
@@ -230,6 +239,59 @@
     <section class="section">
       <div class="wrap">
         <div class="section-head">
+          <p class="kicker">Google Trends check</p>
+          <h2>What the search data says about the ideas</h2>
+          <p class="sub">Pulled from Google Trends on October 11, 2026: US web searches, October 2021 to now. It confirmed the home idea, narrowed it to mold and water damage, and showed GLP-1 is bigger than we assumed.</p>
+        </div>
+
+        <div class="chart-grid">
+          <figure class="chart reveal">
+            <h3>Home problems people search for: 2021 vs 2026</h3>
+            <p class="note">Change in average Google search interest, 2021 vs 2026 so far (Jan to Oct). US, web search.</p>
+            <ul class="bars div" aria-label="Change in search interest">
+              <li class="bar hi" title="water damage: +222%"><span class="bar-label">water damage</span><span class="bar-track"><span class="bar-fill" style="--w:88.1%"></span></span><span class="bar-val">+222%</span></li>
+              <li class="bar" title="home repair: +114%"><span class="bar-label">home repair</span><span class="bar-track"><span class="bar-fill" style="--w:45.2%"></span></span><span class="bar-val">+114%</span></li>
+              <li class="bar hi" title="mold in house: +65%"><span class="bar-label">mold in house</span><span class="bar-track"><span class="bar-fill" style="--w:25.8%"></span></span><span class="bar-val">+65%</span></li>
+              <li class="bar" title="water heater leaking: +6%"><span class="bar-label">water heater leaking</span><span class="bar-track"><span class="bar-fill" style="--w:2.4%"></span></span><span class="bar-val">+6%</span></li>
+              <li class="bar neg" title="dishwasher not draining: -30%"><span class="bar-label">dishwasher not draining</span><span class="bar-track"><span class="bar-fill" style="--w:11.9%"></span></span><span class="bar-val">&minus;30%</span></li>
+            </ul>
+            <p class="take"><strong>Water damage and mold are growing; appliance fixes are not.</strong> Idea 01 should start with mold and water damage.</p>
+          </figure>
+
+          <figure class="chart reveal">
+            <h3>Fastest-rising searches around mold</h3>
+            <p class="note">Google's "rising" related searches for "mold in house", past 5 years, US.</p>
+            <ul class="rising">
+              <li>10 warning signs of mold toxicity <b>Breakout</b></li>
+              <li>signs of sickness from mold in house <b>+2,250%</b></li>
+              <li>symptoms of mold toxicity <b>+350%</b></li>
+              <li>signs of mold exposure <b>+190%</b></li>
+              <li>mold remediation near me <b>+180%</b></li>
+            </ul>
+            <p class="take"><strong>People are worried about their health, not only the repair.</strong> "Is this mold, and could it be making me sick?" is the question to answer first.</p>
+          </figure>
+
+          <figure class="chart wide reveal">
+            <h3>GLP-1 search interest is far bigger than the home searches</h3>
+            <p class="note">Average search interest in 2026 (Jan to Oct) for "zepbound" (a GLP-1 weight-loss drug) vs. the home searches, all in one Google Trends comparison so they share a scale (100 = the busiest week in the comparison). US, web search.</p>
+            <ul class="bars" aria-label="2026 search interest on a shared scale">
+              <li class="bar hi" title="zepbound: 87"><span class="bar-label">zepbound</span><span class="bar-track"><span class="bar-fill" style="--w:100%"></span></span><span class="bar-val">87</span></li>
+              <li class="bar" title="water damage: 38"><span class="bar-label">water damage</span><span class="bar-track"><span class="bar-fill" style="--w:43.7%"></span></span><span class="bar-val">38</span></li>
+              <li class="bar" title="home repair: 30"><span class="bar-label">home repair</span><span class="bar-track"><span class="bar-fill" style="--w:34.5%"></span></span><span class="bar-val">30</span></li>
+              <li class="bar" title="mold in house: 4"><span class="bar-label">mold in house</span><span class="bar-track"><span class="bar-fill" style="--w:4.6%"></span></span><span class="bar-val">4</span></li>
+              <li class="bar" title="plant identifier: 2"><span class="bar-label">plant identifier</span><span class="bar-track"><span class="bar-fill" style="--w:2.3%"></span></span><span class="bar-val">2</span></li>
+            </ul>
+            <p class="take"><strong>"zepbound" went from 4 in 2023 to 87 in 2026.</strong> Rising related searches include "wegovy side effects", "glp-1 cost" and "tirzepatide". That makes idea 02 a much bigger market than idea 01, though GLP-1 tracking apps already exist, so it will be harder to stand out.</p>
+          </figure>
+        </div>
+
+        <p class="caveat">Google Trends shows relative interest, not search counts, and 2026 covers January to October only. Some rising searches for broad terms like "home repair" are local ads and quiz questions, so we only quote the rising searches that are clearly real people.</p>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="wrap">
+        <div class="section-head">
           <p class="kicker">The ideas</p>
           <h2>Three things worth testing, best first</h2>
           <p class="sub">Picked for how quickly they could reach people through search, not just how big the market is.</p>
@@ -241,13 +303,14 @@
               <div class="proj-top"><span class="proj-n">01</span><span class="badge"><span class="dot"></span>Top pick</span></div>
               <h3>Snap a photo, find out what's wrong at home</h3>
               <p>Take a photo of a leaking water heater, a mold spot, or a part you can't name. The app tells you what it is, how serious it is, roughly what it costs to fix, and whether to do it yourself or call a pro.</p>
-              <p>It starts as free web pages, one per problem ("water heater leaking from top"), and grows into a paid home-maintenance tracker with reminders.</p>
+              <p>Start with mold and water damage, the two problems with the fastest-growing searches, and answer the health worry first. Then grow into free web pages, one per problem, and a paid home-maintenance tracker with reminders.</p>
               <ul class="chips"><li>House &amp; Home</li><li>Photo search</li><li>SEO pages</li><li>Web first, then app</li></ul>
             </div>
             <div class="why">
               <h4>Why it fits</h4>
               <ul>
                 <li><svg aria-hidden="true"><use href="#i-check"/></svg>Fastest-growing category in the data</li>
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg>Google searches for "water damage" are up 222% and "mold in house" up 65% since 2021</li>
                 <li><svg aria-hidden="true"><use href="#i-check"/></svg>Rides the shift to searching by photo (25B+ Lens searches a month)</li>
                 <li><svg aria-hidden="true"><use href="#i-check"/></svg>Few AI apps here yet</li>
                 <li><svg aria-hidden="true"><use href="#i-check"/></svg>Every problem is its own search, so each page can bring in Google traffic</li>
@@ -266,6 +329,7 @@
             <div class="why">
               <h4>Why it fits</h4>
               <ul>
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg>Searches for "zepbound" rose from 4 to 87 since 2023, more than double "home repair"</li>
                 <li><svg aria-hidden="true"><use href="#i-check"/></svg>Record $4.5B in-app spending; people already pay</li>
                 <li><svg aria-hidden="true"><use href="#i-check"/></svg>Daily tracking builds the habit AI apps lack</li>
                 <li><svg aria-hidden="true"><use href="#i-check"/></svg>Small groups gather in easy-to-find communities</li>
@@ -319,7 +383,7 @@
       </div>
     </section>
 
-    <section class="section section-soft">
+    <section class="section">
       <div class="wrap">
         <div class="section-head">
           <p class="kicker">Before building</p>
@@ -334,7 +398,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-soft">
       <div class="wrap">
         <div class="section-head">
           <p class="kicker">Sources</p>
@@ -342,6 +406,7 @@
           <p class="sub">Most figures come from Sensor Tower, Adjust and RevenueCat reports, as quoted by the articles below. Some are blog estimates, so treat them as direction, not proof.</p>
         </div>
         <ul class="sources">
+          <li><a href="https://trends.google.com/trends/explore?date=today%205-y&amp;geo=US&amp;q=zepbound,home%20repair,water%20damage,mold%20in%20house,plant%20identifier" rel="noopener">Google Trends: US search interest, Oct 2021 to Oct 2026</a></li>
           <li><a href="https://peekly.app/reports/fastest-growing-app-categories" rel="noopener">Peekly: Fastest-growing app categories (Aug 2026)</a></li>
           <li><a href="https://stealwhatworks.com/blogs/news/app-categories-growing-fastest-now" rel="noopener">Stealwhatworks: Which app categories are growing fastest</a></li>
           <li><a href="https://business.google.com/en-all/think/search-and-video/search-trends-marketing-takeaways/" rel="noopener">Think with Google: Search trends</a></li>
