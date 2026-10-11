@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What to Build Next — Ship to Live</title>
+  <meta name="description" content="Research on what people are searching for on Google and the App Store in 2026, and three app ideas that could get users quickly." />
+  <meta name="author" content="Yufan Chen" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="canonical" href="https://shiptolive.com/ideas/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Ship to Live" />
+  <meta property="og:title" content="What to Build Next — Ship to Live" />
+  <meta property="og:description" content="What people are searching for in 2026, and three app ideas that could get users quickly." />
+  <meta property="og:url" content="https://shiptolive.com/ideas/" />
+  <meta property="og:image" content="https://shiptolive.com/assets/img/og.png?v=2" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin />
+  <link rel="stylesheet" href="/styles.css?v=20261008h" />
+  <script>document.documentElement.classList.add('js')</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5W92T6J80C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5W92T6J80C');
+  </script>
+  <style>
+    /* Page-only styles. Charts stay monochrome like the rest of the site:
+       ink marks the bar we're pointing at, grey is everything else. */
+    :root { --bar: #8b8b94; --bar-hi: var(--ink); }
+    .stat-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; list-style: none; }
+    .stat { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; background: #fff; }
+    .stat strong { display: block; font-size: clamp(28px, 3.4vw, 38px); letter-spacing: -0.03em; line-height: 1.1; font-weight: 700; }
+    .stat span { display: block; margin-top: 8px; font-size: 14px; color: var(--muted); line-height: 1.45; }
+
+    .chart-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .chart { border: 1px solid var(--line); border-radius: var(--radius); background: #fff; padding: 26px; }
+    .chart.wide { grid-column: 1 / -1; }
+    .chart h3 { font-size: 18px; letter-spacing: -0.015em; line-height: 1.3; font-weight: 650; }
+    .chart .note { margin-top: 6px; font-size: 14px; color: var(--muted); }
+    .chart .take { margin-top: 18px; padding-top: 14px; border-top: 1px dashed var(--line); font-size: 15px; color: var(--ink-2); }
+    .chart .take strong { color: var(--ink); }
+
+    .bars { list-style: none; margin-top: 22px; display: grid; gap: 10px; }
+    .bar { display: grid; grid-template-columns: 9.5em minmax(0, 1fr) 4.2em; align-items: center; gap: 12px; font-size: 14px; }
+    .bar-label { color: var(--ink-2); line-height: 1.25; }
+    .bar-track { position: relative; height: 18px; }
+    .bar-fill { position: absolute; left: 0; top: 0; bottom: 0; width: var(--w); background: var(--bar); border-radius: 0 4px 4px 0; transition: opacity .15s ease; }
+    .bar.hi .bar-fill { background: var(--bar-hi); }
+    .bar.hi .bar-label { color: var(--ink); font-weight: 600; }
+    .bar-val { font-family: var(--mono); font-size: 13px; color: var(--ink); text-align: right; }
+    .bars:hover .bar-fill { opacity: .45; }
+    .bars .bar:hover .bar-fill { opacity: 1; }
+
+    .pair .bar-track { height: 26px; display: grid; gap: 2px; }
+    .pair .bar-fill { position: static; height: 12px; }
+    .pair .bar-fill.ai { background: var(--bar-hi); }
+    .pair .bar-vals { display: grid; gap: 2px; font-family: var(--mono); font-size: 12px; text-align: right; line-height: 12px; }
+    .legend { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 16px; font-size: 13px; color: var(--ink-2); }
+    .legend span { display: inline-flex; align-items: center; gap: 6px; }
+    .legend i { width: 12px; height: 12px; border-radius: 3px; background: var(--bar); display: inline-block; }
+    .legend i.ai { background: var(--bar-hi); }
+
+    .matrix { margin: 18px auto 0; width: 100%; max-width: 720px; height: auto; display: block; }
+    .matrix text { font-family: var(--font); }
+    .matrix .dot { cursor: default; }
+
+    .ideas { display: grid; gap: 20px; }
+    .idea { border: 1px solid var(--line); border-radius: var(--radius); background: #fff; padding: 28px; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); gap: clamp(20px, 4vw, 48px); }
+    .idea.top { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .idea.top p, .idea.top li { color: #c4c4cc; }
+    .idea.top h3, .idea.top strong { color: #fff; }
+    .idea.top .proj-n { color: #a1a1aa; }
+    .idea.top .badge { background: transparent; color: #e4e4e7; border-color: #3f3f46; }
+    .idea.top .badge .dot { background: #22c55e; }
+    .idea.top .chips li { background: transparent; color: #d4d4d8; border-color: #3f3f46; }
+    .idea.top .why { border-color: #3f3f46; }
+    .idea h3 { font-size: clamp(22px, 2.6vw, 28px); letter-spacing: -0.025em; line-height: 1.2; font-weight: 700; }
+    .idea p { margin-top: 10px; color: var(--ink-2); font-size: 15.5px; }
+    .idea .chips { margin-top: 18px; }
+    .why { border-left: 1px solid var(--line); padding-left: clamp(16px, 3vw, 32px); }
+    .why h4 { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+    .idea.top .why h4 { color: #a1a1aa; }
+    .why ul { list-style: none; margin-top: 12px; display: grid; gap: 10px; }
+    .why li { font-size: 14.5px; color: var(--ink-2); padding-left: 22px; position: relative; line-height: 1.5; }
+    .why li svg { position: absolute; left: 0; top: 3px; width: 15px; height: 15px; }
+
+    .flow { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; counter-reset: flow; }
+    .flow li { counter-increment: flow; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; padding: 22px; }
+    .flow li::before { content: counter(flow); display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--ink); color: #fff; font-size: 13px; font-weight: 700; }
+    .flow h3 { margin-top: 14px; font-size: 16.5px; font-weight: 650; letter-spacing: -0.01em; }
+    .flow p { margin-top: 6px; font-size: 14.5px; color: var(--ink-2); }
+
+    .caveat { margin-top: 18px; font-size: 14px; color: var(--muted); max-width: 70ch; }
+    .sources { list-style: none; display: grid; gap: 8px; font-size: 14.5px; columns: 2; display: block; }
+    .sources li { break-inside: avoid; margin-bottom: 8px; }
+    .sources a { color: var(--ink-2); text-underline-offset: 3px; }
+    .sources a:hover { color: var(--ink); }
+
+    @media (max-width: 900px) {
+      .stat-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .chart-grid { grid-template-columns: minmax(0, 1fr); }
+      .idea { grid-template-columns: minmax(0, 1fr); }
+      .why { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 18px; }
+      .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 560px) {
+      .stat-row, .flow { grid-template-columns: minmax(0, 1fr); }
+      .chart, .idea { padding: 20px; }
+      .bar { grid-template-columns: 7.2em minmax(0, 1fr) 3.8em; gap: 8px; font-size: 13px; }
+      .sources { columns: 1; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Icon sprite (Lucide, ISC licence). -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="nav" id="top">
+    <div class="wrap nav-inner">
+      <a class="brand" href="/" aria-label="Ship to Live">
+        <img src="/assets/favicon.svg" alt="" width="30" height="30" />
+        <span>
+          <span class="brand-name">Ship to Live</span>
+          <span class="brand-by">by Yufan Chen</span>
+        </span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/#services">Services</a>
+        <a href="/#work">Work</a>
+        <a href="/projects/">Projects</a>
+        <a href="/#experience">Experience</a>
+        <a href="/#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-primary btn-sm" href="/#contact">Contact</a>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="kicker">Research · October 2026</p>
+        <h1>What should we build next?</h1>
+        <p class="lede">What people are searching for on Google and the App Store in 2026, what the data says about getting users, and three ideas worth testing. The short answer: build a free web tool that answers something people already search for, then grow it into an app.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <ul class="stat-row">
+          <li class="stat reveal"><strong>+232%</strong><span>Year-over-year revenue growth for generative AI apps (Sensor Tower)</span></li>
+          <li class="stat reveal"><strong>25B+</strong><span>Google Lens searches a month. Searching by photo is one of the fastest-growing kinds of search</span></li>
+          <li class="stat reveal"><strong>$4.5B</strong><span>Record in-app spending on Health &amp; Fitness in 2025, while downloads stayed flat</span></li>
+          <li class="stat reveal"><strong>~3%</strong><span>Share of subscription revenue earned by apps launched in 2025 or later. New apps start far behind</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">What's growing</p>
+          <h2>Where people are showing up, and where it's already crowded</h2>
+          <p class="sub">Growth alone isn't enough. We want a category that's growing and where AI isn't everywhere yet.</p>
+        </div>
+
+        <div class="chart-grid">
+          <figure class="chart reveal">
+            <h3>Fastest-growing app categories</h3>
+            <p class="note">Median 7-day growth in how fast new reviews arrive, App Store + Google Play, August 2026 (Peekly). Reviews stand in for downloads, so treat this as a signal, not a count.</p>
+            <ul class="bars" aria-label="Category growth">
+              <li class="bar hi" title="House & Home: +63.6%"><span class="bar-label">House &amp; Home</span><span class="bar-track"><span class="bar-fill" style="--w:100%"></span></span><span class="bar-val">+63.6%</span></li>
+              <li class="bar" title="Maps & Navigation: +54.7%"><span class="bar-label">Maps &amp; Navigation</span><span class="bar-track"><span class="bar-fill" style="--w:86%"></span></span><span class="bar-val">+54.7%</span></li>
+              <li class="bar" title="Art & Design: +51.2%"><span class="bar-label">Art &amp; Design</span><span class="bar-track"><span class="bar-fill" style="--w:80.5%"></span></span><span class="bar-val">+51.2%</span></li>
+              <li class="bar" title="Photo & Video: +50.8%"><span class="bar-label">Photo &amp; Video</span><span class="bar-track"><span class="bar-fill" style="--w:79.9%"></span></span><span class="bar-val">+50.8%</span></li>
+              <li class="bar" title="Health & Fitness: +50.2%"><span class="bar-label">Health &amp; Fitness</span><span class="bar-track"><span class="bar-fill" style="--w:78.9%"></span></span><span class="bar-val">+50.2%</span></li>
+            </ul>
+            <p class="take"><strong>House &amp; Home leads</strong>, and it's not a category the big AI apps are going after.</p>
+          </figure>
+
+          <figure class="chart reveal">
+            <h3>How crowded AI already is, by category</h3>
+            <p class="note">Share of subscription apps in each category that use AI (RevenueCat).</p>
+            <ul class="bars" aria-label="AI share by category">
+              <li class="bar" title="Photo & Video: 61.4%"><span class="bar-label">Photo &amp; Video</span><span class="bar-track"><span class="bar-fill" style="--w:100%"></span></span><span class="bar-val">61.4%</span></li>
+              <li class="bar" title="Productivity: 41.1%"><span class="bar-label">Productivity</span><span class="bar-track"><span class="bar-fill" style="--w:66.9%"></span></span><span class="bar-val">41.1%</span></li>
+              <li class="bar" title="Business: 19.1%"><span class="bar-label">Business</span><span class="bar-track"><span class="bar-fill" style="--w:31.1%"></span></span><span class="bar-val">19.1%</span></li>
+              <li class="bar hi" title="Travel: 12.3%"><span class="bar-label">Travel</span><span class="bar-track"><span class="bar-fill" style="--w:20%"></span></span><span class="bar-val">12.3%</span></li>
+              <li class="bar hi" title="Gaming: 6.2%"><span class="bar-label">Gaming</span><span class="bar-track"><span class="bar-fill" style="--w:10.1%"></span></span><span class="bar-val">6.2%</span></li>
+            </ul>
+            <p class="take"><strong>Skip another AI photo app.</strong> Six in ten already use AI. The room is in categories where AI is rare.</p>
+          </figure>
+
+          <figure class="chart wide reveal">
+            <h3>AI apps make money fast but lose subscribers faster</h3>
+            <p class="note">Share of subscribers still paying after 12 months (RevenueCat). AI apps do earn 41% more per payer in year one ($30.16 vs $21.37).</p>
+            <ul class="bars pair" aria-label="12-month retention, AI vs non-AI">
+              <li class="bar" title="Monthly plans: AI 6.1%, non-AI 9.5%">
+                <span class="bar-label">Monthly plans</span>
+                <span class="bar-track"><span class="bar-fill ai" style="width:19.9%"></span><span class="bar-fill" style="width:30.9%"></span></span>
+                <span class="bar-vals"><span>6.1%</span><span>9.5%</span></span>
+              </li>
+              <li class="bar" title="Annual plans: AI 21.1%, non-AI 30.7%">
+                <span class="bar-label">Annual plans</span>
+                <span class="bar-track"><span class="bar-fill ai" style="width:68.7%"></span><span class="bar-fill" style="width:100%"></span></span>
+                <span class="bar-vals"><span>21.1%</span><span>30.7%</span></span>
+              </li>
+            </ul>
+            <div class="legend"><span><i class="ai"></i>AI apps</span><span><i></i>Non-AI apps</span></div>
+            <p class="take"><strong>AI alone won't keep people.</strong> The idea needs a reason to come back, like reminders, tracking or a recurring problem.</p>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">The ideas</p>
+          <h2>Three things worth testing, best first</h2>
+          <p class="sub">Picked for how quickly they could reach people through search, not just how big the market is.</p>
+        </div>
+
+        <div class="ideas">
+          <article class="idea top reveal">
+            <div>
+              <div class="proj-top"><span class="proj-n">01</span><span class="badge"><span class="dot"></span>Top pick</span></div>
+              <h3>Snap a photo, find out what's wrong at home</h3>
+              <p>Take a photo of a leaking water heater, a mold spot, or a part you can't name. The app tells you what it is, how serious it is, roughly what it costs to fix, and whether to do it yourself or call a pro.</p>
+              <p>It starts as free web pages, one per problem ("water heater leaking from top"), and grows into a paid home-maintenance tracker with reminders.</p>
+              <ul class="chips"><li>House &amp; Home</li><li>Photo search</li><li>SEO pages</li><li>Web first, then app</li></ul>
+            </div>
+            <div class="why">
+              <h4>Why it fits</h4>
+              <ul>
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg>Fastest-growing category in the data</li>
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg>Rides the shift to searching by photo (25B+ Lens searches a month)</li>
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg>Few AI apps here yet</li>
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg>Every problem is its own search, so each page can bring in Google traffic</li>
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg>The maintenance tracker gives people a reason to come back</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="idea reveal">
+            <div>
+              <div class="proj-top"><span class="proj-n">02</span><span class="badge"><span class="dot"></span>Strong</span></div>
+              <h3>A companion app for one narrow health group</h3>
+              <p>Pick one group the big fitness apps ignore and serve it well. For example, people on GLP-1 medication who track protein and side effects, or people doing physical therapy at home.</p>
+              <ul class="chips"><li>Health &amp; Fitness</li><li>Subscription</li><li>Daily habit</li></ul>
+            </div>
+            <div class="why">
+              <h4>Why it fits</h4>
+              <ul>
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg>Record $4.5B in-app spending; people already pay</li>
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg>Daily tracking builds the habit AI apps lack</li>
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg>Small groups gather in easy-to-find communities</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="idea reveal">
+            <div>
+              <div class="proj-top"><span class="proj-n">03</span><span class="badge"><span class="dot"></span>Fast but small</span></div>
+              <h3>Hundreds of niche calculator and converter pages</h3>
+              <p>Generate a page for each specific question in one niche. It's the quickest way to get Google traffic, but each visitor is worth little, so it works best as a way to bring people to idea 01 or 02.</p>
+              <ul class="chips"><li>Utility</li><li>SEO</li><li>Ships in days</li></ul>
+            </div>
+            <div class="why">
+              <h4>Why it fits</h4>
+              <ul>
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg>People search these when they need an answer right now</li>
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg>Cheap to build on our existing web stack</li>
+              </ul>
+            </div>
+          </article>
+
+          <figure class="chart reveal">
+            <h3>Speed to first users vs. money per user</h3>
+            <p class="note">Our own estimate, not measured data. Top-right is best.</p>
+            <svg class="matrix" viewBox="0 0 640 360" role="img" aria-label="Idea 01 is fast and earns well, idea 02 is slower but earns the most, idea 03 is fastest but earns the least.">
+              <rect x="70" y="20" width="550" height="290" fill="#f6f6f7" rx="8"/>
+              <line x1="345" y1="20" x2="345" y2="310" stroke="#e6e6ea" stroke-width="1"/>
+              <line x1="70" y1="165" x2="620" y2="165" stroke="#e6e6ea" stroke-width="1"/>
+              <text x="345" y="345" text-anchor="middle" font-size="13" fill="#5b5b66">Speed to first users →</text>
+              <text x="24" y="165" text-anchor="middle" font-size="13" fill="#5b5b66" transform="rotate(-90 24 165)">Money per user →</text>
+              <text x="608" y="40" text-anchor="end" font-size="12" fill="#8b8b94">Best</text>
+              <g class="dot"><title>01 Home fix-it: fast through search, earns from a tracker subscription</title>
+                <circle cx="470" cy="95" r="12" fill="#0a0a0b" stroke="#f6f6f7" stroke-width="2"/>
+                <text x="470" y="99" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">01</text>
+                <text x="490" y="99" font-size="13.5" font-weight="600" fill="#0a0a0b">Home fix-it</text></g>
+              <g class="dot"><title>02 Health niche: slower to reach people, highest willingness to pay</title>
+                <circle cx="230" cy="62" r="12" fill="#0a0a0b" stroke="#f6f6f7" stroke-width="2"/>
+                <text x="230" y="66" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">02</text>
+                <text x="250" y="66" font-size="13.5" font-weight="600" fill="#0a0a0b">Health niche</text></g>
+              <g class="dot"><title>03 Utility pages: fastest traffic, lowest value per visitor</title>
+                <circle cx="560" cy="262" r="12" fill="#0a0a0b" stroke="#f6f6f7" stroke-width="2"/>
+                <text x="560" y="266" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">03</text>
+                <text x="540" y="266" text-anchor="end" font-size="13.5" font-weight="600" fill="#0a0a0b">Utility pages</text></g>
+            </svg>
+          </figure>
+        </div>
+
+        <p class="caveat">Skipped on purpose: general chatbots (big players win), short-drama video apps (need a content studio and ad budget), and finance (regulation and trust slow everything down).</p>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Before building</p>
+          <h2>Check demand in one afternoon</h2>
+        </div>
+        <ol class="flow">
+          <li class="reveal"><h3>Google Trends</h3><p>Look up the idea's search terms with the "Rising" filter on. Are they growing?</p></li>
+          <li class="reveal"><h3>App Store search</h3><p>Type the keywords and note what autocomplete suggests. Read the 1–3 star reviews of the top 3 apps.</p></li>
+          <li class="reveal"><h3>Reddit</h3><p>Count how often the same question comes up each week in r/HomeImprovement or r/fixit.</p></li>
+          <li class="reveal"><h3>Ship one page</h3><p>Put up a single working page and see whether people find it and use it before building the app.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Sources</p>
+          <h2>Where the numbers come from</h2>
+          <p class="sub">Most figures come from Sensor Tower, Adjust and RevenueCat reports, as quoted by the articles below. Some are blog estimates, so treat them as direction, not proof.</p>
+        </div>
+        <ul class="sources">
+          <li><a href="https://peekly.app/reports/fastest-growing-app-categories" rel="noopener">Peekly: Fastest-growing app categories (Aug 2026)</a></li>
+          <li><a href="https://stealwhatworks.com/blogs/news/app-categories-growing-fastest-now" rel="noopener">Stealwhatworks: Which app categories are growing fastest</a></li>
+          <li><a href="https://business.google.com/en-all/think/search-and-video/search-trends-marketing-takeaways/" rel="noopener">Think with Google: Search trends</a></li>
+          <li><a href="https://www.yotpo.com/blog/google-trends-seo-strategy/" rel="noopener">Yotpo: Google Trends in 2026</a></li>
+          <li><a href="https://bigideasdb.com/profitable-mobile-app-ideas-2026" rel="noopener">BigIdeasDB: Profitable mobile app ideas 2026</a></li>
+          <li><a href="https://thebotpost.com/startups/indie-ai-apps-making-real-money" rel="noopener">The Bot Post: Indie AI apps making money</a></li>
+          <li><a href="https://fungies.io/indie-developer-market-analysis-2026/" rel="noopener">Fungies: Indie developer market 2026</a></li>
+          <li><a href="https://youcouldshipthis.com/blog/indie-app-revenue-realistic-expectations" rel="noopener">You Could Ship This: Realistic indie app revenue</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <span>© <span id="year"></span> Ship to Live · QY LLC · <span lang="zh-Hant">夏裕科技股份有限公司</span></span>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="/#services">Services</a>
+        <a href="/#work">Work</a>
+        <a href="/projects/">Projects</a>
+        <a href="/#experience">Experience</a>
+        <a href="/#faq">FAQ</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="/script.js?v=20261008f"></script>
+</body>
+</html>
