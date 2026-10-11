@@ -96,6 +96,14 @@
     .flow h3 { margin-top: 14px; font-size: 16.5px; font-weight: 650; letter-spacing: -0.01em; }
     .flow p { margin-top: 6px; font-size: 14.5px; color: var(--ink-2); }
 
+    .now-testing { margin-top: 28px; display: flex; align-items: center; gap: 14px; max-width: 760px; padding: 16px 20px; border: 1px solid var(--ink); border-radius: var(--radius); background: #fff; text-decoration: none; color: var(--ink-2); font-size: 15.5px; line-height: 1.5; transition: box-shadow .2s ease, transform .2s ease; }
+    .now-testing:hover { box-shadow: var(--shadow); transform: translateY(-1px); }
+    .now-testing strong { color: var(--ink); }
+    .now-testing .nt-copy { flex: 1; }
+    .now-testing .nt-go { font-size: 20px; color: var(--ink); }
+    .idea .cta { margin-top: 20px; }
+    .idea.testing { border: 2px solid var(--ink); box-shadow: var(--shadow); }
+    @media (max-width: 560px) { .now-testing { flex-wrap: wrap; } .now-testing .nt-go { display: none; } }
     .caveat { margin-top: 18px; font-size: 14px; color: var(--muted); max-width: 70ch; }
     /* Diverging bars: zero line sits at --zero; growth extends right, decline left. */
     .div .bar-track { --zero: 11.9%; }
@@ -165,6 +173,11 @@
         <p class="kicker">Research · October 2026</p>
         <h1>What should we build next?</h1>
         <p class="lede">What people are searching for on Google and the App Store in 2026, what the data says about getting users, and three ideas worth testing. The short answer: build a free web tool that answers something people already search for, then grow it into an app.</p>
+        <a class="now-testing" href="/glp1-protein-calculator/">
+          <span class="badge building"><span class="dot"></span>Now testing</span>
+          <span class="nt-copy"><strong>We're testing idea 02 first.</strong> Try the free GLP-1 protein calculator, and see whether people sign up for the plan behind it.</span>
+          <span class="nt-go" aria-hidden="true">&rarr;</span>
+        </a>
       </div>
     </section>
 
@@ -298,9 +311,9 @@
         </div>
 
         <div class="ideas">
-          <article class="idea top reveal">
+          <article class="idea reveal">
             <div>
-              <div class="proj-top"><span class="proj-n">01</span><span class="badge"><span class="dot"></span>Top pick</span></div>
+              <div class="proj-top"><span class="proj-n">01</span><span class="badge"><span class="dot"></span>Fastest growing</span></div>
               <h3>Snap a photo, find out what's wrong at home</h3>
               <p>Take a photo of a leaking water heater, a mold spot, or a part you can't name. The app tells you what it is, how serious it is, roughly what it costs to fix, and whether to do it yourself or call a pro.</p>
               <p>Start with mold and water damage, the two problems with the fastest-growing searches, and answer the health worry first. Then grow into free web pages, one per problem, and a paid home-maintenance tracker with reminders.</p>
@@ -319,13 +332,14 @@
             </div>
           </article>
 
-          <article class="idea reveal">
+          <article class="idea testing reveal">
             <div>
-              <div class="proj-top"><span class="proj-n">02</span><span class="badge"><span class="dot"></span>Strong</span></div>
-              <h3>A companion app for one narrow health group</h3>
-              <p>Pick one group the big fitness apps ignore and serve it well. For example, people on GLP-1 medication who track protein and side effects, or people doing physical therapy at home.</p>
-              <ul class="chips"><li>Health &amp; Fitness</li><li>Subscription</li><li>Daily habit</li></ul>
-              <p><a href="/glp1-protein-calculator/" style="font-weight:600">First test: the free GLP-1 protein calculator &rarr;</a></p>
+              <div class="proj-top"><span class="proj-n">02</span><span class="badge building"><span class="dot"></span>Testing now</span></div>
+              <h3>A GLP-1 companion for muscle and life after the drug</h3>
+              <p>About 1 in 9 US adults now takes a GLP-1 like Zepbound or Wegovy. There are already plenty of apps for logging shots. The two problems they mostly leave alone: 15&ndash;45% of the weight lost can be lean mass, including muscle, and in one major trial people regained about two-thirds of it within a year of stopping.</p>
+              <p>So the app focuses on those: a daily protein target, short strength workouts, and a 12-week plan for coming off the drug. The first test is a free protein calculator with a waitlist for that plan. 100+ sign-ups in 2&ndash;3 weeks means we build it.</p>
+              <ul class="chips"><li>Health &amp; Fitness</li><li>Subscription</li><li>Daily habit</li><li>Live test</li></ul>
+              <a class="btn btn-primary cta" href="/glp1-protein-calculator/">Try the protein calculator <span aria-hidden="true">&rarr;</span></a>
             </div>
             <div class="why">
               <h4>Why it fits</h4>
@@ -333,7 +347,7 @@
                 <li><svg aria-hidden="true"><use href="#i-check"/></svg>Searches for "zepbound" rose from 4 to 87 since 2023, more than double "home repair"</li>
                 <li><svg aria-hidden="true"><use href="#i-check"/></svg>Record $4.5B in-app spending; people already pay</li>
                 <li><svg aria-hidden="true"><use href="#i-check"/></svg>Daily tracking builds the habit AI apps lack</li>
-                <li><svg aria-hidden="true"><use href="#i-check"/></svg>Small groups gather in easy-to-find communities</li>
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg>Users gather in big, easy-to-find communities (r/Zepbound alone has about 211k weekly visitors)</li>
               </ul>
             </div>
           </article>
