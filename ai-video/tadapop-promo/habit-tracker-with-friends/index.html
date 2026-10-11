@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tadapop Promo: Habit Tracker with Friends (Veo Kit) | ShipToLive</title>
+<meta name="description" content="Production kit for a 45-second Tadapop promo with Chloe, our AI host: first-frame images and Veo prompts for every shot, plus the real app recordings to capture.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://shiptolive.com/ai-video/tadapop-promo/habit-tracker-with-friends/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root { --bg:#f6f4ef; --surface:#fff; --ink:#16151a; --muted:#5d5a63; --line:#dcd7cb; --accent:#e4572e; --accent-soft:#fbe3da; --good:#2a7f62; --good-soft:#e2f1ea; --warn-soft:#fbf1d9; --code-bg:#efece4; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#121116; --surface:#1b1a20; --ink:#f1efe9; --muted:#a6a2ad; --line:#33313b; --accent:#ff6a3d; --accent-soft:#3a2219; --good:#5cc49c; --good-soft:#16271f; --warn-soft:#2a2412; --code-bg:#24232b; } }
+:root[data-theme="dark"] { --bg:#121116; --surface:#1b1a20; --ink:#f1efe9; --muted:#a6a2ad; --line:#33313b; --accent:#ff6a3d; --accent-soft:#3a2219; --good:#5cc49c; --good-soft:#16271f; --warn-soft:#2a2412; --code-bg:#24232b; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 "Inter", "Noto Sans TC", system-ui, sans-serif; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 40px 16px 80px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+.crumb { font-size: 14px; color: var(--muted); margin-bottom: 24px; } .crumb a { color: var(--muted); }
+.kicker { font: 500 12px/1 "JetBrains Mono", monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 0 0 16px; }
+h1, h2, h3 { font-family: "Bricolage Grotesque", "Noto Sans TC", Georgia, serif; line-height: 1.2; }
+h1 { font-size: clamp(32px, 6vw, 52px); font-weight: 800; margin: 0 0 14px; } h1 em, h2 em { color: var(--accent); font-style: normal; }
+h2 { font-size: 26px; margin: 48px 0 10px; } h3 { font-size: 20px; margin: 0; }
+.lede { font-size: 18px; color: var(--muted); margin: 0 0 20px; max-width: 70ch; }
+.callout { background: var(--warn-soft); border-left: 3px solid #ca8a04; border-radius: 0 10px 10px 0; padding: 14px 18px; margin: 18px 0; } .callout p { margin: 0; }
+.callout.good { background: var(--good-soft); border-color: var(--good); }
+.steps { padding-left: 20px; } .steps li { margin: 6px 0; }
+.refs { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin: 14px 0; }
+.refs a { display: block; text-decoration: none; color: var(--ink); font-size: 14px; } .refs img { width: 100%; border-radius: 10px; border: 1px solid var(--line); display: block; margin-bottom: 6px; }
+.shot { display: grid; grid-template-columns: 220px 1fr; gap: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin: 14px 0; }
+.shot-img { display: block; text-decoration: none; color: var(--muted); font-size: 13px; text-align: center; }
+.shot-img img { width: 100%; aspect-ratio: 9/16; object-fit: cover; border-radius: 10px; display: block; margin-bottom: 6px; border: 1px solid var(--line); }
+.shot-img.pending { aspect-ratio: 9/16; border: 1px dashed var(--line); border-radius: 10px; display: grid; place-items: center; padding: 12px; }
+.shot-head { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.tag { font: 500 12px/1 "JetBrains Mono", monospace; padding: 5px 8px; border-radius: 99px; background: var(--code-bg); color: var(--muted); }
+.tag.lip { background: var(--accent-soft); color: var(--accent); }
+.line { font-size: 17px; font-weight: 600; margin: 10px 0 6px; }
+.note { font-size: 14px; color: var(--muted); margin: 0 0 6px; }
+.settings { display: flex; gap: 18px; margin: 8px 0 12px; font-size: 14px; } .settings div { display: flex; gap: 6px; } .settings dt { color: var(--muted); } .settings dd { margin: 0; font-weight: 600; }
+.prompt { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.prompt-head { display: flex; justify-content: space-between; align-items: center; padding: 6px 10px; background: var(--code-bg); font-size: 13px; color: var(--muted); }
+.prompt pre { margin: 0; padding: 12px; white-space: pre-wrap; font: 14px/1.55 "Inter", system-ui, sans-serif; color: var(--ink); background: var(--surface); }
+.copy { font: 600 13px "Inter", sans-serif; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 8px; padding: 5px 12px; cursor: pointer; }
+.copy.done { border-color: var(--good); color: var(--good); }
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 15px; } th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; } th { background: var(--code-bg); color: var(--muted); font-size: 13px; } tr:last-child td { border-bottom: 0; }
+footer { margin-top: 56px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+@media (max-width: 640px) { .shot { grid-template-columns: 1fr; } .shot-img img { max-width: 240px; margin: 0 auto 6px; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+<nav class="crumb"><a href="/ai-video/">AI Video in 30 Days</a> › <a href="/ai-video/tadapop-promo/">Tadapop promos</a> › Habit tracker with friends</nav>
+<p class="kicker">ShipToLive · Veo kit</p>
+<h1>Habit tracker with friends: <em>the Veo kit</em></h1>
+<p class="lede">Everything for a 45-second Tadapop promo with Chloe, our AI host: the first-frame image and the Veo prompt for every Chloe shot, the script, and the real app screens to record. Download a frame, copy its prompt, and generate.</p>
+<div class="callout"><p><strong>Chloe is AI-generated.</strong> Turn on the platform's AI-generated content label when you post. She's a host, not a customer, so no "I lost 10 kg" style result claims.</p></div>
+
+<h2>How to use this in <em>Veo</em></h2>
+<ol class="steps">
+  <li>In Google Flow (or Veo), start a new clip with <strong>Frames to Video</strong> and upload the shot's <strong>first frame</strong>.</li>
+  <li>Paste the shot's <strong>Veo prompt</strong>. Set <strong>9:16</strong> and the length shown.</li>
+  <li>Talking shots (lip-sync): make 2–3 takes and keep the ones whose voices match. Veo picks a new voice each time.</li>
+  <li>Voice-over shots: keep the clip silent, and record the script as one voice-over track at the end so the voice matches throughout.</li>
+  <li>If Veo changes her face, add the <strong>reference image</strong> below as an ingredient.</li>
+</ol>
+
+<h2>Reference images</h2>
+<div class="refs">
+  <a href="img/chloe-reference.jpg" download><img src="img/chloe-reference.jpg" alt="Chloe master portrait" loading="lazy">Chloe, master portrait</a>
+  <a href="img/s3.jpg" download><img src="img/s3.jpg" alt="Chloe 9:16 face crop" loading="lazy">9:16 face crop (shot 3)</a>
+</div>
+
+<h2>The <em>script</em> (about 45 seconds)</h2>
+<div class="prompt"><div class="prompt-head"><span>Teleprompter script</span><button type="button" class="copy">Copy</button></div><pre>Most people quit a new habit in the first week.
+Not because they&#x27;re lazy.
+Because nobody notices.
+
+I&#x27;m Chloe, and I make videos about habits that actually stick.
+Here&#x27;s the fix nobody talks about.
+
+When you&#x27;re doing it alone,
+skipping costs you nothing.
+No one asks. No one sees.
+
+So change who&#x27;s watching.
+
+Pick a habit with two or three friends.
+Every day, you check in with a photo.
+Everyone&#x27;s streak is on one leaderboard.
+
+Now skipping has a price.
+Your name drops.
+Your friends notice.
+Make it fun: loser buys dinner.
+
+That&#x27;s Tadapop.
+A habit tracker you use with friends.
+
+Who&#x27;s the friend you&#x27;d challenge first?
+Tag them.</pre></div>
+
+<h2>Chloe <em>shots</em></h2>
+<p>Every frame is waist-up or closer (Veo blocks full-body frames of her). Shot 7 is a screen recording, so it isn't here. For every shot, use this <strong>negative prompt</strong> if your tool has one: <code>subtitles, captions, text, logos, watermark, distorted face, extra fingers, phone screen with readable text</code></p>
+<article class="shot" id="shot-1">
+  <a class="shot-img" href="img/s1.jpg" download><img src="img/s1.jpg" alt="First frame for shot 1" loading="lazy"><span>Download first frame</span></a>
+  <div class="shot-body">
+    <div class="shot-head"><h3>Shot 1</h3><span class="tag">0–4 s</span><span class="tag ">Voice-over</span></div>
+    <p class="line">“Most people quit a new habit in the first week.”</p>
+    
+    <dl class="settings"><div><dt>Length</dt><dd>4 s</dd></div><div><dt>Audio</dt><dd>Off (no speech)</dd></div><div><dt>Aspect</dt><dd>9:16</dd></div></dl>
+    <div class="prompt"><div class="prompt-head"><span>Veo prompt</span><button type="button" class="copy">Copy</button></div><pre>The woman runs steadily on the treadmill, shoulders and arms moving with her stride, breathing visibly. Near the end she glances briefly at the camera, then looks ahead again. Slight handheld camera sway, slow push-in. Treadmill hum and footsteps, quiet gym ambience. No dialogue, no speech. Cold desaturated blue-grey daylight, muted filmic color grade, shallow depth of field.</pre></div>
+  </div>
+</article>
+<article class="shot" id="shot-2">
+  <a class="shot-img" href="img/s2.jpg" download><img src="img/s2.jpg" alt="First frame for shot 2" loading="lazy"><span>Download first frame</span></a>
+  <div class="shot-body">
+    <div class="shot-head"><h3>Shot 2</h3><span class="tag">4–8 s</span><span class="tag lip">Lip-sync</span></div>
+    <p class="line">“Not because they&#x27;re lazy. Because nobody notices.”</p>
+    
+    <dl class="settings"><div><dt>Length</dt><dd>4 s</dd></div><div><dt>Audio</dt><dd>On</dd></div><div><dt>Aspect</dt><dd>9:16</dd></div></dl>
+    <div class="prompt"><div class="prompt-head"><span>Veo prompt</span><button type="button" class="copy">Copy</button></div><pre>The woman, still catching her breath, wipes her forehead with the towel, looks straight into the camera with a faint knowing smile and says in a calm, cool, slightly playful young woman&#x27;s voice: &quot;Not because they&#x27;re lazy. Because nobody notices.&quot; Static camera, slight push-in. Quiet gym ambience. Cold desaturated blue-grey daylight, muted filmic color grade, shallow depth of field.</pre></div>
+  </div>
+</article>
+<article class="shot" id="shot-3">
+  <a class="shot-img" href="img/s3.jpg" download><img src="img/s3.jpg" alt="First frame for shot 3" loading="lazy"><span>Download first frame</span></a>
+  <div class="shot-body">
+    <div class="shot-head"><h3>Shot 3</h3><span class="tag">8–14 s</span><span class="tag lip">Lip-sync</span></div>
+    <p class="line">“I&#x27;m Chloe, and I make videos about habits that actually stick. Here&#x27;s the fix nobody talks about.”</p>
+    
+    <dl class="settings"><div><dt>Length</dt><dd>6 s</dd></div><div><dt>Audio</dt><dd>On</dd></div><div><dt>Aspect</dt><dd>9:16</dd></div></dl>
+    <div class="prompt"><div class="prompt-head"><span>Veo prompt</span><button type="button" class="copy">Copy</button></div><pre>The young woman by the large window in the industrial gym looks just past the camera, then turns to look straight into it with a warm, confident smile and says in a calm, cool, slightly playful young woman&#x27;s voice: &quot;I&#x27;m Chloe, and I make videos about habits that actually stick. Here&#x27;s the fix nobody talks about.&quot; Slow subtle camera push-in. Quiet gym ambience. Cold desaturated blue-grey daylight, muted filmic color grade, shallow depth of field.</pre></div>
+  </div>
+</article>
+<article class="shot" id="shot-4">
+  <a class="shot-img" href="img/s4.jpg" download><img src="img/s4.jpg" alt="First frame for shot 4" loading="lazy"><span>Download first frame</span></a>
+  <div class="shot-body">
+    <div class="shot-head"><h3>Shot 4</h3><span class="tag">14–20 s</span><span class="tag ">Voice-over</span></div>
+    <p class="line">“When you&#x27;re doing it alone, skipping costs you nothing. No one asks. No one sees.”</p>
+    
+    <dl class="settings"><div><dt>Length</dt><dd>6 s</dd></div><div><dt>Audio</dt><dd>Off (no speech)</dd></div><div><dt>Aspect</dt><dd>9:16</dd></div></dl>
+    <div class="prompt"><div class="prompt-head"><span>Veo prompt</span><button type="button" class="copy">Copy</button></div><pre>The woman scrolls her phone on the couch, glances at the gym bag beside her, sighs, and looks back at the phone. Static camera, very slow push-in. Quiet room tone, a faint clock tick. No dialogue, no speech. The phone screen faces away from the camera. Warm lamp light, muted filmic color grade.</pre></div>
+  </div>
+</article>
+<article class="shot" id="shot-5">
+  <a class="shot-img" href="img/s2.jpg" download><img src="img/s2.jpg" alt="First frame for shot 5" loading="lazy"><span>Download first frame</span></a>
+  <div class="shot-body">
+    <div class="shot-head"><h3>Shot 5</h3><span class="tag">20–24 s</span><span class="tag lip">Lip-sync</span></div>
+    <p class="line">“So change who&#x27;s watching.”</p>
+    <p class="note">Same still as shot 2.</p>
+    <dl class="settings"><div><dt>Length</dt><dd>4 s</dd></div><div><dt>Audio</dt><dd>On</dd></div><div><dt>Aspect</dt><dd>9:16</dd></div></dl>
+    <div class="prompt"><div class="prompt-head"><span>Veo prompt</span><button type="button" class="copy">Copy</button></div><pre>Back in the gym, the woman lifts her phone into view at chest height, screen facing her, looks up from it straight into the camera with a small determined smile and says in a calm, cool, slightly playful young woman&#x27;s voice: &quot;So change who&#x27;s watching.&quot; Static camera. Quiet gym ambience. Cold desaturated blue-grey daylight, muted filmic color grade, shallow depth of field.</pre></div>
+  </div>
+</article>
+<article class="shot" id="shot-6">
+  <a class="shot-img" href="img/s6.jpg" download><img src="img/s6.jpg" alt="First frame for shot 6" loading="lazy"><span>Download first frame</span></a>
+  <div class="shot-body">
+    <div class="shot-head"><h3>Shot 6</h3><span class="tag">24–28 s</span><span class="tag ">Voice-over</span></div>
+    <p class="line">“Pick a habit with two or three friends. Every day, you check in with a photo.”</p>
+    <p class="note">Then cut to recording R1 (the real check-in).</p>
+    <dl class="settings"><div><dt>Length</dt><dd>4 s</dd></div><div><dt>Audio</dt><dd>Off (no speech)</dd></div><div><dt>Aspect</dt><dd>9:16</dd></div></dl>
+    <div class="prompt"><div class="prompt-head"><span>Veo prompt</span><button type="button" class="copy">Copy</button></div><pre>She steadies the phone over her wrist and taps the screen to take a photo of her smartwatch, then lowers the phone with a satisfied nod. Slow push-in over her shoulder. Soft camera shutter click, quiet gym ambience. No dialogue, no speech. Screens stay out of focus with no readable text. Cold desaturated blue-grey daylight, muted filmic color grade, shallow depth of field.</pre></div>
+  </div>
+</article>
+<article class="shot" id="shot-8">
+  <a class="shot-img" href="img/s8.jpg" download><img src="img/s8.jpg" alt="First frame for shot 8" loading="lazy"><span>Download first frame</span></a>
+  <div class="shot-body">
+    <div class="shot-head"><h3>Shot 8</h3><span class="tag">37–41 s</span><span class="tag ">Voice-over + laugh</span></div>
+    <p class="line">“Your friends notice. Make it fun: loser buys dinner.”</p>
+    <p class="note">Plays after recordings R2–R4.</p>
+    <dl class="settings"><div><dt>Length</dt><dd>4 s</dd></div><div><dt>Audio</dt><dd>On (laugh only)</dd></div><div><dt>Aspect</dt><dd>9:16</dd></div></dl>
+    <div class="prompt"><div class="prompt-head"><span>Veo prompt</span><button type="button" class="copy">Copy</button></div><pre>Her phone buzzes in her hands. She looks at the screen, bursts into a short genuine laugh, shakes her head and glances up at the camera, amused. Static camera. A phone vibration buzz, her laugh, quiet gym ambience. No spoken words. The phone screen faces her, not the camera. Cold desaturated blue-grey daylight, muted filmic color grade, shallow depth of field.</pre></div>
+  </div>
+</article>
+<article class="shot" id="shot-9">
+  <a class="shot-img" href="img/s9.jpg" download><img src="img/s9.jpg" alt="First frame for shot 9" loading="lazy"><span>Download first frame</span></a>
+  <div class="shot-body">
+    <div class="shot-head"><h3>Shot 9</h3><span class="tag">41–49 s</span><span class="tag lip">Lip-sync</span></div>
+    <p class="line">“That&#x27;s Tadapop. A habit tracker you use with friends. Who&#x27;s the friend you&#x27;d challenge first? Tag them.”</p>
+    
+    <dl class="settings"><div><dt>Length</dt><dd>8 s</dd></div><div><dt>Audio</dt><dd>On</dd></div><div><dt>Aspect</dt><dd>9:16</dd></div></dl>
+    <div class="prompt"><div class="prompt-head"><span>Veo prompt</span><button type="button" class="copy">Copy</button></div><pre>The woman looks straight into the camera and says in a calm, cool, slightly playful young woman&#x27;s voice: &quot;That&#x27;s Tadapop. A habit tracker you use with friends. Who&#x27;s the friend you&#x27;d challenge first? Tag them.&quot; On &quot;Tag them&quot; she raises her free hand and points at the camera with a grin. Static camera, slight push-in. Quiet gym ambience. Cold desaturated blue-grey daylight, muted filmic color grade, shallow depth of field.</pre></div>
+  </div>
+</article>
+
+<h2>Real Tadapop <em>screens</em> to record</h2>
+<p>Never let AI draw the app: it invents text and buttons. Record these on the iPhone with Screen Recording, inside a real Check-in Club challenge (for example "30-day run") with 2–3 friends who agree to appear. Get a few days of real check-ins first, and turn on Do Not Disturb.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>#</th><th>Plays at</th><th>Record this</th></tr></thead>
+<tbody>
+<tr><td>R1</td><td>After shot 6: "you check in with a photo"</td><td>Posting a check-in: add the photo of your Apple Watch workout summary (take a real one after a run) → post → it appears in the challenge.</td></tr>
+<tr><td>R2</td><td>"Everyone's streak is on one leaderboard"</td><td>The challenge standings: everyone's place ("#1 of 4"), streaks and check-ins. Scroll once, slowly.</td></tr>
+<tr><td>R3</td><td>"Now skipping has a price. Your name drops."</td><td>Your place dropping. Screenshot the standings, skip a day while a friend checks in, screenshot again, then cross-fade in CapCut.</td></tr>
+<tr><td>R4</td><td>Just before shot 8</td><td>A friend's check-in arriving as a lock-screen notification.</td></tr>
+</tbody></table></div>
+
+<h2>Edit <em>order</em></h2>
+<p><strong>1 → 2 → 3 → 4 → 5 → 6 → R1 → R2 → R3 → R4 → 8 → 9.</strong> On-screen text for the first 3 seconds: <strong>"Why you quit in the first week"</strong>. Title: <strong>Habit tracker with friends: why you quit in the first week</strong>. Keyword research: <a href="/ai-video/tadapop-video-research/">Tadapop video research</a>.</p>
+
+<footer>ShipToLive · Tadapop promo kit · Chloe is fully AI-generated and not based on any real person.</footer>
+</main>
+<script>
+document.querySelectorAll('.copy').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var t = b.closest('.prompt').querySelector('pre').textContent;
+    (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () {
+      b.textContent = 'Copied'; b.classList.add('done'); setTimeout(function () { b.textContent = 'Copy'; b.classList.remove('done'); }, 1500);
+    }).catch(function () { var r = document.createRange(); r.selectNodeContents(b.closest('.prompt').querySelector('pre')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); });
+  });
+});
+</script>
+</body>
+</html>
