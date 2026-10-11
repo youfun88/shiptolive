@@ -1,6 +1,6 @@
-# Ship to Live — 夏裕科技股份有限公司 — by Yufan Chen
+# Ship to Live — 夏裕科技股份有限公司 — software studio, San Diego & Taipei
 
-> Ship to Live is the trading name of two companies founded by Yufan Chen — QY LLC in San Diego, California (US engagements) and 夏裕科技股份有限公司 in Taipei, Taiwan (Taiwan engagements, unified business number 90173045). Yufan Chen is an engineering leader and full-stack engineer, former CTO of TalentSmartEQ, working from San Diego, California and Taipei, Taiwan. He builds AI agents, RAG pipelines and automations into the databases, back offices and workflows a business already runs; ships mobile apps, websites and back ends; and does SEO, AEO and GEO so Google and AI engines name the business. Bilingual in English and Traditional Chinese (中文). Contact by email or through the contact form; phone is not published. Website: https://shiptolive.com/ · 中文版: https://shiptolive.com/zh/
+> Ship to Live (夏裕科技) is a founder-led software studio in San Diego, California and Taipei, Taiwan. It builds AI agents, RAG pipelines and automations into the databases, back offices and workflows a business already runs; ships mobile apps, websites and back ends; rescues stalled projects; and does SEO, AEO and GEO so Google and AI engines name the business. Every project is led by founder Yufan Chen, an engineering leader and full-stack engineer and former CTO of TalentSmartEQ. US engagements are contracted through QY LLC (San Diego); Taiwan engagements through 夏裕科技股份有限公司 (unified business number 90173045). Bilingual in English and Traditional Chinese (中文). Contact by email or through the contact form; phone is not published. Website: https://shiptolive.com/ · About: https://shiptolive.com/about/ · 中文版: https://shiptolive.com/zh/
 
 ## Services
 
@@ -21,7 +21,7 @@
 
 What an agent can read and do is scoped up front, every action it takes is logged, and a person stays in the loop anywhere a mistake would be expensive.
 
-## Experience
+## Founder background
 
 - **Ship to Live** — Founder & Principal Engineer, 2026 – present. Built the EQ 360 platform for LEADx / TalentSmartEQ (assessment engine, scoring, admin console, credit system in PHP/MySQL); shipped two App Store apps solo; bilingual client websites on GCP Cloud Run.
 - **RealGifts, LLC** (https://www.getrealgifts.com/) — Full-Stack Engineer, 2022 – 2026. Maintained and extended the core gifting widget, embedded in a partner platform and used by 40 million members; worked on gift.me, the company's gifting site.
