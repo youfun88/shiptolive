@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI Video in 30 Days | ShipToLive</title>
-<meta name="description" content="A 30-day, 2-hours-a-day plan for learning AI video production with Google Veo 3.1, Kling and a developer pipeline.">
+<meta name="description" content="A 30-day, 2-hours-a-day plan for learning AI video production with Google Veo 3.1, Kling, Higgsfield and a developer pipeline.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -242,6 +242,13 @@ footer{margin-top:56px;padding:28px 0 48px;border-top:1px solid var(--line);colo
       <p>Voice-over and dialogue when Veo's built-in audio isn't good enough. Try the free tier before paying.</p>
       <div class="when">Only if Veo's native voices fall short.</div>
     </div>
+    <div class="card">
+      <span class="tag opt">Optional · Day 28</span>
+      <h3>Higgsfield</h3>
+      <div class="price">No free credits · paid from ~US$15 / month</div>
+      <p><a href="https://higgsfield.ai" target="_blank" rel="noopener">higgsfield.ai</a>. Many video models in one place (Kling, Seedance, Veo and its own), so you can try one hard shot across several models without separate accounts. New accounts may get a 24-hour trial.</p>
+      <div class="when">The trial needs a card and turns into a paid plan unless you cancel. Set a reminder to cancel before 24 hours.</div>
+    </div>
   </div>
 </section>
 
@@ -457,10 +464,12 @@ const WEEKS = [
         ["70m","Polish in CapCut: audio, music, captions, hook. Upload."],
         ["50m","Review Episode 1 analytics: where viewers dropped off. Write 3 changes for Episode 3."]],
         d:"Episode 2 is live + analytics notes."},
-      {t:"Fix the weakest link", c:"~150 Flow · Kling", steps:[
-        ["20m","Look at your logs: what fails most? (character drift, hands, dialogue, motion)"],
-        ["100m","Spend the whole session improving that one problem. Try Kling for motion-heavy shots if you have Kling credits."]],
-        d:"A documented fix for your weakest area."}
+      {t:"Fix the weakest link", c:"~150 Flow · Higgsfield trial", steps:[
+        ["20m","Look at your logs: what fails most? (character drift, hands, dialogue, motion). Pick 2–3 shots that kept failing."],
+        ["60m","Spend the session improving that one problem in Flow. Try Kling for motion-heavy shots if you have Kling credits."],
+        ["40m","Optional: start Higgsfield's 24-hour trial and run the same failing shots through 3–4 models there (Kling, Seedance, Veo). Log which model handled each one best, then cancel the trial."]],
+        d:"A documented fix for your weakest area, and which model to use for it.",
+        v:[{tool:"Higgsfield", id:"Pjw8nnxHo5I", t:"How to use Higgsfield AI for Beginners (Step by Step 2026)", by:"Mariana Montoya"}]}
     ]
   },
   {
