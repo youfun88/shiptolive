@@ -210,9 +210,9 @@ footer{margin-top:56px;padding:28px 0 48px;border-top:1px solid var(--line);colo
     <div class="card">
       <span class="tag free">Free · Day 1</span>
       <h3>Kling AI</h3>
-      <div class="price">Free tier: 66 credits / day</div>
-      <p><a href="https://klingai.com" target="_blank" rel="noopener">klingai.com</a>. A second model to compare against Veo, strong on motion and action. The free tier is enough for practice.</p>
-      <div class="when">Upgrade to Standard (US$10/mo, 660 credits) only if you need it in Week 3.</div>
+      <div class="price">Free tier: 66 credits / month</div>
+      <p><a href="https://klingai.com" target="_blank" rel="noopener">klingai.com</a>. A second model to compare against Veo, strong on motion and action. 66 credits is about two 5-second 720p clips, so save them for head-to-head comparisons. Most practice happens in Flow.</p>
+      <div class="when">Credits expire a month after they arrive. Upgrade to Standard (US$10/mo, 660 credits) only if you need more Kling in Week 3.</div>
     </div>
     <div class="card">
       <span class="tag free">Free · Day 1</span>
@@ -303,7 +303,7 @@ she whispers "finally."</pre>
 const WEEKS = [
   {
     id:"w1", label:"WEEK 1", color:"var(--w1)", title:"Foundations on free credits",
-    sub:"Learn how the models respond to prompts. Free tiers only: 50 Flow credits and 66 Kling credits a day.",
+    sub:"Learn how the models respond to prompts. Free tiers only: 50 Flow credits a day, and Kling's 66 credits for the whole month (about two clips).",
     days:[
       {t:"Set up and first clips", c:"40 Flow · 30 Kling", steps:[
         ["20m","Create accounts: Google Flow (free), Kling (free), CapCut. Open Flow settings and set outputs to 1 per prompt."],
@@ -314,17 +314,17 @@ const WEEKS = [
         v:[{tool:"Google Flow", id:"ysway-8WY-I", t:"Google Flow Tutorial for Beginners 2026", by:"Dan Kuda AI"},
            {tool:"Kling (free)", id:"6abmr53yEOw", t:"How to Use Kling AI for FREE in 2026", by:"LearnFix"},
            {tool:"CapCut", id:"C5O353fpPwM", t:"CapCut Desktop Tutorial for Beginners (PC & Mac)", by:"Primal Video"}]},
-      {t:"Prompt anatomy", c:"40 Flow · 60 Kling", steps:[
+      {t:"Prompt anatomy", c:"40 Flow · 30 Kling", steps:[
         ["20m","Study the 7-part prompt formula above. Rewrite yesterday's prompts using all 7 parts."],
-        ["80m","Run the same prompt in Veo Fast and Kling. Then change one variable at a time (subject only, then setting only)."],
+        ["80m","Run the same prompt in Veo Fast and Kling (this uses most of your remaining Kling credits). Then, in Veo only, change one variable at a time (subject only, then setting only)."],
         ["20m","Log which parts of the prompt each model actually follows."]],
         d:"A side-by-side Veo vs Kling comparison."},
-      {t:"Camera language", c:"40 Flow · 60 Kling", steps:[
+      {t:"Camera language", c:"40 Flow", steps:[
         ["20m","Learn shot sizes (wide, medium, close-up) and moves (dolly, pan, tilt, orbit, handheld, crane)."],
         ["80m","Keep one scene fixed and change only the camera direction across 4 generations."],
         ["20m","Save the camera phrases that worked reliably into a 'camera cheat sheet' tab in your log."]],
         d:"Your camera cheat sheet."},
-      {t:"Lighting and visual style", c:"40 Flow · 60 Kling", steps:[
+      {t:"Lighting and visual style", c:"40 Flow", steps:[
         ["20m","Learn lighting terms: golden hour, hard/soft light, neon, practical lights, backlight, low-key."],
         ["80m","Same scene, 4 lighting setups. Then try 3 styles: realistic film, anime, documentary."],
         ["20m","Add a 'lighting & style' tab to the cheat sheet."]],
@@ -334,10 +334,10 @@ const WEEKS = [
         ["80m","Make 2 clips with one short line of dialogue each. Check lip-sync, accent and timing."],
         ["20m","Note which phrasings gave clean dialogue and which caused garbled speech."]],
         d:"Two talking clips and audio notes."},
-      {t:"Image-to-video", c:"50 Flow · 60 Kling", steps:[
+      {t:"Image-to-video", c:"50 Flow", steps:[
         ["20m","Learn why pros make a keyframe image first: more control over composition and character."],
         ["40m","Generate 3 keyframe images with Nano Banana (in Flow or Gemini)."],
-        ["40m","Animate them with Flow 'Frames to Video' and Kling image-to-video. Compare against pure text-to-video."],
+        ["40m","Animate them with Flow 'Frames to Video'. Compare against pure text-to-video. If you still have Kling credits, animate one keyframe in Kling image-to-video too."],
         ["20m","Log which approach gave more control."]],
         d:"Three animated keyframes."},
       {t:"First edit and decision day", c:"50 Flow", steps:[
@@ -414,7 +414,7 @@ const WEEKS = [
       {t:"Shots 6–10 and hero shots", c:"~300 Flow", steps:[
         ["80m","Animate shots 6–10 in Fast mode."],
         ["30m","Re-render your 1–2 hero shots in Quality mode (100 credits each)."],
-        ["10m","If an action shot keeps failing in Veo, try it in Kling."]],
+        ["10m","If an action shot keeps failing in Veo, try it in Kling (needs Kling Standard, or credits left from the free 66)."]],
         d:"All 10 shots done."},
       {t:"Voice and audio pass", c:"~60 Flow", steps:[
         ["20m","Listen to every line of dialogue. List anything off: voice, timing, accent."],
@@ -459,7 +459,7 @@ const WEEKS = [
         d:"Episode 2 is live + analytics notes."},
       {t:"Fix the weakest link", c:"~150 Flow · Kling", steps:[
         ["20m","Look at your logs: what fails most? (character drift, hands, dialogue, motion)"],
-        ["100m","Spend the whole session improving that one problem. Try Kling for motion-heavy shots."]],
+        ["100m","Spend the whole session improving that one problem. Try Kling for motion-heavy shots if you have Kling credits."]],
         d:"A documented fix for your weakest area."}
     ]
   },
