@@ -22,7 +22,7 @@
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin />
-  <link rel="stylesheet" href="/styles.css?v=20261011b" />
+  <link rel="stylesheet" href="/styles.css?v=20261012a" />
   <script>document.documentElement.classList.add('js')</script>
   <script type="application/ld+json">
 {
@@ -47,6 +47,22 @@
     "priceCurrency": "USD",
     "description": "Free early-access check"
   }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why not just ask ChatGPT whether it recommends my business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because customers ask without naming you, AI can't reliably report on its own behaviour, answers vary between runs, and your own chats are personalised to you. The AI Visibility Checker asks about ten real customer questions in English and Chinese, several times each, across ChatGPT, Perplexity, Gemini and Claude, and reports how often you're named, who is named instead, which sources AI cites, and what to fix on your website."
+      }
+    }
+  ]
 }
   </script>
   <!-- Google tag (gtag.js) -->
@@ -152,7 +168,39 @@
       </div>
     </section>
 
-    <section class="section" id="how">
+    <section class="section" id="why-not-ask">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Why not just ask AI?</p>
+          <h2>Asking ChatGPT yourself won't show you what customers see</h2>
+          <p class="sub">It's the first thing most owners try, and it feels like a quick check. But a single chat can't measure what your customers are told. Here's why.</p>
+        </div>
+        <ul class="benefits">
+          <li class="benefit reveal"><h3>You ask a different question</h3><p>You ask “Is Acme Accounting any good?” Your customers ask “Who's the best accountant in San Diego?” and never say your name. Once a business is named in the question, AI almost always finds something nice to say about it. The real test is whether it names you when nobody else does.</p></li>
+          <li class="benefit reveal"><h3>AI can't report on itself</h3><p>Ask “Would you recommend my business?” and the AI guesses what it might tell someone else. It isn't checking anything, and its guesses tend to be polite.</p></li>
+          <li class="benefit reveal"><h3>One answer is one sample</h3><p>Ask the same question twice and you can get different names. One reply tells you very little, so we run each question several times and report how often you're named.</p></li>
+          <li class="benefit reveal"><h3>Your answers are tailored to you</h3><p>AI adjusts its replies to your location, your past chats and what it remembers about you. And you're checking one engine, while your customers use ChatGPT, Perplexity, Gemini and Claude.</p></li>
+        </ul>
+        <div class="compare-wrap reveal">
+          <table class="compare">
+            <thead><tr><td></td><th scope="col">Asking AI yourself</th><th scope="col">The AI Visibility Checker</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Questions</th><td data-label="Asking AI yourself">One, usually with your name in it</td><td class="us" data-label="The AI Visibility Checker">About ten customer questions, in English and 中文, without your name</td></tr>
+              <tr><th scope="row">Engines</th><td data-label="Asking AI yourself">One</td><td class="us" data-label="The AI Visibility Checker">ChatGPT, Perplexity, Gemini and Claude</td></tr>
+              <tr><th scope="row">Runs</th><td data-label="Asking AI yourself">Once</td><td class="us" data-label="The AI Visibility Checker">Several per question, reported as how often you're named</td></tr>
+              <tr><th scope="row">Context</th><td data-label="Asking AI yourself">Shaped by your location, history and memory</td><td class="us" data-label="The AI Visibility Checker">Fresh sessions with no personal history</td></tr>
+              <tr><th scope="row">Competitors</th><td data-label="Asking AI yourself">Not shown</td><td class="us" data-label="The AI Visibility Checker">Who gets named instead of you</td></tr>
+              <tr><th scope="row">Sources</th><td data-label="Asking AI yourself">Usually hidden</td><td class="us" data-label="The AI Visibility Checker">The sites AI cited, and whether you're listed on them</td></tr>
+              <tr><th scope="row">Why</th><td data-label="Asking AI yourself">No explanation</td><td class="us" data-label="The AI Visibility Checker">A website check and fixes ranked by impact</td></tr>
+              <tr><th scope="row">Over time</th><td data-label="Asking AI yourself">Nothing to compare against</td><td class="us" data-label="The AI Visibility Checker">A baseline you can re-run after making changes</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="cta-note" style="margin-top:20px">Asking AI yourself is still worth doing. It gives you one opinion. The checker gives you a measurement, and the reasons behind it.</p>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="how">
       <div class="wrap">
         <div class="section-head">
           <p class="kicker">How it works</p>
@@ -187,7 +235,7 @@
       </div>
     </section>
 
-    <section class="section section-soft">
+    <section class="section">
       <div class="wrap split">
         <div class="section-head" style="margin-bottom:0">
           <p class="kicker">What you get</p>
@@ -204,7 +252,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-soft">
       <div class="wrap">
         <div class="section-head">
           <p class="kicker">Why it matters</p>
@@ -219,7 +267,7 @@
       </div>
     </section>
 
-    <section class="section section-soft">
+    <section class="section">
       <div class="wrap">
         <div class="section-head">
           <p class="kicker">How to use it</p>
@@ -234,7 +282,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-soft">
       <div class="wrap split">
         <div class="section-head" style="margin-bottom:0">
           <p class="kicker">Under the hood</p>

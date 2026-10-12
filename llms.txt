@@ -41,7 +41,7 @@ What an agent can read and do is scoped up front, every action it takes is logge
 
 ## Projects
 
-- **AI Visibility Checker** (in development) — https://shiptolive.com/projects/ai-visibility-checker/ — asks ChatGPT, Perplexity, Gemini and Claude the questions a business's customers ask, in English and Chinese, and reports whether the business is named, who is named instead, which sources the AI cites, and what to fix on the website (structured data, llms.txt, AI crawler access). Free early-access checks are available through the contact form.
+- **AI Visibility Checker** (in development) — https://shiptolive.com/projects/ai-visibility-checker/ — asks ChatGPT, Perplexity, Gemini and Claude the questions a business's customers ask, in English and Chinese, and reports whether the business is named, who is named instead, which sources the AI cites, and what to fix on the website (structured data, llms.txt, AI crawler access). It answers the common question of why not just ask ChatGPT directly: customers ask without naming the business, AI can't reliably report on its own recommendations, answers vary between runs, and personal chats are tailored to the person asking, so the checker runs many unnamed customer questions several times across all four engines and reports a mention rate. Free early-access checks are available through the contact form.
 - **Lead intake agent** (planned) — drafts replies to new inquiries for human approval.
 - **AI assistant in Tally** (planned) — natural-language time entries and invoice drafts.
 

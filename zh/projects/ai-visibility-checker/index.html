@@ -22,7 +22,7 @@
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin />
-  <link rel="stylesheet" href="/styles.css?v=20261011b" />
+  <link rel="stylesheet" href="/styles.css?v=20261012a" />
   <script>document.documentElement.classList.add('js')</script>
   <script type="application/ld+json">
 {
@@ -47,6 +47,22 @@
     "priceCurrency": "USD",
     "description": "Free early-access check"
   }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "為什麼不直接問 ChatGPT 會不會推薦我的公司？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "因為客戶提問時不會提到你的名字，AI 無法準確回報自己的行為，每次回答都不一樣，而且你自己的對話會依你個人調整。AI 能見度檢測用中英文、約十個客戶真正會問的問題，每題跑好幾次，同時問 ChatGPT、Perplexity、Gemini 和 Claude，回報你被提到的比例、AI 推薦了誰、引用了哪些來源，以及網站該修正什麼。"
+      }
+    }
+  ]
 }
   </script>
   <!-- Google tag (gtag.js) -->
@@ -152,7 +168,39 @@
       </div>
     </section>
 
-    <section class="section" id="how">
+    <section class="section" id="why-not-ask">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">為什麼不直接問 AI？</p>
+          <h2>自己問 ChatGPT，看不到客戶看到的答案</h2>
+          <p class="sub">這是多數老闆第一個會試的方法，感覺又快又簡單。但一次對話，測不出客戶實際聽到了什麼。原因如下。</p>
+        </div>
+        <ul class="benefits">
+          <li class="benefit reveal"><h3>你問的問題不一樣</h3><p>你會問「王大明會計師事務所好嗎？」客戶問的是「台北最推薦的會計師是誰？」，根本不會提到你的名字。只要問題裡出現公司名稱，AI 幾乎都會說些好話。真正的考驗是：沒人提起你的時候，AI 會不會主動推薦你。</p></li>
+          <li class="benefit reveal"><h3>AI 無法回報自己的行為</h3><p>問 AI「你會推薦我的公司嗎？」，它只是在猜自己會對別人說什麼，並沒有實際查證，而且通常猜得很客氣。</p></li>
+          <li class="benefit reveal"><h3>一次回答只是一次抽樣</h3><p>同一個問題問兩次，可能得到不同的名字。一次回答說明不了什麼，所以我們每個問題都跑好幾次，回報你被提到的比例。</p></li>
+          <li class="benefit reveal"><h3>你看到的答案是為你量身打造的</h3><p>AI 會依你的所在地、過去的對話和它記得的資訊調整回答。而且你只查了一個引擎，客戶用的卻是 ChatGPT、Perplexity、Gemini 和 Claude。</p></li>
+        </ul>
+        <div class="compare-wrap reveal">
+          <table class="compare">
+            <thead><tr><td></td><th scope="col">自己問 AI</th><th scope="col">AI 能見度檢測</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">問題</th><td data-label="自己問 AI">一個，通常帶著你的公司名稱</td><td class="us" data-label="AI 能見度檢測">約十個客戶真正會問的問題，中英文都有，不提你的名字</td></tr>
+              <tr><th scope="row">引擎</th><td data-label="自己問 AI">一個</td><td class="us" data-label="AI 能見度檢測">ChatGPT、Perplexity、Gemini 和 Claude</td></tr>
+              <tr><th scope="row">次數</th><td data-label="自己問 AI">一次</td><td class="us" data-label="AI 能見度檢測">每個問題跑好幾次，回報你被提到的比例</td></tr>
+              <tr><th scope="row">情境</th><td data-label="自己問 AI">受你的所在地、對話紀錄和記憶影響</td><td class="us" data-label="AI 能見度檢測">全新對話，不帶任何個人紀錄</td></tr>
+              <tr><th scope="row">競爭者</th><td data-label="自己問 AI">看不到</td><td class="us" data-label="AI 能見度檢測">AI 推薦了誰，而不是你</td></tr>
+              <tr><th scope="row">來源</th><td data-label="自己問 AI">通常看不到</td><td class="us" data-label="AI 能見度檢測">AI 引用了哪些網站，你有沒有出現在上面</td></tr>
+              <tr><th scope="row">原因</th><td data-label="自己問 AI">沒有說明</td><td class="us" data-label="AI 能見度檢測">網站檢查，加上依影響程度排序的修正建議</td></tr>
+              <tr><th scope="row">長期追蹤</th><td data-label="自己問 AI">沒有比較基準</td><td class="us" data-label="AI 能見度檢測">一個基準，修改之後可以再測一次</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="cta-note" style="margin-top:20px">自己問 AI 還是值得做，只是你得到的是一個意見。檢測給你的是一個量測結果，以及背後的原因。</p>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="how">
       <div class="wrap">
         <div class="section-head">
           <p class="kicker">怎麼運作</p>
@@ -187,7 +235,7 @@
       </div>
     </section>
 
-    <section class="section section-soft">
+    <section class="section">
       <div class="wrap split">
         <div class="section-head" style="margin-bottom:0">
           <p class="kicker">你會拿到什麼</p>
@@ -204,7 +252,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-soft">
       <div class="wrap">
         <div class="section-head">
           <p class="kicker">為什麼重要</p>
@@ -219,7 +267,7 @@
       </div>
     </section>
 
-    <section class="section section-soft">
+    <section class="section">
       <div class="wrap">
         <div class="section-head">
           <p class="kicker">怎麼使用</p>
@@ -234,7 +282,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-soft">
       <div class="wrap split">
         <div class="section-head" style="margin-bottom:0">
           <p class="kicker">技術細節</p>
