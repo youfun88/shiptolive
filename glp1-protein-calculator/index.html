@@ -75,7 +75,10 @@
     gtag('config', 'G-5W92T6J80C');
   </script>
   <style>
-    .calc { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 20px; align-items: start; }
+    .calc { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); grid-template-rows: auto 1fr; grid-template-areas: "details result" "plan result"; gap: 20px; align-items: start; }
+    .calc .details { grid-area: details; }
+    .calc .result { grid-area: result; }
+    .calc .quick-plan { grid-area: plan; }
     .panel { border: 1px solid var(--line); border-radius: var(--radius); background: #fff; padding: 28px; }
     .panel h2 { font-size: 20px; letter-spacing: -0.015em; font-weight: 650; }
     .panel form { display: grid; gap: 18px; margin-top: 20px; }
@@ -117,6 +120,13 @@
     .day .g { font-family: var(--mono); font-size: 13.5px; font-weight: 600; }
     .day .total { display: flex; justify-content: space-between; margin-top: 8px; padding-top: 12px; border-top: 2px solid var(--ink); font-weight: 650; }
     .fine { margin-top: 12px; font-size: 13px; color: var(--muted); }
+    .quick-plan h2 { font-size: 18px; }
+    .quick-plan > p { margin-top: 6px; font-size: 14.5px; color: var(--ink-2); }
+    .quick-plan .quick-row { display: flex; gap: 10px; margin-top: 14px; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .quick-plan .quick-row input { flex: 1; min-width: 0; }
+    .quick-plan .form-status { display: block; margin-top: 8px; }
+    @media (max-width: 560px) { .quick-plan .quick-row { flex-direction: column; } }
 
     .tips { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; list-style: none; }
     .tips li { border: 1px solid var(--line); border-radius: var(--radius); background: #fff; padding: 22px; }
@@ -148,6 +158,7 @@
 
     @media (max-width: 900px) {
       .calc, .waitlist { grid-template-columns: minmax(0, 1fr); }
+      .calc { grid-template-rows: none; grid-template-areas: "details" "result" "plan"; }
       .result { position: static; }
       .tips { grid-template-columns: minmax(0, 1fr); }
     }
@@ -194,7 +205,7 @@
 
     <section class="section" id="calculator" style="padding-top:0">
       <div class="wrap calc">
-        <div class="panel">
+        <div class="panel details">
           <h2>Your details</h2>
           <form id="calcForm" novalidate>
             <div class="weight-row">
@@ -250,6 +261,19 @@
             <p class="fine">Protein amounts are approximate. Check the label on what you buy.</p>
           </div>
         </div>
+
+        <form class="panel quick-plan" id="quickForm" novalidate>
+          <h2>Stopping a GLP-1? Get the 12-week plan</h2>
+          <p>Protein, short strength workouts and weekly check-ins to help keep the weight off. We'll email it when it's ready.</p>
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true" />
+          <div class="field quick-row">
+            <label class="visually-hidden" for="qEmail">Email</label>
+            <input id="qEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+            <button class="btn btn-primary" type="submit">Join the list</button>
+          </div>
+          <span class="form-status" role="status"></span>
+          <p class="fine">One email when the plan is ready. No spam, and we never share your email. <a href="#plan">More about the plan</a></p>
+        </form>
       </div>
     </section>
 
@@ -469,9 +493,6 @@
     // owner. If that call fails, FormSubmit (same relay as the home page contact
     // form) still gets the sign-up to the inbox, so none is lost.
     var WAITLIST_API = 'https://jzvyyxcwsebftskfcimp.supabase.co/functions/v1/glp1-waitlist';
-    var wf = document.getElementById('waitForm');
-    var ws = document.getElementById('wStatus');
-    var wb = document.getElementById('wSend');
     function post(url, data) {
       return fetch(url, {
         method: 'POST',
@@ -479,28 +500,41 @@
         body: JSON.stringify(data)
       }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
     }
-    wf.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (wf._honey.value) { ws.textContent = "Thanks, you're on the list."; ws.className = 'form-status ok'; return; }
-      var email = wf.email.value.trim();
-      if (!/^\S+@\S+\.\S+$/.test(email)) { ws.textContent = 'Please enter a valid email.'; ws.className = 'form-status err'; return; }
-      var stage = wf.stage.value;
-      var target = parseInt(document.getElementById('target').textContent, 10) || null;
-      wb.disabled = true; ws.textContent = 'Sending…'; ws.className = 'form-status';
-      post(WAITLIST_API, { email: email, stage: stage, target_g: target, source: location.pathname })
-        .catch(function () {
-          return post('https://formsubmit.co/ajax/yufan@shiptolive.com', {
-            email: email, _replyto: email, stage: stage, target_g: target,
-            _subject: 'GLP-1 plan waitlist (backup): ' + stage, _template: 'table'
-          });
-        })
-        .then(function () {
-          wf.reset(); ws.textContent = "Thanks, you're on the list."; ws.className = 'form-status ok';
-          if (typeof gtag === 'function') gtag('event', 'glp1_waitlist_signup');
-        })
-        .catch(function () { ws.textContent = "Sorry, that didn't go through. Please try again."; ws.className = 'form-status err'; })
-        .finally(function () { wb.disabled = false; });
+    // Two sign-up forms: the short one under the result (stage taken from the
+    // calculator) and the full one in the #plan section. `spot` tells them apart
+    // in GA4.
+    function waitlist(wf, spot, getStage) {
+      var ws = wf.querySelector('.form-status');
+      var wb = wf.querySelector('button[type=submit]');
+      wf.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (wf._honey.value) { ws.textContent = "Thanks, you're on the list."; ws.className = 'form-status ok'; return; }
+        var email = wf.email.value.trim();
+        if (!/^\S+@\S+\.\S+$/.test(email)) { ws.textContent = 'Please enter a valid email.'; ws.className = 'form-status err'; return; }
+        var stage = getStage();
+        var target = parseInt(document.getElementById('target').textContent, 10) || null;
+        wb.disabled = true; ws.textContent = 'Sending…'; ws.className = 'form-status';
+        post(WAITLIST_API, { email: email, stage: stage, target_g: target, source: location.pathname + '#' + spot })
+          .catch(function () {
+            return post('https://formsubmit.co/ajax/yufan@shiptolive.com', {
+              email: email, _replyto: email, stage: stage, target_g: target,
+              _subject: 'GLP-1 plan waitlist (backup): ' + stage, _template: 'table'
+            });
+          })
+          .then(function () {
+            wf.reset(); ws.textContent = "Thanks, you're on the list."; ws.className = 'form-status ok';
+            if (typeof gtag === 'function') gtag('event', 'glp1_waitlist_signup', { form_location: spot });
+          })
+          .catch(function () { ws.textContent = "Sorry, that didn't go through. Please try again."; ws.className = 'form-status err'; })
+          .finally(function () { wb.disabled = false; });
+      });
+    }
+    var calcStage = document.getElementById('stage');
+    waitlist(document.getElementById('quickForm'), 'result', function () {
+      return calcStage.options[calcStage.selectedIndex].text;
     });
+    var fullForm = document.getElementById('waitForm');
+    waitlist(fullForm, 'plan', function () { return fullForm.stage.value; });
   })();
   </script>
   <script src="/script.js?v=20261008f"></script>
