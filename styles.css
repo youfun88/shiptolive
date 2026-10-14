@@ -726,3 +726,4 @@ a.proj:hover .proj-more svg { transform: translateX(3px); }
 .incl li { position: relative; padding-left: 22px; margin-top: 7px; }
 .incl li::before { content: '✓'; position: absolute; left: 0; color: var(--ok); font-weight: 600; }
 .svc-note { margin-top: auto !important; padding-top: 14px; border-top: 1px dashed var(--line); font-size: 14px; color: var(--muted); }
+@media (min-width: 881px) { .stats-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
