@@ -438,6 +438,7 @@ html[lang^="zh"] .kicker { letter-spacing: 0.12em; }
 .founder-copy .founder-legal { font-size: 14.5px; color: var(--muted); }
 .founder-copy .btn { margin-top: 24px; }
 @media (max-width: 720px) { .founder { grid-template-columns: 1fr; } .founder-photo { max-width: 160px; } }
+.founder:not(:has(.founder-photo)) { grid-template-columns: 1fr; } /* no photo yet */
 
 /* ---------- FAQ ---------- */
 .faq-list { max-width: 820px; border-top: 1px solid var(--line); }
