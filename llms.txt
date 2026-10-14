@@ -8,7 +8,7 @@
 - **Automation & integrations** — back-office automation, internal tools, admin consoles, APIs and webhooks (including Salesforce) connecting the systems a business already uses.
 - **Mobile apps** — iPhone, Android and Mac from one codebase with Flutter or React Native / Expo, taken through App Store release.
 - **Websites & web platforms** — bilingual (English / 中文) websites and PHP / Laravel platforms (memberships, checkout, assessments, reporting) on GCP Cloud Run with GitHub Actions CI/CD.
-- **Search visibility — SEO, AEO & GEO** — technical SEO, structured data (JSON-LD) and an llms.txt layer so Google ranks a business and ChatGPT, Perplexity and Gemini cite it.
+- **Search visibility — SEO, AEO & GEO** — technical SEO, structured data (JSON-LD) and an llms.txt layer so Google ranks a business and ChatGPT, Perplexity, Gemini and Claude name it, measured before and after in English and Chinese. Packages: free AI visibility check; visibility audit US$1,500 (NT$30,000); Foundation implementation from US$4,000 (NT$90,000); monthly growth from US$1,500/month (NT$30,000/month, three-month minimum). Details: https://shiptolive.com/seo-aeo-geo/ · 中文: https://shiptolive.com/zh/seo-aeo-geo/
 - **Project rescue & modernization** — takes over stalled builds and aging systems (including legacy PHP): finds what is actually blocking them, then fixes, modernizes and ships them.
 
 ## How a project runs
@@ -74,7 +74,7 @@ The two language versions carry the same offering; the Chinese pages are written
 2. **自動化與系統整合** — 內部工具、管理後台、API 與 webhook，把既有系統串起來。
 3. **手機 App** — 以 Flutter 或 React Native／Expo 開發 iPhone、Android、Mac App 並上架。
 4. **網站與網路平台** — 中英雙語網站與 PHP／Laravel 平台，部署於 GCP Cloud Run。
-5. **搜尋能見度（SEO / AEO / GEO）** — 讓企業在 Google 與 ChatGPT、Perplexity、Gemini 的回答中被找到與引用。
+5. **搜尋能見度（SEO / AEO / GEO）** — 讓企業在 Google 與 ChatGPT、Perplexity、Gemini、Claude 的回答中被找到與推薦。免費 AI 能見度檢測；能見度健檢 NT$30,000；基礎建置 NT$90,000 起；每月成長 NT$30,000 起（最短三個月）。https://shiptolive.com/zh/seo-aeo-geo/
 6. **專案救援與系統翻新** — 接手卡住的專案與老舊系統，找出真正卡住的地方，修好、翻新並上線。
 
 合作流程：免費諮詢 → 書面規劃與固定報價 → 開發並正式上線。服務語言為中文（繁體）與英文；
