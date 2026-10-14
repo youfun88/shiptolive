@@ -378,10 +378,21 @@ html[lang^="zh"] .kicker { letter-spacing: 0.12em; }
 .sites-head { padding: 20px 24px; border-bottom: 1px solid var(--line); }
 .sites-head h3 { font-size: 17px; font-weight: 650; letter-spacing: -0.01em; }
 .sites-head p { font-size: 14.5px; color: var(--muted); }
-.sites ul { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.sites li { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.sites li:nth-child(3n) { border-right: 0; }
-.sites li:nth-last-child(-n+3) { border-bottom: 0; }
+/* One row. script.js duplicates the items and adds .is-marquee so it loops;
+   without JS, or with reduced motion, the row scrolls sideways by hand. */
+.sites-track { overflow-x: auto; scrollbar-width: none; }
+.sites-track::-webkit-scrollbar { display: none; }
+.sites ul { list-style: none; display: flex; width: max-content; }
+.sites li { flex: 0 0 280px; border-right: 1px solid var(--line); }
+.sites.is-marquee .sites-track {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 48px, #000 calc(100% - 48px), transparent);
+          mask-image: linear-gradient(to right, transparent, #000 48px, #000 calc(100% - 48px), transparent);
+}
+.sites.is-marquee ul { animation: sites-scroll 40s linear infinite; }
+.sites.is-marquee:hover ul, .sites.is-marquee:focus-within ul { animation-play-state: paused; }
+@keyframes sites-scroll { to { transform: translateX(-50%); } }
+@media (max-width: 720px) { .sites li { flex-basis: 240px; } }
 .sites a {
   display: flex; flex-direction: column; gap: 2px; padding: 18px 24px; min-height: 76px;
   text-decoration: none; transition: background-color 0.15s ease;
@@ -517,11 +528,6 @@ html[lang^="zh"] .kicker { letter-spacing: 0.12em; }
 @media (max-width: 1000px) {
   .svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .svc-wide { grid-column: 1 / -1; }
-  .sites ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .sites li:nth-child(3n) { border-right: 1px solid var(--line); }
-  .sites li:nth-child(2n) { border-right: 0; }
-  .sites li:nth-last-child(-n+3) { border-bottom: 1px solid var(--line); }
-  .sites li:nth-last-child(-n+2) { border-bottom: 0; }
 }
 
 @media (max-width: 880px) {
@@ -559,9 +565,6 @@ html[lang^="zh"] .kicker { letter-spacing: 0.12em; }
   .svc-grid { grid-template-columns: 1fr; }
   .svc-wide { grid-column: auto; }
   .svc { padding: 24px 20px; }
-  .sites ul { grid-template-columns: 1fr; }
-  .sites li, .sites li:nth-child(3n), .sites li:nth-child(2n) { border-right: 0; border-bottom: 1px solid var(--line); }
-  .sites li:last-child { border-bottom: 0; }
   .sites a { padding: 16px 20px; }
   .field-row { grid-template-columns: 1fr; }
   .cta-row .btn { flex: 1 1 100%; }

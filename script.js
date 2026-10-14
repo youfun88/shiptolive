@@ -44,6 +44,22 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   els.forEach(function (el) { io.observe(el); });
 })();
 
+// Client sites: loop the row. The copy is hidden from screen readers and the tab order.
+(function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('.sites').forEach(function (box) {
+    const ul = box.querySelector('ul');
+    if (!ul) return;
+    Array.prototype.slice.call(ul.children).forEach(function (li) {
+      const copy = li.cloneNode(true);
+      copy.setAttribute('aria-hidden', 'true');
+      copy.querySelectorAll('a').forEach(function (a) { a.tabIndex = -1; });
+      ul.appendChild(copy);
+    });
+    box.classList.add('is-marquee');
+  });
+})();
+
 // Count the hero numbers up once they scroll into view ("40M", "4,000 萬", "1M+").
 (function () {
   const els = document.querySelectorAll('.stats strong');
