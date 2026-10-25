@@ -1,15 +1,21 @@
 # Ship to Live — 夏裕科技股份有限公司 — software studio, San Diego & Taipei
 
-> Ship to Live (夏裕科技) is a founder-led software studio in San Diego, California and Taipei, Taiwan. It builds AI agents, RAG pipelines and automations into the databases, back offices and workflows a business already runs; ships mobile apps, websites and back ends; rescues stalled projects; and does SEO, AEO and GEO so Google and AI engines name the business. Every project is led by founder Yufan Chen, an engineering leader and full-stack engineer and former CTO of TalentSmartEQ. US engagements are contracted through QY LLC (San Diego); Taiwan engagements through 夏裕科技股份有限公司 (unified business number 90173045). Bilingual in English and Traditional Chinese (中文). Contact by email or through the contact form; phone is not published. Website: https://shiptolive.com/ · About: https://shiptolive.com/about/ · 中文版: https://shiptolive.com/zh/
+> Ship to Live (夏裕科技) is a founder-led software studio in San Diego, California and Taipei, Taiwan. It builds AI agents, RAG pipelines and automations into the databases, back offices and workflows a business already runs; ships mobile apps, websites and back ends; rescues stalled projects; and builds English / 中文 websites that Google and AI search can find, check and cite, measured before and after. Every project is led by founder Yufan Chen, an engineering leader and full-stack engineer and former CTO of TalentSmartEQ. US engagements are contracted through QY LLC (San Diego); Taiwan engagements through 夏裕科技股份有限公司 (unified business number 90173045). Bilingual in English and Traditional Chinese (中文). Contact by email or through the contact form; phone is not published. Website: https://shiptolive.com/ · About: https://shiptolive.com/about/ · 中文版: https://shiptolive.com/zh/
 
 ## Services
 
 - **AI agents & assistants** — assistants and RAG pipelines that answer from a company's own documents and data, with sources attached, and can act on them: look up the record, draft the reply, file the result. LangChain, LangGraph, ChromaDB, OpenAI and Claude.
-- **Automation & integrations** — back-office automation, internal tools, admin consoles, APIs and webhooks (including Salesforce) connecting the systems a business already uses.
+- **Lead follow-up & automation** — missed-call text-back, instant replies, booking and follow-up wired into the CRM, LINE or inbox a business already uses; plus back-office automation, internal tools, APIs and webhooks (including Salesforce).
 - **Mobile apps** — iPhone, Android and Mac from one codebase with Flutter or React Native / Expo, taken through App Store release.
 - **Websites & web platforms** — bilingual (English / 中文) websites and PHP / Laravel platforms (memberships, checkout, assessments, reporting) on GCP Cloud Run with GitHub Actions CI/CD.
-- **Search visibility — SEO, AEO & GEO** — technical SEO, structured data (JSON-LD) and an llms.txt layer so Google ranks a business and ChatGPT, Perplexity, Gemini and Claude name it, measured before and after in English and Chinese. Packages: free AI visibility check; visibility audit US$1,500 (NT$30,000); Foundation implementation from US$4,000 (NT$90,000); monthly growth from US$1,500/month (NT$30,000/month, three-month minimum). Details: https://shiptolive.com/seo-aeo-geo/ · 中文: https://shiptolive.com/zh/seo-aeo-geo/
+- **Search visibility — SEO, AEO & GEO** — technical SEO, structured data (JSON-LD) and an llms.txt layer so Google can rank a business and ChatGPT, Perplexity, Gemini and Claude can find and cite it, measured before and after in English and Chinese. Packages: free AI visibility check; visibility audit US$1,500 (NT$30,000); Foundation implementation from US$4,000 (NT$90,000); monthly growth from US$1,500/month (NT$30,000/month, three-month minimum); new website from US$6,000 (NT$150,000); site care US$500/month (NT$15,000/month: uptime, backups, security updates, monthly search health check, monthly AI visibility check on the same 10 questions, up to 2 hours of small changes; month to month, first 3 months included with a new website). No one can guarantee an AI engine will name a business; results are measured, not promised. Details: https://shiptolive.com/seo-aeo-geo/ · 中文: https://shiptolive.com/zh/seo-aeo-geo/
 - **Project rescue & modernization** — takes over stalled builds and aging systems (including legacy PHP): finds what is actually blocking them, then fixes, modernizes and ships them.
+
+## Who Ship to Live works with most
+
+- Cross-border professional firms (law, immigration, accounting, estate) serving clients in English and Chinese, across the US and Taiwan.
+- Taiwan businesses serving foreign visitors (tours, shuttles, stays, activities) that want direct English bookings.
+- Small businesses losing leads to slow replies, who need instant replies, booking and follow-up wired into their existing tools.
 
 ## How a project runs
 
@@ -32,7 +38,7 @@ What an agent can read and do is scoped up front, every action it takes is logge
 - **Tally** (https://www.tallybillable.com/) — billable-time and invoicing app. iPhone & Mac, Flutter.
 - **Tadapop** (https://tadapop.app/) — social habit tracker with a private leaderboard. iOS & Android, React Native / Expo.
 - **LEADx** (https://leadx.org/) — EQ 360 assessment platform.
-- **WU LAW GROUP** (https://wulawintl.com/) — bilingual (English / Chinese) website for a New York–licensed attorney in Taipei handling US–Taiwan cross-border inheritance, investment and business law. Built by Ship to Live with SEO, AEO and GEO; the owner reports 20 consultations and 6 paying clients from the site in its first month, many from people who found the firm through Google or AI search.
+- **WU LAW GROUP** (https://wulawintl.com/) — bilingual (English / Chinese) website for a New York–licensed attorney in Taipei handling US–Taiwan cross-border inheritance, investment and business law. Built by Ship to Live with SEO, AEO and GEO; the owner reports 20 consultations and 6 paying clients from the site in its first month.
 - **山行接駁 Go Hike** (https://gohike.tw/) — booking website for a Taiwan hiking shuttle service running from Taipei and Taichung to high-mountain trailheads, launched September 2026. Built by Ship to Live with SEO, AEO and GEO: 102 routes and prices and 22 FAQ answers in structured data, plus llms.txt.
 - **Travis Bradberry** (https://travisbradberry.com/) — author site for the coauthor of *Emotional Intelligence 2.0*.
 - **SHX Training** (https://shxtraining.com/) — corporate ESG training website (Taiwan & California).

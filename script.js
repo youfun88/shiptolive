@@ -128,7 +128,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   // arrive with the right option chosen and the message started.
   const topic = new URLSearchParams(location.search).get('topic');
   if (topic === 'visibility') {
-    const opt = Array.prototype.find.call(form.topic.options, function (o) { return /GEO/.test(o.text); });
+    const opt = Array.prototype.find.call(form.topic.options, function (o) { return /visibility check|能見度檢測/.test(o.text); });
     if (opt) form.topic.value = opt.value;
     if (!form.message.value) {
       form.message.value = ZH
