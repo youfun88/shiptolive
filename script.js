@@ -105,7 +105,8 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   const form = document.getElementById('contactForm');
   if (!form) return;
 
-  const ENDPOINT = 'https://formsubmit.co/ajax/yufan@shiptolive.com';
+  // Sent by Brevo from our own address, via the admin site (key stays server side).
+  const ENDPOINT = 'https://admin.shiptolive.com/api/contact';
 
   // Same form on /  and /zh/ — pick the copy off <html lang>.
   const ZH = /^zh/i.test(document.documentElement.lang || '');
@@ -171,15 +172,15 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     fetch(ENDPOINT, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      // text/plain keeps it a simple request: no CORS preflight.
+      headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify({
         name: d.name,
         email: d.email,
-        _replyto: d.email,
         topic: d.topic,
         message: d.message,
-        _subject: 'New inquiry (' + d.topic + ') — ' + d.name,
-        _template: 'table',
+        lang: document.documentElement.lang,
+        page: location.pathname,
       }),
     })
       .then(function (r) {
