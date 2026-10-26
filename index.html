@@ -42,7 +42,8 @@
   <!-- Inter is self-hosted (see @font-face in styles.css); preloading starts it
        in parallel with the stylesheet instead of after it. -->
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin.woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=20261014d" />
+  <link rel="stylesheet" href="styles.css?v=20261026a" />
+  <link rel="stylesheet" href="hero-a.css?v=20261026a" />
   <script>document.documentElement.classList.add('js')</script>
 
   <!-- Structured data: who I am, what I offer, and the site itself.
@@ -269,16 +270,51 @@
           <p class="cta-note"><a class="link" href="#start">See prices</a> · <a class="link" href="#work">see our work</a> · fixed-price quotes · replies within 1–2 business days · English or 中文</p>
         </div>
 
-        <div class="deploy" role="img" aria-label="WU LAW GROUP, first month after launch: an English / 中文 site launched, 20 consultations were booked, and 6 became paying clients.">
-          <div class="deploy-bar" aria-hidden="true"><i></i><i></i><i></i><span>wulawintl.com · first month</span></div>
-          <ol class="deploy-log" aria-hidden="true">
-            <li><span class="tick">✓</span><b>launched</b><em>built for Google &amp; AI search</em></li>
-            <li><span class="tick">✓</span><b>visited</b><em>the EN / 中文 site we built</em></li>
-            <li><span class="tick">✓</span><b>booked</b><em>20 consultations</em></li>
-            <li class="is-live"><span class="pulse"></span><b>hired</b><em>6 paying clients</em></li>
-          </ol>
-          <p class="deploy-foot" aria-hidden="true"><span>WU LAW GROUP · as reported by the owner</span></p>
-        </div>
+        <figure class="aia" aria-labelledby="aia-cap">
+          <figcaption class="aia-sr" id="aia-cap">An example of an AI answer. It names and cites one law firm and leaves another out. Below it, research on what being cited is worth.</figcaption>
+
+          <div class="aia-panel">
+            <div class="aia-bar">
+              <span class="aia-logo" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 1.5v3M8 11.5v3M1.5 8h3M11.5 8h3M3.4 3.4l2.1 2.1M10.5 10.5l2.1 2.1M3.4 12.6l2.1-2.1M10.5 5.5l2.1-2.1"/></svg></span>
+              <span class="aia-title">AI answer</span>
+              <span class="aia-tag">Example</span>
+            </div>
+
+            <p class="aia-q"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Who&rsquo;s the best bilingual estate lawyer for Taiwan heirs?</span></p>
+
+            <p class="aia-a">For a US estate with heirs in Taiwan, <mark>Your firm</mark> is a strong pick. They work in English and 中文 and explain Taiwan inheritance steps clearly.<sup class="aia-ref" aria-hidden="true">1</sup></p>
+
+            <ul class="aia-src" aria-label="Sources">
+              <li class="is-cited">
+                <span class="aia-fav" aria-hidden="true">Y</span>
+                <span class="aia-name">Your firm<small>Clear, checkable site</small></span>
+                <span class="aia-pill"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="m3.5 8.5 3 3 6-7"/></svg>Cited</span>
+              </li>
+              <li class="is-out">
+                <span class="aia-fav" aria-hidden="true">A</span>
+                <span class="aia-name">Another firm<small>Site AI can&rsquo;t read well</small></span>
+                <span class="aia-pill">Not mentioned</span>
+              </li>
+            </ul>
+            <p class="aia-note">Illustrative example.</p>
+          </div>
+
+          <div class="aia-data">
+            <p class="aia-k">What a citation is worth</p>
+            <p class="aia-h">Brands cited in Google&rsquo;s AI answer get <strong>2.2&times; the clicks</strong>.</p>
+            <div class="aia-bars" role="img" aria-label="Organic clicks per 1 million searches with an AI answer: about 20,700 when the brand is cited, about 9,400 when it is not.">
+              <div class="aia-row is-cited"><span>Cited</span><b><i style="--w:100%"></i></b><em>20,700</em></div>
+              <div class="aia-row is-out"><span>Not cited</span><b><i style="--w:45.4%"></i></b><em>9,400</em></div>
+            </div>
+            <p class="aia-unit">Organic clicks per 1M searches · <a href="https://www.seerinteractive.com/blog/aio-impact-on-google-ctr-2026-update" target="_blank" rel="noopener">Seer Interactive, 2026</a></p>
+
+            <ul class="aia-facts">
+              <li><strong>45%</strong><span>of US consumers use AI tools like ChatGPT for local picks. Up from 6%.</span><a href="https://www.brightlocal.com/research/local-consumer-review-survey/" target="_blank" rel="noopener">BrightLocal, 2026</a></li>
+              <li><strong>8% <small>vs</small> 15%</strong><span>click a website with a Google AI summary vs without one.</span><a href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/" target="_blank" rel="noopener">Pew Research, 2025</a></li>
+            </ul>
+            <p class="aia-foot">Correlation, not a guarantee. We measure yours before and after.</p>
+          </div>
+        </figure>
       </div>
 
       <div class="wrap">

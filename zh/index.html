@@ -39,7 +39,8 @@
   <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
 
   <link rel="preload" as="font" type="font/woff2" href="../assets/fonts/inter-latin.woff2" crossorigin />
-  <link rel="stylesheet" href="../styles.css?v=20261014d" />
+  <link rel="stylesheet" href="../styles.css?v=20261026a" />
+  <link rel="stylesheet" href="../hero-a.css?v=20261026a" />
   <script>document.documentElement.classList.add('js')</script>
 
   <!-- 結構化資料：我是誰、提供什麼、以及這個網站本身。
@@ -245,16 +246,51 @@
           <p class="cta-note"><a class="link" href="#start">看價格</a> · <a class="link" href="#work">看作品</a> · 固定報價 · 1–2 個工作天內回覆 · 可開統一發票</p>
         </div>
 
-        <div class="deploy" role="img" aria-label="WU LAW GROUP 網站上線第一個月：中英文網站上線，預約了 20 場諮詢，其中 6 位成為付費客戶。">
-          <div class="deploy-bar" aria-hidden="true"><i></i><i></i><i></i><span>wulawintl.com · 上線第一個月</span></div>
-          <ol class="deploy-log" aria-hidden="true">
-            <li><span class="tick">✓</span><b>launched</b><em>為 Google 與 AI 搜尋打造</em></li>
-            <li><span class="tick">✓</span><b>visited</b><em>我們打造的中英雙語網站</em></li>
-            <li><span class="tick">✓</span><b>booked</b><em>20 場諮詢預約</em></li>
-            <li class="is-live"><span class="pulse"></span><b>hired</b><em>6 位付費客戶</em></li>
-          </ol>
-          <p class="deploy-foot" aria-hidden="true"><span>WU LAW GROUP · 數字由業主提供</span></p>
-        </div>
+        <figure class="aia" aria-labelledby="aia-cap">
+          <figcaption class="aia-sr" id="aia-cap">AI 回答的示意圖：回答點名並引用了一家律師事務所，另一家沒被提到。下方是「被引用」價值多少的研究數據。</figcaption>
+
+          <div class="aia-panel">
+            <div class="aia-bar">
+              <span class="aia-logo" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 1.5v3M8 11.5v3M1.5 8h3M11.5 8h3M3.4 3.4l2.1 2.1M10.5 10.5l2.1 2.1M3.4 12.6l2.1-2.1M10.5 5.5l2.1-2.1"/></svg></span>
+              <span class="aia-title">AI 回答</span>
+              <span class="aia-tag">示意</span>
+            </div>
+
+            <p class="aia-q"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>繼承人在台灣，推薦會中英文的遺產律師？</span></p>
+
+            <p class="aia-a">美國的遺產、繼承人在台灣，<mark>你的事務所</mark>是很好的選擇。這家事務所中英文都能溝通，也熟悉台灣的繼承手續。<sup class="aia-ref" aria-hidden="true">1</sup></p>
+
+            <ul class="aia-src" aria-label="資料來源">
+              <li class="is-cited">
+                <span class="aia-fav" aria-hidden="true">你</span>
+                <span class="aia-name">你的事務所<small>網站清楚、資訊可查證</small></span>
+                <span class="aia-pill"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="m3.5 8.5 3 3 6-7"/></svg>被引用</span>
+              </li>
+              <li class="is-out">
+                <span class="aia-fav" aria-hidden="true">另</span>
+                <span class="aia-name">另一家事務所<small>網站 AI 讀不太懂</small></span>
+                <span class="aia-pill">沒被提到</span>
+              </li>
+            </ul>
+            <p class="aia-note">示意畫面。</p>
+          </div>
+
+          <div class="aia-data">
+            <p class="aia-k">被引用值多少</p>
+            <p class="aia-h">被 Google AI 回答引用的品牌，點擊數是 <strong>2.2 倍</strong>。</p>
+            <div class="aia-bars" role="img" aria-label="出現 AI 回答的搜尋，每 100 萬次的自然點擊：品牌被引用約 20,700 次，沒被引用約 9,400 次。">
+              <div class="aia-row is-cited"><span>被引用</span><b><i style="--w:100%"></i></b><em>20,700</em></div>
+              <div class="aia-row is-out"><span>沒被引用</span><b><i style="--w:45.4%"></i></b><em>9,400</em></div>
+            </div>
+            <p class="aia-unit">每 100 萬次搜尋的自然點擊 · <a href="https://www.seerinteractive.com/blog/aio-impact-on-google-ctr-2026-update" target="_blank" rel="noopener">Seer Interactive，2026</a></p>
+
+            <ul class="aia-facts">
+              <li><strong>45%</strong><span>的美國消費者用 ChatGPT 等 AI 找在地商家。一年前 6%。</span><a href="https://www.brightlocal.com/research/local-consumer-review-survey/" target="_blank" rel="noopener">BrightLocal，2026</a></li>
+              <li><strong>8% <small>對</small> 15%</strong><span>有 AI 摘要時點進網站的比例，對比沒有摘要時。</span><a href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/" target="_blank" rel="noopener">Pew Research，2025</a></li>
+            </ul>
+            <p class="aia-foot">這是相關性，不是保證。我們會量你自己做前、做後的數字。</p>
+          </div>
+        </figure>
       </div>
 
       <div class="wrap">
