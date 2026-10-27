@@ -1,5 +1,5 @@
 /* ---------- SELF-HOSTED FONTS ----------
-   Inter (SIL OFL), served from this origin instead of fonts.googleapis.com —
+   Inter (SIL OFL), served from this origin instead of fonts.googleapis.com,
    loading from Google cost two extra DNS+TLS handshakes before any text
    could paint. Variable font: one file covers the whole weight axis.
    latin-ext only downloads if the page actually uses those codepoints. */
@@ -46,7 +46,7 @@
 html[lang^="zh"] {
   --font: 'Inter', 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', 'Heiti TC', system-ui, sans-serif;
 }
-/* CJK has no ascenders/descenders to breathe against — give it more room. */
+/* CJK has no ascenders/descenders to breathe against, so give it more room. */
 html[lang^="zh"] body { line-height: 1.8; }
 html[lang^="zh"] h1, html[lang^="zh"] h2, html[lang^="zh"] h3 { line-height: 1.35; letter-spacing: 0; }
 html[lang^="zh"] .hero h1 { max-width: none; font-size: clamp(27px, 7.2vw, 58px); }
@@ -166,7 +166,7 @@ strong { font-weight: 600; color: var(--ink); }
   line-height: 1.02; letter-spacing: -0.035em; font-weight: 700;
   max-width: 15ch;
 }
-.hero h1 .soft { color: #85858e; } /* 3.66:1 on white — passes AA for large text */
+.hero h1 .soft { color: #85858e; } /* 3.66:1 on white, passes AA for large text */
 .lede {
   margin-top: 22px; font-size: clamp(17px, 1.6vw, 19px); color: var(--ink-2);
   max-width: 56ch;
@@ -731,3 +731,26 @@ a.proj:hover .proj-more svg { transform: translateX(3px); }
 .svc-note { margin-top: auto !important; padding-top: 14px; border-top: 1px dashed var(--line); font-size: 14px; color: var(--muted); }
 @media (min-width: 881px) { .stats-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
+
+/* Homepage: one offer, proof strip, pricing as a path (2026-10-27) */
+.brand-by { white-space: nowrap; }
+.cta-row .cta-alt { align-self: center; min-height: 48px; }
+.proof-k { margin-top: 4px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+html[lang^="zh"] .proof-k { letter-spacing: 0.1em; }
+.proof { margin-top: 12px; }
+.proof span { color: var(--ink-2); }
+.offer { max-width: 760px; }
+.offer .cta-note { margin-top: 18px; }
+.also { max-width: 760px; margin-top: 8px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 15px; color: var(--ink-2); }
+.also strong { color: var(--ink); font-weight: 600; }
+.also-note { max-width: 760px; margin-top: 10px; font-size: 14px; color: var(--muted); }
+.svc-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.path .price { margin-top: 10px; font-size: 22px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; color: var(--ink); }
+.path .price small { display: block; margin-top: 2px; font-size: 13px; font-weight: 500; letter-spacing: 0; color: var(--muted); }
+.path .step h3 { font-size: 17.5px; }
+.path .step p { font-size: 14.5px; }
+.path .svc-note { margin-top: 14px !important; }
+.path-or { display: block; margin: 18px 0 2px; padding-top: 14px; border-top: 1px dashed var(--line); font-size: 13px; font-weight: 600; color: var(--muted); }
+.path-note { max-width: 760px; margin-top: 24px; font-size: 14.5px; color: var(--ink-2); }
+.path-note strong { color: var(--ink); font-weight: 600; }
+@media (max-width: 600px) { .svc-grid-2 { grid-template-columns: 1fr; } }

@@ -42,12 +42,12 @@
   <!-- Inter is self-hosted (see @font-face in styles.css); preloading starts it
        in parallel with the stylesheet instead of after it. -->
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin.woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=20261026a" />
-  <link rel="stylesheet" href="hero-a.css?v=20261026a" />
+  <link rel="stylesheet" href="styles.css?v=20261027a" />
+  <link rel="stylesheet" href="hero-a.css?v=20261027a" />
   <script>document.documentElement.classList.add('js')</script>
 
   <!-- Structured data: who I am, what I offer, and the site itself.
-       This is core GEO — it lets Google and AI engines understand and cite me. -->
+       This is core GEO: it lets Google and AI engines understand and cite me. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -132,7 +132,7 @@
             { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://shiptolive.com/#svc-automation", "name": "Automation & integrations", "serviceType": "Systems integration", "description": "Back-office automation, internal tools, admin consoles, APIs and webhooks that connect the systems you already use.", "provider": { "@id": "https://shiptolive.com/#service" } } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://shiptolive.com/#svc-apps", "name": "Mobile apps", "serviceType": "Mobile application development", "description": "iPhone, Android and Mac apps from one codebase with Flutter or React Native / Expo, taken through to App Store release.", "provider": { "@id": "https://shiptolive.com/#service" } } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://shiptolive.com/#svc-web", "name": "Websites & web platforms", "serviceType": "Web development", "description": "Bilingual (English / Chinese) websites and PHP / Laravel web platforms deployed on Google Cloud Run with CI/CD.", "provider": { "@id": "https://shiptolive.com/#service" } } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://shiptolive.com/#svc-geo", "name": "Search visibility — SEO, AEO & GEO", "serviceType": "Generative engine optimization", "description": "Technical SEO, structured data and an llms.txt layer so Google can rank you and ChatGPT, Perplexity and Gemini can find and cite you.", "provider": { "@id": "https://shiptolive.com/#service" } } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://shiptolive.com/#svc-geo", "name": "Search visibility: SEO, AEO & GEO", "serviceType": "Generative engine optimization", "description": "Technical SEO, structured data and an llms.txt layer so Google can rank you and ChatGPT, Perplexity and Gemini can find and cite you.", "provider": { "@id": "https://shiptolive.com/#service" } } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://shiptolive.com/#svc-rescue", "name": "Project rescue & modernization", "serviceType": "Software modernization", "description": "Takes over stalled builds and aging systems: finds what is actually blocking them, then fixes, modernizes and ships them.", "provider": { "@id": "https://shiptolive.com/#service" } } }
           ]
         }
@@ -174,14 +174,14 @@
         "@type": "WebPage",
         "@id": "https://shiptolive.com/#webpage",
         "url": "https://shiptolive.com/",
-        "name": "Ship to Live: software studio for AI agents, apps, websites & search visibility",
+        "name": "Ship to Live: bilingual websites Google and AI search can find and cite",
         "isPartOf": { "@id": "https://shiptolive.com/#website" },
         "about": { "@id": "https://shiptolive.com/#service" },
         "mainEntity": { "@id": "https://shiptolive.com/#faq" },
         "primaryImageOfPage": "https://shiptolive.com/assets/img/og.png?v=2",
         "inLanguage": "en",
         "datePublished": "2026-06-24",
-        "dateModified": "2026-10-11",
+        "dateModified": "2026-10-27",
         "speakable": {
           "@type": "SpeakableSpecification",
           "cssSelector": [".hero h1", ".hero .lede", ".faq-a"]
@@ -225,20 +225,18 @@
   <!-- NAV -->
   <header class="nav" id="top">
     <div class="wrap nav-inner">
-      <a class="brand" href="#top" aria-label="Ship to Live — home">
+      <a class="brand" href="#top" aria-label="Ship to Live, home">
         <img src="assets/favicon.svg" alt="" width="30" height="30" />
         <span>
           <span class="brand-name">Ship to Live</span>
-          <span class="brand-by">Software studio</span>
+          <span class="brand-by">Bilingual websites AI can find and cite</span>
         </span>
       </a>
       <nav class="nav-links" id="navLinks" aria-label="Primary">
-        <a href="#services">Services</a>
+        <a href="#start">Pricing</a>
         <a href="#work">Work</a>
-        <a href="/projects/">Projects</a>
         <a href="#process">How we work</a>
         <a href="/about/">About</a>
-        <a href="#faq">FAQ</a>
         <span class="lang-switch" role="group" aria-label="Language">
           <a href="/" hreflang="en" aria-current="true">EN</a>
           <a href="/zh/" hreflang="zh-Hant" lang="zh-Hant">中文</a>
@@ -260,15 +258,16 @@
           <p class="status"><span class="dot" aria-hidden="true"></span>Taking new projects · US &amp; Taiwan</p>
           <h1>Every business has a website. <span class="soft">Few get found by&nbsp;AI.</span><span class="live-dot" aria-hidden="true"></span></h1>
           <p class="lede">
-            When customers ask ChatGPT, Google or Perplexity who to hire, the answer comes from a handful of sites.
+            When a client asks ChatGPT, Google or Perplexity who to hire, the answer comes from a few sites.
             We build and fix English / 中文 websites so yours is easy for AI to find, check and cite.
-            Then we measure how often you're named, before and after. We also build the apps, automations and AI agents behind them.
+            We measure how often you're named, before and after.
+            You work directly with the engineer who builds it.
           </p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="/?topic=visibility#contact">Get a free AI visibility check <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="btn btn-ghost" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">Book a free 20-minute call <svg aria-hidden="true"><use href="#i-out"/></svg></a>
+            <a class="btn btn-primary" href="/?topic=visibility#contact">Check if AI names your business. Free. <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="link cta-alt" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">or book a free 20-minute call <svg aria-hidden="true"><use href="#i-out"/></svg></a>
           </div>
-          <p class="cta-note"><a class="link" href="#start">See prices</a> · <a class="link" href="#work">see our work</a> · fixed-price quotes · replies within 1–2 business days · English or 中文</p>
+          <p class="cta-note">Fixed-price quotes · Replies within 1–2 business days · English or 中文</p>
         </div>
 
         <figure class="aia" aria-labelledby="aia-cap">
@@ -297,7 +296,6 @@
                 <span class="aia-pill">Not mentioned</span>
               </li>
             </ul>
-            <p class="aia-note">Illustrative example.</p>
           </div>
 
           <div class="aia-data">
@@ -326,15 +324,29 @@
           <li><span>Our app</span><b>Tally</b></li>
           <li><span>Our app</span><b>Tadapop</b></li>
         </ul>
-        <ul class="stats stats-3" aria-label="Results">
-          <li><strong>6</strong><span>paying clients in the first month of a law firm site we built, from 20 consultations (owner-reported).</span></li>
-          <li><strong>2</strong><span>apps of our own live on the App Store</span></li>
-          <li><strong>EN · 中文</strong><span>US and Taiwan contracts, through our companies in each country</span></li>
+        <p class="proof-k">One client site we built, WU LAW GROUP, measured</p>
+        <ul class="stats stats-3 proof" aria-label="Results for the WU LAW GROUP site">
+          <li><strong>495</strong><span>times Microsoft Copilot cited the site, late July to late October 2026. Source: Bing Webmaster Tools.</span></li>
+          <li><strong>112</strong><span>Google clicks in 28 days. Source: Google Search Console.</span></li>
+          <li><strong>6</strong><span>paying clients from 20 consultations in the first month. Owner-reported.</span></li>
         </ul>
       </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- SERVICES: one offer -->
+    <section class="section section-soft" id="services" aria-labelledby="services-h">
+      <div class="wrap">
+        <div class="section-head offer">
+          <p class="kicker">What we do</p>
+          <h2 id="services-h">One thing we do: websites that get found</h2>
+          <p class="sub">Bilingual sites built so Google can rank them and ChatGPT, Perplexity, Claude and Gemini can find and cite them. Fast pages, clear answers, structured data. No agency layer. The engineer who scopes it builds it.</p>
+          <p class="cta-note"><a class="link" href="#start">See prices</a> · <a class="link" href="#work">See the work</a></p>
+        </div>
+        <p class="also"><strong>Also:</strong> booking and lead follow-up · AI assistants · mobile apps · fixing stalled projects</p>
+        <p class="also-note">Already get leads but reply slowly? We wire follow-up into LINE or your inbox.</p>
+      </div>
+    </section>
+
     <!-- WHO WE HELP -->
     <section class="section" id="who" aria-labelledby="who-h">
       <div class="wrap">
@@ -343,107 +355,67 @@
           <h2 id="who-h">Who we work with most</h2>
           <p class="sub">Most of our clients sit between the US and Taiwan, or serve customers in both English and 中文.</p>
         </div>
-        <div class="svc-grid">
+        <div class="svc-grid svc-grid-2">
           <article class="svc reveal">
             <h3>Cross-border professional firms</h3>
             <p>Law, immigration, accounting and estate firms whose clients research in English and 中文. One site that answers both, so Google and AI search can match you to the questions clients actually ask.</p>
-            <p class="svc-note">WU LAW GROUP: 20 consultations and 6 paying clients in month one (owner-reported).</p>
+            <p class="svc-note">WU LAW GROUP: a US–Taiwan law practice in Taipei. <a class="link" href="#work">See the site</a></p>
           </article>
           <article class="svc reveal">
-            <h3>Taiwan businesses serving visitors</h3>
+            <h3>Taiwan businesses serving foreign visitors</h3>
             <p>Tours, shuttles, stays and activities that want foreign customers to find and book them directly in English, not only through booking platforms.</p>
             <p class="svc-note">山行接駁 Go Hike: an English page for every route, built to be found.</p>
-          </article>
-          <article class="svc reveal">
-            <h3>Businesses losing leads to slow replies</h3>
-            <p>Missed calls, unanswered forms, follow-ups that never happen. We wire instant replies, booking and follow-up into the CRM, LINE or inbox you already use, and a person approves anything important.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="services">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">Services</p>
-          <h2>What we build for you</h2>
-          <p class="sub">One team, accountable from architecture to deployment. We bring in specialists when a project needs them, and you own the result.</p>
-        </div>
-        <div class="svc-grid">
-          <article class="svc svc-wide reveal">
-            <div class="svc-ico"><svg aria-hidden="true"><use href="#i-search"/></svg></div>
-            <h3>Websites that get found</h3>
-            <p>Bilingual (English / 中文) sites built so Google can rank them and ChatGPT, Perplexity and Gemini can find and cite them, through technical SEO, structured data and an <code>llms.txt</code> layer. When a site needs more behind it, we build that too: memberships, checkout, booking and reporting.</p>
-            <p class="svc-proof"><strong>6 paying clients</strong> from 20 consultations booked through the WU LAW GROUP site in its first month (owner-reported). <a class="link" href="#work">See the work</a> · <a class="link" href="#start">Prices</a></p>
-            <ul class="chips"><li>SEO · AEO · GEO</li><li>JSON-LD</li><li>PHP · Laravel</li><li>Cloud Run</li></ul>
-          </article>
-          <article class="svc reveal">
-            <div class="svc-ico"><svg aria-hidden="true"><use href="#i-bot"/></svg></div>
-            <h3>AI agents &amp; assistants</h3>
-            <p>AI that drafts replies for your staff to approve, pulls the details out of forms and documents, and answers from your own files with sources attached. A person stays in the loop wherever a mistake would be costly.</p>
-            <ul class="chips"><li>RAG</li><li>LangChain</li><li>LangGraph</li><li>OpenAI · Claude</li></ul>
-          </article>
-          <article class="svc reveal">
-            <div class="svc-ico"><svg aria-hidden="true"><use href="#i-flow"/></svg></div>
-            <h3>Lead follow-up &amp; automation</h3>
-            <p>Missed-call text-back, instant replies, booking and follow-up, wired into the CRM, LINE or inbox you already use. We also replace copy-paste work between systems with APIs, webhooks and internal tools.</p>
-            <ul class="chips"><li>CRM</li><li>LINE</li><li>REST &amp; webhooks</li><li>Salesforce</li></ul>
-          </article>
-          <article class="svc reveal">
-            <div class="svc-ico"><svg aria-hidden="true"><use href="#i-phone"/></svg></div>
-            <h3>Mobile apps</h3>
-            <p>iPhone, Android and Mac apps from one codebase. We design and build them, then take them through App Store review.</p>
-            <ul class="chips"><li>Flutter</li><li>React Native</li><li>Expo</li></ul>
-          </article>
-          <article class="svc reveal">
-            <div class="svc-ico"><svg aria-hidden="true"><use href="#i-wrench"/></svg></div>
-            <h3>Project rescue &amp; modernization</h3>
-            <p>You have a stalled build, or an aging system nobody wants to touch. We find what's blocking it, then fix it, modernize it and ship it.</p>
-            <ul class="chips"><li>Code audit</li><li>Legacy PHP</li><li>UI refresh</li><li>Migrations</li></ul>
           </article>
         </div>
       </div>
     </section>
 
     <!-- START HERE: offers and prices -->
-    <section class="section" id="start" aria-labelledby="start-h">
+    <section class="section section-soft" id="start" aria-labelledby="start-h">
       <div class="wrap">
         <div class="section-head">
-          <p class="kicker">Start here</p>
-          <h2 id="start-h">Clear steps, fixed prices</h2>
-          <p class="sub">Start free. Every paid step is a fixed price, agreed in writing before work starts. Taiwan clients are quoted in NT$ with a 統一發票.</p>
+          <p class="kicker">Pricing</p>
+          <h2 id="start-h">Pricing. Start free, then fixed prices.</h2>
+          <p class="sub">Every paid step is a fixed price, agreed in writing before work starts. Taiwan clients are quoted in NT$ with a 統一發票.</p>
         </div>
-        <div class="svc-grid">
-          <article class="svc reveal">
+        <ol class="steps four path">
+          <li class="step reveal">
+            <span class="step-n">1</span>
+            <span class="step-when">Start here</span>
             <h3>Free AI visibility check</h3>
             <p class="price">Free</p>
             <p>About ten of your customers' questions, asked to four AI engines in English and 中文. See who gets named, and your top fixes.</p>
             <p class="svc-note"><a class="link" href="/?topic=visibility#contact">Request a free check</a></p>
-          </article>
-          <article class="svc reveal">
+          </li>
+          <li class="step reveal">
+            <span class="step-n">2</span>
+            <span class="step-when">Then</span>
             <h3>Visibility audit</h3>
             <p class="price">US$1,500 <small>one time</small></p>
             <p>Where you stand, why, and what to fix first, with a 60-minute walkthrough.</p>
             <p class="svc-note">The full fee counts toward Foundation if you go ahead within 60 days.</p>
-          </article>
-          <article class="svc reveal">
-            <h3>Foundation</h3>
+          </li>
+          <li class="step reveal">
+            <span class="step-n">3</span>
+            <span class="step-when">Pick one</span>
+            <h3>Fix your current site</h3>
             <p class="price">from US$4,000 <small>one time</small></p>
-            <p>We make the fixes on your current site, then measure again 30 days after launch.</p>
-          </article>
-          <article class="svc svc-wide reveal">
+            <p>Foundation: we make the fixes on your current site, then measure again 30 days after launch.</p>
+            <span class="path-or">or</span>
             <h3>New website, built to get found</h3>
             <p class="price">US$2,500 <small>founding client offer · regular from US$6,000</small></p>
             <p>An English / 中文 site with SEO, AEO and GEO in place from launch, as we did for WU LAW GROUP.</p>
-            <p class="svc-note">Founding client offer: US$2,500 for the site, plus site care at US$500/month with a 6-month minimum. In return, a short testimonial and permission to share your results. Regular projects from US$6,000 include the first 3 months of site care.</p>
-          </article>
-          <article class="svc reveal">
+          </li>
+          <li class="step reveal">
+            <span class="step-n">4</span>
+            <span class="step-when">Keep it found</span>
             <h3>Site care</h3>
             <p class="price">US$500 <small>per month</small></p>
             <p>Uptime, backups and security updates, a monthly search health check, a monthly AI visibility check on the same 10 questions, and up to 2 hours of small changes. Month to month; the first 3 months are included with a new website.</p>
-          </article>
-        </div>
-        <p class="cta-note"><a class="link" href="/seo-aeo-geo/#pricing">Full package details</a> · AI agents, automations and apps are quoted per project.</p>
+          </li>
+        </ol>
+        <p class="path-note"><strong>Founding client offer:</strong> US$2,500 for a new site, plus site care at US$500/month for at least 6 months. In return, a short testimonial and permission to share your results. Regular projects from US$6,000 include the first 3 months of site care.</p>
+        <p class="cta-note"><a class="link" href="/seo-aeo-geo/#pricing">Full package details</a> · AI assistants, automations and apps are quoted per project.</p>
       </div>
     </section>
 
@@ -464,7 +436,7 @@
             <div class="work-body">
               <p class="work-meta">WU LAW GROUP · Client website</p>
               <h3>A law firm site that brings in clients</h3>
-              <p>We built the English / 中文 site for a New York–licensed attorney in Taipei who handles US–Taiwan inheritance, investment and business law, with SEO, AEO and GEO built in. In its first month, the owner reports 20 consultations and 6 paying clients from the site, many from people who found her through Google or AI search.</p>
+              <p>We built the English / 中文 site for a New York–licensed attorney in Taipei who handles US–Taiwan inheritance, investment and business law, with SEO, AEO and GEO built in. The owner reports that many of her first-month clients found her through Google or AI search.</p>
               <ul class="chips"><li>Bilingual site</li><li>SEO / AEO / GEO</li><li>JSON-LD</li></ul>
               <div class="work-links">
                 <a class="link" href="https://wulawintl.com/" target="_blank" rel="noopener">wulawintl.com <svg aria-hidden="true"><use href="#i-out"/></svg></a>
@@ -696,6 +668,7 @@
       <span>© <span id="year"></span> Ship to Live · QY LLC · <span lang="zh-Hant">夏裕科技股份有限公司</span></span>
       <nav class="foot-links" aria-label="Footer">
         <a href="#services">Services</a>
+        <a href="#start">Pricing</a>
         <a href="#work">Work</a>
         <a href="/projects/">Projects</a>
         <a href="/about/">About</a>
@@ -707,7 +680,7 @@
     </div>
   </footer>
 
-  <!-- FAQ structured data — lets AI engines quote these answers directly. -->
+  <!-- FAQ structured data: lets AI engines quote these answers directly. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",

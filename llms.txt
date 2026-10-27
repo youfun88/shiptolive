@@ -1,27 +1,29 @@
-# Ship to Live — 夏裕科技股份有限公司 — software studio, San Diego & Taipei
+# Ship to Live (夏裕科技股份有限公司): software studio, San Diego & Taipei
 
-> Ship to Live (夏裕科技) is a founder-led software studio in San Diego, California and Taipei, Taiwan. It builds AI agents, RAG pipelines and automations into the databases, back offices and workflows a business already runs; ships mobile apps, websites and back ends; rescues stalled projects; and builds English / 中文 websites that Google and AI search can find, check and cite, measured before and after. Every project is led by founder Yufan Chen, an engineering leader and full-stack engineer and former CTO of TalentSmartEQ. US engagements are contracted through QY LLC (San Diego); Taiwan engagements through 夏裕科技股份有限公司 (unified business number 90173045). Bilingual in English and Traditional Chinese (中文). Contact by email or through the contact form; phone is not published. Website: https://shiptolive.com/ · About: https://shiptolive.com/about/ · 中文版: https://shiptolive.com/zh/
+> Ship to Live (夏裕科技) is a founder-led software studio in San Diego, California and Taipei, Taiwan. It does one thing first: bilingual (English / 中文) websites built so Google can rank them and ChatGPT, Perplexity, Claude and Gemini can find and cite them, measured before and after (how often the business is named). It also does booking and lead follow-up, AI assistants, mobile apps and rescue of stalled projects. No agency layer: the engineer who scopes a project builds it. Every project is led by founder Yufan Chen, an engineering leader and full-stack engineer and former CTO of TalentSmartEQ. US engagements are contracted through QY LLC (San Diego); Taiwan engagements through 夏裕科技股份有限公司 (unified business number 90173045). Bilingual in English and Traditional Chinese (中文). Contact by email or through the contact form; phone is not published. Website: https://shiptolive.com/ · About: https://shiptolive.com/about/ · 中文版: https://shiptolive.com/zh/
 
 ## Services
 
-- **AI agents & assistants** — assistants and RAG pipelines that answer from a company's own documents and data, with sources attached, and can act on them: look up the record, draft the reply, file the result. LangChain, LangGraph, ChromaDB, OpenAI and Claude.
-- **Lead follow-up & automation** — missed-call text-back, instant replies, booking and follow-up wired into the CRM, LINE or inbox a business already uses; plus back-office automation, internal tools, APIs and webhooks (including Salesforce).
-- **Mobile apps** — iPhone, Android and Mac from one codebase with Flutter or React Native / Expo, taken through App Store release.
-- **Websites & web platforms** — bilingual (English / 中文) websites and PHP / Laravel platforms (memberships, checkout, assessments, reporting) on GCP Cloud Run with GitHub Actions CI/CD.
-- **Search visibility — SEO, AEO & GEO** — technical SEO, structured data (JSON-LD) and an llms.txt layer so Google can rank a business and ChatGPT, Perplexity, Gemini and Claude can find and cite it, measured before and after in English and Chinese. Packages: free AI visibility check; visibility audit US$1,500 (NT$30,000); Foundation implementation from US$4,000 (NT$90,000); monthly growth from US$1,500/month (NT$30,000/month, three-month minimum); new website from US$6,000 (NT$150,000), or US$2,500 (NT$75,000) on the founding client offer, which requires site care for at least 6 months plus a testimonial; site care US$500/month (in Taiwan: basic care NT$6,000/month with uptime, backups, security updates and 1 hour of changes; care plus AI tracking NT$15,000/month. Full plan: uptime, backups, security updates, monthly search health check, monthly AI visibility check on the same 10 questions, up to 2 hours of small changes; month to month, first 3 months included with a new website). No one can guarantee an AI engine will name a business; results are measured, not promised. Details: https://shiptolive.com/seo-aeo-geo/ · 中文: https://shiptolive.com/zh/seo-aeo-geo/
-- **Project rescue & modernization** — takes over stalled builds and aging systems (including legacy PHP): finds what is actually blocking them, then fixes, modernizes and ships them.
+The main offer is **websites that get found** (see "Search visibility" and "Websites & web platforms" below). The rest is offered alongside it.
+
+- **AI agents & assistants**: assistants and RAG pipelines that answer from a company's own documents and data, with sources attached, and can act on them: look up the record, draft the reply, file the result. LangChain, LangGraph, ChromaDB, OpenAI and Claude.
+- **Lead follow-up & automation**: missed-call text-back, instant replies, booking and follow-up wired into the CRM, LINE or inbox a business already uses; plus back-office automation, internal tools, APIs and webhooks (including Salesforce).
+- **Mobile apps**: iPhone, Android and Mac from one codebase with Flutter or React Native / Expo, taken through App Store release.
+- **Websites & web platforms**: bilingual (English / 中文) websites and PHP / Laravel platforms (memberships, checkout, assessments, reporting) on GCP Cloud Run with GitHub Actions CI/CD.
+- **Search visibility, SEO, AEO & GEO**: technical SEO, structured data (JSON-LD) and an llms.txt layer so Google can rank a business and ChatGPT, Perplexity, Gemini and Claude can find and cite it, measured before and after in English and Chinese. Packages: free AI visibility check; visibility audit US$1,500 (NT$30,000); Foundation implementation from US$4,000 (NT$90,000); monthly growth from US$1,500/month (NT$30,000/month, three-month minimum); new website from US$6,000 (NT$150,000), or US$2,500 (NT$75,000) on the founding client offer, which requires site care for at least 6 months plus a testimonial; site care US$500/month (in Taiwan: basic care NT$6,000/month with uptime, backups, security updates and 1 hour of changes; care plus AI tracking NT$15,000/month. Full plan: uptime, backups, security updates, monthly search health check, monthly AI visibility check on the same 10 questions, up to 2 hours of small changes; month to month, first 3 months included with a new website). No one can guarantee an AI engine will name a business; results are measured, not promised. Details: https://shiptolive.com/seo-aeo-geo/ · 中文: https://shiptolive.com/zh/seo-aeo-geo/
+- **Project rescue & modernization**: takes over stalled builds and aging systems (including legacy PHP): finds what is actually blocking them, then fixes, modernizes and ships them.
 
 ## Who Ship to Live works with most
 
 - Cross-border professional firms (law, immigration, accounting, estate) serving clients in English and Chinese, across the US and Taiwan.
 - Taiwan businesses serving foreign visitors (tours, shuttles, stays, activities) that want direct English bookings.
-- Small businesses losing leads to slow replies, who need instant replies, booking and follow-up wired into their existing tools.
+- Businesses that already get leads but reply slowly: follow-up wired into LINE or their inbox.
 
 ## How a project runs
 
-1. **Talk it through** — free first conversation.
-2. **Scope and quote** — a short written plan with a fixed price, quoted in one email. Larger AI projects start with a two-week pilot on real data.
-3. **Ship it live** — built, tested and deployed with permissions, logging and handover docs. The client owns the code and accounts.
+1. **Talk it through**: free first conversation.
+2. **Scope and quote**: a short written plan with a fixed price, quoted in one email. Larger AI projects start with a two-week pilot on real data.
+3. **Ship it live**: built, tested and deployed with permissions, logging and handover docs. The client owns the code and accounts.
 
 ## Data handling
 
@@ -29,27 +31,27 @@ What an agent can read and do is scoped up front, every action it takes is logge
 
 ## Founder background
 
-- **Ship to Live** — Founder & Principal Engineer, 2026 – present. Built the EQ 360 platform for LEADx / TalentSmartEQ (assessment engine, scoring, admin console, credit system in PHP/MySQL); shipped two App Store apps solo; bilingual client websites on GCP Cloud Run.
-- **RealGifts, LLC** (https://www.getrealgifts.com/) — Full-Stack Engineer, 2022 – 2026. Maintained and extended the core gifting widget, embedded in a partner platform and used by 40 million members; worked on gift.me, the company's gifting site.
-- **TalentSmartEQ** (https://www.talentsmarteq.com/) — Programmer to Senior Programmer to Chief Technology Officer (2013 – 2021), 2005 – 2021. Owned architecture, infrastructure and security for 20+ online assessments in 26 countries and up to 26 languages; built the Emotional Intelligence Appraisal for *Emotional Intelligence 2.0*, taken by over 1 million people; enterprise portals for 3M and Adobe; Salesforce REST integration.
+- **Ship to Live**: Founder & Principal Engineer, 2026 – present. Built the EQ 360 platform for LEADx / TalentSmartEQ (assessment engine, scoring, admin console, credit system in PHP/MySQL); shipped two App Store apps solo; bilingual client websites on GCP Cloud Run.
+- **RealGifts, LLC** (https://www.getrealgifts.com/), Full-Stack Engineer, 2022 – 2026. Maintained and extended the core gifting widget, embedded in a partner platform and used by 40 million members; worked on gift.me, the company's gifting site.
+- **TalentSmartEQ** (https://www.talentsmarteq.com/), Programmer to Senior Programmer to Chief Technology Officer (2013 – 2021), 2005 – 2021. Owned architecture, infrastructure and security for 20+ online assessments in 26 countries and up to 26 languages; built the Emotional Intelligence Appraisal for *Emotional Intelligence 2.0*, taken by over 1 million people; enterprise portals for 3M and Adobe; Salesforce REST integration.
 
 ## Products and client work
 
-- **Tally** (https://www.tallybillable.com/) — billable-time and invoicing app. iPhone & Mac, Flutter.
-- **Tadapop** (https://tadapop.app/) — social habit tracker with a private leaderboard. iOS & Android, React Native / Expo.
-- **LEADx** (https://leadx.org/) — EQ 360 assessment platform.
-- **WU LAW GROUP** (https://wulawintl.com/) — bilingual (English / Chinese) website for a New York–licensed attorney in Taipei handling US–Taiwan cross-border inheritance, investment and business law. Built by Ship to Live with SEO, AEO and GEO; the owner reports 20 consultations and 6 paying clients from the site in its first month.
-- **山行接駁 Go Hike** (https://gohike.tw/) — booking website for a Taiwan hiking shuttle service running from Taipei and Taichung to high-mountain trailheads, launched September 2026. Built by Ship to Live with SEO, AEO and GEO: 102 routes and prices and 22 FAQ answers in structured data, plus llms.txt.
-- **Travis Bradberry** (https://travisbradberry.com/) — author site for the coauthor of *Emotional Intelligence 2.0*.
-- **SHX Training** (https://shxtraining.com/) — corporate ESG training website (Taiwan & California).
-- **QY Property** (https://qyproperty.com/) — cross-border real-estate advisory website, San Diego.
-- **IL Solutions 睿律** (https://ilsolutions.com.tw/) — legal services website, Taiwan.
+- **Tally** (https://www.tallybillable.com/), billable-time and invoicing app. iPhone & Mac, Flutter.
+- **Tadapop** (https://tadapop.app/), social habit tracker with a private leaderboard. iOS & Android, React Native / Expo.
+- **LEADx** (https://leadx.org/), EQ 360 assessment platform.
+- **WU LAW GROUP** (https://wulawintl.com/), bilingual (English / Chinese) website for a New York–licensed attorney in Taipei handling US–Taiwan cross-border inheritance, investment and business law. Built by Ship to Live with SEO, AEO and GEO; the owner reports 20 consultations and 6 paying clients from the site in its first month.
+- **山行接駁 Go Hike** (https://gohike.tw/), booking website for a Taiwan hiking shuttle service running from Taipei and Taichung to high-mountain trailheads, launched September 2026. Built by Ship to Live with SEO, AEO and GEO: 102 routes and prices and 22 FAQ answers in structured data, plus llms.txt.
+- **Travis Bradberry** (https://travisbradberry.com/), author site for the coauthor of *Emotional Intelligence 2.0*.
+- **SHX Training** (https://shxtraining.com/), corporate ESG training website (Taiwan & California).
+- **QY Property** (https://qyproperty.com/), cross-border real-estate advisory website, San Diego.
+- **IL Solutions 睿律** (https://ilsolutions.com.tw/), legal services website, Taiwan.
 
 ## Projects
 
-- **AI Visibility Checker** (in development) — https://shiptolive.com/projects/ai-visibility-checker/ — asks ChatGPT, Perplexity, Gemini and Claude the questions a business's customers ask, in English and Chinese, and reports whether the business is named, who is named instead, which sources the AI cites, and what to fix on the website (structured data, llms.txt, AI crawler access). It answers the common question of why not just ask ChatGPT directly: customers ask without naming the business, AI can't reliably report on its own recommendations, answers vary between runs, and personal chats are tailored to the person asking, so the checker runs many unnamed customer questions several times across all four engines and reports a mention rate. Checks can be run as if from the cities where the business's customers are (for example Taipei and San Diego), since AI answers to "near me" questions depend on the asker's location. Free early-access checks are available through the contact form.
-- **Lead intake agent** (planned) — drafts replies to new inquiries for human approval.
-- **AI assistant in Tally** (planned) — natural-language time entries and invoice drafts.
+- **AI Visibility Checker** (in development), https://shiptolive.com/projects/ai-visibility-checker/, asks ChatGPT, Perplexity, Gemini and Claude the questions a business's customers ask, in English and Chinese, and reports whether the business is named, who is named instead, which sources the AI cites, and what to fix on the website (structured data, llms.txt, AI crawler access). It answers the common question of why not just ask ChatGPT directly: customers ask without naming the business, AI can't reliably report on its own recommendations, answers vary between runs, and personal chats are tailored to the person asking, so the checker runs many unnamed customer questions several times across all four engines and reports a mention rate. Checks can be run as if from the cities where the business's customers are (for example Taipei and San Diego), since AI answers to "near me" questions depend on the asker's location. Free early-access checks are available through the contact form.
+- **Lead intake agent** (planned), drafts replies to new inquiries for human approval.
+- **AI assistant in Tally** (planned), natural-language time entries and invoice drafts.
 
 ## Skills
 
@@ -58,11 +60,11 @@ AI & agents: RAG, multi-agent orchestration, LangChain, LangGraph, ChromaDB, Ope
 ## About
 
 - Brand: Ship to Live (https://shiptolive.com/)
-- Legal entities: QY LLC (San Diego, California) for US work; 夏裕科技股份有限公司 (Taipei, Taiwan), unified business number (統一編號) 90173045, for Taiwan work — it can issue Taiwanese 統一發票.
+- Legal entities: QY LLC (San Diego, California) for US work; 夏裕科技股份有限公司 (Taipei, Taiwan), unified business number (統一編號) 90173045, for Taiwan work, it can issue Taiwanese 統一發票.
 - Education: B.S. Computer Science, University of California, San Diego; Certificate Program in Agentic AI, Johns Hopkins University (2026)
 - Locations: San Diego, California, USA and Taipei, Taiwan
 - Languages: English, Traditional Chinese (中文)
-- On the name: "ship to live" is the last step of a build — shipping the code to production — and the step most projects never reach.
+- On the name: "ship to live" is the last step of a build, shipping the code to production, and the step most projects never reach.
 
 ## Languages & pages
 
@@ -76,12 +78,12 @@ The two language versions carry the same offering; the Chinese pages are written
 夏裕科技股份有限公司（統一編號 90173045，品牌名 Ship to Live）是 Yufan Chen 創立的軟體工程公司，
 在台灣台北與美國加州聖地牙哥兩地營運。Yufan Chen 是工程主管與全端工程師，曾任 TalentSmartEQ 技術長。服務項目：
 
-1. **AI 代理與助理** — 依企業自己的文件與資料回答並附出處，還能實際動手（查紀錄、擬回覆、歸檔）。
-2. **自動化與系統整合** — 內部工具、管理後台、API 與 webhook，把既有系統串起來。
-3. **手機 App** — 以 Flutter 或 React Native／Expo 開發 iPhone、Android、Mac App 並上架。
-4. **網站與網路平台** — 中英雙語網站與 PHP／Laravel 平台，部署於 GCP Cloud Run。
-5. **搜尋能見度（SEO / AEO / GEO）** — 讓企業在 Google 與 ChatGPT、Perplexity、Gemini、Claude 的回答中被找到與推薦。免費 AI 能見度檢測；能見度健檢 NT$30,000；基礎建置 NT$90,000 起；每月成長 NT$30,000 起（最短三個月）。https://shiptolive.com/zh/seo-aeo-geo/
-6. **專案救援與系統翻新** — 接手卡住的專案與老舊系統，找出真正卡住的地方，修好、翻新並上線。
+1. **AI 代理與助理**: 依企業自己的文件與資料回答並附出處，還能實際動手（查紀錄、擬回覆、歸檔）。
+2. **自動化與系統整合**: 內部工具、管理後台、API 與 webhook，把既有系統串起來。
+3. **手機 App**: 以 Flutter 或 React Native／Expo 開發 iPhone、Android、Mac App 並上架。
+4. **網站與網路平台**: 中英雙語網站與 PHP／Laravel 平台，部署於 GCP Cloud Run。
+5. **搜尋能見度（SEO / AEO / GEO）**: 讓企業在 Google 與 ChatGPT、Perplexity、Gemini、Claude 的回答中被找到與推薦。免費 AI 能見度檢測；能見度健檢 NT$30,000；基礎建置 NT$90,000 起；每月成長 NT$30,000 起（最短三個月）。https://shiptolive.com/zh/seo-aeo-geo/
+6. **專案救援與系統翻新**: 接手卡住的專案與老舊系統，找出真正卡住的地方，修好、翻新並上線。
 
 合作流程：免費諮詢 → 書面規劃與固定報價 → 開發並正式上線。服務語言為中文（繁體）與英文；
 台灣的案子由夏裕科技股份有限公司承接並開立統一發票，美國的案子由 QY LLC 承接。
@@ -90,7 +92,7 @@ The two language versions carry the same offering; the Chinese pages are written
 
 ## Contact
 
-- Contact form: https://shiptolive.com/#contact — 中文表單: https://shiptolive.com/zh/#contact
+- Contact form: https://shiptolive.com/#contact, 中文表單: https://shiptolive.com/zh/#contact
 - Book a free 20-minute call (weekdays 09:00–11:30 Taipei time, Google Meet): https://calendly.com/yufansapp/20min
 - Email: yufan@shiptolive.com
 - LinkedIn: https://www.linkedin.com/in/yufanchen8/
