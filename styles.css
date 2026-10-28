@@ -754,3 +754,31 @@ html[lang^="zh"] .proof-k { letter-spacing: 0.1em; }
 .path-note { max-width: 760px; margin-top: 24px; font-size: 14.5px; color: var(--ink-2); }
 .path-note strong { color: var(--ink); font-weight: 600; }
 @media (max-width: 600px) { .svc-grid-2 { grid-template-columns: 1fr; } }
+
+/* What you get: the monthly report preview */
+.rpt-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 760px) { .rpt-grid { grid-template-columns: 1fr; } }
+.rpt { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 1px 2px rgba(10,10,11,.04); }
+.rpt h3 { font-size: 18px; letter-spacing: -0.015em; line-height: 1.3; font-weight: 650; }
+.rpt p { font-size: 15px; color: var(--ink-2); }
+.rpt-tag { align-self: flex-start; font-size: 12px !important; font-weight: 600; color: var(--ok) !important; background: #ecfdf3; border-radius: 999px; padding: 3px 10px; }
+.rpt-tag-muted { color: var(--muted) !important; background: var(--bg-soft); }
+.rpt-q { font-size: 13.5px !important; color: var(--muted) !important; font-style: italic; }
+.rpt-table { width: 100%; border-collapse: collapse; margin-top: 4px; font-size: 14px; }
+.rpt-table th { text-align: left; font-weight: 600; padding: 6px 12px 6px 0; width: 90px; white-space: nowrap; }
+.rpt-table td { padding: 6px 0; }
+.rpt-table td:last-child { text-align: right; white-space: nowrap; color: var(--ink-2); padding-left: 12px; width: 1%; }
+.rpt-bar { display: block; height: 8px; border-radius: 4px; background: var(--bg-soft); position: relative; overflow: hidden; }
+.rpt-bar::after { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--v); background: var(--ink); border-radius: 4px; }
+.rpt-note { margin-top: auto; padding-top: 10px; border-top: 1px dashed var(--line); font-size: 13px !important; color: var(--muted) !important; }
+.rpt-rank { list-style: none; margin: 4px 0 0; padding: 0; }
+.rpt-rank li { display: flex; justify-content: space-between; padding: 8px 10px; border-radius: 8px; font-size: 14.5px; }
+.rpt-rank li + li { border-top: 1px solid var(--line); border-radius: 0; }
+.rpt-rank .rpt-you { background: var(--bg-soft); font-weight: 650; }
+.rpt-big { font-size: 15px !important; }
+.rpt-big b { display: block; font-size: 40px; letter-spacing: -0.03em; line-height: 1.1; color: var(--ink); margin-bottom: 4px; }
+.rpt-todo { margin: 0; padding-left: 18px; font-size: 15px; color: var(--ink-2); display: flex; flex-direction: column; gap: 8px; }
+.rpt-foot { margin-top: 20px; font-size: 15px; color: var(--ink-2); }
+.rpt-foot .link { margin-left: 6px; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
