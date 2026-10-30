@@ -782,3 +782,51 @@ html[lang^="zh"] .proof-k { letter-spacing: 0.1em; }
 .rpt-foot .link { margin-left: 6px; }
 
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* ---------- Services v2 (2026-10-30): outcomes, monthly loop, review mock, dashboard preview ---------- */
+.out-grid .svc h3 { font-size: 17.5px; }
+.out-grid .svc p { font-size: 14.5px; }
+.out-grid .svc-ico { margin-bottom: 16px; }
+@media (min-width: 601px) and (max-width: 1000px) {
+  .svc-grid-3 > .svc:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+
+.loop-note { max-width: 760px; margin-top: 24px; font-size: 15px; color: var(--ink-2); }
+.loop-note strong { color: var(--ink); }
+
+/* "You approve": an illustrative private review page */
+.ctl { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 56px); align-items: center; margin-top: clamp(40px, 6vw, 64px); }
+.ctl h3 { font-size: clamp(22px, 2.6vw, 28px); line-height: 1.2; letter-spacing: -0.02em; font-weight: 700; }
+.ctl p { margin-top: 10px; font-size: 16px; color: var(--ink-2); max-width: 52ch; }
+.ctl .incl { font-size: 15px; }
+.rv { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; font-size: 14px; color: var(--ink-2); }
+.rv-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; padding: 12px 16px; border-bottom: 1px solid var(--line); background: var(--bg-soft); font-size: 12.5px; }
+.rv-bar b { color: var(--ink); font-weight: 600; }
+.rv-pill { margin-left: auto; font-size: 11.5px; font-weight: 600; color: var(--ink-2); border: 1px solid var(--line-strong); border-radius: 999px; padding: 2px 9px; background: #fff; white-space: nowrap; }
+.rv-body { padding: 16px 16px 4px; }
+.rv-body .rv-k { font-size: 12px; font-weight: 600; color: var(--muted); }
+.rv-body .rv-t { margin-top: 2px; font-size: 16px; font-weight: 650; color: var(--ink); line-height: 1.4; }
+.rv-line { display: block; height: 8px; border-radius: 4px; background: var(--bg-soft); margin-top: 10px; }
+.rv-act { display: flex; flex-wrap: wrap; gap: 8px; padding: 16px; }
+.rv-btn { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border-radius: 10px; font-weight: 600; font-size: 14px; color: var(--ink); border: 1px solid var(--line-strong); background: #fff; }
+.rv-btn.is-ok { background: var(--ink); color: #fff; border-color: var(--ink); }
+.rv-btn svg { width: 16px; height: 16px; }
+@media (max-width: 880px) { .ctl { grid-template-columns: 1fr; } }
+
+/* "What you see": a simplified client results page */
+.dash { border: 1px solid var(--line-strong); border-radius: 18px; background: var(--bg-soft); overflow: hidden; }
+.dash-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; padding: 14px 18px; background: #fff; border-bottom: 1px solid var(--line); font-size: 13.5px; color: var(--muted); }
+.dash-bar b { color: var(--ink); font-weight: 650; font-size: 15px; }
+.dash .rpt-grid { padding: clamp(12px, 2vw, 18px); }
+@media (min-width: 1001px) { .dash .rpt-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.rpt-kw { padding: 10px 12px; border-radius: 10px; background: var(--bg-soft); font-size: 15px !important; font-weight: 600; color: var(--ink) !important; line-height: 1.45; }
+.rpt-kw small { display: block; font-size: 12.5px; font-weight: 500; color: var(--muted); }
+.rpt-cite { display: flex; align-items: flex-start; gap: 8px; font-size: 14.5px !important; color: var(--ink) !important; }
+.rpt-cite svg { flex: none; width: 18px; height: 18px; margin-top: 2px; color: var(--ok); }
+.rpt-split { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.rpt-split p { font-size: 13.5px !important; }
+.rpt-split b { display: block; font-size: 34px; letter-spacing: -0.03em; line-height: 1.1; color: var(--ink); }
+.section-dark .loop-note { color: #c4c4cc; }
+.section-dark .loop-note strong { color: #fff; }
+.section-dark code { color: #fff; }
+.out-grid + .also { margin-top: 28px; }

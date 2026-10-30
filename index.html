@@ -42,7 +42,7 @@
   <!-- Inter is self-hosted (see @font-face in styles.css); preloading starts it
        in parallel with the stylesheet instead of after it. -->
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin.woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=20261028a" />
+  <link rel="stylesheet" href="styles.css?v=20261030a" />
   <link rel="stylesheet" href="hero-a.css?v=20261027a" />
   <script>document.documentElement.classList.add('js')</script>
 
@@ -132,7 +132,7 @@
             { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://shiptolive.com/#svc-automation", "name": "Automation & integrations", "serviceType": "Systems integration", "description": "Back-office automation, internal tools, admin consoles, APIs and webhooks that connect the systems you already use.", "provider": { "@id": "https://shiptolive.com/#service" } } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://shiptolive.com/#svc-apps", "name": "Mobile apps", "serviceType": "Mobile application development", "description": "iPhone, Android and Mac apps from one codebase with Flutter or React Native / Expo, taken through to App Store release.", "provider": { "@id": "https://shiptolive.com/#service" } } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://shiptolive.com/#svc-web", "name": "Websites & web platforms", "serviceType": "Web development", "description": "Bilingual (English / Chinese) websites and PHP / Laravel web platforms deployed on Google Cloud Run with CI/CD.", "provider": { "@id": "https://shiptolive.com/#service" } } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://shiptolive.com/#svc-geo", "name": "Search visibility: SEO, AEO & GEO", "serviceType": "Generative engine optimization", "description": "Technical SEO, structured data and an llms.txt layer so Google can rank you and ChatGPT, Perplexity and Gemini can find and cite you.", "provider": { "@id": "https://shiptolive.com/#service" } } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://shiptolive.com/#svc-geo", "name": "Search visibility: SEO, AEO & GEO", "serviceType": "Generative engine optimization", "description": "A monthly service in English and Chinese: we ask ChatGPT, Claude, Perplexity and Gemini 15+ real customer questions with live web search, track Google AI Overviews and AI Mode citations, research keywords with real search volume, measure Google Search Console clicks, Microsoft Copilot citations and site leads, check site health, then fix pages, structured data and directory listings. The client approves every change on a private review page and gets a plain-language monthly report and a login.", "provider": { "@id": "https://shiptolive.com/#service" } } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://shiptolive.com/#svc-rescue", "name": "Project rescue & modernization", "serviceType": "Software modernization", "description": "Takes over stalled builds and aging systems: finds what is actually blocking them, then fixes, modernizes and ships them.", "provider": { "@id": "https://shiptolive.com/#service" } } }
           ]
         }
@@ -181,7 +181,7 @@
         "primaryImageOfPage": "https://shiptolive.com/assets/img/og.png?v=2",
         "inLanguage": "en",
         "datePublished": "2026-06-24",
-        "dateModified": "2026-10-27",
+        "dateModified": "2026-10-30",
         "speakable": {
           "@type": "SpeakableSpecification",
           "cssSelector": [".hero h1", ".hero .lede", ".faq-a"]
@@ -217,6 +217,9 @@
       <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
       <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
       <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></symbol>
+      <symbol id="i-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
     </defs>
   </svg>
 
@@ -235,7 +238,7 @@
       <nav class="nav-links" id="navLinks" aria-label="Primary">
         <a href="#start">Pricing</a>
         <a href="#work">Work</a>
-        <a href="#process">How we work</a>
+        <a href="#monthly">How it works</a>
         <a href="/about/">About</a>
         <span class="lang-switch" role="group" aria-label="Language">
           <a href="/" hreflang="en" aria-current="true">EN</a>
@@ -259,9 +262,9 @@
           <h1>Every business has a website. <span class="soft">Few get found by&nbsp;AI.</span><span class="live-dot" aria-hidden="true"></span></h1>
           <p class="lede">
             When a client asks ChatGPT, Google or Perplexity who to hire, the answer comes from a few sites.
-            We build and fix English / 中文 websites so yours is easy for AI to find, check and cite.
-            We measure how often you're named, before and after.
-            You work directly with the engineer who builds it.
+            We work to make yours one of them, in English and 中文.
+            Every month we check what AI and Google say about you, fix what's missing, and show you what changed.
+            Nothing goes live without your OK.
           </p>
           <div class="cta-row">
             <a class="btn btn-primary" href="/?topic=visibility#contact">Check if AI names your business. Free. <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
@@ -324,11 +327,12 @@
           <li><span>Our app</span><b>Tally</b></li>
           <li><span>Our app</span><b>Tadapop</b></li>
         </ul>
-        <p class="proof-k">One client site we built, WU LAW INTL PLLC, measured</p>
-        <ul class="stats stats-3 proof" aria-label="Results for the WU LAW INTL PLLC site">
-          <li><strong>495</strong><span>times Microsoft Copilot cited the site, late July to late October 2026. Source: Bing Webmaster Tools.</span></li>
-          <li><strong>112</strong><span>Google clicks in 28 days. Source: Google Search Console.</span></li>
-          <li><strong>6</strong><span>paying clients from 20 consultations in the first month. Owner-reported.</span></li>
+        <p class="proof-k">One client, WU LAW INTL PLLC, measured in October 2026</p>
+        <ul class="stats proof" aria-label="Results for the WU LAW INTL PLLC site">
+          <li><strong>26 of 45</strong><span>AI answers to 15 client questions named the firm. Gemini 13 of 15, ChatGPT 12 of 15.</span></li>
+          <li><strong>487</strong><span>times Microsoft Copilot cited the site in 90 days, 156 in the last 30. Source: Bing Webmaster Tools.</span></li>
+          <li><strong>29</strong><span>searches where the site shows on Google page 1. Source: Google Search Console.</span></li>
+          <li><strong>6</strong><span>paying clients from 20 consultations in the site's first month. Owner-reported.</span></li>
         </ul>
       </div>
     </section>
@@ -338,9 +342,41 @@
       <div class="wrap">
         <div class="section-head offer">
           <p class="kicker">What we do</p>
-          <h2 id="services-h">One thing we do: websites that get found</h2>
-          <p class="sub">Bilingual sites built so Google can rank them and ChatGPT, Perplexity, Claude and Gemini can find and cite them. Fast pages, clear answers, structured data. No agency layer. The engineer who scopes it builds it.</p>
-          <p class="cta-note"><a class="link" href="#report">See a real report</a> · <a class="link" href="#start">See prices</a> · <a class="link" href="#work">See the work</a></p>
+          <h2 id="services-h">We help Google and AI find, trust and name your business</h2>
+          <p class="sub">One monthly service for your website, in English and 中文. We check where you show up, fix what keeps you out, and report what changed. No agency layer: the engineer who checks your site does the work.</p>
+          <p class="cta-note"><a class="link" href="#monthly">How it works</a> · <a class="link" href="#report">See a real results page</a> · <a class="link" href="#start">See prices</a></p>
+        </div>
+        <div class="svc-grid out-grid">
+          <article class="svc reveal">
+            <div class="svc-ico" aria-hidden="true"><svg><use href="#i-bot"/></svg></div>
+            <h3>Ask AI what your customers ask</h3>
+            <p>Each month we ask ChatGPT, Claude, Perplexity and Gemini 15 or more real customer questions, with live web search on. You see who they name, which sites they read, and whether they mix you up with a business that has a similar name.</p>
+          </article>
+          <article class="svc reveal">
+            <div class="svc-ico" aria-hidden="true"><svg><use href="#i-search"/></svg></div>
+            <h3>Track Google's AI answers</h3>
+            <p>Google now often puts an AI summary above the links (AI Overviews, and the chat-style AI Mode). For your most important searches, we check whether it cites your site, and who it cites instead.</p>
+          </article>
+          <article class="svc reveal">
+            <div class="svc-ico" aria-hidden="true"><svg><use href="#i-chart"/></svg></div>
+            <h3>Find the searches worth winning</h3>
+            <p>Keyword research with real monthly search numbers. Quick wins: searches where you're already on Google page 1 but not in the top 3. New searches worth a page. And how your rankings spread over time.</p>
+          </article>
+          <article class="svc reveal">
+            <div class="svc-ico" aria-hidden="true"><svg><use href="#i-pulse"/></svg></div>
+            <h3>Measure real visits and leads</h3>
+            <p>Google clicks and rankings from Search Console, how often Microsoft Copilot cites your site (from Bing's AI Performance report), and the leads your site sends: contact forms and booking clicks.</p>
+          </article>
+          <article class="svc reveal">
+            <div class="svc-ico" aria-hidden="true"><svg><use href="#i-shield"/></svg></div>
+            <h3>Keep the site healthy</h3>
+            <p>Speed, security and the technical basics that Google and AI crawlers need. Crawlers are the bots that read websites for search engines and AI assistants.</p>
+          </article>
+          <article class="svc reveal">
+            <div class="svc-ico" aria-hidden="true"><svg><use href="#i-wrench"/></svg></div>
+            <h3>Fix it, in English and 中文</h3>
+            <p>Answer-first pages and guides for the exact questions people ask, FAQ sections, structured data (labels that tell Google what each page is), and listings on the directories AI reads, like legal directories, Google Business Profile and Bing Places.</p>
+          </article>
         </div>
         <p class="also"><strong>Also:</strong> booking and lead follow-up · AI assistants · mobile apps · fixing stalled projects</p>
         <p class="also-note">Already get leads but reply slowly? We wire follow-up into LINE or your inbox.</p>
@@ -355,7 +391,7 @@
           <h2 id="who-h">Who we work with most</h2>
           <p class="sub">Most of our clients sit between the US and Taiwan, or serve customers in both English and 中文.</p>
         </div>
-        <div class="svc-grid svc-grid-2">
+        <div class="svc-grid svc-grid-3">
           <article class="svc reveal">
             <h3>Cross-border professional firms</h3>
             <p>Law, immigration, accounting and estate firms whose clients research in English and 中文. One site that answers both, so Google and AI search can match you to the questions clients actually ask.</p>
@@ -366,65 +402,150 @@
             <p>Tours, shuttles, stays and activities that want foreign customers to find and book them directly in English, not only through booking platforms.</p>
             <p class="svc-note">山行接駁 Go Hike: an English page for every route, built to be found.</p>
           </article>
+          <article class="svc reveal">
+            <h3>Local service businesses</h3>
+            <p>Property managers and other local services whose customers ask Google or AI for a recommendation before they call. We work to make sure the answer can include you, in the language your customers use.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- WHAT YOU GET: the monthly report, with a real example -->
+    <!-- HOW IT WORKS EACH MONTH -->
+    <section class="section section-soft" id="monthly" aria-labelledby="monthly-h">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">How it works</p>
+          <h2 id="monthly-h">The same four steps, every month</h2>
+          <p class="sub">Measure, fix, you approve, report. You see what we found, what we changed, and what moved.</p>
+        </div>
+        <ol class="steps four">
+          <li class="step reveal">
+            <span class="step-n">1</span>
+            <span class="step-when">Measure</span>
+            <h3>Check where you stand</h3>
+            <p>The AI check, Google AI answers, rankings, real visits and leads, and site health. Same questions each month, so a change is a real change.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-n">2</span>
+            <span class="step-when">Fix</span>
+            <h3>We do the work</h3>
+            <p>Pages, guides, FAQ sections, structured data and directory listings, in English and 中文. We start with what should move the most.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-n">3</span>
+            <span class="step-when">You approve</span>
+            <h3>Nothing goes live without you</h3>
+            <p>Drafts go to a private review page that Google and AI can't see. You click Approve or Request changes.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-n">4</span>
+            <span class="step-when">Report</span>
+            <h3>Plain-language results</h3>
+            <p>A short email in English or 中文, next month's to-do list, and your own login to see your results any time.</p>
+          </li>
+        </ol>
+        <p class="loop-note"><strong>How fast?</strong> AI assistants that search the web live can pick up changes within weeks. Google rankings usually take months. You see the numbers either way.</p>
+
+        <div class="ctl">
+          <div class="reveal">
+            <h3>You stay in control</h3>
+            <p>You know your business best, so every new page and every change waits for your OK.</p>
+            <ul class="incl">
+              <li>Drafts sit on a private page, hidden from Google and AI</li>
+              <li>Approve with one click, or tell us what to change</li>
+              <li>We publish only what you approved</li>
+            </ul>
+          </div>
+          <div class="rv reveal" role="img" aria-label="Example of a private review page: a draft guide titled Documents a foreigner needs to inherit a Taiwan estate, with an Approve button and a Request changes button.">
+            <div class="rv-bar"><b>Review page</b><span>Private · hidden from search</span><span class="rv-pill">Example</span></div>
+            <div class="rv-body">
+              <p class="rv-k">Draft guide · English and 中文</p>
+              <p class="rv-t">Documents a foreigner needs to inherit a Taiwan estate</p>
+              <span class="rv-line" style="width:96%"></span>
+              <span class="rv-line" style="width:88%"></span>
+              <span class="rv-line" style="width:72%"></span>
+            </div>
+            <div class="rv-act">
+              <span class="rv-btn is-ok"><svg aria-hidden="true"><use href="#i-check"/></svg>Approve</span>
+              <span class="rv-btn">Request changes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT YOU SEE: the client results page, with real numbers -->
     <section class="section" id="report" aria-labelledby="report-h">
       <div class="wrap">
         <div class="section-head">
-          <p class="kicker">What you get</p>
-          <h2 id="report-h">A monthly report on who AI recommends</h2>
-          <p class="sub">Every month we ask ChatGPT, Perplexity, Claude and Gemini the questions your clients ask, in English and 中文. You get a private results page and a short list of what we fix next. Here is a real one.</p>
+          <p class="kicker">What you see</p>
+          <h2 id="report-h">Your results page, with real numbers</h2>
+          <p class="sub">This is what one client's page showed in October 2026: WU LAW INTL PLLC, a US–Taiwan law practice. Simplified here, and other firms' names are hidden.</p>
         </div>
-        <div class="rpt-grid">
-          <article class="rpt reveal">
-            <p class="rpt-tag">Real check · WU LAW INTL PLLC · Oct 28, 2026</p>
-            <h3>Is your firm named?</h3>
-            <p class="rpt-q">&ldquo;English-speaking lawyer in Taipei for US-Taiwan cross-border inheritance?&rdquo;</p>
-            <p class="rpt-q">&ldquo;推薦處理台美跨境繼承的律師&rdquo;</p>
-            <table class="rpt-table">
-              <caption class="sr-only">Answers that named the firm, out of 4 questions, by assistant</caption>
-              <tbody>
-                <tr><th scope="row">Perplexity</th><td><span class="rpt-bar" style="--v:100%"></span></td><td>4 of 4</td></tr>
-                <tr><th scope="row">ChatGPT</th><td><span class="rpt-bar" style="--v:75%"></span></td><td>3 of 4</td></tr>
-                <tr><th scope="row">Gemini</th><td><span class="rpt-bar" style="--v:75%"></span></td><td>3 of 4</td></tr>
-                <tr><th scope="row">Claude</th><td><span class="rpt-bar" style="--v:50%"></span></td><td>2 of 4</td></tr>
-              </tbody>
-            </table>
-            <p class="rpt-note">Each assistant answers with live web search. We count the answers that name the firm and the ones that cite its own site.</p>
-          </article>
-          <article class="rpt reveal">
-            <p class="rpt-tag rpt-tag-muted">Example layout</p>
-            <h3>Who else gets recommended</h3>
-            <p>Every firm the answers put forward, how often, and in what tone. You see who AI picks when it does not pick you, and you can follow named competitors month by month.</p>
-            <ol class="rpt-rank">
-              <li class="rpt-you"><span>Your firm</span><b>12</b></li>
-              <li><span>International firm A</span><b>3</b></li>
-              <li><span>Local firm B</span><b>3</b></li>
-              <li><span>Consultancy C</span><b>2</b></li>
-            </ol>
-            <p class="rpt-note">Times named across 16 answers. Real reports name the firms.</p>
-          </article>
-          <article class="rpt reveal">
-            <p class="rpt-tag">Real usage · Bing Webmaster Tools</p>
-            <h3>Tests, plus real usage</h3>
-            <p class="rpt-big"><b>185</b> times Microsoft Copilot quoted the WU LAW INTL PLLC site in the 30 days to Oct 24, 2026.</p>
-            <p>The tests show what AI says when asked. The real-usage numbers show what it already does: citations from Copilot, clicks from Google, and booking clicks and forms on your site.</p>
-          </article>
-          <article class="rpt reveal">
-            <p class="rpt-tag">What we fix next</p>
-            <h3>A short list, done for you</h3>
-            <ul class="rpt-todo">
-              <li>A page that answers each question AI could not answer from your site, in English and 中文.</li>
-              <li>One registered firm name everywhere, including the structured data search engines read.</li>
-              <li>Listings AI checks before it recommends a firm, such as Google Business Profile and attorney directories.</li>
-            </ul>
-            <p class="rpt-note">Included in site care. Next month&rsquo;s check shows whether it worked.</p>
-          </article>
+        <div class="dash">
+          <div class="dash-bar"><b>WU LAW INTL PLLC</b><span>October 2026 · real numbers, simplified view</span></div>
+          <div class="rpt-grid">
+            <article class="rpt reveal">
+              <p class="rpt-tag">AI check · 15 questions</p>
+              <h3>Is your firm named?</h3>
+              <p class="rpt-big"><b>26 of 45</b> answers named the firm.</p>
+              <table class="rpt-table">
+                <caption class="sr-only">Answers that named the firm, out of 15 questions, by assistant</caption>
+                <tbody>
+                  <tr><th scope="row">Gemini</th><td><span class="rpt-bar" style="--v:86.7%"></span></td><td>13 of 15</td></tr>
+                  <tr><th scope="row">ChatGPT</th><td><span class="rpt-bar" style="--v:80%"></span></td><td>12 of 15</td></tr>
+                </tbody>
+              </table>
+              <p class="rpt-note">Each assistant answers with live web search, like a client would. We also flag answers that confuse you with a similar-named business.</p>
+            </article>
+            <article class="rpt reveal">
+              <p class="rpt-tag">Google AI Overview</p>
+              <h3>Does Google's AI summary cite you?</h3>
+              <p class="rpt-kw"><span lang="zh-Hant">外國人繼承台灣遺產應備文件</span><small>Documents a foreigner needs to inherit a Taiwan estate</small></p>
+              <p class="rpt-cite"><svg aria-hidden="true"><use href="#i-check"/></svg><span>wulawintl.com is cited in the first line</span></p>
+              <p class="rpt-note">For each important search we record whether you are cited, and who is cited instead. We check Google's AI Mode too.</p>
+            </article>
+            <article class="rpt reveal">
+              <p class="rpt-tag">Microsoft Copilot · Bing</p>
+              <h3>How often AI quotes your site</h3>
+              <div class="rpt-split">
+                <p><b>487</b>citations in 90 days</p>
+                <p><b>156</b>in the last 30 days</p>
+              </div>
+              <p class="rpt-note">From Bing Webmaster Tools' AI Performance report. Real citations, not a test.</p>
+            </article>
+            <article class="rpt reveal">
+              <p class="rpt-tag">Google Search Console</p>
+              <h3>Where you rank on Google</h3>
+              <p class="rpt-big"><b>29</b> searches with the site on Google page 1.</p>
+              <p>Quick wins are searches already on page 1 but not in the top 3, where a better page can move you up.</p>
+              <p class="rpt-note">Also on this page: Google clicks, contact forms and booking clicks from your site.</p>
+            </article>
+            <article class="rpt reveal">
+              <p class="rpt-tag rpt-tag-muted">Example layout</p>
+              <h3>Who else gets recommended</h3>
+              <p>Every firm the answers put forward, how often, and which sites the AI read. You see who AI picks when it does not pick you.</p>
+              <ol class="rpt-rank">
+                <li class="rpt-you"><span>Your firm</span><b>12</b></li>
+                <li><span>International firm A</span><b>3</b></li>
+                <li><span>Local firm B</span><b>3</b></li>
+                <li><span>Consultancy C</span><b>2</b></li>
+              </ol>
+              <p class="rpt-note">Illustrative numbers. Your real page names the firms.</p>
+            </article>
+            <article class="rpt reveal">
+              <p class="rpt-tag">Next month's to-do</p>
+              <h3>A short list, done for you</h3>
+              <ul class="rpt-todo">
+                <li>A guide for each question AI could not answer from your site, in English and 中文.</li>
+                <li>One registered firm name everywhere, so AI does not mix you up with a similar name.</li>
+                <li>Listings AI reads before it recommends a firm, such as attorney directories, Google Business Profile and Bing Places.</li>
+              </ul>
+              <p class="rpt-note">Drafts wait on your review page. Next month's check shows whether it worked.</p>
+            </article>
+          </div>
         </div>
-        <p class="rpt-foot">Clients open their page from a QR code, sign in with Google, and see their own site only. <a class="link" href="/?topic=visibility#contact">Get a free check on your questions</a></p>
+        <p class="rpt-foot">Each month you also get a plain-language email in English or 中文. Clients sign in with Google and see their own site only. <a class="link" href="/?topic=visibility#contact">Get a free check on your questions</a></p>
       </div>
     </section>
 
@@ -570,7 +691,7 @@
     <section class="section section-dark" id="process">
       <div class="wrap">
         <div class="section-head">
-          <p class="kicker">How we work</p>
+          <p class="kicker">Getting started</p>
           <h2>Three steps from first call to launch</h2>
         </div>
         <ol class="steps">
@@ -624,8 +745,24 @@
         </div>
         <div class="faq-list">
           <details class="faq-item">
-            <summary>What services does Ship to Live offer?</summary>
-            <div class="faq-a"><p>AI agents and assistants, workflow automation and integrations, mobile apps (iPhone, Android, Mac), websites and web platforms, search visibility (SEO, AEO and GEO), and rescuing or modernizing stalled and aging projects. Each project has one accountable lead from architecture to deployment.</p></div>
+            <summary>What does Ship to Live do for my business?</summary>
+            <div class="faq-a"><p>We help small businesses get found on Google and named by AI assistants like ChatGPT, Claude, Perplexity, Gemini and Microsoft Copilot, in English and 中文. Each month we check where you show up, fix your site and listings, and report what changed. We also build websites, booking and lead follow-up, AI assistants and mobile apps, and rescue stalled projects.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>What happens each month?</summary>
+            <div class="faq-a"><p>Four steps. We measure: we ask AI assistants 15 or more of your customers' questions, check whether Google's AI summary cites you, and review your rankings, visits, leads and site health. We fix what keeps you out. You approve every draft on a private review page. Then you get a plain-language report email and next month's to-do list, and you can sign in to see your results any time.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Is the monthly AI check included in the price?</summary>
+            <div class="faq-a"><p>Yes. The monthly AI visibility check and your private results page are part of Site care (US$500 a month) and Monthly growth. Your first check is free. <a class="link" href="#start">See prices</a></p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Will anything go live without my approval?</summary>
+            <div class="faq-a"><p>No. New pages and changes go to a private review page that Google and AI can't see. You click Approve or Request changes, and we publish only what you approved.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>How long until we see results?</summary>
+            <div class="faq-a"><p>AI assistants that search the web live can pick up fixes to your site and listings within weeks. Google rankings for competitive searches usually take months. We report every month, so you can see what is moving either way.</p></div>
           </details>
           <details class="faq-item">
             <summary>How does a project start, and how is it priced?</summary>
@@ -637,11 +774,11 @@
           </details>
           <details class="faq-item">
             <summary>SEO, AEO, GEO: what's the difference?</summary>
-            <div class="faq-a"><p><strong>SEO</strong> gets your link into Google and Bing results. <strong>AEO</strong> (answer engine optimization) gets your content into featured snippets and AI Overviews. <strong>GEO</strong> (generative engine optimization) gets your business cited in answers from ChatGPT, Perplexity and Gemini. All three rest on fast pages, clear answers, structured data and an <code>llms.txt</code> layer. <a class="link" href="/seo-aeo-geo/">How we do it, and what it costs</a></p></div>
+            <div class="faq-a"><p><strong>SEO</strong> gets your link into Google and Bing results. <strong>AEO</strong> (answer engine optimization) gets your content into featured snippets and Google's AI Overviews. <strong>GEO</strong> (generative engine optimization) gets your business cited in answers from ChatGPT, Claude, Perplexity, Gemini and Copilot. All three rest on fast pages, clear answers, structured data and an <code>llms.txt</code> layer. <a class="link" href="/seo-aeo-geo/">How we do it, and what it costs</a></p></div>
           </details>
           <details class="faq-item">
             <summary>Can't I just build my website with AI?</summary>
-            <div class="faq-a"><p>You can, and if you only need a simple page, you should. Building a site is cheap now. Getting found is the hard part: most new sites get almost no visitors. We build English / 中文 sites that Google and AI assistants can find, check and cite, then measure every month: Google clicks, AI citations, and which bookings came from where. For example, the WU LAW INTL PLLC site we built got 112 Google clicks in 28 days, and Microsoft Copilot cited it 495 times from late July to late October 2026, according to Google Search Console and Bing Webmaster Tools. We use AI too; we just know what to do with it.</p></div>
+            <div class="faq-a"><p>You can, and if you only need a simple page, you should. Building a site is cheap now. Getting found is the hard part: most new sites get almost no visitors. We build English / 中文 sites that Google and AI assistants can find, check and cite, then measure every month: Google clicks, AI citations, and which bookings came from where. For example, the WU LAW INTL PLLC site we built got 112 Google clicks in 28 days, and Microsoft Copilot cited it 487 times in the 90 days to October 2026, according to Google Search Console and Bing Webmaster Tools. We use AI too; we just know what to do with it.</p></div>
           </details>
           <details class="faq-item">
             <summary>Can you guarantee ChatGPT or Google will recommend us?</summary>
@@ -746,14 +883,18 @@
     "@id": "https://shiptolive.com/#faq",
     "inLanguage": "en",
     "mainEntity": [
-      { "@type": "Question", "name": "What services does Ship to Live offer?", "acceptedAnswer": { "@type": "Answer", "text": "AI agents and assistants, workflow automation and integrations, mobile apps (iPhone, Android, Mac), websites and web platforms, search visibility (SEO, AEO and GEO), and rescuing or modernizing stalled and aging projects. Each project has one accountable lead from architecture to deployment." } },
-      { "@type": "Question", "name": "How does a project start, and how is it priced?", "acceptedAnswer": { "@type": "Answer", "text": "With a free conversation about what you need. Then you get a short written plan with a fixed price, quoted in one email. Larger AI projects start with a two-week pilot on one workflow, running on your real data." } },
-      { "@type": "Question", "name": "Can an AI agent answer from my company's own data? Is that safe?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Retrieval-augmented generation (RAG) makes your documents, policies and records the source the assistant answers from, with citations back to the original. Ship to Live builds RAG and agent systems, and its AI Visibility Checker uses the same approach. We set what the agent can read and do, log every action, and keep a person in the loop wherever a mistake would be costly." } },
-      { "@type": "Question", "name": "SEO, AEO, GEO: what's the difference?", "acceptedAnswer": { "@type": "Answer", "text": "SEO gets your link into Google and Bing results. AEO (answer engine optimization) gets your content into featured snippets and AI Overviews. GEO (generative engine optimization) gets your business cited in answers from ChatGPT, Perplexity and Gemini. All three rest on fast pages, clear answers, structured data and an llms.txt layer." } },
-      { "@type": "Question", "name": "Can't I just build my website with AI?", "acceptedAnswer": {"@type": "Answer", "text": "You can, and if you only need a simple page, you should. Building a site is cheap now. Getting found is the hard part: most new sites get almost no visitors. We build English / 中文 sites that Google and AI assistants can find, check and cite, then measure every month: Google clicks, AI citations, and which bookings came from where. For example, the WU LAW INTL PLLC site we built got 112 Google clicks in 28 days, and Microsoft Copilot cited it 495 times from late July to late October 2026, according to Google Search Console and Bing Webmaster Tools. We use AI too; we just know what to do with it."}},
-      { "@type": "Question", "name": "Can you guarantee ChatGPT or Google will recommend us?", "acceptedAnswer": {"@type": "Answer", "text": "No, and nobody honestly can. AI engines decide whom to name, and they change often. What we can do is make your site easy to find, check and cite in English and 中文, fix what keeps you out, and measure how often you're named before and after, with the same questions each time."}},
-      { "@type": "Question", "name": "Who is behind Ship to Live?", "acceptedAnswer": { "@type": "Answer", "text": "Ship to Live is a founder-led studio run by Yufan Chen, an engineering leader and full-stack engineer based in San Diego, California and Taipei, Taiwan, who leads every project. He was CTO of TalentSmartEQ, maintained and extended a gifting widget used by 40 million people at RealGifts, and holds a B.S. in Computer Science from UC San Diego and a Certificate in Agentic AI from Johns Hopkins." } },
-      { "@type": "Question", "name": "Do you work in Chinese, and where are you based?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Ship to Live works in English and Traditional Chinese, from San Diego and Taipei, so US and Taiwan clients each get a workable time zone. US projects are contracted through QY LLC; Taiwan projects through 夏裕科技股份有限公司." } }
+      {"@type": "Question", "name": "What does Ship to Live do for my business?", "acceptedAnswer": {"@type": "Answer", "text": "We help small businesses get found on Google and named by AI assistants like ChatGPT, Claude, Perplexity, Gemini and Microsoft Copilot, in English and 中文. Each month we check where you show up, fix your site and listings, and report what changed. We also build websites, booking and lead follow-up, AI assistants and mobile apps, and rescue stalled projects."}},
+      {"@type": "Question", "name": "What happens each month?", "acceptedAnswer": {"@type": "Answer", "text": "Four steps. We measure: we ask AI assistants 15 or more of your customers' questions, check whether Google's AI summary cites you, and review your rankings, visits, leads and site health. We fix what keeps you out. You approve every draft on a private review page. Then you get a plain-language report email and next month's to-do list, and you can sign in to see your results any time."}},
+      {"@type": "Question", "name": "Is the monthly AI check included in the price?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The monthly AI visibility check and your private results page are part of Site care (US$500 a month) and Monthly growth. Your first check is free."}},
+      {"@type": "Question", "name": "Will anything go live without my approval?", "acceptedAnswer": {"@type": "Answer", "text": "No. New pages and changes go to a private review page that Google and AI can't see. You click Approve or Request changes, and we publish only what you approved."}},
+      {"@type": "Question", "name": "How long until we see results?", "acceptedAnswer": {"@type": "Answer", "text": "AI assistants that search the web live can pick up fixes to your site and listings within weeks. Google rankings for competitive searches usually take months. We report every month, so you can see what is moving either way."}},
+      {"@type": "Question", "name": "How does a project start, and how is it priced?", "acceptedAnswer": {"@type": "Answer", "text": "With a free conversation about what you need. Then you get a short written plan with a fixed price, quoted in one email. Larger AI projects start with a two-week pilot on one workflow, running on your real data."}},
+      {"@type": "Question", "name": "Can an AI agent answer from my company's own data? Is that safe?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Retrieval-augmented generation (RAG) makes your documents, policies and records the source the assistant answers from, with citations back to the original. We build RAG and agent systems, and our AI Visibility Checker uses the same approach. We set what the agent can read and do, log every action, and keep a person in the loop wherever a mistake would be costly."}},
+      {"@type": "Question", "name": "SEO, AEO, GEO: what's the difference?", "acceptedAnswer": {"@type": "Answer", "text": "SEO gets your link into Google and Bing results. AEO (answer engine optimization) gets your content into featured snippets and Google's AI Overviews. GEO (generative engine optimization) gets your business cited in answers from ChatGPT, Claude, Perplexity, Gemini and Copilot. All three rest on fast pages, clear answers, structured data and an llms.txt layer."}},
+      {"@type": "Question", "name": "Can't I just build my website with AI?", "acceptedAnswer": {"@type": "Answer", "text": "You can, and if you only need a simple page, you should. Building a site is cheap now. Getting found is the hard part: most new sites get almost no visitors. We build English / 中文 sites that Google and AI assistants can find, check and cite, then measure every month: Google clicks, AI citations, and which bookings came from where. For example, the WU LAW INTL PLLC site we built got 112 Google clicks in 28 days, and Microsoft Copilot cited it 487 times in the 90 days to October 2026, according to Google Search Console and Bing Webmaster Tools. We use AI too; we just know what to do with it."}},
+      {"@type": "Question", "name": "Can you guarantee ChatGPT or Google will recommend us?", "acceptedAnswer": {"@type": "Answer", "text": "No, and nobody honestly can. AI engines decide whom to name, and they change often. What we can do is make your site easy to find, check and cite in English and 中文, fix what keeps you out, and measure how often you're named before and after, with the same questions each time."}},
+      {"@type": "Question", "name": "Who is behind Ship to Live?", "acceptedAnswer": {"@type": "Answer", "text": "Ship to Live is a founder-led studio run by Yufan Chen, who leads every project. He was CTO of TalentSmartEQ, maintained and extended a gifting widget used by 40 million people at RealGifts, and holds a B.S. in Computer Science from UC San Diego and a Certificate in Agentic AI from Johns Hopkins."}},
+      {"@type": "Question", "name": "Do you work in Chinese, and where are you based?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We work in English and Traditional Chinese, from San Diego and Taipei, so US and Taiwan clients each get a workable time zone. US projects are contracted through QY LLC; Taiwan projects through 夏裕科技股份有限公司."}}
     ]
   }
   </script>
