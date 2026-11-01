@@ -37,7 +37,7 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 });
 </script>
 <h1>Developer review · SEO / AEO / GEO</h1>
-<p>Search and AI-visibility changes for Yufan to approve: titles, descriptions, schema, internal links, llms.txt, sitemap, keywords. Content changes go to the owner at <a href="/pending/">/pending</a>. Not linked from the site and not indexed. The GX10 job applies approved changes at its next run (every 4 hours).</p>
+<p>Search and AI-visibility changes for Yufan to approve: titles, descriptions, schema, internal links, llms.txt, sitemap, keywords. Content changes go to the owner at <a href="/pending/">/pending</a>. Not linked from the site and not indexed. The GX10 job applies approved changes at its next run (every 8 hours).</p>
 <p class="updated">Updated 2026-11-01.</p>
 
 <!-- Item markup (copy for each draft; data-item must equal the board title exactly):
@@ -48,7 +48,20 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </div>
 -->
 <h2>Waiting for approval</h2>
-<p class="empty">Nothing yet.</p>
+<div class="item" data-item="[Yufan] Shorten six page titles to 60 characters">
+<h3>1. [Yufan] Shorten six page titles to 60 characters</h3>
+<p>Changes only the <code>&lt;title&gt;</code> tag on six pages; no visible text, Open Graph tags or schema change. Branch: <code>seo/shorten-page-titles</code>.</p>
+<p>Why: the admin report's page checklist (score 86) fails these six pages for titles over 60 characters, which search results cut off. The GLP-1 title now leads with "for Zepbound": Search Console shows zepbound protein calculator (3 impressions, position 59) and zepbound protein calculator free (3 impressions, position 58). That page has 19 impressions at position 55 overall, so small numbers. It drops "How Much Protein" from the title; that phrase stays in the page's FAQ.</p>
+<ol class="q">
+<li><a href="/"><code>/</code></a><br>Before (64): Ship to Live | Websites Built to Get Found by Google &amp; AI Search<br>After (51): Ship to Live | Websites Found by Google &amp; AI Search</li>
+<li><a href="/seo-aeo-geo/"><code>/seo-aeo-geo/</code></a><br>Before (75): SEO, AEO &amp; GEO services: get found on Google and named by AI | Ship to Live<br>After (56): SEO, AEO &amp; GEO services for Google and AI | Ship to Live</li>
+<li><a href="/about/"><code>/about/</code></a><br>Before (69): About Ship to Live | Founder-Led Software Studio · San Diego &amp; Taipei<br>After (56): About Ship to Live | Software Studio, San Diego &amp; Taipei</li>
+<li><a href="/projects/ai-visibility-checker/"><code>/projects/ai-visibility-checker/</code></a><br>Before (71): AI Visibility Checker — does AI recommend your business? | Ship to Live<br>After (55): AI Visibility Checker: does AI recommend your business?</li>
+<li><a href="/glp1-protein-calculator/"><code>/glp1-protein-calculator/</code></a><br>Before (73): GLP-1 Protein Calculator: How Much Protein on Zepbound, Wegovy or Ozempic<br>After (55): GLP-1 Protein Calculator for Zepbound, Wegovy &amp; Ozempic</li>
+<li><a href="/ai-video/tadapop-video-research/"><code>/ai-video/tadapop-video-research/</code></a><br>Before (62): Tadapop Video Research: What's Popular on YouTube | ShipToLive<br>After (49): Tadapop Video Research: What's Popular on YouTube</li>
+</ol>
+<div class="links"><a href="https://github.com/youfun88/shiptolive/compare/main...seo/shorten-page-titles">Diff on GitHub</a></div>
+</div>
 
 <script>
 (function(){
