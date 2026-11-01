@@ -97,6 +97,6 @@ Disallow: /card/
 Disallow: /zh/card/
 
 # Plain-text summary written for language models.
-# https://shiptolive.com/llms.txt
+# https://www.shiptolive.com/llms.txt
 
-Sitemap: https://shiptolive.com/sitemap.xml
+Sitemap: https://www.shiptolive.com/sitemap.xml

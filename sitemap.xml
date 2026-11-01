@@ -2,114 +2,114 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://shiptolive.com/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://shiptolive.com/" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://shiptolive.com/zh/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://shiptolive.com/" />
+    <loc>https://www.shiptolive.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shiptolive.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/" />
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://shiptolive.com/zh/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://shiptolive.com/" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://shiptolive.com/zh/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://shiptolive.com/" />
+    <loc>https://www.shiptolive.com/zh/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shiptolive.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/" />
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://shiptolive.com/seo-aeo-geo/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://shiptolive.com/seo-aeo-geo/" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://shiptolive.com/zh/seo-aeo-geo/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://shiptolive.com/seo-aeo-geo/" />
+    <loc>https://www.shiptolive.com/seo-aeo-geo/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shiptolive.com/seo-aeo-geo/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/zh/seo-aeo-geo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/seo-aeo-geo/" />
     <lastmod>2026-10-30</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://shiptolive.com/zh/seo-aeo-geo/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://shiptolive.com/seo-aeo-geo/" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://shiptolive.com/zh/seo-aeo-geo/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://shiptolive.com/seo-aeo-geo/" />
+    <loc>https://www.shiptolive.com/zh/seo-aeo-geo/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shiptolive.com/seo-aeo-geo/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/zh/seo-aeo-geo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/seo-aeo-geo/" />
     <lastmod>2026-10-30</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://shiptolive.com/projects/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://shiptolive.com/projects/" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://shiptolive.com/zh/projects/" />
+    <loc>https://www.shiptolive.com/projects/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shiptolive.com/projects/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/zh/projects/" />
     <lastmod>2026-10-08</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://shiptolive.com/zh/projects/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://shiptolive.com/projects/" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://shiptolive.com/zh/projects/" />
+    <loc>https://www.shiptolive.com/zh/projects/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shiptolive.com/projects/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/zh/projects/" />
     <lastmod>2026-10-08</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://shiptolive.com/projects/ai-visibility-checker/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://shiptolive.com/projects/ai-visibility-checker/" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://shiptolive.com/zh/projects/ai-visibility-checker/" />
-    <lastmod>2026-10-08</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://shiptolive.com/zh/projects/ai-visibility-checker/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://shiptolive.com/projects/ai-visibility-checker/" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://shiptolive.com/zh/projects/ai-visibility-checker/" />
+    <loc>https://www.shiptolive.com/projects/ai-visibility-checker/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shiptolive.com/projects/ai-visibility-checker/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/zh/projects/ai-visibility-checker/" />
     <lastmod>2026-10-08</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://shiptolive.com/ideas/</loc>
+    <loc>https://www.shiptolive.com/zh/projects/ai-visibility-checker/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shiptolive.com/projects/ai-visibility-checker/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/zh/projects/ai-visibility-checker/" />
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.shiptolive.com/ideas/</loc>
     <lastmod>2026-10-11</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://shiptolive.com/glp1-protein-calculator/</loc>
+    <loc>https://www.shiptolive.com/glp1-protein-calculator/</loc>
     <lastmod>2026-10-11</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://shiptolive.com/about/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://shiptolive.com/about/" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://shiptolive.com/zh/about/" />
+    <loc>https://www.shiptolive.com/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shiptolive.com/about/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/zh/about/" />
     <lastmod>2026-10-11</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://shiptolive.com/zh/about/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://shiptolive.com/about/" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://shiptolive.com/zh/about/" />
+    <loc>https://www.shiptolive.com/zh/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shiptolive.com/about/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/zh/about/" />
     <lastmod>2026-10-11</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://shiptolive.com/tools/</loc>
+    <loc>https://www.shiptolive.com/tools/</loc>
     <lastmod>2026-10-11</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://shiptolive.com/tools/topic-finder/</loc>
+    <loc>https://www.shiptolive.com/tools/topic-finder/</loc>
     <lastmod>2026-10-11</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://shiptolive.com/ai-video/</loc>
+    <loc>https://www.shiptolive.com/ai-video/</loc>
     <lastmod>2026-10-11</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://shiptolive.com/ai-video/how-to-pick-video-topics/</loc>
+    <loc>https://www.shiptolive.com/ai-video/how-to-pick-video-topics/</loc>
     <lastmod>2026-10-11</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://shiptolive.com/ai-video/tadapop-video-research/</loc>
+    <loc>https://www.shiptolive.com/ai-video/tadapop-video-research/</loc>
     <lastmod>2026-10-11</lastmod>
     <priority>0.6</priority>
   </url>
