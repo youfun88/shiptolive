@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Vocabulary Quiz</title>
+<style>
+  :root {
+    --bg: #f6f7f4; --card: #ffffff; --ink: #1d2433; --muted: #5d6675; --line: #d6dae0;
+    --accent: #1f5fa8; --good: #17693a; --good-bg: #e4f5ea; --bad: #a92c21; --bad-bg: #fbe9e6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 18px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif;
+  }
+  main { max-width: 640px; margin: 0 auto; padding: 24px 16px 48px; }
+  h1 { font-size: 26px; line-height: 1.2; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 16px; margin: 0 0 20px; }
+  .bar { height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; margin-bottom: 6px; }
+  .bar i { display: block; height: 100%; background: var(--accent); transition: width .2s; }
+  .count { color: var(--muted); font-size: 15px; margin-bottom: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+  .q { font-size: 21px; font-weight: 600; margin: 0 0 18px; }
+  .blank { display: inline-block; min-width: 4.5em; border-bottom: 3px solid var(--ink); }
+  .choices { display: grid; gap: 10px; }
+  button { font: inherit; cursor: pointer; }
+  .choice {
+    display: flex; gap: 12px; align-items: center; width: 100%; min-height: 56px; padding: 10px 14px; text-align: left;
+    color: var(--ink); background: var(--card); border: 2px solid var(--line); border-radius: 10px;
+  }
+  .choice:hover:not(:disabled) { border-color: var(--accent); }
+  .choice:disabled { cursor: default; color: var(--ink); }
+  .choice.test b { display: block; }
+  .meta { display: block; color: var(--muted); font-size: 15px; }
+  .ask { color: var(--muted); font-size: 16px; margin-bottom: 6px; }
+  .speak {
+    display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 6px 14px; margin-bottom: 14px;
+    color: var(--accent); background: transparent; border: 2px solid var(--accent); border-radius: 999px; font-size: 16px; font-weight: 600;
+  }
+  .feedback .speak { margin: 10px 0 0; }
+  .speak[hidden] { display: none; }
+  .back {
+    min-height: 44px; padding: 6px 12px 6px 0; margin-bottom: 10px; color: var(--accent);
+    background: transparent; border: 0; font-size: 16px; font-weight: 600;
+  }
+  .letter { flex: none; font-weight: 700; color: var(--muted); }
+  .choice.right { background: var(--good-bg); border-color: var(--good); }
+  .choice.wrong { background: var(--bad-bg); border-color: var(--bad); }
+  .feedback { margin-top: 16px; padding: 12px 14px; border-radius: 10px; }
+  .feedback.right { background: var(--good-bg); color: var(--good); }
+  .feedback.wrong { background: var(--bad-bg); color: var(--bad); }
+  .feedback strong { display: block; }
+  .feedback .def { color: var(--ink); margin-top: 4px; }
+  .feedback .zh { color: var(--muted); margin-top: 2px; }
+  .primary {
+    width: 100%; min-height: 54px; margin-top: 16px; color: #fff; background: var(--accent);
+    border: 0; border-radius: 10px; font-weight: 600;
+  }
+  .secondary {
+    width: 100%; min-height: 54px; margin-top: 10px; color: var(--accent); background: transparent;
+    border: 2px solid var(--accent); border-radius: 10px; font-weight: 600;
+  }
+  .score { font-size: 52px; font-weight: 700; line-height: 1.1; margin: 0; }
+  .msg { margin: 6px 0 18px; }
+  h2 { font-size: 18px; margin: 18px 0 8px; }
+  .missed { list-style: none; margin: 0; padding: 0; }
+  .missed li { padding: 10px 0; border-top: 1px solid var(--line); }
+  .missed b { display: block; }
+  .missed span { display: block; font-size: 16px; }
+  .missed b { margin-bottom: 4px; font-weight: 600; }
+  .missed .was { color: var(--bad); }
+  .missed .fix { color: var(--good); font-weight: 600; }
+  .missed .zh { color: var(--muted); }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<main>
+  <h1 id="title">Social Studies Vocabulary Quiz</h1>
+  <p class="sub" id="sub">Pick a test.</p>
+  <div id="app" aria-live="polite"></div>
+</main>
+<script>
+// Chapter 2 stems are the worksheet's own definitions, with the word blanked out.
+var CHAPTER2 = [
+  { w: 'relative location', q: '___ tells where something is by comparing it to something else.', zh: '相對位置', near: ['absolute location', 'legend', 'compass rose'] },
+  { w: 'absolute location', q: 'The exact spot where a place is located is its ___. It may include a place\'s house number, street, town, and state.', zh: '絕對位置', near: ['relative location', 'town', 'symbols'] },
+  { w: 'town', q: 'A ___ is a small community.', zh: '城鎮', near: ['city', 'continent', 'harbor'] },
+  { w: 'symbols', q: 'These small pictures are called ___. An object that stands for something else.', zh: '符號／標誌', near: ['legend', 'compass rose', 'globe'] },
+  { w: 'legend', q: 'The map key, or ___, shows the different symbols. It tells what each means.', zh: '圖例', near: ['symbols', 'compass rose', 'globe'] },
+  { w: 'city', q: 'A ___ is a very large community, much larger than a town.', zh: '城市', near: ['town', 'continent', 'ocean'] },
+  { w: 'compass rose', q: 'A ___ shows directions on the map. It is a directional indicator.', zh: '羅盤玫瑰', near: ['legend', 'symbols', 'globe'] },
+  { w: 'landform', q: 'Earth has different shapes of land. Each shape is called a ___.', zh: '地形', near: ['continent', 'globe', 'harbor'] },
+  { w: 'ocean', q: 'An ___ is a large body of salt water.', zh: '海洋', near: ['harbor', 'continent', 'landform'] },
+  { w: 'continent', q: 'A ___ is a large land area on Earth.', zh: '大陸／大洲', near: ['landform', 'ocean', 'city'] },
+  { w: 'globe', q: 'A ___ is a round model of Earth.', zh: '地球儀', near: ['compass rose', 'continent', 'legend'] },
+  { w: 'migrate', q: 'People move, or ___, from one place to another.', zh: '遷移／移居', near: ['harbor', 'landform', 'town'] },
+  { w: 'harbor', q: 'A ___ is a safe place near land where ships are tied up.', zh: '港口', near: ['ocean', 'town', 'migrate'] }
+];
+
+// The worksheet's definitions as written. Its printed Chinese is garbled, so `zh` here is our own gloss.
+var REVIEW27 = [
+  { w: 'primary source', q: 'Something made or written by someone who saw or experienced an event.', zh: '第一手資料', near: ['secondary source', 'historian', 'biography'] },
+  { w: 'journal', q: 'A daily record of thoughts and events in a person\'s life.', zh: '日記', near: ['biography', 'autobiography', 'artifact'] },
+  { w: 'artifact', q: 'An object made and used by people.', zh: '文物', near: ['architecture', 'journal', 'tradition'] },
+  { w: 'architecture', q: 'How buildings are designed.', zh: '建築', near: ['artifact', 'culture', 'history'] },
+  { w: 'secondary source', q: 'Something written or made by someone who did not see an event happen.', zh: '第二手資料', near: ['primary source', 'journal', 'family tree'] },
+  { w: 'biography', q: 'A book about a person\'s life written by someone else.', zh: '傳記', near: ['autobiography', 'journal', 'oral history'] },
+  { w: 'autobiography', q: 'A story about a person\'s life written by that person.', zh: '自傳', near: ['biography', 'family tree', 'oral history'] },
+  { w: 'historian', q: 'Someone who studies and writes about history.', zh: '歷史學家', near: ['guardian', 'ancestor', 'immigrant'] },
+  { w: 'family', q: 'A group of people who live together and experience the world together.', zh: '家庭', near: ['community', 'generation', 'culture'] },
+  { w: 'community', q: 'A place where people live, work, and play together; also a group sharing interests and beliefs.', zh: '社區', near: ['family', 'culture', 'citizen'] },
+  { w: 'respect', q: 'Being kind and fair to others.', zh: '尊重', near: ['responsible', 'practice', 'tradition'] },
+  { w: 'responsible', q: 'Taking care of important things.', zh: '負責任的', near: ['respect', 'practice', 'guardian'] },
+  { w: 'extended family', q: 'A family that includes more than parents and children, such as aunts and uncles.', zh: '大家庭', near: ['family', 'generation', 'family tree'] },
+  { w: 'generation', q: 'People born and living about the same time.', zh: '世代', near: ['ancestor', 'extended family', 'community'] },
+  { w: 'guardian', q: 'Someone who cares for a child.', zh: '監護人', near: ['ancestor', 'historian', 'citizen'] },
+  { w: 'immigrant', q: 'A person who moves from one country to another.', zh: '移民', near: ['citizen', 'ancestor', 'guardian'] },
+  { w: 'practice', q: 'To follow teachings and rules.', zh: '奉行', near: ['tradition', 'respect', 'examine'] },
+  { w: 'citizen', q: 'A person who belongs to a country.', zh: '公民', near: ['immigrant', 'guardian', 'community'] },
+  { w: 'tradition', q: 'Something passed down over time.', zh: '傳統', near: ['culture', 'practice', 'history'] },
+  { w: 'history', q: 'The story of the past, including people, events, places, and objects.', zh: '歷史', near: ['historian', 'tradition', 'culture'] },
+  { w: 'compare', q: 'To see how two or more things are similar.', zh: '比較（找相同）', near: ['contrast', 'examine', 'practice'] },
+  { w: 'contrast', q: 'To see how two or more things are different.', zh: '對比（找不同）', near: ['compare', 'examine', 'respect'] },
+  { w: 'ancestor', q: 'A relative who lived long before your grandparents.', zh: '祖先', near: ['generation', 'guardian', 'historian'] },
+  { w: 'culture', q: 'A way of life.', zh: '文化', near: ['tradition', 'community', 'history'] },
+  { w: 'oral history', q: 'Recorded information from a person who experienced an event.', zh: '口述歷史', near: ['history', 'family tree', 'biography'] },
+  { w: 'examine', q: 'To study something closely and carefully.', zh: '仔細檢視', near: ['compare', 'contrast', 'practice'] },
+  { w: 'family tree', q: 'A drawing or diagram that shows how family members are related.', zh: '家譜', near: ['extended family', 'generation', 'ancestor'] }
+];
+
+var TESTS = [
+  { title: 'Chapter 2: People, Places, and Nature', sub: 'Lessons 1–3', words: CHAPTER2 },
+  { title: 'Sources, Families, and the Past', sub: 'Vocabulary Review', words: REVIEW27 }
+];
+
+var app = document.getElementById('app');
+var titleEl = document.getElementById('title'), subEl = document.getElementById('sub');
+var test, quiz, at, missed, picks, orders, next;
+
+function shuffle(list) {
+  var a = list.slice();
+  for (var i = a.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = a[i]; a[i] = a[j]; a[j] = t;
+  }
+  return a;
+}
+function el(tag, cls, text) {
+  var e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text !== undefined) e.textContent = text;
+  return e;
+}
+function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+function fill(item) {
+  return item.q.indexOf('___') >= 0 ? cap(item.q.replace('___', item.w)) : cap(item.w) + ': ' + item.q;
+}
+
+// Read aloud with the device's own voices. Each part: [text, lang]. Tapping again while it talks stops it.
+function say(parts) {
+  var v = window.speechSynthesis;
+  if (!v) return;
+  if (v.speaking || v.pending) { v.cancel(); return; }
+  parts.forEach(function (p) {
+    var u = new SpeechSynthesisUtterance(p[0]);
+    u.lang = p[1];
+    u.rate = 0.9;
+    v.speak(u);
+  });
+}
+function hush() { if (window.speechSynthesis) window.speechSynthesis.cancel(); }
+function speakButton(label, parts) {
+  var b = el('button', 'speak', '🔊 ' + label);
+  b.type = 'button';
+  b.onclick = function () { say(parts()); };
+  if (!window.speechSynthesis) b.hidden = true;
+  return b;
+}
+
+function menu() {
+  hush();
+  test = null;
+  titleEl.textContent = 'Social Studies Vocabulary Quiz';
+  subEl.textContent = 'Pick a test.';
+  app.textContent = '';
+  var box = el('div', 'choices');
+  TESTS.forEach(function (t) {
+    var b = el('button', 'choice test');
+    b.type = 'button';
+    var txt = el('span');
+    txt.appendChild(el('b', '', t.title));
+    txt.appendChild(el('span', 'meta', t.sub + ' · ' + t.words.length + ' questions'));
+    b.appendChild(txt);
+    b.onclick = function () {
+      test = t;
+      titleEl.textContent = t.title;
+      subEl.textContent = t.sub;
+      start(t.words);
+    };
+    box.appendChild(b);
+  });
+  app.appendChild(box);
+}
+
+function start(list) {
+  quiz = shuffle(list);
+  at = 0;
+  missed = [];
+  picks = [];
+  orders = [];
+  show();
+}
+
+function stem(item) {
+  var p = el('p', 'q');
+  if (item.q.indexOf('___') < 0) {
+    var wrap = el('div');
+    wrap.appendChild(el('div', 'ask', 'Which word matches this meaning?'));
+    p.textContent = item.q;
+    wrap.appendChild(p);
+    return wrap;
+  }
+  var parts = item.q.split('___');
+  p.appendChild(document.createTextNode(parts[0]));
+  var b = el('span', 'blank');
+  b.setAttribute('aria-label', 'blank');
+  b.innerHTML = '&nbsp;';
+  p.appendChild(b);
+  p.appendChild(document.createTextNode(parts[1]));
+  return p;
+}
+
+function show() {
+  var item = quiz[at];
+  hush();
+  app.textContent = '';
+  // First question goes back to the test list. Later ones show the previous question,
+  // with its answer locked, so going back can't change the score.
+  var back = el('button', 'back', at === 0 ? '← Back to tests' : '← Back');
+  back.type = 'button';
+  back.onclick = function () { if (at === 0) menu(); else { at--; show(); } };
+  app.appendChild(back);
+  var bar = el('div', 'bar'), fillBar = el('i');
+  fillBar.style.width = (at / quiz.length * 100) + '%';
+  bar.appendChild(fillBar);
+  app.appendChild(bar);
+  app.appendChild(el('div', 'count', 'Question ' + (at + 1) + ' of ' + quiz.length));
+
+  var card = el('div', 'card');
+  var box = el('div', 'choices');
+  card.appendChild(stem(item));
+  card.appendChild(speakButton('Read it to me', function () {
+    var parts = [[item.q.replace('___', 'blank'), 'en-US']];
+    box.querySelectorAll('button').forEach(function (b, i) {
+      parts.push(['ABCD'.charAt(i) + '. ' + cap(b.dataset.word), 'en-US']);
+    });
+    return parts;
+  }));
+  if (!orders[at]) orders[at] = shuffle([item.w].concat(item.near));
+  orders[at].forEach(function (word, i) {
+    var c = el('button', 'choice');
+    c.type = 'button';
+    c.dataset.word = word;
+    c.appendChild(el('span', 'letter', 'ABCD'.charAt(i)));
+    c.appendChild(el('span', '', cap(word)));
+    c.onclick = function () { picks[at] = word; reveal(item, word, box, card); next.focus(); };
+    box.appendChild(c);
+  });
+  card.appendChild(box);
+  app.appendChild(card);
+  if (picks[at]) reveal(item, picks[at], box, card);
+}
+
+function reveal(item, picked, box, card) {
+  var ok = picked === item.w;
+  box.querySelectorAll('button').forEach(function (b) {
+    b.disabled = true;
+    if (b.dataset.word === item.w) b.classList.add('right');
+    else if (b.dataset.word === picked) b.classList.add('wrong');
+  });
+  var f = el('div', 'feedback ' + (ok ? 'right' : 'wrong'));
+  f.appendChild(el('strong', '', ok ? 'Correct!' : 'Not quite. The answer is ' + cap(item.w) + '.'));
+  f.appendChild(el('div', 'def', fill(item)));
+  f.appendChild(el('div', 'zh', item.zh));
+  f.appendChild(speakButton('Read the answer', function () {
+    return [[(ok ? 'Correct! ' : 'The answer is ' + item.w + '. ') + fill(item).replace(/^[^:]*: /, ''), 'en-US'], [item.zh.replace(/[（）／]/g, '，'), 'zh-TW']];
+  }));
+  card.appendChild(f);
+  var last = at === quiz.length - 1;
+  next = el('button', 'primary', last ? 'See my score' : 'Next question');
+  next.type = 'button';
+  next.onclick = function () { at++; if (last) done(); else show(); };
+  card.appendChild(next);
+}
+
+function done() {
+  hush();
+  missed = [];
+  quiz.forEach(function (item, i) {
+    if (picks[i] !== item.w) missed.push({ item: item, picked: picks[i] });
+  });
+  var total = quiz.length, right = total - missed.length;
+  app.textContent = '';
+  var card = el('div', 'card');
+  card.appendChild(el('p', 'score', right + ' / ' + total));
+  card.appendChild(el('p', 'msg',
+    right === total ? 'Perfect score. Great job!' :
+    right / total >= 0.8 ? 'Very good. Look at the wrong answers below.' :
+    'Good try. Look at the wrong answers below and go again.'));
+  if (missed.length) {
+    card.appendChild(el('h2', '', missed.length === 1 ? '1 wrong answer' : missed.length + ' wrong answers'));
+    var ul = el('ul', 'missed');
+    missed.forEach(function (m) {
+      var li = el('li');
+      li.appendChild(el('b', '', cap(m.item.q.replace('___', '_____'))));
+      li.appendChild(el('span', 'was', '✗ You picked: ' + cap(m.picked)));
+      li.appendChild(el('span', 'fix', '✓ Correct answer: ' + cap(m.item.w)));
+      li.appendChild(el('span', 'zh', m.item.zh));
+      ul.appendChild(li);
+    });
+    card.appendChild(ul);
+    var again = el('button', 'primary', missed.length === 1 ? 'Try this one again' : 'Try these ' + missed.length + ' again');
+    again.type = 'button';
+    var retry = missed.map(function (m) { return m.item; });
+    again.onclick = function () { start(retry); };
+    card.appendChild(again);
+  }
+  var all = el('button', missed.length ? 'secondary' : 'primary', 'Start the whole quiz over');
+  all.type = 'button';
+  all.onclick = function () { start(test.words); };
+  card.appendChild(all);
+  var pick = el('button', 'secondary', 'Pick a different test');
+  pick.type = 'button';
+  pick.onclick = menu;
+  card.appendChild(pick);
+  app.appendChild(card);
+}
+
+menu();
+</script>
+</body>
+</html>
