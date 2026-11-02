@@ -18,6 +18,11 @@ a{color:#1d4f91}h1{font-size:24px}h2{font-size:18px;margin-top:32px}p,li{color:#
 .status{min-height:1.5em;margin-top:8px;font-size:14px}
 .status.ok{color:#166534}.status.err{color:#b91c1c}
 ol.q li{margin:0 0 12px}
+.ba{display:block;margin:6px 0;padding:8px 10px;border-left:3px solid;border-radius:4px}
+.ba b{display:block;font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+.ba.was{color:#b91c1c;background:#fef2f2;border-color:#b91c1c}
+.ba.now{color:#166534;background:#f0fdf4;border-color:#166534}
+.ba code{color:inherit;background:none}
 </style>
 </head>
 <body>
@@ -107,8 +112,8 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 <h3>1. [Yufan] Question-style headings on the GLP-1 calculator</h3>
 <p>Rewords two existing H2s as questions. Nothing else on the page changes. The page has no 中文 version. Branch <code>seo/glp1-question-headings</code>.</p>
 <ul>
-<li><code>/glp1-protein-calculator/</code> H2: Easy high-protein foods → What are easy high-protein foods on a GLP-1?</li>
-<li><code>/glp1-protein-calculator/</code> H2: Common questions → Common questions: how much protein do you need on a GLP-1?</li>
+<li><code>/glp1-protein-calculator/</code> H2:<span class="ba was"><b>Before</b>Easy high-protein foods</span><span class="ba now"><b>After</b>What are easy high-protein foods on a GLP-1?</span></li>
+<li><code>/glp1-protein-calculator/</code> H2:<span class="ba was"><b>Before</b>Common questions</span><span class="ba now"><b>After</b>Common questions: how much protein do you need on a GLP-1?</span></li>
 </ul>
 <p>Why: the page checklist flags this page with "No question-style H2", its only open fix. It is also the page behind most non-brand Search Console queries: 35 impressions at position 54.9 in the last 28 days. The second heading matches "how much protein on glp-1" (2 impressions, position 97.5), and the first answer in that section already answers it. Those numbers are small, so don't expect a measurable change on their own.</p>
 <div class="links"><a href="/glp1-protein-calculator/">Live version</a></div>
@@ -117,11 +122,11 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 <h3>2. [Yufan] Question-style headings on the What to Build Next page</h3>
 <p>Rewords five existing H2s as questions. The text under them doesn't change. The page has no 中文 version. Branch <code>seo/ideas-question-headings</code>.</p>
 <ul>
-<li><code>/ideas/</code> H2: Where people are showing up, and where it's already crowded → Where are people showing up, and where is it already crowded?</li>
-<li><code>/ideas/</code> H2: What the search data says about the ideas → What does the search data say about the ideas?</li>
-<li><code>/ideas/</code> H2: Three things worth testing, best first → Which three ideas are worth testing first?</li>
-<li><code>/ideas/</code> H2: Check demand in one afternoon → How do you check demand in one afternoon?</li>
-<li><code>/ideas/</code> H2: Where the numbers come from → Where do the numbers come from?</li>
+<li><code>/ideas/</code> H2:<span class="ba was"><b>Before</b>Where people are showing up, and where it's already crowded</span><span class="ba now"><b>After</b>Where are people showing up, and where is it already crowded?</span></li>
+<li><code>/ideas/</code> H2:<span class="ba was"><b>Before</b>What the search data says about the ideas</span><span class="ba now"><b>After</b>What does the search data say about the ideas?</span></li>
+<li><code>/ideas/</code> H2:<span class="ba was"><b>Before</b>Three things worth testing, best first</span><span class="ba now"><b>After</b>Which three ideas are worth testing first?</span></li>
+<li><code>/ideas/</code> H2:<span class="ba was"><b>Before</b>Check demand in one afternoon</span><span class="ba now"><b>After</b>How do you check demand in one afternoon?</span></li>
+<li><code>/ideas/</code> H2:<span class="ba was"><b>Before</b>Where the numbers come from</span><span class="ba now"><b>After</b>Where do the numbers come from?</span></li>
 </ul>
 <p>Why: the page checklist flags /ideas/ with "No question-style H2" (score 94). Search Console shows no impressions for this page in the latest 28-day report, so this clears a checklist item and there is no search number to compare against yet. The checklist's other flag on this page, no FAQPage data, is not part of this change.</p>
 <div class="links"><a href="/ideas/">Live version</a></div>
