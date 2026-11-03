@@ -152,6 +152,20 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 <p>Why: /glp1-protein-calculator/ is the page behind most non-brand Search Console queries (40 of 121 impressions in the 28 days to 2026-10-30, position 51.2), yet llms.txt, the file written for AI engines, doesn't name it. The page checklist only checks that llms.txt exists, so it doesn't flag this. The AI check has never run and the Copilot report has no data, so there is no number yet to show an effect.</p>
 <div class="links"><a href="/llms.txt">Live version</a></div>
 </div>
+<div class="item" data-item="[Yufan] Link the Free tools page from the site footer">
+<h3>5. [Yufan] Link the Free tools page from the site footer</h3>
+<p>Adds one footer link, "Free tools" → <code>/tools/</code>, right after Projects, on the six English pages that share the main footer. Nothing else changes. The 中文 pages are left alone because /tools/ has no 中文 version, and the GLP-1 calculator and 404 pages have their own short footers. Branch <code>seo/footer-tools-link</code>.</p>
+<ul>
+<li><code>/</code> footer:<span class="ba was"><b>Before</b>Services · Pricing · Work · Projects · About · FAQ · Contact · LinkedIn · 中文</span><span class="ba now"><b>After</b>Services · Pricing · Work · Projects · Free tools · About · FAQ · Contact · LinkedIn · 中文</span></li>
+<li><code>/about/</code> footer:<span class="ba was"><b>Before</b>Services · Work · Projects · About · FAQ · Contact · 中文</span><span class="ba now"><b>After</b>Services · Work · Projects · Free tools · About · FAQ · Contact · 中文</span></li>
+<li><code>/projects/</code> footer:<span class="ba was"><b>Before</b>Services · Work · Projects · About · FAQ · 中文</span><span class="ba now"><b>After</b>Services · Work · Projects · Free tools · About · FAQ · 中文</span></li>
+<li><code>/projects/ai-visibility-checker/</code> footer:<span class="ba was"><b>Before</b>Services · Work · Projects · About · FAQ · 中文</span><span class="ba now"><b>After</b>Services · Work · Projects · Free tools · About · FAQ · 中文</span></li>
+<li><code>/seo-aeo-geo/</code> footer:<span class="ba was"><b>Before</b>Services · Work · Projects · About · FAQ · 中文</span><span class="ba now"><b>After</b>Services · Work · Projects · Free tools · About · FAQ · 中文</span></li>
+<li><code>/ideas/</code> footer:<span class="ba was"><b>Before</b>Services · Work · Projects · About · FAQ</span><span class="ba now"><b>After</b>Services · Work · Projects · Free tools · About · FAQ</span></li>
+</ul>
+<p>Why: the page checklist covers /tools/, but only one public page links to it (the Topic Finder). It isn't reachable from the homepage, About, Projects or the service page, and /ai-video/ is only reachable through /tools/ and its own pages. Search Console shows no impressions for /tools/ in the 28 days to 2026-10-31 (site total 120 impressions, 1 click). A sitewide footer link gives Google and AI crawlers a path in from every main page. No number shows an effect yet. Search Console will show whether /tools/ starts getting impressions.</p>
+<div class="links"><a href="/tools/">Live version</a></div>
+</div>
 </div>
 
 <script>
