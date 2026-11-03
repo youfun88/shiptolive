@@ -462,6 +462,16 @@ var C_GRAMMAR = [
   ] }
 ];
 
+// Listen and spell: the Unit 1 word lists, heard and typed. Nothing on screen gives the word away.
+var U1_LISTEN = U1_VOCAB.map(function (p, i) {
+  return {
+    title: 'JKLMN'.charAt(i) + '. Listen and spell: ' + p.title.replace(/^Words: /, ''),
+    items: p.items.map(function (x) {
+      return { kind: 'type', spell: true, listen: true, a: x.q, zh: x.a, q: x.a, alts: [], ask: 'Tap 🔊, listen, then type the word you hear.' };
+    })
+  };
+});
+
 // A part-level tip applies to every question in the part.
 [C_GRAMMAR].forEach(function (list) {
   list.forEach(function (p) { if (p.tip) inherit(p.items, { tip: p.tip }); });
@@ -473,7 +483,7 @@ var MENU = [
     { id: 'ss-rev', title: 'Sources, Families, and the Past', sub: 'Vocabulary Review', items: REVIEW27 }
   ] },
   { group: 'Grade 2 English', tests: [
-    { id: 'en-u1', title: 'Unit 1 Cumulative Review', sub: 'Sentences, questions, commands & exclamations', parts: U1_GRAMMAR },
+    { id: 'en-u1', title: 'Unit 1 Cumulative Review', sub: 'Sentences, questions, commands & exclamations', parts: U1_GRAMMAR.concat(U1_LISTEN) },
     { id: 'en-all', title: 'Complete Review', sub: 'Nouns (Lessons 1–5) and Sentences (Lessons 1–7)', parts: C_VOCAB.concat(C_GRAMMAR) }
   ] }
 ];
@@ -565,6 +575,7 @@ function filled(item) {
   return '';
 }
 function promptText(item) {
+  if (item.listen) return '🔊 ' + item.zh;
   if (item.spell) return item.zh;
   var q = plain(item.q).replace('___', '_____');
   if (item.kind === 'multi') return item.q + ' (' + item.options.join(', ') + ')';
@@ -792,6 +803,21 @@ function stem(item) {
   var wrap = el('div');
   var ask = item.ask || (item.kind === 'mc' && item.q.indexOf('___') < 0 ? 'Which word matches this meaning?' : '');
   if (ask) wrap.appendChild(el('div', 'ask', ask));
+  if (item.listen) {
+    // No English and no Chinese until she asks: the test is hearing it.
+    var play = el('button', 'secondary', '🔊 Play the word');
+    play.type = 'button';
+    play.onclick = function () { say([[speakAnswer(item), 'en-US']]); };
+    wrap.appendChild(play);
+    var hintBtn = el('button', 'back', 'Need a hint? Show the Chinese');
+    hintBtn.type = 'button';
+    hintBtn.onclick = function () {
+      var z = el('p', 'q big'); zhText(z, item.zh);
+      hintBtn.replaceWith(z);
+    };
+    wrap.appendChild(hintBtn);
+    return wrap;
+  }
   var p = el('p', item.spell || item.big ? 'q big' : 'q');
   if (item.spell) zhText(p, item.zh); else rich(p, item.q);
   wrap.appendChild(p);
@@ -946,7 +972,7 @@ function show() {
   var card = el('div', 'card');
   card.appendChild(stem(item));
   area = answerArea(item, card);
-  card.appendChild(speakButton(item.spell ? 'Hear the word' : 'Read it to me', function () { return readQuestion(item, area.box); }));
+  if (!item.listen) card.appendChild(speakButton(item.spell ? 'Hear the word' : 'Read it to me', function () { return readQuestion(item, area.box); }));
   card.appendChild(area.el);
   app.appendChild(card);
   var here = at, a = area;
