@@ -41,6 +41,14 @@
   .choice:disabled { cursor: default; color: var(--ink); }
   .choice[aria-pressed="true"] { border-color: var(--accent); background: #eaf1fa; }
   .choice.test b { display: block; }
+  .status { display: inline-block; margin-top: 4px; padding: 1px 9px; border-radius: 999px; font-size: 14px; font-weight: 600; }
+  .status.new { color: var(--muted); background: #eef0f3; }
+  .status.going { color: var(--accent); background: #e8f0fa; }
+  .stop { float: right; min-height: 44px; padding: 6px 0 6px 12px; color: var(--muted); background: transparent; border: 0; font-size: 15px; }
+  .status.done { color: #8a5a00; background: #fdf1d8; }
+  .status.perfect { color: var(--good); background: var(--good-bg); }
+  .progress { margin: 0 0 14px; }
+  .progress .bar { margin: 6px 0 0; }
   a.choice { text-decoration: none; }
   .meta { display: block; color: var(--muted); font-size: 15px; }
   .ask { color: var(--muted); font-size: 16px; margin-bottom: 6px; }
@@ -465,7 +473,7 @@ var MENU = [
     { id: 'ss-rev', title: 'Sources, Families, and the Past', sub: 'Vocabulary Review', items: REVIEW27 }
   ] },
   { group: 'Grade 2 English', tests: [
-    { id: 'en-u1', title: 'Unit 1 Cumulative Review', sub: 'Sentences, questions, commands & exclamations', parts: U1_VOCAB.concat(U1_GRAMMAR) },
+    { id: 'en-u1', title: 'Unit 1 Cumulative Review', sub: 'Sentences, questions, commands & exclamations', parts: U1_GRAMMAR },
     { id: 'en-all', title: 'Complete Review', sub: 'Nouns (Lessons 1–5) and Sentences (Lessons 1–7)', parts: C_VOCAB.concat(C_GRAMMAR) }
   ] }
 ];
@@ -621,11 +629,43 @@ function speakButton(label, parts) {
 
 /* ---------- Best scores, kept on this device only ---------- */
 function bests() { try { return JSON.parse(localStorage.getItem('josie-best') || '{}'); } catch (e) { return {}; } }
+/* Scores used to be keyed by a part's position ("en-u1-5"). Unit 1 lost its five
+   word parts on 2026-11-03, which moved every grammar part up by five, so old
+   position keys are moved onto the part's title once. */
+(function migrate() {
+  try {
+    var b = bests(), moved = false;
+    var oldOrder = { 'en-u1': U1_VOCAB.concat(U1_GRAMMAR), 'en-all': C_VOCAB.concat(C_GRAMMAR) };
+    Object.keys(oldOrder).forEach(function (id) {
+      oldOrder[id].forEach(function (p, i) {
+        var old = id + '-' + i;
+        if (b[old]) { if (!b[id + ':' + p.title]) b[id + ':' + p.title] = b[old]; delete b[old]; moved = true; }
+      });
+    });
+    if (moved) localStorage.setItem('josie-best', JSON.stringify(b));
+  } catch (e) {}
+})();
 function saveBest(key, right, total) {
   try {
     var b = bests();
     if (!b[key] || right / total > b[key][0] / b[key][1]) { b[key] = [right, total]; localStorage.setItem('josie-best', JSON.stringify(b)); }
   } catch (e) {}
+}
+
+/* ---------- Where she stopped in a part, kept on this device only ---------- */
+function places() { try { return JSON.parse(localStorage.getItem('josie-progress') || '{}'); } catch (e) { return {}; } }
+function setPlace(key, val) {
+  try {
+    var all = places();
+    if (val) all[key] = val; else delete all[key];
+    localStorage.setItem('josie-progress', JSON.stringify(all));
+  } catch (e) {}
+}
+function answered(pl) { return pl.picks.filter(function (x) { return x !== undefined && x !== null; }).length; }
+function savePlace() {
+  if (!cur || !cur.key || !fullRun || typeof cur.items === 'function') return;
+  var list = cur.items;
+  setPlace(cur.key, { ids: quiz.map(function (q) { return list.indexOf(q); }), picks: picks, orders: orders });
 }
 
 /* ---------- Menus ---------- */
@@ -681,16 +721,26 @@ function parts(t) {
   back.onclick = menu;
   app.appendChild(back);
   var best = bests();
+  var finished = t.parts.filter(function (p) { return best[t.id + ':' + p.title]; }).length;
+  var prog = el('div', 'progress');
+  prog.appendChild(el('div', 'meta', 'Progress: ' + finished + ' of ' + t.parts.length + ' parts done'));
+  var pbar = el('div', 'bar'), pfill = el('i');
+  pfill.style.width = (finished / t.parts.length * 100) + '%';
+  pbar.appendChild(pfill);
+  prog.appendChild(pbar);
+  app.appendChild(prog);
   var box = el('div', 'choices');
-  t.parts.forEach(function (p, i) {
-    var key = t.id + '-' + i;
+  t.parts.forEach(function (p) {
+    var key = t.id + ':' + p.title;
     var b = el('button', 'choice test');
     b.type = 'button';
     var txt = el('span');
     txt.appendChild(el('b', '', p.title));
-    var meta = p.items.length + ' questions';
-    if (best[key]) meta += ' · Best: ' + best[key][0] + ' / ' + best[key][1];
-    txt.appendChild(el('span', 'meta', meta));
+    txt.appendChild(el('span', 'meta', p.items.length + ' questions'));
+    var bk = best[key], pl = places()[key];
+    if (pl) txt.appendChild(el('span', 'status going', 'In progress · ' + answered(pl) + ' of ' + pl.ids.length + ' done' + (bk ? ' · Best ' + bk[0] + ' / ' + bk[1] : '')));
+    else txt.appendChild(el('span', 'status ' + (!bk ? 'new' : bk[0] === bk[1] ? 'perfect' : 'done'),
+      !bk ? 'Not started' : bk[0] === bk[1] ? '✓ All correct · ' + bk[0] + ' / ' + bk[1] : '✓ Done · Best ' + bk[0] + ' / ' + bk[1]));
     b.appendChild(txt);
     b.onclick = function () {
       begin({ key: key, title: t.title, sub: p.title, items: p.items, back: function () { parts(t); }, backLabel: 'Pick a different part' });
@@ -711,8 +761,22 @@ function parts(t) {
 function begin(ctx) {
   cur = ctx;
   setHead(ctx.title, ctx.sub);
+  fullRun = true;
+  var pl = ctx.key && typeof ctx.items !== 'function' ? places()[ctx.key] : null;
+  if (pl && pl.ids.every(function (i) { return ctx.items[i]; }) && pl.ids.length === ctx.items.length) {
+    // Carry on where she stopped: same order, answers kept, first unanswered question.
+    quiz = pl.ids.map(function (i) { return ctx.items[i]; });
+    picks = pl.picks.map(function (x) { return x === null ? undefined : x; });
+    orders = (pl.orders || []).map(function (x) { return x === null ? undefined : x; });
+    at = 0;
+    while (at < quiz.length - 1 && picks[at] !== undefined) at++;
+    show();
+    return;
+  }
+  if (pl) setPlace(ctx.key, null);
   start(items());
 }
+var fullRun = true;
 function items() { return typeof cur.items === 'function' ? cur.items() : cur.items; }
 
 function start(list) {
@@ -866,6 +930,12 @@ function show() {
   var back = el('button', 'back', at === 0 ? '← ' + (cur.backLabel || 'Back') : '← Back');
   back.type = 'button';
   back.onclick = function () { if (at === 0) cur.back(); else { at--; show(); } };
+  if (cur.key && fullRun && typeof cur.items !== 'function') {
+    var stop = el('button', 'stop', 'Stop here · saved');
+    stop.type = 'button';
+    stop.onclick = function () { savePlace(); cur.back(); };
+    app.appendChild(stop);
+  }
   app.appendChild(back);
   var bar = el('div', 'bar'), fillBar = el('i');
   fillBar.style.width = (at / quiz.length * 100) + '%';
@@ -883,6 +953,7 @@ function show() {
   submit = function (resp) {
     if (picks[here] !== undefined) return;
     picks[here] = resp;
+    savePlace();
     reveal(item, resp, a, card);
     next.focus();
   };
@@ -939,7 +1010,7 @@ function done() {
     if (!grade(item, picks[i]).ok) missed.push({ item: item, picked: picks[i] });
   });
   var total = quiz.length, right = total - missed.length;
-  if (cur.key) saveBest(cur.key, right, total);
+  if (cur.key && fullRun) { saveBest(cur.key, right, total); setPlace(cur.key, null); }
   app.textContent = '';
   var card = el('div', 'card');
   card.appendChild(el('p', 'score', right + ' / ' + total));
@@ -963,12 +1034,12 @@ function done() {
     var again = el('button', 'primary', missed.length === 1 ? 'Try this one again' : 'Try these ' + missed.length + ' again');
     again.type = 'button';
     var retry = missed.map(function (m) { return m.item; });
-    again.onclick = function () { start(retry); };
+    again.onclick = function () { fullRun = false; start(retry); };
     card.appendChild(again);
   }
   var all = el('button', missed.length ? 'secondary' : 'primary', 'Start the whole quiz over');
   all.type = 'button';
-  all.onclick = function () { start(items()); };
+  all.onclick = function () { fullRun = true; if (cur.key) setPlace(cur.key, null); start(items()); };
   card.appendChild(all);
   var pick = el('button', 'secondary', cur.backLabel || 'Pick a different test');
   pick.type = 'button';
