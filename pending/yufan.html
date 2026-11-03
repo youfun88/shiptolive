@@ -98,7 +98,7 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </script>
 <h1>Developer review · SEO / AEO / GEO</h1>
 <p>Search and AI-visibility changes for Yufan to approve: titles, descriptions, schema, internal links, llms.txt, sitemap, keywords. Content changes go to the owner at <a href="/pending/">/pending</a>. Not linked from the site and not indexed. The GX10 job applies approved changes at its next run (every 8 hours).</p>
-<p class="updated">Updated 2026-11-03.</p>
+<p class="updated">Updated 2026-11-03 (evening run).</p>
 
 <!-- Item markup (copy for each draft; data-item must equal the board title exactly):
 <div class="item" data-item="TITLE">
@@ -108,63 +108,15 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </div>
 -->
 <h2>Waiting for approval</h2>
-<div class="item" data-item="[Yufan] Question-style headings on the GLP-1 calculator">
-<h3>1. [Yufan] Question-style headings on the GLP-1 calculator</h3>
-<p>Rewords two existing H2s as questions. Nothing else on the page changes. The page has no 中文 version. Branch <code>seo/glp1-question-headings</code>.</p>
+<div class="item" data-item="[Yufan] Link the What to Build Next page from the GLP-1 calculator and llms.txt">
+<h3>1. [Yufan] Link the What to Build Next page from the GLP-1 calculator and llms.txt</h3>
+<p>Adds one footer link on the GLP-1 calculator and one line in <code>llms.txt</code>, both pointing to <code>/ideas/</code>. No other text changes. Neither page has a 中文 version. Branch <code>seo/link-ideas-page</code>.</p>
 <ul>
-<li><code>/glp1-protein-calculator/</code> H2:<span class="ba was"><b>Before</b>Easy high-protein foods</span><span class="ba now"><b>After</b>What are easy high-protein foods on a GLP-1?</span></li>
-<li><code>/glp1-protein-calculator/</code> H2:<span class="ba was"><b>Before</b>Common questions</span><span class="ba now"><b>After</b>Common questions: how much protein do you need on a GLP-1?</span></li>
+<li><code>/glp1-protein-calculator/</code> footer:<span class="ba was"><b>Before</b>Calculator · FAQ · About Ship to Live</span><span class="ba now"><b>After</b>Calculator · FAQ · Why we built it · About Ship to Live</span></li>
+<li><code>llms.txt</code>, end of "Free tools and guides":<span class="ba was"><b>Before</b>No line. The file doesn't mention /ideas/.</span><span class="ba now"><b>After</b>- **What to Build Next**, https://www.shiptolive.com/ideas/, research on what people search for on Google and the App Store in 2026, three app ideas worth testing, and why the GLP-1 protein calculator was built first.</span></li>
 </ul>
-<p>Why: the page checklist flags this page with "No question-style H2", its only open fix. It is also the page behind most non-brand Search Console queries: 35 impressions at position 54.9 in the last 28 days. The second heading matches "how much protein on glp-1" (2 impressions, position 97.5), and the first answer in that section already answers it. Those numbers are small, so don't expect a measurable change on their own.</p>
-<div class="links"><a href="/glp1-protein-calculator/">Live version</a></div>
-</div>
-<div class="item" data-item="[Yufan] Question-style headings on the What to Build Next page">
-<h3>2. [Yufan] Question-style headings on the What to Build Next page</h3>
-<p>Rewords five existing H2s as questions. The text under them doesn't change. The page has no 中文 version. Branch <code>seo/ideas-question-headings</code>.</p>
-<ul>
-<li><code>/ideas/</code> H2:<span class="ba was"><b>Before</b>Where people are showing up, and where it's already crowded</span><span class="ba now"><b>After</b>Where are people showing up, and where is it already crowded?</span></li>
-<li><code>/ideas/</code> H2:<span class="ba was"><b>Before</b>What the search data says about the ideas</span><span class="ba now"><b>After</b>What does the search data say about the ideas?</span></li>
-<li><code>/ideas/</code> H2:<span class="ba was"><b>Before</b>Three things worth testing, best first</span><span class="ba now"><b>After</b>Which three ideas are worth testing first?</span></li>
-<li><code>/ideas/</code> H2:<span class="ba was"><b>Before</b>Check demand in one afternoon</span><span class="ba now"><b>After</b>How do you check demand in one afternoon?</span></li>
-<li><code>/ideas/</code> H2:<span class="ba was"><b>Before</b>Where the numbers come from</span><span class="ba now"><b>After</b>Where do the numbers come from?</span></li>
-</ul>
-<p>Why: the page checklist flags /ideas/ with "No question-style H2" (score 94). Search Console shows no impressions for this page in the latest 28-day report, so this clears a checklist item and there is no search number to compare against yet. The checklist's other flag on this page, no FAQPage data, is not part of this change.</p>
-<div class="links"><a href="/ideas/">Live version</a></div>
-</div>
-<div class="item" data-item="[Yufan] Question-style headings on the Topic Finder">
-<h3>3. [Yufan] Question-style headings on the Topic Finder</h3>
-<p>Rewords the tool's four step headings as questions and keeps their numbers. The form, the results and the text under the headings don't change. The page has no 中文 version. Branch <code>seo/topic-finder-question-headings</code>.</p>
-<ul>
-<li><code>/tools/topic-finder/</code> H2:<span class="ba was"><b>Before</b>1. Your product and idea</span><span class="ba now"><b>After</b>1. What do you sell, and what video do you have in mind?</span></li>
-<li><code>/tools/topic-finder/</code> H2:<span class="ba was"><b>Before</b>2. What people actually search</span><span class="ba now"><b>After</b>2. What do people actually search?</span></li>
-<li><code>/tools/topic-finder/</code> H2:<span class="ba was"><b>Before</b>3. Check the six places</span><span class="ba now"><b>After</b>3. Which six places should you check?</span></li>
-<li><code>/tools/topic-finder/</code> H2:<span class="ba was"><b>Before</b>4. Score your shortlist</span><span class="ba now"><b>After</b>4. Which topic on your shortlist is worth filming?</span></li>
-</ul>
-<p>Why: the page checklist flags /tools/topic-finder/ with "No question-style H2". Search Console shows no impressions for the page in the latest 28-day report, so there is no baseline to measure against. Steps 2 to 4 only appear on screen after someone runs the tool. /tools/ is flagged too, but its H2s are tool names, so they aren't reworded here. The checklist's other flag on this page, no FAQPage data, would add content and isn't part of this item.</p>
-<div class="links"><a href="/tools/topic-finder/">Live version</a></div>
-</div>
-<div class="item" data-item="[Yufan] List the free tools and video guides in llms.txt">
-<h3>4. [Yufan] List the free tools and video guides in llms.txt</h3>
-<p>Adds a "Free tools and guides" section to <code>llms.txt</code>, between Projects and Skills. It lists five live pages, using wording from their own descriptions. No existing line changes, and no public page changes. Branch <code>seo/llms-free-tools</code>.</p>
-<ul>
-<li><code>llms.txt</code>, new section after Projects:<span class="ba was"><b>Before</b>No section. The file doesn't mention the GLP-1 calculator, the Topic Finder, /tools/ or the /ai-video/ pages.</span><span class="ba now"><b>After</b>## Free tools and guides: /tools/, GLP-1 protein calculator, Topic Finder (對標選題), How to Pick Video Topics, AI Video in 30 Days, Tadapop video research, each with its URL and one line on what it does. The calculator's line says "General information, not medical advice."</span></li>
-</ul>
-<p>Why: /glp1-protein-calculator/ is the page behind most non-brand Search Console queries (40 of 121 impressions in the 28 days to 2026-10-30, position 51.2), yet llms.txt, the file written for AI engines, doesn't name it. The page checklist only checks that llms.txt exists, so it doesn't flag this. The AI check has never run and the Copilot report has no data, so there is no number yet to show an effect.</p>
-<div class="links"><a href="/llms.txt">Live version</a></div>
-</div>
-<div class="item" data-item="[Yufan] Link the Free tools page from the site footer">
-<h3>5. [Yufan] Link the Free tools page from the site footer</h3>
-<p>Adds one footer link, "Free tools" → <code>/tools/</code>, right after Projects, on the six English pages that share the main footer. Nothing else changes. The 中文 pages are left alone because /tools/ has no 中文 version, and the GLP-1 calculator and 404 pages have their own short footers. Branch <code>seo/footer-tools-link</code>.</p>
-<ul>
-<li><code>/</code> footer:<span class="ba was"><b>Before</b>Services · Pricing · Work · Projects · About · FAQ · Contact · LinkedIn · 中文</span><span class="ba now"><b>After</b>Services · Pricing · Work · Projects · Free tools · About · FAQ · Contact · LinkedIn · 中文</span></li>
-<li><code>/about/</code> footer:<span class="ba was"><b>Before</b>Services · Work · Projects · About · FAQ · Contact · 中文</span><span class="ba now"><b>After</b>Services · Work · Projects · Free tools · About · FAQ · Contact · 中文</span></li>
-<li><code>/projects/</code> footer:<span class="ba was"><b>Before</b>Services · Work · Projects · About · FAQ · 中文</span><span class="ba now"><b>After</b>Services · Work · Projects · Free tools · About · FAQ · 中文</span></li>
-<li><code>/projects/ai-visibility-checker/</code> footer:<span class="ba was"><b>Before</b>Services · Work · Projects · About · FAQ · 中文</span><span class="ba now"><b>After</b>Services · Work · Projects · Free tools · About · FAQ · 中文</span></li>
-<li><code>/seo-aeo-geo/</code> footer:<span class="ba was"><b>Before</b>Services · Work · Projects · About · FAQ · 中文</span><span class="ba now"><b>After</b>Services · Work · Projects · Free tools · About · FAQ · 中文</span></li>
-<li><code>/ideas/</code> footer:<span class="ba was"><b>Before</b>Services · Work · Projects · About · FAQ</span><span class="ba now"><b>After</b>Services · Work · Projects · Free tools · About · FAQ</span></li>
-</ul>
-<p>Why: the page checklist covers /tools/, but only one public page links to it (the Topic Finder). It isn't reachable from the homepage, About, Projects or the service page, and /ai-video/ is only reachable through /tools/ and its own pages. Search Console shows no impressions for /tools/ in the 28 days to 2026-10-31 (site total 120 impressions, 1 click). A sitewide footer link gives Google and AI crawlers a path in from every main page. No number shows an effect yet. Search Console will show whether /tools/ starts getting impressions.</p>
-<div class="links"><a href="/tools/">Live version</a></div>
+<p>Why: /ideas/ is in the sitemap, but no public page links to it, so Google and AI crawlers can only find it through the sitemap. The page says the GLP-1 calculator is the idea being tested first, so the calculator is the natural place to link from. The calculator is also the page with the most non-brand Search Console queries (about 40 of 120 impressions in the 28 days to 2026-10-31). /ideas/ itself has no impressions in that report, so there is no number to compare against yet. Search Console will show whether it starts getting impressions.</p>
+<div class="links"><a href="/ideas/">Live version</a><a href="/glp1-protein-calculator/">Calculator</a></div>
 </div>
 </div>
 
