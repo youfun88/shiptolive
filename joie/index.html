@@ -58,6 +58,7 @@
     width: 100%; min-height: 54px; margin-top: 10px; color: var(--accent); background: transparent;
     border: 2px solid var(--accent); border-radius: 10px; font-weight: 600;
   }
+  .stop { float: right; min-height: 44px; padding: 6px 0 6px 12px; color: var(--muted); background: transparent; border: 0; font-size: 15px; }
   .back { min-height: 44px; padding: 6px 12px 6px 0; margin-bottom: 10px; color: var(--accent); background: transparent; border: 0; font-size: 16px; font-weight: 600; }
   .pick b { display: block; }
   .meta { display: block; color: var(--muted); font-size: 15px; }
@@ -180,7 +181,48 @@ var UNITS = [
 
 var app = document.getElementById('app');
 var titleEl = document.getElementById('title'), subEl = document.getElementById('sub');
-var unit, quiz, at, picks, orders, next;
+var unit, quiz, at, picks, orders, next, fullRun = true;
+
+/* ---------- Where she stopped, on this device and online ---------- */
+// Kept in this browser and sent to admin.shiptolive.com, so she can stop on one
+// device and carry on on another. Online is best effort: offline it still saves here.
+var SYNC = 'https://admin.shiptolive.com/api/practice', WHO = 'joie', LOCAL = 'joie-progress';
+function readLocal() { try { return JSON.parse(localStorage.getItem(LOCAL)) || { t: 0, units: {} }; } catch (e) { return { t: 0, units: {} }; } }
+var saved = readLocal(), pushTimer = null;
+function writeLocal() { try { localStorage.setItem(LOCAL, JSON.stringify(saved)); } catch (e) {} }
+function push() {
+  clearTimeout(pushTimer);
+  pushTimer = setTimeout(function () {
+    try {
+      fetch(SYNC, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=UTF-8' }, body: JSON.stringify({ who: WHO, data: saved }), keepalive: true }).catch(function () {});
+    } catch (e) {}
+  }, 600);
+}
+function savePlace() {
+  if (!unit || !fullRun) return;
+  saved.units[unit.title] = { ids: quiz.map(function (q) { return unit.qs.indexOf(q); }), picks: picks.map(function (x) { return x === undefined ? null : x; }) };
+  saved.t = Date.now();
+  writeLocal(); push();
+}
+function clearPlace() {
+  if (!unit || !saved.units[unit.title]) return;
+  delete saved.units[unit.title];
+  saved.t = Date.now();
+  writeLocal(); push();
+}
+function placeOf(u) {
+  var pl = saved.units[u.title];
+  return pl && pl.ids.length === u.qs.length && pl.ids.every(function (i) { return u.qs[i]; }) ? pl : null;
+}
+function pull() {
+  fetch(SYNC + '?who=' + WHO, { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
+    if (j && j.ok && j.data && j.data.t > saved.t) {
+      saved = j.data; if (!saved.units) saved.units = {};
+      writeLocal();
+      if (!unit) menu();
+    } else if (j && j.ok && saved.t > ((j.data && j.data.t) || 0)) push();
+  }).catch(function () {});
+}
 
 function el(tag, cls, text) {
   var e = document.createElement(tag);
@@ -220,6 +262,7 @@ function hush() { if (window.speechSynthesis) window.speechSynthesis.cancel(); }
 
 function menu() {
   hush();
+  unit = null;
   titleEl.textContent = '四年級數學練習';
   subEl.textContent = '選一個單元開始練習。';
   app.textContent = '';
@@ -231,12 +274,28 @@ function menu() {
     t.appendChild(el('b', '', u.title));
     t.appendChild(el('span', 'meta', u.sub + ' · ' + u.qs.length + ' 題'));
     b.appendChild(t);
-    b.onclick = function () { unit = u; titleEl.textContent = u.title; subEl.textContent = u.sub; start(u.qs); };
+    var pl = placeOf(u);
+    if (pl) {
+      var n = pl.picks.filter(function (x) { return x !== null; }).length;
+      t.appendChild(el('span', 'meta', '進行中：已做 ' + n + ' / ' + u.qs.length + ' 題，點一下接著做'));
+    }
+    b.onclick = function () { unit = u; titleEl.textContent = u.title; subEl.textContent = u.sub; resume(u); };
     box.appendChild(b);
   });
   app.appendChild(box);
 }
 
+function resume(u) {
+  var pl = placeOf(u);
+  fullRun = true;
+  if (!pl) { start(u.qs); return; }
+  quiz = pl.ids.map(function (i) { return u.qs[i]; });
+  picks = pl.picks.map(function (x) { return x === null ? undefined : x; });
+  orders = [];
+  at = 0;
+  while (at < quiz.length - 1 && picks[at] !== undefined) at++;
+  show();
+}
 function start(list) {
   quiz = shuffle(list);
   at = 0; picks = []; orders = [];
@@ -250,6 +309,12 @@ function show() {
   var back = el('button', 'back', at === 0 ? '← 回到單元' : '← 上一題');
   back.type = 'button';
   back.onclick = function () { if (at === 0) menu(); else { at--; show(); } };
+  if (fullRun) {
+    var stop = el('button', 'stop', '先停在這裡（已儲存）');
+    stop.type = 'button';
+    stop.onclick = menu;
+    app.appendChild(stop);
+  }
   app.appendChild(back);
   var bar = el('div', 'bar'), fill = el('i');
   fill.style.width = (at / quiz.length * 100) + '%';
@@ -275,7 +340,7 @@ function show() {
       c.dataset.i = i;
       c.appendChild(el('span', 'num', '①②③④'.charAt(i)));
       c.appendChild(el('span', '', o));
-      c.onclick = function () { picks[at] = i; reveal(item, card); };
+      c.onclick = function () { picks[at] = i; savePlace(); reveal(item, card); };
       box.appendChild(c);
     });
     card.appendChild(box);
@@ -298,6 +363,7 @@ function show() {
       var vals = Array.prototype.map.call(form.querySelectorAll('input'), function (x) { return x.value; });
       if (vals.some(function (v) { return !clean(v); })) { form.querySelector('input').focus(); return; }
       picks[at] = vals;
+      savePlace();
       reveal(item, card);
     };
     card.appendChild(form);
@@ -340,6 +406,7 @@ function reveal(item, card) {
 
 function done() {
   hush();
+  if (fullRun) clearPlace();
   var wrong = [];
   quiz.forEach(function (item, i) { if (!isRight(item, picks[i])) wrong.push({ item: item, pick: picks[i] }); });
   var total = quiz.length, right = total - wrong.length;
@@ -362,12 +429,12 @@ function done() {
     card.appendChild(ul);
     var again = el('button', 'primary', '再練錯的 ' + wrong.length + ' 題');
     again.type = 'button';
-    again.onclick = function () { start(wrong.map(function (m) { return m.item; })); };
+    again.onclick = function () { fullRun = false; start(wrong.map(function (m) { return m.item; })); };
     card.appendChild(again);
   }
   var all = el('button', wrong.length ? 'secondary' : 'primary', '整個單元重做');
   all.type = 'button';
-  all.onclick = function () { start(unit.qs); };
+  all.onclick = function () { fullRun = true; clearPlace(); start(unit.qs); };
   card.appendChild(all);
   var pick = el('button', 'secondary', '換一個單元');
   pick.type = 'button';
@@ -377,6 +444,7 @@ function done() {
 }
 
 menu();
+pull();
 </script>
 </body>
 </html>
