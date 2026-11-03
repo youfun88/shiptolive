@@ -775,7 +775,8 @@ function answerArea(item, card) {
   if (kind === 'pick') {
     var opts = item.shuffle ? (orders[at] = orders[at] || shuffle(item.options)) : item.options;
     var shortest = opts.every(function (o) { return o.length <= 2; }), small = opts.every(function (o) { return o.length <= 16; });
-    box.className = 'choices' + (shortest ? ' mark' : small ? ' inline' : '');
+    var zh = opts.some(function (o) { return /[\u3400-\u9fff]/.test(o); });
+    box.className = 'choices' + (zh ? '' : shortest ? ' mark' : small ? ' inline' : '');
     opts.forEach(function (o) {
       var c = el('button', 'choice');
       zhText(c, o);
