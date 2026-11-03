@@ -40,6 +40,7 @@
   .choice:disabled { cursor: default; color: var(--ink); }
   .choice[aria-pressed="true"] { border-color: var(--accent); background: #eaf1fa; }
   .choice.test b { display: block; }
+  a.choice { text-decoration: none; }
   .meta { display: block; color: var(--muted); font-size: 15px; }
   .ask { color: var(--muted); font-size: 16px; margin-bottom: 6px; }
   .hint { color: var(--muted); font-size: 18px; letter-spacing: 1px; margin: -8px 0 14px; word-break: break-all; }
@@ -97,6 +98,12 @@
   .missed .was { color: var(--bad); }
   .missed .fix { color: var(--good); font-weight: 600; }
   .missed .zh { color: var(--muted); }
+  .zc { display: inline-flex; align-items: center; margin-right: .08em; }
+  .zy { display: inline-flex; align-items: flex-start; margin-left: 1px; font-size: .5em; line-height: 1; color: var(--muted); font-weight: 400; }
+  .zl { writing-mode: vertical-rl; text-orientation: upright; }
+  .zt { margin-left: 1px; }
+  .zy.n { flex-direction: column; align-items: center; }
+  .zy.n .zt { margin: 0 0 1px; }
   :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 </style>
 </head>
@@ -462,6 +469,9 @@ var MENU = [
   ] }
 ];
 
+/* ---------- Zhuyin for every Chinese string on this page (one reading per character, "|"-separated) ---------- */
+var ZY = {"一些":"ㄧˋ|ㄒㄧㄝ","一個":"ㄧˊ|ㄍㄜˋ","三個":"ㄙㄢ|ㄍㄜˋ","不要放手":"ㄅㄨˊ|ㄧㄠˋ|ㄈㄤˋ|ㄕㄡˇ","世代":"ㄕˋ|ㄉㄞˋ","中文":"ㄓㄨㄥ|ㄨㄣˊ","主語（誰／什麼）":"ㄓㄨˇ|ㄩˇ||ㄕㄨㄟˊ||ㄕㄣˊ|ㄇㄜ˙|","主語／命名部分":"ㄓㄨˇ|ㄩˇ||ㄇㄧㄥˋ|ㄇㄧㄥˊ|ㄅㄨˋ|ㄈㄣˋ","乾草":"ㄍㄢ|ㄘㄠˇ","五個":"ㄨˇ|ㄍㄜˋ","人":"ㄖㄣˊ","人們":"ㄖㄣˊ|ㄇㄣ˙","什麼":"ㄕㄣˊ|ㄇㄜ˙","什麼顏色":"ㄕㄣˊ|ㄇㄜ˙|ㄧㄢˊ|ㄙㄜˋ","今天":"ㄐㄧㄣ|ㄊㄧㄢ","仔細檢視":"ㄗˇ|ㄒㄧˋ|ㄐㄧㄢˇ|ㄕˋ","低吼":"ㄉㄧ|ㄏㄡˇ","作家":"ㄗㄨㄛˋ|ㄐㄧㄚ","保持安靜":"ㄅㄠˇ|ㄔˊ|ㄢ|ㄐㄧㄥˋ","修理":"ㄒㄧㄡ|ㄌㄧˇ","做得好":"ㄗㄨㄛˋ|ㄉㄜˊ|ㄏㄠˇ","停下來":"ㄊㄧㄥˊ|ㄒㄧㄚˋ|ㄌㄞˊ","傳統":"ㄔㄨㄢˊ|ㄊㄨㄥˇ","傳記":"ㄔㄨㄢˊ|ㄐㄧˋ","全部":"ㄑㄩㄢˊ|ㄅㄨˋ","兩個":"ㄌㄧㄤˇ|ㄍㄜˋ","公民":"ㄍㄨㄥ|ㄇㄧㄣˊ","公車／公車們":"ㄍㄨㄥ|ㄔㄜ||ㄍㄨㄥ|ㄔㄜ|ㄇㄣ˙","公雞們":"ㄍㄨㄥ|ㄐㄧ|ㄇㄣ˙","刷子／刷子們":"ㄕㄨㄚ|ㄗ˙||ㄕㄨㄚ|ㄗ˙|ㄇㄣ˙","助動詞":"ㄓㄨˋ|ㄉㄨㄥˋ|ㄘˊ","動作部分":"ㄉㄨㄥˋ|ㄗㄨㄛˋ|ㄅㄨˋ|ㄈㄣˋ","動作部分（做什麼）":"ㄉㄨㄥˋ|ㄗㄨㄛˋ|ㄅㄨˋ|ㄈㄣˋ||ㄗㄨㄛˋ|ㄕㄣˊ|ㄇㄜ˙|","動物":"ㄉㄨㄥˋ|ㄨˋ","動物園":"ㄉㄨㄥˋ|ㄨˋ|ㄩㄢˊ","十個":"ㄕˊ|ㄍㄜˋ","午餐":"ㄨˇ|ㄘㄢ","參觀":"ㄘㄢ|ㄍㄨㄢ","叔叔、舅舅":"ㄕㄨ|ㄕㄨ˙||ㄐㄧㄡˋ|ㄐㄧㄡ˙","叢林":"ㄘㄨㄥˊ|ㄌㄧㄣˊ","口述歷史":"ㄎㄡˇ|ㄕㄨˋ|ㄌㄧˋ|ㄕˇ","句子":"ㄐㄩˋ|ㄗ˙","句末標點":"ㄐㄩˋ|ㄇㄛˋ|ㄅㄧㄠ|ㄉㄧㄢˇ","句號":"ㄐㄩˋ|ㄏㄠˋ","吃／吃了":"ㄔ||ㄔ|ㄌㄜ˙","同學":"ㄊㄨㄥˊ|ㄒㄩㄝˊ","名詞":"ㄇㄧㄥˊ|ㄘˊ","吠叫":"ㄈㄟˋ|ㄐㄧㄠˋ","吼叫":"ㄏㄡˇ|ㄐㄧㄠˋ","咀嚼":"ㄐㄩˇ|ㄐㄩㄝˊ","品嚐／嚐起來":"ㄆㄧㄣˇ|ㄔㄤˊ||ㄔㄤˊ|ㄑㄧˇ|ㄌㄞˊ","哞哞叫":"ㄇㄡ|ㄇㄡ|ㄐㄧㄠˋ","哪裡":"ㄋㄚˇ|ㄌㄧˇ","唱／唱（第三人稱）":"ㄔㄤˋ||ㄔㄤˋ||ㄉㄧˋ|ㄙㄢ|ㄖㄣˊ|ㄔㄥ|","啁啾叫":"ㄓㄡ|ㄐㄧㄡ|ㄐㄧㄠˋ","問號":"ㄨㄣˋ|ㄏㄠˋ","啼叫":"ㄊㄧˊ|ㄐㄧㄠˋ","喇叭":"ㄌㄚˇ|ㄅㄚ","單數":"ㄉㄢ|ㄕㄨˋ","單跳／跳躍":"ㄉㄢ|ㄊㄧㄠˋ||ㄊㄧㄠˋ|ㄩㄝˋ","嗡嗡叫":"ㄨㄥ|ㄨㄥ|ㄐㄧㄠˋ","嚎叫":"ㄏㄠˊ|ㄐㄧㄠˋ","嚐起來":"ㄔㄤˊ|ㄑㄧˇ|ㄌㄞˊ","四個":"ㄙˋ|ㄍㄜˋ","圈":"ㄑㄩㄢ","圍欄":"ㄨㄟˊ|ㄌㄢˊ","圓木":"ㄩㄢˊ|ㄇㄨˋ","圖例":"ㄊㄨˊ|ㄌㄧˋ","在上方":"ㄗㄞˋ|ㄕㄤˋ|ㄈㄤ","在下方":"ㄗㄞˋ|ㄒㄧㄚˋ|ㄈㄤ","地形":"ㄉㄧˋ|ㄒㄧㄥˊ","地方":"ㄉㄧˋ|ㄈㄤ","地球儀":"ㄉㄧˋ|ㄑㄧㄡˊ|ㄧˊ","城市":"ㄔㄥˊ|ㄕˋ","城鎮":"ㄔㄥˊ|ㄓㄣˋ","大家庭":"ㄉㄚˋ|ㄐㄧㄚ|ㄊㄧㄥˊ","大寫字母":"ㄉㄚˋ|ㄒㄧㄝˇ|ㄗˋ|ㄇㄨˇ","大聲嗡嗡叫":"ㄉㄚˋ|ㄕㄥ|ㄨㄥ|ㄨㄥ|ㄐㄧㄠˋ","大陸／大洲":"ㄉㄚˋ|ㄌㄨˋ||ㄉㄚˋ|ㄓㄡ","天氣":"ㄊㄧㄢ|ㄑㄧˋ","天氣如何":"ㄊㄧㄢ|ㄑㄧˋ|ㄖㄨˊ|ㄏㄜˊ","奉行":"ㄈㄥˋ|ㄒㄧㄥˊ","女人／女人們":"ㄋㄩˇ|ㄖㄣˊ||ㄋㄩˇ|ㄖㄣˊ|ㄇㄣ˙","女孩":"ㄋㄩˇ|ㄏㄞˊ","好消息":"ㄏㄠˇ|ㄒㄧㄠ|ㄒㄧ˙","如何":"ㄖㄨˊ|ㄏㄜˊ","媽媽":"ㄇㄚ|ㄇㄚ˙","嬰兒":"ㄧㄥ|ㄦˊ","孩子們":"ㄏㄞˊ|ㄗ˙|ㄇㄣ˙","完整的":"ㄨㄢˊ|ㄓㄥˇ|ㄉㄜ˙","家人":"ㄐㄧㄚ|ㄖㄣˊ","家庭":"ㄐㄧㄚ|ㄊㄧㄥˊ","家譜":"ㄐㄧㄚ|ㄆㄨˇ","寫作":"ㄒㄧㄝˇ|ㄗㄨㄛˋ","尊重":"ㄗㄨㄣ|ㄓㄨㄥˋ","對比（找不同）":"ㄉㄨㄟˋ|ㄅㄧˇ||ㄓㄠˇ|ㄅㄨˋ|ㄊㄨㄥˊ|","小丑":"ㄒㄧㄠˇ|ㄔㄡˇ","小塊土地／補丁":"ㄒㄧㄠˇ|ㄎㄨㄞˋ|ㄊㄨˇ|ㄉㄧˋ||ㄅㄨˇ|ㄉㄧㄥ","小孩／小孩們":"ㄒㄧㄠˇ|ㄏㄞˊ||ㄒㄧㄠˇ|ㄏㄞˊ|ㄇㄣ˙","小狗":"ㄒㄧㄠˇ|ㄍㄡˇ","小睡":"ㄒㄧㄠˇ|ㄕㄨㄟˋ","小貓們":"ㄒㄧㄠˇ|ㄇㄠ|ㄇㄣ˙","居住":"ㄐㄩ|ㄓㄨˋ","展示／展示了":"ㄓㄢˇ|ㄕˋ||ㄓㄢˇ|ㄕˋ|ㄌㄜ˙","岩石":"ㄧㄢˊ|ㄕˊ","工人":"ㄍㄨㄥ|ㄖㄣˊ","幫助我":"ㄅㄤ|ㄓㄨˋ|ㄨㄛˇ","幾點":"ㄐㄧˇ|ㄉㄧㄢˇ","床":"ㄔㄨㄤˊ","建築":"ㄐㄧㄢˋ|ㄓㄨˋ","強烈情緒":"ㄑㄧㄤˊ|ㄌㄧㄝˋ|ㄑㄧㄥˊ|ㄒㄩˋ","彩虹":"ㄘㄞˇ|ㄏㄨㄥˊ","影片":"ㄧㄥˇ|ㄆㄧㄢˋ","很多":"ㄏㄣˇ|ㄉㄨㄛ","快走":"ㄎㄨㄞˋ|ㄗㄡˇ","感嘆句":"ㄍㄢˇ|ㄊㄢˋ|ㄐㄩˋ","我喜歡那首歌":"ㄨㄛˇ|ㄒㄧˇ|ㄏㄨㄢ|ㄋㄚˋ|ㄕㄡˇ|ㄍㄜ","我很害怕":"ㄨㄛˇ|ㄏㄣˇ|ㄏㄞˋ|ㄆㄚˋ","披薩":"ㄆㄧ|ㄙㄚˋ","拉":"ㄌㄚ","拋":"ㄆㄠ","拋接雜耍":"ㄆㄠ|ㄐㄧㄝ|ㄗㄚˊ|ㄕㄨㄚˇ","拍手／拍了手":"ㄆㄞ|ㄕㄡˇ||ㄆㄞ|ㄌㄜ˙|ㄕㄡˇ","拿這條繩子":"ㄋㄚˊ|ㄓㄜˋ|ㄊㄧㄠˊ|ㄕㄥˊ|ㄗ˙","排隊":"ㄆㄞˊ|ㄉㄨㄟˋ","握住、拿著":"ㄨㄛˋ|ㄓㄨˋ||ㄋㄚˊ|ㄓㄜ˙","握手":"ㄨㄛˋ|ㄕㄡˇ","搖動":"ㄧㄠˊ|ㄉㄨㄥˋ","摩擦":"ㄇㄛˊ|ㄘㄚ","撿起":"ㄐㄧㄢˇ|ㄑㄧˇ","攀爬／爬了":"ㄆㄢ|ㄆㄚˊ||ㄆㄚˊ|ㄌㄜ˙","敘述句":"ㄒㄩˋ|ㄕㄨˋ|ㄐㄩˋ","數數":"ㄕㄨˇ|ㄕㄨˋ","文化":"ㄨㄣˊ|ㄏㄨㄚˋ","文物":"ㄨㄣˊ|ㄨˋ","日記":"ㄖˋ|ㄐㄧˋ","昂首跳躍":"ㄤˊ|ㄕㄡˇ|ㄊㄧㄠˋ|ㄩㄝˋ","明信片":"ㄇㄧㄥˊ|ㄒㄧㄣˋ|ㄆㄧㄢˋ","明天":"ㄇㄧㄥˊ|ㄊㄧㄢ","是":"ㄕˋ","是（過去）":"ㄕˋ||ㄍㄨㄛˋ|ㄑㄩˋ|","時鐘":"ㄕˊ|ㄓㄨㄥ","暴風雨":"ㄅㄠˋ|ㄈㄥ|ㄩˇ","書桌":"ㄕㄨ|ㄓㄨㄛ","有條紋的":"ㄧㄡˇ|ㄊㄧㄠˊ|ㄨㄣˊ|ㄉㄜ˙","朋友":"ㄆㄥˊ|ㄧㄡˇ","東西":"ㄉㄨㄥ|ㄒㄧ˙","松鼠":"ㄙㄨㄥ|ㄕㄨˇ","柱子":"ㄓㄨˋ|ㄗ˙","校對":"ㄒㄧㄠˋ|ㄉㄨㄟˋ","梯子":"ㄊㄧ|ㄗ˙","棒球":"ㄅㄤˋ|ㄑㄧㄡˊ","椅子":"ㄧˇ|ㄗ˙","植物":"ㄓˊ|ㄨˋ","樂隊":"ㄩㄝˋ|ㄉㄨㄟˋ","標誌":"ㄅㄧㄠ|ㄓˋ","樹":"ㄕㄨˋ","樹林":"ㄕㄨˋ|ㄌㄧㄣˊ","機器人":"ㄐㄧ|ㄑㄧˋ|ㄖㄣˊ","橡實":"ㄒㄧㄤˋ|ㄕˊ","正方形":"ㄓㄥˋ|ㄈㄤ|ㄒㄧㄥˊ","正確的／訂正":"ㄓㄥˋ|ㄑㄩㄝˋ|ㄉㄜ˙||ㄉㄧㄥˋ|ㄓㄥˋ","歷史":"ㄌㄧˋ|ㄕˇ","歷史學家":"ㄌㄧˋ|ㄕˇ|ㄒㄩㄝˊ|ㄐㄧㄚ","比較（找相同）":"ㄅㄧˇ|ㄐㄧㄠˋ||ㄓㄠˇ|ㄒㄧㄤ|ㄊㄨㄥˊ|","毛毛蟲":"ㄇㄠˊ|ㄇㄠˊ|ㄔㄨㄥˊ","氣球":"ㄑㄧˋ|ㄑㄧㄡˊ","水":"ㄕㄨㄟˇ","池塘":"ㄔˊ|ㄊㄤˊ","沙拉":"ㄕㄚ|ㄌㄚ","海洋":"ㄏㄞˇ|ㄧㄤˊ","消防演習":"ㄒㄧㄠ|ㄈㄤˊ|ㄧㄢˇ|ㄒㄧˊ","清理／清理了":"ㄑㄧㄥ|ㄌㄧˇ||ㄑㄧㄥ|ㄌㄧˇ|ㄌㄜ˙","港口":"ㄍㄤˇ|ㄎㄡˇ","游泳":"ㄧㄡˊ|ㄩㄥˇ","湖":"ㄏㄨˊ","滑動":"ㄏㄨㄚˊ|ㄉㄨㄥˋ","滴落":"ㄉㄧ|ㄌㄨㄛˋ","滾動":"ㄍㄨㄣˇ|ㄉㄨㄥˋ","漂浮":"ㄆㄧㄠ|ㄈㄨˊ","火星":"ㄏㄨㄛˇ|ㄒㄧㄥ","火箭":"ㄏㄨㄛˇ|ㄐㄧㄢˋ","火車":"ㄏㄨㄛˇ|ㄔㄜ","烏龜":"ㄨ|ㄍㄨㄟ","熊":"ㄒㄩㄥˊ","熊們":"ㄒㄩㄥˊ|ㄇㄣ˙","燈":"ㄉㄥ","爆米花":"ㄅㄠˋ|ㄇㄧˇ|ㄏㄨㄚ","爬行":"ㄆㄚˊ|ㄒㄧㄥˊ","爸爸":"ㄅㄚˋ|ㄅㄚ˙","牙醫":"ㄧㄚˊ|ㄧ","牛":"ㄋㄧㄡˊ","牽我的手":"ㄑㄧㄢ|ㄨㄛˇ|ㄉㄜ˙|ㄕㄡˇ","狐狸／狐狸們":"ㄏㄨˊ|ㄌㄧˊ||ㄏㄨˊ|ㄌㄧˊ|ㄇㄣ˙","狗":"ㄍㄡˇ","猴子":"ㄏㄡˊ|ㄗ˙","猴子們":"ㄏㄡˊ|ㄗ˙|ㄇㄣ˙","獅子":"ㄕ|ㄗ˙","獅子們":"ㄕ|ㄗ˙|ㄇㄣ˙","玉米":"ㄩˋ|ㄇㄧˇ","玩伴":"ㄨㄢˊ|ㄅㄢˋ","玩具":"ㄨㄢˊ|ㄐㄩˋ","玩這個遊戲":"ㄨㄢˊ|ㄓㄜˋ|ㄍㄜˋ|ㄧㄡˊ|ㄒㄧˋ","玩／玩了":"ㄨㄢˊ||ㄨㄢˊ|ㄌㄜ˙","玻璃杯／玻璃杯們":"ㄅㄛ|ㄌㄧˊ|ㄅㄟ||ㄅㄛ|ㄌㄧˊ|ㄅㄟ|ㄇㄣ˙","球":"ㄑㄧㄡˊ","球門／目標":"ㄑㄧㄡˊ|ㄇㄣˊ||ㄇㄨˋ|ㄅㄧㄠ","環顧四周":"ㄏㄨㄢˊ|ㄍㄨˋ|ㄙˋ|ㄓㄡ","生長／長大了":"ㄕㄥ|ㄓㄤˇ||ㄓㄤˇ|ㄉㄚˋ|ㄌㄜ˙","用力拉":"ㄩㄥˋ|ㄌㄧˋ|ㄌㄚ","田野":"ㄊㄧㄢˊ|ㄧㄝˇ","男人／男人們":"ㄋㄢˊ|ㄖㄣˊ||ㄋㄢˊ|ㄖㄣˊ|ㄇㄣ˙","男孩":"ㄋㄢˊ|ㄏㄞˊ","畫、油漆／畫了":"ㄏㄨㄚˋ||ㄧㄡˊ|ㄑㄧ||ㄏㄨㄚˋ|ㄌㄜ˙","畫底線":"ㄏㄨㄚˋ|ㄉㄧˇ|ㄒㄧㄢˋ","疑問句":"ㄧˊ|ㄨㄣˋ|ㄐㄩˋ","發光":"ㄈㄚ|ㄍㄨㄤ","盒子／盒子們":"ㄏㄜˊ|ㄗ˙||ㄏㄜˊ|ㄗ˙|ㄇㄣ˙","盡可能快":"ㄐㄧㄣˇ|ㄎㄜˇ|ㄋㄥˊ|ㄎㄨㄞˋ","監護人":"ㄐㄧㄢ|ㄏㄨˋ|ㄖㄣˊ","盤子／盤子們":"ㄆㄢˊ|ㄗ˙||ㄆㄢˊ|ㄗ˙|ㄇㄣ˙","相對位置":"ㄒㄧㄤ|ㄉㄨㄟˋ|ㄨㄟˋ|ㄓˋ","看／正在看":"ㄎㄢˋ||ㄓㄥˋ|ㄗㄞˋ|ㄎㄢˋ","看／看了":"ㄎㄢˋ||ㄎㄢˋ|ㄌㄜ˙","睡覺":"ㄕㄨㄟˋ|ㄐㄧㄠˋ","知更鳥":"ㄓ|ㄍㄥ|ㄋㄧㄠˇ","石頭":"ㄕˊ|ㄊㄡˊ","社區":"ㄕㄜˋ|ㄑㄩ","祈使句／命令句":"ㄑㄧˊ|ㄕˇ|ㄐㄩˋ||ㄇㄧㄥˋ|ㄌㄧㄥˋ|ㄐㄩˋ","祖先":"ㄗㄨˇ|ㄒㄧㄢ","移民":"ㄧˊ|ㄇㄧㄣˊ","稍後":"ㄕㄠ|ㄏㄡˋ","種子":"ㄓㄨㄥˇ|ㄗ˙","窗戶":"ㄔㄨㄤ|ㄏㄨˋ","符號／標誌":"ㄈㄨˊ|ㄏㄠˋ||ㄅㄧㄠ|ㄓˋ","第一手資料":"ㄉㄧˋ|ㄧ|ㄧˋ|ㄗ|ㄌㄧㄠˋ","第二手資料":"ㄉㄧˋ|ㄦˋ|ㄕㄡˇ|ㄗ|ㄌㄧㄠˋ","紅蘿蔔":"ㄏㄨㄥˊ|ㄌㄨㄛˊ|ㄅㄛˊ","紡／織":"ㄈㄤˇ||ㄓ","絕對位置":"ㄐㄩㄝˊ|ㄉㄨㄟˋ|ㄨㄟˋ|ㄓˋ","綿羊":"ㄇㄧㄢˊ|ㄧㄤˊ","繩子":"ㄕㄥˊ|ㄗ˙","羅盤玫瑰":"ㄌㄨㄛˊ|ㄆㄢˊ|ㄇㄟˊ|ㄍㄨㄟ","美式足球":"ㄇㄟˇ|ㄕˋ|ㄗㄨˊ|ㄑㄧㄡˊ","翅膀":"ㄔˋ|ㄅㄤˇ","老師":"ㄌㄠˇ|ㄕ","聽規則":"ㄊㄧㄥ|ㄍㄨㄟ|ㄗㄜˊ","自傳":"ㄗˋ|ㄔㄨㄢˊ","舞者":"ㄨˇ|ㄓㄜˇ","船":"ㄔㄨㄢˊ","花":"ㄏㄨㄚ","花園":"ㄏㄨㄚ|ㄩㄢˊ","花栗鼠":"ㄏㄨㄚ|ㄌㄧˋ|ㄕㄨˇ","英吋":"ㄧㄥ|ㄘㄨㄣˋ","草":"ㄘㄠˇ","落下":"ㄌㄨㄛˋ|ㄒㄧㄚˋ","落下／擺設":"ㄌㄨㄛˋ|ㄒㄧㄚˋ||ㄅㄞˇ|ㄕㄜˋ","葉子":"ㄧㄝˋ|ㄗ˙","藝術家":"ㄧˋ|ㄕㄨˋ|ㄐㄧㄚ","蛋":"ㄉㄢˋ","蜂蜜":"ㄈㄥ|ㄇㄧˋ","蜘蛛":"ㄓ|ㄓㄨ","蜘蛛網":"ㄓ|ㄓㄨ|ㄨㄤˇ","蜜蜂":"ㄇㄧˋ|ㄈㄥ","蜜蜂們":"ㄇㄧˋ|ㄈㄥ|ㄇㄣ˙","街道":"ㄐㄧㄝ|ㄉㄠˋ","製作":"ㄓˋ|ㄗㄨㄛˋ","複數":"ㄈㄨˋ|ㄕㄨˋ","誰":"ㄕㄨㄟˊ","護理師":"ㄏㄨˋ|ㄌㄧˇ|ㄕ","豆子":"ㄉㄡˋ|ㄗ˙","豬":"ㄓㄨ","貓":"ㄇㄠ","貓熊":"ㄇㄠ|ㄒㄩㄥˊ","負責任的":"ㄈㄨˋ|ㄗㄜˊ|ㄖㄣˋ|ㄉㄜ˙","走路／走了":"ㄗㄡˇ|ㄌㄨˋ||ㄗㄡˇ|ㄌㄜ˙","走開":"ㄗㄡˇ|ㄎㄞ","起飛":"ㄑㄧˇ|ㄈㄟ","超過一個":"ㄔㄠ|ㄍㄨㄛˋ|ㄧˊ|ㄍㄜˋ","跑／跑了":"ㄆㄠˇ||ㄆㄠˇ|ㄌㄜ˙","跟隨":"ㄍㄣ|ㄙㄨㄟˊ","跟隨／跟隨了":"ㄍㄣ|ㄙㄨㄟˊ||ㄍㄣ|ㄙㄨㄟˊ|ㄌㄜ˙","跳步":"ㄊㄧㄠˋ|ㄅㄨˋ","跳躍":"ㄊㄧㄠˋ|ㄩㄝˋ","跳躍／跳躍了":"ㄊㄧㄠˋ|ㄩㄝˋ||ㄊㄧㄠˋ|ㄩㄝˋ|ㄌㄜ˙","跳／跳（第三人稱）":"ㄊㄧㄠˋ||ㄊㄧㄠˋ||ㄉㄧˋ|ㄙㄢ|ㄖㄣˊ|ㄔㄥ|","躲藏":"ㄉㄨㄛˇ|ㄘㄤˊ","農場":"ㄋㄨㄥˊ|ㄔㄤˇ","農夫":"ㄋㄨㄥˊ|ㄈㄨ","這裡":"ㄓㄜˋ|ㄌㄧˇ","遊戲":"ㄧㄡˊ|ㄒㄧˋ","遊行":"ㄧㄡˊ|ㄒㄧㄥˊ","運球":"ㄩㄣˋ|ㄑㄧㄡˊ","遷移／移居":"ㄑㄧㄢ|ㄧˊ||ㄧˊ|ㄐㄩ","那裡":"ㄋㄚˋ|ㄌㄧˇ","醫師":"ㄧ|ㄕ","鈴":"ㄌㄧㄥˊ","長椅／長椅們":"ㄔㄤˊ|ㄧˇ||ㄔㄤˊ|ㄧˇ|ㄇㄣ˙","門":"ㄇㄣˊ","門廊":"ㄇㄣˊ|ㄌㄤˊ","開花":"ㄎㄞ|ㄏㄨㄚ","降落":"ㄐㄧㄤˋ|ㄌㄨㄛˋ","雙胞胎":"ㄕㄨㄤ|ㄅㄠ|ㄊㄞ","雨滴":"ㄩˇ|ㄉㄧ","電影":"ㄉㄧㄢˋ|ㄧㄥˇ","青蛙":"ㄑㄧㄥ|ㄨㄚ","音樂":"ㄧㄣ|ㄩㄝˋ","響鈴":"ㄒㄧㄤˇ|ㄌㄧㄥˊ","飛":"ㄈㄟ","飛機／噴射機":"ㄈㄟ|ㄐㄧ||ㄆㄣ|ㄕㄜˋ|ㄐㄧ","飛行員":"ㄈㄟ|ㄒㄧㄥˊ|ㄩㄢˊ","食物":"ㄕˊ|ㄨˋ","餵食":"ㄨㄟˋ|ㄕˊ","馬":"ㄇㄚˇ","馬戲團":"ㄇㄚˇ|ㄒㄧˋ|ㄊㄨㄢˊ","騎乘":"ㄑㄧˊ|ㄔㄥˊ","驚嘆號":"ㄐㄧㄥ|ㄊㄢˋ|ㄏㄠˋ","鬍鬚":"ㄏㄨˊ|ㄒㄩ","魚":"ㄩˊ","鳥":"ㄋㄧㄠˇ","鳴喇叭":"ㄇㄧㄥˊ|ㄌㄚˇ|ㄅㄚ","鴨子":"ㄧㄚ|ㄗ˙","麵包":"ㄇㄧㄢˋ|ㄅㄠ","麵包師":"ㄇㄧㄢˋ|ㄅㄠ|ㄕ","點心":"ㄉㄧㄢˇ|ㄒㄧㄣ","鼓":"ㄍㄨˇ"};
+
 /* ---------- Engine ---------- */
 var app = document.getElementById('app');
 var titleEl = document.getElementById('title'), subEl = document.getElementById('sub');
@@ -486,6 +496,32 @@ function squash(s) { return s.replace(/\s+/g, ' ').trim(); }
 function norm(s) { return squash(s.toLowerCase().replace(/[\/,]+/g, ' ')).replace(/\.$/, ''); }
 function plain(s) { return s.replace(/\[\[|\]\]/g, ''); }
 function same(a, b) { return a.length === b.length && a.every(function (x) { return b.indexOf(x) >= 0; }); }
+
+// Chinese with zhuyin to the right of each character (Taiwan textbook style). Other text passes through.
+function zhText(parent, text) {
+  var z = ZY[text];
+  if (!z) { parent.appendChild(document.createTextNode(text)); return; }
+  var marks = z.split('|');
+  Array.from(text).forEach(function (ch, i) {
+    var m = marks[i];
+    if (!m) { parent.appendChild(document.createTextNode(ch)); return; }
+    var c = el('span', 'zc');
+    c.appendChild(el('span', 'zh', ch));
+    var neutral = m.indexOf('\u02d9') >= 0, tone = /[\u02ca\u02c7\u02cb\u02d9]/.test(m) ? m.match(/[\u02ca\u02c7\u02cb\u02d9]/)[0] : '';
+    var y = el('span', neutral ? 'zy n' : 'zy');
+    if (neutral) y.appendChild(el('span', 'zt', tone));
+    y.appendChild(el('span', 'zl', m.replace(/[\u02ca\u02c7\u02cb\u02d9]/, '')));
+    if (tone && !neutral) y.appendChild(el('span', 'zt', tone));
+    c.appendChild(y);
+    parent.appendChild(c);
+  });
+}
+// A label followed by text that may be Chinese.
+function put(parent, label, text) {
+  if (label) parent.appendChild(document.createTextNode(label));
+  zhText(parent, text);
+  return parent;
+}
 
 // Text with [[underlined]] parts and ___ blanks.
 function rich(p, text) {
@@ -621,6 +657,18 @@ function menu() {
     });
     app.appendChild(box);
   });
+  app.appendChild(el('h2', 'group', 'Links'));
+  var links = el('div', 'choices');
+  var a = el('a', 'choice test');
+  a.href = 'https://rungwise.app/start';
+  a.target = '_blank';
+  a.rel = 'noopener';
+  var at2 = el('span');
+  at2.appendChild(el('b', '', 'Rungwise'));
+  at2.appendChild(el('span', 'meta', 'rungwise.app/start · opens in a new tab'));
+  a.appendChild(at2);
+  links.appendChild(a);
+  app.appendChild(links);
 }
 
 function parts(t) {
@@ -680,7 +728,7 @@ function stem(item) {
   var ask = item.ask || (item.kind === 'mc' && item.q.indexOf('___') < 0 ? 'Which word matches this meaning?' : '');
   if (ask) wrap.appendChild(el('div', 'ask', ask));
   var p = el('p', item.spell || item.big ? 'q big' : 'q');
-  rich(p, item.spell ? item.zh : item.q);
+  if (item.spell) zhText(p, item.zh); else rich(p, item.q);
   wrap.appendChild(p);
   if (item.spell) {
     var h = el('div', 'hint', item.a.split('').map(function (c) { return /[A-Za-z]/.test(c) ? '_' : c === ' ' ? ' ' : c; }).join(' '));
@@ -728,7 +776,8 @@ function answerArea(item, card) {
     var shortest = opts.every(function (o) { return o.length <= 2; }), small = opts.every(function (o) { return o.length <= 16; });
     box.className = 'choices' + (shortest ? ' mark' : small ? ' inline' : '');
     opts.forEach(function (o) {
-      var c = el('button', 'choice', o);
+      var c = el('button', 'choice');
+      zhText(c, o);
       c.type = 'button';
       c.dataset.opt = o;
       c.onclick = function () { submit(o); };
@@ -848,7 +897,10 @@ function reveal(item, resp, a, card) {
   else if (ok) head = 'Correct!';
   else if (item.kind === 'mc') head = 'Not quite. The answer is ' + cap(item.w) + '.';
   else head = 'Not quite. The answer is: ' + answerText(item);
-  f.appendChild(el('strong', '', head));
+  var strong = el('strong');
+  if (!ok && item.kind !== 'mc' && item.kind !== 'write') put(strong, 'Not quite. The answer is: ', answerText(item));
+  else strong.textContent = head;
+  f.appendChild(strong);
   if (item.kind === 'write') {
     var ul = el('ul');
     res.notes.forEach(function (n) { ul.appendChild(el('li', n.ok ? 'ok' : 'no', n.label)); });
@@ -861,7 +913,7 @@ function reveal(item, resp, a, card) {
     if (line) f.appendChild(el('div', 'def', line));
     if (item.spell && ok) f.appendChild(el('div', 'def', item.a));
     if (!ok && item.tip) f.appendChild(el('div', 'def', item.tip));
-    if (item.zh) f.appendChild(el('div', 'zh', item.zh));
+    if (item.zh) f.appendChild(put(el('div', 'zh'), '', item.zh));
     if (ok && item.alt && item.alt.indexOf(resp) >= 0) f.appendChild(el('div', 'zh', 'The other choice works too, but “' + item.a + '” is the one we were looking for.'));
     if (ok && item.alts && item.alts.length && item.kind === 'type' && !item.spell) f.appendChild(el('div', 'zh', 'Also correct: ' + item.alts.join(', ')));
     f.appendChild(speakButton('Read the answer', function () {
@@ -898,11 +950,11 @@ function done() {
     var ul = el('ul', 'missed');
     missed.forEach(function (m) {
       var li = el('li');
-      li.appendChild(el('b', '', promptText(m.item)));
+      li.appendChild(put(el('b'), '', promptText(m.item)));
       var said = Array.isArray(m.picked) ? m.picked.join(', ') : (m.item.kind === 'mc' ? cap(m.picked) : m.picked);
-      li.appendChild(el('span', 'was', '✗ You ' + (m.item.kind === 'type' || m.item.kind === 'write' ? 'wrote: ' : 'picked: ') + said));
-      li.appendChild(el('span', 'fix', (m.item.kind === 'write' ? '✓ Example: ' : '✓ Correct answer: ') + answerText(m.item)));
-      if (m.item.zh && !m.item.spell) li.appendChild(el('span', 'zh', m.item.zh));
+      li.appendChild(put(el('span', 'was'), '✗ You ' + (m.item.kind === 'type' || m.item.kind === 'write' ? 'wrote: ' : 'picked: '), said));
+      li.appendChild(put(el('span', 'fix'), m.item.kind === 'write' ? '✓ Example: ' : '✓ Correct answer: ', answerText(m.item)));
+      if (m.item.zh && !m.item.spell) li.appendChild(put(el('span', 'zh'), '', m.item.zh));
       ul.appendChild(li);
     });
     card.appendChild(ul);
