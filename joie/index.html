@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>四年級數學練習</title>
+<style>
+  :root {
+    --bg: #f6f7f4; --card: #ffffff; --ink: #1d2433; --muted: #5d6675; --line: #d6dae0;
+    --accent: #1f5fa8; --good: #17693a; --good-bg: #e4f5ea; --bad: #a92c21; --bad-bg: #fbe9e6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 19px/1.6 -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  }
+  main { max-width: 660px; margin: 0 auto; padding: 24px 16px 48px; }
+  h1 { font-size: 26px; line-height: 1.25; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 16px; margin: 0 0 20px; }
+  .bar { height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; margin-bottom: 6px; }
+  .bar i { display: block; height: 100%; background: var(--accent); }
+  .count { color: var(--muted); font-size: 15px; margin-bottom: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+  .tag { display: inline-block; font-size: 13px; color: var(--accent); background: #e8f0fa; border-radius: 999px; padding: 2px 10px; margin-bottom: 10px; }
+  .q { font-size: 21px; font-weight: 600; margin: 0 0 16px; white-space: pre-line; }
+  .choices { display: grid; gap: 10px; }
+  button { font: inherit; cursor: pointer; }
+  .choice {
+    display: flex; gap: 12px; align-items: center; width: 100%; min-height: 54px; padding: 10px 14px; text-align: left;
+    color: var(--ink); background: var(--card); border: 2px solid var(--line); border-radius: 10px;
+  }
+  .choice:hover:not(:disabled) { border-color: var(--accent); }
+  .choice:disabled { cursor: default; color: var(--ink); }
+  .choice.right { background: var(--good-bg); border-color: var(--good); }
+  .choice.wrong { background: var(--bad-bg); border-color: var(--bad); }
+  .num { flex: none; font-weight: 700; color: var(--muted); }
+  .fields { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; font-size: 20px; }
+  .fields input {
+    width: 9.5em; max-width: 100%; min-height: 50px; padding: 8px 10px; font: inherit; font-size: 22px; text-align: center;
+    color: var(--ink); background: #fff; border: 2px solid var(--line); border-radius: 10px;
+  }
+  .fields input.short { width: 5.5em; }
+  .fields input:focus { outline: none; border-color: var(--accent); }
+  .fields input.right { background: var(--good-bg); border-color: var(--good); }
+  .fields input.wrong { background: var(--bad-bg); border-color: var(--bad); }
+  .feedback { margin-top: 16px; padding: 12px 14px; border-radius: 10px; }
+  .feedback.right { background: var(--good-bg); color: var(--good); }
+  .feedback.wrong { background: var(--bad-bg); color: var(--bad); }
+  .feedback strong { display: block; }
+  .feedback .how { color: var(--ink); margin-top: 6px; white-space: pre-line; }
+  .primary {
+    width: 100%; min-height: 54px; margin-top: 16px; color: #fff; background: var(--accent);
+    border: 0; border-radius: 10px; font-weight: 600;
+  }
+  .primary:disabled { opacity: .45; cursor: default; }
+  .secondary {
+    width: 100%; min-height: 54px; margin-top: 10px; color: var(--accent); background: transparent;
+    border: 2px solid var(--accent); border-radius: 10px; font-weight: 600;
+  }
+  .back { min-height: 44px; padding: 6px 12px 6px 0; margin-bottom: 10px; color: var(--accent); background: transparent; border: 0; font-size: 16px; font-weight: 600; }
+  .pick b { display: block; }
+  .meta { display: block; color: var(--muted); font-size: 15px; }
+  .score { font-size: 52px; font-weight: 700; line-height: 1.1; margin: 0; }
+  .msg { margin: 6px 0 18px; }
+  h2 { font-size: 18px; margin: 18px 0 8px; }
+  .missed { list-style: none; margin: 0; padding: 0; }
+  .missed li { padding: 12px 0; border-top: 1px solid var(--line); }
+  .missed b { display: block; font-weight: 600; white-space: pre-line; margin-bottom: 6px; }
+  .ba { display: block; margin: 6px 0; padding: 8px 10px; border-left: 3px solid; border-radius: 4px; font-size: 17px; }
+  .ba small { display: block; font-size: 13px; font-weight: 700; }
+  .ba.was { color: var(--bad); background: var(--bad-bg); }
+  .ba.now { color: var(--good); background: var(--good-bg); }
+  .missed .how { color: var(--muted); font-size: 16px; white-space: pre-line; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<main>
+  <h1 id="title">四年級數學練習</h1>
+  <p class="sub" id="sub">選一個單元開始練習。</p>
+  <div id="app" aria-live="polite"></div>
+</main>
+<script>
+// Built from Joie's graded tests (units 1, 2, 3 and 5). Every question practices a
+// kind of mistake she made there. Answers are checked in code below; keep them right.
+//   mc:  options + answer (index)
+//   ask: fields [{ ans, after }] in order, typed answers; `after` is the unit shown after the box
+var UNITS = [
+  {
+    title: '第一單元：大數（萬）', sub: '萬的換算、借位減法、「多」和「少」',
+    qs: [
+      { mc: ['1000', '10000', '100000', '1000000'], answer: 2, q: '「1000 個百」和下面哪個數一樣？', how: '1000 個百 = 1000 × 100 = 100000' },
+      { mc: ['8500 元', '8599 元', '8600 元', '8590 元'], answer: 1, q: '老闆把今天的收入全部換成百元鈔，最多換到 85 張。今天的收入最多可能是多少元？', how: '85 張百元鈔是 8500 元。還沒滿 100 元的零錢最多 99 元，所以最多是 8599 元。' },
+      { mc: ['十萬位', '萬位', '千位', '百位'], answer: 1, q: '把「四千零六萬」寫成數字，0 不會出現在哪一位？', how: '四千零六萬 = 40060000\n千萬位 4、百萬位 0、十萬位 0、萬位 6，後面都是 0。\n所以 0 不會出現在萬位。' },
+      { q: '爸爸換到 215 張千元鈔和 6 張百元鈔，一共是多少元？', fields: [{ ans: 215600, after: '元' }], how: '215 張千元 = 215000 元\n6 張百元 = 600 元\n215000 + 600 = 215600' },
+      { q: '「三千零九萬四千」記作多少？', fields: [{ ans: 30094000 }], how: '3009 萬 = 30090000，再加 4000\n= 30094000' },
+      { q: '463 萬 − 158 萬 = ？', fields: [{ ans: 305, after: '萬' }], how: '萬的單位一樣，直接算 463 − 158 = 305\n答案是 305 萬。不要多寫一個數字。' },
+      { q: '726 萬 4000 − 518 萬 6000 = ？\n（寫成數字）', fields: [{ ans: 2078000 }], how: '7264000 − 5186000 = 2078000\n先把「萬」都換成數字，再對齊位數相減。' },
+      { q: '45 萬 8000 + 37 萬 6000 = ？\n（寫成數字）', fields: [{ ans: 834000 }], how: '458000 + 376000 = 834000' },
+      { q: '3051200 − 1786400 = ？', fields: [{ ans: 1264800 }], how: '3051200 − 1786400 = 1264800\n記得借位：每一位不夠減，就向前一位借 1。' },
+      { q: '這個月的收入是 2468000 元，上個月比這個月少 32 萬 5000 元。上個月的收入是多少元？', fields: [{ ans: 2143000, after: '元' }], how: '上個月比較「少」，所以用減的：\n2468000 − 325000 = 2143000\n32 萬 5000 = 325000，不是 3205000。' },
+      { q: '今年收成 84 萬 200 公斤，比去年多了 6000 公斤。去年收成多少公斤？', fields: [{ ans: 834200, after: '公斤' }], how: '今年比去年「多」，所以去年比較少，用減的：\n840200 − 6000 = 834200' },
+      { q: '12 月的遊客是 96500 人，比 11 月多 12000 人。11 月的遊客是多少人？', fields: [{ ans: 84500, after: '人' }], how: '12 月比 11 月多，所以 11 月比較少：\n96500 − 12000 = 84500' },
+      { q: '110 年的人口約 2316 萬人，109 年比 110 年多約 21 萬人。109 年的人口約多少人？\n（寫成數字）', fields: [{ ans: 23370000, after: '人' }], how: '2316 萬 + 21 萬 = 2337 萬\n2337 萬 = 23370000' },
+      { q: '一個八位數：千萬位 6、百萬位 3、十萬位空著、萬位 5，其他都是 0。\n哥哥在十萬位填最大的數字，弟弟填最小的數字。兩個數相差多少？', fields: [{ ans: 900000 }], how: '哥哥填 9：63950000\n弟弟填 0：63050000\n只有十萬位不一樣，相差 9 個十萬 = 900000' }
+    ]
+  },
+  {
+    title: '第二單元：乘法', sub: '直式乘法、幾個 0、兩步驟應用題',
+    qs: [
+      { q: '48 × 36 = ？', fields: [{ ans: 1728 }], how: '48 × 6 = 288\n48 × 30 = 1440\n288 + 1440 = 1728' },
+      { q: '135 × 24 = ？', fields: [{ ans: 3240 }], how: '135 × 4 = 540\n135 × 20 = 2700\n540 + 2700 = 3240' },
+      { q: '207 × 43 = ？', fields: [{ ans: 8901 }], how: '207 × 3 = 621\n207 × 40 = 8280\n621 + 8280 = 8901\n直式相加時，進位要記得加上去。' },
+      { q: '已知 64 × 25 = 1600，那 64 × 24 = ？', fields: [{ ans: 1536 }], how: '64 × 24 比 64 × 25 少 1 個 64：\n1600 − 64 = 1536' },
+      { q: '不用直式：一盒玫瑰賣 300 元，買 99 盒要多少元？', fields: [{ ans: 29700, after: '元' }], how: '99 盒 = 100 盒少 1 盒\n300 × 100 = 30000\n30000 − 300 = 29700' },
+      { q: '30 × 600 的答案有幾個 0？', fields: [{ ans: 3, after: '個 0' }], how: '30 × 600 = 18000，有 3 個 0。' },
+      { q: '125 × 80 的答案有幾個 0？', fields: [{ ans: 4, after: '個 0' }], how: '125 × 80 = 10000，有 4 個 0。\n小心：125 × 8 = 1000 自己就有 0，所以比你想的多。' },
+      { q: '每天寫 45 頁，從 3 月 1 日寫到 4 月 30 日，一共寫了幾頁？', fields: [{ ans: 2745, after: '頁' }], how: '3 月有 31 天，4 月有 30 天，共 61 天\n45 × 61 = 2745' },
+      { mc: ['剩下 60 顆', '不夠 60 顆', '剩下 160 顆', '不夠 160 顆'], answer: 1, q: '一包糖有 6 顆，一盒有 8 包。學校買了 30 盒，要送給 1500 人每人 1 顆。會剩下還是不夠幾顆？', how: '一盒 6 × 8 = 48 顆\n30 盒 48 × 30 = 1440 顆\n1500 − 1440 = 60，所以不夠 60 顆。' },
+      { q: '一個蛋糕 150 元，每買 5 個送 1 個。一共拿到 20 個蛋糕，要付多少元？', fields: [{ ans: 2550, after: '元' }], how: '付 5 個拿 6 個。20 個 = 6 + 6 + 6 + 2\n要付 5 + 5 + 5 + 2 = 17 個\n150 × 17 = 2550' },
+      { q: '買 15 把椅子，每把 640 元；又買 4 張桌子，每張 1850 元。一共要付多少元？', fields: [{ ans: 17000, after: '元' }], how: '椅子 640 × 15 = 9600\n桌子 1850 × 4 = 7400\n9600 + 7400 = 17000' },
+      { q: '一箱有 236 個，318 箱一共有幾個？', fields: [{ ans: 75048, after: '個' }], how: '236 × 8 = 1888\n236 × 10 = 2360\n236 × 300 = 70800\n1888 + 2360 + 70800 = 75048' },
+      { q: '有一題是「□ × 204」，妹妹把 × 看成 +，算出來是 630。\n□ 是多少？原來的正確答案是多少？', fields: [{ ans: 426, after: '是 □，' }, { ans: 86904, after: '是正確答案' }], how: '□ + 204 = 630，所以 □ = 630 − 204 = 426\n正確答案 426 × 204 = 86904' }
+    ]
+  },
+  {
+    title: '第三、五單元：長度和角度', sub: '公里、公尺、公分、毫米的換算，角度',
+    qs: [
+      { q: '8 公里 5 公尺 = 多少公尺？', fields: [{ ans: 8005, after: '公尺' }], how: '1 公里 = 1000 公尺\n8 公里 = 8000 公尺，再加 5 = 8005\n5 公尺要寫成 005，不是 5 或 500。' },
+      { q: '503 毫米 = 幾公分幾毫米？', fields: [{ ans: 50, after: '公分' }, { ans: 3, after: '毫米' }], how: '1 公分 = 10 毫米\n503 ÷ 10 = 50 公分，還剩 3 毫米' },
+      { q: '20015 公尺 = 幾公里幾公尺？', fields: [{ ans: 20, after: '公里' }, { ans: 15, after: '公尺' }], how: '1000 公尺 = 1 公里\n20015 = 20000 + 15 → 20 公里 15 公尺' },
+      { q: '3600 公里 = 多少公尺？', fields: [{ ans: 3600000, after: '公尺' }], how: '1 公里 = 1000 公尺，後面加 3 個 0\n3600 × 1000 = 3600000' },
+      { q: '12 公里 − 3 公里 40 公尺 = 多少公尺？', fields: [{ ans: 8960, after: '公尺' }], how: '12 公里 = 12000 公尺\n3 公里 40 公尺 = 3040 公尺（40 要寫成 040）\n12000 − 3040 = 8960' },
+      { q: '一條 20 公分的緞帶，剪掉 8 公分 7 毫米，還剩幾公分幾毫米？', fields: [{ ans: 11, after: '公分' }, { ans: 3, after: '毫米' }], how: '1 公分 = 10 毫米，不是 1000。\n20 公分 = 200 毫米，8 公分 7 毫米 = 87 毫米\n200 − 87 = 113 毫米 = 11 公分 3 毫米' },
+      { q: '18 公里 60 公尺 − 5 公里 370 公尺 = 幾公里幾公尺？', fields: [{ ans: 12, after: '公里' }, { ans: 690, after: '公尺' }], how: '18 公里 60 公尺 = 18060 公尺（60 寫成 060）\n5 公里 370 公尺 = 5370 公尺\n18060 − 5370 = 12690 → 12 公里 690 公尺' },
+      { q: '小明身高 1 公尺 42 公分，小華身高 1 公尺 28 公分。兩人相差幾公分？', fields: [{ ans: 14, after: '公分' }], how: '142 − 128 = 14 公分' },
+      { q: '時針從數字 2 沿順時針方向轉到數字 7，轉了幾度？', fields: [{ ans: 150, after: '度' }], how: '鐘面一大格是 30 度\n從 2 到 7 是 5 大格，30 × 5 = 150 度' },
+      { mc: ['順時針旋轉', '逆時針旋轉', '平角', '直角'], answer: 0, q: '從始邊轉到終邊，轉的方向和鐘面指針一樣，叫作什麼？', how: '和鐘面指針方向相同 → 順時針\n和鐘面指針方向相反 → 逆時針' },
+      { q: '3 個直角是幾度？', fields: [{ ans: 270, after: '度' }], how: '1 個直角 = 90 度\n90 × 3 = 270 度' },
+      { q: '∠A 和 ∠B 合起來剛好是 ∠C。∠C = 155 度，∠B = 70 度，∠A 是幾度？', fields: [{ ans: 85, after: '度' }], how: '∠A = ∠C − ∠B\n155 − 70 = 85 度' },
+      { mc: ['平角', '直角', '鈍角', '銳角'], answer: 3, q: '∠1 和 ∠2 可以拼成一個平角。如果 ∠1 是鈍角，∠2 是什麼角？', how: '平角是 180 度。鈍角比 90 度大，\n所以剩下的 ∠2 一定比 90 度小，是銳角。' },
+      { mc: ['邊越長，角越大', '邊越短，角越大', '角的大小和邊的長短無關', '角的單位是公分'], answer: 2, q: '關於角，哪一個正確？', how: '角的大小看兩條邊張開多少，和邊畫多長沒有關係。角的單位是「度」。' }
+    ]
+  }
+];
+
+var app = document.getElementById('app');
+var titleEl = document.getElementById('title'), subEl = document.getElementById('sub');
+var unit, quiz, at, picks, orders, next;
+
+function el(tag, cls, text) {
+  var e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text !== undefined) e.textContent = text;
+  return e;
+}
+function shuffle(list) {
+  var a = list.slice();
+  for (var i = a.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = a[i]; a[i] = a[j]; a[j] = t;
+  }
+  return a;
+}
+// Accept 1,234 / 1 234 / full-width digits.
+function clean(v) {
+  return String(v || '').replace(/[０-９]/g, function (d) { return String.fromCharCode(d.charCodeAt(0) - 65248); }).replace(/[,，\s]/g, '');
+}
+function isRight(item, pick) {
+  if (item.mc) return pick === item.answer;
+  return item.fields.every(function (f, i) { return clean(pick[i]) === String(f.ans); });
+}
+function answerText(item, pick) {
+  if (item.mc) return item.mc[pick];
+  return item.fields.map(function (f, i) { return (pick ? clean(pick[i]) || '（空白）' : f.ans) + (f.after ? ' ' + f.after : ''); }).join('　');
+}
+function say(text) {
+  var v = window.speechSynthesis;
+  if (!v) return;
+  if (v.speaking || v.pending) { v.cancel(); return; }
+  var u = new SpeechSynthesisUtterance(text.replace(/□/g, '方格').replace(/∠/g, '角'));
+  u.lang = 'zh-TW'; u.rate = 0.9;
+  v.speak(u);
+}
+function hush() { if (window.speechSynthesis) window.speechSynthesis.cancel(); }
+
+function menu() {
+  hush();
+  titleEl.textContent = '四年級數學練習';
+  subEl.textContent = '選一個單元開始練習。';
+  app.textContent = '';
+  var box = el('div', 'choices');
+  UNITS.forEach(function (u) {
+    var b = el('button', 'choice pick');
+    b.type = 'button';
+    var t = el('span');
+    t.appendChild(el('b', '', u.title));
+    t.appendChild(el('span', 'meta', u.sub + ' · ' + u.qs.length + ' 題'));
+    b.appendChild(t);
+    b.onclick = function () { unit = u; titleEl.textContent = u.title; subEl.textContent = u.sub; start(u.qs); };
+    box.appendChild(b);
+  });
+  app.appendChild(box);
+}
+
+function start(list) {
+  quiz = shuffle(list);
+  at = 0; picks = []; orders = [];
+  show();
+}
+
+function show() {
+  var item = quiz[at];
+  hush();
+  app.textContent = '';
+  var back = el('button', 'back', at === 0 ? '← 回到單元' : '← 上一題');
+  back.type = 'button';
+  back.onclick = function () { if (at === 0) menu(); else { at--; show(); } };
+  app.appendChild(back);
+  var bar = el('div', 'bar'), fill = el('i');
+  fill.style.width = (at / quiz.length * 100) + '%';
+  bar.appendChild(fill);
+  app.appendChild(bar);
+  app.appendChild(el('div', 'count', '第 ' + (at + 1) + ' 題，共 ' + quiz.length + ' 題'));
+
+  var card = el('div', 'card');
+  card.appendChild(el('p', 'q', item.q));
+  if (window.speechSynthesis) {
+    var sp = el('button', 'back', '🔊 唸題目');
+    sp.type = 'button';
+    sp.onclick = function () { say(item.q + (item.mc ? '。' + item.mc.map(function (o, i) { return (i + 1) + '，' + o; }).join('。') : '')); };
+    card.appendChild(sp);
+  }
+  var done = picks[at] !== undefined;
+
+  if (item.mc) {
+    var box = el('div', 'choices');
+    item.mc.forEach(function (o, i) {
+      var c = el('button', 'choice');
+      c.type = 'button';
+      c.dataset.i = i;
+      c.appendChild(el('span', 'num', '①②③④'.charAt(i)));
+      c.appendChild(el('span', '', o));
+      c.onclick = function () { picks[at] = i; reveal(item, card); };
+      box.appendChild(c);
+    });
+    card.appendChild(box);
+  } else {
+    var form = el('form', 'fields');
+    item.fields.forEach(function (f, i) {
+      var inp = el('input');
+      inp.type = 'text';
+      inp.inputMode = 'numeric';
+      inp.autocomplete = 'off';
+      inp.setAttribute('aria-label', '答案' + (f.after ? '，' + f.after : ''));
+      if (item.fields.length > 1 || String(f.ans).length < 4) inp.className = 'short';
+      form.appendChild(inp);
+      if (f.after) form.appendChild(el('span', '', f.after));
+    });
+    var check = el('button', 'primary', '對答案');
+    check.type = 'submit';
+    form.onsubmit = function (e) {
+      e.preventDefault();
+      var vals = Array.prototype.map.call(form.querySelectorAll('input'), function (x) { return x.value; });
+      if (vals.some(function (v) { return !clean(v); })) { form.querySelector('input').focus(); return; }
+      picks[at] = vals;
+      reveal(item, card);
+    };
+    card.appendChild(form);
+    if (!done) card.appendChild(check);
+    check.onclick = function () { form.requestSubmit ? form.requestSubmit() : form.onsubmit(new Event('submit')); };
+  }
+  app.appendChild(card);
+  if (done) reveal(item, card);
+  else if (!item.mc) setTimeout(function () { var x = card.querySelector('input'); if (x) x.focus(); }, 50);
+}
+
+function reveal(item, card) {
+  var pick = picks[at], ok = isRight(item, pick);
+  var old = card.querySelector('.primary'); if (old) old.remove();
+  if (item.mc) {
+    card.querySelectorAll('.choice').forEach(function (b) {
+      b.disabled = true;
+      var i = Number(b.dataset.i);
+      if (i === item.answer) b.classList.add('right');
+      else if (i === pick) b.classList.add('wrong');
+    });
+  } else {
+    card.querySelectorAll('.fields input').forEach(function (x, i) {
+      x.value = clean(pick[i]);
+      x.disabled = true;
+      x.classList.add(clean(pick[i]) === String(item.fields[i].ans) ? 'right' : 'wrong');
+    });
+  }
+  var f = el('div', 'feedback ' + (ok ? 'right' : 'wrong'));
+  f.appendChild(el('strong', '', ok ? '答對了！' : '再想想看。正確答案：' + answerText(item)));
+  f.appendChild(el('div', 'how', item.how));
+  card.appendChild(f);
+  var last = at === quiz.length - 1;
+  next = el('button', 'primary', last ? '看成績' : '下一題');
+  next.type = 'button';
+  next.onclick = function () { at++; if (last) done(); else show(); };
+  card.appendChild(next);
+  next.focus();
+}
+
+function done() {
+  hush();
+  var wrong = [];
+  quiz.forEach(function (item, i) { if (!isRight(item, picks[i])) wrong.push({ item: item, pick: picks[i] }); });
+  var total = quiz.length, right = total - wrong.length;
+  app.textContent = '';
+  var card = el('div', 'card');
+  card.appendChild(el('p', 'score', right + ' / ' + total));
+  card.appendChild(el('p', 'msg', right === total ? '全部答對，太厲害了！' : right / total >= 0.8 ? '很棒！看看下面錯的題目。' : '加油！看看下面錯的題目，再練一次。'));
+  if (wrong.length) {
+    card.appendChild(el('h2', '', '錯了 ' + wrong.length + ' 題'));
+    var ul = el('ul', 'missed');
+    wrong.forEach(function (m) {
+      var li = el('li');
+      li.appendChild(el('b', '', m.item.q));
+      var was = el('span', 'ba was'); was.appendChild(el('small', '', '你的答案')); was.appendChild(document.createTextNode(answerText(m.item, m.pick)));
+      var now = el('span', 'ba now'); now.appendChild(el('small', '', '正確答案')); now.appendChild(document.createTextNode(answerText(m.item)));
+      li.appendChild(was); li.appendChild(now);
+      li.appendChild(el('span', 'how', m.item.how));
+      ul.appendChild(li);
+    });
+    card.appendChild(ul);
+    var again = el('button', 'primary', '再練錯的 ' + wrong.length + ' 題');
+    again.type = 'button';
+    again.onclick = function () { start(wrong.map(function (m) { return m.item; })); };
+    card.appendChild(again);
+  }
+  var all = el('button', wrong.length ? 'secondary' : 'primary', '整個單元重做');
+  all.type = 'button';
+  all.onclick = function () { start(unit.qs); };
+  card.appendChild(all);
+  var pick = el('button', 'secondary', '換一個單元');
+  pick.type = 'button';
+  pick.onclick = menu;
+  card.appendChild(pick);
+  app.appendChild(card);
+}
+
+menu();
+</script>
+</body>
+</html>
