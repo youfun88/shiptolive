@@ -174,6 +174,14 @@ function V(text) {
   });
 }
 // Type a sentence or word. Strict = capitals and punctuation must match exactly.
+// Recognition: see the English word, pick its Chinese meaning (no spelling).
+function R(text) {
+  var base = V(text);
+  return base.map(function (x, i) {
+    var others = shuffle(base.filter(function (y, j) { return j !== i && y.zh !== x.zh; }).map(function (y) { return y.zh; })).slice(0, 3);
+    return P(x.a, others.concat([x.zh]), x.zh, { big: true, shuffle: true, ask: 'What does this word mean? Pick the Chinese.' });
+  });
+}
 function T(q, a, o) { return extend({ kind: 'type', q: q, a: a, alts: [] }, o); }
 function S(q, a, o) { return extend({ kind: 'type', q: q, a: a, alts: [], strict: true }, o); }
 function P(q, options, a, o) { return extend({ kind: 'pick', q: q, options: options, a: a, alt: [] }, o); }
@@ -206,26 +214,26 @@ function fixList(rows) {
 
 /* ---------- Test 1: Unit 1 Cumulative Review ---------- */
 var U1_VOCAB = [
-  { title: 'Words: Grammar & sentence types', items: V(
+  { title: 'Words: Grammar & sentence types', items: R(
     'sentence|句子\nnaming part|主語／命名部分\naction part|動作部分\ntelling sentence|敘述句\nquestion|疑問句\n' +
     'command|祈使句／命令句\nexclamation|感嘆句\ncapital letter|大寫字母\nperiod|句號\nquestion mark|問號\n' +
     'exclamation point|驚嘆號\nend mark|句末標點\nunderline|畫底線\ncomplete|完整的\nproofread|校對\n' +
     'correct|正確的／訂正\nstrong feeling|強烈情緒') },
-  { title: 'Words: People & animals', items: V(
+  { title: 'Words: People & animals', items: R(
     'children|孩子們\nfriend|朋友\nteacher|老師\nfarmer|農夫\ngirl|女孩\nboy|男孩\ntwins|雙胞胎\nkittens|小貓們\n' +
     'puppy|小狗\nturtle|烏龜\nrobin|知更鳥\nfrog|青蛙\nlions|獅子們\nbears|熊們\nroosters|公雞們\nbees|蜜蜂們\n' +
     'spider|蜘蛛\nsquirrel|松鼠\nwhiskers|鬍鬚\nmonkeys|猴子們\ncaterpillar|毛毛蟲') },
-  { title: 'Words: Action words', items: V(
+  { title: 'Words: Action words', items: R(
     'buzz|嗡嗡叫\nspin|紡／織\ncrawl|爬行\nleap|跳躍\nskip|跳步\ndrip|滴落\ngrowl|低吼\nhowl|嚎叫\ncrow|啼叫\nmoo|哞哞叫\n' +
     'chew|咀嚼\nbloom|開花\nchirp|啁啾叫\nshine|發光\nnap|小睡\nhop|單跳／跳躍\nhide|躲藏\ncount|數數\n' +
     'look around|環顧四周\npull|拉\nfollow|跟隨\ndribble|運球\ntoss|拋\npick up|撿起\ntake off|起飛\nland|降落\n' +
     'rub|摩擦\nshake hands|握手\ntaste|嚐起來\nset|落下／擺設\nroar|吼叫\nbuzz loudly|大聲嗡嗡叫') },
-  { title: 'Words: Things, places & nature', items: V(
+  { title: 'Words: Things, places & nature', items: R(
     'balloon|氣球\nparade|遊行\nband|樂隊\nmusic|音樂\nmovie|電影\ndrum|鼓\nbaseball|棒球\nsnacks|點心\npopcorn|爆米花\n' +
     'storm|暴風雨\nweather|天氣\nrainbow|彩虹\nraindrops|雨滴\nwoods|樹林\nleaves|葉子\nbee|蜜蜂\nhoney|蜂蜜\n' +
     'wings|翅膀\nweb|蜘蛛網\nacorns|橡實\nseeds|種子\ngrass|草\nhay|乾草\nstone|石頭\nsquare|正方形\ngoal|球門／目標\n' +
     'rope|繩子\nfire drill|消防演習\nrocket|火箭\nMars|火星\nladder|梯子\nstriped|有條紋的') },
-  { title: 'Words: Useful phrases', items: V(
+  { title: 'Words: Useful phrases', items: R(
     'be quiet|保持安靜\ndo not let go|不要放手\ntake this rope|拿這條繩子\npull hard|用力拉\nline up|排隊\n' +
     'walk quickly|快走\nlisten to the rules|聽規則\nplay this game|玩這個遊戲\ngo away|走開\nhelp me|幫助我\n' +
     'I am afraid|我很害怕\nI love that song|我喜歡那首歌\ngreat job|做得好\ngood news|好消息\nwhat time|幾點\n' +
@@ -671,7 +679,7 @@ function stem(item) {
   var wrap = el('div');
   var ask = item.ask || (item.kind === 'mc' && item.q.indexOf('___') < 0 ? 'Which word matches this meaning?' : '');
   if (ask) wrap.appendChild(el('div', 'ask', ask));
-  var p = el('p', item.spell ? 'q big' : 'q');
+  var p = el('p', item.spell || item.big ? 'q big' : 'q');
   rich(p, item.spell ? item.zh : item.q);
   wrap.appendChild(p);
   if (item.spell) {
