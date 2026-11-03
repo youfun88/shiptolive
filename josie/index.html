@@ -52,6 +52,7 @@
   a.choice { text-decoration: none; }
   .meta { display: block; color: var(--muted); font-size: 15px; }
   .ask { color: var(--muted); font-size: 16px; margin-bottom: 6px; }
+  .passage { margin: 4px 0 10px; padding: 14px 16px; background: #fff8e6; border-left: 4px solid #e0a526; border-radius: 8px; font-size: 19px; line-height: 1.65; }
   .hint { color: var(--muted); font-size: 18px; letter-spacing: 1px; margin: -8px 0 14px; word-break: break-all; }
   .speak {
     display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 6px 14px; margin-bottom: 14px;
@@ -477,6 +478,138 @@ var U1_LISTEN = U1_VOCAB.map(function (p, i) {
   list.forEach(function (p) { if (p.tip) inherit(p.items, { tip: p.tip }); });
 });
 
+/* ---------- Reading: L1 to L4 (Story words and Skills) ---------- */
+// Word lists and meanings are from her L1-L4 story pages. The sentences are new,
+// so she has to understand each word, not remember the worksheet.
+var RD_LESSONS = [
+  { title: 'L1. Clark the Shark', words: ['munch', 'bellow', 'rough', 'handle', 'cool', 'bounce', 'grin', 'might'],
+    zh: ['大口咀嚼', '大聲吼叫', '粗魯的', '應付', '冷靜下來', '彈跳', '露齒笑', '力氣'],
+    fill: [
+      ['The hungry rabbit likes to ___ on fresh lettuce.', 'munch'],
+      ['The captain had to ___ "Come back!" so the kids could hear him over the wind.', 'bellow'],
+      ['Pushing your little brother is too ___. Please be gentle.', 'rough'],
+      ['This box is too heavy for me to ___ alone, so I need some help.', 'handle'],
+      ['After the argument, Mia counted to ten to ___ down.', 'cool'],
+      ['The rubber ball will ___ up and down when you drop it.', 'bounce'],
+      ['Dad gave a big ___ when he saw my good report card.', 'grin'],
+      ['She pushed the heavy door with all her ___.', 'might']
+    ],
+    mean: [
+      ['to chew food loudly and completely', 'munch'],
+      ['to move up and down', 'bounce'],
+      ['a wide smile', 'grin'],
+      ['using all your power', 'might']
+    ] },
+  { title: 'L2. The Great Puppy Invasion', words: ['panic', 'ridiculous', 'prohibit', 'cautiously', 'invade', 'trot', 'lovable', 'enormous'],
+    zh: ['驚慌', '荒謬的', '禁止', '小心地', '入侵', '小跑步', '可愛的', '巨大的'],
+    fill: [
+      ["Don't ___ if you get lost. Stay calm and find a grown-up.", 'panic'],
+      ['The clown wore a ___ hat shaped like a giant banana.', 'ridiculous'],
+      ['The library rules ___ eating near the books.', 'prohibit'],
+      ['The cat stepped ___ along the top of the narrow fence.', 'cautiously'],
+      ['Every summer, ants try to ___ our kitchen.', 'invade'],
+      ['The pony began to ___ around the ring, a little faster than walking.', 'trot'],
+      ['The fluffy bunny was so sweet and ___ that every kid wanted to hug it.', 'lovable'],
+      ['A whale is an ___ animal, much bigger than a car.', 'enormous']
+    ],
+    mean: [
+      ['to suddenly feel afraid', 'panic'],
+      ['not allowed', 'prohibit'],
+      ['very carefully, to stay safe', 'cautiously'],
+      ['to enter a place in a big group and take it over', 'invade']
+    ] },
+  { title: 'L3. Picture Day Perfection', words: ['plan', 'perfect', 'hamper', 'disaster', 'scowl', 'mood', 'queasy', 'fiddle'],
+    zh: ['計畫', '完美的', '有蓋的洗衣籃', '災難', '生氣地皺眉', '心情', '想吐的', '撥弄'],
+    fill: [
+      ["Let's ___ what to pack before the trip, so we don't forget anything.", 'plan'],
+      ['She got every answer right. Her score was ___.', 'perfect'],
+      ['Put your muddy socks in the ___, not on the floor.', 'hamper'],
+      ['The cake fell on the floor, and the party was a ___.', 'disaster'],
+      ['When his ice cream fell, he had a big ___ on his face.', 'scowl'],
+      ['Sunny weather always puts me in a happy ___.', 'mood'],
+      ['The bumpy boat ride made my stomach feel ___.', 'queasy'],
+      ["Please don't ___ with the buttons on the remote during the movie.", 'fiddle']
+    ],
+    mean: [
+      ['an angry frown', 'scowl'],
+      ['your stomach hurts and you feel sick', 'queasy'],
+      ['a basket with a lid for dirty clothes', 'hamper'],
+      ['the way you are feeling', 'mood']
+    ] },
+  { title: 'L4. The Great Fuzz Frenzy', words: ['gasp', 'frenzy', 'battleground', 'feud', 'fuzz', 'charge', 'crept', 'scatter'],
+    zh: ['倒抽一口氣', '瘋狂', '戰場', '長期爭吵', '細絨毛', '衝過去', '悄悄地走', '四散'],
+    fill: [
+      ['The crowd began to ___ when the magician made the rabbit disappear.', 'gasp'],
+      ['When the big sale started, the shoppers ran around in a ___.', 'frenzy'],
+      ['During the pillow fight, my bedroom became a ___.', 'battleground'],
+      ['The two neighbors had a long ___ about the tall tree between their houses.', 'feud'],
+      ['A peach is covered in soft, light ___.', 'fuzz'],
+      ['The players will ___ down the field toward the goal.', 'charge'],
+      ['I ___ past my sleeping baby brother so I would not wake him.', 'crept'],
+      ['When the cat ran in, the pigeons began to ___ in every direction.', 'scatter']
+    ],
+    mean: [
+      ['moved slowly and quietly so no one would hear', 'crept'],
+      ['a long fight', 'feud'],
+      ['to take a sharp breath in surprise', 'gasp'],
+      ['a mass of fine, light, fluffy hairs', 'fuzz']
+    ] }
+];
+var RD_STORY = RD_LESSONS.map(function (L) {
+  var fill = L.fill.map(function (r) {
+    return P(r[0], L.words, r[1], { ask: 'Use the word list to complete the sentence.' });
+  });
+  var mean = L.mean.map(function (r) {
+    return P('Which word means “' + r[0] + '”?', L.words, r[1], { ask: 'Pick the word that matches the meaning.', shuffle: true });
+  });
+  return { title: L.title, items: fill.concat(mean) };
+}).concat([{
+  title: 'E. Listen and spell the story words',
+  items: [].concat.apply([], RD_LESSONS.map(function (L) {
+    return L.words.map(function (w, i) {
+      return { kind: 'type', spell: true, listen: true, a: w, zh: L.zh[i], q: L.zh[i], alts: [], ask: 'Tap 🔊, listen, then type the word you hear.' };
+    });
+  }))
+}]);
+
+// Skills: short new passages, one per skill. Each question shows its passage again.
+function withText(text, rows, ask) {
+  return rows.map(function (r) { return P(r[0], r[1], r[2], { passage: text, ask: ask, shuffle: true }); });
+}
+var BEES = 'Bees are small, but they do big jobs. They fly from flower to flower to drink nectar. As they fly, they carry pollen that helps new plants grow. Bees also make honey and wax in their hives. Without bees, many fruits and vegetables would not grow.';
+var TWINS = 'Mia and Leo are twins. Both of them love to read, and both have curly hair. Mia likes to play soccer outside, but Leo likes to paint inside. Mia wakes up early every morning. Leo likes to sleep late.';
+var MAX = "Nora's dog, Max, hid under the bed when the thunder boomed. His ears were flat, and he shook from nose to tail. Nora sat on the floor and spoke softly to him. She gave Max his favorite blanket. Soon Max crawled out and licked her hand.";
+var PURPOSE = ['To inform (teach facts)', 'To entertain (tell a fun story)', 'To persuade (make you do or believe something)'];
+var RD_SKILLS = [
+  { title: 'A. Central idea', items: withText(BEES, [
+    ['What is the central idea of the text?', ['Bees are small, but they do important jobs.', 'Bees live in hives.', 'Honey is sweet.', 'Flowers are pretty.'], 'Bees are small, but they do important jobs.'],
+    ['Which detail supports the central idea?', ['Bees carry pollen that helps new plants grow.', 'Bees have black and yellow stripes.', 'Some flowers are red.', 'Bees sleep at night.'], 'Bees carry pollen that helps new plants grow.'],
+    ['What does the text say would happen without bees?', ['Many fruits and vegetables would not grow.', 'Flowers would be bigger.', 'There would be more honey.', 'Birds would make honey.'], 'Many fruits and vegetables would not grow.'],
+    ['Which title fits the text best?', ['Bees: Small Helpers with Big Jobs', 'My Trip to the Zoo', 'How to Grow a Pumpkin', 'The Funny Bee Who Danced'], 'Bees: Small Helpers with Big Jobs']
+  ], 'Read the text. Then answer.') },
+  { title: "B. Author's purpose", items: [
+    P('Penguins cannot fly, but they are great swimmers. They use their wings like flippers.', PURPOSE, PURPOSE[0], { ask: 'Why did the author write this?', passage: '' }),
+    P('Pip the penguin wanted to fly. He flapped and flapped, and then, splash! He landed in the pond, laughing.', PURPOSE, PURPOSE[1], { ask: 'Why did the author write this?' }),
+    P('Everyone should visit the zoo this summer! It is fun, and your ticket helps the animals.', PURPOSE, PURPOSE[2], { ask: 'Why did the author write this?' }),
+    P('First, fill a pot with soil. Next, push a seed into the soil. Then water it every day.', PURPOSE, PURPOSE[0], { ask: 'Why did the author write this?' }),
+    P('Which sentence is trying to PERSUADE you?', ['You should drink water every day!', 'Water boils at 100 degrees.', 'The duck splashed in the water.', 'Rain comes from clouds.'], 'You should drink water every day!', { shuffle: true }),
+    P('An author writes a silly story about a pig who dances on the moon. Why?', PURPOSE, PURPOSE[1], { ask: 'Think about the author’s purpose.' })
+  ] },
+  { title: 'C. Compare and contrast', items: withText(TWINS, [
+    ['How are Mia and Leo ALIKE?', ['They both love to read.', 'They both play soccer.', 'They both paint.', 'They both sleep late.'], 'They both love to read.'],
+    ['How are Mia and Leo DIFFERENT?', ['Mia plays soccer outside, but Leo paints inside.', 'Mia has curly hair, but Leo does not.', 'Mia likes to read, but Leo does not.', 'Mia is a twin, but Leo is not.'], 'Mia plays soccer outside, but Leo paints inside.'],
+    ['Which word from the text tells you something is the SAME?', ['both', 'but', 'late', 'inside'], 'both'],
+    ['Which word from the text tells you something is DIFFERENT?', ['but', 'both', 'and', 'every'], 'but'],
+    ['Who wakes up early?', ['Mia', 'Leo', 'Both of them', 'Neither of them'], 'Mia']
+  ], 'Read the text. Then answer.') },
+  { title: 'D. Text evidence', items: withText(MAX, [
+    ['How did Max feel during the storm?', ['Scared', 'Happy', 'Sleepy', 'Hungry'], 'Scared'],
+    ['Which sentence from the text shows that Max was scared?', ['His ears were flat, and he shook from nose to tail.', 'Nora sat on the floor and spoke softly to him.', 'She gave Max his favorite blanket.', 'Soon Max crawled out and licked her hand.'], 'His ears were flat, and he shook from nose to tail.'],
+    ['Nora is kind. Which sentence from the text shows this?', ['She gave Max his favorite blanket.', 'The thunder boomed.', 'Max hid under the bed.', 'His ears were flat.'], 'She gave Max his favorite blanket.'],
+    ['How do you know Max felt better at the end?', ['Soon Max crawled out and licked her hand.', 'Max hid under the bed.', 'The thunder boomed.', 'He shook from nose to tail.'], 'Soon Max crawled out and licked her hand.']
+  ], 'Read the text. Find the proof in the text.') }
+];
+
 var MENU = [
   { group: 'Social Studies', tests: [
     { id: 'ss-ch2', title: 'Chapter 2: People, Places, and Nature', sub: 'Lessons 1–3', items: CHAPTER2 },
@@ -484,12 +617,14 @@ var MENU = [
   ] },
   { group: 'Grade 2 English', tests: [
     { id: 'en-u1', title: 'Unit 1 Cumulative Review', sub: 'Sentences, questions, commands & exclamations', parts: U1_GRAMMAR.concat(U1_LISTEN) },
+    { id: 'rd-story', title: 'Reading L1–L4: Story words', sub: 'Use the word list, word meanings and spelling', parts: RD_STORY },
+    { id: 'rd-skills', title: 'Reading L1–L4: Skills', sub: "Central idea, author's purpose, compare and contrast, text evidence", parts: RD_SKILLS },
     { id: 'en-all', title: 'Complete Review', sub: 'Nouns (Lessons 1–5) and Sentences (Lessons 1–7)', parts: C_GRAMMAR }
   ] }
 ];
 
 /* ---------- Zhuyin for every Chinese string on this page (one reading per character, "|"-separated) ---------- */
-var ZY = {"一些":"ㄧˋ|ㄒㄧㄝ","一個":"ㄧˊ|ㄍㄜˋ","三個":"ㄙㄢ|ㄍㄜˋ","不要放手":"ㄅㄨˊ|ㄧㄠˋ|ㄈㄤˋ|ㄕㄡˇ","世代":"ㄕˋ|ㄉㄞˋ","中文":"ㄓㄨㄥ|ㄨㄣˊ","主語（誰／什麼）":"ㄓㄨˇ|ㄩˇ||ㄕㄨㄟˊ||ㄕㄣˊ|ㄇㄜ˙|","主語／命名部分":"ㄓㄨˇ|ㄩˇ||ㄇㄧㄥˋ|ㄇㄧㄥˊ|ㄅㄨˋ|ㄈㄣˋ","乾草":"ㄍㄢ|ㄘㄠˇ","五個":"ㄨˇ|ㄍㄜˋ","人":"ㄖㄣˊ","人們":"ㄖㄣˊ|ㄇㄣ˙","什麼":"ㄕㄣˊ|ㄇㄜ˙","什麼顏色":"ㄕㄣˊ|ㄇㄜ˙|ㄧㄢˊ|ㄙㄜˋ","今天":"ㄐㄧㄣ|ㄊㄧㄢ","仔細檢視":"ㄗˇ|ㄒㄧˋ|ㄐㄧㄢˇ|ㄕˋ","低吼":"ㄉㄧ|ㄏㄡˇ","作家":"ㄗㄨㄛˋ|ㄐㄧㄚ","保持安靜":"ㄅㄠˇ|ㄔˊ|ㄢ|ㄐㄧㄥˋ","修理":"ㄒㄧㄡ|ㄌㄧˇ","做得好":"ㄗㄨㄛˋ|ㄉㄜˊ|ㄏㄠˇ","停下來":"ㄊㄧㄥˊ|ㄒㄧㄚˋ|ㄌㄞˊ","傳統":"ㄔㄨㄢˊ|ㄊㄨㄥˇ","傳記":"ㄔㄨㄢˊ|ㄐㄧˋ","全部":"ㄑㄩㄢˊ|ㄅㄨˋ","兩個":"ㄌㄧㄤˇ|ㄍㄜˋ","公民":"ㄍㄨㄥ|ㄇㄧㄣˊ","公車／公車們":"ㄍㄨㄥ|ㄔㄜ||ㄍㄨㄥ|ㄔㄜ|ㄇㄣ˙","公雞們":"ㄍㄨㄥ|ㄐㄧ|ㄇㄣ˙","刷子／刷子們":"ㄕㄨㄚ|ㄗ˙||ㄕㄨㄚ|ㄗ˙|ㄇㄣ˙","助動詞":"ㄓㄨˋ|ㄉㄨㄥˋ|ㄘˊ","動作部分":"ㄉㄨㄥˋ|ㄗㄨㄛˋ|ㄅㄨˋ|ㄈㄣˋ","動作部分（做什麼）":"ㄉㄨㄥˋ|ㄗㄨㄛˋ|ㄅㄨˋ|ㄈㄣˋ||ㄗㄨㄛˋ|ㄕㄣˊ|ㄇㄜ˙|","動物":"ㄉㄨㄥˋ|ㄨˋ","動物園":"ㄉㄨㄥˋ|ㄨˋ|ㄩㄢˊ","十個":"ㄕˊ|ㄍㄜˋ","午餐":"ㄨˇ|ㄘㄢ","參觀":"ㄘㄢ|ㄍㄨㄢ","叔叔、舅舅":"ㄕㄨ|ㄕㄨ˙||ㄐㄧㄡˋ|ㄐㄧㄡ˙","叢林":"ㄘㄨㄥˊ|ㄌㄧㄣˊ","口述歷史":"ㄎㄡˇ|ㄕㄨˋ|ㄌㄧˋ|ㄕˇ","句子":"ㄐㄩˋ|ㄗ˙","句末標點":"ㄐㄩˋ|ㄇㄛˋ|ㄅㄧㄠ|ㄉㄧㄢˇ","句號":"ㄐㄩˋ|ㄏㄠˋ","吃／吃了":"ㄔ||ㄔ|ㄌㄜ˙","同學":"ㄊㄨㄥˊ|ㄒㄩㄝˊ","名詞":"ㄇㄧㄥˊ|ㄘˊ","吠叫":"ㄈㄟˋ|ㄐㄧㄠˋ","吼叫":"ㄏㄡˇ|ㄐㄧㄠˋ","咀嚼":"ㄐㄩˇ|ㄐㄩㄝˊ","品嚐／嚐起來":"ㄆㄧㄣˇ|ㄔㄤˊ||ㄔㄤˊ|ㄑㄧˇ|ㄌㄞˊ","哞哞叫":"ㄇㄡ|ㄇㄡ|ㄐㄧㄠˋ","哪裡":"ㄋㄚˇ|ㄌㄧˇ","唱／唱（第三人稱）":"ㄔㄤˋ||ㄔㄤˋ||ㄉㄧˋ|ㄙㄢ|ㄖㄣˊ|ㄔㄥ|","啁啾叫":"ㄓㄡ|ㄐㄧㄡ|ㄐㄧㄠˋ","問號":"ㄨㄣˋ|ㄏㄠˋ","啼叫":"ㄊㄧˊ|ㄐㄧㄠˋ","喇叭":"ㄌㄚˇ|ㄅㄚ","單數":"ㄉㄢ|ㄕㄨˋ","單跳／跳躍":"ㄉㄢ|ㄊㄧㄠˋ||ㄊㄧㄠˋ|ㄩㄝˋ","嗡嗡叫":"ㄨㄥ|ㄨㄥ|ㄐㄧㄠˋ","嚎叫":"ㄏㄠˊ|ㄐㄧㄠˋ","嚐起來":"ㄔㄤˊ|ㄑㄧˇ|ㄌㄞˊ","四個":"ㄙˋ|ㄍㄜˋ","圈":"ㄑㄩㄢ","圍欄":"ㄨㄟˊ|ㄌㄢˊ","圓木":"ㄩㄢˊ|ㄇㄨˋ","圖例":"ㄊㄨˊ|ㄌㄧˋ","在上方":"ㄗㄞˋ|ㄕㄤˋ|ㄈㄤ","在下方":"ㄗㄞˋ|ㄒㄧㄚˋ|ㄈㄤ","地形":"ㄉㄧˋ|ㄒㄧㄥˊ","地方":"ㄉㄧˋ|ㄈㄤ","地球儀":"ㄉㄧˋ|ㄑㄧㄡˊ|ㄧˊ","城市":"ㄔㄥˊ|ㄕˋ","城鎮":"ㄔㄥˊ|ㄓㄣˋ","大家庭":"ㄉㄚˋ|ㄐㄧㄚ|ㄊㄧㄥˊ","大寫字母":"ㄉㄚˋ|ㄒㄧㄝˇ|ㄗˋ|ㄇㄨˇ","大聲嗡嗡叫":"ㄉㄚˋ|ㄕㄥ|ㄨㄥ|ㄨㄥ|ㄐㄧㄠˋ","大陸／大洲":"ㄉㄚˋ|ㄌㄨˋ||ㄉㄚˋ|ㄓㄡ","天氣":"ㄊㄧㄢ|ㄑㄧˋ","天氣如何":"ㄊㄧㄢ|ㄑㄧˋ|ㄖㄨˊ|ㄏㄜˊ","奉行":"ㄈㄥˋ|ㄒㄧㄥˊ","女人／女人們":"ㄋㄩˇ|ㄖㄣˊ||ㄋㄩˇ|ㄖㄣˊ|ㄇㄣ˙","女孩":"ㄋㄩˇ|ㄏㄞˊ","好消息":"ㄏㄠˇ|ㄒㄧㄠ|ㄒㄧ˙","如何":"ㄖㄨˊ|ㄏㄜˊ","媽媽":"ㄇㄚ|ㄇㄚ˙","嬰兒":"ㄧㄥ|ㄦˊ","孩子們":"ㄏㄞˊ|ㄗ˙|ㄇㄣ˙","完整的":"ㄨㄢˊ|ㄓㄥˇ|ㄉㄜ˙","家人":"ㄐㄧㄚ|ㄖㄣˊ","家庭":"ㄐㄧㄚ|ㄊㄧㄥˊ","家譜":"ㄐㄧㄚ|ㄆㄨˇ","寫作":"ㄒㄧㄝˇ|ㄗㄨㄛˋ","尊重":"ㄗㄨㄣ|ㄓㄨㄥˋ","對比（找不同）":"ㄉㄨㄟˋ|ㄅㄧˇ||ㄓㄠˇ|ㄅㄨˋ|ㄊㄨㄥˊ|","小丑":"ㄒㄧㄠˇ|ㄔㄡˇ","小塊土地／補丁":"ㄒㄧㄠˇ|ㄎㄨㄞˋ|ㄊㄨˇ|ㄉㄧˋ||ㄅㄨˇ|ㄉㄧㄥ","小孩／小孩們":"ㄒㄧㄠˇ|ㄏㄞˊ||ㄒㄧㄠˇ|ㄏㄞˊ|ㄇㄣ˙","小狗":"ㄒㄧㄠˇ|ㄍㄡˇ","小睡":"ㄒㄧㄠˇ|ㄕㄨㄟˋ","小貓們":"ㄒㄧㄠˇ|ㄇㄠ|ㄇㄣ˙","居住":"ㄐㄩ|ㄓㄨˋ","展示／展示了":"ㄓㄢˇ|ㄕˋ||ㄓㄢˇ|ㄕˋ|ㄌㄜ˙","岩石":"ㄧㄢˊ|ㄕˊ","工人":"ㄍㄨㄥ|ㄖㄣˊ","幫助我":"ㄅㄤ|ㄓㄨˋ|ㄨㄛˇ","幾點":"ㄐㄧˇ|ㄉㄧㄢˇ","床":"ㄔㄨㄤˊ","建築":"ㄐㄧㄢˋ|ㄓㄨˋ","強烈情緒":"ㄑㄧㄤˊ|ㄌㄧㄝˋ|ㄑㄧㄥˊ|ㄒㄩˋ","彩虹":"ㄘㄞˇ|ㄏㄨㄥˊ","影片":"ㄧㄥˇ|ㄆㄧㄢˋ","很多":"ㄏㄣˇ|ㄉㄨㄛ","快走":"ㄎㄨㄞˋ|ㄗㄡˇ","感嘆句":"ㄍㄢˇ|ㄊㄢˋ|ㄐㄩˋ","我喜歡那首歌":"ㄨㄛˇ|ㄒㄧˇ|ㄏㄨㄢ|ㄋㄚˋ|ㄕㄡˇ|ㄍㄜ","我很害怕":"ㄨㄛˇ|ㄏㄣˇ|ㄏㄞˋ|ㄆㄚˋ","披薩":"ㄆㄧ|ㄙㄚˋ","拉":"ㄌㄚ","拋":"ㄆㄠ","拋接雜耍":"ㄆㄠ|ㄐㄧㄝ|ㄗㄚˊ|ㄕㄨㄚˇ","拍手／拍了手":"ㄆㄞ|ㄕㄡˇ||ㄆㄞ|ㄌㄜ˙|ㄕㄡˇ","拿這條繩子":"ㄋㄚˊ|ㄓㄜˋ|ㄊㄧㄠˊ|ㄕㄥˊ|ㄗ˙","排隊":"ㄆㄞˊ|ㄉㄨㄟˋ","握住、拿著":"ㄨㄛˋ|ㄓㄨˋ||ㄋㄚˊ|ㄓㄜ˙","握手":"ㄨㄛˋ|ㄕㄡˇ","搖動":"ㄧㄠˊ|ㄉㄨㄥˋ","摩擦":"ㄇㄛˊ|ㄘㄚ","撿起":"ㄐㄧㄢˇ|ㄑㄧˇ","攀爬／爬了":"ㄆㄢ|ㄆㄚˊ||ㄆㄚˊ|ㄌㄜ˙","敘述句":"ㄒㄩˋ|ㄕㄨˋ|ㄐㄩˋ","數數":"ㄕㄨˇ|ㄕㄨˋ","文化":"ㄨㄣˊ|ㄏㄨㄚˋ","文物":"ㄨㄣˊ|ㄨˋ","日記":"ㄖˋ|ㄐㄧˋ","昂首跳躍":"ㄤˊ|ㄕㄡˇ|ㄊㄧㄠˋ|ㄩㄝˋ","明信片":"ㄇㄧㄥˊ|ㄒㄧㄣˋ|ㄆㄧㄢˋ","明天":"ㄇㄧㄥˊ|ㄊㄧㄢ","是":"ㄕˋ","是（過去）":"ㄕˋ||ㄍㄨㄛˋ|ㄑㄩˋ|","時鐘":"ㄕˊ|ㄓㄨㄥ","暴風雨":"ㄅㄠˋ|ㄈㄥ|ㄩˇ","書桌":"ㄕㄨ|ㄓㄨㄛ","有條紋的":"ㄧㄡˇ|ㄊㄧㄠˊ|ㄨㄣˊ|ㄉㄜ˙","朋友":"ㄆㄥˊ|ㄧㄡˇ","東西":"ㄉㄨㄥ|ㄒㄧ˙","松鼠":"ㄙㄨㄥ|ㄕㄨˇ","柱子":"ㄓㄨˋ|ㄗ˙","校對":"ㄒㄧㄠˋ|ㄉㄨㄟˋ","梯子":"ㄊㄧ|ㄗ˙","棒球":"ㄅㄤˋ|ㄑㄧㄡˊ","椅子":"ㄧˇ|ㄗ˙","植物":"ㄓˊ|ㄨˋ","樂隊":"ㄩㄝˋ|ㄉㄨㄟˋ","標誌":"ㄅㄧㄠ|ㄓˋ","樹":"ㄕㄨˋ","樹林":"ㄕㄨˋ|ㄌㄧㄣˊ","機器人":"ㄐㄧ|ㄑㄧˋ|ㄖㄣˊ","橡實":"ㄒㄧㄤˋ|ㄕˊ","正方形":"ㄓㄥˋ|ㄈㄤ|ㄒㄧㄥˊ","正確的／訂正":"ㄓㄥˋ|ㄑㄩㄝˋ|ㄉㄜ˙||ㄉㄧㄥˋ|ㄓㄥˋ","歷史":"ㄌㄧˋ|ㄕˇ","歷史學家":"ㄌㄧˋ|ㄕˇ|ㄒㄩㄝˊ|ㄐㄧㄚ","比較（找相同）":"ㄅㄧˇ|ㄐㄧㄠˋ||ㄓㄠˇ|ㄒㄧㄤ|ㄊㄨㄥˊ|","毛毛蟲":"ㄇㄠˊ|ㄇㄠˊ|ㄔㄨㄥˊ","氣球":"ㄑㄧˋ|ㄑㄧㄡˊ","水":"ㄕㄨㄟˇ","池塘":"ㄔˊ|ㄊㄤˊ","沙拉":"ㄕㄚ|ㄌㄚ","海洋":"ㄏㄞˇ|ㄧㄤˊ","消防演習":"ㄒㄧㄠ|ㄈㄤˊ|ㄧㄢˇ|ㄒㄧˊ","清理／清理了":"ㄑㄧㄥ|ㄌㄧˇ||ㄑㄧㄥ|ㄌㄧˇ|ㄌㄜ˙","港口":"ㄍㄤˇ|ㄎㄡˇ","游泳":"ㄧㄡˊ|ㄩㄥˇ","湖":"ㄏㄨˊ","滑動":"ㄏㄨㄚˊ|ㄉㄨㄥˋ","滴落":"ㄉㄧ|ㄌㄨㄛˋ","滾動":"ㄍㄨㄣˇ|ㄉㄨㄥˋ","漂浮":"ㄆㄧㄠ|ㄈㄨˊ","火星":"ㄏㄨㄛˇ|ㄒㄧㄥ","火箭":"ㄏㄨㄛˇ|ㄐㄧㄢˋ","火車":"ㄏㄨㄛˇ|ㄔㄜ","烏龜":"ㄨ|ㄍㄨㄟ","熊":"ㄒㄩㄥˊ","熊們":"ㄒㄩㄥˊ|ㄇㄣ˙","燈":"ㄉㄥ","爆米花":"ㄅㄠˋ|ㄇㄧˇ|ㄏㄨㄚ","爬行":"ㄆㄚˊ|ㄒㄧㄥˊ","爸爸":"ㄅㄚˋ|ㄅㄚ˙","牙醫":"ㄧㄚˊ|ㄧ","牛":"ㄋㄧㄡˊ","牽我的手":"ㄑㄧㄢ|ㄨㄛˇ|ㄉㄜ˙|ㄕㄡˇ","狐狸／狐狸們":"ㄏㄨˊ|ㄌㄧˊ||ㄏㄨˊ|ㄌㄧˊ|ㄇㄣ˙","狗":"ㄍㄡˇ","猴子":"ㄏㄡˊ|ㄗ˙","猴子們":"ㄏㄡˊ|ㄗ˙|ㄇㄣ˙","獅子":"ㄕ|ㄗ˙","獅子們":"ㄕ|ㄗ˙|ㄇㄣ˙","玉米":"ㄩˋ|ㄇㄧˇ","玩伴":"ㄨㄢˊ|ㄅㄢˋ","玩具":"ㄨㄢˊ|ㄐㄩˋ","玩這個遊戲":"ㄨㄢˊ|ㄓㄜˋ|ㄍㄜˋ|ㄧㄡˊ|ㄒㄧˋ","玩／玩了":"ㄨㄢˊ||ㄨㄢˊ|ㄌㄜ˙","玻璃杯／玻璃杯們":"ㄅㄛ|ㄌㄧˊ|ㄅㄟ||ㄅㄛ|ㄌㄧˊ|ㄅㄟ|ㄇㄣ˙","球":"ㄑㄧㄡˊ","球門／目標":"ㄑㄧㄡˊ|ㄇㄣˊ||ㄇㄨˋ|ㄅㄧㄠ","環顧四周":"ㄏㄨㄢˊ|ㄍㄨˋ|ㄙˋ|ㄓㄡ","生長／長大了":"ㄕㄥ|ㄓㄤˇ||ㄓㄤˇ|ㄉㄚˋ|ㄌㄜ˙","用力拉":"ㄩㄥˋ|ㄌㄧˋ|ㄌㄚ","田野":"ㄊㄧㄢˊ|ㄧㄝˇ","男人／男人們":"ㄋㄢˊ|ㄖㄣˊ||ㄋㄢˊ|ㄖㄣˊ|ㄇㄣ˙","男孩":"ㄋㄢˊ|ㄏㄞˊ","畫、油漆／畫了":"ㄏㄨㄚˋ||ㄧㄡˊ|ㄑㄧ||ㄏㄨㄚˋ|ㄌㄜ˙","畫底線":"ㄏㄨㄚˋ|ㄉㄧˇ|ㄒㄧㄢˋ","疑問句":"ㄧˊ|ㄨㄣˋ|ㄐㄩˋ","發光":"ㄈㄚ|ㄍㄨㄤ","盒子／盒子們":"ㄏㄜˊ|ㄗ˙||ㄏㄜˊ|ㄗ˙|ㄇㄣ˙","盡可能快":"ㄐㄧㄣˇ|ㄎㄜˇ|ㄋㄥˊ|ㄎㄨㄞˋ","監護人":"ㄐㄧㄢ|ㄏㄨˋ|ㄖㄣˊ","盤子／盤子們":"ㄆㄢˊ|ㄗ˙||ㄆㄢˊ|ㄗ˙|ㄇㄣ˙","相對位置":"ㄒㄧㄤ|ㄉㄨㄟˋ|ㄨㄟˋ|ㄓˋ","看／正在看":"ㄎㄢˋ||ㄓㄥˋ|ㄗㄞˋ|ㄎㄢˋ","看／看了":"ㄎㄢˋ||ㄎㄢˋ|ㄌㄜ˙","睡覺":"ㄕㄨㄟˋ|ㄐㄧㄠˋ","知更鳥":"ㄓ|ㄍㄥ|ㄋㄧㄠˇ","石頭":"ㄕˊ|ㄊㄡˊ","社區":"ㄕㄜˋ|ㄑㄩ","祈使句／命令句":"ㄑㄧˊ|ㄕˇ|ㄐㄩˋ||ㄇㄧㄥˋ|ㄌㄧㄥˋ|ㄐㄩˋ","祖先":"ㄗㄨˇ|ㄒㄧㄢ","移民":"ㄧˊ|ㄇㄧㄣˊ","稍後":"ㄕㄠ|ㄏㄡˋ","種子":"ㄓㄨㄥˇ|ㄗ˙","窗戶":"ㄔㄨㄤ|ㄏㄨˋ","符號／標誌":"ㄈㄨˊ|ㄏㄠˋ||ㄅㄧㄠ|ㄓˋ","第一手資料":"ㄉㄧˋ|ㄧ|ㄧˋ|ㄗ|ㄌㄧㄠˋ","第二手資料":"ㄉㄧˋ|ㄦˋ|ㄕㄡˇ|ㄗ|ㄌㄧㄠˋ","紅蘿蔔":"ㄏㄨㄥˊ|ㄌㄨㄛˊ|ㄅㄛˊ","紡／織":"ㄈㄤˇ||ㄓ","絕對位置":"ㄐㄩㄝˊ|ㄉㄨㄟˋ|ㄨㄟˋ|ㄓˋ","綿羊":"ㄇㄧㄢˊ|ㄧㄤˊ","繩子":"ㄕㄥˊ|ㄗ˙","羅盤玫瑰":"ㄌㄨㄛˊ|ㄆㄢˊ|ㄇㄟˊ|ㄍㄨㄟ","美式足球":"ㄇㄟˇ|ㄕˋ|ㄗㄨˊ|ㄑㄧㄡˊ","翅膀":"ㄔˋ|ㄅㄤˇ","老師":"ㄌㄠˇ|ㄕ","聽規則":"ㄊㄧㄥ|ㄍㄨㄟ|ㄗㄜˊ","自傳":"ㄗˋ|ㄔㄨㄢˊ","舞者":"ㄨˇ|ㄓㄜˇ","船":"ㄔㄨㄢˊ","花":"ㄏㄨㄚ","花園":"ㄏㄨㄚ|ㄩㄢˊ","花栗鼠":"ㄏㄨㄚ|ㄌㄧˋ|ㄕㄨˇ","英吋":"ㄧㄥ|ㄘㄨㄣˋ","草":"ㄘㄠˇ","落下":"ㄌㄨㄛˋ|ㄒㄧㄚˋ","落下／擺設":"ㄌㄨㄛˋ|ㄒㄧㄚˋ||ㄅㄞˇ|ㄕㄜˋ","葉子":"ㄧㄝˋ|ㄗ˙","藝術家":"ㄧˋ|ㄕㄨˋ|ㄐㄧㄚ","蛋":"ㄉㄢˋ","蜂蜜":"ㄈㄥ|ㄇㄧˋ","蜘蛛":"ㄓ|ㄓㄨ","蜘蛛網":"ㄓ|ㄓㄨ|ㄨㄤˇ","蜜蜂":"ㄇㄧˋ|ㄈㄥ","蜜蜂們":"ㄇㄧˋ|ㄈㄥ|ㄇㄣ˙","街道":"ㄐㄧㄝ|ㄉㄠˋ","製作":"ㄓˋ|ㄗㄨㄛˋ","複數":"ㄈㄨˋ|ㄕㄨˋ","誰":"ㄕㄨㄟˊ","護理師":"ㄏㄨˋ|ㄌㄧˇ|ㄕ","豆子":"ㄉㄡˋ|ㄗ˙","豬":"ㄓㄨ","貓":"ㄇㄠ","貓熊":"ㄇㄠ|ㄒㄩㄥˊ","負責任的":"ㄈㄨˋ|ㄗㄜˊ|ㄖㄣˋ|ㄉㄜ˙","走路／走了":"ㄗㄡˇ|ㄌㄨˋ||ㄗㄡˇ|ㄌㄜ˙","走開":"ㄗㄡˇ|ㄎㄞ","起飛":"ㄑㄧˇ|ㄈㄟ","超過一個":"ㄔㄠ|ㄍㄨㄛˋ|ㄧˊ|ㄍㄜˋ","跑／跑了":"ㄆㄠˇ||ㄆㄠˇ|ㄌㄜ˙","跟隨":"ㄍㄣ|ㄙㄨㄟˊ","跟隨／跟隨了":"ㄍㄣ|ㄙㄨㄟˊ||ㄍㄣ|ㄙㄨㄟˊ|ㄌㄜ˙","跳步":"ㄊㄧㄠˋ|ㄅㄨˋ","跳躍":"ㄊㄧㄠˋ|ㄩㄝˋ","跳躍／跳躍了":"ㄊㄧㄠˋ|ㄩㄝˋ||ㄊㄧㄠˋ|ㄩㄝˋ|ㄌㄜ˙","跳／跳（第三人稱）":"ㄊㄧㄠˋ||ㄊㄧㄠˋ||ㄉㄧˋ|ㄙㄢ|ㄖㄣˊ|ㄔㄥ|","躲藏":"ㄉㄨㄛˇ|ㄘㄤˊ","農場":"ㄋㄨㄥˊ|ㄔㄤˇ","農夫":"ㄋㄨㄥˊ|ㄈㄨ","這裡":"ㄓㄜˋ|ㄌㄧˇ","遊戲":"ㄧㄡˊ|ㄒㄧˋ","遊行":"ㄧㄡˊ|ㄒㄧㄥˊ","運球":"ㄩㄣˋ|ㄑㄧㄡˊ","遷移／移居":"ㄑㄧㄢ|ㄧˊ||ㄧˊ|ㄐㄩ","那裡":"ㄋㄚˋ|ㄌㄧˇ","醫師":"ㄧ|ㄕ","鈴":"ㄌㄧㄥˊ","長椅／長椅們":"ㄔㄤˊ|ㄧˇ||ㄔㄤˊ|ㄧˇ|ㄇㄣ˙","門":"ㄇㄣˊ","門廊":"ㄇㄣˊ|ㄌㄤˊ","開花":"ㄎㄞ|ㄏㄨㄚ","降落":"ㄐㄧㄤˋ|ㄌㄨㄛˋ","雙胞胎":"ㄕㄨㄤ|ㄅㄠ|ㄊㄞ","雨滴":"ㄩˇ|ㄉㄧ","電影":"ㄉㄧㄢˋ|ㄧㄥˇ","青蛙":"ㄑㄧㄥ|ㄨㄚ","音樂":"ㄧㄣ|ㄩㄝˋ","響鈴":"ㄒㄧㄤˇ|ㄌㄧㄥˊ","飛":"ㄈㄟ","飛機／噴射機":"ㄈㄟ|ㄐㄧ||ㄆㄣ|ㄕㄜˋ|ㄐㄧ","飛行員":"ㄈㄟ|ㄒㄧㄥˊ|ㄩㄢˊ","食物":"ㄕˊ|ㄨˋ","餵食":"ㄨㄟˋ|ㄕˊ","馬":"ㄇㄚˇ","馬戲團":"ㄇㄚˇ|ㄒㄧˋ|ㄊㄨㄢˊ","騎乘":"ㄑㄧˊ|ㄔㄥˊ","驚嘆號":"ㄐㄧㄥ|ㄊㄢˋ|ㄏㄠˋ","鬍鬚":"ㄏㄨˊ|ㄒㄩ","魚":"ㄩˊ","鳥":"ㄋㄧㄠˇ","鳴喇叭":"ㄇㄧㄥˊ|ㄌㄚˇ|ㄅㄚ","鴨子":"ㄧㄚ|ㄗ˙","麵包":"ㄇㄧㄢˋ|ㄅㄠ","麵包師":"ㄇㄧㄢˋ|ㄅㄠ|ㄕ","點心":"ㄉㄧㄢˇ|ㄒㄧㄣ","鼓":"ㄍㄨˇ"};
+var ZY = {"倒抽一口氣":"ㄉㄠˋ|ㄔㄡ|ㄧ|ㄎㄡˇ|ㄑㄧˋ","入侵":"ㄖㄨˋ|ㄑㄧㄣ","冷靜下來":"ㄌㄥˇ|ㄐㄧㄥˋ|ㄒㄧㄚˋ|ㄌㄞˊ","力氣":"ㄌㄧˋ|ㄑㄧˋ","可愛的":"ㄎㄜˇ|ㄞˋ|ㄉㄜ˙","四散":"ㄙˋ|ㄙㄢˋ","大口咀嚼":"ㄉㄚˋ|ㄎㄡˇ|ㄐㄩˇ|ㄐㄩㄝˊ","大聲吼叫":"ㄉㄚˋ|ㄕㄥ|ㄏㄡˇ|ㄐㄧㄠˋ","完美的":"ㄨㄢˊ|ㄇㄟˇ|ㄉㄜ˙","小心地":"ㄒㄧㄠˇ|ㄒㄧㄣ|ㄉㄜ˙","小跑步":"ㄒㄧㄠˇ|ㄆㄠˇ|ㄅㄨˋ","巨大的":"ㄐㄩˋ|ㄉㄚˋ|ㄉㄜ˙","彈跳":"ㄊㄢˊ|ㄊㄧㄠˋ","心情":"ㄒㄧㄣ|ㄑㄧㄥˊ","悄悄地走":"ㄑㄧㄠˇ|ㄑㄧㄠˇ|ㄉㄜ˙|ㄗㄡˇ","想吐的":"ㄒㄧㄤˇ|ㄊㄨˋ|ㄉㄜ˙","應付":"ㄧㄥˋ|ㄈㄨˋ","戰場":"ㄓㄢˋ|ㄔㄤˇ","撥弄":"ㄅㄛ|ㄋㄨㄥˋ","有蓋的洗衣籃":"ㄧㄡˇ|ㄍㄞˋ|ㄉㄜ˙|ㄒㄧˇ|ㄧ|ㄌㄢˊ","災難":"ㄗㄞ|ㄋㄢˊ","生氣地皺眉":"ㄕㄥ|ㄑㄧˋ|ㄉㄜ˙|ㄓㄡˋ|ㄇㄟˊ","瘋狂":"ㄈㄥ|ㄎㄨㄤˊ","禁止":"ㄐㄧㄣˋ|ㄓˇ","粗魯的":"ㄘㄨ|ㄌㄨˇ|ㄉㄜ˙","細絨毛":"ㄒㄧˋ|ㄖㄨㄥˊ|ㄇㄠˊ","荒謬的":"ㄏㄨㄤ|ㄇㄧㄡˋ|ㄉㄜ˙","衝過去":"ㄔㄨㄥ|ㄍㄨㄛˋ|ㄑㄩˋ","計畫":"ㄐㄧˋ|ㄏㄨㄚˋ","長期爭吵":"ㄔㄤˊ|ㄑㄧˊ|ㄓㄥ|ㄔㄠˇ","露齒笑":"ㄌㄨˋ|ㄔˇ|ㄒㄧㄠˋ","驚慌":"ㄐㄧㄥ|ㄏㄨㄤ","一些":"ㄧˋ|ㄒㄧㄝ","一個":"ㄧˊ|ㄍㄜˋ","三個":"ㄙㄢ|ㄍㄜˋ","不要放手":"ㄅㄨˊ|ㄧㄠˋ|ㄈㄤˋ|ㄕㄡˇ","世代":"ㄕˋ|ㄉㄞˋ","中文":"ㄓㄨㄥ|ㄨㄣˊ","主語（誰／什麼）":"ㄓㄨˇ|ㄩˇ||ㄕㄨㄟˊ||ㄕㄣˊ|ㄇㄜ˙|","主語／命名部分":"ㄓㄨˇ|ㄩˇ||ㄇㄧㄥˋ|ㄇㄧㄥˊ|ㄅㄨˋ|ㄈㄣˋ","乾草":"ㄍㄢ|ㄘㄠˇ","五個":"ㄨˇ|ㄍㄜˋ","人":"ㄖㄣˊ","人們":"ㄖㄣˊ|ㄇㄣ˙","什麼":"ㄕㄣˊ|ㄇㄜ˙","什麼顏色":"ㄕㄣˊ|ㄇㄜ˙|ㄧㄢˊ|ㄙㄜˋ","今天":"ㄐㄧㄣ|ㄊㄧㄢ","仔細檢視":"ㄗˇ|ㄒㄧˋ|ㄐㄧㄢˇ|ㄕˋ","低吼":"ㄉㄧ|ㄏㄡˇ","作家":"ㄗㄨㄛˋ|ㄐㄧㄚ","保持安靜":"ㄅㄠˇ|ㄔˊ|ㄢ|ㄐㄧㄥˋ","修理":"ㄒㄧㄡ|ㄌㄧˇ","做得好":"ㄗㄨㄛˋ|ㄉㄜˊ|ㄏㄠˇ","停下來":"ㄊㄧㄥˊ|ㄒㄧㄚˋ|ㄌㄞˊ","傳統":"ㄔㄨㄢˊ|ㄊㄨㄥˇ","傳記":"ㄔㄨㄢˊ|ㄐㄧˋ","全部":"ㄑㄩㄢˊ|ㄅㄨˋ","兩個":"ㄌㄧㄤˇ|ㄍㄜˋ","公民":"ㄍㄨㄥ|ㄇㄧㄣˊ","公車／公車們":"ㄍㄨㄥ|ㄔㄜ||ㄍㄨㄥ|ㄔㄜ|ㄇㄣ˙","公雞們":"ㄍㄨㄥ|ㄐㄧ|ㄇㄣ˙","刷子／刷子們":"ㄕㄨㄚ|ㄗ˙||ㄕㄨㄚ|ㄗ˙|ㄇㄣ˙","助動詞":"ㄓㄨˋ|ㄉㄨㄥˋ|ㄘˊ","動作部分":"ㄉㄨㄥˋ|ㄗㄨㄛˋ|ㄅㄨˋ|ㄈㄣˋ","動作部分（做什麼）":"ㄉㄨㄥˋ|ㄗㄨㄛˋ|ㄅㄨˋ|ㄈㄣˋ||ㄗㄨㄛˋ|ㄕㄣˊ|ㄇㄜ˙|","動物":"ㄉㄨㄥˋ|ㄨˋ","動物園":"ㄉㄨㄥˋ|ㄨˋ|ㄩㄢˊ","十個":"ㄕˊ|ㄍㄜˋ","午餐":"ㄨˇ|ㄘㄢ","參觀":"ㄘㄢ|ㄍㄨㄢ","叔叔、舅舅":"ㄕㄨ|ㄕㄨ˙||ㄐㄧㄡˋ|ㄐㄧㄡ˙","叢林":"ㄘㄨㄥˊ|ㄌㄧㄣˊ","口述歷史":"ㄎㄡˇ|ㄕㄨˋ|ㄌㄧˋ|ㄕˇ","句子":"ㄐㄩˋ|ㄗ˙","句末標點":"ㄐㄩˋ|ㄇㄛˋ|ㄅㄧㄠ|ㄉㄧㄢˇ","句號":"ㄐㄩˋ|ㄏㄠˋ","吃／吃了":"ㄔ||ㄔ|ㄌㄜ˙","同學":"ㄊㄨㄥˊ|ㄒㄩㄝˊ","名詞":"ㄇㄧㄥˊ|ㄘˊ","吠叫":"ㄈㄟˋ|ㄐㄧㄠˋ","吼叫":"ㄏㄡˇ|ㄐㄧㄠˋ","咀嚼":"ㄐㄩˇ|ㄐㄩㄝˊ","品嚐／嚐起來":"ㄆㄧㄣˇ|ㄔㄤˊ||ㄔㄤˊ|ㄑㄧˇ|ㄌㄞˊ","哞哞叫":"ㄇㄡ|ㄇㄡ|ㄐㄧㄠˋ","哪裡":"ㄋㄚˇ|ㄌㄧˇ","唱／唱（第三人稱）":"ㄔㄤˋ||ㄔㄤˋ||ㄉㄧˋ|ㄙㄢ|ㄖㄣˊ|ㄔㄥ|","啁啾叫":"ㄓㄡ|ㄐㄧㄡ|ㄐㄧㄠˋ","問號":"ㄨㄣˋ|ㄏㄠˋ","啼叫":"ㄊㄧˊ|ㄐㄧㄠˋ","喇叭":"ㄌㄚˇ|ㄅㄚ","單數":"ㄉㄢ|ㄕㄨˋ","單跳／跳躍":"ㄉㄢ|ㄊㄧㄠˋ||ㄊㄧㄠˋ|ㄩㄝˋ","嗡嗡叫":"ㄨㄥ|ㄨㄥ|ㄐㄧㄠˋ","嚎叫":"ㄏㄠˊ|ㄐㄧㄠˋ","嚐起來":"ㄔㄤˊ|ㄑㄧˇ|ㄌㄞˊ","四個":"ㄙˋ|ㄍㄜˋ","圈":"ㄑㄩㄢ","圍欄":"ㄨㄟˊ|ㄌㄢˊ","圓木":"ㄩㄢˊ|ㄇㄨˋ","圖例":"ㄊㄨˊ|ㄌㄧˋ","在上方":"ㄗㄞˋ|ㄕㄤˋ|ㄈㄤ","在下方":"ㄗㄞˋ|ㄒㄧㄚˋ|ㄈㄤ","地形":"ㄉㄧˋ|ㄒㄧㄥˊ","地方":"ㄉㄧˋ|ㄈㄤ","地球儀":"ㄉㄧˋ|ㄑㄧㄡˊ|ㄧˊ","城市":"ㄔㄥˊ|ㄕˋ","城鎮":"ㄔㄥˊ|ㄓㄣˋ","大家庭":"ㄉㄚˋ|ㄐㄧㄚ|ㄊㄧㄥˊ","大寫字母":"ㄉㄚˋ|ㄒㄧㄝˇ|ㄗˋ|ㄇㄨˇ","大聲嗡嗡叫":"ㄉㄚˋ|ㄕㄥ|ㄨㄥ|ㄨㄥ|ㄐㄧㄠˋ","大陸／大洲":"ㄉㄚˋ|ㄌㄨˋ||ㄉㄚˋ|ㄓㄡ","天氣":"ㄊㄧㄢ|ㄑㄧˋ","天氣如何":"ㄊㄧㄢ|ㄑㄧˋ|ㄖㄨˊ|ㄏㄜˊ","奉行":"ㄈㄥˋ|ㄒㄧㄥˊ","女人／女人們":"ㄋㄩˇ|ㄖㄣˊ||ㄋㄩˇ|ㄖㄣˊ|ㄇㄣ˙","女孩":"ㄋㄩˇ|ㄏㄞˊ","好消息":"ㄏㄠˇ|ㄒㄧㄠ|ㄒㄧ˙","如何":"ㄖㄨˊ|ㄏㄜˊ","媽媽":"ㄇㄚ|ㄇㄚ˙","嬰兒":"ㄧㄥ|ㄦˊ","孩子們":"ㄏㄞˊ|ㄗ˙|ㄇㄣ˙","完整的":"ㄨㄢˊ|ㄓㄥˇ|ㄉㄜ˙","家人":"ㄐㄧㄚ|ㄖㄣˊ","家庭":"ㄐㄧㄚ|ㄊㄧㄥˊ","家譜":"ㄐㄧㄚ|ㄆㄨˇ","寫作":"ㄒㄧㄝˇ|ㄗㄨㄛˋ","尊重":"ㄗㄨㄣ|ㄓㄨㄥˋ","對比（找不同）":"ㄉㄨㄟˋ|ㄅㄧˇ||ㄓㄠˇ|ㄅㄨˋ|ㄊㄨㄥˊ|","小丑":"ㄒㄧㄠˇ|ㄔㄡˇ","小塊土地／補丁":"ㄒㄧㄠˇ|ㄎㄨㄞˋ|ㄊㄨˇ|ㄉㄧˋ||ㄅㄨˇ|ㄉㄧㄥ","小孩／小孩們":"ㄒㄧㄠˇ|ㄏㄞˊ||ㄒㄧㄠˇ|ㄏㄞˊ|ㄇㄣ˙","小狗":"ㄒㄧㄠˇ|ㄍㄡˇ","小睡":"ㄒㄧㄠˇ|ㄕㄨㄟˋ","小貓們":"ㄒㄧㄠˇ|ㄇㄠ|ㄇㄣ˙","居住":"ㄐㄩ|ㄓㄨˋ","展示／展示了":"ㄓㄢˇ|ㄕˋ||ㄓㄢˇ|ㄕˋ|ㄌㄜ˙","岩石":"ㄧㄢˊ|ㄕˊ","工人":"ㄍㄨㄥ|ㄖㄣˊ","幫助我":"ㄅㄤ|ㄓㄨˋ|ㄨㄛˇ","幾點":"ㄐㄧˇ|ㄉㄧㄢˇ","床":"ㄔㄨㄤˊ","建築":"ㄐㄧㄢˋ|ㄓㄨˋ","強烈情緒":"ㄑㄧㄤˊ|ㄌㄧㄝˋ|ㄑㄧㄥˊ|ㄒㄩˋ","彩虹":"ㄘㄞˇ|ㄏㄨㄥˊ","影片":"ㄧㄥˇ|ㄆㄧㄢˋ","很多":"ㄏㄣˇ|ㄉㄨㄛ","快走":"ㄎㄨㄞˋ|ㄗㄡˇ","感嘆句":"ㄍㄢˇ|ㄊㄢˋ|ㄐㄩˋ","我喜歡那首歌":"ㄨㄛˇ|ㄒㄧˇ|ㄏㄨㄢ|ㄋㄚˋ|ㄕㄡˇ|ㄍㄜ","我很害怕":"ㄨㄛˇ|ㄏㄣˇ|ㄏㄞˋ|ㄆㄚˋ","披薩":"ㄆㄧ|ㄙㄚˋ","拉":"ㄌㄚ","拋":"ㄆㄠ","拋接雜耍":"ㄆㄠ|ㄐㄧㄝ|ㄗㄚˊ|ㄕㄨㄚˇ","拍手／拍了手":"ㄆㄞ|ㄕㄡˇ||ㄆㄞ|ㄌㄜ˙|ㄕㄡˇ","拿這條繩子":"ㄋㄚˊ|ㄓㄜˋ|ㄊㄧㄠˊ|ㄕㄥˊ|ㄗ˙","排隊":"ㄆㄞˊ|ㄉㄨㄟˋ","握住、拿著":"ㄨㄛˋ|ㄓㄨˋ||ㄋㄚˊ|ㄓㄜ˙","握手":"ㄨㄛˋ|ㄕㄡˇ","搖動":"ㄧㄠˊ|ㄉㄨㄥˋ","摩擦":"ㄇㄛˊ|ㄘㄚ","撿起":"ㄐㄧㄢˇ|ㄑㄧˇ","攀爬／爬了":"ㄆㄢ|ㄆㄚˊ||ㄆㄚˊ|ㄌㄜ˙","敘述句":"ㄒㄩˋ|ㄕㄨˋ|ㄐㄩˋ","數數":"ㄕㄨˇ|ㄕㄨˋ","文化":"ㄨㄣˊ|ㄏㄨㄚˋ","文物":"ㄨㄣˊ|ㄨˋ","日記":"ㄖˋ|ㄐㄧˋ","昂首跳躍":"ㄤˊ|ㄕㄡˇ|ㄊㄧㄠˋ|ㄩㄝˋ","明信片":"ㄇㄧㄥˊ|ㄒㄧㄣˋ|ㄆㄧㄢˋ","明天":"ㄇㄧㄥˊ|ㄊㄧㄢ","是":"ㄕˋ","是（過去）":"ㄕˋ||ㄍㄨㄛˋ|ㄑㄩˋ|","時鐘":"ㄕˊ|ㄓㄨㄥ","暴風雨":"ㄅㄠˋ|ㄈㄥ|ㄩˇ","書桌":"ㄕㄨ|ㄓㄨㄛ","有條紋的":"ㄧㄡˇ|ㄊㄧㄠˊ|ㄨㄣˊ|ㄉㄜ˙","朋友":"ㄆㄥˊ|ㄧㄡˇ","東西":"ㄉㄨㄥ|ㄒㄧ˙","松鼠":"ㄙㄨㄥ|ㄕㄨˇ","柱子":"ㄓㄨˋ|ㄗ˙","校對":"ㄒㄧㄠˋ|ㄉㄨㄟˋ","梯子":"ㄊㄧ|ㄗ˙","棒球":"ㄅㄤˋ|ㄑㄧㄡˊ","椅子":"ㄧˇ|ㄗ˙","植物":"ㄓˊ|ㄨˋ","樂隊":"ㄩㄝˋ|ㄉㄨㄟˋ","標誌":"ㄅㄧㄠ|ㄓˋ","樹":"ㄕㄨˋ","樹林":"ㄕㄨˋ|ㄌㄧㄣˊ","機器人":"ㄐㄧ|ㄑㄧˋ|ㄖㄣˊ","橡實":"ㄒㄧㄤˋ|ㄕˊ","正方形":"ㄓㄥˋ|ㄈㄤ|ㄒㄧㄥˊ","正確的／訂正":"ㄓㄥˋ|ㄑㄩㄝˋ|ㄉㄜ˙||ㄉㄧㄥˋ|ㄓㄥˋ","歷史":"ㄌㄧˋ|ㄕˇ","歷史學家":"ㄌㄧˋ|ㄕˇ|ㄒㄩㄝˊ|ㄐㄧㄚ","比較（找相同）":"ㄅㄧˇ|ㄐㄧㄠˋ||ㄓㄠˇ|ㄒㄧㄤ|ㄊㄨㄥˊ|","毛毛蟲":"ㄇㄠˊ|ㄇㄠˊ|ㄔㄨㄥˊ","氣球":"ㄑㄧˋ|ㄑㄧㄡˊ","水":"ㄕㄨㄟˇ","池塘":"ㄔˊ|ㄊㄤˊ","沙拉":"ㄕㄚ|ㄌㄚ","海洋":"ㄏㄞˇ|ㄧㄤˊ","消防演習":"ㄒㄧㄠ|ㄈㄤˊ|ㄧㄢˇ|ㄒㄧˊ","清理／清理了":"ㄑㄧㄥ|ㄌㄧˇ||ㄑㄧㄥ|ㄌㄧˇ|ㄌㄜ˙","港口":"ㄍㄤˇ|ㄎㄡˇ","游泳":"ㄧㄡˊ|ㄩㄥˇ","湖":"ㄏㄨˊ","滑動":"ㄏㄨㄚˊ|ㄉㄨㄥˋ","滴落":"ㄉㄧ|ㄌㄨㄛˋ","滾動":"ㄍㄨㄣˇ|ㄉㄨㄥˋ","漂浮":"ㄆㄧㄠ|ㄈㄨˊ","火星":"ㄏㄨㄛˇ|ㄒㄧㄥ","火箭":"ㄏㄨㄛˇ|ㄐㄧㄢˋ","火車":"ㄏㄨㄛˇ|ㄔㄜ","烏龜":"ㄨ|ㄍㄨㄟ","熊":"ㄒㄩㄥˊ","熊們":"ㄒㄩㄥˊ|ㄇㄣ˙","燈":"ㄉㄥ","爆米花":"ㄅㄠˋ|ㄇㄧˇ|ㄏㄨㄚ","爬行":"ㄆㄚˊ|ㄒㄧㄥˊ","爸爸":"ㄅㄚˋ|ㄅㄚ˙","牙醫":"ㄧㄚˊ|ㄧ","牛":"ㄋㄧㄡˊ","牽我的手":"ㄑㄧㄢ|ㄨㄛˇ|ㄉㄜ˙|ㄕㄡˇ","狐狸／狐狸們":"ㄏㄨˊ|ㄌㄧˊ||ㄏㄨˊ|ㄌㄧˊ|ㄇㄣ˙","狗":"ㄍㄡˇ","猴子":"ㄏㄡˊ|ㄗ˙","猴子們":"ㄏㄡˊ|ㄗ˙|ㄇㄣ˙","獅子":"ㄕ|ㄗ˙","獅子們":"ㄕ|ㄗ˙|ㄇㄣ˙","玉米":"ㄩˋ|ㄇㄧˇ","玩伴":"ㄨㄢˊ|ㄅㄢˋ","玩具":"ㄨㄢˊ|ㄐㄩˋ","玩這個遊戲":"ㄨㄢˊ|ㄓㄜˋ|ㄍㄜˋ|ㄧㄡˊ|ㄒㄧˋ","玩／玩了":"ㄨㄢˊ||ㄨㄢˊ|ㄌㄜ˙","玻璃杯／玻璃杯們":"ㄅㄛ|ㄌㄧˊ|ㄅㄟ||ㄅㄛ|ㄌㄧˊ|ㄅㄟ|ㄇㄣ˙","球":"ㄑㄧㄡˊ","球門／目標":"ㄑㄧㄡˊ|ㄇㄣˊ||ㄇㄨˋ|ㄅㄧㄠ","環顧四周":"ㄏㄨㄢˊ|ㄍㄨˋ|ㄙˋ|ㄓㄡ","生長／長大了":"ㄕㄥ|ㄓㄤˇ||ㄓㄤˇ|ㄉㄚˋ|ㄌㄜ˙","用力拉":"ㄩㄥˋ|ㄌㄧˋ|ㄌㄚ","田野":"ㄊㄧㄢˊ|ㄧㄝˇ","男人／男人們":"ㄋㄢˊ|ㄖㄣˊ||ㄋㄢˊ|ㄖㄣˊ|ㄇㄣ˙","男孩":"ㄋㄢˊ|ㄏㄞˊ","畫、油漆／畫了":"ㄏㄨㄚˋ||ㄧㄡˊ|ㄑㄧ||ㄏㄨㄚˋ|ㄌㄜ˙","畫底線":"ㄏㄨㄚˋ|ㄉㄧˇ|ㄒㄧㄢˋ","疑問句":"ㄧˊ|ㄨㄣˋ|ㄐㄩˋ","發光":"ㄈㄚ|ㄍㄨㄤ","盒子／盒子們":"ㄏㄜˊ|ㄗ˙||ㄏㄜˊ|ㄗ˙|ㄇㄣ˙","盡可能快":"ㄐㄧㄣˇ|ㄎㄜˇ|ㄋㄥˊ|ㄎㄨㄞˋ","監護人":"ㄐㄧㄢ|ㄏㄨˋ|ㄖㄣˊ","盤子／盤子們":"ㄆㄢˊ|ㄗ˙||ㄆㄢˊ|ㄗ˙|ㄇㄣ˙","相對位置":"ㄒㄧㄤ|ㄉㄨㄟˋ|ㄨㄟˋ|ㄓˋ","看／正在看":"ㄎㄢˋ||ㄓㄥˋ|ㄗㄞˋ|ㄎㄢˋ","看／看了":"ㄎㄢˋ||ㄎㄢˋ|ㄌㄜ˙","睡覺":"ㄕㄨㄟˋ|ㄐㄧㄠˋ","知更鳥":"ㄓ|ㄍㄥ|ㄋㄧㄠˇ","石頭":"ㄕˊ|ㄊㄡˊ","社區":"ㄕㄜˋ|ㄑㄩ","祈使句／命令句":"ㄑㄧˊ|ㄕˇ|ㄐㄩˋ||ㄇㄧㄥˋ|ㄌㄧㄥˋ|ㄐㄩˋ","祖先":"ㄗㄨˇ|ㄒㄧㄢ","移民":"ㄧˊ|ㄇㄧㄣˊ","稍後":"ㄕㄠ|ㄏㄡˋ","種子":"ㄓㄨㄥˇ|ㄗ˙","窗戶":"ㄔㄨㄤ|ㄏㄨˋ","符號／標誌":"ㄈㄨˊ|ㄏㄠˋ||ㄅㄧㄠ|ㄓˋ","第一手資料":"ㄉㄧˋ|ㄧ|ㄧˋ|ㄗ|ㄌㄧㄠˋ","第二手資料":"ㄉㄧˋ|ㄦˋ|ㄕㄡˇ|ㄗ|ㄌㄧㄠˋ","紅蘿蔔":"ㄏㄨㄥˊ|ㄌㄨㄛˊ|ㄅㄛˊ","紡／織":"ㄈㄤˇ||ㄓ","絕對位置":"ㄐㄩㄝˊ|ㄉㄨㄟˋ|ㄨㄟˋ|ㄓˋ","綿羊":"ㄇㄧㄢˊ|ㄧㄤˊ","繩子":"ㄕㄥˊ|ㄗ˙","羅盤玫瑰":"ㄌㄨㄛˊ|ㄆㄢˊ|ㄇㄟˊ|ㄍㄨㄟ","美式足球":"ㄇㄟˇ|ㄕˋ|ㄗㄨˊ|ㄑㄧㄡˊ","翅膀":"ㄔˋ|ㄅㄤˇ","老師":"ㄌㄠˇ|ㄕ","聽規則":"ㄊㄧㄥ|ㄍㄨㄟ|ㄗㄜˊ","自傳":"ㄗˋ|ㄔㄨㄢˊ","舞者":"ㄨˇ|ㄓㄜˇ","船":"ㄔㄨㄢˊ","花":"ㄏㄨㄚ","花園":"ㄏㄨㄚ|ㄩㄢˊ","花栗鼠":"ㄏㄨㄚ|ㄌㄧˋ|ㄕㄨˇ","英吋":"ㄧㄥ|ㄘㄨㄣˋ","草":"ㄘㄠˇ","落下":"ㄌㄨㄛˋ|ㄒㄧㄚˋ","落下／擺設":"ㄌㄨㄛˋ|ㄒㄧㄚˋ||ㄅㄞˇ|ㄕㄜˋ","葉子":"ㄧㄝˋ|ㄗ˙","藝術家":"ㄧˋ|ㄕㄨˋ|ㄐㄧㄚ","蛋":"ㄉㄢˋ","蜂蜜":"ㄈㄥ|ㄇㄧˋ","蜘蛛":"ㄓ|ㄓㄨ","蜘蛛網":"ㄓ|ㄓㄨ|ㄨㄤˇ","蜜蜂":"ㄇㄧˋ|ㄈㄥ","蜜蜂們":"ㄇㄧˋ|ㄈㄥ|ㄇㄣ˙","街道":"ㄐㄧㄝ|ㄉㄠˋ","製作":"ㄓˋ|ㄗㄨㄛˋ","複數":"ㄈㄨˋ|ㄕㄨˋ","誰":"ㄕㄨㄟˊ","護理師":"ㄏㄨˋ|ㄌㄧˇ|ㄕ","豆子":"ㄉㄡˋ|ㄗ˙","豬":"ㄓㄨ","貓":"ㄇㄠ","貓熊":"ㄇㄠ|ㄒㄩㄥˊ","負責任的":"ㄈㄨˋ|ㄗㄜˊ|ㄖㄣˋ|ㄉㄜ˙","走路／走了":"ㄗㄡˇ|ㄌㄨˋ||ㄗㄡˇ|ㄌㄜ˙","走開":"ㄗㄡˇ|ㄎㄞ","起飛":"ㄑㄧˇ|ㄈㄟ","超過一個":"ㄔㄠ|ㄍㄨㄛˋ|ㄧˊ|ㄍㄜˋ","跑／跑了":"ㄆㄠˇ||ㄆㄠˇ|ㄌㄜ˙","跟隨":"ㄍㄣ|ㄙㄨㄟˊ","跟隨／跟隨了":"ㄍㄣ|ㄙㄨㄟˊ||ㄍㄣ|ㄙㄨㄟˊ|ㄌㄜ˙","跳步":"ㄊㄧㄠˋ|ㄅㄨˋ","跳躍":"ㄊㄧㄠˋ|ㄩㄝˋ","跳躍／跳躍了":"ㄊㄧㄠˋ|ㄩㄝˋ||ㄊㄧㄠˋ|ㄩㄝˋ|ㄌㄜ˙","跳／跳（第三人稱）":"ㄊㄧㄠˋ||ㄊㄧㄠˋ||ㄉㄧˋ|ㄙㄢ|ㄖㄣˊ|ㄔㄥ|","躲藏":"ㄉㄨㄛˇ|ㄘㄤˊ","農場":"ㄋㄨㄥˊ|ㄔㄤˇ","農夫":"ㄋㄨㄥˊ|ㄈㄨ","這裡":"ㄓㄜˋ|ㄌㄧˇ","遊戲":"ㄧㄡˊ|ㄒㄧˋ","遊行":"ㄧㄡˊ|ㄒㄧㄥˊ","運球":"ㄩㄣˋ|ㄑㄧㄡˊ","遷移／移居":"ㄑㄧㄢ|ㄧˊ||ㄧˊ|ㄐㄩ","那裡":"ㄋㄚˋ|ㄌㄧˇ","醫師":"ㄧ|ㄕ","鈴":"ㄌㄧㄥˊ","長椅／長椅們":"ㄔㄤˊ|ㄧˇ||ㄔㄤˊ|ㄧˇ|ㄇㄣ˙","門":"ㄇㄣˊ","門廊":"ㄇㄣˊ|ㄌㄤˊ","開花":"ㄎㄞ|ㄏㄨㄚ","降落":"ㄐㄧㄤˋ|ㄌㄨㄛˋ","雙胞胎":"ㄕㄨㄤ|ㄅㄠ|ㄊㄞ","雨滴":"ㄩˇ|ㄉㄧ","電影":"ㄉㄧㄢˋ|ㄧㄥˇ","青蛙":"ㄑㄧㄥ|ㄨㄚ","音樂":"ㄧㄣ|ㄩㄝˋ","響鈴":"ㄒㄧㄤˇ|ㄌㄧㄥˊ","飛":"ㄈㄟ","飛機／噴射機":"ㄈㄟ|ㄐㄧ||ㄆㄣ|ㄕㄜˋ|ㄐㄧ","飛行員":"ㄈㄟ|ㄒㄧㄥˊ|ㄩㄢˊ","食物":"ㄕˊ|ㄨˋ","餵食":"ㄨㄟˋ|ㄕˊ","馬":"ㄇㄚˇ","馬戲團":"ㄇㄚˇ|ㄒㄧˋ|ㄊㄨㄢˊ","騎乘":"ㄑㄧˊ|ㄔㄥˊ","驚嘆號":"ㄐㄧㄥ|ㄊㄢˋ|ㄏㄠˋ","鬍鬚":"ㄏㄨˊ|ㄒㄩ","魚":"ㄩˊ","鳥":"ㄋㄧㄠˇ","鳴喇叭":"ㄇㄧㄥˊ|ㄌㄚˇ|ㄅㄚ","鴨子":"ㄧㄚ|ㄗ˙","麵包":"ㄇㄧㄢˋ|ㄅㄠ","麵包師":"ㄇㄧㄢˋ|ㄅㄠ|ㄕ","點心":"ㄉㄧㄢˇ|ㄒㄧㄣ","鼓":"ㄍㄨˇ"};
 
 /* ---------- Engine ---------- */
 var app = document.getElementById('app');
@@ -803,6 +938,11 @@ function stem(item) {
   var wrap = el('div');
   var ask = item.ask || (item.kind === 'mc' && item.q.indexOf('___') < 0 ? 'Which word matches this meaning?' : '');
   if (ask) wrap.appendChild(el('div', 'ask', ask));
+  if (item.passage) {
+    var ps = el('div', 'passage', item.passage);
+    wrap.appendChild(ps);
+    wrap.appendChild(speakButton('Read the text to me', function () { return [[item.passage, 'en-US']]; }));
+  }
   if (item.listen) {
     // No English and no Chinese until she asks: the test is hearing it.
     var play = el('button', 'secondary', '🔊 Play the word');
