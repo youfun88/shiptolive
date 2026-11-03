@@ -20,7 +20,12 @@
   .sub { color: var(--muted); font-size: 16px; margin: 0 0 20px; }
   .bar { height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; margin-bottom: 6px; }
   .bar i { display: block; height: 100%; background: var(--accent); }
-  .count { color: var(--muted); font-size: 15px; margin-bottom: 16px; }
+  .count { color: var(--muted); font-size: 15px; margin-bottom: 8px; }
+  .jump { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .jump button { min-width: 34px; height: 34px; padding: 0 6px; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 8px; font: inherit; font-size: 14px; cursor: pointer; }
+  .jump button.ok { background: var(--good-bg); border-color: var(--good); }
+  .jump button.bad { background: var(--bad-bg); border-color: var(--bad); }
+  .jump button.cur { outline: 2px solid var(--accent); outline-offset: 1px; font-weight: 700; }
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
   .tag { display: inline-block; font-size: 13px; color: var(--accent); background: #e8f0fa; border-radius: 999px; padding: 2px 10px; margin-bottom: 10px; }
   .q { font-size: 21px; font-weight: 600; margin: 0 0 16px; white-space: pre-line; }
@@ -200,7 +205,7 @@ function push() {
 }
 function savePlace() {
   if (!unit || !fullRun) return;
-  saved.units[unit.title] = { ids: quiz.map(function (q) { return unit.qs.indexOf(q); }), picks: picks.map(function (x) { return x === undefined ? null : x; }) };
+  saved.units[unit.title] = { ids: quiz.map(function (q) { return unit.qs.indexOf(q); }), picks: picks.map(function (x) { return x === undefined ? null : x; }), at: at };
   saved.t = Date.now();
   writeLocal(); push();
 }
@@ -243,10 +248,12 @@ function clean(v) {
   return String(v || '').replace(/[０-９]/g, function (d) { return String.fromCharCode(d.charCodeAt(0) - 65248); }).replace(/[,，\s]/g, '');
 }
 function isRight(item, pick) {
+  if (pick === undefined || pick === null) return false;
   if (item.mc) return pick === item.answer;
   return item.fields.every(function (f, i) { return clean(pick[i]) === String(f.ans); });
 }
 function answerText(item, pick) {
+  if (arguments.length > 1 && (pick === undefined || pick === null)) return '（沒有作答）';
   if (item.mc) return item.mc[pick];
   return item.fields.map(function (f, i) { return (pick ? clean(pick[i]) || '（空白）' : f.ans) + (f.after ? ' ' + f.after : ''); }).join('　');
 }
@@ -292,8 +299,10 @@ function resume(u) {
   quiz = pl.ids.map(function (i) { return u.qs[i]; });
   picks = pl.picks.map(function (x) { return x === null ? undefined : x; });
   orders = [];
+  // Carry on at the first unanswered question from where she was, then from the start.
+  var from = typeof pl.at === 'number' ? pl.at : 0, n = quiz.length;
   at = 0;
-  while (at < quiz.length - 1 && picks[at] !== undefined) at++;
+  for (var k = 0; k < n; k++) { var i = (from + k) % n; if (picks[i] === undefined) { at = i; break; } }
   show();
 }
 function start(list) {
@@ -321,6 +330,18 @@ function show() {
   bar.appendChild(fill);
   app.appendChild(bar);
   app.appendChild(el('div', 'count', '第 ' + (at + 1) + ' 題，共 ' + quiz.length + ' 題'));
+  // Tap a number to go straight to that question. Green and red are answered ones.
+  var jump = el('div', 'jump');
+  jump.setAttribute('aria-label', '跳到第幾題');
+  quiz.forEach(function (q, i) {
+    var j = el('button', '', String(i + 1));
+    j.type = 'button';
+    if (picks[i] !== undefined) j.className = isRight(q, picks[i]) ? 'ok' : 'bad';
+    if (i === at) { j.className += ' cur'; j.setAttribute('aria-current', 'step'); }
+    j.onclick = function () { at = i; savePlace(); show(); };
+    jump.appendChild(j);
+  });
+  app.appendChild(jump);
 
   var card = el('div', 'card');
   card.appendChild(el('p', 'q', item.q));
@@ -397,9 +418,11 @@ function reveal(item, card) {
   f.appendChild(el('div', 'how', item.how));
   card.appendChild(f);
   var last = at === quiz.length - 1;
-  next = el('button', 'primary', last ? '看成績' : '下一題');
+  var gap = picks.length < quiz.length ? -1 : -1;
+  for (var g = 0; g < quiz.length; g++) if (picks[g] === undefined) { gap = g; break; }
+  next = el('button', 'primary', last ? (gap >= 0 ? '還有題目沒做 →' : '看成績') : '下一題');
   next.type = 'button';
-  next.onclick = function () { at++; if (last) done(); else show(); };
+  next.onclick = function () { if (!last) { at++; show(); } else if (gap >= 0) { at = gap; show(); } else done(); };
   card.appendChild(next);
   next.focus();
 }

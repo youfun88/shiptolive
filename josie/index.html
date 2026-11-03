@@ -20,7 +20,12 @@
   .sub { color: var(--muted); font-size: 16px; margin: 0 0 20px; }
   .bar { height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; margin-bottom: 6px; }
   .bar i { display: block; height: 100%; background: var(--accent); transition: width .2s; }
-  .count { color: var(--muted); font-size: 15px; margin-bottom: 16px; }
+  .count { color: var(--muted); font-size: 15px; margin-bottom: 8px; }
+  .jump { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .jump button { min-width: 34px; height: 34px; padding: 0 6px; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 8px; font: inherit; font-size: 14px; cursor: pointer; }
+  .jump button.ok { background: var(--good-bg); border-color: var(--good); }
+  .jump button.bad { background: var(--bad-bg); border-color: var(--bad); }
+  .jump button.cur { outline: 2px solid var(--accent); outline-offset: 1px; font-weight: 700; }
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
   .q { font-size: 21px; font-weight: 600; margin: 0 0 18px; }
   .q.big { font-size: 30px; line-height: 1.3; }
@@ -811,7 +816,7 @@ function answered(pl) { return pl.picks.filter(function (x) { return x !== undef
 function savePlace() {
   if (!cur || !cur.key || !fullRun || typeof cur.items === 'function') return;
   var list = cur.items;
-  setPlace(cur.key, { ids: quiz.map(function (q) { return list.indexOf(q); }), picks: picks, orders: orders });
+  setPlace(cur.key, { ids: quiz.map(function (q) { return list.indexOf(q); }), picks: picks, orders: orders, at: at });
 }
 
 /* ---------- Menus ---------- */
@@ -914,8 +919,10 @@ function begin(ctx) {
     quiz = pl.ids.map(function (i) { return ctx.items[i]; });
     picks = pl.picks.map(function (x) { return x === null ? undefined : x; });
     orders = (pl.orders || []).map(function (x) { return x === null ? undefined : x; });
+    // Carry on at the first unanswered question from where she was, then from the start.
+    var from = typeof pl.at === 'number' ? pl.at : 0, n = quiz.length;
     at = 0;
-    while (at < quiz.length - 1 && picks[at] !== undefined) at++;
+    for (var k = 0; k < n; k++) { var i = (from + k) % n; if (picks[i] === undefined) { at = i; break; } }
     show();
     return;
   }
@@ -1108,6 +1115,18 @@ function show() {
   bar.appendChild(fillBar);
   app.appendChild(bar);
   app.appendChild(el('div', 'count', 'Question ' + (at + 1) + ' of ' + quiz.length));
+  // Tap a number to go straight to that question. Green and red are answered ones.
+  var jump = el('div', 'jump');
+  jump.setAttribute('aria-label', 'Jump to a question');
+  quiz.forEach(function (q, i) {
+    var j = el('button', '', String(i + 1));
+    j.type = 'button';
+    if (picks[i] !== undefined) j.className = grade(q, picks[i]).ok ? 'ok' : 'bad';
+    if (i === at) { j.className += ' cur'; j.setAttribute('aria-current', 'step'); }
+    j.onclick = function () { at = i; savePlace(); show(); };
+    jump.appendChild(j);
+  });
+  app.appendChild(jump);
 
   var card = el('div', 'card');
   card.appendChild(stem(item));
@@ -1163,9 +1182,11 @@ function reveal(item, resp, a, card) {
   }
   card.appendChild(f);
   var last = at === quiz.length - 1;
-  next = el('button', 'primary', last ? 'See my score' : 'Next question');
+  var gap = picks.length < quiz.length ? -1 : -1;
+  for (var g = 0; g < quiz.length; g++) if (picks[g] === undefined) { gap = g; break; }
+  next = el('button', 'primary', last ? (gap >= 0 ? 'Some questions are not done →' : 'See my score') : 'Next question');
   next.type = 'button';
-  next.onclick = function () { at++; if (last) done(); else show(); };
+  next.onclick = function () { if (!last) { at++; show(); } else if (gap >= 0) { at = gap; show(); } else done(); };
   card.appendChild(next);
 }
 
@@ -1173,7 +1194,7 @@ function done() {
   hush();
   var missed = [];
   quiz.forEach(function (item, i) {
-    if (!grade(item, picks[i]).ok) missed.push({ item: item, picked: picks[i] });
+    if (picks[i] === undefined || !grade(item, picks[i]).ok) missed.push({ item: item, picked: picks[i] });
   });
   var total = quiz.length, right = total - missed.length;
   if (cur.key && fullRun) { saveBest(cur.key, right, total); setPlace(cur.key, null); }
@@ -1190,7 +1211,7 @@ function done() {
     missed.forEach(function (m) {
       var li = el('li');
       li.appendChild(put(el('b'), '', promptText(m.item)));
-      var said = Array.isArray(m.picked) ? m.picked.join(', ') : (m.item.kind === 'mc' ? cap(m.picked) : m.picked);
+      var said = m.picked === undefined ? '(not answered)' : Array.isArray(m.picked) ? m.picked.join(', ') : (m.item.kind === 'mc' ? cap(m.picked) : m.picked);
       li.appendChild(put(el('span', 'was'), '✗ You ' + (m.item.kind === 'type' || m.item.kind === 'write' ? 'wrote: ' : 'picked: '), said));
       li.appendChild(put(el('span', 'fix'), m.item.kind === 'write' ? '✓ Example: ' : '✓ Correct answer: ', answerText(m.item)));
       if (m.item.zh && !m.item.spell) li.appendChild(put(el('span', 'zh'), '', m.item.zh));
