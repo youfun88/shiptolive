@@ -143,6 +143,15 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 <p>Why: the page checklist flags /tools/topic-finder/ with "No question-style H2". Search Console shows no impressions for the page in the latest 28-day report, so there is no baseline to measure against. Steps 2 to 4 only appear on screen after someone runs the tool. /tools/ is flagged too, but its H2s are tool names, so they aren't reworded here. The checklist's other flag on this page, no FAQPage data, would add content and isn't part of this item.</p>
 <div class="links"><a href="/tools/topic-finder/">Live version</a></div>
 </div>
+<div class="item" data-item="[Yufan] List the free tools and video guides in llms.txt">
+<h3>4. [Yufan] List the free tools and video guides in llms.txt</h3>
+<p>Adds a "Free tools and guides" section to <code>llms.txt</code>, between Projects and Skills. It lists five live pages, using wording from their own descriptions. No existing line changes, and no public page changes. Branch <code>seo/llms-free-tools</code>.</p>
+<ul>
+<li><code>llms.txt</code>, new section after Projects:<span class="ba was"><b>Before</b>No section. The file doesn't mention the GLP-1 calculator, the Topic Finder, /tools/ or the /ai-video/ pages.</span><span class="ba now"><b>After</b>## Free tools and guides: /tools/, GLP-1 protein calculator, Topic Finder (對標選題), How to Pick Video Topics, AI Video in 30 Days, Tadapop video research, each with its URL and one line on what it does. The calculator's line says "General information, not medical advice."</span></li>
+</ul>
+<p>Why: /glp1-protein-calculator/ is the page behind most non-brand Search Console queries (40 of 121 impressions in the 28 days to 2026-10-30, position 51.2), yet llms.txt, the file written for AI engines, doesn't name it. The page checklist only checks that llms.txt exists, so it doesn't flag this. The AI check has never run and the Copilot report has no data, so there is no number yet to show an effect.</p>
+<div class="links"><a href="/llms.txt">Live version</a></div>
+</div>
 </div>
 
 <script>
