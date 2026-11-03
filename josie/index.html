@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Vocabulary Quiz</title>
+<title>Practice Quizzes</title>
 <style>
   :root {
     --bg: #f6f7f4; --card: #ffffff; --ink: #1d2433; --muted: #5d6675; --line: #d6dae0;
@@ -23,18 +23,26 @@
   .count { color: var(--muted); font-size: 15px; margin-bottom: 16px; }
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
   .q { font-size: 21px; font-weight: 600; margin: 0 0 18px; }
+  .q.big { font-size: 30px; line-height: 1.3; }
+  .q u { text-decoration-thickness: 2px; text-underline-offset: 4px; }
   .blank { display: inline-block; min-width: 4.5em; border-bottom: 3px solid var(--ink); }
   .choices { display: grid; gap: 10px; }
+  .choices.inline { grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
+  .choices.mark { grid-template-columns: repeat(3, 1fr); }
   button { font: inherit; cursor: pointer; }
   .choice {
     display: flex; gap: 12px; align-items: center; width: 100%; min-height: 56px; padding: 10px 14px; text-align: left;
     color: var(--ink); background: var(--card); border: 2px solid var(--line); border-radius: 10px;
   }
+  .choices.inline .choice { justify-content: center; text-align: center; }
+  .choices.mark .choice { justify-content: center; font-size: 30px; font-weight: 700; }
   .choice:hover:not(:disabled) { border-color: var(--accent); }
   .choice:disabled { cursor: default; color: var(--ink); }
+  .choice[aria-pressed="true"] { border-color: var(--accent); background: #eaf1fa; }
   .choice.test b { display: block; }
   .meta { display: block; color: var(--muted); font-size: 15px; }
   .ask { color: var(--muted); font-size: 16px; margin-bottom: 6px; }
+  .hint { color: var(--muted); font-size: 18px; letter-spacing: 1px; margin: -8px 0 14px; word-break: break-all; }
   .speak {
     display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 6px 14px; margin-bottom: 14px;
     color: var(--accent); background: transparent; border: 2px solid var(--accent); border-radius: 999px; font-size: 16px; font-weight: 600;
@@ -48,16 +56,30 @@
   .letter { flex: none; font-weight: 700; color: var(--muted); }
   .choice.right { background: var(--good-bg); border-color: var(--good); }
   .choice.wrong { background: var(--bad-bg); border-color: var(--bad); }
+  .choice.miss { border: 2px dashed var(--good); }
+  .typed { display: grid; gap: 10px; }
+  .field {
+    width: 100%; font: inherit; font-size: 20px; padding: 12px 14px; color: var(--ink); background: #fff;
+    border: 2px solid var(--line); border-radius: 10px; resize: vertical;
+  }
+  .field.right { background: var(--good-bg); border-color: var(--good); }
+  .field.wrong { background: var(--bad-bg); border-color: var(--bad); }
   .feedback { margin-top: 16px; padding: 12px 14px; border-radius: 10px; }
   .feedback.right { background: var(--good-bg); color: var(--good); }
   .feedback.wrong { background: var(--bad-bg); color: var(--bad); }
   .feedback strong { display: block; }
   .feedback .def { color: var(--ink); margin-top: 4px; }
   .feedback .zh { color: var(--muted); margin-top: 2px; }
+  .feedback .you { color: var(--ink); margin-top: 4px; }
+  .feedback ul { list-style: none; margin: 6px 0 0; padding: 0; color: var(--ink); }
+  .feedback li.ok::before { content: "✓ "; color: var(--good); font-weight: 700; }
+  .feedback li.no::before { content: "✗ "; color: var(--bad); font-weight: 700; }
   .primary {
     width: 100%; min-height: 54px; margin-top: 16px; color: #fff; background: var(--accent);
     border: 0; border-radius: 10px; font-weight: 600;
   }
+  .typed .primary, .chips + .primary { margin-top: 4px; }
+  .primary:disabled { opacity: .5; cursor: default; }
   .secondary {
     width: 100%; min-height: 54px; margin-top: 10px; color: var(--accent); background: transparent;
     border: 2px solid var(--accent); border-radius: 10px; font-weight: 600;
@@ -65,6 +87,8 @@
   .score { font-size: 52px; font-weight: 700; line-height: 1.1; margin: 0; }
   .msg { margin: 6px 0 18px; }
   h2 { font-size: 18px; margin: 18px 0 8px; }
+  h2.group { font-size: 15px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 26px 0 10px; }
+  h2.group:first-child { margin-top: 0; }
   .missed { list-style: none; margin: 0; padding: 0; }
   .missed li { padding: 10px 0; border-top: 1px solid var(--line); }
   .missed b { display: block; }
@@ -78,11 +102,12 @@
 </head>
 <body>
 <main>
-  <h1 id="title">Social Studies Vocabulary Quiz</h1>
-  <p class="sub" id="sub">Pick a test.</p>
+  <h1 id="title">Practice Quizzes</h1>
+  <p class="sub" id="sub">Pick a quiz.</p>
   <div id="app" aria-live="polite"></div>
 </main>
 <script>
+/* ---------- Social Studies (multiple choice; the stem is the worksheet's own definition) ---------- */
 // Chapter 2 stems are the worksheet's own definitions, with the word blanked out.
 var CHAPTER2 = [
   { w: 'relative location', q: '___ tells where something is by comparing it to something else.', zh: '相對位置', near: ['absolute location', 'legend', 'compass rose'] },
@@ -131,14 +156,308 @@ var REVIEW27 = [
   { w: 'family tree', q: 'A drawing or diagram that shows how family members are related.', zh: '家譜', near: ['extended family', 'generation', 'ancestor'] }
 ];
 
-var TESTS = [
-  { title: 'Chapter 2: People, Places, and Nature', sub: 'Lessons 1–3', words: CHAPTER2 },
-  { title: 'Sources, Families, and the Past', sub: 'Vocabulary Review', words: REVIEW27 }
+/* ---------- Question builders for the English worksheets ---------- */
+// Item kinds: mc (word + 3 near words), pick (choose one option), multi (choose all that apply),
+// type (type the answer), write (write your own; we check the objective rules only).
+CHAPTER2.forEach(function (x) { x.kind = 'mc'; });
+REVIEW27.forEach(function (x) { x.kind = 'mc'; });
+
+// Spelling: "english | 中文 | other accepted answers (;)". The Chinese is the prompt.
+function V(text) {
+  return text.trim().split('\n').map(function (line) {
+    var p = line.split('|').map(function (s) { return s.trim(); });
+    return {
+      kind: 'type', spell: true, q: p[1], zh: p[1], a: p[0],
+      alts: p[2] ? p[2].split(';').map(function (s) { return s.trim(); }) : [],
+      ask: p[0].indexOf('/') >= 0 ? 'Write the English words. Put a slash (/) between them.' : 'Write the English word.'
+    };
+  });
+}
+// Type a sentence or word. Strict = capitals and punctuation must match exactly.
+function T(q, a, o) { return extend({ kind: 'type', q: q, a: a, alts: [] }, o); }
+function S(q, a, o) { return extend({ kind: 'type', q: q, a: a, alts: [], strict: true }, o); }
+function P(q, options, a, o) { return extend({ kind: 'pick', q: q, options: options, a: a, alt: [] }, o); }
+function M(q, options, a, o) { return extend({ kind: 'multi', q: q, options: options, a: a }, o); }
+function W(q, o) { return extend({ kind: 'write', q: q, min: 3 }, o); }
+function extend(x, o) { if (o) for (var k in o) x[k] = o[k]; return x; }
+function inherit(items, o) { items.forEach(function (x) { for (var k in o) if (x[k] === undefined) x[k] = o[k]; }); return items; }
+
+var NA = ['Naming part (N)', 'Action part (A)'];
+var YN = ['YES', 'NO'];
+var TQ = ['Telling sentence', 'Question'];
+var MARK = ['.', '?', '!'];
+var TQ_TIP = 'A telling sentence ends with a period (.). A question ends with a question mark (?).';
+
+function naList(rows) {
+  return rows.map(function (r) { return P(r[0], NA, r[1] === 'N' ? NA[0] : NA[1]); });
+}
+function ynList(rows) {
+  return rows.map(function (r) { return P(r[0], YN, r[1]); });
+}
+function tqList(rows) {
+  return rows.map(function (r) { return P(r[0], TQ, r[1] === 'T' ? TQ[0] : TQ[1], { tip: TQ_TIP }); });
+}
+function markList(rows) {
+  return rows.map(function (r) { return P(r[0] + ' ___', MARK, r[1], { alt: r[2] ? [r[2]] : [] }); });
+}
+function fixList(rows) {
+  return rows.map(function (r) { return S(r[0], r[1], { alts: r[2] ? [r[2]] : [] }); });
+}
+
+/* ---------- Test 1: Unit 1 Cumulative Review ---------- */
+var U1_VOCAB = [
+  { title: 'Words: Grammar & sentence types', items: V(
+    'sentence|句子\nnaming part|主語／命名部分\naction part|動作部分\ntelling sentence|敘述句\nquestion|疑問句\n' +
+    'command|祈使句／命令句\nexclamation|感嘆句\ncapital letter|大寫字母\nperiod|句號\nquestion mark|問號\n' +
+    'exclamation point|驚嘆號\nend mark|句末標點\nunderline|畫底線\ncomplete|完整的\nproofread|校對\n' +
+    'correct|正確的／訂正\nstrong feeling|強烈情緒') },
+  { title: 'Words: People & animals', items: V(
+    'children|孩子們\nfriend|朋友\nteacher|老師\nfarmer|農夫\ngirl|女孩\nboy|男孩\ntwins|雙胞胎\nkittens|小貓們\n' +
+    'puppy|小狗\nturtle|烏龜\nrobin|知更鳥\nfrog|青蛙\nlions|獅子們\nbears|熊們\nroosters|公雞們\nbees|蜜蜂們\n' +
+    'spider|蜘蛛\nsquirrel|松鼠\nwhiskers|鬍鬚\nmonkeys|猴子們\ncaterpillar|毛毛蟲') },
+  { title: 'Words: Action words', items: V(
+    'buzz|嗡嗡叫\nspin|紡／織\ncrawl|爬行\nleap|跳躍\nskip|跳步\ndrip|滴落\ngrowl|低吼\nhowl|嚎叫\ncrow|啼叫\nmoo|哞哞叫\n' +
+    'chew|咀嚼\nbloom|開花\nchirp|啁啾叫\nshine|發光\nnap|小睡\nhop|單跳／跳躍\nhide|躲藏\ncount|數數\n' +
+    'look around|環顧四周\npull|拉\nfollow|跟隨\ndribble|運球\ntoss|拋\npick up|撿起\ntake off|起飛\nland|降落\n' +
+    'rub|摩擦\nshake hands|握手\ntaste|嚐起來\nset|落下／擺設\nroar|吼叫\nbuzz loudly|大聲嗡嗡叫') },
+  { title: 'Words: Things, places & nature', items: V(
+    'balloon|氣球\nparade|遊行\nband|樂隊\nmusic|音樂\nmovie|電影\ndrum|鼓\nbaseball|棒球\nsnacks|點心\npopcorn|爆米花\n' +
+    'storm|暴風雨\nweather|天氣\nrainbow|彩虹\nraindrops|雨滴\nwoods|樹林\nleaves|葉子\nbee|蜜蜂\nhoney|蜂蜜\n' +
+    'wings|翅膀\nweb|蜘蛛網\nacorns|橡實\nseeds|種子\ngrass|草\nhay|乾草\nstone|石頭\nsquare|正方形\ngoal|球門／目標\n' +
+    'rope|繩子\nfire drill|消防演習\nrocket|火箭\nMars|火星\nladder|梯子\nstriped|有條紋的') },
+  { title: 'Words: Useful phrases', items: V(
+    'be quiet|保持安靜\ndo not let go|不要放手\ntake this rope|拿這條繩子\npull hard|用力拉\nline up|排隊\n' +
+    'walk quickly|快走\nlisten to the rules|聽規則\nplay this game|玩這個遊戲\ngo away|走開\nhelp me|幫助我\n' +
+    'I am afraid|我很害怕\nI love that song|我喜歡那首歌\ngreat job|做得好\ngood news|好消息\nwhat time|幾點\n' +
+    'what color|什麼顏色\nwhat is the weather|天氣如何\nas fast as you can|盡可能快\nhold my hand|牽我的手') }
 ];
 
+var U1_GRAMMAR = [
+  { title: 'A. Naming part or action part', items: inherit(naList([
+    ['The [[puppy]] runs in the yard.', 'N'], ['The birds [[fly over the trees]].', 'A'], ['[[My best friend]] likes music.', 'N'],
+    ['The sun [[was setting]].', 'A'], ['A big frog [[jumps into the pond]].', 'A'], ['[[Two young girls]] play soccer.', 'N'],
+    ['The teacher [[opened the door]].', 'A'], ['[[The little kitten]] sleeps.', 'N'], ['The boys [[laughed loudly]].', 'A'],
+    ['[[Raindrops]] fall on the roof.', 'N'], ['A squirrel [[climbed the tree]].', 'A'], ['[[Those monkeys]] shake hands.', 'N']
+  ]), { ask: 'Are the underlined words the naming part or the action part?',
+        tip: 'The naming part tells who or what the sentence is about. The action part tells what happens.' }) },
+  { title: 'B. Is it a complete sentence?', items: inherit(ynList([
+    ['Bright stars.', 'NO'], ['The airplane landed.', 'YES'], ['Runs to school.', 'NO'], ['A blue balloon floats.', 'YES'],
+    ['The yellow flowers.', 'NO'], ['Children play in the park.', 'YES'], ['Under the big tree.', 'NO'], ['The fish swims fast.', 'YES'],
+    ['Made a loud noise.', 'NO'], ['Our teacher reads a book.', 'YES'], ['Three noisy roosters.', 'NO'], ['My sister and I walked home.', 'YES']
+  ]), { ask: 'YES if it is a complete sentence. NO if it is not.',
+        tip: 'A complete sentence has a naming part (who or what) and an action part (what happens).' }) },
+  { title: 'C. Telling sentence or question?', items: inheritAsk(tqList([
+    ['Do bees make honey', 'Q'], ['The kitten has whiskers', 'T'], ['What time is it', 'Q'], ['We like the parade', 'T'],
+    ['Is the squirrel hungry', 'Q'], ['The sky is blue', 'T'], ['Where did the plane land', 'Q'], ['Children ride bikes', 'T'],
+    ['Will you come with us', 'Q'], ['The storm is coming', 'T'], ['How many wings does a bee have', 'Q'], ['The monkey likes bananas', 'T']
+  ]), 'Is it a telling sentence or a question?') },
+  { title: 'D. Choose the end mark', items: inherit(markList([
+    ['Where is my backpack', '?'], ['Please close the window', '.', '!'], ['What an amazing rainbow', '!'], ['The puppy is asleep', '.'],
+    ['Run as fast as you can', '!', '.'], ['Help me', '!', '.'], ['How big is the rocket', '?'], ['This is wonderful news', '!'],
+    ['Our friends went to a movie', '.'], ['Are the bees near the flowers', '?'], ['Take this rope', '.', '!'], ['I am so excited', '!']
+  ]), { ask: 'Which end mark goes at the end?',
+        tip: 'Telling sentences and commands usually end with a period (.). Questions end with (?). Strong feelings end with (!).' }) },
+  { title: 'E. Fix capital letters and end marks', items: inherit(fixList([
+    ['where are the rockets built', 'Where are the rockets built?'], ['the cat naps on the chair', 'The cat naps on the chair.'],
+    ['do not let go', 'Do not let go.', 'Do not let go!'], ['what a beautiful picture', 'What a beautiful picture!'],
+    ['is the moon bright tonight', 'Is the moon bright tonight?'], ['the woods are dark', 'The woods are dark.'],
+    ['follow your teacher', 'Follow your teacher.', 'Follow your teacher!'], ['the bees have wings', 'The bees have wings.'],
+    ['help me', 'Help me!', 'Help me.'], ['what color are the leaves', 'What color are the leaves?'],
+    ['please walk quickly', 'Please walk quickly.', 'Please walk quickly!'], ['we watched the plane take off', 'We watched the plane take off.'],
+    ['i love this song', 'I love this song.', 'I love this song!'], ['can we go to the parade', 'Can we go to the parade?'],
+    ['a band plays music', 'A band plays music.']
+  ]), { ask: 'Rewrite the sentence with a capital letter and the correct end mark.' }) },
+  { title: 'F. Commands', items: inherit(fixList([
+    ['listen to the rules', 'Listen to the rules.'], ['close your eyes', 'Close your eyes.'], ['be quiet', 'Be quiet.'],
+    ['count to ten', 'Count to ten.'], ['pick up your stone', 'Pick up your stone.'], ['hop on one foot', 'Hop on one foot.'],
+    ['pull hard', 'Pull hard.'], ['look around', 'Look around.'], ['hold my hand', 'Hold my hand.'], ['dribble the ball', 'Dribble the ball.']
+  ]), { ask: 'Rewrite the command. Start with a capital letter and end with a period.' }) },
+  { title: 'G. Exclamations', items: inherit(fixList([
+    ['i am afraid', 'I am afraid!'], ['the girl is lost', 'The girl is lost!'], ['the wolf is after us', 'The wolf is after us!'],
+    ['what a neat picture', 'What a neat picture!'], ['a big storm is coming', 'A big storm is coming!'],
+    ['i am proud of you', 'I am proud of you!'], ['go away', 'Go away!'], ['this book is great', 'This book is great!']
+  ]), { ask: 'Rewrite it as an exclamation. Use a capital letter and an exclamation point.' }) },
+  { title: 'H. Complete the sentence', items: (function () {
+    var box = ' Word box: The kittens · The sun · Bees · The plane · shines · buzz · landed · sleep';
+    var a = [
+      S('___ in the garden.', 'Bees buzz in the garden.'), S('___ in the sky.', 'The sun shines in the sky.'),
+      S('___ on the runway.', 'The plane landed on the runway.'), S('___ in the basket.', 'The kittens sleep in the basket.')
+    ];
+    a.forEach(function (x) { x.ask = 'Use two words from the box to finish the sentence. Write the whole sentence.' + box; });
+    var b = [
+      P('The sun ___.', ['shines', 'buzz', 'landed', 'sleep'], 'shines'), P('Bees ___.', ['shines', 'buzz', 'landed', 'sleep'], 'buzz'),
+      P('The plane ___.', ['shines', 'buzz', 'landed', 'sleep'], 'landed'), P('The kittens ___.', ['shines', 'buzz', 'landed', 'sleep'], 'sleep')
+    ];
+    b.forEach(function (x) { x.ask = 'Which action word finishes the sentence?'; x.shuffle = true; });
+    return a.concat(b);
+  })() },
+  { title: 'I. Write your own sentences', items: [
+    W('Write a telling sentence about bees.', { end: ['.'], sample: 'Bees buzz around the flowers.' }),
+    W('Write a question about a dog.', { end: ['?'], sample: 'Does the dog like to play?' }),
+    W('Write a command for a classmate.', { end: ['.', '!'], sample: 'Please line up.' }),
+    W('Write an exclamation about a storm.', { end: ['!'], sample: 'What a loud storm!' }),
+    W('Write a sentence beginning with “My friend and I”.', { end: ['.', '!', '?'], start: 'My friend and I', sample: 'My friend and I play soccer.' }),
+    W('Write a complete sentence about a monkey.', { end: ['.', '!', '?'], sample: 'The monkey eats a banana.' })
+  ] }
+];
+function inheritAsk(items, ask) { return inherit(items, { ask: ask }); }
+
+/* ---------- Test 2: Complete Review (Nouns + Sentences) ---------- */
+var C_VOCAB = [
+  { title: 'Words: People & family', items: V(
+    'teacher|老師\ndancer|舞者\nman / men|男人／男人們\nwoman / women|女人／女人們\nbaby|嬰兒\nchild / children|小孩／小孩們\nboy|男孩\ngirl|女孩\n' +
+    'mother / mom|媽媽|mother;mom\nfather / dad|爸爸|father;dad\nuncle|叔叔、舅舅\nfriend|朋友\nplaymate|玩伴\ndoctor|醫師\ndentist|牙醫\n' +
+    'nurse|護理師\nbaker|麵包師\nfarmer|農夫\npilot|飛行員\nauthor|作家\nartist|藝術家\nworker|工人\nclown|小丑\nfamily|家人\n' +
+    'classmate|同學\npeople|人們') },
+  { title: 'Words: Animals & nature', items: V(
+    'cow|牛\npig|豬\nsheep|綿羊\nhorse|馬\nlion|獅子\nbear|熊\nfox / foxes|狐狸／狐狸們\ncat|貓\ndog|狗\nfrog|青蛙\nfish|魚\nbird|鳥\n' +
+    'duck|鴨子\nmonkey|猴子\npanda|貓熊\nsquirrel|松鼠\nchipmunk|花栗鼠\nplant|植物\nflower|花\ntree|樹\ngrass|草\nseed|種子\n' +
+    'acorn|橡實\npond|池塘\nlake|湖\nfield|田野\nfarm|農場\ngarden|花園\njungle|叢林\nrock|岩石\nwater|水') },
+  { title: 'Words: Objects, places & foods', items: V(
+    'corn|玉米\nbean|豆子\ncarrot|紅蘿蔔\nfood|食物\nbread|麵包\negg|蛋\nsalad|沙拉\npizza|披薩\ndish / dishes|盤子／盤子們\n' +
+    'glass / glasses|玻璃杯／玻璃杯們\nbox / boxes|盒子／盒子們\nbus / buses|公車／公車們\nbench / benches|長椅／長椅們\n' +
+    'patch / patches|小塊土地／補丁\ninch / inches|英吋\nlunch / lunches|午餐\nporch / porches|門廊\nbrush / brushes|刷子／刷子們\n' +
+    'desk|書桌\nclock|時鐘\nlamp|燈\nchair|椅子\nbed|床\nstreet|街道\ntown|城鎮\ncircus|馬戲團\nzoo|動物園\npen|圍欄\nlog|圓木\n' +
+    'hoop|圈\npole|柱子\nball|球\nballoon|氣球\nbell|鈴\nhorn|喇叭\ntrain|火車\nboat|船\nplane / jet|飛機／噴射機|plane;jet\n' +
+    'rocket|火箭\nrobot|機器人\nfootball|美式足球\nsign|標誌\npostcard|明信片\nvideo|影片\ndoor|門\nwindow|窗戶\ntoy|玩具\ngame|遊戲') },
+  { title: 'Words: Action words 1', items: V(
+    'watch / watched|看／看了\nplay / played|玩／玩了\nclap / clapped|拍手／拍了手\nleap / leaped|跳躍／跳躍了\ngrow / grew|生長／長大了\n' +
+    'walk / walked|走路／走了\neat / ate|吃／吃了\npaint / painted|畫、油漆／畫了\nclean / cleaned|清理／清理了\nrun / ran|跑／跑了\n' +
+    'jump / jumps|跳／跳（第三人稱）\nsing / sings|唱／唱（第三人稱）\nswim / swims|游泳\nfly / flies|飛\nfloat / floats|漂浮\n' +
+    'roll / rolled|滾動\nring / rings|響鈴\ntoot / toots|鳴喇叭\nbark / barks|吠叫\nroar / roars|吼叫\njuggle|拋接雜耍\nprance|昂首跳躍\n' +
+    'hold / holds|握住、拿著\nclimb / climbed|攀爬／爬了\nfollow / followed|跟隨／跟隨了\nslide / slides|滑動') },
+  { title: 'Words: Action words 2', items: V(
+    'show / showed|展示／展示了\nwrite / writes|寫作\nmake / makes|製作\nfix / fixes|修理\nvisit / visited|參觀\nstop / stopped|停下來\n' +
+    'feed / fed|餵食\nride / rode|騎乘\nfall / falls|落下\nshake / shakes|搖動\ntaste / tasted|品嚐／嚐起來\nsleep / sleeps|睡覺\n' +
+    'live / lives|居住\nlook / looking|看／正在看') },
+  { title: 'Words: Grammar words', items: V(
+    'noun|名詞\nsingular|單數\nplural|複數\nperson|人\nanimal|動物\nplace|地方\nthing|東西\nsentence|句子\nnaming part|主語（誰／什麼）\n' +
+    'action part|動作部分（做什麼）\ntelling sentence|敘述句\nquestion|疑問句\ncapital letter|大寫字母\nperiod|句號\nquestion mark|問號\n' +
+    'complete|完整的\nmore than one|超過一個') },
+  { title: 'Words: Little words & numbers', items: V(
+    'one|一個\nmany|很多\nsome|一些\nall|全部\ntwo|兩個\nthree|三個\nfour|四個\nfive|五個\nten|十個\nwhere|哪裡\nwhat|什麼\nwho|誰\nhow|如何\n' +
+    'does / do|助動詞\nis / are|是\nwas / were|是（過去）\nunder|在下方\nover|在上方\nthere|那裡\nhere|這裡\nlater|稍後\n' +
+    'tomorrow|明天\ntoday|今天') }
+];
+
+function pickList(rows, ask) {
+  return rows.map(function (r) { return P(r[0], r[1], r[2], { ask: ask, alt: r[3] ? [r[3]] : [] }); });
+}
+var C_GRAMMAR = [
+  { title: 'A. Nouns', items: [].concat(
+    inherit([T('The teacher watched.', 'teacher'), T('A man played music.', 'man'), T('The baby clapped.', 'baby')],
+      { ask: 'Write the noun that names a person in the sentence.' }),
+    [M('Circle every noun that names a PERSON.', ['uncle', 'mother', 'under', 'friend', 'looking', 'boy', 'drive'], ['uncle', 'mother', 'friend', 'boy']),
+     M('Circle every noun that names a PERSON.', ['baker', 'playmate', 'where', 'father', 'dentist', 'girl', 'nurse'], ['baker', 'playmate', 'father', 'dentist', 'girl', 'nurse'])],
+    inherit([T('We saw farmers and cows.', 'cows', { alts: ['cow'] }), T('We walked by a huge field.', 'field'), T('The corn grew tall.', 'corn')],
+      { ask: 'Write the noun that names an animal, place, or thing.' }),
+    inherit([P('go  ·  like  ·  pig', ['go', 'like', 'pig'], 'pig'), P('town  ·  eat  ·  small', ['town', 'eat', 'small'], 'town'),
+             P('send  ·  football  ·  over', ['send', 'football', 'over'], 'football'), P('bed  ·  keep  ·  hear', ['bed', 'keep', 'hear'], 'bed'),
+             P('see  ·  street  ·  live', ['see', 'street', 'live'], 'street'), P('three  ·  ate  ·  mom', ['three', 'ate', 'mom'], 'mom'),
+             P('egg  ·  brown  ·  was', ['egg', 'brown', 'was'], 'egg')],
+      { ask: 'Which one is the noun?', shuffle: true })
+  ) },
+  { title: 'B. Plural nouns: add -s', items: [].concat(
+    pickList([
+      ['Many ___ grow there.', ['plants', 'plant'], 'plants'], ['One garden has ___.', ['bean', 'beans'], 'beans'],
+      ['The other one has ___.', ['flowers', 'flower'], 'flowers'], ['Chris and Rob grow ___.', ['tulip', 'tulips'], 'tulips'],
+      ['Lisa grows ___.', ['carrots', 'carrot'], 'carrots'], ['Does your garden have ___?', ['weed', 'weeds'], 'weeds']
+    ], 'Which noun names more than one?'),
+    inherit([T('desk → ___', 'desks'), T('clock → ___', 'clocks'), T('lamp → ___', 'lamps'), T('chair → ___', 'chairs'),
+             T('cat → ___', 'cats'), T('pond → ___', 'ponds'), T('boy → ___', 'boys'), T('girl → ___', 'girls')],
+      { ask: 'Write the plural noun.' })
+  ), tip: 'For most nouns, add -s: cat → cats.' },
+  { title: 'C. Plural nouns: add -es', items: [].concat(
+    pickList([
+      ['The workers ate their ___.', ['lunch', 'lunches'], 'lunches'], ['They painted two ___.', ['benches', 'bench'], 'benches'],
+      ['They painted three ___.', ['porches', 'porch'], 'porches'], ['Then they cleaned all the ___.', ['brush', 'brushes'], 'brushes']
+    ], 'Which noun names more than one?'),
+    inherit([T('one fox → two ___', 'foxes'), T('one dish → five ___', 'dishes'), T('one patch → three ___', 'patches'),
+             T('one glass → four ___', 'glasses'), T('one inch → ten ___', 'inches')],
+      { ask: 'Write the plural noun.' })
+  ), tip: 'Nouns ending in -s, -x, -ch, -sh add -es: bus → buses, box → boxes, dish → dishes.' },
+  { title: 'D. Irregular nouns', items: pickList([
+    ['Today two ___ played tennis.', ['man', 'men'], 'men'], ['One ___ kept score.', ['man', 'men'], 'man'],
+    ['Four ___ played later.', ['woman', 'women'], 'women'], ['Some ___ will play tomorrow.', ['child', 'children'], 'children'],
+    ['My art teacher is a ___.', ['man', 'men'], 'man'], ['Many ___ like art class.', ['child', 'children'], 'children'],
+    ['Men and ___ are artists.', ['woman', 'women'], 'women']
+  ], 'Choose the correct noun.').map(function (x) { x.tip = 'man → men, woman → women, child → children.'; return x; }) },
+  { title: 'E. Make complete sentences', items: inherit([
+    S('A balloon  +  popped.', 'A balloon popped.'), S('The train  +  goes fast.', 'The train goes fast.'), S('The bell  +  rings.', 'The bell rings.'),
+    S('The ball  +  rolled.', 'The ball rolled.'), S('The plane  +  flies.', 'The plane flies.'), S('The robot  +  walked.', 'The robot walked.'),
+    S('The boat  +  floats.', 'The boat floats.'), S('The horns  +  toot.', 'The horns toot.'), S('The bells  +  ring.', 'The bells ring.')
+  ], { ask: 'Put the naming part and the action part together. Write the full sentence with a capital letter and a period.' }) },
+  { title: 'F. Naming part: who or what?', items: [
+    P('___ juggle.', ['Clowns', 'Dogs'], 'Clowns'), P('___ bark.', ['Dogs', 'Children'], 'Dogs'), P('___ roar.', ['Lions', 'A band'], 'Lions'),
+    P('___ prance.', ['Horses', 'A man'], 'Horses'), P('___ plays music.', ['A band', 'Lions'], 'A band'),
+    P('___ sells balloons.', ['A man', 'Horses'], 'A man'), P('___ holds the hoop.', ['The clown', 'A bear'], 'The clown', { alt: ['A bear'] }),
+    P('___ stood on a horse.', ['A girl', 'A band'], 'A girl'), P('___ sat on a ball.', ['A bear', 'A clown'], 'A clown', { alt: ['A bear'] })
+  ].map(function (x) { x.ask = 'Choose a naming part that makes a complete sentence.'; x.shuffle = true; return x; }) },
+  { title: 'G. Action part: what did they do?', items: [
+    P('Ken ___.', ['climbed a pole', 'makes bread'], 'climbed a pole', { alt: ['makes bread'] }), P('Anna ___.', ['walked on a log', 'roared'], 'walked on a log'),
+    P('A chipmunk ___.', ['watched', 'sells balloons'], 'watched'), P('The signs ___.', ['showed what to do', 'sang'], 'showed what to do'),
+    P('A doctor ___.', ['makes us well', 'flies a jet'], 'makes us well'), P('An author ___.', ['writes books', 'fixes teeth'], 'writes books'),
+    P('A pilot ___.', ['flies a jet', 'grows food'], 'flies a jet'), P('A farmer ___.', ['grows food', 'flies a jet'], 'grows food'),
+    P('A baker ___.', ['makes bread', 'fixes teeth'], 'makes bread'), P('A dentist ___.', ['fixes teeth', 'grows food'], 'fixes teeth')
+  ].map(function (x) { x.ask = 'Choose the action part that makes sense.'; x.shuffle = true; return x; }) },
+  { title: 'H. Is it a sentence?', items: inherit(ynList([
+    ['Sleeps on a log.', 'NO'], ['Fish swim in the water.', 'YES'], ['Three birds sing.', 'YES'], ['The green frog.', 'NO'],
+    ['Plants grow.', 'YES'], ['Floats away.', 'NO'], ['Deep water.', 'NO'], ['It falls down.', 'YES'],
+    ['Children swim here.', 'YES'], ['Little children and dogs.', 'NO'], ['Swims and runs.', 'NO'], ['All boats stay out.', 'YES']
+  ]), { ask: 'YES if the word group is a complete sentence. NO if it is not.',
+        tip: 'A complete sentence needs a naming part (who or what) and an action part (what happens).' }) },
+  { title: 'H2. Finish the sentence', items: [
+    W('The monkey.', { start: 'The monkey', end: ['.'], sample: 'The monkey eats a banana.' }),
+    W('Eats corn.', { after: 'eats corn', end: ['.'], sample: 'The pig eats corn.' }),
+    W('Rubs its head.', { after: 'rubs its head', end: ['.'], sample: 'The bear rubs its head.' }),
+    W('The monkeys.', { start: 'The monkeys', end: ['.'], sample: 'The monkeys climb the tree.' }),
+    W('A panda and its sister.', { start: 'A panda and its sister', end: ['.'], sample: 'A panda and its sister play.' }),
+    W('Tasted good.', { after: 'tasted good', end: ['.'], sample: 'The bread tasted good.' }),
+    W('The cute pandas.', { start: 'The cute pandas', end: ['.'], sample: 'The cute pandas eat bamboo.' })
+  ].map(function (x) { x.ask = 'Add a naming part or an action part to make a complete sentence. Many answers are right.'; return x; }) },
+  { title: 'I. Telling sentences', items: inherit(fixList([
+    ['the sheep are in a pen', 'The sheep are in a pen.'], ['Pigs roll in the mud', 'Pigs roll in the mud.'], ['cows eat grass', 'Cows eat grass.'],
+    ['It is hot', 'It is hot.'], ['the cat naps', 'The cat naps.'], ['we fed the chickens', 'We fed the chickens.'],
+    ['We rode the horses', 'We rode the horses.'], ['the farm is very busy', 'The farm is very busy.']
+  ]), { ask: 'Rewrite the telling sentence with a capital letter and a period.' }) },
+  { title: 'J. Questions', items: inherit(fixList([
+    ['will it eat seeds?', 'Will it eat seeds?'], ['is the squirrel red', 'Is the squirrel red?'], ['Where does it live', 'Where does it live?'],
+    ['Do you see the stars', 'Do you see the stars?'], ['is that a rocket', 'Is that a rocket?'], ['where is it going', 'Where is it going?'],
+    ['how big are rockets?', 'How big are rockets?'], ['Are all rockets the same size', 'Are all rockets the same size?'],
+    ['Can a rocket reach Mars.', 'Can a rocket reach Mars?'], ['where are rockets built', 'Where are rockets built?']
+  ]), { ask: 'Rewrite the question with a capital letter and a question mark.' }) },
+  { title: 'K. Telling sentence or question?', items: inheritAsk(tqList([
+    ['What color is the balloon', 'Q'], ['The balloon has many colors', 'T'], ['Where will the balloon go', 'Q'], ['Pets are in the balloon', 'T']
+  ]), 'Is it a telling sentence or a question?') },
+  { title: 'L. Writing challenge', items: [
+    W('Write one sentence about a toy.', { end: ['.', '!', '?'], sample: 'The toy robot walks.' }),
+    W('Write one sentence about an animal.', { end: ['.', '!', '?'], sample: 'The cat naps on the chair.' }),
+    W('Write one telling sentence about your school.', { end: ['.'], sample: 'My school has a big playground.' }),
+    W('Write one question about the moon or stars.', { end: ['?'], sample: 'Is the moon bright tonight?' }),
+    W('Write two complete sentences about a day at the zoo.', { end: ['.', '!', '?'], count: 2, min: 6, sample: 'We saw a lion. The monkeys jumped.' })
+  ] }
+];
+
+// A part-level tip applies to every question in the part.
+[C_GRAMMAR].forEach(function (list) {
+  list.forEach(function (p) { if (p.tip) inherit(p.items, { tip: p.tip }); });
+});
+
+var MENU = [
+  { group: 'Social Studies', tests: [
+    { id: 'ss-ch2', title: 'Chapter 2: People, Places, and Nature', sub: 'Lessons 1–3', items: CHAPTER2 },
+    { id: 'ss-rev', title: 'Sources, Families, and the Past', sub: 'Vocabulary Review', items: REVIEW27 }
+  ] },
+  { group: 'Grade 2 English', tests: [
+    { id: 'en-u1', title: 'Unit 1 Cumulative Review', sub: 'Sentences, questions, commands & exclamations', parts: U1_VOCAB.concat(U1_GRAMMAR) },
+    { id: 'en-all', title: 'Complete Review', sub: 'Nouns (Lessons 1–5) and Sentences (Lessons 1–7)', parts: C_VOCAB.concat(C_GRAMMAR) }
+  ] }
+];
+
+/* ---------- Engine ---------- */
 var app = document.getElementById('app');
 var titleEl = document.getElementById('title'), subEl = document.getElementById('sub');
-var test, quiz, at, missed, picks, orders, next;
+var cur, quiz, at, picks, orders, next;
 
 function shuffle(list) {
   var a = list.slice();
@@ -155,11 +474,86 @@ function el(tag, cls, text) {
   return e;
 }
 function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+function squash(s) { return s.replace(/\s+/g, ' ').trim(); }
+function norm(s) { return squash(s.toLowerCase().replace(/[\/,]+/g, ' ')).replace(/\.$/, ''); }
+function plain(s) { return s.replace(/\[\[|\]\]/g, ''); }
+function same(a, b) { return a.length === b.length && a.every(function (x) { return b.indexOf(x) >= 0; }); }
+
+// Text with [[underlined]] parts and ___ blanks.
+function rich(p, text) {
+  text.split(/(\[\[.*?\]\]|___)/).forEach(function (s) {
+    if (!s) return;
+    if (s === '___') {
+      var b = el('span', 'blank', ' ');
+      b.setAttribute('aria-label', 'blank');
+      p.appendChild(b);
+    } else if (s.indexOf('[[') === 0) p.appendChild(el('u', '', s.slice(2, -2)));
+    else p.appendChild(document.createTextNode(s));
+  });
+}
+
+// The multiple-choice stems fill the word back into the definition.
 function fill(item) {
   return item.q.indexOf('___') >= 0 ? cap(item.q.replace('___', item.w)) : cap(item.w) + ': ' + item.q;
 }
+function answerText(item) {
+  if (item.kind === 'mc') return cap(item.w);
+  if (item.kind === 'multi') return item.a.join(', ');
+  if (item.kind === 'write') return item.sample;
+  return item.a;
+}
+function filled(item) {
+  var q = plain(item.q);
+  if (item.kind === 'mc') return fill(item);
+  if (q.indexOf('___') >= 0 && item.kind !== 'multi') {
+    var ans = answerText(item);
+    return cap(/^[.?!]$/.test(ans) ? q.replace(' ___', ans) : q.replace('___', ans));
+  }
+  return '';
+}
+function promptText(item) {
+  if (item.spell) return item.zh;
+  var q = plain(item.q).replace('___', '_____');
+  if (item.kind === 'multi') return item.q + ' (' + item.options.join(', ') + ')';
+  return cap(q);
+}
+function speakAnswer(item) {
+  return item.a.replace(/\s*\/\s*/g, ', ');
+}
 
-// Read aloud with the device's own voices. Each part: [text, lang]. Tapping again while it talks stops it.
+/* ---------- Grading ---------- */
+function endLabel(marks) {
+  var names = { '.': 'a period', '?': 'a question mark', '!': 'an exclamation point' };
+  return marks.map(function (m) { return names[m]; }).join(' or ');
+}
+function writeCheck(item, text) {
+  var s = squash(text), low = s.toLowerCase(), notes = [];
+  function add(ok, label) { notes.push({ ok: ok, label: label }); }
+  add(/^[A-Z]/.test(s), 'Starts with a capital letter');
+  if (item.count === 2) {
+    var sents = s.match(/[^.!?]+[.!?]+/g) || [];
+    add(sents.length >= 2 && sents.every(function (x) { return /^[A-Z]/.test(x.trim()); }), 'Has two sentences, each starting with a capital letter');
+  }
+  add(item.end.indexOf(s.slice(-1)) >= 0, 'Ends with ' + endLabel(item.end));
+  add(s.split(' ').length >= item.min, 'Is long enough to have a naming part and an action part');
+  if (item.start) add(low.indexOf(item.start.toLowerCase()) === 0, 'Begins with “' + item.start + '”');
+  if (item.after) add(low.indexOf(item.after) > 0, 'Uses “' + item.after + '”');
+  return notes;
+}
+function grade(item, resp) {
+  if (item.kind === 'mc') return { ok: resp === item.w };
+  if (item.kind === 'pick') return { ok: resp === item.a || item.alt.indexOf(resp) >= 0 };
+  if (item.kind === 'multi') return { ok: same(resp, item.a) };
+  if (item.kind === 'type') {
+    var list = [item.a].concat(item.alts || []);
+    return { ok: list.some(function (x) { return item.strict ? squash(resp) === x : norm(resp) === norm(x); }) };
+  }
+  var notes = writeCheck(item, resp);
+  return { ok: notes.every(function (n) { return n.ok; }), notes: notes };
+}
+
+/* ---------- Read aloud with the device's own voices ---------- */
+// Each part: [text, lang]. Tapping again while it talks stops it.
 function say(parts) {
   var v = window.speechSynthesis;
   if (!v) return;
@@ -180,68 +574,239 @@ function speakButton(label, parts) {
   return b;
 }
 
+/* ---------- Best scores, kept on this device only ---------- */
+function bests() { try { return JSON.parse(localStorage.getItem('josie-best') || '{}'); } catch (e) { return {}; } }
+function saveBest(key, right, total) {
+  try {
+    var b = bests();
+    if (!b[key] || right / total > b[key][0] / b[key][1]) { b[key] = [right, total]; localStorage.setItem('josie-best', JSON.stringify(b)); }
+  } catch (e) {}
+}
+
+/* ---------- Menus ---------- */
+function setHead(t, s) { titleEl.textContent = t; subEl.textContent = s; }
+function count(t) {
+  if (!t.parts) return t.items.length;
+  return t.parts.reduce(function (n, p) { return n + p.items.length; }, 0);
+}
+
 function menu() {
   hush();
-  test = null;
-  titleEl.textContent = 'Social Studies Vocabulary Quiz';
-  subEl.textContent = 'Pick a test.';
+  cur = null;
+  setHead('Practice Quizzes', 'Pick a quiz.');
   app.textContent = '';
+  MENU.forEach(function (g) {
+    app.appendChild(el('h2', 'group', g.group));
+    var box = el('div', 'choices');
+    g.tests.forEach(function (t) {
+      var b = el('button', 'choice test');
+      b.type = 'button';
+      var txt = el('span');
+      txt.appendChild(el('b', '', t.title));
+      txt.appendChild(el('span', 'meta', t.sub + ' · ' + count(t) + ' questions' + (t.parts ? ' · ' + t.parts.length + ' parts' : '')));
+      b.appendChild(txt);
+      b.onclick = function () {
+        if (t.parts) parts(t);
+        else begin({ key: t.id, title: t.title, sub: t.sub, items: t.items, back: menu, backLabel: 'Pick a different test' });
+      };
+      box.appendChild(b);
+    });
+    app.appendChild(box);
+  });
+}
+
+function parts(t) {
+  hush();
+  setHead(t.title, t.sub);
+  app.textContent = '';
+  var back = el('button', 'back', '← All quizzes');
+  back.type = 'button';
+  back.onclick = menu;
+  app.appendChild(back);
+  var best = bests();
   var box = el('div', 'choices');
-  TESTS.forEach(function (t) {
+  t.parts.forEach(function (p, i) {
+    var key = t.id + '-' + i;
     var b = el('button', 'choice test');
     b.type = 'button';
     var txt = el('span');
-    txt.appendChild(el('b', '', t.title));
-    txt.appendChild(el('span', 'meta', t.sub + ' · ' + t.words.length + ' questions'));
+    txt.appendChild(el('b', '', p.title));
+    var meta = p.items.length + ' questions';
+    if (best[key]) meta += ' · Best: ' + best[key][0] + ' / ' + best[key][1];
+    txt.appendChild(el('span', 'meta', meta));
     b.appendChild(txt);
     b.onclick = function () {
-      test = t;
-      titleEl.textContent = t.title;
-      subEl.textContent = t.sub;
-      start(t.words);
+      begin({ key: key, title: t.title, sub: p.title, items: p.items, back: function () { parts(t); }, backLabel: 'Pick a different part' });
     };
     box.appendChild(b);
   });
   app.appendChild(box);
+  var mix = el('button', 'secondary', 'Mixed practice: 20 random questions');
+  mix.type = 'button';
+  mix.onclick = function () {
+    var pool = [];
+    t.parts.forEach(function (p) { p.items.forEach(function (x) { if (x.kind !== 'write') pool.push(x); }); });
+    begin({ title: t.title, sub: 'Mixed practice', items: function () { return shuffle(pool).slice(0, 20); }, back: function () { parts(t); }, backLabel: 'Pick a different part' });
+  };
+  app.appendChild(mix);
 }
+
+function begin(ctx) {
+  cur = ctx;
+  setHead(ctx.title, ctx.sub);
+  start(items());
+}
+function items() { return typeof cur.items === 'function' ? cur.items() : cur.items; }
 
 function start(list) {
   quiz = shuffle(list);
   at = 0;
-  missed = [];
   picks = [];
   orders = [];
   show();
 }
 
+/* ---------- One question ---------- */
 function stem(item) {
-  var p = el('p', 'q');
-  if (item.q.indexOf('___') < 0) {
-    var wrap = el('div');
-    wrap.appendChild(el('div', 'ask', 'Which word matches this meaning?'));
-    p.textContent = item.q;
-    wrap.appendChild(p);
-    return wrap;
+  var wrap = el('div');
+  var ask = item.ask || (item.kind === 'mc' && item.q.indexOf('___') < 0 ? 'Which word matches this meaning?' : '');
+  if (ask) wrap.appendChild(el('div', 'ask', ask));
+  var p = el('p', item.spell ? 'q big' : 'q');
+  rich(p, item.spell ? item.zh : item.q);
+  wrap.appendChild(p);
+  if (item.spell) {
+    var h = el('div', 'hint', item.a.split('').map(function (c) { return /[A-Za-z]/.test(c) ? '_' : c === ' ' ? ' ' : c; }).join(' '));
+    h.setAttribute('aria-hidden', 'true');
+    wrap.appendChild(h);
   }
-  var parts = item.q.split('___');
-  p.appendChild(document.createTextNode(parts[0]));
-  var b = el('span', 'blank');
-  b.setAttribute('aria-label', 'blank');
-  b.innerHTML = '&nbsp;';
-  p.appendChild(b);
-  p.appendChild(document.createTextNode(parts[1]));
-  return p;
+  return wrap;
 }
+function readQuestion(item, box) {
+  if (item.spell) return [[speakAnswer(item), 'en-US']];
+  var parts = [[plain(item.q).replace(/___/g, 'blank').replace(/\s+[+·→]\s+/g, ', '), 'en-US']];
+  if (item.kind === 'mc') {
+    box.querySelectorAll('button').forEach(function (b, i) { parts.push(['ABCD'.charAt(i) + '. ' + cap(b.dataset.word), 'en-US']); });
+  }
+  return parts;
+}
+
+// Builds the answer area. Returns { el, lock(resp, ok) }.
+function answerArea(item, card) {
+  var box = el('div', 'choices');
+  var kind = item.kind;
+
+  if (kind === 'mc') {
+    if (!orders[at]) orders[at] = shuffle([item.w].concat(item.near));
+    orders[at].forEach(function (word, i) {
+      var c = el('button', 'choice');
+      c.type = 'button';
+      c.dataset.word = word;
+      c.appendChild(el('span', 'letter', 'ABCD'.charAt(i)));
+      c.appendChild(el('span', '', cap(word)));
+      c.onclick = function () { submit(word); };
+      box.appendChild(c);
+    });
+    return { el: box, box: box, lock: function (resp) {
+      box.querySelectorAll('button').forEach(function (b) {
+        b.disabled = true;
+        if (b.dataset.word === item.w) b.classList.add('right');
+        else if (b.dataset.word === resp) b.classList.add('wrong');
+      });
+    } };
+  }
+
+  if (kind === 'pick') {
+    var opts = item.shuffle ? (orders[at] = orders[at] || shuffle(item.options)) : item.options;
+    var shortest = opts.every(function (o) { return o.length <= 2; }), small = opts.every(function (o) { return o.length <= 16; });
+    box.className = 'choices' + (shortest ? ' mark' : small ? ' inline' : '');
+    opts.forEach(function (o) {
+      var c = el('button', 'choice', o);
+      c.type = 'button';
+      c.dataset.opt = o;
+      c.onclick = function () { submit(o); };
+      box.appendChild(c);
+    });
+    return { el: box, box: box, lock: function (resp) {
+      box.querySelectorAll('button').forEach(function (b) {
+        b.disabled = true;
+        var o = b.dataset.opt, good = o === item.a || (o === resp && item.alt.indexOf(o) >= 0);
+        if (good) b.classList.add('right');
+        else if (o === resp) b.classList.add('wrong');
+      });
+    } };
+  }
+
+  if (kind === 'multi') {
+    box.className = 'choices inline chips';
+    var chosen = [];
+    var go = el('button', 'primary', 'Check');
+    go.type = 'button';
+    go.disabled = true;
+    item.options.forEach(function (o) {
+      var c = el('button', 'choice', o);
+      c.type = 'button';
+      c.dataset.opt = o;
+      c.setAttribute('aria-pressed', 'false');
+      c.onclick = function () {
+        var i = chosen.indexOf(o);
+        if (i >= 0) chosen.splice(i, 1); else chosen.push(o);
+        c.setAttribute('aria-pressed', i >= 0 ? 'false' : 'true');
+        go.disabled = !chosen.length;
+      };
+      box.appendChild(c);
+    });
+    go.onclick = function () { submit(chosen.slice()); };
+    var wrap = el('div');
+    wrap.appendChild(box);
+    wrap.appendChild(go);
+    return { el: wrap, box: box, lock: function (resp) {
+      go.hidden = true;
+      box.querySelectorAll('button').forEach(function (b) {
+        var o = b.dataset.opt, want = item.a.indexOf(o) >= 0, got = resp.indexOf(o) >= 0;
+        b.disabled = true;
+        b.setAttribute('aria-pressed', got ? 'true' : 'false');
+        if (want && got) b.classList.add('right');
+        else if (want) b.classList.add('miss');
+        else if (got) b.classList.add('wrong');
+      });
+    } };
+  }
+
+  // type / write
+  var wrapT = el('div', 'typed');
+  var f = el(kind === 'write' ? 'textarea' : 'input', 'field');
+  if (kind === 'write') f.rows = 3; else f.type = 'text';
+  f.setAttribute('autocapitalize', 'off');
+  f.setAttribute('autocomplete', 'off');
+  f.setAttribute('autocorrect', 'off');
+  f.setAttribute('spellcheck', 'false');
+  f.setAttribute('aria-label', 'Your answer');
+  var go2 = el('button', 'primary', 'Check');
+  go2.type = 'button';
+  function check() { if (!f.value.trim()) { f.focus(); return; } submit(f.value); }
+  go2.onclick = check;
+  if (kind === 'type') f.onkeydown = function (e) { if (e.key === 'Enter') { e.preventDefault(); check(); } };
+  wrapT.appendChild(f);
+  wrapT.appendChild(go2);
+  return { el: wrapT, focus: function () { f.focus(); }, lock: function (resp, ok) {
+    f.value = resp;
+    f.disabled = true;
+    f.classList.add(ok ? 'right' : 'wrong');
+    go2.hidden = true;
+  } };
+}
+
+var area, submit;
 
 function show() {
   var item = quiz[at];
   hush();
   app.textContent = '';
-  // First question goes back to the test list. Later ones show the previous question,
+  // First question goes back to the part list. Later ones show the previous question,
   // with its answer locked, so going back can't change the score.
-  var back = el('button', 'back', at === 0 ? '← Back to tests' : '← Back');
+  var back = el('button', 'back', at === 0 ? '← ' + (cur.backLabel || 'Back') : '← Back');
   back.type = 'button';
-  back.onclick = function () { if (at === 0) menu(); else { at--; show(); } };
+  back.onclick = function () { if (at === 0) cur.back(); else { at--; show(); } };
   app.appendChild(back);
   var bar = el('div', 'bar'), fillBar = el('i');
   fillBar.style.width = (at / quiz.length * 100) + '%';
@@ -250,44 +815,53 @@ function show() {
   app.appendChild(el('div', 'count', 'Question ' + (at + 1) + ' of ' + quiz.length));
 
   var card = el('div', 'card');
-  var box = el('div', 'choices');
   card.appendChild(stem(item));
-  card.appendChild(speakButton('Read it to me', function () {
-    var parts = [[item.q.replace('___', 'blank'), 'en-US']];
-    box.querySelectorAll('button').forEach(function (b, i) {
-      parts.push(['ABCD'.charAt(i) + '. ' + cap(b.dataset.word), 'en-US']);
-    });
-    return parts;
-  }));
-  if (!orders[at]) orders[at] = shuffle([item.w].concat(item.near));
-  orders[at].forEach(function (word, i) {
-    var c = el('button', 'choice');
-    c.type = 'button';
-    c.dataset.word = word;
-    c.appendChild(el('span', 'letter', 'ABCD'.charAt(i)));
-    c.appendChild(el('span', '', cap(word)));
-    c.onclick = function () { picks[at] = word; reveal(item, word, box, card); next.focus(); };
-    box.appendChild(c);
-  });
-  card.appendChild(box);
+  area = answerArea(item, card);
+  card.appendChild(speakButton(item.spell ? 'Hear the word' : 'Read it to me', function () { return readQuestion(item, area.box); }));
+  card.appendChild(area.el);
   app.appendChild(card);
-  if (picks[at]) reveal(item, picks[at], box, card);
+  var here = at, a = area;
+  submit = function (resp) {
+    if (picks[here] !== undefined) return;
+    picks[here] = resp;
+    reveal(item, resp, a, card);
+    next.focus();
+  };
+  if (picks[at] !== undefined) reveal(item, picks[at], area, card);
+  else if (area.focus && matchMedia('(hover: hover)').matches) area.focus();
 }
 
-function reveal(item, picked, box, card) {
-  var ok = picked === item.w;
-  box.querySelectorAll('button').forEach(function (b) {
-    b.disabled = true;
-    if (b.dataset.word === item.w) b.classList.add('right');
-    else if (b.dataset.word === picked) b.classList.add('wrong');
-  });
+function reveal(item, resp, a, card) {
+  var res = grade(item, resp), ok = res.ok;
+  a.lock(resp, ok);
   var f = el('div', 'feedback ' + (ok ? 'right' : 'wrong'));
-  f.appendChild(el('strong', '', ok ? 'Correct!' : 'Not quite. The answer is ' + cap(item.w) + '.'));
-  f.appendChild(el('div', 'def', fill(item)));
-  f.appendChild(el('div', 'zh', item.zh));
-  f.appendChild(speakButton('Read the answer', function () {
-    return [[(ok ? 'Correct! ' : 'The answer is ' + item.w + '. ') + fill(item).replace(/^[^:]*: /, ''), 'en-US'], [item.zh.replace(/[（）／]/g, '，'), 'zh-TW']];
-  }));
+  var head;
+  if (item.kind === 'write') head = ok ? 'Looks good!' : 'Almost. Check the list.';
+  else if (ok) head = 'Correct!';
+  else if (item.kind === 'mc') head = 'Not quite. The answer is ' + cap(item.w) + '.';
+  else head = 'Not quite. The answer is: ' + answerText(item);
+  f.appendChild(el('strong', '', head));
+  if (item.kind === 'write') {
+    var ul = el('ul');
+    res.notes.forEach(function (n) { ul.appendChild(el('li', n.ok ? 'ok' : 'no', n.label)); });
+    f.appendChild(ul);
+    f.appendChild(el('div', 'def', 'Example: ' + item.sample));
+    f.appendChild(el('div', 'zh', 'Ask a grown-up to read it and check that it makes sense.'));
+  } else {
+    if (!ok && item.kind === 'type' && item.strict) f.appendChild(el('div', 'you', 'You wrote: ' + squash(resp)));
+    var line = filled(item);
+    if (line) f.appendChild(el('div', 'def', line));
+    if (item.spell && ok) f.appendChild(el('div', 'def', item.a));
+    if (!ok && item.tip) f.appendChild(el('div', 'def', item.tip));
+    if (item.zh) f.appendChild(el('div', 'zh', item.zh));
+    if (ok && item.alt && item.alt.indexOf(resp) >= 0) f.appendChild(el('div', 'zh', 'The other choice works too, but “' + item.a + '” is the one we were looking for.'));
+    if (ok && item.alts && item.alts.length && item.kind === 'type' && !item.spell) f.appendChild(el('div', 'zh', 'Also correct: ' + item.alts.join(', ')));
+    f.appendChild(speakButton('Read the answer', function () {
+      var parts = [[(ok ? 'Correct! ' : 'The answer is ' + (item.kind === 'mc' ? item.w + '. ' : '')) + (item.spell ? speakAnswer(item) : (filled(item) ? filled(item).replace(/^[^:]*: /, '') : answerText(item))), 'en-US']];
+      if (item.zh && item.kind !== 'write') parts.push([item.zh.replace(/[（）／、]/g, '，'), 'zh-TW']);
+      return parts;
+    }));
+  }
   card.appendChild(f);
   var last = at === quiz.length - 1;
   next = el('button', 'primary', last ? 'See my score' : 'Next question');
@@ -298,11 +872,12 @@ function reveal(item, picked, box, card) {
 
 function done() {
   hush();
-  missed = [];
+  var missed = [];
   quiz.forEach(function (item, i) {
-    if (picks[i] !== item.w) missed.push({ item: item, picked: picks[i] });
+    if (!grade(item, picks[i]).ok) missed.push({ item: item, picked: picks[i] });
   });
   var total = quiz.length, right = total - missed.length;
+  if (cur.key) saveBest(cur.key, right, total);
   app.textContent = '';
   var card = el('div', 'card');
   card.appendChild(el('p', 'score', right + ' / ' + total));
@@ -315,10 +890,11 @@ function done() {
     var ul = el('ul', 'missed');
     missed.forEach(function (m) {
       var li = el('li');
-      li.appendChild(el('b', '', cap(m.item.q.replace('___', '_____'))));
-      li.appendChild(el('span', 'was', '✗ You picked: ' + cap(m.picked)));
-      li.appendChild(el('span', 'fix', '✓ Correct answer: ' + cap(m.item.w)));
-      li.appendChild(el('span', 'zh', m.item.zh));
+      li.appendChild(el('b', '', promptText(m.item)));
+      var said = Array.isArray(m.picked) ? m.picked.join(', ') : (m.item.kind === 'mc' ? cap(m.picked) : m.picked);
+      li.appendChild(el('span', 'was', '✗ You ' + (m.item.kind === 'type' || m.item.kind === 'write' ? 'wrote: ' : 'picked: ') + said));
+      li.appendChild(el('span', 'fix', (m.item.kind === 'write' ? '✓ Example: ' : '✓ Correct answer: ') + answerText(m.item)));
+      if (m.item.zh && !m.item.spell) li.appendChild(el('span', 'zh', m.item.zh));
       ul.appendChild(li);
     });
     card.appendChild(ul);
@@ -330,11 +906,11 @@ function done() {
   }
   var all = el('button', missed.length ? 'secondary' : 'primary', 'Start the whole quiz over');
   all.type = 'button';
-  all.onclick = function () { start(test.words); };
+  all.onclick = function () { start(items()); };
   card.appendChild(all);
-  var pick = el('button', 'secondary', 'Pick a different test');
+  var pick = el('button', 'secondary', cur.backLabel || 'Pick a different test');
   pick.type = 'button';
-  pick.onclick = menu;
+  pick.onclick = cur.back;
   card.appendChild(pick);
   app.appendChild(card);
 }
