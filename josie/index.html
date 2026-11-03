@@ -27,7 +27,8 @@
   .q u { text-decoration-thickness: 2px; text-underline-offset: 4px; }
   .blank { display: inline-block; min-width: 4.5em; border-bottom: 3px solid var(--ink); }
   .choices { display: grid; gap: 10px; }
-  .choices.inline { grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
+  .choices.inline { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .choices.inline .choice { min-height: 72px; }
   .choices.mark { grid-template-columns: repeat(3, 1fr); }
   button { font: inherit; cursor: pointer; }
   .choice {
@@ -98,8 +99,8 @@
   .missed .was { color: var(--bad); }
   .missed .fix { color: var(--good); font-weight: 600; }
   .missed .zh { color: var(--muted); }
-  .zc { display: inline-flex; align-items: center; margin-right: .08em; }
-  .zy { display: inline-flex; align-items: flex-start; margin-left: 1px; font-size: .5em; line-height: 1; color: var(--muted); font-weight: 400; }
+  .zc { display: inline-flex; align-items: center; margin-right: .12em; font-size: 1.4em; line-height: 1.25; }
+  .zy { display: inline-flex; align-items: flex-start; margin-left: 2px; font-size: .55em; line-height: 1.05; color: var(--muted); font-weight: 400; }
   .zl { writing-mode: vertical-rl; text-orientation: upright; }
   .zt { margin-left: 1px; }
   .zy.n { flex-direction: column; align-items: center; }
