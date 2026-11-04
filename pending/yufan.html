@@ -98,7 +98,7 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </script>
 <h1>Developer review · SEO / AEO / GEO</h1>
 <p>Search and AI-visibility changes for Yufan to approve: titles, descriptions, schema, internal links, llms.txt, sitemap, keywords. Content changes go to the owner at <a href="/pending/">/pending</a>. Not linked from the site and not indexed. The GX10 job applies approved changes at its next run (every 8 hours).</p>
-<p class="updated">Updated 2026-11-04 (early run).</p>
+<p class="updated">Updated 2026-11-04 (afternoon run).</p>
 
 <!-- Item markup (copy for each draft; data-item must equal the board title exactly):
 <div class="item" data-item="TITLE">
@@ -118,6 +118,19 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </ul>
 <p>Why: in Search Console (28 days to 2026-11-01) the calculator is the page with the most non-brand searches (44 of 121 impressions, average position 48). Several of those searches name a drug, not "GLP-1": "mounjaro protein calculator" (4 impressions, position 62.8), "ozempic protein calculator" (3, position 49.7), "semaglutide protein calculator" (1, position 20). The page text already mentions these drugs, but the structured data names the tool only as "GLP-1 Protein Calculator", and AI assistants and Google read <code>alternateName</code> as other names for the same thing. The share title was shorter than the page title and left out the drug names. No click-through numbers yet (0 clicks), so Search Console positions for these queries are what to watch.</p>
 <div class="links"><a href="/glp1-protein-calculator/">Live version</a></div>
+</div>
+<div class="item" data-item="[Yufan] Name Kling AI in the AI Video page title and add share tags">
+<h3>2. [Yufan] Name Kling AI in the AI Video page title and add share tags</h3>
+<p>Puts the two tools the plan teaches into the page title, spells out "Kling AI" in the description, and adds the Open Graph and Twitter tags the page never had, so links shared on LINE, Facebook or X show a title, summary and image. Nothing visible on the page changes. The page has no 中文 version. Branch <code>seo/ai-video-kling-title</code>.</p>
+<ul>
+<li><code>/ai-video/</code> <code>&lt;title&gt;</code>:<span class="ba was"><b>Before</b>AI Video in 30 Days | ShipToLive</span><span class="ba now"><b>After</b>AI Video in 30 Days: Learn Veo 3.1 &amp; Kling AI | Ship to Live</span></li>
+<li>Meta description:<span class="ba was"><b>Before</b>… with Google Veo 3.1, Kling, Higgsfield and a developer pipeline.</span><span class="ba now"><b>After</b>… with Google Veo 3.1, Kling AI, Higgsfield and a developer pipeline.</span></li>
+<li>Open Graph / Twitter tags:<span class="ba was"><b>Before</b>None.</span><span class="ba now"><b>After</b>og:type article, og:site_name "Ship to Live", og:title "AI Video in 30 Days: Learn Veo 3.1 &amp; Kling AI", og:description (same as the meta description), og:url, og:image (the site's usual og.png), twitter:card summary_large_image</span></li>
+<li><code>llms.txt</code>, AI Video line:<span class="ba was"><b>Before</b>… Google Veo 3.1, Kling, Higgsfield …</span><span class="ba now"><b>After</b>… Google Veo 3.1, Kling AI, Higgsfield …</span></li>
+<li><code>sitemap.xml</code> lastmod for /ai-video/:<span class="ba was"><b>Before</b>2026-10-11</span><span class="ba now"><b>After</b>2026-11-04</span></li>
+</ul>
+<p>Why: in Search Console (28 days to 2026-11-01) /ai-video/ had 4 impressions at average position 29, and three of the site's queries are the tool's name misspelled: "clingai.com" (position 10), "cling ai" (47), "clingai" (52). The page's title said only "AI Video in 30 Days" and the brand was written "ShipToLive", unlike every other page. Google matches misspellings to the right name, so the title now carries "Kling AI" and "Veo 3.1", the two tools the 30 days are built on. The page also had no share tags at all. (The owner's FAQ draft for this page is a separate item; neither change touches the other's lines.)</p>
+<div class="links"><a href="/ai-video/">Live version</a></div>
 </div>
 </div>
 
