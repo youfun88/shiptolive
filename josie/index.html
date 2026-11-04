@@ -1239,6 +1239,11 @@ function menu() {
       var txt = el('span');
       txt.appendChild(el('b', '', t.title));
       txt.appendChild(el('span', 'meta', t.sub + ' · ' + count(t) + ' questions' + (t.parts ? ' · ' + t.parts.length + ' parts' : '')));
+      var pl0 = !t.parts && places()[t.id];
+      if (pl0 && answered(pl0) === pl0.ids.length) {
+        var r0 = pl0.ids.filter(function (id, k) { return grade(t.items[id], pl0.picks[k]).ok; }).length;
+        txt.appendChild(el('span', 'status ' + (r0 === pl0.ids.length ? 'perfect' : 'done'), '✓ Finished · ' + r0 + ' / ' + pl0.ids.length + ' · tap to see the wrong ones'));
+      } else if (pl0) txt.appendChild(el('span', 'status going', 'In progress · ' + answered(pl0) + ' of ' + pl0.ids.length + ' done'));
       b.appendChild(txt);
       b.onclick = function () {
         if (t.parts) parts(t);
