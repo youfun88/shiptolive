@@ -1596,6 +1596,12 @@ function reveal(item, resp, a, card) {
       return parts;
     }));
   }
+  if (item.lang && item.kind === 'type' && !ok) {
+    var again2 = el('button', 'secondary', '✏️ 擦掉重寫');
+    again2.type = 'button';
+    again2.onclick = function () { picks[at] = undefined; savePlace(); show(); };
+    f.appendChild(again2);
+  }
   card.appendChild(f);
   var last = at === quiz.length - 1;
   var gap = picks.length < quiz.length ? -1 : -1;
