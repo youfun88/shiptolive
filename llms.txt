@@ -60,7 +60,7 @@ Free tools need no sign-up. Tools page: https://www.shiptolive.com/tools/
 - **GLP-1 protein calculator**, https://www.shiptolive.com/glp1-protein-calculator/, finds a daily protein target on a GLP-1 medication like Zepbound, Wegovy, Ozempic or Mounjaro, how much to eat at each meal, and a sample day of food. General information, not medical advice.
 - **Topic Finder (對標選題)**, https://www.shiptolive.com/tools/topic-finder/, takes what you sell and the video you're thinking of, shows what people actually search on YouTube and Google, builds searches for the six places to find proven topics, and scores your options. Searches in 中文 (Taiwan) or English (US).
 - **How to Pick Video Topics**, https://www.shiptolive.com/ai-video/how-to-pick-video-topics/, the 對標選題 method for short video: six places to research demand and a 15-minute topic check.
-- **AI Video in 30 Days**, https://www.shiptolive.com/ai-video/, a 30-day, 2-hours-a-day plan for learning AI video production with Google Veo 3.1, Kling, Higgsfield and a developer pipeline.
+- **AI Video in 30 Days**, https://www.shiptolive.com/ai-video/, a 30-day, 2-hours-a-day plan for learning AI video production with Google Veo 3.1, Kling AI, Higgsfield and a developer pipeline.
 - **Tadapop video research**, https://www.shiptolive.com/ai-video/tadapop-video-research/, which YouTube searches have proven demand for Tadapop, a habit tracker you use with friends, and which to skip.
 - **What to Build Next**, https://www.shiptolive.com/ideas/, research on what people search for on Google and the App Store in 2026, three app ideas worth testing, and why the GLP-1 protein calculator was built first.
 
