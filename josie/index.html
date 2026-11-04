@@ -1202,7 +1202,13 @@ function saveBest(key, right, total) {
 }
 
 /* ---------- Where she stopped in a part, kept on this device only ---------- */
-function places() { try { return JSON.parse(localStorage.getItem('josie-progress') || '{}'); } catch (e) { return {}; } }
+function places() {
+  var all;
+  try { all = JSON.parse(localStorage.getItem('josie-progress') || '{}'); } catch (e) { return {}; }
+  // Drop saved runs with no answers (left by older versions as "0 of N done").
+  for (var k in all) if (!all[k] || !all[k].picks || !all[k].picks.some(function (x) { return x !== undefined && x !== null; })) delete all[k];
+  return all;
+}
 function setPlace(key, val) {
   try {
     var all = places();
