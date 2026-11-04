@@ -98,7 +98,7 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </script>
 <h1>Developer review · SEO / AEO / GEO</h1>
 <p>Search and AI-visibility changes for Yufan to approve: titles, descriptions, schema, internal links, llms.txt, sitemap, keywords. Content changes go to the owner at <a href="/pending/">/pending</a>. Not linked from the site and not indexed. The GX10 job applies approved changes at its next run (every 8 hours).</p>
-<p class="updated">Updated 2026-11-03 (evening run).</p>
+<p class="updated">Updated 2026-11-04 (early run).</p>
 
 <!-- Item markup (copy for each draft; data-item must equal the board title exactly):
 <div class="item" data-item="TITLE">
@@ -108,15 +108,16 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </div>
 -->
 <h2>Waiting for approval</h2>
-<div class="item" data-item="[Yufan] Link the What to Build Next page from the GLP-1 calculator and llms.txt">
-<h3>1. [Yufan] Link the What to Build Next page from the GLP-1 calculator and llms.txt</h3>
-<p>Adds one footer link on the GLP-1 calculator and one line in <code>llms.txt</code>, both pointing to <code>/ideas/</code>. No other text changes. Neither page has a 中文 version. Branch <code>seo/link-ideas-page</code>.</p>
+<div class="item" data-item="[Yufan] Name Ozempic, Mounjaro and semaglutide in the GLP-1 calculator schema">
+<h3>1. [Yufan] Name Ozempic, Mounjaro and semaglutide in the GLP-1 calculator schema</h3>
+<p>Adds the drug-specific names people search for to the calculator's structured data and makes the share title match the page title. Nothing visible on the page changes. The page has no 中文 version. Branch <code>seo/glp1-drug-names-schema</code>.</p>
 <ul>
-<li><code>/glp1-protein-calculator/</code> footer:<span class="ba was"><b>Before</b>Calculator · FAQ · About Ship to Live</span><span class="ba now"><b>After</b>Calculator · FAQ · Why we built it · About Ship to Live</span></li>
-<li><code>llms.txt</code>, end of "Free tools and guides":<span class="ba was"><b>Before</b>No line. The file doesn't mention /ideas/.</span><span class="ba now"><b>After</b>- **What to Build Next**, https://www.shiptolive.com/ideas/, research on what people search for on Google and the App Store in 2026, three app ideas worth testing, and why the GLP-1 protein calculator was built first.</span></li>
+<li><code>/glp1-protein-calculator/</code> WebApplication JSON-LD, <code>alternateName</code>:<span class="ba was"><b>Before</b>None.</span><span class="ba now"><b>After</b>"Ozempic protein calculator", "Mounjaro protein calculator", "Wegovy protein calculator", "Zepbound protein calculator", "Semaglutide protein calculator"</span></li>
+<li>WebApplication JSON-LD, <code>description</code>:<span class="ba was"><b>Before</b>None.</span><span class="ba now"><b>After</b>The page's meta description, word for word: "Free calculator: find your daily protein target on a GLP-1 medication like Zepbound, Wegovy, Ozempic or Mounjaro, how much to eat at each meal, and a sample day of food that gets you there."</span></li>
+<li><code>og:title</code>:<span class="ba was"><b>Before</b>GLP-1 Protein Calculator</span><span class="ba now"><b>After</b>GLP-1 Protein Calculator for Zepbound, Wegovy, Ozempic &amp; Mounjaro</span></li>
 </ul>
-<p>Why: /ideas/ is in the sitemap, but no public page links to it, so Google and AI crawlers can only find it through the sitemap. The page says the GLP-1 calculator is the idea being tested first, so the calculator is the natural place to link from. The calculator is also the page with the most non-brand Search Console queries (about 40 of 120 impressions in the 28 days to 2026-10-31). /ideas/ itself has no impressions in that report, so there is no number to compare against yet. Search Console will show whether it starts getting impressions.</p>
-<div class="links"><a href="/ideas/">Live version</a><a href="/glp1-protein-calculator/">Calculator</a></div>
+<p>Why: in Search Console (28 days to 2026-11-01) the calculator is the page with the most non-brand searches (44 of 121 impressions, average position 48). Several of those searches name a drug, not "GLP-1": "mounjaro protein calculator" (4 impressions, position 62.8), "ozempic protein calculator" (3, position 49.7), "semaglutide protein calculator" (1, position 20). The page text already mentions these drugs, but the structured data names the tool only as "GLP-1 Protein Calculator", and AI assistants and Google read <code>alternateName</code> as other names for the same thing. The share title was shorter than the page title and left out the drug names. No click-through numbers yet (0 clicks), so Search Console positions for these queries are what to watch.</p>
+<div class="links"><a href="/glp1-protein-calculator/">Live version</a></div>
 </div>
 </div>
 
