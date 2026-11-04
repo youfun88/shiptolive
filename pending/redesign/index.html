@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>首頁改版：5 個版型 | Ship to Live（草稿）</title>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<style>
+:root{--ink:#16161a;--mut:#5b5b66;--line:#e6e2da;--bg:#f7f5f0;--card:#fff;--acc:#1d4ed8}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;color:var(--ink);background:var(--bg);-webkit-text-size-adjust:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:28px 16px 64px}
+header h1{font-size:clamp(26px,6vw,40px);line-height:1.2;margin:8px 0 10px;letter-spacing:-.01em}
+.kick{font-size:13px;color:var(--mut);letter-spacing:.06em}
+.lead{color:var(--mut);max-width:62ch;margin:0}
+.note{margin:18px 0 0;padding:12px 14px;background:#fff8e6;border:1px solid #f1dfae;border-radius:12px;font-size:14px;color:#5b4a1a}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 8px;padding:0;list-style:none}
+.jump a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);text-decoration:none;font-weight:600;font-size:15px}
+.jump a.old{background:var(--ink);color:#fff;border-color:var(--ink)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;margin:22px 0;scroll-margin-top:12px}
+.card h2{margin:0 0 2px;font-size:22px;line-height:1.3}
+.card h2 small{display:block;font-size:13px;font-weight:500;color:var(--mut);letter-spacing:.04em}
+.pitch{margin:8px 0 14px}
+.shots{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:12px;align-items:start}
+.shots a{display:block;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#eee;line-height:0}
+.shots img{width:100%;height:auto;display:block}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+.cols h3{font-size:14px;margin:0 0 4px;letter-spacing:.04em}
+.cols ul{margin:0;padding-left:1.1em;color:#333;font-size:15px}
+.cols li{margin:2px 0}
+.good h3{color:#15803d}.bad h3{color:#b45309}
+.open{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.open a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:999px;font-weight:700;text-decoration:none;font-size:16px}
+.open .p{background:var(--ink);color:#fff}
+.open .s{border:1.5px solid var(--ink);color:var(--ink)}
+.rec{border:2px solid var(--acc)}
+.badge{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--acc);border-radius:999px;padding:2px 10px;margin-left:6px;vertical-align:middle}
+footer{color:var(--mut);font-size:14px;margin-top:36px;border-top:1px solid var(--line);padding-top:16px}
+footer a{color:var(--ink)}
+@media (max-width:700px){
+  .shots{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr)}
+  .cols{grid-template-columns:1fr}
+  .open a{flex:1 1 140px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <p class="kick">SHIPTOLIVE.COM 首頁改版 · 草稿（不公開、不被搜尋）</p>
+  <h1>5 個首頁版型，請挑一個</h1>
+  <p class="lead">五個版型都賣同樣三件事：科技行銷、軟體開發、AI 導入。內容和規則一樣（真實客戶、標明來源的數據、沒有保證、沒有新價格），差別在版面、互動和第一印象。每個都有中文版和英文版，手機和電腦都能看。點截圖或「開啟」就能看完整頁面。</p>
+  <p class="note">這些頁面都是手工寫的靜態 HTML，沒有用 base44：base44 需要你的帳號，而且網站會放在它的平台上（不在 GitHub Pages，對 SEO 不利）。後台畫面是真實的 admin 介面跑在示範模式，數字是示範資料。</p>
+  <p class="note" style="background:#eef3ff;border-color:#c9d6fb;color:#1e2a55"><strong>我的推薦：版型 4（互動診斷）。</strong>它用客戶自己的話問「你現在最卡的是？」，把三種服務分流，再帶著答案進聯絡表單，最可能變成預約；扮演「懷疑的台灣中小企業老闆」的審稿也把它排第一。想要更穩重的感覺，就選 2 或 3；4 的問答卡也可以搬到 2 或 3 的首屏上。</p>
+  <ul class="jump">
+    <li><a href="#l1">1 Bento</a></li><li><a href="#l2">2 捲動故事</a></li><li><a href="#l3">3 雜誌</a></li><li><a href="#l4">4 互動診斷</a></li><li><a href="#l5">5 學院＋工作室</a></li><li><a class="old" href="/old-site/">現在的網站 →</a></li>
+  </ul>
+</header>
+
+<section class="card" id="l1">
+  <h2><small>版型 1</small>Bento</h2>
+  <p class="kick">深色・Apple / Linear 風格</p>
+  <p class="pitch">深色背景、細邊框的方格版面。首屏一句話，下面三個服務各一個會動的方格：後台畫面在筆電框裡、軟體估算器、週報計時器 2:00:00 → 0:10:00。每個服務再展開成自己的方格區塊。</p>
+  <div class="shots">
+    <a href="/pending/redesign/1/" aria-label="開啟版型 1（手機截圖）"><img src="/pending/redesign/shared/img/pick-1-m.webp" alt="版型 1 手機首屏" width="390" height="844" loading="lazy"></a>
+    <a href="/pending/redesign/1/" aria-label="開啟版型 1（電腦截圖）"><img src="/pending/redesign/shared/img/pick-1-d.webp" alt="版型 1 電腦首屏" width="960" height="600" loading="lazy"></a>
+  </div>
+  <div class="cols"><div class="good"><h3>優點</h3><ul><li>最有「產品公司」的高級感</li><li>三個服務 5 秒內看懂</li><li>動畫多但克制，減少動態設定時會關掉</li></ul></div><div class="bad"><h3>取捨</h3><ul><li>和現在的淺色網站差最多</li><li>手機版約 18,000px，偏長</li><li>深色在戶外陽光下較難讀</li></ul></div></div>
+  <div class="open"><a class="p" href="/pending/redesign/1/">開啟中文版</a><a class="s" href="/pending/redesign/1/en/">English</a></div>
+</section>
+<section class="card" id="l2">
+  <h2><small>版型 2</small>捲動故事</h2>
+  <p class="kick">Scroll story・石灰紙色＋深藍綠</p>
+  <p class="pitch">邊捲邊講故事。電腦版：科技行銷的後台會隨著五個章節一步步組起來（健檢 → 缺口 → 每週修正 → AI 開始引用 → 手機核准）；軟體開發是模組一塊塊拼上；AI 導入是週報流程逐步播放。手機版改成每章圖文直排，不會卡住。</p>
+  <div class="shots">
+    <a href="/pending/redesign/2/" aria-label="開啟版型 2（手機截圖）"><img src="/pending/redesign/shared/img/pick-2-m.webp" alt="版型 2 手機首屏" width="390" height="844" loading="lazy"></a>
+    <a href="/pending/redesign/2/" aria-label="開啟版型 2（電腦截圖）"><img src="/pending/redesign/shared/img/pick-2-d.webp" alt="版型 2 電腦首屏" width="960" height="600" loading="lazy"></a>
+  </div>
+  <div class="cols"><div class="good"><h3>優點</h3><ul><li>最會「講流程」，老闆看得懂我們每個月在做什麼</li><li>WU LAW 成果在第 1.5 個畫面就出現</li><li>三個服務深度一致</li></ul></div><div class="bad"><h3>取捨</h3><ul><li>電腦版的捲動特效要實際滑才看得出來</li><li>後台示意圖在手機上偏小（可點開放大）</li><li>英文版較長</li></ul></div></div>
+  <div class="open"><a class="p" href="/pending/redesign/2/">開啟中文版</a><a class="s" href="/pending/redesign/2/en/">English</a></div>
+</section>
+<section class="card" id="l3">
+  <h2><small>版型 3</small>雜誌</h2>
+  <p class="kick">Editorial・淺色・襯線大字</p>
+  <p class="pitch">像一本安靜的商業雜誌：大字標題、章節編號 01 / 02 / 03、引言、後台截圖當成「圖 1、圖 2」。每個數字旁邊都有註腳，頁尾有完整的資料來源清單。手機底部有固定的「預約 20 分鐘」按鈕。</p>
+  <div class="shots">
+    <a href="/pending/redesign/3/" aria-label="開啟版型 3（手機截圖）"><img src="/pending/redesign/shared/img/pick-3-m.webp" alt="版型 3 手機首屏" width="390" height="844" loading="lazy"></a>
+    <a href="/pending/redesign/3/" aria-label="開啟版型 3（電腦截圖）"><img src="/pending/redesign/shared/img/pick-3-d.webp" alt="版型 3 電腦首屏" width="960" height="600" loading="lazy"></a>
+  </div>
+  <div class="cols"><div class="good"><h3>優點</h3><ul><li>最有信任感、最像 B2B 顧問</li><li>每個數字都標了來源，可查證</li><li>手機讀起來像一篇好文章</li></ul></div><div class="bad"><h3>取捨</h3><ul><li>最長（手機約 21,000px），需要讀者有耐心</li><li>動畫最少，「哇」的感覺較弱</li><li>中文標題用 Google Fonts 襯線字（多一點載入）</li></ul></div></div>
+  <div class="open"><a class="p" href="/pending/redesign/3/">開啟中文版</a><a class="s" href="/pending/redesign/3/en/">English</a></div>
+</section>
+<section class="card rec" id="l4">
+  <h2><small>版型 4</small>互動診斷<span class="badge">推薦</span></h2>
+  <p class="kick">Interactive diagnostic・像一個 App</p>
+  <p class="pitch">首屏直接問：「你現在最卡的是？」客戶找不到你 / 流程太手動 / 需要一套系統。點一個，再回答兩題，就得到一張「診斷結果」：可能的問題、我們會先做什麼、相關的真實成果，按鈕會把答案自動帶進聯絡表單。下面仍完整介紹三個服務。</p>
+  <div class="shots">
+    <a href="/pending/redesign/4/" aria-label="開啟版型 4（手機截圖）"><img src="/pending/redesign/shared/img/pick-4-m.webp" alt="版型 4 手機首屏" width="390" height="844" loading="lazy"></a>
+    <a href="/pending/redesign/4/" aria-label="開啟版型 4（電腦截圖）"><img src="/pending/redesign/shared/img/pick-4-d.webp" alt="版型 4 電腦首屏" width="960" height="600" loading="lazy"></a>
+  </div>
+  <div class="cols"><div class="good"><h3>優點</h3><ul><li>訪客自己分流，聯絡表單帶著情境進來（最容易轉成預約）</li><li>結果可以用連結分享</li><li>感覺像產品，不像傳單；手機版首屏就有成果數字和預約按鈕</li></ul></div><div class="bad"><h3>取捨</h3><ul><li>想直接瀏覽的人要先捲過問答卡</li><li>診斷結果的文字在 JS 裡（同樣的事實下方都有寫，SEO 不受影響）</li><li>手機約 18,000px</li></ul></div></div>
+  <div class="open"><a class="p" href="/pending/redesign/4/">開啟中文版</a><a class="s" href="/pending/redesign/4/en/">English</a></div>
+</section>
+<section class="card" id="l5">
+  <h2><small>版型 5</small>學院＋工作室</h2>
+  <p class="kick">Academy + studio・暖色・AI 導入優先</p>
+  <p class="pitch">以 AI 導入為主角：「把 AI 從工具，變成團隊的同事」。首屏是一條學習路徑（免費資源 → 個人工作坊 → 企業內訓 → 代建自動化 → 持續支援），接著是週報 / 客服 / 報價的前後對照動畫、課程大綱、適合誰 / 不適合誰。後半段「工作室」介紹科技行銷和軟體開發。</p>
+  <div class="shots">
+    <a href="/pending/redesign/5/" aria-label="開啟版型 5（手機截圖）"><img src="/pending/redesign/shared/img/pick-5-m.webp" alt="版型 5 手機首屏" width="390" height="844" loading="lazy"></a>
+    <a href="/pending/redesign/5/" aria-label="開啟版型 5（電腦截圖）"><img src="/pending/redesign/shared/img/pick-5-d.webp" alt="版型 5 電腦首屏" width="960" height="600" loading="lazy"></a>
+  </div>
+  <div class="cols"><div class="good"><h3>優點</h3><ul><li>最適合往「AI 導入」轉型的方向</li><li>像課程頁但沒有倒數計時、假人數</li><li>「適合 / 不適合」區塊很誠實</li></ul></div><div class="bad"><h3>取捨</h3><ul><li>科技行銷（現在主要收入）排第二</li><li>課程時數、價格都還沒定（目前寫洽詢）</li><li>免費資源（YouTube、LINE 社群）還不存在，寫「陸續推出」</li></ul></div></div>
+  <div class="open"><a class="p" href="/pending/redesign/5/">開啟中文版</a><a class="s" href="/pending/redesign/5/en/">English</a></div>
+</section>
+<section class="card" id="old">
+  <h2><small>對照</small>現在的網站</h2>
+  <p class="pitch">目前的首頁原封不動保存在 /old-site/（中文版 /old-site/zh/），方便比較。不會被搜尋引擎收錄。</p>
+  <div class="open"><a class="p" href="/old-site/zh/">開啟舊站中文版</a><a class="s" href="/old-site/">English</a></div>
+</section>
+
+<footer>
+  <p>挑好之後回覆編號就好（也可以說「1 的首屏 + 3 的字體」這種組合）。選定後，我們會把它換成正式首頁（含 Google tag、正式 canonical、sitemap），舊首頁保留在 <a href="/old-site/">/old-site/</a>。</p>
+  <p>研究摘要與資料來源：<a href="BRIEF.md">BRIEF.md</a> · <a href="research-ai.md">research-ai.md</a> · <a href="research-software.md">research-software.md</a> · <a href="CRITIQUE.md">CRITIQUE.md</a></p>
+</footer>
+</div>
+</body>
+</html>
