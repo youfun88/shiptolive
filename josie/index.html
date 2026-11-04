@@ -1213,6 +1213,7 @@ function setPlace(key, val) {
 function answered(pl) { return pl.picks.filter(function (x) { return x !== undefined && x !== null; }).length; }
 function savePlace() {
   if (!cur || !cur.key || !fullRun || typeof cur.items === 'function') return;
+  if (!picks.some(function (x) { return x !== undefined && x !== null; })) { setPlace(cur.key, null); return; }
   var list = cur.items;
   setPlace(cur.key, { ids: quiz.map(function (q) { return list.indexOf(q); }), picks: picks, orders: orders, at: at });
 }
@@ -1287,7 +1288,11 @@ function parts(t) {
     txt.appendChild(el('b', '', p.title));
     txt.appendChild(el('span', 'meta', p.items.length + ' questions'));
     var bk = best[key], pl = places()[key];
-    if (pl) txt.appendChild(el('span', 'status going', 'In progress · ' + answered(pl) + ' of ' + pl.ids.length + ' done' + (bk ? ' · Best ' + bk[0] + ' / ' + bk[1] : '')));
+    var fin = pl && answered(pl) === pl.ids.length;
+    if (fin) {
+      var gotR = pl.ids.filter(function (id, k) { return grade(p.items[id], pl.picks[k]).ok; }).length;
+      txt.appendChild(el('span', 'status ' + (gotR === pl.ids.length ? 'perfect' : 'done'), '✓ Finished · ' + gotR + ' / ' + pl.ids.length + ' · tap to see the wrong ones'));
+    } else if (pl) txt.appendChild(el('span', 'status going', 'In progress · ' + answered(pl) + ' of ' + pl.ids.length + ' done' + (bk ? ' · Best ' + bk[0] + ' / ' + bk[1] : '')));
     else txt.appendChild(el('span', 'status ' + (!bk ? 'new' : bk[0] === bk[1] ? 'perfect' : 'done'),
       !bk ? 'Not started' : bk[0] === bk[1] ? '✓ All correct · ' + bk[0] + ' / ' + bk[1] : '✓ Done · Best ' + bk[0] + ' / ' + bk[1]));
     b.appendChild(txt);
@@ -1321,6 +1326,7 @@ function begin(ctx) {
     var from = typeof pl.at === 'number' ? pl.at : 0, n = quiz.length;
     at = 0;
     for (var k = 0; k < n; k++) { var i = (from + k) % n; if (picks[i] === undefined) { at = i; break; } }
+    if (answered(pl) === n) { done(); return; }
     show();
     return;
   }
@@ -1637,7 +1643,7 @@ function done() {
     if (picks[i] === undefined || !grade(item, picks[i]).ok) missed.push({ item: item, picked: picks[i] });
   });
   var total = quiz.length, right = total - missed.length;
-  if (cur.key && fullRun) { saveBest(cur.key, right, total); setPlace(cur.key, null); }
+  if (cur.key && fullRun) { saveBest(cur.key, right, total); savePlace(); }
   app.textContent = '';
   var card = el('div', 'card');
   card.appendChild(el('p', 'score', right + ' / ' + total));
@@ -1664,10 +1670,17 @@ function done() {
     again.onclick = function () { fullRun = false; start(retry); };
     card.appendChild(again);
   }
-  var all = el('button', missed.length ? 'secondary' : 'primary', 'Start the whole quiz over');
+  if (fullRun) {
+    var look = el('button', 'secondary', 'Look at all my answers');
+    look.type = 'button';
+    look.onclick = function () { at = 0; show(); };
+    card.appendChild(look);
+  }
+  var all = el('button', missed.length ? 'secondary' : 'primary', '↺ Reset: clear my answers and start over');
   all.type = 'button';
   all.onclick = function () { fullRun = true; if (cur.key) setPlace(cur.key, null); start(items()); };
   card.appendChild(all);
+  if (cur.key && fullRun) card.appendChild(el('p', 'meta', 'Your answers are saved on this iPad until you tap Reset.'));
   var pick = el('button', 'secondary', cur.backLabel || 'Pick a different test');
   pick.type = 'button';
   pick.onclick = cur.back;
