@@ -1547,6 +1547,23 @@ function reveal(item, resp, a, card) {
   var res = grade(item, resp), ok = res.ok;
   a.lock(resp, ok);
   var f = el('div', 'feedback ' + (ok ? 'right' : 'wrong'));
+  // 聽寫 wrong: don't give the answer away. She can erase and write again, or ask to see it.
+  if (item.lang && item.kind === 'type' && !ok && !item.shown) {
+    f.appendChild(el('strong', '', '再想想，擦掉再寫一次！'));
+    var row = el('div', 'retry');
+    var again = el('button', 'primary', '✏️ 擦掉重寫');
+    again.type = 'button';
+    again.onclick = function () { picks[at] = undefined; savePlace(); show(); };
+    var peek = el('button', 'secondary', '看答案');
+    peek.type = 'button';
+    peek.onclick = function () { item.shown = true; card.removeChild(f); if (next && next.parentNode) next.parentNode.removeChild(next); reveal(item, resp, { lock: function () {} }, card); delete item.shown; };
+    row.appendChild(again);
+    row.appendChild(peek);
+    f.appendChild(row);
+    card.appendChild(f);
+    next = again;
+    return;
+  }
   var head;
   if (item.kind === 'write') head = ok ? 'Looks good!' : 'Almost. Check the list.';
   else if (ok) head = 'Correct!';
@@ -1572,7 +1589,7 @@ function reveal(item, resp, a, card) {
     if (item.zh && !item.lang) f.appendChild(put(el('div', 'zh'), '', item.zh));
     if (ok && item.alt && item.alt.indexOf(resp) >= 0) f.appendChild(el('div', 'zh', 'The other choice works too, but “' + item.a + '” is the one we were looking for.'));
     if (ok && item.alts && item.alts.length && item.kind === 'type' && !item.spell) f.appendChild(el('div', 'zh', 'Also correct: ' + item.alts.join(', ')));
-    f.appendChild(speakButton('Read the answer', function () {
+    f.appendChild(speakButton(item.lang ? '念答案' : 'Read the answer', function () {
       if (item.lang) return [[(ok ? '答對了！' : '答案是：') + (filled(item) || answerText(item)), item.lang]];
       var parts = [[(ok ? 'Correct! ' : 'The answer is ' + (item.kind === 'mc' ? item.w + '. ' : '')) + (item.spell ? speakAnswer(item) : (filled(item) ? filled(item).replace(/^[^:]*: /, '') : answerText(item))), 'en-US']];
       if (item.zh && item.kind !== 'write') parts.push([item.zh.replace(/[（）／、]/g, '，'), 'zh-TW']);
