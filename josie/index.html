@@ -935,47 +935,47 @@ var ZH_PARTS = [
 ];
 
 /* 聽寫: the iPad reads the word and its sentence; she writes it (Apple Pencil Scribble or handwriting keyboard). */
-function Zd(rows) {
-  return rows.map(function (r) {
+function Zd(n, rows) {
+  return rows.map(function (r, i) {
     var said = r[1].replace(/___\([^)]*\)/, r[0]);
     return { kind: 'type', listen: true, lang: 'zh-TW', a: r[0], alts: r[2] || [], q: r[1], zh: r[1],
-      say: r[0] + '。' + said + '。' + r[0] + '。', ask: '按 🔊 聽，再把聽到的國字寫在格子裡。' };
+      say: r[0] + '。' + said + '。' + r[0] + '。', audio: 'audio/d' + n + '-' + (i + 1) + '.mp3', ans: 'audio/d' + n + '-' + (i + 1) + 'a.mp3', ask: '按 🔊 聽，再把聽到的國字寫在格子裡。' };
   });
 }
-var ZD_L1 = Zd([
+var ZD_L1 = Zd(1, [
   ['時候', '害怕的___(ㄕˊ ㄏㄡˋ)，我好想躲起來。'], ['颳', '心裡___(ㄍㄨㄚ)起冷冷的風。'], ['冷', '颳起___(ㄌㄥˇ)冷的風。'],
   ['躲', '我好想___(ㄉㄨㄛˇ)起來。'], ['閃電', '心裡一會兒___(ㄕㄢˇ ㄉㄧㄢˋ)。'], ['難過', '___(ㄋㄢˊ ㄍㄨㄛˋ)的時候。'],
   ['烏雲', '心裡___(ㄨ ㄩㄣˊ)密布。'], ['密布', '烏雲___(ㄇㄧˋ ㄅㄨˋ)。'], ['盆', '下起傾___(ㄆㄣˊ)大雨。'],
   ['充滿', '心裡___(ㄔㄨㄥ ㄇㄢˇ)溫暖的陽光。'], ['放晴', '雨後___(ㄈㄤˋ ㄑㄧㄥˊ)。'], ['出現', '會___(ㄔㄨ ㄒㄧㄢˋ)美麗的彩虹。'],
   ['彩虹', '美麗的___(ㄘㄞˇ ㄏㄨㄥˊ)。']
 ]);
-var ZD_L2 = Zd([
+var ZD_L2 = Zd(2, [
   ['老師', '___(ㄌㄠˇ ㄕ)給我們小雲朵卡片。'], ['新希望', '寫上開學___(ㄒㄧㄣ ㄒㄧ ㄨㄤˋ)。'], ['卻', '我想了好久，___(ㄑㄩㄝˋ)想不出要寫什麼。'],
   ['開始', '看大家都___(ㄎㄞ ㄕˇ)寫了。'], ['緊張', '我心裡好___(ㄐㄧㄣˇ ㄓㄤ)。'], ['因為', '___(ㄧㄣ ㄨㄟˋ)我是轉學生。'],
   ['知道', '不___(ㄓ ㄉㄠˋ)可以問誰。'], ['怎麼', '___(ㄗㄣˇ ㄇㄜ˙)辦才好呢？', ['怎么']], ['消失', '緊張的心情___(ㄒㄧㄠ ㄕ)了。'],
   ['學習', '一起快樂___(ㄒㄩㄝˊ ㄒㄧˊ)！'], ['最後', '___(ㄗㄨㄟˋ ㄏㄡˋ)，老師把卡片掛起來。'], ['掛', '把卡片___(ㄍㄨㄚˋ)在教室的後面。']
 ]);
-var ZD_L3 = Zd([
+var ZD_L3 = Zd(3, [
   ['國王', '___(ㄍㄨㄛˊ ㄨㄤˊ)喜歡穿新衣。'], ['喜歡', '國王___(ㄒㄧˇ ㄏㄨㄢ)穿新衣。'], ['穿', '國王喜歡___(ㄔㄨㄢ)新衣。'],
   ['只要', '___(ㄓˇ ㄧㄠˋ)穿上新衣，就會很高興。'], ['件', '大臣送國王一___(ㄐㄧㄢˋ)新衣。'], ['一點', '___(ㄧˋ ㄉㄧㄢˇ)都不難！'],
   ['改', '又___(ㄍㄞˇ)袖子。'], ['衣領', '又加___(ㄧ ㄌㄧㄥˇ)。'], ['越', '國王___(ㄩㄝˋ)做越高興。'],
   ['設計', '國王喜歡上___(ㄕㄜˋ ㄐㄧˋ)衣服。'], ['發現', '他___(ㄈㄚ ㄒㄧㄢˋ)有不同的方法。'], ['方法', '不同的___(ㄈㄤ ㄈㄚˇ)。'],
   ['分享', '把快樂___(ㄈㄣ ㄒㄧㄤˇ)出去。']
 ]);
-var ZD_L4 = Zd([
+var ZD_L4 = Zd(4, [
   ['聞', '只___(ㄨㄣˊ)聲不見影。'], ['聲', '只聞___(ㄕㄥ)不見影。'], ['猜', '你來___(ㄘㄞ)一猜。'],
   ['青蛙', '我是蝦蟆還是___(ㄑㄧㄥ ㄨㄚ)？'], ['別', '請___(ㄅㄧㄝˊ)再靠近我。'], ['靠近', '請別再___(ㄎㄠˋ ㄐㄧㄣˋ)我。'],
   ['抓', '還想要___(ㄓㄨㄚ)。'], ['如果', '___(ㄖㄨˊ ㄍㄨㄛˇ)你乖乖的。'], ['乖', '如果你___(ㄍㄨㄞ)乖的。'],
   ['腦袋瓜', '跳上你的___(ㄋㄠˇ ㄉㄞˋ ㄍㄨㄚ)。'], ['證明', '___(ㄓㄥˋ ㄇㄧㄥˊ)你頂呱呱！'], ['頂', '證明你___(ㄉㄧㄥˇ)呱呱！']
 ]);
-var ZD_L5 = Zd([
+var ZD_L5 = Zd(5, [
   ['海邊', '小真一家人到___(ㄏㄞˇ ㄅㄧㄢ)玩。'], ['退', '海水___(ㄊㄨㄟˋ)得好遠。'], ['遠', '退得好___(ㄩㄢˇ)好遠。'],
   ['沙灘', '___(ㄕㄚ ㄊㄢ)上有很多小洞。'], ['螃蟹', '小___(ㄆㄤˊ ㄒㄧㄝˋ)爬進爬出。'], ['可愛', '好___(ㄎㄜˇ ㄞˋ)！'],
   ['注意', '你___(ㄓㄨˋ ㄧˋ)到螃蟹是怎麼走的嗎？'], ['夕陽', '___(ㄒㄧˋ ㄧㄤˊ)把沙灘照得閃閃發亮。'], ['腳丫', '他們光著___(ㄐㄧㄠˇ ㄧㄚ)。'],
   ['橫', '___(ㄏㄥˊ)著走。'], ['留下', '在沙灘上___(ㄌㄧㄡˊ ㄒㄧㄚˋ)腳印。'], ['腳印', '大大小小的___(ㄐㄧㄠˇ ㄧㄣˋ)。'],
   ['挖', '螃蟹___(ㄨㄚ)的小洞。'], ['美麗', '好像___(ㄇㄟˇ ㄌㄧˋ)的畫。']
 ]);
-var ZD_L6 = Zd([
+var ZD_L6 = Zd(6, [
   ['奶奶', '我們到___(ㄋㄞˇ ㄋㄞ˙)家。'], ['晚飯', '吃過___(ㄨㄢˇ ㄈㄢˋ)。'], ['散步', '全家人一起去___(ㄙㄢˋ ㄅㄨˋ)。'],
   ['屋', '穿過___(ㄨ)後的竹林。'], ['竹林', '穿過屋後的___(ㄓㄨˊ ㄌㄧㄣˊ)。'], ['頭', '竹林盡___(ㄊㄡˊ)是小溪。'],
   ['小溪', '竹林盡頭是___(ㄒㄧㄠˇ ㄒㄧ)。'], ['兩旁', '小溪___(ㄌㄧㄤˇ ㄆㄤˊ)長滿了草。'], ['暗', '天色很___(ㄢˋ)。'],
@@ -1139,6 +1139,21 @@ function grade(item, resp) {
 
 /* ---------- Read aloud with the device's own voices ---------- */
 // Each part: [text, lang]. Tapping again while it talks stops it.
+var clip = null;
+function playClip(src, fallback) {
+  hush();
+  var a = new Audio(src);
+  clip = a;
+  a.play().catch(function () { clip = null; say(fallback); });
+}
+function bestVoice(lang) {
+  var vs = window.speechSynthesis ? speechSynthesis.getVoices() : [];
+  var mine = vs.filter(function (v) { return v.lang.replace('_', '-') === lang; });
+  if (lang !== 'zh-TW') return null;
+  var rank = function (v) { return (/premium/i.test(v.name) ? 4 : /enhanced|增強|高品質/i.test(v.name) ? 3 : 0) + (/mei-?jia|美佳/i.test(v.name) ? 2 : 0) + (v.localService ? 1 : 0); };
+  return mine.sort(function (a, b) { return rank(b) - rank(a); })[0] || null;
+}
+if (window.speechSynthesis) { speechSynthesis.getVoices(); speechSynthesis.onvoiceschanged = function () {}; }
 function say(parts) {
   var v = window.speechSynthesis;
   if (!v) return;
@@ -1146,11 +1161,13 @@ function say(parts) {
   parts.forEach(function (p) {
     var u = new SpeechSynthesisUtterance(p[0]);
     u.lang = p[1];
-    u.rate = 0.9;
+    var bv = bestVoice(p[1]);
+    if (bv) u.voice = bv;
+    u.rate = p[1] === 'zh-TW' ? 0.8 : 0.9;
     v.speak(u);
   });
 }
-function hush() { if (window.speechSynthesis) window.speechSynthesis.cancel(); }
+function hush() { if (clip) { clip.pause(); clip = null; } if (window.speechSynthesis) window.speechSynthesis.cancel(); }
 function speakButton(label, parts) {
   var b = el('button', 'speak', '🔊 ' + label);
   b.type = 'button';
@@ -1334,13 +1351,13 @@ function stem(item) {
   if (item.listen && item.lang) {
     var playZ = el('button', 'secondary', '🔊 再聽一次');
     playZ.type = 'button';
-    playZ.onclick = function () { say([[item.say, item.lang]]); };
+    playZ.onclick = function () { playClip(item.audio, [[item.say, item.lang]]); };
     wrap.appendChild(playZ);
     var hintZ = el('button', 'back', '需要提示？看句子和注音');
     hintZ.type = 'button';
     hintZ.onclick = function () { var z = el('p', 'q'); rich(z, item.q); hintZ.replaceWith(z); };
     wrap.appendChild(hintZ);
-    if (picks[at] === undefined) setTimeout(function () { say([[item.say, item.lang]]); }, 300);
+    if (picks[at] === undefined) setTimeout(function () { playClip(item.audio, [[item.say, item.lang]]); }, 300);
     return wrap;
   }
   if (item.listen) {
@@ -1590,6 +1607,7 @@ function reveal(item, resp, a, card) {
     if (ok && item.alt && item.alt.indexOf(resp) >= 0) f.appendChild(el('div', 'zh', 'The other choice works too, but “' + item.a + '” is the one we were looking for.'));
     if (ok && item.alts && item.alts.length && item.kind === 'type' && !item.spell) f.appendChild(el('div', 'zh', 'Also correct: ' + item.alts.join(', ')));
     f.appendChild(speakButton(item.lang ? '念答案' : 'Read the answer', function () {
+      if (item.lang && item.ans) { playClip(item.ans, [[(filled(item) || answerText(item)), item.lang]]); return []; }
       if (item.lang) return [[(ok ? '答對了！' : '答案是：') + (filled(item) || answerText(item)), item.lang]];
       var parts = [[(ok ? 'Correct! ' : 'The answer is ' + (item.kind === 'mc' ? item.w + '. ' : '')) + (item.spell ? speakAnswer(item) : (filled(item) ? filled(item).replace(/^[^:]*: /, '') : answerText(item))), 'en-US']];
       if (item.zh && item.kind !== 'write') parts.push([item.zh.replace(/[（）／、]/g, '，'), 'zh-TW']);
