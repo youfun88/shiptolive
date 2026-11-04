@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow,noarchive">
-<title>首頁改版：5 個版型 | Ship to Live（草稿）</title>
+<title>首頁改版：10 個版型 | Ship to Live（草稿）</title>
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <style>
 :root{--ink:#16161a;--mut:#5b5b66;--line:#e6e2da;--bg:#f7f5f0;--card:#fff;--acc:#1d4ed8}
@@ -43,21 +43,100 @@ footer a{color:var(--ink)}
   .cols{grid-template-columns:1fr}
   .open a{flex:1 1 140px}
 }
+.rank{margin:18px 0 0;padding:16px 18px;background:#fff;border:1px solid var(--line);border-radius:16px}
+.rank h2{font-size:18px;margin:0 0 8px}
+.rank ol{margin:0;padding-left:1.4em}
+.rank li{margin:6px 0;font-size:15px}
+.rank li a{color:var(--ink);font-weight:700}
+.rank .r1{color:#6e6e73}
+.sec{font-size:13px;letter-spacing:.06em;color:var(--mut);margin:34px 0 0;border-top:1px solid var(--line);padding-top:14px}
+.badge.alt{background:#16161a}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header>
-  <p class="kick">SHIPTOLIVE.COM 首頁改版 · 草稿（不公開、不被搜尋）</p>
-  <h1>5 個首頁版型，請挑一個</h1>
-  <p class="lead">五個版型都賣同樣三件事：科技行銷、軟體開發、AI 導入。內容和規則一樣（真實客戶、標明來源的數據、沒有保證、沒有新價格），差別在版面、互動和第一印象。每個都有中文版和英文版，手機和電腦都能看。點截圖或「開啟」就能看完整頁面。</p>
-  <p class="note">這些頁面都是手工寫的靜態 HTML，沒有用 base44：base44 需要你的帳號，而且網站會放在它的平台上（不在 GitHub Pages，對 SEO 不利）。後台畫面是真實的 admin 介面跑在示範模式，數字是示範資料。</p>
-  <p class="note" style="background:#eef3ff;border-color:#c9d6fb;color:#1e2a55"><strong>我的推薦：版型 4（互動診斷）。</strong>它用客戶自己的話問「你現在最卡的是？」，把三種服務分流，再帶著答案進聯絡表單，最可能變成預約；扮演「懷疑的台灣中小企業老闆」的審稿也把它排第一。想要更穩重的感覺，就選 2 或 3；4 的問答卡也可以搬到 2 或 3 的首屏上。</p>
+  <p class="kick">SHIPTOLIVE.COM 首頁改版 · 第二輪 · 草稿（不公開、不被搜尋）</p>
+  <h1>10 個首頁版型（新的 5 個在最上面）</h1>
+  <p class="lead">第一輪 1–5 你說「看起來很廉價、像模板」。我們先寫了原因（<a href="ROUND2.md">ROUND2.md</a>）：沒有真正的圖片、一堆細框卡片和小標籤、每個畫面字太多、標題不夠大、顏色太雜。第二輪 6–10 每個都用 GX10 自己生成的 3D 渲染、電影畫面和短影片，搭配真實後台截圖，字更少、字更大、一個主色。三個服務、真實客戶、規則都和第一輪一樣。</p>
+  <p class="note">每個版型都經過兩輪審稿：一位挑剔的設計總監（對照 apple.com 和 Awwwards 得獎網站）和一位懷疑的台中老闆，意見都改進去了（<a href="CRITIQUE2-design.md">設計審稿</a> · <a href="CRITIQUE2-smb.md">老闆審稿</a>）。所有 3D 物件、電影場景和風景照都是 AI 生成的示意圖，不是客戶作品；後台畫面是真的，數字是示範資料。</p>
+  <div class="rank">
+    <h2>我的排名（1 = 最好）</h2>
+    <ol>
+      <li><a href="#l9">9 漸層景深</a>：最清楚說出「你會得到什麼」，真實後台和真實客戶照片最多，好看又最像會成交的網站。</li>
+      <li><a href="#l6">6 Apple 產品頁</a>：最乾淨、最好讀，台灣老闆一看就覺得正式；缺點是風格是借來的。</li>
+      <li><a href="#l7">7 電影感</a>：最有「哇」的高級感，實績一個畫面一個；但深色＋AI 畫面對保守的老闆可能太像廣告。</li>
+      <li><a href="#l8">8 物件工作室</a>：最有自己個性、安靜可信；陶土物件太抽象，衝擊力不如前三名。</li>
+      <li><a href="#l10">10 液態玻璃</a>：台灣在地感最強、手機分頁列好用；但玻璃面板多，風景和我們做的事連結較弱。</li>
+      <li class="r1"><a href="#l4">4 互動診斷</a>：第一輪最好，問答分流很實用，可以搬進 9 或 6；但外觀仍是模板感。</li>
+      <li class="r1"><a href="#l2">2 捲動故事</a>：流程講得最清楚，但幾乎沒有圖片。</li>
+      <li class="r1"><a href="#l3">3 雜誌</a>：可信、有註腳，但字太多、太長。</li>
+      <li class="r1"><a href="#l1">1 Bento</a>：細框方格是最典型的模板感。</li>
+      <li class="r1"><a href="#l5">5 學院＋工作室</a>：把現在的主要收入（科技行銷）排到後面，而且依賴還不存在的免費資源。</li>
+    </ol>
+  </div>
   <ul class="jump">
-    <li><a href="#l1">1 Bento</a></li><li><a href="#l2">2 捲動故事</a></li><li><a href="#l3">3 雜誌</a></li><li><a href="#l4">4 互動診斷</a></li><li><a href="#l5">5 學院＋工作室</a></li><li><a class="old" href="/old-site/">現在的網站 →</a></li>
+    <li><a href="#l9">9 漸層</a></li><li><a href="#l6">6 Apple</a></li><li><a href="#l7">7 電影</a></li><li><a href="#l8">8 物件</a></li><li><a href="#l10">10 玻璃</a></li><li><a href="#round1">第一輪 1–5</a></li><li><a class="old" href="/old-site/">現在的網站 →</a></li>
   </ul>
 </header>
 
+<section class="card rec" id="l9">
+  <h2><small>版型 9</small>漸層景深<span class="badge">第 1 名</span></h2>
+  <p class="kick">Gradient depth・白底・Stripe 式產品感</p>
+  <p class="pitch">白底大標「客人找得到你，系統替你做事。」，右上是流動的彩色玻璃緞帶。往下是真實後台（電腦＋手機）隨捲動從傾斜轉正；科技行銷用一張「AI 回答檢查」產品卡，軟體開發是滿版的山行接駁 Go Hike 實景照片，AI 導入是超大的「2 小時 → 10 分鐘」。WU LAW 的 12/16 一個數字佔一整個畫面。</p>
+  <div class="shots">
+    <a href="/pending/redesign/9/" aria-label="開啟版型 9（手機截圖）"><img src="/pending/redesign/shared/img/pick-9-m.webp" alt="版型 9 手機首屏" width="390" height="844" loading="lazy"></a>
+    <a href="/pending/redesign/9/" aria-label="開啟版型 9（電腦截圖）"><img src="/pending/redesign/shared/img/pick-9-d.webp" alt="版型 9 電腦首屏" width="960" height="600" loading="lazy"></a>
+  </div>
+  <div class="cols"><div class="good"><h3>優點</h3><ul><li>首屏一句話就講清楚「你會得到什麼」</li><li>真實後台、真實客戶照片最多，最不像 AI 圖</li><li>老闆角色的審稿排第 1</li></ul></div><div class="bad"><h3>取捨</h3><ul><li>緞帶圖是 AI 渲染（只當裝飾）</li><li>整體偏「軟體公司」，溫度比 8 低</li><li>手機上後台截圖的小字仍看不清</li></ul></div></div>
+  <div class="open"><a class="p" href="/pending/redesign/9/">開啟中文版</a><a class="s" href="/pending/redesign/9/en/">English</a></div>
+</section>
+<section class="card" id="l6">
+  <h2><small>版型 6</small>Apple 產品頁<span class="badge">第 2 名</span></h2>
+  <p class="kick">Apple style・白／淺灰／黑・SF 字體</p>
+  <p class="pitch">照 apple.com/tw/iphone 的語言：超大標題「Ship to Live」、下面一排服務小圖示（科技行銷 / 軟體開發 / AI 導入 / 作品 / 方案 / 預約），接著是 28px 圓角的大卡片輪播（黑卡會播 3D 動畫），每張卡有「預約諮詢」和藍色「了解更多」。之後是每個服務的 Apple 式介紹、「跟我們合作，你會得到什麼」、黑底的 12/16 實績。</p>
+  <div class="shots">
+    <a href="/pending/redesign/6/" aria-label="開啟版型 6（手機截圖）"><img src="/pending/redesign/shared/img/pick-6-m.webp" alt="版型 6 手機首屏" width="390" height="844" loading="lazy"></a>
+    <a href="/pending/redesign/6/" aria-label="開啟版型 6（電腦截圖）"><img src="/pending/redesign/shared/img/pick-6-d.webp" alt="版型 6 電腦首屏" width="960" height="600" loading="lazy"></a>
+  </div>
+  <div class="cols"><div class="good"><h3>優點</h3><ul><li>你指定的方向，台灣人一看就覺得「正式的大公司」</li><li>最乾淨、留白最多，手機最好讀</li><li>軟體估算器（6–10 週，非報價）做成 Apple 分段按鈕</li></ul></div><div class="bad"><h3>取捨</h3><ul><li>風格是借來的，辨識度不是我們自己的</li><li>3D 物件是 AI 渲染</li><li>電腦版較長（約 12,600px）</li></ul></div></div>
+  <div class="open"><a class="p" href="/pending/redesign/6/">開啟中文版</a><a class="s" href="/pending/redesign/6/en/">English</a></div>
+</section>
+<section class="card" id="l7">
+  <h2><small>版型 7</small>電影感<span class="badge">第 3 名</span></h2>
+  <p class="kick">Cinematic・黑底・電影劇照＋短影片</p>
+  <p class="pitch">像產品發表會的預告片：首屏是光柱裡的黑色石碑（會動），「把對的事做到上線。」三個服務各是一整個畫面的電影場景（城市探照燈＝被找到、組裝中的機器＝做系統、金色光流＝工作流），中間穿插黑底大字幕：「16 則 AI 回答中，12 則提到了我們的客戶。」、「487 次」、「102 條接駁路線」。</p>
+  <div class="shots">
+    <a href="/pending/redesign/7/" aria-label="開啟版型 7（手機截圖）"><img src="/pending/redesign/shared/img/pick-7-m.webp" alt="版型 7 手機首屏" width="390" height="844" loading="lazy"></a>
+    <a href="/pending/redesign/7/" aria-label="開啟版型 7（電腦截圖）"><img src="/pending/redesign/shared/img/pick-7-d.webp" alt="版型 7 電腦首屏" width="960" height="600" loading="lazy"></a>
+  </div>
+  <div class="cols"><div class="good"><h3>優點</h3><ul><li>「哇」的感覺最強，設計總監審稿排第 1</li><li>每個實績都是一整個畫面，很有份量</li><li>影片只在電腦上載入，手機不耗流量</li></ul></div><div class="bad"><h3>取捨</h3><ul><li>老闆角色覺得像預告片／加密貨幣廣告（已加強字的對比和真實照片）</li><li>場景都是 AI 生成畫面</li><li>深色在戶外陽光下較難讀</li></ul></div></div>
+  <div class="open"><a class="p" href="/pending/redesign/7/">開啟中文版</a><a class="s" href="/pending/redesign/7/en/">English</a></div>
+</section>
+<section class="card" id="l8">
+  <h2><small>版型 8</small>物件工作室<span class="badge">第 4 名</span></h2>
+  <p class="kick">Object studio・米白紙色・日式工作室</p>
+  <p class="pitch">像日本設計工作室或 Nothing 的網站：暖米白底、霧面陶土物件（每個服務一個，帶一點橘色），大大的 01 / 02 / 03，細線規格表（價格、時程、你會拿到什麼），細節收在「看細節」裡。後台截圖像裱框的作品。</p>
+  <div class="shots">
+    <a href="/pending/redesign/8/" aria-label="開啟版型 8（手機截圖）"><img src="/pending/redesign/shared/img/pick-8-m.webp" alt="版型 8 手機首屏" width="390" height="844" loading="lazy"></a>
+    <a href="/pending/redesign/8/" aria-label="開啟版型 8（電腦截圖）"><img src="/pending/redesign/shared/img/pick-8-d.webp" alt="版型 8 電腦首屏" width="960" height="600" loading="lazy"></a>
+  </div>
+  <div class="cols"><div class="good"><h3>優點</h3><ul><li>最有自己的個性，安靜、細緻、可信</li><li>字少、留白多，手機約 8,900px</li><li>價格錨點（健檢 NT$30,000）放在規格表裡很自然</li></ul></div><div class="bad"><h3>取捨</h3><ul><li>陶土物件是抽象的 AI 渲染，老闆不一定懂代表什麼</li><li>「哇」的程度不如 7</li><li>色調偏暖靜，科技感較弱</li></ul></div></div>
+  <div class="open"><a class="p" href="/pending/redesign/8/">開啟中文版</a><a class="s" href="/pending/redesign/8/en/">English</a></div>
+</section>
+<section class="card" id="l10">
+  <h2><small>版型 10</small>液態玻璃<span class="badge">第 5 名</span></h2>
+  <p class="kick">Liquid Glass・iOS 26 毛玻璃＋台灣風景</p>
+  <p class="pitch">台北 101 黃昏、雨夜霓虹街、陽光辦公室、玉山雲海，每個服務一幕；上面浮著 iOS 26 式的毛玻璃面板，手機底部有玻璃分頁列（科技行銷 / 軟體開發 / AI 導入 / 聯絡）。首屏的台北天際線會動。</p>
+  <div class="shots">
+    <a href="/pending/redesign/10/" aria-label="開啟版型 10（手機截圖）"><img src="/pending/redesign/shared/img/pick-10-m.webp" alt="版型 10 手機首屏" width="390" height="844" loading="lazy"></a>
+    <a href="/pending/redesign/10/" aria-label="開啟版型 10（電腦截圖）"><img src="/pending/redesign/shared/img/pick-10-d.webp" alt="版型 10 電腦首屏" width="960" height="600" loading="lazy"></a>
+  </div>
+  <div class="cols"><div class="good"><h3>優點</h3><ul><li>最有台灣在地感，第一眼很漂亮</li><li>手機底部分頁列很好用</li><li>唯一點名勞動部補助計畫名稱（謹慎寫法）</li></ul></div><div class="bad"><h3>取捨</h3><ul><li>照片是 AI 生成的「明信片風景」</li><li>玻璃面板多，細看會覺得忙</li><li>和公司實際做的事關聯較弱</li></ul></div></div>
+  <div class="open"><a class="p" href="/pending/redesign/10/">開啟中文版</a><a class="s" href="/pending/redesign/10/en/">English</a></div>
+</section>
+
+<p class="sec" id="round1">第一輪（2026-11-04 上午）：1–5</p>
 <section class="card" id="l1">
   <h2><small>版型 1</small>Bento</h2>
   <p class="kick">深色・Apple / Linear 風格</p>
@@ -91,8 +170,8 @@ footer a{color:var(--ink)}
   <div class="cols"><div class="good"><h3>優點</h3><ul><li>最有信任感、最像 B2B 顧問</li><li>每個數字都標了來源，可查證</li><li>手機讀起來像一篇好文章</li></ul></div><div class="bad"><h3>取捨</h3><ul><li>最長（手機約 21,000px），需要讀者有耐心</li><li>動畫最少，「哇」的感覺較弱</li><li>中文標題用 Google Fonts 襯線字（多一點載入）</li></ul></div></div>
   <div class="open"><a class="p" href="/pending/redesign/3/">開啟中文版</a><a class="s" href="/pending/redesign/3/en/">English</a></div>
 </section>
-<section class="card rec" id="l4">
-  <h2><small>版型 4</small>互動診斷<span class="badge">推薦</span></h2>
+<section class="card" id="l4">
+  <h2><small>版型 4</small>互動診斷</h2>
   <p class="kick">Interactive diagnostic・像一個 App</p>
   <p class="pitch">首屏直接問：「你現在最卡的是？」客戶找不到你 / 流程太手動 / 需要一套系統。點一個，再回答兩題，就得到一張「診斷結果」：可能的問題、我們會先做什麼、相關的真實成果，按鈕會把答案自動帶進聯絡表單。下面仍完整介紹三個服務。</p>
   <div class="shots">
@@ -119,9 +198,10 @@ footer a{color:var(--ink)}
   <div class="open"><a class="p" href="/old-site/zh/">開啟舊站中文版</a><a class="s" href="/old-site/">English</a></div>
 </section>
 
+
 <footer>
-  <p>挑好之後回覆編號就好（也可以說「1 的首屏 + 3 的字體」這種組合）。選定後，我們會把它換成正式首頁（含 Google tag、正式 canonical、sitemap），舊首頁保留在 <a href="/old-site/">/old-site/</a>。</p>
-  <p>研究摘要與資料來源：<a href="BRIEF.md">BRIEF.md</a> · <a href="research-ai.md">research-ai.md</a> · <a href="research-software.md">research-software.md</a> · <a href="CRITIQUE.md">CRITIQUE.md</a></p>
+  <p>挑好之後回覆編號就好（也可以說「9 的首屏 + 6 的卡片輪播 + 4 的問答」這種組合）。選定後，我們會把它換成正式首頁（含 Google tag、正式 canonical、sitemap），舊首頁保留在 <a href="/old-site/">/old-site/</a>。</p>
+  <p>研究與審稿：<a href="ROUND2.md">ROUND2.md</a> · <a href="CRITIQUE2-design.md">CRITIQUE2-design.md</a> · <a href="CRITIQUE2-smb.md">CRITIQUE2-smb.md</a> · <a href="BRIEF.md">BRIEF.md</a> · <a href="research-ai.md">research-ai.md</a> · <a href="research-software.md">research-software.md</a> · <a href="CRITIQUE.md">CRITIQUE.md</a></p>
 </footer>
 </div>
 </body>
