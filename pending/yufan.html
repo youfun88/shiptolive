@@ -98,7 +98,7 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </script>
 <h1>Developer review · SEO / AEO / GEO</h1>
 <p>Search and AI-visibility changes for Yufan to approve: titles, descriptions, schema, internal links, llms.txt, sitemap, keywords. Content changes go to the owner at <a href="/pending/">/pending</a>. Not linked from the site and not indexed. The GX10 job applies approved changes at its next run (every 8 hours).</p>
-<p class="updated">Updated 2026-11-05.</p>
+<p class="updated">Updated 2026-11-05 (evening run).</p>
 
 <!-- Item markup (copy for each draft; data-item must equal the board title exactly):
 <div class="item" data-item="TITLE">
@@ -122,6 +122,15 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </ul>
 <p>Why: own check of share tags and structured data across the sitemap (after /tools/, /ai-video/ and the calculator went live today): the Tadapop research page was the last public page with no Open Graph, Twitter or JSON-LD at all, so a link shared on LINE or Facebook showed no image or summary, and its title had no brand. The video topics article had no share image or card. In Search Console (28 days to 2026-11-02, 123 impressions in all) neither page has impressions yet; /ai-video/ has 4 at position 29. The owner's FAQ drafts for these two pages (separate items, FAQPage data) add their own script blocks; they don't touch the same lines.</p>
 <div class="links"><a href="/ai-video/tadapop-video-research/">Live version</a><a href="/ai-video/how-to-pick-video-topics/">Video topics article (live)</a></div>
+</div>
+<div class="item" data-item="[Yufan] Cut the Free tools page title to 60 characters">
+<h3>2. [Yufan] Cut the Free tools page title to 60 characters</h3>
+<p>The title that went live this morning is 72 characters, so Google cuts it off and the page checklist now flags it. The new title keeps both tool names and the brand. Only the <code>&lt;title&gt;</code> changes; og:title (where length matters less) and the page itself stay as they are. No 中文 version. Branch <code>seo/tools-title-60</code>.</p>
+<ul>
+<li><code>/tools/</code> <code>&lt;title&gt;</code>:<span class="ba was"><b>Before</b>Free Tools: Video Topic Finder &amp; GLP-1 Protein Calculator | Ship to Live (72)</span><span class="ba now"><b>After</b>Free Video Topic Finder &amp; GLP-1 Calculator | Ship to Live (57)</span></li>
+</ul>
+<p>Why: page checklist (health run 2026-11-05 18:00 UTC, score 95): "/tools/: Title is 72 characters. Cut it to 60 or fewer." The page has no Search Console impressions yet (28 days to 2026-11-02), so nothing ranking is put at risk. The page's other checklist gaps (no FAQ, thin at 74 words) are covered by the owner's FAQ draft for /tools/.</p>
+<div class="links"><a href="/tools/">Live version</a></div>
 </div>
 </div>
 
