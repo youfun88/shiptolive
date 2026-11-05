@@ -121,6 +121,7 @@
   .zy.n .zt { margin: 0 0 1px; }
   .choices.zhbig .choice { justify-content: center; font-size: 30px; min-height: 64px; }
   .field.zhfield { font-size: 34px; text-align: center; letter-spacing: 4px; min-height: 72px; }
+  hr.divider { border: 0; border-top: 2px solid var(--line); margin: 30px 0 4px; }
   :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 </style>
 </head>
@@ -991,7 +992,124 @@ ZH_PARTS = [
   { title: '第六課 草叢裡的星星', items: ZH_L6 }, { title: '第六課 聽寫', items: ZD_L6 }
 ];
 
+/* ---------- Grade 2 Reading Midterm (Fall 2026), from her graded exam ---------- */
+// Same stories, questions and answers as the paper. `tip` explains the right answer.
+var MID_SOCK = 'Max has a little puppy named Bean. Bean’s favorite toy is an old tennis ball. It is covered in soft, yellow fuzz. Bean carries it everywhere she goes. One morning, Max could not find his red sock. He looked in the hamper, the basket where he puts his dirty clothes. The sock was not there! Max panicked. He felt very afraid. “I need my red sock for my soccer game!” Max looked under his bed. He found an enormous pile of toys. It was so big! But there was no sock. Max ran to the kitchen. Bean was eating. Crunch, crunch! Bean likes to munch on her dog treats. But she ate too many treats, and now she felt queasy. Her tummy hurt. Then Max saw something red under the table, right next to Bean’s tennis ball. “Bean, did you take my sock?” Max was angry. He had a scowl on his face. Max reached under the table. He fiddled with the sock until it came loose. The sock was fine! Max gave Bean her tennis ball. She felt better, and she bounced up and down happily. Max grinned from ear to ear. “Silly Bean! Now I can play soccer!”';
+var MID_FIELD = 'Today was Field Day at Green Valley School. The teachers had planned lots of fun games. The sun was shining, and the weather was perfect. Everyone was in a happy mood. The first game was the sack race. The kids hopped in big bags and looked so ridiculous that everyone laughed. Next was the water balloon game. The grassy field became a battleground as the two teams got ready. “We prohibit throwing balloons at faces,” said Mr. Park. The kids ran around in a frenzy, grabbing balloons as fast as they could. Lily crept up behind Ben with a balloon. SPLASH! Ben gasped as the cold water hit his back. Suddenly, dark clouds filled the sky, and it began to rain. Was Field Day going to be a disaster? Everyone ran into the gym. Then the school mascot came to cheer everyone up. A mascot is a person in a big, fun costume. Our mascot is a lovable bear, and he gave high fives to all the kids. Next was tug-of-war. Ben pulled the rope with all his might. The game got a little rough. Kids bumped into each other, and some fell down, but nobody got hurt. Some kids were upset that their team lost. Mr. Park said, “Take a deep breath and cool down.” Lily smiled and said, “We can handle a little rain! Field Day is still fun!”';
+var MID_BREAK = 'I think Sunny Hill School should have longer break time. I am in Ms. Green’s second-grade class. Break time starts at 10:00 every morning. Right now, it is only 15 minutes long. That is not enough time to play! First, kids need to move their bodies. Running, jumping, and climbing help us stay strong and healthy. Second, playing outside makes us happy. When we are happy, we can sit still and learn better in class. Our school also has a big library with lots of animal books. Third, a longer break time helps us make new friends. We can play games, take turns, and share with each other. Some people think we need more time to study, but a short rest helps our brains work better, so we will do even better on our schoolwork! Longer break time is the best idea for Sunny Hill School. Please tell Principal Brown that you agree. You should help us make break time longer!';
+var MID_FROGS = 'Have you ever visited a pond? Frogs and turtles both live near ponds. They can both swim very well. A frog has smooth, wet skin. Its skin must stay wet, or the frog can get sick. A turtle has a hard shell on its back. When a turtle is scared, it pulls its head inside its shell. Most frogs are small enough to sit in your hand. Some turtles can grow as big as a car tire! Frogs can be green, brown, or even bright blue. A frog also has big eyes that help it see all around. A frog eats bugs. It catches them with its long, sticky tongue. A turtle eats plants and small fish. Turtles move very slowly when they walk on land. Both frogs and turtles lay eggs. A mother frog lays her eggs in the water. A mother turtle digs a hole in the sand and lays her eggs there. Baby frogs are called tadpoles, and they have long tails. At night, frogs sing a loud “ribbit” song. In the cold winter, frogs and turtles both sleep in the mud at the bottom of the pond. Some turtles can live for more than 50 years! The next time you visit a pond, look closely. You might see a frog or a turtle!';
+var MID_BANK = ['enormous', 'fuzz', 'hamper', 'queasy', 'fiddled', 'panicked', 'bounced', 'munch', 'scowl', 'grinned'];
+function midList(rows, o) { return rows.map(function (r) { return P(r[0], r[1], r[2], extend({ tip: r[3] }, o)); }); }
+var TF = ['True', 'False'];
+var MID_PARTS = [
+  { title: 'Part 1. Max and the Red Sock: missing words', items: midList([
+    ['It is covered in soft, yellow ___.', MID_BANK, 'fuzz', 'Fuzz is soft, fluffy hair, like on a tennis ball.'],
+    ['He looked in the ___, the basket where he puts his dirty clothes.', MID_BANK, 'hamper', 'A hamper is a basket for dirty clothes.'],
+    ['The sock was not there! Max ___. He felt very afraid.', MID_BANK, 'panicked', 'Panicked means felt very afraid all of a sudden.'],
+    ['He found an ___ pile of toys. It was so big!', MID_BANK, 'enormous', 'Enormous means very, very big.'],
+    ['Crunch, crunch! Bean likes to ___ on her dog treats.', MID_BANK, 'munch', 'Munch means chew with a crunching sound.'],
+    ['She ate too many treats, and now she felt ___. Her tummy hurt.', MID_BANK, 'queasy', 'Queasy means your tummy feels sick.'],
+    ['Max was angry. He had a ___ on his face.', MID_BANK, 'scowl', 'A scowl is an angry face.'],
+    ['He ___ with the sock until it came loose.', MID_BANK, 'fiddled', 'Fiddled means moved it around with his fingers.'],
+    ['She felt better, and she ___ up and down happily.', MID_BANK, 'bounced', 'Bounced means jumped up and down.'],
+    ['Max ___ from ear to ear.', MID_BANK, 'grinned', 'Grinned means smiled a big smile.']
+  ], { ask: 'Pick the word that fits the blank.' }) },
+  { title: 'Part 2. Max and the Red Sock: questions', items: midList([
+    ['Where does the story take place?', ['at school', 'at Max’s house', 'at the park', 'at the soccer field'], 'at Max’s house', 'Max looks in his hamper, under his bed and in the kitchen. That is his house.'],
+    ['What does Max find under his bed?', ['a big pile of toys', 'a tennis ball', 'Bean', 'his sock'], 'a big pile of toys', '“He found an enormous pile of toys.” The sock was under the table, not the bed.'],
+    ['Why does Max need his red sock?', ['for a party', 'for Bean', 'for school', 'for his soccer game'], 'for his soccer game', '“I need my red sock for my soccer game!”'],
+    ['Where does Max look first?', ['in his backpack', 'under the table', 'in the basket for dirty clothes', 'in the kitchen'], 'in the basket for dirty clothes', 'First the hamper, then under the bed, then the kitchen.'],
+    ['Why does Bean’s tummy hurt?', ['She ran too fast.', 'She ate too many treats.', 'She ate the sock.', 'She was cold.'], 'She ate too many treats.', '“She ate too many treats, and now she felt queasy.”'],
+    ['How does Max feel when he thinks Bean took his sock?', ['proud', 'angry', 'sleepy', 'happy'], 'angry', '“Max was angry. He had a scowl on his face.”'],
+    ['Bean took Max’s sock. Which sentence from the story is the best evidence?', ['Bean’s favorite toy is an old tennis ball.', '“Bean, did you take my sock?”', 'One morning, Max could not find his red sock.', 'The red sock was right next to Bean’s tennis ball.'], 'The red sock was right next to Bean’s tennis ball.', 'Evidence is a clue that shows it. The sock was found next to Bean’s toy. Max asking a question does not prove anything.'],
+    ['Main idea: Max looks for his sock. Which detail does NOT support it?', ['Bean’s ball is old.', 'Max reached under the table.', 'Max looked under his bed.', 'Max looked in the basket.'], 'Bean’s ball is old.', 'The other three are places Max looked. An old ball is not about looking for the sock.'],
+    ['How does Max feel at the beginning and at the end of the story?', ['happy at the beginning, afraid at the end', 'afraid at the beginning, happy at the end', 'sleepy at the beginning, excited at the end', 'angry at the beginning, still angry at the end'], 'afraid at the beginning, happy at the end', 'He panicked at the start and grinned at the end.'],
+    ['What does Max give Bean at the end?', ['a bath', 'the sock', 'a treat', 'her tennis ball'], 'her tennis ball', '“Max gave Bean her tennis ball.”']
+  ], { ask: 'Read the story. Then answer.', passage: MID_SOCK }) },
+  { title: 'Part 3. Field Day', items: midList([
+    ['The kids hopped in big bags and looked so ___ that everyone laughed.', ['ridiculus', 'crept', 'ridiculous', 'creept'], 'ridiculous', 'Ridiculous means very silly. It is spelled r-i-d-i-c-u-l-o-u-s. Crept means walked quietly; it does not fit.'],
+    ['The grassy field became a ___ as the two teams got ready.', ['battleground', 'perfict', 'battlegound', 'perfect'], 'battleground', 'A battleground is a place where a fight happens. Battle + ground.'],
+    ['“We ___ throwing balloons at faces,” said Mr. Park.', ['mood', 'proohibit', 'prohibit', 'mude'], 'prohibit', 'Prohibit means do not allow.'],
+    ['The kids ran around in a ___, grabbing balloons as fast as they could.', ['plan', 'frensy', 'plann', 'frenzy'], 'frenzy', 'A frenzy is wild, fast, excited moving. Spelled f-r-e-n-z-y.'],
+    ['Suddenly it began to rain. Was Field Day going to be a ___?', ['gasp', 'disaster', 'gassp', 'dissaster'], 'disaster', 'A disaster is when something goes very wrong. Gasp is a sound you make, not a thing that goes wrong.'],
+    ['What does it mean that the bear mascot was “lovable”?', ['It was very scary.', 'It was very small.', 'It was very cute.', 'It was very angry.'], 'It was very cute.', 'Lovable means easy to love: cute and nice.'],
+    ['What does it mean that Ben pulled with all his “might”?', ['He used all his power.', 'He used only one hand.', 'He pulled very gently.', 'He closed his eyes.'], 'He used all his power.', 'Might means strength or power.'],
+    ['What does it mean that the game was “rough”?', ['It was very quiet.', 'It was not gentle.', 'It was very boring.', 'It was very short.'], 'It was not gentle.', 'Kids bumped into each other and fell down. Rough means not gentle.'],
+    ['What does it mean to “cool down”?', ['to calm down', 'to run faster', 'to put on a jacket', 'to eat ice cream'], 'to calm down', 'Mr. Park says “Take a deep breath.” The kids were upset, not hot. Cool down means calm down.'],
+    ['What does it mean that Lily can “handle” a little rain?', ['She can drink the rain.', 'She can stop the rain.', 'She can deal with it.', 'She can hold the rain in her hands.'], 'She can deal with it.', 'Handle here means deal with it and still have fun. It is not about her hands.']
+  ], { ask: 'Field Day. Pick the answer that fits and is spelled correctly.', passage: MID_FIELD }) },
+  { title: 'Part 4. Definitions', items: midList([
+    ['a long fight', ['feud', 'scowl'], 'feud', 'A feud is a long fight. A scowl is an angry face.'],
+    ['move quickly away from each other in different directions', ['charge', 'scatter'], 'scatter', 'Scatter means go in all directions.'],
+    ['entering a place in a large group to take it over', ['trot', 'invade'], 'invade', 'Invade means go in to take over.'],
+    ['do something very carefully to avoid danger', ['cautiously', 'crept'], 'cautiously', 'Cautiously means very carefully.'],
+    ['shout in a loud, deep voice', ['gasp', 'bellow'], 'bellow', 'Bellow means shout loudly. Gasp is a quick breath.']
+  ], { ask: 'Which word matches the definition?' }) },
+  { title: 'Part 5. We Need Longer Break Time!', items: midList([
+    ['Mia wants a longer break. Which sentence is a REASON (a supporting detail)?', ['Kids need to move their bodies. Running, jumping, and climbing help us stay strong and healthy.', 'I think Sunny Hill School should have longer break time.', 'Break time starts at 10:00 every morning.', 'Our school also has a big library with lots of animal books.'], 'Kids need to move their bodies. Running, jumping, and climbing help us stay strong and healthy.', 'A supporting detail tells WHY. Look for First, Second, Third. “I think… should have longer break time” is her main idea, not a reason.'],
+    ['Which sentence is another REASON for a longer break?', ['Playing outside makes us happy, and then we learn better in class.', 'Right now, it is only 15 minutes long.', 'I am in Ms. Green’s second-grade class.', 'Please tell Principal Brown that you agree.'], 'Playing outside makes us happy, and then we learn better in class.', 'This is her “Second” reason. The time and her class are facts, not reasons.'],
+    ['Which sentence is the third REASON?', ['A longer break time helps us make new friends.', 'Break time starts at 10:00 every morning.', 'Our school has a big library.', 'Longer break time is the best idea for Sunny Hill School.'], 'A longer break time helps us make new friends.', 'Her “Third” reason: we play games, take turns and share.'],
+    ['Which detail does NOT support a longer break?', ['Our school also has a big library with lots of animal books.', 'Running and jumping help us stay strong.', 'Playing outside makes us happy.', 'A short rest helps our brains work better.'], 'Our school also has a big library with lots of animal books.', 'The library has nothing to do with break time.'],
+    ['The author’s purpose is to ___ readers that Sunny Hill School should have longer break time.', ['persuade', 'inform', 'entertain'], 'persuade', 'Mia wants you to agree and to help: “You should help us make break time longer!” That is persuade.']
+  ], { ask: 'Read Mia’s letter. Then answer.', passage: MID_BREAK }) },
+  { title: 'Part 6. Frogs and Turtles: Venn diagram', items: midList([
+    ['Which fact goes in BOTH?', ['They can both swim very well.', 'A frog has smooth, wet skin.', 'A turtle has a hard shell.', 'Frogs sing a loud “ribbit” song.'], 'They can both swim very well.', 'Both = true for frogs AND turtles.'],
+    ['Which fact also goes in BOTH?', ['They both lay eggs.', 'They both have long tails.', 'They both eat bugs.', 'They both move slowly on land.'], 'They both lay eggs.', '“Both frogs and turtles lay eggs.”'],
+    ['A frog has smooth, wet skin. Which turtle fact uses the SAME category (what covers its body)?', ['A turtle has a hard shell on its back.', 'A turtle eats plants and small fish.', 'Some turtles live more than 50 years.', 'Turtles move slowly on land.'], 'A turtle has a hard shell on its back.', 'Same category: skin and shell are both what covers the body.'],
+    ['Most frogs are small enough to sit in your hand. Which turtle fact uses the SAME category (size)?', ['Some turtles can grow as big as a car tire.', 'When a turtle is scared, it pulls its head inside its shell.', 'A turtle eats plants and small fish.', 'A turtle has a hard shell.'], 'Some turtles can grow as big as a car tire.', 'Compare size with size. On the test, frog size was matched with a turtle hiding its head. Those are different categories.'],
+    ['A frog eats bugs. Which turtle fact uses the SAME category (food)?', ['A turtle eats plants and small fish.', 'A turtle has a hard shell.', 'Turtles lay eggs in the sand.', 'Turtles move very slowly.'], 'A turtle eats plants and small fish.', 'Food with food.'],
+    ['A mother frog lays her eggs in the water. Which turtle fact uses the SAME category (where eggs go)?', ['A mother turtle digs a hole in the sand and lays her eggs there.', 'Some turtles grow as big as a car tire.', 'A turtle eats small fish.', 'Turtles sleep in the mud.'], 'A mother turtle digs a hole in the sand and lays her eggs there.', 'Eggs with eggs.']
+  ], { ask: 'Use only information from the story.', passage: MID_FROGS }) },
+  { title: 'Part 7. Frogs and Turtles: True or False', items: midList([
+    ['Frogs can be green, brown, or blue.', TF, 'True', '“Frogs can be green, brown, or even bright blue.”'],
+    ['Frogs have big eyes that help them see all around.', TF, 'True', '“A frog also has big eyes that help it see all around.”'],
+    ['Turtles move very fast on land.', TF, 'False', '“Turtles move very slowly when they walk on land.”'],
+    ['Some turtles can live for more than 50 years.', TF, 'True', '“Some turtles can live for more than 50 years!”'],
+    ['Tadpoles have short tails.', TF, 'False', '“Baby frogs are called tadpoles, and they have long tails.”']
+  ], { ask: 'Use the story. True or False?', passage: MID_FROGS }) }
+];
+// Shuffle the answer choices except the word bank, True/False and the author's purpose row.
+MID_PARTS.forEach(function (p, i) { if (i > 0) p.items.forEach(function (x) { if (x.options !== TF && x.options.length > 3 && i !== 2) x.shuffle = true; }); });
+
+// New sentences with the exam words, so she has to know what each word means and how to use it.
+var MID_WORDS = ['fuzz', 'hamper', 'panicked', 'enormous', 'munch', 'queasy', 'scowl', 'fiddled', 'bounced', 'grinned', 'ridiculous', 'battleground', 'prohibit', 'frenzy', 'disaster', 'lovable', 'might', 'rough', 'handle', 'feud', 'scatter', 'invade', 'cautiously', 'bellow'];
+function midUse(rows) {
+  return rows.map(function (r) {
+    var others = shuffle(MID_WORDS.filter(function (w) { return w !== r[1]; })).slice(0, 3);
+    return P(r[0], others.concat([r[1]]), r[1], { shuffle: true, tip: r[2], ask: 'New sentence. Which word fits?' });
+  });
+}
+MID_PARTS.push({ title: 'Part 8. Use the words in new sentences', items: midUse([
+  ['My peach has soft ___ on its skin.', 'fuzz', 'Fuzz: soft, fluffy hair.'],
+  ['Put your muddy socks in the ___, please.', 'hamper', 'Hamper: a basket for dirty clothes.'],
+  ['When the lights went out, the kitten ___ and ran under the sofa.', 'panicked', 'Panicked: got very scared all at once.'],
+  ['A blue whale is ___. It is longer than a bus!', 'enormous', 'Enormous: very, very big.'],
+  ['The rabbit likes to ___ on crunchy carrots.', 'munch', 'Munch: chew with a crunch.'],
+  ['The boat rocked so much that I felt ___.', 'queasy', 'Queasy: sick in the tummy.'],
+  ['Grandpa did not like the loud music, so he made a ___.', 'scowl', 'Scowl: an angry face.'],
+  ['Tom ___ with the knot until it came undone.', 'fiddled', 'Fiddled: moved it around with his fingers.'],
+  ['The ball ___ off the wall and rolled away.', 'bounced', 'Bounced: hit something and went back up.'],
+  ['When she saw her birthday cake, Amy ___ from ear to ear.', 'grinned', 'Grinned: smiled a big smile.'],
+  ['The clown wore a ___ hat with a rubber duck on top.', 'ridiculous', 'Ridiculous: very silly.'],
+  ['After the pillow fight, the bedroom looked like a ___.', 'battleground', 'Battleground: a place where a fight happened.'],
+  ['The library rules ___ eating food near the books.', 'prohibit', 'Prohibit: do not allow.'],
+  ['When the bell rang, the kids ran to the door in a ___.', 'frenzy', 'Frenzy: wild, fast, excited moving.'],
+  ['The cake fell on the floor. What a ___!', 'disaster', 'Disaster: something that goes very wrong.'],
+  ['The fluffy puppy with big eyes is so ___.', 'lovable', 'Lovable: cute and easy to love.'],
+  ['Dad pushed the heavy door with all his ___.', 'might', 'Might: strength, power.'],
+  ['Please do not be ___ with the baby. Be gentle.', 'rough', 'Rough: not gentle.'],
+  ['This math is hard, but I can ___ it.', 'handle', 'Handle: deal with it.'],
+  ['The two neighbors had a ___ about the fence for ten years.', 'feud', 'Feud: a long fight.'],
+  ['When the dog barked, the pigeons ___ed all over the park.', 'scatter', 'Scatter: go away fast in all directions.'],
+  ['Ants ___ our kitchen every summer to take the sugar.', 'invade', 'Invade: come in as a big group to take over.'],
+  ['Mom walked ___ across the icy sidewalk.', 'cautiously', 'Cautiously: very carefully.'],
+  ['The coach had to ___ “Time out!” across the noisy gym.', 'bellow', 'Bellow: shout in a loud, deep voice.']
+]) });
+
 var MENU = [
+  { group: 'Midterm', top: true, tests: [
+    { id: 'mid-rd', title: 'Grade 2 Reading Midterm', sub: 'Fall 2026 · the same 7 parts as the paper, plus the words in new sentences', parts: MID_PARTS }
+  ] },
   { group: 'Social Studies', tests: [
     { id: 'ss-ch2', title: 'Chapter 2: People, Places, and Nature', sub: 'Lessons 1–3', items: CHAPTER2 },
     { id: 'ss-rev', title: 'Sources, Families, and the Past', sub: 'Vocabulary Review', items: REVIEW27 }
@@ -1258,6 +1376,7 @@ function menu() {
       box.appendChild(b);
     });
     app.appendChild(box);
+    if (g.top) app.appendChild(el('hr', 'divider'));
   });
   app.appendChild(el('h2', 'group', 'Links'));
   var links = el('div', 'choices');
