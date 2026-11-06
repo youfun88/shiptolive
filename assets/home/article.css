@@ -1,0 +1,43 @@
+/* Theme override for the standalone article/tool pages (tools, ai-video, promo kits).
+   Load AFTER the page's own <style>. It maps the page's old tokens onto the site palette
+   and type, so the page's own layout rules keep working. Single theme, like the rest of the site. */
+:root {
+  --bg: #efebe6; --surface: #f7f4ef; --surface-2: #e7e2da; --ink: #161513; --muted: #57524b;
+  --line: rgba(22, 21, 19, .16); --accent: #d7612a; --accent-ink: #efebe6; --accent-soft: #f6e3d8;
+  --good: #2a6b4f; --good-soft: #e3ede6; --warn-soft: #f4ecd6; --code-bg: #e7e2da; --shadow: none; --radius: 6px;
+  --w1: #2a6b4f; --w2: #3a5ba0; --w3: #b5432b; --w4: #6f4ba5; --w5: #161513; --ok: #2a6b4f;
+}
+body { font-family: "Inter", -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, .stat b, .rhythm b, .yt-list b, .big, .sublink b, .week-head h2 { font-family: "Inter", -apple-system, "PingFang TC", "Noto Sans TC", system-ui, sans-serif; letter-spacing: -.03em; }
+h1 { font-weight: 600; letter-spacing: -.045em; line-height: 1.02; }
+h1 em, h2 em, .hero h1 em { color: var(--ink); }
+.kicker, .mono, .crumb, .stat span, .week-num, .day .dnum, .day .credits, .day .body li .t, .vtool, .deliv b, .progress-inner .label, .nav-weeks a, .tag, .sublink-tag, .chip .src, th, .formula span, .reset, .score-pill, .prompt-head, .copy {
+  font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, "Roboto Mono", Consolas, "PingFang TC", monospace;
+}
+.kicker { color: var(--muted); text-transform: none; letter-spacing: .03em; font-size: 12px; }
+a { color: var(--ink); }
+a:hover { color: var(--accent); }
+.btn, .btn.ghost { border-radius: 999px; }
+.btn { background: var(--ink); color: var(--bg); }
+.btn.ghost { color: var(--ink); background: transparent; }
+.panel, .card, .place, .cand, .tool, .stat, .sublink, .table-wrap, .tool-card, .ep, .shot, .idea-list li, .day, .rhythm { border-radius: var(--radius); box-shadow: none; }
+input[type=text], input[type=number], textarea, select { border-radius: 4px; background: #fff; }
+.crumb a, .crumb { color: var(--muted); text-decoration: none; }
+.crumb a:hover { color: var(--ink); }
+.callout { border-radius: 0 var(--radius) var(--radius) 0; }
+/* page-level wrapper: keep each page's own reading width, add the site gutters */
+main.wrap, .wrap.progress-inner { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+main.wrap { padding-top: 32px; }
+/* site header/footer live outside main; make sure the page's own `footer` rule doesn't restyle the site footer */
+footer.foot { margin-top: 56px; padding: 22px 0 48px; border-top: 1px solid var(--ink); font-size: inherit; color: var(--ink); }
+footer.foot .wrap { max-width: 1440px; padding: 0 clamp(20px, 4.4vw, 72px); }
+footer.foot p { margin: 0; }
+/* ai-video: hero and sticky progress bar under the site header */
+header.hero { border-bottom: 1px solid var(--ink); padding: 24px 0 36px; }
+header.hero .wrap { max-width: 1040px; }
+.progress-bar { top: 60px; background: rgba(239, 235, 230, .9); }
+@media (min-width: 960px) { .progress-bar { top: 64px; } }
+.stat { background: transparent; border: 0; border-top: 1px solid var(--ink); border-radius: 0; padding: 12px 16px 0 0; min-width: 150px; }
+.stat b { font-weight: 500; letter-spacing: -.04em; }
+pre.example { background: var(--ink); color: var(--bg); }
+.hdr .wrap { max-width: 1440px; padding: 0 clamp(20px, 4.4vw, 72px); }

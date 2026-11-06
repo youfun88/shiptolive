@@ -2,8 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Topic Finder (對標選題) | Ship to Live</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#eee9e3">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin>
+<link rel="stylesheet" href="/assets/home/home.css?v=2">
+<title>Topic Finder (對標選題) | Ship to Live 夏裕科技</title>
 <meta name="description" content="Tell it what you sell and the video you're thinking of. It pulls what people actually search on YouTube and Google, builds searches for the six places to find proven topics, and scores your options so you film the one with demand behind it.">
 <link rel="canonical" href="https://www.shiptolive.com/tools/topic-finder/">
 <meta property="og:title" content="Topic Finder: 對標選題 for your promo video">
@@ -13,26 +18,11 @@
 <meta property="og:site_name" content="Ship to Live">
 <meta property="og:image" content="https://www.shiptolive.com/assets/img/og.png?v=4">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg:#f6f4ef; --surface:#ffffff; --ink:#16151a; --muted:#5d5a63; --line:#dcd7cb;
   --accent:#e4572e; --accent-soft:#fbe3da; --good:#2a7f62; --good-soft:#e2f1ea;
   --warn-soft:#fbf1d9; --code-bg:#efece4;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg:#121116; --surface:#1b1a20; --ink:#f1efe9; --muted:#a6a2ad; --line:#33313b;
-    --accent:#ff6a3d; --accent-soft:#3a2219; --good:#5cc49c; --good-soft:#16271f;
-    --warn-soft:#2a2412; --code-bg:#24232b;
-  }
-}
-:root[data-theme="dark"] {
-  --bg:#121116; --surface:#1b1a20; --ink:#f1efe9; --muted:#a6a2ad; --line:#33313b;
-  --accent:#ff6a3d; --accent-soft:#3a2219; --good:#5cc49c; --good-soft:#16271f;
-  --warn-soft:#2a2412; --code-bg:#24232b;
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -145,11 +135,36 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
   .panel { padding: 16px; }
 }
 </style>
+<link rel="stylesheet" href="/assets/home/article.css?v=1">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5W92T6J80C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5W92T6J80C');
+</script>
+
 </head>
-<body>
-<main class="wrap">
+ <body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="夏裕科技 首頁 · home"><b lang="zh-Hant"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect x="20" y="16" width="38" height="12" rx="6" fill="currentColor"/><rect x="6" y="36" width="31" height="12" rx="6" fill="currentColor"/><circle cx="49" cy="42" r="7.5" fill="#d7612a"/></svg>夏裕科技</b><span class="mono">Taipei · San Diego</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/seo-aeo-geo/"><span class="mono">01</span>Marketing</a>
+      <a href="/#sw"><span class="mono">02</span>Software</a>
+      <a href="/#ai"><span class="mono">03</span>AI</a>
+      <a href="/projects/">Work</a>
+      <a href="/about/">About</a>
+    </nav>
+    <a class="lang" href="/zh/" hreflang="zh-Hant" lang="zh-Hant" aria-label="中文版">中文</a>
+    <a class="pill sm" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">Book a call</a>
+  </div>
+</header>
+<main class="wrap" id="main">
 <nav class="crumb"><a href="/tools/">Tools</a> › Topic finder · from the lesson <a href="/ai-video/how-to-pick-video-topics/">How to pick video topics</a></nav>
-<p class="kicker">ShipToLive · Tool</p>
+<p class="kicker">Ship to Live · Tool</p>
 <h1>Find a promo topic <em>people already want</em></h1>
 <p class="lede">Tell it what you sell and the video you're thinking of. It pulls what people actually type into YouTube and Google, opens the six places to find proven topics, and scores your options so you film the one with demand behind it. <span class="zh">對標選題</span>, in one page.</p>
 
@@ -561,5 +576,17 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
   if (state.product || state.topic) run();
 })();
 </script>
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <p class="mono"><b>Ship to Live 夏裕科技</b><br>Taiwan: 夏裕科技股份有限公司 · 統一編號 90173045<br>US: QY LLC, San Diego</p>
+      <nav aria-label="Footer">
+        <a href="/seo-aeo-geo/">Tech marketing</a><a href="/projects/">Work</a><a href="/about/">About</a><a href="/tools/">Tools</a><a href="/ai-video/">AI video</a><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a>
+      </nav>
+      <p class="mono">© 2026 Ship to Live 夏裕科技</p>
+    </div>
+  </div>
+</footer>
+<script src="/assets/home/home.js" defer></script>
 </body>
 </html>

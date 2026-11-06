@@ -217,3 +217,8 @@ a.pitem:hover h3 { text-decoration: underline; text-underline-offset: 5px; text-
 }
 .status-pill { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12px; letter-spacing: .03em; color: var(--ink-2); margin-top: 18px; }
 .status-pill::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+/* case/proof intro sits beside the heading on wide screens */
+@media (min-width: 960px) {
+  #case .state, #dashboard .state { grid-column: 1 / 7; }
+  #case .case, #dashboard .case { grid-column: 7 / -1; align-self: end; margin-top: 44px; max-width: 34em; padding-bottom: 6px; }
+}

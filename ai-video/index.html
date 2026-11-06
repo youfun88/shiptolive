@@ -2,8 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Video in 30 Days: Learn Veo 3.1 &amp; Kling AI | Ship to Live</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#eee9e3">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin>
+<link rel="stylesheet" href="/assets/home/home.css?v=2">
+<title>AI Video in 30 Days: Learn Veo 3.1 &amp; Kling AI | Ship to Live 夏裕科技</title>
 <meta name="description" content="A 30-day, 2-hours-a-day plan for learning AI video production with Google Veo 3.1, Kling AI, Higgsfield and a developer pipeline.">
 <link rel="canonical" href="https://www.shiptolive.com/ai-video/">
 <meta property="og:type" content="article">
@@ -13,27 +18,12 @@
 <meta property="og:url" content="https://www.shiptolive.com/ai-video/">
 <meta property="og:image" content="https://www.shiptolive.com/assets/img/og.png?v=4">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#f6f4ef; --surface:#ffffff; --surface-2:#efece4; --ink:#16151a; --muted:#5d5a63;
   --line:#dcd7cb; --accent:#e4572e; --accent-ink:#ffffff; --accent-soft:#fbe3da;
   --w1:#2a7f62; --w2:#3a5ba0; --w3:#b5432b; --w4:#7a4bb0; --w5:#1c1b20;
   --ok:#2a7f62; --radius:14px;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#121116; --surface:#1b1a20; --surface-2:#24232b; --ink:#f1efe9; --muted:#a6a2ad;
-    --line:#33313b; --accent:#ff6a3d; --accent-ink:#121116; --accent-soft:#3a2219;
-    --w1:#5cc49c; --w2:#7f9ee0; --w3:#f0846a; --w4:#b48ae6; --w5:#d8d5cf; --ok:#5cc49c;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#121116; --surface:#1b1a20; --surface-2:#24232b; --ink:#f1efe9; --muted:#a6a2ad;
-  --line:#33313b; --accent:#ff6a3d; --accent-ink:#121116; --accent-soft:#3a2219;
-  --w1:#5cc49c; --w2:#7f9ee0; --w3:#f0846a; --w4:#b48ae6; --w5:#d8d5cf; --ok:#5cc49c;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -154,12 +144,36 @@ footer{margin-top:56px;padding:28px 0 48px;border-top:1px solid var(--line);colo
   .rhythm div:last-child{border-bottom:0}
 }
 </style>
-</head>
-<body>
+<link rel="stylesheet" href="/assets/home/article.css?v=1">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5W92T6J80C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5W92T6J80C');
+</script>
 
+</head>
+ <body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="夏裕科技 首頁 · home"><b lang="zh-Hant"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect x="20" y="16" width="38" height="12" rx="6" fill="currentColor"/><rect x="6" y="36" width="31" height="12" rx="6" fill="currentColor"/><circle cx="49" cy="42" r="7.5" fill="#d7612a"/></svg>夏裕科技</b><span class="mono">Taipei · San Diego</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/seo-aeo-geo/"><span class="mono">01</span>Marketing</a>
+      <a href="/#sw"><span class="mono">02</span>Software</a>
+      <a href="/#ai"><span class="mono">03</span>AI</a>
+      <a href="/projects/">Work</a>
+      <a href="/about/">About</a>
+    </nav>
+    <a class="lang" href="/zh/" hreflang="zh-Hant" lang="zh-Hant" aria-label="中文版">中文</a>
+    <a class="pill sm" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">Book a call</a>
+  </div>
+</header>
 <header class="hero">
   <div class="wrap">
-    <span class="kicker">ShipToLive · Learning Log</span>
+    <span class="kicker">Ship to Live · Learning Log</span>
     <h1>AI Video in <em>30&nbsp;Days</em></h1>
     <p class="lede">Two hours a day. From a first 8-second clip to a 60–90 second short drama episode, then an automated pipeline built on the APIs. No course fees, just tool credits.</p>
     <div class="stats">
@@ -181,7 +195,7 @@ footer{margin-top:56px;padding:28px 0 48px;border-top:1px solid var(--line);colo
   </div>
 </div>
 
-<main class="wrap">
+<main class="wrap" id="main">
 
 <nav class="sublinks" aria-label="Lessons and tools">
   <a class="sublink" href="/ai-video/how-to-pick-video-topics/">
@@ -556,5 +570,17 @@ document.getElementById("resetBtn").addEventListener("click", () => {
 });
 updateProgress();
 </script>
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <p class="mono"><b>Ship to Live 夏裕科技</b><br>Taiwan: 夏裕科技股份有限公司 · 統一編號 90173045<br>US: QY LLC, San Diego</p>
+      <nav aria-label="Footer">
+        <a href="/seo-aeo-geo/">Tech marketing</a><a href="/projects/">Work</a><a href="/about/">About</a><a href="/tools/">Tools</a><a href="/ai-video/">AI video</a><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a>
+      </nav>
+      <p class="mono">© 2026 Ship to Live 夏裕科技</p>
+    </div>
+  </div>
+</footer>
+<script src="/assets/home/home.js" defer></script>
 </body>
 </html>
