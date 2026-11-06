@@ -108,7 +108,19 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </div>
 -->
 <h2>Waiting for approval</h2>
-<p>Nothing yet.</p>
+<div class="item" data-item="[Yufan] Cut five page titles to 60 characters, keeping the brand">
+<h3>1. [Yufan] Cut five page titles to 60 characters, keeping the brand</h3>
+<p>The site-wide move to the new look added " | Ship to Live 夏裕科技" to every title, which pushed five pages over 60 characters, so Google cuts them off in results. The brand suffix stays exactly as it is; only the part before it gets shorter. Each page still names what it is (Kling AI stays in the AI Video title). og:title and twitter:title are not touched. Branch <code>seo/titles-60-brand-suffix</code>.</p>
+<ul>
+<li><code>/tools/</code> <code>&lt;title&gt;</code>:<span class="ba was"><b>Before</b>Free tools: Video Topic Finder &amp; GLP-1 Protein Calculator | Ship to Live 夏裕科技 (77)</span><span class="ba now"><b>After</b>Free Topic Finder &amp; GLP-1 Calculator | Ship to Live 夏裕科技 (56)</span></li>
+<li><code>/ai-video/</code> <code>&lt;title&gt;</code>:<span class="ba was"><b>Before</b>AI Video in 30 Days: Learn Veo 3.1 &amp; Kling AI | Ship to Live 夏裕科技 (65)</span><span class="ba now"><b>After</b>AI Video in 30 Days: Veo 3.1 &amp; Kling AI | Ship to Live 夏裕科技 (59)</span></li>
+<li><code>/ai-video/tadapop-video-research/</code> <code>&lt;title&gt;</code>:<span class="ba was"><b>Before</b>Tadapop Video Research: What's Popular on YouTube | Ship to Live 夏裕科技 (69)</span><span class="ba now"><b>After</b>Tadapop Video Research: YouTube Demand | Ship to Live 夏裕科技 (58)</span></li>
+<li><code>/en/seo-aeo-geo/</code> <code>&lt;title&gt;</code>:<span class="ba was"><b>Before</b>Tech marketing: get recommended by Google and by AI | Ship to Live 夏裕科技 (71)</span><span class="ba now"><b>After</b>Tech marketing for Google and AI answers | Ship to Live 夏裕科技 (60)</span></li>
+<li><code>/en/projects/ai-visibility-checker/</code> <code>&lt;title&gt;</code>:<span class="ba was"><b>Before</b>AI Visibility Checker: does AI recommend your business? | Ship to Live 夏裕科技 (75)</span><span class="ba now"><b>After</b>AI Visibility Checker: does AI name you? | Ship to Live 夏裕科技 (60)</span></li>
+</ul>
+<p>Why: page checklist from the health run 2026-11-06 10:00 UTC (score 90): "Title is N characters. Cut it to 60 or fewer" on these five pages (and on /en/, fixed this run by the approved homepage item). GSC (28 days to 2026-11-03): /ai-video/ ranks for "clingai.com" at position 10, so "Kling AI" stays in its title. The Chinese pages' titles are within limits and are not touched.</p>
+<div class="links"><a href="/tools/">Free tools (live)</a><a href="/ai-video/">AI Video (live)</a><a href="/ai-video/tadapop-video-research/">Tadapop research (live)</a><a href="/en/seo-aeo-geo/">Tech marketing (live)</a><a href="/en/projects/ai-visibility-checker/">AI Visibility Checker (live)</a></div>
+</div>
 (function(){
   var API='https://admin.shiptolive.com/api/contact';
   document.querySelectorAll('.item').forEach(function(box,i){
