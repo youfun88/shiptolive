@@ -6,6 +6,7 @@
 .phero { padding-top: 8px; }
 .phero h1 { font-size: clamp(42px, 11vw, 104px); line-height: 1.06; letter-spacing: -.02em; margin-top: 32px; max-width: 13em; }
 html[lang="en"] .phero h1 { letter-spacing: -.045em; line-height: 1; }
+.phero h1.one { font-size: clamp(30px, 9vw, 104px); max-width: none; white-space: nowrap; } /* single-line headline: sized so it never wraps, even at 320px */
 .phero .lede { margin-top: 26px; }
 .phero .obj-h { margin: 8px calc(var(--gut) * -1) 0; padding: 0 14%; }
 .phero .obj-h img { width: 100%; }
@@ -91,6 +92,7 @@ a.pitem:hover h3 { text-decoration: underline; text-underline-offset: 5px; text-
 @media (min-width: 960px) {
   .phero h1 { grid-column: 1 / 11; margin-top: 72px; font-size: clamp(64px, 6.6vw, 104px); }
   html[lang="en"] .phero h1 { font-size: clamp(60px, 6.2vw, 96px); }
+  .phero h1.one { font-size: clamp(60px, 6.4vw, 100px); }
   .phero .lede { grid-column: 1 / 7; margin-top: 36px; }
   .phero.has-obj h1 { grid-column: 1 / 8; grid-row: 2; align-self: end; }
   .phero.has-obj .obj-h { grid-column: 8 / -1; grid-row: 2 / 4; margin: 24px calc(var(--gut) * -1) 0 0; padding: 0; align-self: start; }
