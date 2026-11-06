@@ -108,21 +108,7 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </div>
 -->
 <h2>Waiting for approval</h2>
-<div class="item" data-item="[Yufan] Homepage: shorter title and description, and a link that says where it goes">
-<h3>1. [Yufan] Homepage: shorter title and description, and a link that says where it goes</h3>
-<p>Three small fixes on the new homepage (layout 8, live since this morning), all flagged by the health run that followed it. Nothing about the services or claims changes; the description keeps the same three services and "English and 中文". og:title and og:description are left as they are. Branch <code>seo/home-title-desc-linktext</code>.</p>
-<ul>
-<li><code>/</code> <code>&lt;title&gt;</code>:<span class="ba was"><b>Before</b>Ship to Live | Tech marketing, custom software and AI adoption (62)</span><span class="ba now"><b>After</b>Ship to Live | Tech marketing, custom software, AI adoption (59)</span></li>
-<li><code>/</code> meta description:<span class="ba was"><b>Before</b>We help small and mid-sized businesses with three things: get found on Google and in AI answers, turn your processes into software you own, and teach your team to work with AI. We find what's wrong, then ship the fix. English and 中文. (189)</span><span class="ba now"><b>After</b>We help small and mid-sized businesses get found on Google and in AI answers, turn processes into software they own, and teach teams to use AI. English and 中文. (159)</span></li>
-<li><code>/</code> Tech marketing card, link to /seo-aeo-geo/:<span class="ba was"><b>Before</b>Learn more</span><span class="ba now"><b>After</b>SEO, AEO &amp; GEO in detail</span></li>
-<li><code>/zh/</code> 科技行銷 card, link to /zh/seo-aeo-geo/:<span class="ba was"><b>Before</b>了解更多</span><span class="ba now"><b>After</b>SEO、AEO、GEO 服務詳情</span></li>
-</ul>
-<p>Why: health run 2026-11-06 02:00 UTC (score 90, page checklist 93, both down from 100 / 95 before the redesign). New since the last run: "Meta description 189 characters" (warn, /), "Title is 62 characters. Cut it to 60 or fewer" (/), and "Links say where they go: 2 links on 2 pages" ("Learn more" on /, "了解更多" on /zh/, both generic). The /zh/ title and description are within limits and are not touched. The "Learn more" link is the homepage's only link into the SEO, AEO &amp; GEO page, so its text is the anchor Google and AI crawlers read for that page.</p>
-<div class="links"><a href="/">Live version</a><a href="/zh/">中文 (live)</a></div>
-</div>
-</div>
-
-<script>
+<p>Nothing yet.</p>
 (function(){
   var API='https://admin.shiptolive.com/api/contact';
   document.querySelectorAll('.item').forEach(function(box,i){
