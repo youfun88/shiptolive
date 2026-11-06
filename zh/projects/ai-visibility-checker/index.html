@@ -2,66 +2,52 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI 能見度檢測 — AI 會推薦你的公司嗎？｜Ship to Live 上線工作室</title>
-  <meta name="description" content="AI 能見度檢測會用你的客戶會問的問題，以中文與英文詢問 ChatGPT、Perplexity、Gemini 與 Claude，告訴你公司有沒有被提到、被推薦的是誰，以及該修正什麼。" />
-  <meta name="author" content="Yufan Chen" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>AI 能見度檢測：AI 會推薦你的公司嗎？｜夏裕科技</title>
+  <meta name="description" content="AI 能見度檢測用你的客戶會問的問題，以中文與英文詢問 ChatGPT、Perplexity、Gemini 與 Claude，告訴你公司有沒有被提到、被推薦的是誰、AI 引用了哪些網站，以及該修正什麼。已正式運作，結果在客戶後台隨時可看。" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#eee9e3" />
   <link rel="canonical" href="https://www.shiptolive.com/zh/projects/ai-visibility-checker/" />
   <link rel="alternate" hreflang="en" href="https://www.shiptolive.com/projects/ai-visibility-checker/" />
   <link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/zh/projects/ai-visibility-checker/" />
   <link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/projects/ai-visibility-checker/" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Ship to Live" />
-  <meta property="og:title" content="AI 能見度檢測 — AI 會推薦你的公司嗎？｜Ship to Live 上線工作室" />
-  <meta property="og:description" content="AI 能見度檢測會用你的客戶會問的問題，以中文與英文詢問 ChatGPT、Perplexity、Gemini 與 Claude，告訴你公司有沒有被提到、被推薦的是誰，以及該修正什麼。" />
+  <meta property="og:site_name" content="夏裕科技" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:title" content="AI 能見度檢測：AI 會推薦你的公司嗎？｜夏裕科技" />
+  <meta property="og:description" content="用客戶會問的問題去問 ChatGPT、Perplexity、Gemini、Claude，數它們提到誰。已正式運作，結果在客戶後台。" />
   <meta property="og:url" content="https://www.shiptolive.com/zh/projects/ai-visibility-checker/" />
   <meta property="og:image" content="https://www.shiptolive.com/assets/img/og.png?v=4" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin />
-  <link rel="stylesheet" href="/styles.css?v=20261014d" />
-  <script>document.documentElement.classList.add('js')</script>
+  <link rel="stylesheet" href="/assets/home/home.css?v=2" />
+  <link rel="stylesheet" href="/assets/home/pages.css?v=5" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "AI Visibility Checker",
-  "alternateName": "AI 能見度檢測",
-  "url": "https://www.shiptolive.com/zh/projects/ai-visibility-checker/",
+  "@id": "https://www.shiptolive.com/zh/projects/ai-visibility-checker/#app",
+  "name": "AI 能見度檢測",
+  "alternateName": "AI Visibility Checker",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
-  "description": "AI 能見度檢測會用你的客戶會問的問題，以中文與英文詢問 ChatGPT、Perplexity、Gemini 與 Claude，告訴你公司有沒有被提到、被推薦的是誰，以及該修正什麼。",
+  "url": "https://www.shiptolive.com/zh/projects/ai-visibility-checker/",
   "inLanguage": "zh-Hant",
-  "creator": {
-    "@id": "https://www.shiptolive.com/#yufan"
-  },
-  "publisher": {
-    "@id": "https://www.shiptolive.com/#service"
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD",
-    "description": "Free early-access check"
-  }
+  "description": "用公司客戶真正會問的問題，以中文與英文詢問 ChatGPT、Perplexity、Gemini 與 Claude，回報公司有沒有被提到、被推薦的是誰、AI 引用了哪些網站，以及該修正什麼。每月為夏裕科技的客戶執行，結果顯示在客戶後台。",
+  "author": { "@id": "https://www.shiptolive.com/#service" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TWD", "description": "台灣與美國的企業可申請一次免費檢測。" }
 }
   </script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "為什麼不直接問 ChatGPT 會不會推薦我的公司？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "因為客戶提問時不會提到你的名字，AI 無法準確回報自己的行為，每次回答都不一樣，而且你自己的對話會依你個人調整。AI 能見度檢測用中英文、約十個客戶真正會問的問題，每題跑好幾次，同時問 ChatGPT、Perplexity、Gemini 和 Claude，回報你被提到的比例、AI 推薦了誰、引用了哪些來源，以及網站該修正什麼。"
-      }
-    }
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "夏裕科技", "item": "https://www.shiptolive.com/zh/" },
+    { "@type": "ListItem", "position": 2, "name": "專案", "item": "https://www.shiptolive.com/zh/projects/" },
+    { "@type": "ListItem", "position": 3, "name": "AI 能見度檢測", "item": "https://www.shiptolive.com/zh/projects/ai-visibility-checker/" }
   ]
 }
   </script>
@@ -75,258 +61,171 @@
   </script>
 </head>
 <body>
-  <!-- Icon sprite (Lucide, ISC licence). Referenced below with <use href="#i-…">. -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <defs>
-      <symbol id="i-bot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></symbol>
-      <symbol id="i-flow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></symbol>
-      <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
-      <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></symbol>
-      <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
-      <symbol id="i-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
-      <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
-      <symbol id="i-out" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></symbol>
-      <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
-      <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
-      <symbol id="i-lang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></symbol>
-      <symbol id="i-brief" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol>
-      <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
-      <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
-      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
-    </defs>
-  </svg>
+<a class="skip" href="#main">跳到主要內容</a>
 
-  <a class="skip-link" href="#main">跳至主要內容</a>
-  <header class="nav" id="top">
-    <div class="wrap nav-inner">
-      <a class="brand" href="/zh/" aria-label="夏裕科技 首頁">
-        <img src="/assets/logo/mark.svg" alt="" width="30" height="30" />
-        <span>
-          <span class="brand-name" lang="zh-Hant">夏裕科技</span>
-          <span class="brand-by">夏裕科技股份有限公司</span>
-        </span>
-      </a>
-      <nav class="nav-links" id="navLinks" aria-label="主選單">
-        <a href="/zh/#services">服務項目</a>
-        <a href="/zh/#work">作品</a>
-        <a href="/zh/projects/" aria-current="page">專案</a>
-        <a href="/zh/about/">關於我們</a>
-        <a href="/zh/#faq">常見問題</a>
-        <span class="lang-switch" role="group" aria-label="語言">
-          <a href="/projects/ai-visibility-checker/" hreflang="en" lang="en">EN</a>
-          <a href="/zh/projects/ai-visibility-checker/" hreflang="zh-Hant" lang="zh-Hant" aria-current="true">中文</a>
-        </span>
-      </nav>
-      <a class="btn btn-primary btn-sm" href="/zh/#contact">聯絡我們</a>
-      <button class="menu-btn" type="button" aria-label="開啟選單" aria-expanded="false" aria-controls="navLinks">
-        <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
-      </button>
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="/zh/" aria-label="夏裕科技 首頁"><b><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect x="20" y="16" width="38" height="12" rx="6" fill="currentColor"/><rect x="6" y="36" width="31" height="12" rx="6" fill="currentColor"/><circle cx="49" cy="42" r="7.5" fill="#d7612a"/></svg>夏裕科技</b><span class="mono">台北・聖地牙哥</span></a>
+    <nav class="nav" aria-label="主選單">
+      <a href="/zh/seo-aeo-geo/"><span class="mono">01</span>科技行銷</a>
+      <a href="/zh/#sw"><span class="mono">02</span>軟體開發</a>
+      <a href="/zh/#ai"><span class="mono">03</span>AI 導入</a>
+      <a href="/zh/projects/" aria-current="page">作品</a>
+      <a href="/zh/about/">關於</a>
+    </nav>
+    <a class="lang" href="/projects/ai-visibility-checker/" hreflang="en" lang="en" aria-label="English version">EN</a>
+    <a class="pill sm" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約諮詢</a>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="phero" aria-labelledby="h1">
+  <div class="wrap g12">
+    <p class="idx mono"><span><a href="/zh/projects/" style="text-decoration:none">專案</a> / AI 能見度檢測 — 夏裕科技</span><span>正式運作中</span></p>
+    <h1 id="h1"><span class="ph">AI 會推薦</span><span class="ph">你的公司嗎？</span></h1>
+    <p class="lede">你的客戶現在會問 ChatGPT、Perplexity、Gemini 和 Claude 該找誰。AI 能見度檢測用同樣的問題、以中文和英文去問，數一數你的公司有沒有被提到、被推薦的是誰，以及 AI 回答時相信了哪些網站。</p>
+    <p class="status-pill">正式運作中・每月為我們的客戶執行，結果在客戶後台・自助版開發中</p>
+    <div class="ctas">
+      <a class="tlink" href="/zh/?topic=%E5%85%8D%E8%B2%BB%20AI%20%E8%83%BD%E8%A6%8B%E5%BA%A6%E6%AA%A2%E6%B8%AC#contact">申請免費檢測一次</a>
+      <a class="tlink" href="#dashboard">看後台畫面</a>
     </div>
-  </header>
+  </div>
+</section>
 
-  <main id="main">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <p class="crumbs"><a href="/zh/projects/">專案</a> / AI 能見度檢測</p>
-          <p class="status"><span class="dot" aria-hidden="true"></span>開發中</p>
-          <h1>AI 會推薦你的公司嗎？</h1>
-          <p class="lede">你的客戶現在會問 ChatGPT、Perplexity、Gemini 和 Claude 該找誰。AI 能見度檢測用同樣的問題、以中文和英文去問，告訴你公司有沒有被提到，還是 AI 推薦了別人。</p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="/zh/?topic=visibility#contact">申請免費搶先檢測 <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="btn btn-ghost" href="#how">怎麼運作</a>
-          </div>
-        </div>
-        <div>
-          <div class="mock" role="img" aria-label="示意範例，並非真實資料。">
-            <div class="mock-head"><b>你的公司</b><span>報告範例</span></div>
-            <p class="mock-q">› 「台北 跨境 律師 推薦」</p>
-            <ul>
-            <li><span>ChatGPT</span><span class="yes">✓ 有提到 · 第 2</span></li>
-            <li><span>Perplexity</span><span class="no">✕ 沒有提到</span></li>
-            <li><span>Gemini</span><span class="yes">✓ 有提到 · 第 1</span></li>
-            <li><span>Claude</span><span class="no">✕ 沒有提到</span></li>
-            </ul>
-            <div class="mock-foot"><span>AI 能見度分數</span><b>48 / 100</b></div>
-          </div>
-          <p class="mock-note">示意範例，並非真實資料。</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft">
-      <div class="wrap split">
-        <div class="section-head" style="margin-bottom:0">
-          <p class="kicker">問題在哪</p>
-          <h2>你的客戶正在問 AI 該找誰</h2>
-        </div>
-        <div class="prose reveal">
-          <p>越來越多人跳過搜尋結果，改問 AI：「台北最推薦的會計師是誰？」AI 只會回兩三個名字。如果裡面沒有你，這位客戶就不會看到你的網站，不管它做得多好。</p>
-          <p>大多數公司不知道這些 AI 怎麼描述自己。每個引擎的搜尋方式不同，答案每天在變，中文和英文的結果也不一樣。</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="why-not-ask">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">為什麼不直接問 AI？</p>
-          <h2>自己問 ChatGPT，看不到客戶看到的答案</h2>
-          <p class="sub">這是多數老闆第一個會試的方法，感覺又快又簡單。但一次對話，測不出客戶實際聽到了什麼。原因如下。</p>
-        </div>
-        <ul class="benefits">
-          <li class="benefit reveal"><h3>你問的問題不一樣</h3><p>你會問「王大明會計師事務所好嗎？」客戶問的是「台北最推薦的會計師是誰？」，根本不會提到你的名字。只要問題裡出現公司名稱，AI 幾乎都會說些好話。真正的考驗是：沒人提起你的時候，AI 會不會主動推薦你。</p></li>
-          <li class="benefit reveal"><h3>AI 無法回報自己的行為</h3><p>問 AI「你會推薦我的公司嗎？」，它只是在猜自己會對別人說什麼，並沒有實際查證，而且通常猜得很客氣。</p></li>
-          <li class="benefit reveal"><h3>一次回答只是一次抽樣</h3><p>同一個問題問兩次，可能得到不同的名字。一次回答說明不了什麼，所以我們每個問題都跑好幾次，回報你被提到的比例。</p></li>
-          <li class="benefit reveal"><h3>你看到的答案是為你量身打造的</h3><p>AI 會依你的所在地、過去的對話和它記得的資訊調整回答。而且你只查了一個引擎，客戶用的卻是 ChatGPT、Perplexity、Gemini 和 Claude。</p></li>
-        </ul>
-        <div class="compare-wrap reveal">
-          <table class="compare">
-            <thead><tr><td></td><th scope="col">自己問 AI</th><th scope="col">AI 能見度檢測</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">問題</th><td data-label="自己問 AI">一個，通常帶著你的公司名稱</td><td class="us" data-label="AI 能見度檢測">約十個客戶真正會問的問題，中英文都有，不提你的名字</td></tr>
-              <tr><th scope="row">引擎</th><td data-label="自己問 AI">一個</td><td class="us" data-label="AI 能見度檢測">ChatGPT、Perplexity、Gemini 和 Claude</td></tr>
-              <tr><th scope="row">次數</th><td data-label="自己問 AI">一次</td><td class="us" data-label="AI 能見度檢測">每個問題跑好幾次，回報你被提到的比例</td></tr>
-              <tr><th scope="row">情境</th><td data-label="自己問 AI">受你的所在地、對話紀錄和記憶影響</td><td class="us" data-label="AI 能見度檢測">全新對話，不帶任何個人紀錄</td></tr>
-              <tr><th scope="row">地點</th><td data-label="自己問 AI">你人在哪裡，就是哪裡的結果</td><td class="us" data-label="AI 能見度檢測">模擬從客戶所在的城市提問</td></tr>
-              <tr><th scope="row">競爭者</th><td data-label="自己問 AI">看不到</td><td class="us" data-label="AI 能見度檢測">AI 推薦了誰，而不是你</td></tr>
-              <tr><th scope="row">來源</th><td data-label="自己問 AI">通常看不到</td><td class="us" data-label="AI 能見度檢測">AI 引用了哪些網站，你有沒有出現在上面</td></tr>
-              <tr><th scope="row">原因</th><td data-label="自己問 AI">沒有說明</td><td class="us" data-label="AI 能見度檢測">網站檢查，加上依影響程度排序的修正建議</td></tr>
-              <tr><th scope="row">長期追蹤</th><td data-label="自己問 AI">沒有比較基準</td><td class="us" data-label="AI 能見度檢測">一個基準，修改之後可以再測一次</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="cta-note" style="margin-top:20px">自己問 AI 還是值得做，只是你得到的是一個意見。檢測給你的是一個量測結果，以及背後的原因。</p>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="how">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">怎麼運作</p>
-          <h2>四個步驟</h2>
-        </div>
-        <ol class="steps four">
-          <li class="step reveal">
-            <span class="step-n">1</span>
-            <span class="step-when">提供</span>
-            <h3>告訴我們公司的基本資料</h3>
-            <p>公司名稱、網站、做什麼，以及你的客戶在哪裡。這樣就夠了。</p>
-          </li>
-          <li class="step reveal">
-            <span class="step-n">2</span>
-            <span class="step-when">詢問</span>
-            <h3>像客戶一樣發問</h3>
-            <p>大約十個真實的客戶問題，中文和英文各一組，透過即時網路搜尋問 ChatGPT、Perplexity、Gemini 和 Claude。因為 AI 的答案每次不同，每題會問好幾次。</p>
-          </li>
-          <li class="step reveal">
-            <span class="step-n">3</span>
-            <span class="step-when">判讀</span>
-            <h3>逐一分析回答</h3>
-            <p>你的公司有沒有被提到？排第幾？被推薦的是誰？AI 引用了哪些網站當作來源？</p>
-          </li>
-          <li class="step reveal">
-            <span class="step-n">4</span>
-            <span class="step-when">檢查</span>
-            <h3>檢查你的網站</h3>
-            <p>結構化資料、llms.txt、是否擋住了 AI 爬蟲、網頁速度。AI 會用這些來判斷一個網站是否可信。</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap split">
-        <div class="section-head" style="margin-bottom:0">
-          <p class="kicker">你會拿到什麼</p>
-          <h2>一份可以照著做的報告</h2>
-        </div>
-        <ul class="checklist reveal">
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>AI 能見度分數</b>：每個 AI 引擎、每種語言分開計分，一眼看出哪裡強、哪裡看不到你。</span></li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>完整的問題與回答</b>：逐字呈現，你可以讀到每個 AI 說了什麼。</span></li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>被推薦的是誰</b>：AI 沒推薦你的時候，推薦了哪些競爭對手。</span></li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>AI 信任的來源</b>：AI 引用的目錄網站、評論平台與文章。你需要出現在那裡。</span></li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>依影響程度排序的修正建議</b>：網站與各平台資料的具體修改，最重要的排最前面。</span></li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>依客戶所在地分開的結果</b>：並排比較，看看你是不是在台北被提到，到了聖地牙哥卻消失了。</span></li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>可以比較的基準</b>：修正之後再檢測一次，看看改變了什麼。</span></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section section-soft">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">為什麼重要</p>
-          <h2>它能為你的公司帶來什麼</h2>
-        </div>
-        <ul class="benefits">
-          <li class="benefit reveal"><h3>看到客戶看到的</h3><p>有人問 AI 你這一行該找誰時，你會先知道答案，不用等到客戶流失。</p></li>
-          <li class="benefit reveal"><h3>知道對手是誰</h3><p>AI 可能推薦你沒想到的競爭者。報告會列出他們的名字。</p></li>
-          <li class="benefit reveal"><h3>先改最重要的</h3><p>你會拿到一份排好優先順序的修改清單，最重要的在最前面。</p></li>
-          <li class="benefit reveal"><h3>從客戶所在的地方檢測</h3><p>有人問 AI「附近的會計師」時，AI 是依照提問者的位置回答，不是你的位置。我們從客戶所在的城市檢測，中文和英文也分開檢測。很多公司在一個城市或一種語言裡看得到，換個地方就消失了。</p></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">怎麼使用</p>
-          <h2>開發期間的搶先體驗</h2>
-        </div>
-        <ol class="steps">
-          <li class="step reveal"><span class="step-n">1</span><h3 style="margin-top:16px">提供公司名稱與網站</h3><p>透過聯絡表單送出，並說明你所在的城市、客戶在哪裡，以及客戶通常會找你做什麼。</p></li>
-          <li class="step reveal"><span class="step-n">2</span><h3 style="margin-top:16px">我們執行檢測，用 email 寄報告給你</h3><p>幾天內完成，搶先體驗期間免費。</p></li>
-          <li class="step reveal"><span class="step-n">3</span><h3 style="margin-top:16px">自己修正，或找我們一起</h3><p>報告都歸你。如果需要協助，這些修正正是我們提供的 SEO／AEO／GEO 服務。</p></li>
-        </ol>
-        <p class="cta-note" style="margin-top:20px">之後會推出自助版本：在網站上輸入公司資料，報告直接寄到你的信箱。</p>
-      </div>
-    </section>
-
-    <section class="section section-soft">
-      <div class="wrap split">
-        <div class="section-head" style="margin-bottom:0">
-          <p class="kicker">技術細節</p>
-          <h2>怎麼打造的</h2>
-          <p class="sub">以 Python 與 LangGraph 開發，呼叫各引擎自己的網路搜尋 API，讓結果和真實使用者看到的一致。每一筆回答都會保存、每次執行都記錄成本，我們也會用已知結果的公司來驗證計分方式。</p>
-        </div>
-        <ol class="roadmap reveal">
-            <li class="done"><span>向一個引擎問一個問題並保存回答</span><small>完成</small></li>
-            <li class=""><span>產生中英文的客戶問題</span><small></small></li>
-            <li class=""><span>同時加入 ChatGPT、Perplexity 與 Gemini</span><small></small></li>
-            <li class=""><span>偵測是否被提到、排名與競爭對手</span><small></small></li>
-            <li class=""><span>檢查網站</span><small></small></li>
-            <li class=""><span>計分並產生報告</span><small></small></li>
-            <li class=""><span>用已知的公司驗證，並追蹤成本</span><small></small></li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="section section-dark">
-      <div class="wrap cta-band">
-        <h2>想知道 AI 怎麼介紹你的公司嗎？</h2>
-        <p class="sub" style="margin-top:16px;max-width:60ch;font-size:17.5px">開發期間我們提供免費的搶先檢測。告訴我們公司名稱與網站，我們會把報告寄給你。</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="/zh/?topic=visibility#contact">申請免費檢測 <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn-ghost" href="mailto:yufan@shiptolive.com?subject=AI%20Visibility%20Check">寄信給我們</a>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer class="foot">
-    <div class="wrap foot-inner">
-      <span>© <span id="year"></span> 夏裕科技股份有限公司 · Ship to Live · QY LLC</span>
-      <nav class="foot-links" aria-label="Footer">
-        <a href="/zh/#services">服務項目</a>
-        <a href="/zh/#work">作品</a>
-        <a href="/zh/projects/">專案</a>
-        <a href="/zh/about/">關於我們</a>
-        <a href="/zh/#faq">常見問題</a>
-        <a href="/" hreflang="en" lang="en">English</a>
-      </nav>
+<section class="sec split" id="problem" aria-labelledby="p-h">
+  <div class="wrap g12">
+    <div class="rule" aria-hidden="true"></div>
+    <div class="lhs"><h2 class="state rv" id="p-h"><span class="ph">你的客戶</span><span class="ph">正在問 AI 該找誰。</span></h2></div>
+    <div class="rhs prose rv">
+      <p>越來越多人跳過搜尋結果，直接問 AI：「台北最推薦的會計師是誰？」AI 只會回兩三個名字。如果裡面沒有你，這位客戶就不會看到你的網站，不管它做得多好。</p>
+      <p>大多數公司不知道這些 AI 怎麼描述自己。每個引擎的搜尋方式不同，答案每天在變，中文和英文的結果也不一樣。所以我們做了一個工具來量它。</p>
     </div>
-  </footer>
-  <script src="/script.js?v=20261014a"></script>
+  </div>
+</section>
+
+<section class="sec" id="why-not-ask" aria-labelledby="w-h">
+  <div class="wrap g12">
+    <div class="rule" aria-hidden="true"></div>
+    <div class="lhs">
+      <h2 class="state rv" id="w-h"><span class="ph">自己問 ChatGPT，</span><span class="ph">看不到客戶看到的答案。</span></h2>
+      <p class="sub">這是多數老闆第一個會試的方法。但一次對話測不出客戶實際聽到了什麼，原因有四個。</p>
+    </div>
+    <div class="rhs rv" style="grid-column:1/-1">
+      <dl class="spec wide" style="margin-top:28px">
+        <div><dt>問題不一樣</dt><dd>你會問「王大明會計師事務所好嗎？」客戶問的是「台北最推薦的會計師是誰？」，根本不會提到你的名字。只要問題裡出現公司名稱，AI 幾乎都會說些好話。<b>真正的考驗是：沒人提起你的時候，AI 會不會主動推薦你。</b></dd></div>
+        <div><dt>AI 無法回報自己</dt><dd>問 AI「你會推薦我的公司嗎？」，它只是在猜自己會對別人說什麼，並沒有實際查證，而且通常猜得很客氣。</dd></div>
+        <div><dt>一次只是一次抽樣</dt><dd>同一個問題問兩次，可能得到不同的名字。一次回答說明不了什麼，所以我們每個問題跑好幾次，回報你被提到的比例。</dd></div>
+        <div><dt>答案是為你量身的</dt><dd>AI 會依你的所在地、過去的對話和它記得的資訊調整回答。而且你只查了一個引擎，客戶用的是四個。</dd></div>
+      </dl>
+      <table class="cmp">
+        <thead><tr><td></td><th scope="col">自己問 AI</th><th scope="col">AI 能見度檢測</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">問題</th><td data-label="自己問">一個，通常帶著你的公司名稱</td><td class="us" data-label="檢測">15 個客戶真正會問的問題，中英文都有，不提你的名字</td></tr>
+          <tr><th scope="row">引擎</th><td data-label="自己問">一個</td><td class="us" data-label="檢測">ChatGPT、Perplexity、Gemini 和 Claude</td></tr>
+          <tr><th scope="row">次數</th><td data-label="自己問">一次</td><td class="us" data-label="檢測">每個問題跑好幾次，回報你被提到的比例</td></tr>
+          <tr><th scope="row">情境</th><td data-label="自己問">受你的所在地、對話紀錄和記憶影響</td><td class="us" data-label="檢測">全新對話，不帶任何個人紀錄</td></tr>
+          <tr><th scope="row">地點</th><td data-label="自己問">你人在哪裡，就是哪裡的結果</td><td class="us" data-label="檢測">模擬從客戶所在的城市提問</td></tr>
+          <tr><th scope="row">競爭者</th><td data-label="自己問">看不到</td><td class="us" data-label="檢測">AI 推薦了誰、各被提到幾次</td></tr>
+          <tr><th scope="row">來源</th><td data-label="自己問">通常看不到</td><td class="us" data-label="檢測">AI 引用了哪些網站，你有沒有出現在上面</td></tr>
+          <tr><th scope="row">長期追蹤</th><td data-label="自己問">沒有比較基準</td><td class="us" data-label="檢測">每個月同一組問題，看得出趨勢</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="sec how" id="how" aria-labelledby="how-h">
+  <div class="wrap g12">
+    <div class="rule" aria-hidden="true"></div>
+    <div class="lhs"><h2 class="state rv" id="how-h">怎麼運作。</h2></div>
+    <ol class="rules">
+      <li><b>像客戶一樣發問</b><span>15 個真實的客戶問題，中文和英文各一組，透過即時網路搜尋問 ChatGPT、Perplexity、Gemini 和 Claude，從客戶所在的城市提問。</span></li>
+      <li><b>逐一分析回答</b><span>你的公司有沒有被提到？排第幾？被推薦的是誰？AI 引用了哪些網站？</span></li>
+      <li><b>檢查你的網站</b><span>結構化資料、llms.txt、是否擋住了 AI 爬蟲、網頁速度。AI 會用這些來判斷一個網站是否可信。</span></li>
+      <li><b>每個月再來一次</b><span>同一組問題、同樣的引擎、同樣的城市，每個月的數字才能跟上個月比。</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec proof" id="dashboard" aria-labelledby="d-h">
+  <div class="wrap g12">
+    <div class="rule" aria-hidden="true"></div>
+    <h2 class="state rv" id="d-h"><span class="ph">你在後台</span><span class="ph">會看到什麼。</span></h2>
+    <p class="case"><span>客戶後台的真實畫面：WU LAW INTL PLLC，台北、專辦台美跨境繼承的律師事務所。2026 年 10 月 26 日第一次檢測。經客戶同意分享，同業名稱已模糊處理。</span></p>
+    <div class="step" style="grid-column:1/-1;border-bottom:0;padding-bottom:0">
+      <div class="txt">
+        <h3>每次檢測：有沒有被提到、被引用</h3>
+        <p>45 則回答中有幾則提到事務所、幾則引用它的網站，以及每個 AI 助理各自的數字。第一次檢測，網站被引用 0 次；四天後、修了一輪，26 次。</p>
+      </div>
+      <div class="fig rv">
+        <div class="shot tall"><img src="/assets/img/marketing/ai-trend.webp" width="563" height="864" loading="lazy" decoding="async" alt="後台面板：45 則回答中 26 則提到、26 則引用網站；折線圖從 10 月 26 日的 0 到 10 月 30 日的 26；下方是 Claude、ChatGPT、Gemini 各自提到的次數。"></div>
+        <p class="shot-cap mono">每月檢測面板。2026 年 10 月 26 日 → 10 月 30 日。</p>
+      </div>
+    </div>
+    <div class="step" style="grid-column:1/-1;border-bottom:0">
+      <div class="txt">
+        <h3>和同業的正面比較</h3>
+        <p>你選擇追蹤的每一家同業：AI 提到你和提到他們的比例，以及雙方各有幾頁被引用。名單由你決定；這裡的名稱已模糊處理。</p>
+      </div>
+      <div class="fig rv">
+        <div class="shot"><img src="/assets/img/marketing/compare.webp" width="1072" height="465" loading="lazy" decoding="async" alt="後台面板：您 vs 五家追蹤中的同業，被提到的比例分別是 58% 對 36%、24%、18%、7%、4%；同業名稱已模糊處理。"></div>
+        <p class="shot-cap mono">正面比較面板，10 月 30 日的檢測。同業名稱已模糊處理。</p>
+      </div>
+    </div>
+    <div style="grid-column:1/-1">
+      <h3 class="side-h">每份報告還有</h3>
+      <dl class="spec wide">
+        <div><dt>每一則回答</dt><dd>逐字呈現，你可以讀到每個 AI 說了什麼、哪些問題答錯了。</dd></div>
+        <div><dt>AI 信任的來源</dt><dd>它引用的名錄、評論網站與文章，以及你有沒有出現在上面。那就是你需要出現的地方。</dd></div>
+        <div><dt>主題對應</dt><dd>每個主題 AI 把哪些公司連在一起，以及還沒把你連上的主題。</dd></div>
+        <div><dt>排好順序的修正</dt><dd>網站與各平台資料的具體修改，最重要的在最前面；每一項都會變成草稿，你核准才上線。</dd></div>
+        <div><dt>分語言、分城市</dt><dd>中文與英文的結果並排，從客戶所在的城市提問。很多公司在一邊看得到，另一邊就消失了。</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="sec split" id="built" aria-labelledby="b-h">
+  <div class="wrap g12">
+    <div class="rule" aria-hidden="true"></div>
+    <div class="lhs"><h2 class="state rv" id="b-h"><span class="ph">自己開發，</span><span class="ph">自己運作。</span></h2></div>
+    <div class="rhs prose rv">
+      <p>以 Python 與 LangGraph 開發，呼叫各引擎自己的網路搜尋 API，讓結果和真實使用者看到的一致。每一則回答都保存、每次執行都記錄成本，計分方式用已知結果的公司驗證。</p>
+      <p>從 2026 年 10 月起正式運作，是我們<a href="/zh/seo-aeo-geo/">科技行銷</a>服務的一部分：每月檢測的結果變成待辦清單，數字放在每位客戶的後台。下一步是自助版：在網站上輸入公司資料，報告直接寄到你的信箱。</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec cta-end" aria-labelledby="c-h">
+  <div class="wrap g12">
+    <div class="rule" aria-hidden="true"></div>
+    <div>
+      <h2 class="state rv" id="c-h"><span class="ph">想知道 AI</span><span class="ph">怎麼介紹你的公司？</span></h2>
+      <p class="sub">第一次檢測免費：公司名稱、網站、客戶在哪裡，我們把報告寄給你。1–2 個工作天內回覆。</p>
+      <div class="ctas">
+        <a class="pill" href="/zh/?topic=%E5%85%8D%E8%B2%BB%20AI%20%E8%83%BD%E8%A6%8B%E5%BA%A6%E6%AA%A2%E6%B8%AC#contact">申請免費檢測 <span class="arr" aria-hidden="true">→</span></a>
+        <a class="tlink" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約 20 分鐘諮詢</a>
+      </div>
+      <p class="note mono">中文或英文都可以。先聽你的狀況；不適合就直說，不推銷。</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <p class="mono"><b>夏裕科技</b><br>夏裕科技股份有限公司・統一編號 90173045・可開統一發票<br>台北・聖地牙哥</p>
+      <nav aria-label="頁尾連結">
+        <a href="/zh/seo-aeo-geo/">科技行銷</a><a href="/zh/projects/">作品</a><a href="/zh/about/">關於</a><a href="/tools/">工具</a><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a><a href="/projects/ai-visibility-checker/" hreflang="en" lang="en">English</a>
+      </nav>
+      <p class="mono">後台畫面為 WU LAW INTL PLLC 的真實資料，經客戶同意分享；同業名稱已模糊處理。<br>© 2026 夏裕科技</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/home/home.js" defer></script>
 </body>
 </html>
