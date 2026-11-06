@@ -56,7 +56,7 @@ h1, h2, h3 { margin: 0; font-weight: 600; text-wrap: balance; }
 .hdr .wrap { display: flex; align-items: center; height: 60px; gap: 20px; }
 .brand { display: flex; gap: 10px; text-decoration: none; margin-right: auto; min-height: 44px; align-items: center; }
 .brand b { font-weight: 650; font-size: 17px; letter-spacing: -.01em; white-space: nowrap; }
-.brand b { display: inline-flex; align-items: center; gap: 8px; }
+.brand b { display: inline-flex; align-items: center; gap: 8px; letter-spacing: .06em; font-weight: 700; }
 .brand .mark { width: 22px; height: 22px; flex: none; color: var(--ink); }
 .brand .mono { color: var(--ink-2); font-size: 12px; white-space: nowrap; }
 .nav { display: none; gap: 26px; }
