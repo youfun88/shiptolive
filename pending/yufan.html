@@ -98,7 +98,7 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </script>
 <h1>Developer review · SEO / AEO / GEO</h1>
 <p>Search and AI-visibility changes for Yufan to approve: titles, descriptions, schema, internal links, llms.txt, sitemap, keywords. Content changes go to the owner at <a href="/pending/">/pending</a>. Not linked from the site and not indexed. The GX10 job applies approved changes at its next run (every 8 hours).</p>
-<p class="updated">Updated 2026-11-05 (evening run).</p>
+<p class="updated">Updated 2026-11-06.</p>
 
 <!-- Item markup (copy for each draft; data-item must equal the board title exactly):
 <div class="item" data-item="TITLE">
@@ -108,29 +108,17 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </div>
 -->
 <h2>Waiting for approval</h2>
-<div class="item" data-item="[Yufan] Share tags and article schema on the two AI Video guides">
-<h3>1. [Yufan] Share tags and article schema on the two AI Video guides</h3>
-<p>Gives the Tadapop video research page the share tags and structured data it never had, and finishes the share tags on the video topics article. Both titles now write the brand "Ship to Live" like the rest of the site. Nothing visible on either page changes (the page header and footer text "ShipToLive · Learning Log" are left as they are). Neither page has a 中文 version. Branch <code>seo/ai-video-guides-share-tags</code>.</p>
+<div class="item" data-item="[Yufan] Homepage: shorter title and description, and a link that says where it goes">
+<h3>1. [Yufan] Homepage: shorter title and description, and a link that says where it goes</h3>
+<p>Three small fixes on the new homepage (layout 8, live since this morning), all flagged by the health run that followed it. Nothing about the services or claims changes; the description keeps the same three services and "English and 中文". og:title and og:description are left as they are. Branch <code>seo/home-title-desc-linktext</code>.</p>
 <ul>
-<li><code>/ai-video/tadapop-video-research/</code> <code>&lt;title&gt;</code>:<span class="ba was"><b>Before</b>Tadapop Video Research: What's Popular on YouTube</span><span class="ba now"><b>After</b>Tadapop Video Research: What's Popular on YouTube | Ship to Live</span></li>
-<li><code>/ai-video/tadapop-video-research/</code> Open Graph / Twitter tags:<span class="ba was"><b>Before</b>None.</span><span class="ba now"><b>After</b>og:type article, og:site_name "Ship to Live", og:title (the page title without the brand), og:description (same as the meta description), og:url, og:image (the site's usual og.png), twitter:card summary_large_image</span></li>
-<li><code>/ai-video/tadapop-video-research/</code> JSON-LD:<span class="ba was"><b>Before</b>None.</span><span class="ba now"><b>After</b>Article: headline, author Yufan Chen, publisher Ship to Live, datePublished 2026-10-11 (when the page was added), about the Tadapop app, part of "AI Video in 30 Days", the same pattern the video topics article already uses</span></li>
-<li><code>/ai-video/how-to-pick-video-topics/</code> <code>&lt;title&gt;</code>:<span class="ba was"><b>Before</b>How to Pick Video Topics (短影音選題 · 對標選題) | ShipToLive</span><span class="ba now"><b>After</b>How to Pick Video Topics (短影音選題 · 對標選題) | Ship to Live</span></li>
-<li><code>/ai-video/how-to-pick-video-topics/</code> share tags:<span class="ba was"><b>Before</b>og:title, og:description, og:type, og:url only; no image, no site name, no Twitter card</span><span class="ba now"><b>After</b>adds og:site_name "Ship to Live", og:image (og.png), twitter:card summary_large_image</span></li>
-<li><code>/ai-video/how-to-pick-video-topics/</code> Article JSON-LD <code>publisher.name</code>:<span class="ba was"><b>Before</b>ShipToLive</span><span class="ba now"><b>After</b>Ship to Live</span></li>
-<li><code>sitemap.xml</code> lastmod for both pages:<span class="ba was"><b>Before</b>2026-10-11</span><span class="ba now"><b>After</b>2026-11-05</span></li>
+<li><code>/</code> <code>&lt;title&gt;</code>:<span class="ba was"><b>Before</b>Ship to Live | Tech marketing, custom software and AI adoption (62)</span><span class="ba now"><b>After</b>Ship to Live | Tech marketing, custom software, AI adoption (59)</span></li>
+<li><code>/</code> meta description:<span class="ba was"><b>Before</b>We help small and mid-sized businesses with three things: get found on Google and in AI answers, turn your processes into software you own, and teach your team to work with AI. We find what's wrong, then ship the fix. English and 中文. (189)</span><span class="ba now"><b>After</b>We help small and mid-sized businesses get found on Google and in AI answers, turn processes into software they own, and teach teams to use AI. English and 中文. (159)</span></li>
+<li><code>/</code> Tech marketing card, link to /seo-aeo-geo/:<span class="ba was"><b>Before</b>Learn more</span><span class="ba now"><b>After</b>SEO, AEO &amp; GEO in detail</span></li>
+<li><code>/zh/</code> 科技行銷 card, link to /zh/seo-aeo-geo/:<span class="ba was"><b>Before</b>了解更多</span><span class="ba now"><b>After</b>SEO、AEO、GEO 服務詳情</span></li>
 </ul>
-<p>Why: own check of share tags and structured data across the sitemap (after /tools/, /ai-video/ and the calculator went live today): the Tadapop research page was the last public page with no Open Graph, Twitter or JSON-LD at all, so a link shared on LINE or Facebook showed no image or summary, and its title had no brand. The video topics article had no share image or card. In Search Console (28 days to 2026-11-02, 123 impressions in all) neither page has impressions yet; /ai-video/ has 4 at position 29. The owner's FAQ drafts for these two pages (separate items, FAQPage data) add their own script blocks; they don't touch the same lines.</p>
-<div class="links"><a href="/ai-video/tadapop-video-research/">Live version</a><a href="/ai-video/how-to-pick-video-topics/">Video topics article (live)</a></div>
-</div>
-<div class="item" data-item="[Yufan] Cut the Free tools page title to 60 characters">
-<h3>2. [Yufan] Cut the Free tools page title to 60 characters</h3>
-<p>The title that went live this morning is 72 characters, so Google cuts it off and the page checklist now flags it. The new title keeps both tool names and the brand. Only the <code>&lt;title&gt;</code> changes; og:title (where length matters less) and the page itself stay as they are. No 中文 version. Branch <code>seo/tools-title-60</code>.</p>
-<ul>
-<li><code>/tools/</code> <code>&lt;title&gt;</code>:<span class="ba was"><b>Before</b>Free Tools: Video Topic Finder &amp; GLP-1 Protein Calculator | Ship to Live (72)</span><span class="ba now"><b>After</b>Free Video Topic Finder &amp; GLP-1 Calculator | Ship to Live (57)</span></li>
-</ul>
-<p>Why: page checklist (health run 2026-11-05 18:00 UTC, score 95): "/tools/: Title is 72 characters. Cut it to 60 or fewer." The page has no Search Console impressions yet (28 days to 2026-11-02), so nothing ranking is put at risk. The page's other checklist gaps (no FAQ, thin at 74 words) are covered by the owner's FAQ draft for /tools/.</p>
-<div class="links"><a href="/tools/">Live version</a></div>
+<p>Why: health run 2026-11-06 02:00 UTC (score 90, page checklist 93, both down from 100 / 95 before the redesign). New since the last run: "Meta description 189 characters" (warn, /), "Title is 62 characters. Cut it to 60 or fewer" (/), and "Links say where they go: 2 links on 2 pages" ("Learn more" on /, "了解更多" on /zh/, both generic). The /zh/ title and description are within limits and are not touched. The "Learn more" link is the homepage's only link into the SEO, AEO &amp; GEO page, so its text is the anchor Google and AI crawlers read for that page.</p>
+<div class="links"><a href="/">Live version</a><a href="/zh/">中文 (live)</a></div>
 </div>
 </div>
 
