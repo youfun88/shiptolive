@@ -143,3 +143,53 @@ a.pitem:hover h3 { text-decoration: underline; text-underline-offset: 5px; text-
 .split .rhs { margin-top: 22px; }
 .founder .rhs .prose { margin-top: 16px; }
 @media (min-width: 960px) { .split .rhs { margin-top: 0; } .founder .rhs .prose { margin-top: 20px; } }
+
+/* ---------- service page: steps with dashboard shots ---------- */
+.steps { margin-top: 28px; border-top: 1px solid var(--ink); }
+.step { display: grid; gap: 18px; padding: 28px 0 36px; border-bottom: 1px solid var(--hair); }
+.step:last-child { border-bottom-color: var(--ink); }
+.step .n { font-family: "Inter", var(--sans); font-weight: 500; font-size: 44px; line-height: .9; letter-spacing: -.05em; color: var(--accent); font-variant-numeric: tabular-nums; }
+.step h3 { font-size: clamp(24px, 5.4vw, 32px); letter-spacing: -.02em; line-height: 1.2; margin-top: 10px; }
+.step p { font-size: 16px; color: var(--ink-2); margin-top: 10px; max-width: 32em; }
+.step p b { color: var(--ink); font-weight: 600; }
+.shot { background: #f7f4ef; padding: 10px; box-shadow: 0 1px 1px rgba(60, 40, 20, .08), 0 30px 50px -30px rgba(60, 40, 20, .4); min-width: 0; }
+.shot img { width: 100%; outline: 1px solid rgba(22, 21, 19, .08); background: #fff; }
+.shot.tall { max-width: 420px; }
+.shot-cap { margin-top: 10px; color: var(--ink-3); font-size: 12px; }
+.delta { margin-top: 28px; border-top: 1px solid var(--ink); display: grid; grid-template-columns: 1fr 1fr; }
+.delta > div { padding: 18px 0 20px; border-bottom: 1px solid var(--hair); }
+.delta > div:nth-child(odd) { padding-right: 16px; }
+.delta > div:nth-child(even) { border-left: 1px solid var(--hair); padding-left: 16px; }
+.delta .v { display: block; font-family: "Inter", var(--sans); font-weight: 500; font-size: clamp(34px, 8vw, 56px); line-height: 1; letter-spacing: -.05em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.delta .v small { font-size: .55em; color: var(--ink-3); font-weight: 400; letter-spacing: -.02em; margin: 0 .1em; }
+.delta .v b { font-weight: 500; color: var(--accent); }
+.delta p { font-size: 15px; margin-top: 10px; }
+.delta .src { color: var(--ink-3); font-size: 12px; margin-top: 4px; }
+.plans { margin-top: 28px; border-top: 1px solid var(--ink); display: grid; }
+.plan { padding: 22px 0 26px; border-bottom: 1px solid var(--hair); }
+.plan:last-child { border-bottom-color: var(--ink); }
+.plan h3 { font-size: 22px; letter-spacing: -.02em; }
+.plan .price { font-family: "Inter", var(--sans); font-weight: 500; font-size: 30px; letter-spacing: -.04em; line-height: 1.1; margin-top: 6px; font-variant-numeric: tabular-nums; }
+.plan .price small { font-family: var(--mono); font-size: 12px; letter-spacing: .02em; color: var(--ink-2); margin-left: 8px; }
+.plan .what { font-size: 16px; color: var(--ink); margin-top: 10px; }
+.plan ul { margin: 12px 0 0; padding: 0; }
+.plan li { list-style: none; position: relative; padding-left: 18px; font-size: 15px; color: var(--ink-2); line-height: 1.55; }
+.plan li + li { margin-top: 4px; }
+.plan li::before { content: ""; position: absolute; left: 0; top: .66em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.plan .pn { font-size: 13px; color: var(--ink-3); margin-top: 12px; }
+@media (min-width: 960px) {
+  .step { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; padding: 44px 0 52px; }
+  .step .txt { grid-column: 1 / 5; }
+  .step .fig { grid-column: 6 / -1; }
+  .step .n { font-size: 56px; }
+  .step p { font-size: 17px; }
+  .delta { grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--ink); margin-top: 44px; }
+  .delta > div, .delta > div:nth-child(odd), .delta > div:nth-child(even) { border-bottom: 0; padding: 26px 24px 30px; border-left: 1px solid var(--hair); }
+  .delta > div:first-child { border-left: 0; padding-left: 0; }
+  .plans { grid-template-columns: repeat(3, 1fr); column-gap: 0; border-bottom: 1px solid var(--ink); margin-top: 44px; }
+  .plan, .plan:last-child { border-bottom: 0; padding: 28px 28px 34px 0; }
+  .plan + .plan { border-left: 1px solid var(--hair); padding-left: 28px; }
+  .plan:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  .plan:nth-child(n+4) { border-top: 1px solid var(--hair); }
+  .plan.wide { grid-column: span 2; }
+}
