@@ -7,7 +7,7 @@
   <meta name="description" content="Yufan Chen 先為自己的公司打造的 AI 代理：AI 能見度檢測、詢問信處理代理，以及 Tally App 裡的 AI 助理。" />
   <meta name="author" content="Yufan Chen" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#eee9e3" />
   <link rel="canonical" href="https://www.shiptolive.com/zh/projects/" />
   <link rel="alternate" hreflang="en" href="https://www.shiptolive.com/projects/" />
   <link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/zh/projects/" />
@@ -22,8 +22,8 @@
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin />
-  <link rel="stylesheet" href="/styles.css?v=20261014d" />
-  <script>document.documentElement.classList.add('js')</script>
+  <link rel="stylesheet" href="/assets/home/home.css?v=1" />
+  <link rel="stylesheet" href="/assets/home/pages.css?v=1" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -94,143 +94,156 @@
   </script>
 </head>
 <body>
-  <!-- Icon sprite (Lucide, ISC licence). Referenced below with <use href="#i-…">. -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <defs>
-      <symbol id="i-bot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></symbol>
-      <symbol id="i-flow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></symbol>
-      <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
-      <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></symbol>
-      <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
-      <symbol id="i-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
-      <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
-      <symbol id="i-out" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></symbol>
-      <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
-      <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
-      <symbol id="i-lang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></symbol>
-      <symbol id="i-brief" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol>
-      <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
-      <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
-      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
-    </defs>
-  </svg>
+<a class="skip" href="#main">跳到主要內容</a>
 
-  <a class="skip-link" href="#main">跳至主要內容</a>
-  <header class="nav" id="top">
-    <div class="wrap nav-inner">
-      <a class="brand" href="/zh/" aria-label="Ship to Live">
-        <img src="/assets/favicon.svg" alt="" width="30" height="30" />
-        <span>
-          <span class="brand-name">Ship to Live</span>
-          <span class="brand-by">夏裕科技股份有限公司</span>
-        </span>
-      </a>
-      <nav class="nav-links" id="navLinks" aria-label="主選單">
-        <a href="/zh/#services">服務項目</a>
-        <a href="/zh/#work">作品</a>
-        <a href="/zh/projects/" aria-current="page">專案</a>
-        <a href="/zh/about/">關於我們</a>
-        <a href="/zh/#faq">常見問題</a>
-        <span class="lang-switch" role="group" aria-label="語言">
-          <a href="/projects/" hreflang="en" lang="en">EN</a>
-          <a href="/zh/projects/" hreflang="zh-Hant" lang="zh-Hant" aria-current="true">中文</a>
-        </span>
-      </nav>
-      <a class="btn btn-primary btn-sm" href="/zh/#contact">聯絡我們</a>
-      <button class="menu-btn" type="button" aria-label="開啟選單" aria-expanded="false" aria-controls="navLinks">
-        <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
-      </button>
-    </div>
-  </header>
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="/zh/" aria-label="Ship to Live 夏裕科技 首頁"><b><span class="dot" aria-hidden="true"></span> Ship to Live</b><span class="mono">夏裕科技</span></a>
+    <nav class="nav" aria-label="主選單">
+      <a href="/zh/#mk"><span class="mono">01</span>科技行銷</a>
+      <a href="/zh/#sw"><span class="mono">02</span>軟體開發</a>
+      <a href="/zh/#ai"><span class="mono">03</span>AI 導入</a>
+      <a href="/zh/projects/" aria-current="page">作品</a>
+      <a href="/zh/about/">關於</a>
+    </nav>
+    <a class="lang" href="/projects/" hreflang="en" lang="en" aria-label="English version">EN</a>
+    <a class="pill sm" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約諮詢</a>
+  </div>
+</header>
 
-  <main id="main">
-    <section class="page-hero">
-      <div class="wrap">
-        <p class="kicker">專案</p>
-        <h1>我們正在打造的東西</h1>
-        <p class="lede">三個 AI 代理，我們先用在自己的公司上，讓每一個都在真實資料上跑過，再交到客戶手上。第一個已經在開發中。</p>
+<main id="main">
+
+<section class="phero has-obj" aria-labelledby="h1">
+  <div class="wrap g12">
+    <p class="idx mono"><span>專案 — Ship to Live 夏裕科技</span><span>先用在自己身上</span></p>
+    <h1 id="h1">我們正在打造的東西。</h1>
+    <div class="obj-h blend" data-drift="-0.05"><img src="/assets/img/home/l8-ai-sq-600.webp" srcset="/assets/img/home/l8-ai-sq-600.webp 600w, /assets/img/home/l8-ai-sq-1000.webp 1000w" sizes="(min-width: 960px) 40vw, 70vw" width="1000" height="1000" fetchpriority="high" alt="一顆陶土球體，開口露出橘色核心，外圈環繞著小珠子（示意渲染）。"></div>
+    <p class="lede">三個 AI 代理，我們先用在自己的公司上，讓每一個都在真實資料上跑過，再交到客戶手上。第一個已經在開發中。</p>
+  </div>
+</section>
+
+<section class="sec" id="agents" aria-labelledby="feat-h">
+  <div class="wrap">
+    <div class="feat">
+      <div class="fcopy">
+        <span class="badge building">開發中</span>
+        <h3 id="feat-h">AI 能見度檢測</h3>
+        <p class="one">看看客戶詢問 ChatGPT、Perplexity、Gemini 和 Claude 時，AI 會不會推薦你的公司，還是推薦了別人。中文、英文都檢測。</p>
+        <ul class="tags"><li>AI 搜尋</li><li>SEO · AEO · GEO</li><li>中文 + English</li><li>Python · LangGraph</li></ul>
+        <div class="after"><a class="tlink" href="/zh/projects/ai-visibility-checker/">看完整介紹</a></div>
       </div>
-    </section>
-    <section class="section" style="padding-top:0">
-      <div class="wrap proj-grid">
-        <a class="proj featured reveal" href="/zh/projects/ai-visibility-checker/">
-          <div class="proj-copy">
-            <div class="proj-top"><span class="badge building"><span class="dot"></span>開發中</span></div>
-            <h2>AI 能見度檢測</h2>
-            <p>看看客戶詢問 ChatGPT、Perplexity、Gemini 和 Claude 時，AI 會不會推薦你的公司，還是推薦了別人。中文、英文都檢測。</p>
-            <ul class="chips"><li>AI 搜尋</li><li>SEO · AEO · GEO</li><li>中文 + English</li><li>Python · LangGraph</li></ul>
-            <span class="proj-more">看完整介紹 <svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
-          </div>
-          <div>
-          <div class="mock" role="img" aria-label="示意範例，並非真實資料。">
-            <div class="mock-head"><b>你的公司</b><span>報告範例</span></div>
-            <p class="mock-q">› 「台北 跨境 律師 推薦」</p>
-            <ul>
+      <div class="fmock rv">
+        <div class="mock" role="img" aria-label="示意範例，並非真實資料。">
+          <div class="mock-head"><b>你的公司</b><span>報告範例</span></div>
+          <p class="mock-q">› 「台北 跨境 律師 推薦」</p>
+          <ul>
             <li><span>ChatGPT</span><span class="yes">✓ 有提到 · 第 2</span></li>
             <li><span>Perplexity</span><span class="no">✕ 沒有提到</span></li>
             <li><span>Gemini</span><span class="yes">✓ 有提到 · 第 1</span></li>
             <li><span>Claude</span><span class="no">✕ 沒有提到</span></li>
-            </ul>
-            <div class="mock-foot"><span>AI 能見度分數</span><b>48 / 100</b></div>
-          </div>
-          <p class="mock-note">示意範例，並非真實資料。</p>
+          </ul>
+          <div class="mock-foot"><span>AI 能見度分數</span><b>48 / 100</b></div>
         </div>
-        </a>
-        <article class="proj reveal">
-          <div class="proj-top"><span class="badge"><span class="dot"></span>規劃中</span></div>
-          <h2>詢問信處理代理</h2>
-          <p>讀取每一封新的詢問，查詢寄件公司的背景，對應到合適的服務，並擬好附上初步範圍的回覆。每一封都要經過人工確認才會寄出。</p>
-          <ul class="chips"><li>Email</li><li>背景調查</li><li>人工確認</li></ul>
-        </article>
-        <article class="proj reveal">
-          <div class="proj-top"><span class="badge"><span class="dot"></span>規劃中</span></div>
-          <h2>Tally 裡的 AI 助理</h2>
-          <p>輸入「昨天合約審閱 2 小時」，Tally 就幫你記好工時，或擬好請款單。讓 AI 進到大家每天打開的 App 裡。</p>
-          <ul class="chips"><li>Flutter</li><li>自然語言</li><li>請款</li></ul>
-        </article>
+        <p class="mock-note mono">示意範例，並非真實資料。</p>
       </div>
-    </section>
-    <section class="section" id="projects-faq" aria-labelledby="projects-faq-h">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">常見問題</p>
-          <h2 id="projects-faq-h">關於這些專案，大家常問什麼？</h2>
-        </div>
-        <div class="faq-list">
-          <details class="faq-item" open>
-            <summary>為什麼這些 AI 代理要先用在自己的公司上？</summary>
-            <div class="faq-a"><p>讓每一個都在真實資料上跑過，再交到客戶手上。</p></div>
-          </details>
-          <details class="faq-item" open>
-            <summary>AI 能見度檢測在做什麼？</summary>
-            <div class="faq-a"><p>用客戶會問的問題，以中文和英文去問 ChatGPT、Perplexity、Gemini 和 Claude，告訴你公司有沒有被提到，還是 AI 推薦了別人。目前開發中。 <a class="link" href="/zh/projects/ai-visibility-checker/">看完整介紹</a></p></div>
-          </details>
-          <details class="faq-item" open>
-            <summary>詢問信處理代理會自己寄出回覆嗎？</summary>
-            <div class="faq-a"><p>不會。它會讀取每一封新的詢問，查詢寄件公司的背景，對應到合適的服務，並擬好附上初步範圍的回覆。每一封都要經過人工確認才會寄出。這個代理還在規劃中。</p></div>
-          </details>
-          <details class="faq-item" open>
-            <summary>Tally 裡的 AI 助理會做什麼？</summary>
-            <div class="faq-a"><p>輸入「昨天合約審閱 2 小時」，Tally 就幫你記好工時，或擬好請款單。這個助理還在規劃中。</p></div>
-          </details>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer class="foot">
-    <div class="wrap foot-inner">
-      <span>© <span id="year"></span> 夏裕科技股份有限公司 · Ship to Live · QY LLC</span>
-      <nav class="foot-links" aria-label="Footer">
-        <a href="/zh/#services">服務項目</a>
-        <a href="/zh/#work">作品</a>
-        <a href="/zh/projects/">專案</a>
-        <a href="/zh/about/">關於我們</a>
-        <a href="/zh/#faq">常見問題</a>
-        <a href="/" hreflang="en" lang="en">English</a>
-      </nav>
     </div>
-  </footer>
-  <script src="/script.js?v=20261014a"></script>
+
+    <div class="plist">
+      <article class="pitem rv">
+        <span class="i">02</span><span class="badge">規劃中</span>
+        <div>
+          <h3>詢問信處理代理</h3>
+          <p>讀取每一封新的詢問，查詢寄件公司的背景，對應到合適的服務，並擬好附上初步範圍的回覆。每一封都要經過人工確認才會寄出。</p>
+          <ul class="tags"><li>Email</li><li>背景調查</li><li>人工確認</li></ul>
+        </div>
+      </article>
+      <article class="pitem rv">
+        <span class="i">03</span><span class="badge">規劃中</span>
+        <div>
+          <h3>Tally 裡的 AI 助理</h3>
+          <p>輸入「昨天合約審閱 2 小時」，Tally 就幫你記好工時，或擬好請款單。讓 AI 進到大家每天打開的 App 裡。</p>
+          <ul class="tags"><li>Flutter</li><li>自然語言</li><li>請款</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec proof" id="work" aria-labelledby="w-h">
+  <div class="wrap">
+    <div class="rule" aria-hidden="true"></div>
+    <div class="clients" style="margin-top:0">
+      <div class="lhs"><h2 class="state rv" id="w-h" style="font-size:clamp(34px,3.2vw,48px)">客戶與作品。</h2><p class="sub">網站、系統與平台，都在線上。</p></div>
+      <div class="rhs">
+        <div class="ctable">
+          <a href="https://wulawintl.com" target="_blank" rel="noopener"><span class="i">01</span><span class="nm">WU LAW INTL PLLC</span><span class="wh">雙語律師事務所網站，Google 與 AI 搜尋</span><span class="u">↗</span></a>
+          <a href="https://gohike.tw" target="_blank" rel="noopener"><span class="i">02</span><span class="nm">山行接駁 Go Hike</span><span class="wh">登山接駁預約網站</span><span class="u">↗</span></a>
+          <a href="https://leadx.org" target="_blank" rel="noopener"><span class="i">03</span><span class="nm">LEADx · EQ 360</span><span class="wh">線上測驗平台：計分、管理後台、點數系統</span><span class="u">↗</span></a>
+          <a href="https://azwrealty.com" target="_blank" rel="noopener"><span class="i">04</span><span class="nm">Azure Waves Realty</span><span class="wh">不動產網站</span><span class="u">↗</span></a>
+          <a href="https://travisbradberry.com" target="_blank" rel="noopener"><span class="i">05</span><span class="nm">Travis Bradberry</span><span class="wh">《EQ 2.0》共同作者的個人網站</span><span class="u">↗</span></a>
+          <a href="https://shxtraining.com" target="_blank" rel="noopener"><span class="i">06</span><span class="nm">夏恆企業顧問 SHX</span><span class="wh">企業 ESG 培訓網站，台灣與加州</span><span class="u">↗</span></a>
+          <a href="https://qyproperty.com" target="_blank" rel="noopener"><span class="i">07</span><span class="nm">QY Property</span><span class="wh">聖地牙哥跨境不動產顧問</span><span class="u">↗</span></a>
+          <a href="https://ilsolutions.com.tw" target="_blank" rel="noopener"><span class="i">08</span><span class="nm">睿律 IL Solutions</span><span class="wh">台灣法律服務網站</span><span class="u">↗</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec faq" id="projects-faq" aria-labelledby="faq-h">
+  <div class="wrap g12">
+    <div class="rule" aria-hidden="true"></div>
+    <div class="lhs"><h2 class="state rv" id="faq-h"><span class="ph">大家常問</span><span class="ph">的問題。</span></h2></div>
+    <div class="faq-list">
+      <details open>
+        <summary><span class="i">01</span><span>為什麼這些 AI 代理要先用在自己的公司上？</span><span class="pm" aria-hidden="true"></span></summary>
+        <p>讓每一個都在真實資料上跑過，再交到客戶手上。</p>
+      </details>
+      <details>
+        <summary><span class="i">02</span><span>AI 能見度檢測在做什麼？</span><span class="pm" aria-hidden="true"></span></summary>
+        <p>用客戶會問的問題，以中文和英文去問 ChatGPT、Perplexity、Gemini 和 Claude，告訴你公司有沒有被提到，還是 AI 推薦了別人。目前開發中。 <a href="/zh/projects/ai-visibility-checker/">看完整介紹</a></p>
+      </details>
+      <details>
+        <summary><span class="i">03</span><span>詢問信處理代理會自己寄出回覆嗎？</span><span class="pm" aria-hidden="true"></span></summary>
+        <p>不會。它會讀取每一封新的詢問，查詢寄件公司的背景，對應到合適的服務，並擬好附上初步範圍的回覆。每一封都要經過人工確認才會寄出。這個代理還在規劃中。</p>
+      </details>
+      <details>
+        <summary><span class="i">04</span><span>Tally 裡的 AI 助理會做什麼？</span><span class="pm" aria-hidden="true"></span></summary>
+        <p>輸入「昨天合約審閱 2 小時」，Tally 就幫你記好工時，或擬好請款單。這個助理還在規劃中。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="sec cta-end" aria-labelledby="c-h">
+  <div class="wrap g12">
+    <div class="rule" aria-hidden="true"></div>
+    <div>
+      <h2 class="state rv" id="c-h"><span class="ph">說說你</span><span class="ph">卡在哪裡。</span></h2>
+      <p class="sub">1–2 個工作天內回覆。</p>
+      <div class="ctas">
+        <a class="pill" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約免費 20 分鐘諮詢 <span class="arr" aria-hidden="true">→</span></a>
+        <a class="tlink" href="/zh/#contact">留言給我們</a>
+      </div>
+      <p class="note mono">由創辦人 Yufan 本人接，中文或英文都可以；不適合就直說，不推銷。</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <p class="mono"><b>Ship to Live 夏裕科技</b><br>夏裕科技股份有限公司・統一編號 90173045・可開統一發票<br>台北・聖地牙哥</p>
+      <nav aria-label="頁尾連結">
+        <a href="/zh/seo-aeo-geo/">科技行銷</a><a href="/zh/projects/">作品</a><a href="/zh/about/">關於</a><a href="/tools/">工具</a><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a><a href="/" hreflang="en" lang="en">English</a>
+      </nav>
+      <p class="mono">頁面上的陶土物件為示意渲染，不是客戶作品。<br>© 2026 Ship to Live</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/home/home.js" defer></script>
 </body>
 </html>
