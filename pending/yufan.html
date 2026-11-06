@@ -98,7 +98,7 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </script>
 <h1>Developer review · SEO / AEO / GEO</h1>
 <p>Search and AI-visibility changes for Yufan to approve: titles, descriptions, schema, internal links, llms.txt, sitemap, keywords. Content changes go to the owner at <a href="/pending/">/pending</a>. Not linked from the site and not indexed. The GX10 job applies approved changes at its next run (every 8 hours).</p>
-<p class="updated">Updated 2026-11-06.</p>
+<p class="updated">Updated 2026-11-07.</p>
 
 <!-- Item markup (copy for each draft; data-item must equal the board title exactly):
 <div class="item" data-item="TITLE">
@@ -108,19 +108,17 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </div>
 -->
 <h2>Waiting for approval</h2>
-<div class="item" data-item="[Yufan] Cut five page titles to 60 characters, keeping the brand">
-<h3>1. [Yufan] Cut five page titles to 60 characters, keeping the brand</h3>
-<p>The site-wide move to the new look added " | Ship to Live 夏裕科技" to every title, which pushed five pages over 60 characters, so Google cuts them off in results. The brand suffix stays exactly as it is; only the part before it gets shorter. Each page still names what it is (Kling AI stays in the AI Video title). og:title and twitter:title are not touched. Branch <code>seo/titles-60-brand-suffix</code>.</p>
+<div class="item" data-item="[Yufan] Name Mounjaro in the GLP-1 calculator title">
+<h3>1. [Yufan] Name Mounjaro in the GLP-1 calculator title</h3>
+<p>The calculator gets 47 of the site's 123 Google impressions. Of the searches that name a drug, Mounjaro has the most (5) but was the only one not in the page title, so Google shows the page at position 63 for it. Wegovy has no searches at all, so it moves out of the title; it stays in the meta description, og:title and the schema's alternateName. No page text changes. Branch <code>seo/glp1-title-mounjaro</code>.</p>
 <ul>
-<li><code>/tools/</code> <code>&lt;title&gt;</code>:<span class="ba was"><b>Before</b>Free tools: Video Topic Finder &amp; GLP-1 Protein Calculator | Ship to Live 夏裕科技 (77)</span><span class="ba now"><b>After</b>Free Topic Finder &amp; GLP-1 Calculator | Ship to Live 夏裕科技 (56)</span></li>
-<li><code>/ai-video/</code> <code>&lt;title&gt;</code>:<span class="ba was"><b>Before</b>AI Video in 30 Days: Learn Veo 3.1 &amp; Kling AI | Ship to Live 夏裕科技 (65)</span><span class="ba now"><b>After</b>AI Video in 30 Days: Veo 3.1 &amp; Kling AI | Ship to Live 夏裕科技 (59)</span></li>
-<li><code>/ai-video/tadapop-video-research/</code> <code>&lt;title&gt;</code>:<span class="ba was"><b>Before</b>Tadapop Video Research: What's Popular on YouTube | Ship to Live 夏裕科技 (69)</span><span class="ba now"><b>After</b>Tadapop Video Research: YouTube Demand | Ship to Live 夏裕科技 (58)</span></li>
-<li><code>/en/seo-aeo-geo/</code> <code>&lt;title&gt;</code>:<span class="ba was"><b>Before</b>Tech marketing: get recommended by Google and by AI | Ship to Live 夏裕科技 (71)</span><span class="ba now"><b>After</b>Tech marketing for Google and AI answers | Ship to Live 夏裕科技 (60)</span></li>
-<li><code>/en/projects/ai-visibility-checker/</code> <code>&lt;title&gt;</code>:<span class="ba was"><b>Before</b>AI Visibility Checker: does AI recommend your business? | Ship to Live 夏裕科技 (75)</span><span class="ba now"><b>After</b>AI Visibility Checker: does AI name you? | Ship to Live 夏裕科技 (60)</span></li>
+<li><code>/glp1-protein-calculator/</code> <code>&lt;title&gt;</code>:<span class="ba was"><b>Before</b>GLP-1 Protein Calculator for Zepbound, Wegovy &amp; Ozempic (55)</span><span class="ba now"><b>After</b>GLP-1 Protein Calculator for Ozempic, Mounjaro &amp; Zepbound (57)</span></li>
+<li><code>sitemap.xml</code> calculator <code>&lt;lastmod&gt;</code>:<span class="ba was"><b>Before</b>2026-11-06</span><span class="ba now"><b>After</b>2026-11-07</span></li>
 </ul>
-<p>Why: page checklist from the health run 2026-11-06 10:00 UTC (score 90): "Title is N characters. Cut it to 60 or fewer" on these five pages (and on /en/, fixed this run by the approved homepage item). GSC (28 days to 2026-11-03): /ai-video/ ranks for "clingai.com" at position 10, so "Kling AI" stays in its title. The Chinese pages' titles are within limits and are not touched.</p>
-<div class="links"><a href="/tools/">Free tools (live)</a><a href="/ai-video/">AI Video (live)</a><a href="/ai-video/tadapop-video-research/">Tadapop research (live)</a><a href="/en/seo-aeo-geo/">Tech marketing (live)</a><a href="/en/projects/ai-visibility-checker/">AI Visibility Checker (live)</a></div>
+<p>Why: Google Search Console, 28 days to 2026-11-03: "mounjaro protein calculator" 5 impressions, position 63.2; "ozempic protein calculator" 3, position 49.7; "semaglutide protein calculator" 1, position 20; no query names Wegovy or Zepbound. Ozempic goes first because it is the best-known name and already ranks better than Mounjaro.</p>
+<div class="links"><a href="/glp1-protein-calculator/">GLP-1 calculator (live)</a></div>
 </div>
+<script>
 (function(){
   var API='https://admin.shiptolive.com/api/contact';
   document.querySelectorAll('.item').forEach(function(box,i){
