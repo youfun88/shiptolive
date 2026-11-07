@@ -68,7 +68,15 @@
   $$('[data-topic]').forEach(function (a) {
     a.addEventListener('click', function () { setTopic(a.getAttribute('data-topic')); });
   });
-  try { var tp = new URLSearchParams(location.search).get('topic'); if (tp) setTopic(tp); } catch (e) {}
+  try {
+    var tp = new URLSearchParams(location.search).get('topic');
+    // ?topic=signup (the QR code at the end of the dashboard talk): open a dashboard account. The Email is the Gmail they sign in with.
+    if (tp === 'signup' && form) {
+      setTopic('開通管理後台');
+      form.elements.email.placeholder = '登入用的 Gmail';
+      if (!form.elements.message.value) form.elements.message.value = '我想開通管理後台與審閱頁\n公司名稱：\n網站：\n登入用的 Gmail（和上面的 Email 相同就好）：';
+    } else if (tp) setTopic(tp);
+  } catch (e) {}
 
   if (form) {
     var status = $('.status', form), btn = $('button[type="submit"]', form);
