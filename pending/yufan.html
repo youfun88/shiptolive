@@ -108,17 +108,16 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </div>
 -->
 <h2>Waiting for approval</h2>
-<div class="item" data-item="[Yufan] Name the brand 夏裕科技 in the homepage schema and llms.txt">
-<h3>1. [Yufan] Name the brand 夏裕科技 in the homepage schema and llms.txt</h3>
-<p>Since the 2026-11-06 restructure every page title ends in "Ship to Live 夏裕科技", but the homepage JSON-LD and llms.txt still give 上線工作室 as the only short Chinese name, so search engines and AI assistants get two different brand names. This adds 夏裕科技 as the first alternate name (上線工作室 stays) and gives the WebSite node the same alternate name. It also fixes the WebSite <code>url</code> on <code>/</code>, which still pointed at <code>/en/</code> from before Chinese became the default. No page text changes. Branch <code>seo/brand-name-xiayu-schema</code>.</p>
+<div class="item" data-item="[Yufan] Projects pages: titles that name the AI agents and the brand">
+<h3>1. [Yufan] Projects pages: titles that name the AI agents and the brand</h3>
+<p>The two projects pages are the only pages in the sitemap whose titles skip the site-wide suffix "Ship to Live 夏裕科技" and say nothing about what is on them. The new titles name what the page already shows (the AI agents and the AI Visibility Checker) and follow the same pattern as the other pages. The same text goes into og:title and the CollectionPage <code>name</code>. No page text changes. Branch <code>seo/projects-titles</code>.</p>
 <ul>
-<li><strong>/ and /en/, ProfessionalService alternateName:</strong><span class="ba was"><b>Before</b>["上線工作室", "夏裕科技股份有限公司"]</span><span class="ba now"><b>After</b>["夏裕科技", "上線工作室", "夏裕科技股份有限公司"]</span></li>
-<li><strong>/ and /en/, WebSite alternateName:</strong><span class="ba was"><b>Before</b>(none)</span><span class="ba now"><b>After</b>"夏裕科技"</span></li>
-<li><strong>/, WebSite url:</strong><span class="ba was"><b>Before</b>https://www.shiptolive.com/en/</span><span class="ba now"><b>After</b>https://www.shiptolive.com/</span></li>
-<li><strong>llms.txt, first line:</strong><span class="ba was"><b>Before</b>Ship to Live (上線工作室) is a founder-led software studio…</span><span class="ba now"><b>After</b>Ship to Live (夏裕科技, also written 上線工作室) is a founder-led software studio…</span></li>
+<li><strong>/en/projects/, title, og:title, schema name:</strong><span class="ba was"><b>Before</b>Projects — Ship to Live</span><span class="ba now"><b>After</b>AI Agent Projects: Visibility Checker | Ship to Live 夏裕科技</span></li>
+<li><strong>/projects/, title:</strong><span class="ba was"><b>Before</b>專案｜夏裕科技</span><span class="ba now"><b>After</b>專案：AI 代理與 AI 能見度檢測｜夏裕科技</span></li>
+<li><strong>/projects/, og:title, schema name:</strong><span class="ba was"><b>Before</b>專案 — 夏裕科技</span><span class="ba now"><b>After</b>專案：AI 代理與 AI 能見度檢測｜夏裕科技</span></li>
 </ul>
-<p>Why: own check of brand names after the restructure (the AI check has never run, so the report's brandAccuracy and positioningCheck are empty). All 17 sitemap titles say 夏裕科技; schema and llms.txt said 上線工作室. Same name everywhere helps engines tie the titles, the schema and the legal name 夏裕科技股份有限公司 to one business.</p>
-<div class="links"><a href="/">首頁 (live)</a><a href="/en/">Homepage EN (live)</a><a href="/llms.txt">llms.txt (live)</a></div>
+<p>Why: the page checklist from 2026-11-07 02:04 UTC lists the titles at 23 characters (EN) and 7 (zh), the shortest on the site. Every other page title now ends in the brand, and the two projects pages are where the AI Visibility Checker and the agents are listed. GSC (28 days to 2026-11-04) has no impressions for either projects URL yet, so this sets them up rather than fixing a ranking. EN title 57 characters.</p>
+<div class="links"><a href="/en/projects/">Projects EN (live)</a><a href="/projects/">專案 (live)</a></div>
 </div>
 <script>
 (function(){
