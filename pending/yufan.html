@@ -108,15 +108,17 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </div>
 -->
 <h2>Waiting for approval</h2>
-<div class="item" data-item="[Yufan] Name Mounjaro in the GLP-1 calculator title">
-<h3>1. [Yufan] Name Mounjaro in the GLP-1 calculator title</h3>
-<p>The calculator gets 47 of the site's 123 Google impressions. Of the searches that name a drug, Mounjaro has the most (5) but was the only one not in the page title, so Google shows the page at position 63 for it. Wegovy has no searches at all, so it moves out of the title; it stays in the meta description, og:title and the schema's alternateName. No page text changes. Branch <code>seo/glp1-title-mounjaro</code>.</p>
+<div class="item" data-item="[Yufan] Name the brand 夏裕科技 in the homepage schema and llms.txt">
+<h3>1. [Yufan] Name the brand 夏裕科技 in the homepage schema and llms.txt</h3>
+<p>Since the 2026-11-06 restructure every page title ends in "Ship to Live 夏裕科技", but the homepage JSON-LD and llms.txt still give 上線工作室 as the only short Chinese name, so search engines and AI assistants get two different brand names. This adds 夏裕科技 as the first alternate name (上線工作室 stays) and gives the WebSite node the same alternate name. It also fixes the WebSite <code>url</code> on <code>/</code>, which still pointed at <code>/en/</code> from before Chinese became the default. No page text changes. Branch <code>seo/brand-name-xiayu-schema</code>.</p>
 <ul>
-<li><code>/glp1-protein-calculator/</code> <code>&lt;title&gt;</code>:<span class="ba was"><b>Before</b>GLP-1 Protein Calculator for Zepbound, Wegovy &amp; Ozempic (55)</span><span class="ba now"><b>After</b>GLP-1 Protein Calculator for Ozempic, Mounjaro &amp; Zepbound (57)</span></li>
-<li><code>sitemap.xml</code> calculator <code>&lt;lastmod&gt;</code>:<span class="ba was"><b>Before</b>2026-11-06</span><span class="ba now"><b>After</b>2026-11-07</span></li>
+<li><strong>/ and /en/, ProfessionalService alternateName:</strong><span class="ba was"><b>Before</b>["上線工作室", "夏裕科技股份有限公司"]</span><span class="ba now"><b>After</b>["夏裕科技", "上線工作室", "夏裕科技股份有限公司"]</span></li>
+<li><strong>/ and /en/, WebSite alternateName:</strong><span class="ba was"><b>Before</b>(none)</span><span class="ba now"><b>After</b>"夏裕科技"</span></li>
+<li><strong>/, WebSite url:</strong><span class="ba was"><b>Before</b>https://www.shiptolive.com/en/</span><span class="ba now"><b>After</b>https://www.shiptolive.com/</span></li>
+<li><strong>llms.txt, first line:</strong><span class="ba was"><b>Before</b>Ship to Live (上線工作室) is a founder-led software studio…</span><span class="ba now"><b>After</b>Ship to Live (夏裕科技, also written 上線工作室) is a founder-led software studio…</span></li>
 </ul>
-<p>Why: Google Search Console, 28 days to 2026-11-03: "mounjaro protein calculator" 5 impressions, position 63.2; "ozempic protein calculator" 3, position 49.7; "semaglutide protein calculator" 1, position 20; no query names Wegovy or Zepbound. Ozempic goes first because it is the best-known name and already ranks better than Mounjaro.</p>
-<div class="links"><a href="/glp1-protein-calculator/">GLP-1 calculator (live)</a></div>
+<p>Why: own check of brand names after the restructure (the AI check has never run, so the report's brandAccuracy and positioningCheck are empty). All 17 sitemap titles say 夏裕科技; schema and llms.txt said 上線工作室. Same name everywhere helps engines tie the titles, the schema and the legal name 夏裕科技股份有限公司 to one business.</p>
+<div class="links"><a href="/">首頁 (live)</a><a href="/en/">Homepage EN (live)</a><a href="/llms.txt">llms.txt (live)</a></div>
 </div>
 <script>
 (function(){
