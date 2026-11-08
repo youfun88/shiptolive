@@ -108,16 +108,18 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </div>
 -->
 <h2>Waiting for approval</h2>
-<div class="item" data-item="[Yufan] What to Build Next: a title that names the app ideas, and Article schema">
-<h3>1. [Yufan] What to Build Next: a title that names the app ideas, and Article schema</h3>
-<p>The /ideas/ page is the site's longest research piece (1,336 words, three app ideas with search data), but its title says only "What to build next", with no topic a search would match, and it has no structured data at all. The new title keeps the page's own wording and adds "2026 App Ideas". An Article block names the headline, author (Yufan Chen), publisher and dates (first published 2026-10-11), the same way the two AI Video guides already do. No page text changes. Branch <code>seo/ideas-title-article</code>.</p>
+<div class="item" data-item="[Yufan] Topic Finder: a title that says YouTube video topics, a shorter description, and app schema">
+<h3>1. [Yufan] Topic Finder: a title that says YouTube video topics, a shorter description, and app schema</h3>
+<p>The Topic Finder's title is "Topic Finder (對標選題)", which names no thing a search in English would match, its description is 242 characters (Google cuts it near 155), and the page has no structured data. The new title adds "YouTube Video", which is what the tool searches. The description keeps the page's own wording, shortened. A WebApplication block (free, by Yufan Chen) and a breadcrumb are added, the same way the GLP-1 calculator already has. No page text changes. Branch <code>seo/topic-finder-title-schema</code>.</p>
 <ul>
-<li><strong>/ideas/, title and og:title:</strong><span class="ba was"><b>Before</b>What to build next | Ship to Live 夏裕科技</span><span class="ba now"><b>After</b>What to Build Next: 2026 App Ideas | Ship to Live 夏裕科技</span></li>
-<li><strong>/ideas/, JSON-LD:</strong><span class="ba was"><b>Before</b>none</span><span class="ba now"><b>After</b>Article: headline "What to Build Next: 2026 App Ideas", author Yufan Chen, publisher Ship to Live 夏裕科技, datePublished 2026-10-11, dateModified 2026-11-08</span></li>
-<li><strong>sitemap.xml, /ideas/ lastmod:</strong><span class="ba was"><b>Before</b>2026-11-06</span><span class="ba now"><b>After</b>2026-11-08</span></li>
+<li><strong>/tools/topic-finder/, title:</strong><span class="ba was"><b>Before</b>Topic Finder (對標選題) | Ship to Live 夏裕科技</span><span class="ba now"><b>After</b>YouTube Video Topic Finder (對標選題) | Ship to Live 夏裕科技</span></li>
+<li><strong>og:title:</strong><span class="ba was"><b>Before</b>Topic Finder: 對標選題 for your promo video</span><span class="ba now"><b>After</b>YouTube Video Topic Finder (對標選題)</span></li>
+<li><strong>meta description:</strong><span class="ba was"><b>Before</b>Tell it what you sell and the video you're thinking of. It pulls what people actually search on YouTube and Google, builds searches for the six places to find proven topics, and scores your options so you film the one with demand behind it.</span><span class="ba now"><b>After</b>Tell it what you sell and the video you have in mind. It pulls what people search on YouTube and Google and scores your topics, so you film one with demand.</span></li>
+<li><strong>JSON-LD:</strong><span class="ba was"><b>Before</b>none</span><span class="ba now"><b>After</b>WebApplication "Topic Finder (對標選題)", alternateName "YouTube Video Topic Finder", free (price 0), author Yufan Chen; BreadcrumbList Ship to Live 夏裕科技 › Tools › Topic Finder</span></li>
+<li><strong>sitemap.xml, lastmod:</strong><span class="ba was"><b>Before</b>2026-11-06</span><span class="ba now"><b>After</b>2026-11-08</span></li>
 </ul>
-<p>Why: page checklist 2026-11-07 18:00 UTC (score 93) flags /ideas/ for having no FAQPage data (the FAQ itself waits on the owner draft at /pending); the page has no structured data of any kind, and its 38-character title is one of the few left that names no searchable topic. GSC (28 days to 2026-11-04) has no impressions for /ideas/ yet, so this sets it up rather than fixing a ranking. No fresh paid check to work from (AI check, keywords, AI Overviews never run). Title 54 characters.</p>
-<div class="links"><a href="/ideas/">What to Build Next (live)</a></div>
+<p>Why: page checklist 2026-11-08 02:00 UTC (score 93) flags /tools/topic-finder/ for no structured data (FAQPage; the page has no Q&amp;A, so it gets the app schema instead); its 39-character title is the last sitemap title that names no searchable topic. GSC (28 days to 2026-11-05, 125 impressions) has none for the page yet, so this sets it up rather than fixing a ranking. No fresh paid check to work from (AI check, keywords, AI Overviews never run). Title 53 characters, description 156.</p>
+<div class="links"><a href="/tools/topic-finder/">Topic Finder (live)</a></div>
 </div>
 <script>
 (function(){
