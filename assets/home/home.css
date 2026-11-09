@@ -339,7 +339,7 @@ ol.rules { padding: 0; margin: 28px 0 0; border-top: 1px solid var(--ink); count
   .how .state, .faq .state { font-size: clamp(34px, 3.2vw, 48px); padding-right: 24px; }
 
   .portrait { grid-column: 1 / 5; width: 100%; margin-top: 44px; }
-  .founder .rhs { grid-column: 6 / 12; align-self: end; }
+  .founder .rhs { grid-column: 1 / 10; align-self: end; }
   .founder .rhs .state { font-size: clamp(40px, 4.2vw, 64px); }
 
   .faq .lhs { grid-column: 1 / 5; }
