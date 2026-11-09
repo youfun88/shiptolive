@@ -108,6 +108,16 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </div>
 -->
 <h2>Waiting for approval</h2>
+<div class="item" data-item="[Yufan] English About page: a meta description Google won't cut off">
+<h3>1. [Yufan] English About page: a meta description Google won't cut off</h3>
+<p>The English About page's meta description is 207 characters. Google shows about 155 to 160, so the end is cut off. The new one keeps the business name, San Diego and Taipei, Yufan Chen and the former TalentSmartEQ CTO line, how we work, and the US and Taiwan companies; it drops "Our story" and "the founder's background", which the page and its og:description still cover. Title, og:description, schema and page text stay as they are; the Chinese About page's description is 96 characters already. Branch <code>seo/en-about-description</code>.</p>
+<ul>
+<li><strong>/en/about/, meta description:</strong><span class="ba was"><b>Before</b>Ship to Live is a founder-led software studio in San Diego and Taipei, led by Yufan Chen, former CTO of TalentSmartEQ. Our story, how we work, the founder's background and our companies in the US and Taiwan.</span><span class="ba now"><b>After</b>Ship to Live: founder-led software studio in San Diego and Taipei, led by Yufan Chen, former CTO of TalentSmartEQ. How we work and our US and Taiwan companies.</span></li>
+<li><strong>sitemap.xml, /en/about/ lastmod:</strong><span class="ba was"><b>Before</b>2026-11-06</span><span class="ba now"><b>After</b>2026-11-09</span></li>
+</ul>
+<p>Why: own length check of all 17 sitemap descriptions (2026-11-09): after the two pages already cut (320 and 298, both live), /en/ is longest at 228 (Yufan's own text, left alone) and this page next at 207. GSC (28 days to 2026-11-05): the About page (/about/) 6 impressions at position 12.8, 0 clicks, the closest-to-page-one page on the site, so a complete snippet matters here. Health 2026-11-08 18:00 UTC: 97, checklist 93, nothing new. No fresh paid check to work from (AI check, keywords, AI Overviews never run).</p>
+<div class="links"><a href="/en/about/">English About page (live)</a></div>
+</div>
 <script>
 (function(){
   var API='https://admin.shiptolive.com/api/contact';
