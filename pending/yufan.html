@@ -99,7 +99,7 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </script>
 <h1>Developer review · SEO / AEO / GEO</h1>
 <p>Search and AI-visibility changes for Yufan to approve: titles, descriptions, schema, internal links, llms.txt, sitemap, keywords. Content changes go to the owner at <a href="/pending/">/pending</a>. Not linked from the site and not indexed. The GX10 job applies approved changes at its next run (every 8 hours).</p>
-<p class="updated">Updated 2026-11-09.</p>
+<p class="updated">Updated 2026-11-10.</p>
 
 <!-- review-ui (/pending/review-ui.js + .css, shared by /pending and /pending/yufan):
   - Language: an EN / 中文 switch shows one language. Write every explanation, note, label and question twice, each in
@@ -126,23 +126,7 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </div>
 -->
 <h2>Waiting for approval</h2>
-<div class="item" data-item="[Yufan] Breadcrumb schema on the 9 pages the checklist flags" data-type="setting" data-status="approved" data-approved="2026-11-09">
-<h3>1. [Yufan] Breadcrumb schema on the 9 pages the checklist flags</h3>
-<p>The page checklist (health run 2026-11-09 10:00 UTC, checklist score 89, down from 93 after the 2026-11-09 content pass) flags 9 of the 17 sitemap pages for "No breadcrumbs". This adds one BreadcrumbList JSON-LD block to the <code>&lt;head&gt;</code> of each, built the same way as the pages that already pass (/seo-aeo-geo/, /tools/, the AI Visibility Checker pages): English pages start at 夏裕科技 Xiayu Technology (/en/), Chinese pages at 夏裕科技 (/). The step names come from each page's own visible label or trail (the "作品 —", "About —" line above the H1, or the existing "AI Video in 30 Days ›" trail on the two articles). No visible change, no wording change, no sitemap change. Branch <code>seo/breadcrumb-schema</code> (one commit, 9 files).</p>
-<ul>
-<li><strong><a href="/about/" target="_blank" rel="noopener">/about/</a>, BreadcrumbList JSON-LD:</strong><span class="ba was"><b>Before</b>none</span><span class="ba now"><b>After</b>夏裕科技 › 關於我們</span></li>
-<li><strong><a href="/en/about/" target="_blank" rel="noopener">/en/about/</a>, BreadcrumbList JSON-LD:</strong><span class="ba was"><b>Before</b>none</span><span class="ba now"><b>After</b>夏裕科技 Xiayu Technology › About</span></li>
-<li><strong><a href="/projects/" target="_blank" rel="noopener">/projects/</a>, BreadcrumbList JSON-LD:</strong><span class="ba was"><b>Before</b>none</span><span class="ba now"><b>After</b>夏裕科技 › 作品</span></li>
-<li><strong><a href="/en/projects/" target="_blank" rel="noopener">/en/projects/</a>, BreadcrumbList JSON-LD:</strong><span class="ba was"><b>Before</b>none</span><span class="ba now"><b>After</b>夏裕科技 Xiayu Technology › Projects</span></li>
-<li><strong><a href="/ideas/" target="_blank" rel="noopener">/ideas/</a>, BreadcrumbList JSON-LD:</strong><span class="ba was"><b>Before</b>none</span><span class="ba now"><b>After</b>夏裕科技 Xiayu Technology › What to build next</span></li>
-<li><strong><a href="/glp1-protein-calculator/" target="_blank" rel="noopener">/glp1-protein-calculator/</a>, BreadcrumbList JSON-LD:</strong><span class="ba was"><b>Before</b>none</span><span class="ba now"><b>After</b>夏裕科技 Xiayu Technology › Tools › GLP-1 protein calculator</span></li>
-<li><strong><a href="/ai-video/" target="_blank" rel="noopener">/ai-video/</a>, BreadcrumbList JSON-LD:</strong><span class="ba was"><b>Before</b>none</span><span class="ba now"><b>After</b>夏裕科技 Xiayu Technology › AI Video in 30 Days</span></li>
-<li><strong><a href="/ai-video/how-to-pick-video-topics/" target="_blank" rel="noopener">/ai-video/how-to-pick-video-topics/</a>, BreadcrumbList JSON-LD:</strong><span class="ba was"><b>Before</b>none (visible trail already there)</span><span class="ba now"><b>After</b>夏裕科技 Xiayu Technology › AI Video in 30 Days › Picking topics</span></li>
-<li><strong><a href="/ai-video/tadapop-video-research/" target="_blank" rel="noopener">/ai-video/tadapop-video-research/</a>, BreadcrumbList JSON-LD:</strong><span class="ba was"><b>Before</b>none (visible trail already there)</span><span class="ba now"><b>After</b>夏裕科技 Xiayu Technology › AI Video in 30 Days › Tadapop video research</span></li>
-</ul>
-<p>Not in this item: a visible "Home › Section › Page" trail above the H1 on the pages with the big header (about, projects, ideas, calculator, /ai-video/). Those already show a section label in the same spot, so adding a second line is a design call for you; say so in a comment and the next run drafts it with a preview. Note for publishing: the owner FAQ drafts for /ideas/, /ai-video/ and the two articles are copies of the old pages, so when they are approved the breadcrumb block has to be carried over.</p>
-<p>Why: checklist "breadcrumb" failing on 9 pages; checklist score 93 → 89 between 2026-11-08 18:00 and 2026-11-09 10:00 UTC. Health 97, aiSearchHealth 99, healthChanges nothing new. No fresh paid check to work from (AI check and HubSpot never run).</p>
-</div>
+<p class="empty">Nothing waiting right now.</p>
 <script>
 (function(){
   var API='https://admin.shiptolive.com/api/contact';
