@@ -1,19 +1,26 @@
-# Ship to Live (夏裕科技股份有限公司): software studio, San Diego & Taipei
+# 夏裕科技 Xiayu Technology (夏裕科技股份有限公司): tech marketing, custom software and AI adoption, Taipei
 
-> Ship to Live (夏裕科技, also written 上線工作室) is a founder-led software studio in San Diego, California and Taipei, Taiwan. It does one thing first: bilingual (English / 中文) websites built so Google can rank them and ChatGPT, Perplexity, Claude and Gemini can find and cite them, measured before and after (how often the business is named). It also does booking and lead follow-up, AI assistants, mobile apps and rescue of stalled projects. No agency layer: the engineer who scopes a project builds it. Every project is led by founder Yufan Chen, an engineering leader and full-stack engineer and former CTO of TalentSmartEQ. US engagements are contracted through QY LLC (San Diego); Taiwan engagements through 夏裕科技股份有限公司 (unified business number 90173045). Bilingual in English and Traditional Chinese (中文). Contact by email or through the contact form; phone is not published. Website: https://www.shiptolive.com/en/ · About: https://www.shiptolive.com/en/about/ · 中文版: https://www.shiptolive.com/
+> 夏裕科技 (Xiayu Technology; brand and domain also known as Ship to Live, 上線工作室) is a tech company founded in Taiwan in 2022, headquartered in Taipei, serving clients in Taiwan and the US. It offers three services: tech marketing (SEO, AEO and GEO, so a business is found on Google and named by AI assistants such as ChatGPT, Gemini, Claude and Perplexity), custom software development (websites, apps, internal systems, booking and membership platforms) and business AI adoption (AI workflows, automation, AI tool integration). Customers now ask Google and AI who to hire; if AI does not name a business, customers do not think of it. The tech marketing service runs on the company's own system, the Xiayu AI Visibility Engine (夏裕 AI 曝光引擎). Founder and principal engineer: Yufan Chen, former CTO of TalentSmartEQ. US engagements are contracted through QY LLC (San Diego, California); Taiwan engagements through 夏裕科技股份有限公司 (unified business number 90173045). Bilingual in English and Traditional Chinese (中文). Contact by email or through the contact form; phone is not published. Website: https://www.shiptolive.com/en/ · About: https://www.shiptolive.com/en/about/ · 中文版: https://www.shiptolive.com/
 
 ## Services
 
-The main offer is **websites that get found** (see "Search visibility" and "Websites & web platforms" below). The rest is offered alongside it.
+The main offer is **tech marketing on the Xiayu AI Visibility Engine** (see "Search visibility" below). Custom software and AI adoption are offered alongside it.
 
 - **AI agents & assistants**: assistants and RAG pipelines that answer from a company's own documents and data, with sources attached, and can act on them: look up the record, draft the reply, file the result. LangChain, LangGraph, ChromaDB, OpenAI and Claude.
 - **Lead follow-up & automation**: missed-call text-back, instant replies, booking and follow-up wired into the CRM, LINE or inbox a business already uses; plus back-office automation, internal tools, APIs and webhooks (including Salesforce).
 - **Mobile apps**: iPhone, Android and Mac from one codebase with Flutter or React Native / Expo, taken through App Store release.
 - **Websites & web platforms**: bilingual (English / 中文) websites and PHP / Laravel platforms (memberships, checkout, assessments, reporting) on GCP Cloud Run with GitHub Actions CI/CD.
-- **Search visibility, SEO, AEO & GEO**: a monthly service in English and Chinese that runs measure → fix → client approves → report. What it includes: (1) a monthly AI check that asks ChatGPT, Claude, Perplexity and Gemini 15+ real customer questions with live web search, showing who they name and which sites they read, and flagging name mix-ups (AI confusing the business with a similar-named one); (2) Google AI Overviews and AI Mode tracking: whether Google's AI summary cites the site for important searches, and who it cites instead; (3) keyword research with real monthly search volume: quick wins (page 1 but not top 3), new searches worth a page, ranking spread over time; (4) real usage: Google Search Console clicks and rankings, Microsoft Copilot citations (Bing AI Performance report), and leads from the site (forms and booking clicks); (5) site health for search engines and AI crawlers; (6) the fixes: answer-first pages and guides, FAQ sections, structured data (JSON-LD), llms.txt, and listings on the directories AI cites (legal directories, Google Business Profile, Bing Places), bilingual; (7) client control: drafts go to a private review page hidden from Google and AI, and nothing goes live until the client clicks Approve; (8) a monthly to-do list, a plain-language report email (English or Chinese) and a client login to see results. AI answers can change within weeks; Google rankings usually take months. How plans work: start with a free AI visibility check; on an existing site, setup covers a technical health check, a Google and AI visibility baseline, optimization goals, a first fix list, Google PageSpeed fixes and Search Console / Bing Webmaster Tools setup; new websites are also offered. Every monthly plan includes 4 optimization goals (more can be added), 5 AI-written articles a month in English and Chinese for the client to review, daily and monthly reports. Terms of 3, 6 or 12 months; AI checks 1 to 3 times a day; the client picks which AI platforms to check. Quoted after a free 20-minute call. No one can guarantee an AI engine will name a business; results are measured, not promised. Details: https://www.shiptolive.com/en/seo-aeo-geo/ · 中文: https://www.shiptolive.com/seo-aeo-geo/
+- **Search visibility, SEO, AEO & GEO (tech marketing)**: an ongoing service in English and Chinese. SEO = ranking in regular Google search; AEO = being quoted as a source in Google AI Overviews and AI Mode; GEO = being recommended by ChatGPT, Gemini and other AI assistants. Details: https://www.shiptolive.com/en/seo-aeo-geo/ · 中文: https://www.shiptolive.com/seo-aeo-geo/
+  - **The Xiayu AI Visibility Engine** runs five steps in a loop. (1) Monitor: every day it checks site health and speed, Google rankings and clicks (Search Console), answers from ChatGPT, Gemini, Claude and Perplexity with live search, Google AI Overviews, and competitors the client chooses; it records which page each booking or form came from, without names or emails. (2) Analyze: questions where AI names someone else, new keywords with search volume and low difficulty, pages ranked 4 to 10, and sentences AI gets wrong compared with the site. (3) Plan: 4 optimization goals set with the client (the questions customers ask AI most), asked on every check; plans can add more, up to 20; goals AI already names the business for reliably can be swapped for new ones; every suggestion comes with its evidence. (4) Review: drafts go to a private review page on the client's site (not public, Gmail sign-in); the client answers questions only they can answer, reads each draft in English and Chinese, and taps Approve or Request changes; nothing goes live without approval. Content changes need the client's OK; technical SEO items (titles, descriptions, structured data) are reviewed by the studio and do not change what the client says. (5) Publish & measure: approved changes go live automatically; a results report updates daily (Google visits, booking clicks, AI mentions, site issues), a one-page monthly report compares with last month, and every update is logged.
+  - **Service process**: Set up (connect the existing site, or build a new one; live in 1 to 2 working days) → Diagnose (first diagnosis report on days 3 to 5: about 15 site-health checks, a 16-point page checklist, Google and AI visibility, what to fix first) → Goals (4 optimization goals agreed in week 1) → Optimize → Report. Optimize and Report repeat; each round's numbers start the next.
+  - **Starting on an existing site**: technical health check, Google and AI visibility baseline, optimization goals, a first fix list, Google PageSpeed test and fixes aiming for 90+ on all four scores, Google Search Console and Bing Webmaster Tools set up and sitemap submitted. New websites are also offered (basic: mobile-ready, contact form, basic SEO, sitemap; advanced: service page structure, FAQ, structured data, analytics, AI-search-friendly structure).
+  - **Every plan includes**: 4 optimization goals, 5 AI-written articles a month in English and Chinese with photos, sent to the client's review page (a professional writer can be added per article), a daily results report, a monthly report, and a log of every update.
+  - **Flexibility**: existing or new site; 3, 6 or 12-month terms; AI checks 1 to 3 times a day; the client picks the AI platforms to check (ChatGPT, Gemini, Claude, Perplexity).
+  - **What the studio commits to**: steady checks, evidence behind every change, and monthly numbers the client can compare with the starting point. Results depend on how quickly the client answers questions and reviews drafts; search and AI visibility build over months. No one can guarantee an AI engine will name a business.
+  - **Getting started**: book a free 20-minute call (https://calendly.com/yufansapp/20min) or request the free AI visibility check (https://www.shiptolive.com/en/#contact); plans are quoted after a short call. To start: company name, website and the Gmail used to sign in → sign the contract online → account live in 1 to 2 working days → first diagnosis report in 3 to 5 days.
 - **Project rescue & modernization**: takes over stalled builds and aging systems (including legacy PHP): finds what is actually blocking them, then fixes, modernizes and ships them.
 
-## Who Ship to Live works with most
+## Who 夏裕科技 works with most
 
 - Cross-border professional firms (law, immigration, accounting, estate) serving clients in English and Chinese, across the US and Taiwan.
 - Taiwan businesses serving foreign visitors (tours, shuttles, stays, activities) that want direct English bookings.
@@ -22,7 +29,7 @@ The main offer is **websites that get found** (see "Search visibility" and "Webs
 ## How a project runs
 
 1. **Talk it through**: free first conversation.
-2. **Scope and quote**: a short written plan with a fixed price, quoted in one email. Larger AI projects start with a two-week pilot on real data.
+2. **Scope and quote**: software starts with discovery (1 to 2 weeks), which ends with a written plan, a clickable prototype and a fixed quote. Tech marketing plans are quoted after a short call.
 3. **Ship it live**: built, tested and deployed with permissions, logging and handover docs. The client owns the code and accounts.
 
 ## Data handling
@@ -31,7 +38,7 @@ What an agent can read and do is scoped up front, every action it takes is logge
 
 ## Founder background
 
-- **Ship to Live**: Founder & Principal Engineer, 2026 – present. Built the EQ 360 platform for LEADx / TalentSmartEQ (assessment engine, scoring, admin console, credit system in PHP/MySQL); shipped two App Store apps solo; bilingual client websites on GCP Cloud Run.
+- **夏裕科技 Xiayu Technology (Ship to Live)**: Founder & Principal Engineer, 2026 – present. Built the EQ 360 platform for LEADx / TalentSmartEQ (assessment engine, scoring, admin console, credit system in PHP/MySQL); shipped two App Store apps solo; bilingual client websites on GCP Cloud Run.
 - **RealGifts, LLC** (https://www.getrealgifts.com/), Full-Stack Engineer, 2022 – 2026. Maintained and extended the core gifting widget, embedded in a partner platform and used by 40 million members; worked on gift.me, the company's gifting site.
 - **TalentSmartEQ** (https://www.talentsmarteq.com/), Programmer to Senior Programmer to Chief Technology Officer (2013 – 2021), 2005 – 2021. Owned architecture, infrastructure and security for 20+ online assessments in 26 countries and up to 26 languages; built the Emotional Intelligence Appraisal for *Emotional Intelligence 2.0*, taken by over 1 million people; enterprise portals for 3M and Adobe; Salesforce REST integration.
 
@@ -40,8 +47,8 @@ What an agent can read and do is scoped up front, every action it takes is logge
 - **Tally** (https://www.tallybillable.com/), billable-time and invoicing app. iPhone & Mac, Flutter.
 - **Tadapop** (https://tadapop.app/), social habit tracker with a private leaderboard. iOS & Android, React Native / Expo.
 - **LEADx** (https://leadx.org/), EQ 360 assessment platform.
-- **WU LAW INTL PLLC** (https://wulawintl.com/), bilingual (English / Chinese) website for a New York–licensed attorney in Taipei handling US–Taiwan cross-border inheritance, investment and business law. Built by Ship to Live with SEO, AEO and GEO; the owner reports 20 consultations and 6 paying clients from the site in its first month. October 2026 measurements: an AI check named the firm in 12 of 16 answers across ChatGPT, Claude, Perplexity and Gemini (4 client questions); Microsoft Copilot cited the site 487 times in 90 days (156 in the last 30 days, Bing Webmaster Tools); Google's AI Overview cites wulawintl.com in its first line for 外國人繼承台灣遺產應備文件; 29 searches show the site on Google page 1 (Google Search Console).
-- **山行接駁 Go Hike** (https://gohike.tw/), booking website for a Taiwan hiking shuttle service running from Taipei and Taichung to high-mountain trailheads, launched September 2026. Built by Ship to Live with SEO, AEO and GEO: 102 routes and prices and 22 FAQ answers in structured data, plus llms.txt.
+- **WU LAW INTL PLLC** (https://wulawintl.com/), bilingual (English / Chinese) website for a New York–licensed attorney in Taipei handling US–Taiwan cross-border inheritance, investment and business law. Built by Ship to Live with SEO, AEO and GEO; the owner reports 20 consultations and 6 paying clients from the site in its first month. October 2026 measurements: an AI check named the firm in 12 of 16 answers across ChatGPT, Claude, Perplexity and Gemini (4 client questions); Microsoft Copilot cited the site 487 times in 90 days (156 in the last 30 days, Bing Webmaster Tools); Google's AI Overview cites wulawintl.com in its first line for 外國人繼承台灣遺產應備文件; 29 searches show the site on Google page 1 (Google Search Console). Later dashboard readings: AI answers citing the site went from 0 to 26 of 45 (October 26 → October 30, 2026); search terms in Google's top 3 went from 5 to 21 (October 30 → November 8, 2026) and clicks from Google per 28 days from 112 to 136 (October 26 → November 8, 2026, Google Search Console); booking clicks and forms per 30 days went from 0 in the first 30 days tracked to 15 in the last 30 days.
+- **山行接駁 Go Hike** (https://gohike.tw/), booking website for a Taiwan hiking shuttle service running from Taipei and Taichung to high-mountain trailheads, launched September 2026. Built by Ship to Live with SEO, AEO and GEO: 102 routes and prices and 22 FAQ answers in structured data, plus llms.txt. Results (Google Search Console): search terms the site ranks for went from 25 to 63, terms in the top 3 from 3 to 8 and terms on page 1 from 19 to 39 (October 31 → November 8, 2026); Google clicks per 28 days went from 32 to 79 (late October → early November 2026); bookings and forms per 30 days went from 0 in the first 30 days tracked to 23 in the last 30 days.
 - **Travis Bradberry** (https://travisbradberry.com/), author site for the coauthor of *Emotional Intelligence 2.0*.
 - **SHX Training** (https://shxtraining.com/), corporate ESG training website (Taiwan & California).
 - **QY Property** (https://qyproperty.com/), cross-border real-estate advisory website, San Diego.
@@ -49,7 +56,7 @@ What an agent can read and do is scoped up front, every action it takes is logge
 
 ## Projects
 
-- **AI Visibility Checker** (in development), https://www.shiptolive.com/projects/ai-visibility-checker/, asks ChatGPT, Perplexity, Gemini and Claude the questions a business's customers ask, in English and Chinese, and reports whether the business is named, who is named instead, which sources the AI cites, and what to fix on the website (structured data, llms.txt, AI crawler access). It answers the common question of why not just ask ChatGPT directly: customers ask without naming the business, AI can't reliably report on its own recommendations, answers vary between runs, and personal chats are tailored to the person asking, so the checker runs many unnamed customer questions several times across all four engines and reports a mention rate. Checks can be run as if from the cities where the business's customers are (for example Taipei and San Diego), since AI answers to "near me" questions depend on the asker's location. Free early-access checks are available through the contact form.
+- **AI Visibility Checker** (in production for clients as the Monitor step of the Xiayu AI Visibility Engine; self-serve version next), https://www.shiptolive.com/en/projects/ai-visibility-checker/ (中文: https://www.shiptolive.com/projects/ai-visibility-checker/), asks ChatGPT, Perplexity, Gemini and Claude the questions a business's customers ask, in English and Chinese, and reports whether the business is named, who is named instead, which sources the AI cites, and what to fix on the website (structured data, llms.txt, AI crawler access). It answers the common question of why not just ask ChatGPT directly: customers ask without naming the business, AI can't reliably report on its own recommendations, answers vary between runs, and personal chats are tailored to the person asking, so the checker runs many unnamed customer questions several times across all four engines and reports a mention rate. Checks can be run as if from the cities where the business's customers are (for example Taipei and San Diego), since AI answers to "near me" questions depend on the asker's location. Free early-access checks are available through the contact form.
 - **Lead intake agent** (planned), drafts replies to new inquiries for human approval.
 - **AI assistant in Tally** (planned), natural-language time entries and invoice drafts.
 
@@ -70,10 +77,11 @@ AI & agents: RAG, multi-agent orchestration, LangChain, LangGraph, ChromaDB, Ope
 
 ## About
 
-- Brand: Ship to Live (https://www.shiptolive.com/en/)
+- Brand: 夏裕科技 Xiayu Technology (https://www.shiptolive.com/en/); the domain name is shiptolive.com
+- Founded: Taiwan, 2022. Headquarters: Taipei. Clients in Taiwan and the US.
 - Legal entities: QY LLC (San Diego, California) for US work; 夏裕科技股份有限公司 (Taipei, Taiwan), unified business number (統一編號) 90173045, for Taiwan work, it can issue Taiwanese 統一發票.
 - Education: B.S. Computer Science, University of California, San Diego; Certificate Program in Agentic AI, Johns Hopkins University (2026)
-- Locations: San Diego, California, USA and Taipei, Taiwan
+- Locations: Taipei, Taiwan (headquarters) and San Diego, California, USA
 - Languages: English, Traditional Chinese (中文)
 - On the name: "ship to live" is the last step of a build, shipping the code to production, and the step most projects never reach.
 
@@ -86,18 +94,22 @@ The two language versions carry the same offering; the Chinese pages are written
 
 ## 中文摘要
 
-夏裕科技股份有限公司（統一編號 90173045，品牌名 Ship to Live）是 Yufan Chen 創立的軟體工程公司，
-在台灣台北與美國加州聖地牙哥兩地營運。Yufan Chen 是工程主管與全端工程師，曾任 TalentSmartEQ 技術長。服務項目：
+夏裕科技股份有限公司（統一編號 90173045；網域與舊品牌名 Ship to Live）2022 年在臺灣成立，總部位於臺北，服務臺灣與美國客戶。
+客戶現在會直接問 Google 和 ChatGPT、Gemini 等 AI；沒被 AI 提到，客人就不會想到您。我們做三件事：
 
-1. **AI 代理與助理**: 依企業自己的文件與資料回答並附出處，還能實際動手（查紀錄、擬回覆、歸檔）。
-2. **自動化與系統整合**: 內部工具、管理後台、API 與 webhook，把既有系統串起來。
-3. **手機 App**: 以 Flutter 或 React Native／Expo 開發 iPhone、Android、Mac App 並上架。
-4. **網站與網路平台**: 中英雙語網站與 PHP／Laravel 平台，部署於 GCP Cloud Run。
-5. **搜尋能見度（SEO / AEO / GEO）**: 讓企業在 Google 與 ChatGPT、Perplexity、Gemini、Claude、Copilot 的回答中被找到與推薦。每月流程：量測 → 修正 → 客戶核准 → 報告。包含每月 AI 檢測（15 個以上真實客戶問題、即時搜尋、名稱混淆偵測）、Google AI 摘要與 AI 模式追蹤、真實搜尋量的關鍵字研究、Search Console 與 Copilot 引用及網站詢問、網站健康檢查，以及中英文頁面、結構化資料與名錄修正；草稿放在不公開的審閱頁，客戶核准後才上線；每月白話報告 email 與客戶登入頁。從免費 AI 能見度檢測開始；每個方案含 4 個優化目標（可加選）、每月 5 篇 AI 撰寫的中英文文章送客戶審閱、每日與每月報告；合約 3、6 或 12 個月，依需求報價。https://www.shiptolive.com/seo-aeo-geo/
-6. **專案救援與系統翻新**: 接手卡住的專案與老舊系統，找出真正卡住的地方，修好、翻新並上線。
+1. **科技行銷（SEO / AEO / GEO）**: SEO 提升一般 Google 搜尋排名；AEO 讓網站內容被 Google AI 摘要、AI 模式引用為來源；GEO 提高被 ChatGPT、Gemini 等 AI 推薦的機會。服務以「夏裕 AI 曝光引擎」執行，五個步驟持續循環：監測（網站健康與速度、Google 排名與點擊、AI 回答、競爭對手與詢價來源）→ 分析（AI 沒提到您的問題、有機會的新關鍵字、快進前幾名的頁面、AI 說錯的內容）→ 建議（和您一起設定 4 個優化目標，依方案可加選，最多 20 個；已穩定被推薦的目標可換成新目標；每項建議都附依據）→ 審核（草稿送到您網站上不公開的審閱頁，用 Gmail 登入，按「同意上線」或「需要修改」，沒有同意不會上線；內容修改需要您同意，標題、描述、結構化資料等技術 SEO 由我們審核，不改變您說的內容）→ 線上追蹤（自動更新網站、每日成效報告、每月報告、每次更新都有紀錄）。https://www.shiptolive.com/seo-aeo-geo/
+   - 服務流程：建置串接（1 到 2 個工作天開通）→ 診斷報告（第 3 到 5 天）→ 優化目標（第 1 週）→ 深入優化 → 更新回報；後兩步持續循環。
+   - 既有網站啟動設定：技術健檢、Google 與 AI 能見度基準測試、設定優化目標、初始改善清單、Google PageSpeed 測試與改善（目標四項分數都到 90 以上）、設定 Google Search Console 與 Bing Webmaster Tools 並提交 Sitemap。也提供新網站建置（基本、進階）。
+   - 每個方案都包含：4 個優化目標、每月 5 篇 AI 撰寫的中英文文章（附照片）送到您的審閱頁，可按篇加購專業寫手；每日成效報告與每月報告。
+   - 方案彈性：已有網站或新網站；合約 3、6 或 12 個月；AI 檢測每天 1 到 3 次；可選 AI 平台（ChatGPT、Gemini、Claude、Perplexity）。
+   - 我們承諾：持續檢查、每個修改都有依據、每月可比較的數字。成效和您的配合很有關係，問題回答得越完整、審閱越快，改善越快；搜尋和 AI 能見度需要時間累積，通常以數個月來看。
+   - 開始合作：提供公司名稱、網站和登入用的 Gmail → 線上簽約 → 1 到 2 個工作天開通 → 3 到 5 天內收到第一份診斷報告。先預約免費 20 分鐘諮詢或申請免費 AI 能見度檢測，諮詢後報價。
+2. **客製化軟體開發**: 網站、App、內部管理系統、預約及會員平台；先做 1–2 週的先期規劃，交付書面規劃、可點擊原型與固定報價。
+3. **企業 AI 導入**: AI 工作流程、自動化、AI 工具整合；事先約定 AI 能讀什麼、能做什麼，花錢或對外的動作都要有人核准。
 
-合作流程：免費諮詢 → 書面規劃與固定報價 → 開發並正式上線。服務語言為中文（繁體）與英文；
-台灣的案子由夏裕科技股份有限公司承接並開立統一發票，美國的案子由 QY LLC 承接。
+案例：WU LAW INTL PLLC（雙語律師事務所網站）：AI 回答引用網站 0 → 26 次（45 則中，10 月 26 日 → 10 月 30 日）；Google 前 3 名的搜尋字詞 5 → 21 個（10 月 30 日 → 11 月 8 日）；每 28 天 Google 點擊 112 → 136 次（10 月 26 日 → 11 月 8 日）。山行接駁 Go Hike（登山接駁預約網站）：有排名的搜尋字詞 25 → 63 個、前 3 名 3 → 8 個（10 月 31 日 → 11 月 8 日，Google Search Console）；每 30 天預約與表單從追蹤頭 30 天的 0 次到最近 30 天的 23 次。
+
+台灣的案子由夏裕科技股份有限公司承接並開立統一發票，美國的案子由 QY LLC 承接。服務語言為中文（繁體）與英文。
 聯絡方式：yufan@shiptolive.com 或網站上的聯絡表單（不公開電話）。
 中文網站：https://www.shiptolive.com/
 
