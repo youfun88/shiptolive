@@ -36,22 +36,12 @@
 </script>
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/home/home.css?v=5">
+<link rel="stylesheet" href="/assets/home/motion.css?v=1">
 <style>
   .rules span a { margin-left: 6px; white-space: nowrap; }
   @media (max-width: 959px) {
     #fit ol.rules { grid-template-columns: 1fr; }
     #fit .rules li:nth-last-child(2) { border-bottom-color: var(--hair); }
-  }
-  /* proof: four dated numbers (the motion pass may restyle this) */
-  .figs.f4 .fig-n:nth-child(2) { border-bottom-color: var(--hair); }
-  .figs.f4 .fig-n:nth-child(3) { border-bottom-color: var(--hair); }
-  .figs.f4 .fig-n:nth-child(4) { grid-column: 1 / -1; }
-  @media (min-width: 960px) {
-    .figs.f4 { grid-template-columns: repeat(4, 1fr); }
-    .figs.f4 .fig-n, .figs.f4 .fig-n:nth-child(4) { grid-column: auto; }
-    .figs.f4 .fig-n .v, .figs.f4 .fig-n:nth-child(n+2) .v { font-size: clamp(76px, 7.4vw, 124px); }
-    .figs.f4 .fig-n { padding-right: 20px; padding-left: 20px; }
-    .figs.f4 .fig-n:first-child { padding-left: 0; }
   }
 </style>
 <script type="application/ld+json">
@@ -221,6 +211,7 @@
         </dl>
         <details class="more-d">
           <summary><span>See details</span><span class="pm" aria-hidden="true"></span></summary>
+          <div class="road" aria-hidden="true"><span class="trk"><span class="fill"></span></span><ol><li><i><span>1</span></i><span>Monitor</span></li><li><i><span>2</span></i><span>Analyze</span></li><li><i><span>3</span></i><span>Plan</span></li><li><i><span>4</span></i><span>Review</span></li><li><i><span class="halo"></span><span>5</span></i><span>Publish &amp; Measure</span></li></ol></div>
           <dl class="spec">
             <div class="step"><dt><i>1</i>Monitor</dt><dd>Site health and speed, Google rankings and clicks, answers from ChatGPT, Gemini, Claude and Perplexity, competitors</dd></div>
             <div class="step"><dt><i>2</i>Analyze</dt><dd>Questions where AI names someone else, new keywords, pages close to the top, things AI gets wrong</dd></div>
@@ -339,21 +330,25 @@
     <div class="figs f4" data-case="wulaw" data-measured="2026-11-11">
       <div class="fig-n rv" data-stat="ai-mentions">
         <span class="v"><span class="n" data-count="14" data-total="15">14</span><small class="u">/15</small></span>
+        <div class="mtr" aria-hidden="true"><span class="seg"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i></span><span class="dlt"><b>14</b> / 15</span></div>
         <p class="lbl">Of 15 questions customers ask, AI answers to 14 named the firm.</p>
         <p class="src mono"><time datetime="2026-10-30">Oct 30, 2026</time> · our AI visibility check: ChatGPT, Gemini, Claude, Perplexity</p>
       </div>
       <div class="fig-n rv d1" data-stat="google-visits">
         <span class="v"><span class="n" data-count="145">145</span></span>
+        <div class="mtr" aria-hidden="true"><span class="trk" style="--from:.662"><span class="base"></span><span class="gain"></span></span><span class="dlt"><b>+51%</b></span></div>
         <p class="lbl">Visits from Google in the last 28 days, up 51% on the 28 days before.</p>
         <p class="src mono"><time datetime="2026-11-11">Nov 11, 2026</time> · Google Search Console</p>
       </div>
       <div class="fig-n rv d2" data-stat="booking-clicks">
         <span class="v"><span class="n" data-count="19" data-from="0">19</span></span>
+        <div class="mtr" aria-hidden="true"><span class="trk"><span class="base"></span><span class="gain all"></span></span><span class="dlt">0 → <b>19</b></span></div>
         <p class="lbl">Booking clicks in the last 30 days. The first 30 days tracked: zero.</p>
         <p class="src mono"><time datetime="2026-11-11">Nov 11, 2026</time> · site log, no names or emails</p>
       </div>
       <div class="fig-n rv d2" data-stat="google-top3">
         <span class="v"><span class="n" data-count="21" data-from="5">21</span></span>
+        <div class="mtr" aria-hidden="true"><span class="trk" style="--from:.238"><span class="base"></span><span class="gain"></span></span><span class="dlt">5 → <b>21</b></span></div>
         <p class="lbl">Search terms in Google’s top 3, up from 5.</p>
         <p class="src mono"><time datetime="2026-10-30">Oct 30</time> → <time datetime="2026-11-08">Nov 8, 2026</time> · Google Search Console</p>
       </div>
@@ -436,6 +431,7 @@
       <details>
         <summary><span class="i">03</span><span>Will anything go live without my approval?</span><span class="pm" aria-hidden="true"></span></summary>
         <p>No. Drafts wait on a private review page on your site. It isn't public, and you sign in with Gmail. Nothing is published until you tap Approve, and you can tap Request changes instead. Technical SEO items like titles and structured data are reviewed by us and don't change what you say.</p>
+        <div class="okm" aria-hidden="true"><span class="okm-h">Review page</span><div class="row"><span class="b b1"><svg class="ck" viewBox="0 0 16 16"><path d="M3 8.6l3.1 3L13 4.6"/></svg><span class="lb">Approve</span><span class="rip"></span><svg class="hand" viewBox="0 0 64 64"><path d="M24 30V12a5 5 0 0 1 10 0v15l3-1a5 5 0 0 1 6 3l1 2 2-1a5 5 0 0 1 6 3l1 3 1 0a5 5 0 0 1 5 6v6c0 9-7 16-16 16h-6a16 16 0 0 1-13-7L14 41a5 5 0 0 1 8-6z" fill="#fff" stroke="#161513" stroke-width="3" stroke-linejoin="round"/></svg></span><span class="b">Request changes</span></div></div>
       </details>
       <details>
         <summary><span class="i">04</span><span>What do I send for the free check, and what do I get back?</span><span class="pm" aria-hidden="true"></span></summary>
@@ -507,6 +503,7 @@
 </footer>
 
 <script src="/assets/home/home.js" defer></script>
+<script src="/assets/home/motion.js?v=1" defer></script>
 <script src="/assets/booking.js" defer></script>
 </body>
 </html>

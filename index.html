@@ -36,6 +36,7 @@
 </script>
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/home/home.css?v=5">
+<link rel="stylesheet" href="/assets/home/motion.css?v=1">
 <style>
   .proof .more .tlink + .tlink { margin-left: 22px; }
   .how .lhs .sub { margin-top: 16px; }
@@ -44,18 +45,6 @@
     #process .rules li:nth-last-child(2), #fit .rules li:nth-last-child(2) { border-bottom-color: var(--hair); }
   }
   .rules span a { margin-left: 6px; white-space: nowrap; }
-  /* proof: four dated numbers (the motion pass may restyle this) */
-  .figs.f4 .fig-n:nth-child(2) { border-bottom-color: var(--hair); }
-  .figs.f4 .fig-n:nth-child(3) { border-bottom-color: var(--hair); }
-  .figs.f4 .fig-n:nth-child(4) { grid-column: 1 / -1; }
-  .fig-n .lbl + .src { margin-top: 8px; }
-  @media (min-width: 960px) {
-    .figs.f4 { grid-template-columns: repeat(4, 1fr); }
-    .figs.f4 .fig-n, .figs.f4 .fig-n:nth-child(4) { grid-column: auto; }
-    .figs.f4 .fig-n .v, .figs.f4 .fig-n:nth-child(n+2) .v { font-size: clamp(76px, 7.4vw, 124px); }
-    .figs.f4 .fig-n { padding-right: 20px; padding-left: 20px; }
-    .figs.f4 .fig-n:first-child { padding-left: 0; }
-  }
 </style>
 <script type="application/ld+json">
 {
@@ -281,6 +270,7 @@
         </dl>
         <details class="more-d">
           <summary><span>看細節</span><span class="pm" aria-hidden="true"></span></summary>
+          <div class="road" aria-hidden="true"><span class="trk"><span class="fill"></span></span><ol><li><i><span>1</span></i><span>監測</span></li><li><i><span>2</span></i><span>分析</span></li><li><i><span>3</span></i><span>建議</span></li><li><i><span>4</span></i><span>審核</span></li><li><i><span class="halo"></span><span>5</span></i><span>線上追蹤</span></li></ol></div>
           <dl class="spec">
             <div class="step"><dt><i>1</i>監測</dt><dd>每天檢查網站健康與速度、Google 排名與點擊、ChatGPT、Gemini 等 AI 的回答，以及競爭對手</dd></div>
             <div class="step"><dt><i>2</i>分析</dt><dd>AI 沒提到您的問題、有機會的新關鍵字、快進前幾名的頁面、AI 說錯的內容</dd></div>
@@ -403,21 +393,25 @@
     <div class="figs f4" data-case="wulaw" data-measured="2026-11-11">
       <div class="fig-n rv" data-stat="ai-mentions">
         <span class="v"><span class="n" data-count="14" data-total="15">14</span><small class="u">/15</small></span>
+        <div class="mtr" aria-hidden="true"><span class="seg"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i></span><span class="dlt"><b>14</b> / 15</span></div>
         <p class="lbl">15 個客戶會問的問題，14 題的 AI 回答提到這家事務所。</p>
         <p class="src mono"><time datetime="2026-10-30">2026-10-30</time>・夏裕 AI 能見度檢測：ChatGPT、Gemini、Claude、Perplexity</p>
       </div>
       <div class="fig-n rv d1" data-stat="google-visits">
         <span class="v"><span class="n" data-count="145">145</span></span>
+        <div class="mtr" aria-hidden="true"><span class="trk" style="--from:.662"><span class="base"></span><span class="gain"></span></span><span class="dlt"><b>+51%</b></span></div>
         <p class="lbl">最近 28 天來自 Google 的造訪，比前 28 天多 51%。</p>
         <p class="src mono"><time datetime="2026-11-11">2026-11-11</time>・Google Search Console</p>
       </div>
       <div class="fig-n rv d2" data-stat="booking-clicks">
         <span class="v"><span class="n" data-count="19" data-from="0">19</span></span>
+        <div class="mtr" aria-hidden="true"><span class="trk"><span class="base"></span><span class="gain all"></span></span><span class="dlt">0 → <b>19</b></span></div>
         <p class="lbl">最近 30 天的預約點擊。追蹤的頭 30 天是 0。</p>
         <p class="src mono"><time datetime="2026-11-11">2026-11-11</time>・網站記錄，不記錄姓名或 Email</p>
       </div>
       <div class="fig-n rv d2" data-stat="google-top3">
         <span class="v"><span class="n" data-count="21" data-from="5">21</span><small class="u">個</small></span>
+        <div class="mtr" aria-hidden="true"><span class="trk" style="--from:.238"><span class="base"></span><span class="gain"></span></span><span class="dlt">5 → <b>21</b></span></div>
         <p class="lbl">排在 Google 前 3 名的搜尋字詞，從 5 個增加到 21 個。</p>
         <p class="src mono"><time datetime="2026-10-30">2026-10-30</time> → <time datetime="2026-11-08">2026-11-08</time>・Google Search Console</p>
       </div>
@@ -508,6 +502,7 @@
       <details>
         <summary><span class="i">03</span><span>沒經過我同意，會有內容上線嗎？</span><span class="pm" aria-hidden="true"></span></summary>
         <p>不會。草稿都送到您的私人審閱頁，用 Gmail 登入，不公開。您按「同意上線」才會更新網站，也可以按「需要修改」。標題、描述、結構化資料這類技術 SEO 調整由我們審核，不會改變您對客戶說的內容。</p>
+        <div class="okm" aria-hidden="true"><span class="okm-h">審閱頁</span><div class="row"><span class="b b1"><svg class="ck" viewBox="0 0 16 16"><path d="M3 8.6l3.1 3L13 4.6"/></svg><span class="lb">同意上線</span><span class="rip"></span><svg class="hand" viewBox="0 0 64 64"><path d="M24 30V12a5 5 0 0 1 10 0v15l3-1a5 5 0 0 1 6 3l1 2 2-1a5 5 0 0 1 6 3l1 3 1 0a5 5 0 0 1 5 6v6c0 9-7 16-16 16h-6a16 16 0 0 1-13-7L14 41a5 5 0 0 1 8-6z" fill="#fff" stroke="#161513" stroke-width="3" stroke-linejoin="round"/></svg></span><span class="b">需要修改</span></div></div>
       </details>
       <details>
         <summary><span class="i">04</span><span>科技行銷怎麼開始？</span><span class="pm" aria-hidden="true"></span></summary>
@@ -585,6 +580,7 @@
 </footer>
 
 <script src="/assets/home/home.js" defer></script>
+<script src="/assets/home/motion.js?v=1" defer></script>
 <script src="/assets/booking.js" defer></script>
 </body>
 </html>
