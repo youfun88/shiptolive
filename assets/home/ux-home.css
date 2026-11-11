@@ -4,16 +4,10 @@
 /* h1.one also matched the catalog's `.one` lede rule (grey, 17px colour): keep the headline in full ink */
 .hero h1.one { color: var(--ink); max-width: none; }
 
-@media (min-width: 960px) {
-  /* The service index was auto-placed into grid row 1, above the headline, and sat under the render's fade.
-     It now closes the hero: headline → lede → CTAs → index. */
-  .hero .hidx { grid-row: 4; position: relative; z-index: 2; margin-top: 40px; }
-  .hidx .t { color: var(--ink); }
-}
 
 /* Tablet (mobile layout at 640–959px): the square renders filled a whole screen and pushed the CTAs below the fold */
 @media (min-width: 640px) and (max-width: 959px) {
-  .hero-obj { padding: 0 16%; }
+  .hero-obj { padding: 0 22%; }
   .obj { padding: 0 22%; }
   .lede { max-width: 32em; }
 }
@@ -49,6 +43,77 @@
   html[lang="en"] .hero h1 { font-size: clamp(36px, 11.2vw, 64px); }
 }
 
-/* The hero already ends with the service index bar; the catalog's full 160px top padding left a dead band under it. */
+/* The catalog's full 160px top padding left a dead band under the hero CTAs. */
 @media (min-width: 960px) { .hero + .catalog { padding-top: 96px; } }
 @media (max-width: 959px) { .hero + .catalog { padding-top: 72px; } }
+
+/* ===== UX round 2 (HOME agent) ===== */
+
+/* Hero, desktop: the render spans rows 2–3; without a flexible row its height pushed the lede far below a one-line
+   headline at wide screens (≈80px at 1440) and squeezed it at 1000 (≈20px). Row 3 now takes the extra height. */
+@media (min-width: 960px) {
+  .hero > .g12 { grid-template-rows: auto auto 1fr; }
+  .hero h1 { align-self: end; }
+  .hero h1.one + .hero-obj + .txt { padding-top: 32px; }
+}
+/* 960–1199: the lede column (5 of 12) set Chinese at ~16 characters a line; give it one more column */
+@media (min-width: 960px) and (max-width: 1199px) {
+  .hero .txt { grid-column: 1 / 7; }
+}
+
+/* Service entries, desktop: the render stays beside the text while it scrolls instead of ending halfway and
+   leaving an empty half-column next to the spec table and links */
+@media (min-width: 960px) {
+  .entry .obj { position: sticky; top: 104px; }
+}
+/* 960–1199: the text column was 5 of 12 (~366px at 1000) and spec rows wrapped to 3–4 lines; split 6 / 6 */
+@media (min-width: 960px) and (max-width: 1199px) {
+  .entry .obj { grid-column: 1 / 7; }
+  .entry .body { grid-column: 7 / -1; }
+  .entry.flip .obj { grid-column: 7 / -1; }
+  .entry.flip .body { grid-column: 1 / 7; }
+}
+
+/* English hero on tablets: "Dare to / innovate." broke at 640–959; size it so each line holds */
+@media (min-width: 640px) and (max-width: 959px) {
+  html[lang="en"] .hero h1 { font-size: clamp(56px, 10.4vw, 96px); }
+}
+
+/* Dashboard band → WU LAW proof: band's bottom padding plus the full 160px section padding left a ~270px empty field */
+@media (min-width: 960px) { .plate + .proof { padding-top: 88px; } }
+@media (max-width: 959px) { .plate + .proof { padding-top: 56px; } }
+
+/* Case lines: the inline-flex 44px link inflated its line ("…網站記 / 錄）。" sat lower than the lines above);
+   keep the 44px target with padding instead */
+.proof .case a { display: inline-block; min-height: 0; padding: 12px 0; margin: -12px 0; line-height: 1.5; }
+
+/* Rows and short labels: no one-character last lines ("…依您的需求報 / 價", "比前 28 天 / 多 51%。") */
+.spec dd, .figs .lbl, .rules span, .ctable .wh, .lede, .one, .sub, .case span, .bio { text-wrap: pretty; }
+/* FAQ questions and row titles break at spaces/punctuation, not inside a word ("會推 / 薦我們嗎？") */
+html[lang="zh-Hant"] .faq summary, html[lang="zh-Hant"] .rules b, html[lang="zh-Hant"] .ctable .nm { word-break: keep-all; overflow-wrap: anywhere; text-wrap: balance; }
+
+/* Desktop: the zh phrase "讓客戶在 Google 和 AI" (≈10em) is wider than the text column at 960–1300 and broke into
+   "讓客戶在 Google / 和 AI / 都找得到您"; size the service headline to its column (max 52px as before) */
+@media (min-width: 960px) {
+  .entry .body { container-type: inline-size; }
+  html[lang="zh-Hant"] .entry .big { font-size: min(52px, 9.3cqi); }
+  html[lang="en"] .entry .big { font-size: min(52px, 10.4cqi); }
+}
+/* Short multi-line labels in both languages: even lines, no lone last word ("…our company / data?", "…professional / firms") */
+.entry .big, .faq summary, .rules b, .ctable .nm { text-wrap: balance; }
+/* text-wrap needs the block: the .case span is inline, so set it on the paragraph ("…日期和來 / 源。") */
+.proof .case { text-wrap: pretty; }
+/* client rows: keep a date together ("（2026- / 10-30）") */
+.ctable .nw { white-space: nowrap; }
+/* stat labels are 2–3 short lines: balance them ("…追蹤的頭 30 天 / 是 0。" left a 2-character line) */
+.figs .lbl { text-wrap: balance; }
+/* Chrome's `pretty` doesn't lift a lone CJK word ("…依您的需求 / 報價"); these rows are 1–4 lines, so balance them */
+.spec dd, .rules span, .ctable .wh { text-wrap: balance; }
+/* Phones: the label column (6.4–7em) left the answer ~200px wide and CJK rows broke into 3 short lines
+   ("每月 5 篇 AI 撰寫的 / 文章，中英文、附照 / 片…"); stack label over answer, full width */
+@media (max-width: 639px) {
+  .spec > div, html[lang="en"] .spec > div { grid-template-columns: 1fr; gap: 2px; padding: 12px 0; }
+  .spec dt { padding-top: 0; }
+}
+/* product name in the 01 lede never splits ("…答案裡要有您。夏 / 裕 AI 曝光引擎") */
+.entry .one b { white-space: nowrap; }

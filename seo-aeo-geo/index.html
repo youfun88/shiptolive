@@ -23,10 +23,10 @@
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin />
-  <link rel="stylesheet" href="/assets/home/home.css?v=5" />
-  <link rel="stylesheet" href="/assets/home/pages.css?v=7" />
-  <link rel="stylesheet" href="/assets/home/motion.css?v=3" />
-  <link rel="stylesheet" href="/assets/home/ux-svc.css?v=1" />
+  <link rel="stylesheet" href="/assets/home/home.css?v=7" />
+  <link rel="stylesheet" href="/assets/home/pages.css?v=8" />
+  <link rel="stylesheet" href="/assets/home/motion.css?v=4" />
+  <link rel="stylesheet" href="/assets/home/ux-svc.css?v=13" />
   <style>
     .spec.flow dt { color: var(--ink); }
     .spec.flow dt i { font-style: normal; color: var(--accent); margin-right: 8px; }
@@ -41,7 +41,7 @@
     #metrics .spec dd b, #method .spec dd b { font-weight: 600; color: var(--ink); }
     #metrics .side-h + .spec { margin-top: 8px; }
     #metrics .spec + .side-h { margin-top: 36px; }
-    #method .honest a, .rules span a { margin-left: 6px; white-space: nowrap; }
+    #method .honest a, .rules span a { white-space: nowrap; }
     @media (min-width: 960px) { #metrics .rhs, #method .rhs { padding-top: 56px; } }
     @media (max-width: 959px) {
       #fit ol.rules, #ask ol.rules, .cta-end ol.rules { display: block; }
@@ -245,9 +245,9 @@
   <div class="wrap">
     <a class="brand" href="/" aria-label="夏裕科技 首頁"><b><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect x="20" y="16" width="38" height="12" rx="6" fill="currentColor"/><rect x="6" y="36" width="31" height="12" rx="6" fill="currentColor"/><circle cx="49" cy="42" r="7.5" fill="#d7612a"/></svg>夏裕科技</b><span class="mono">台北・聖地牙哥</span></a>
     <nav class="nav" aria-label="主選單">
-      <a href="/seo-aeo-geo/" aria-current="page"><span class="mono">01</span>科技行銷</a>
-      <a href="/#sw"><span class="mono">02</span>軟體開發</a>
-      <a href="/#ai"><span class="mono">03</span>AI 導入</a>
+      <a href="/seo-aeo-geo/" aria-current="page">科技行銷</a>
+      <a href="/#sw">軟體開發</a>
+      <a href="/#ai">AI 導入</a>
       <a href="/projects/">作品</a>
       <a href="/about/">關於</a>
     </nav>
@@ -311,7 +311,7 @@
         </div>
         <div class="fig rv">
           <div class="shot tall"><img src="/assets/img/marketing/ai-trend.webp" width="563" height="864" loading="lazy" decoding="async" alt="成效報告的 AI 能見度檢測：45 則回答中 26 則提到 WU LAW INTL PLLC；折線圖從 10 月 26 日的 0 到 10 月 30 日的 26；下方列出 Claude、ChatGPT、Gemini 各自提到的次數。"></div>
-          <p class="shot-cap mono">WU LAW INTL PLLC：10 月 26 日第一次檢測，45 則回答引用網站 0 次；10 月 30 日 26 次。</p>
+          <p class="shot-cap mono">WU LAW INTL PLLC：<span class="nw">10 月 26 日</span>第一次檢測，45 則回答引用網站 0 次；<span class="nw">10 月 30 日</span> 26 次。</p>
         </div>
       </div>
       <div class="step">
@@ -322,7 +322,7 @@
         </div>
         <div class="fig rv">
           <div class="shot"><img src="/assets/img/marketing/google-rank.webp" width="1072" height="345" loading="lazy" decoding="async" alt="成效報告的 Google 排名分布：10 月 30 日有 46 個搜尋字詞，前 3 名 5 個；11 月 6 日有 69 個，前 3 名 18 個。"></div>
-          <p class="shot-cap mono">WU LAW INTL PLLC：Google 第 1 頁的搜尋字詞從 29 個變 48 個，前 3 名從 5 個變 18 個。10 月 30 日 → 11 月 6 日。</p>
+          <p class="shot-cap mono">WU LAW INTL PLLC：Google 第 1 頁的搜尋字詞從 29 個變 48 個，前 3 名從 5 個變 18 個。<span class="nw">10 月 30 日</span> → <span class="nw">11 月 6 日</span>。</p>
         </div>
       </div>
       <div class="step">
@@ -362,7 +362,7 @@
       <div class="step">
         <div class="txt">
           <span class="n rv" aria-hidden="true">05</span>
-          <h3>線上追蹤 Publish &amp; Measure</h3>
+          <h3>線上追蹤 <span class="nw">Publish &amp; Measure</span></h3>
           <p>您同意的內容自動更新到網站。成效報告每天更新：Google 造訪、預約點擊、AI 提及、網站問題。變化較慢的數字整理成每月報告，和上個月比較。<b>每一次更新都留下紀錄，最新的在最上面。</b></p>
         </div>
         <div class="fig rv">
@@ -427,7 +427,7 @@
         <div><dt>同一組、固定頻率</dt><dd>優化目標每次都問同一組；AI 檢測每天一次，可加到每天 3 次。網站和 Google 資料也每天檢查。</dd></div>
         <div><dt>原始資料</dt><dd>Google 的數字來自 Google Search Console，Copilot 引用來自 Bing Webmaster Tools。每一則 AI 回答都保存，您讀得到 AI 說的每一句話。</dd></div>
       </dl>
-      <p class="honest">為什麼不自己問 ChatGPT 就好？因為一次對話會受您的名字、所在地和對話紀錄影響，看不到客戶看到的答案。<a href="/projects/ai-visibility-checker/">看 AI 能見度檢測的完整介紹</a></p>
+      <p class="honest">為什麼不自己問 ChatGPT 就好？因為一次對話會受您的名字、所在地和對話紀錄影響，看不到客戶看到的答案。 <a href="/projects/ai-visibility-checker/">看 AI 能見度檢測的完整介紹</a></p>
     </div>
   </div>
 </section>
@@ -449,7 +449,7 @@
       </dl>
       <div class="fig">
         <div class="shot"><img src="/assets/img/marketing/speed.webp" width="1072" height="356" loading="lazy" decoding="async" alt="成效報告的網頁速度檢查：手機效能 98 分，無障礙、最佳做法、SEO 各 100 分；電腦四項都是 100 分。"></div>
-        <p class="shot-cap mono">診斷報告裡的 Google PageSpeed，以 WU LAW INTL PLLC 首頁為例：手機 98、電腦 100。2026 年 11 月 6 日。</p>
+        <p class="shot-cap mono">診斷報告裡的 Google PageSpeed，以 WU LAW INTL PLLC 首頁為例：手機 98、電腦 100。<span class="nw">2026 年 11 月 6 日</span>。</p>
       </div>
     </div>
   </div>
@@ -461,15 +461,15 @@
     <h2 class="state rv" id="case-h"><span class="ph">一家台北事務所，</span><span class="ph">開始後的變化</span></h2>
     <p class="case"><span>WU LAW INTL PLLC 是一位紐約州律師在台北的事務所，專辦台美跨境繼承。我們做了雙語網站，2026 年 8 月開始科技行銷。以下是成效報告的真實數字，每一個都標了日期。</span> <a class="mono" href="https://wulawintl.com" target="_blank" rel="noopener">wulawintl.com ↗</a></p>
     <div class="delta" style="grid-column:1/-1">
-      <div class="rv"><span class="v">0<small>→</small><b data-from="0" data-count="26">26</b></span><p>AI 回答引用網站的次數（45 則中）</p><p class="src mono">10 月 26 日 → 10 月 30 日・我們的 AI 檢測</p></div>
-      <div class="rv d1"><span class="v">5<small>→</small><b data-from="5" data-count="21">21</b></span><p>排在 Google 前 3 名的搜尋字詞</p><p class="src mono">10 月 30 日 → 11 月 8 日・Google Search Console</p></div>
-      <div class="rv d2"><span class="v">112<small>→</small><b data-from="112" data-count="136">136</b></span><p>28 天內來自 Google 的點擊</p><p class="src mono">10 月 26 日 → 11 月 8 日・Google Search Console</p></div>
-      <div class="rv d2"><span class="v">0<small>→</small><b data-from="0" data-count="19">19</b></span><p>30 天內的預約點擊</p><p class="src mono">追蹤的頭 30 天 → 截至 2026-11-11 的最近 30 天・網站記錄</p></div>
+      <div class="rv"><span class="v">0<small>→</small><b data-from="0" data-count="26">26</b></span><p>AI 回答引用網站的次數（45 則中）</p><p class="src mono"><span class="nw">10 月 26 日</span> → <span class="nw">10 月 30 日</span>・<span class="nw">我們的 AI 檢測</span></p></div>
+      <div class="rv d1"><span class="v">5<small>→</small><b data-from="5" data-count="21">21</b></span><p>排在 Google 前 3 名的搜尋字詞</p><p class="src mono"><span class="nw">10 月 30 日</span> → <span class="nw">11 月 8 日</span>・<span class="nw">Google Search Console</span></p></div>
+      <div class="rv d2"><span class="v">112<small>→</small><b data-from="112" data-count="136">136</b></span><p>28 天內來自 Google 的點擊</p><p class="src mono"><span class="nw">10 月 26 日</span> → <span class="nw">11 月 8 日</span>・<span class="nw">Google Search Console</span></p></div>
+      <div class="rv d2"><span class="v">0<small>→</small><b data-from="0" data-count="19">19</b></span><p>30 天內的預約點擊</p><p class="src mono"><span class="nw">追蹤的頭 30 天</span> → <span class="nw">截至 2026-11-11</span><span class="nw">的最近 30 天</span>・<span class="nw">網站記錄</span></p></div>
     </div>
     <p class="case" style="grid-column:1/-1;max-width:40em">客戶問 Gemini：「美國公民在台灣有帳戶和房產，要怎麼做資產規劃？」Gemini 在回答裡 4 次引用這家事務所：3 次是事務所名稱，1 次是網站。客戶還沒開始找律師，AI 就先介紹了它。</p>
     <div class="fig rv" style="grid-column:1/-1;margin-top:44px">
       <div class="shot"><img src="/assets/img/marketing/compare.webp" width="1072" height="465" loading="lazy" decoding="async" alt="成效報告的同業比較：WU LAW INTL PLLC 在 45 則 AI 回答中被提到 58%，分別和五家同業比較，同業的名稱已模糊處理。"></div>
-      <p class="shot-cap mono">和同業比較（10 月 30 日的檢測）：58% 的回答提到這家事務所。同業名稱已模糊處理；追蹤名單由您決定。</p>
+      <p class="shot-cap mono">和同業比較（<span class="nw">10 月 30 日</span>的檢測）：58% 的回答提到這家事務所。同業名稱已模糊處理；追蹤名單由您決定。</p>
     </div>
     <p class="honest" style="grid-column:1/-1;max-width:40em">退步也照實列出。例如 AI 品牌評分從 42 降到 39，下一步就是統一各平台上的名稱、把服務寫清楚。</p>
   </div>
@@ -481,10 +481,10 @@
     <h2 class="state rv" id="case2-h"><span class="ph">一家登山接駁，</span><span class="ph">開始後的變化</span></h2>
     <p class="case"><span>山行接駁 Go Hike 提供台北、台中到玉山、雪山等登山口的接駁預約。網站是我們做的，2026 年 10 月底開始使用夏裕 AI 曝光引擎。</span> <a class="mono" href="https://gohike.tw" target="_blank" rel="noopener">gohike.tw ↗</a></p>
     <div class="delta" style="grid-column:1/-1">
-      <div class="rv"><span class="v">25<small>→</small><b data-from="25" data-count="63">63</b></span><p>有排名的搜尋字詞</p><p class="src mono">10 月 31 日 → 11 月 8 日・Google Search Console</p></div>
-      <div class="rv d1"><span class="v">3<small>→</small><b data-from="3" data-count="8">8</b></span><p>排在 Google 前 3 名的搜尋字詞</p><p class="src mono">10 月 31 日 → 11 月 8 日・Google Search Console</p></div>
-      <div class="rv d2"><span class="v">32<small>→</small><b data-from="32" data-count="79">79</b></span><p>28 天內來自 Google 的點擊</p><p class="src mono">10 月底 → 11 月初・Google Search Console</p></div>
-      <div class="rv d2"><span class="v">0<small>→</small><b data-from="0" data-count="23">23</b></span><p>30 天內的預約與表單</p><p class="src mono">追蹤的頭 30 天 → 最近 30 天・網站記錄</p></div>
+      <div class="rv"><span class="v">25<small>→</small><b data-from="25" data-count="63">63</b></span><p>有排名的搜尋字詞</p><p class="src mono"><span class="nw">10 月 31 日</span> → <span class="nw">11 月 8 日</span>・<span class="nw">Google Search Console</span></p></div>
+      <div class="rv d1"><span class="v">3<small>→</small><b data-from="3" data-count="8">8</b></span><p>排在 Google 前 3 名的搜尋字詞</p><p class="src mono"><span class="nw">10 月 31 日</span> → <span class="nw">11 月 8 日</span>・<span class="nw">Google Search Console</span></p></div>
+      <div class="rv d2"><span class="v">32<small>→</small><b data-from="32" data-count="79">79</b></span><p>28 天內來自 Google 的點擊</p><p class="src mono"><span class="nw">10 月底</span> → <span class="nw">11 月初</span>・<span class="nw">Google Search Console</span></p></div>
+      <div class="rv d2"><span class="v">0<small>→</small><b data-from="0" data-count="23">23</b></span><p>30 天內的預約與表單</p><p class="src mono"><span class="nw">追蹤的頭 30 天</span> → <span class="nw">最近 30 天</span>・<span class="nw">網站記錄</span></p></div>
     </div>
     <p class="honest" style="grid-column:1/-1;max-width:40em">同一段時間，平均排名從 2.5 變成 9.4，這不是退步：原來的字詞名次沒變，是新字詞剛起步、排在後面，把平均拉高。新字詞往前爬，平均就會回來。</p>
   </div>
@@ -500,20 +500,20 @@
     <div class="rhs rv">
       <h3 class="side-h">AI 回答</h3>
       <dl class="spec wide">
-        <div><dt>AI 提及率</dt><dd>客戶會問的問題裡，AI 回答提到您的比例。<b>例：15 題中 14 題（2026-10-30）</b></dd></div>
-        <div><dt>網站引用率</dt><dd>AI 回答把您的網站列為來源的次數。<b>例：45 則回答中 26 則；第一次檢測是 0（2026-10-26 → 10-30）</b></dd></div>
-        <div><dt>同業比較</dt><dd>同一組問題，AI 提到您和提到您指定同業的比例。<b>例：58%，最接近的同業 36%（2026-10-30，同業名稱不公開）</b></dd></div>
-        <div><dt>Copilot 引用</dt><dd>Bing Webmaster Tools 回報 Microsoft Copilot 引用您網站的次數。<b>例：最近 30 天 176 次（2026-11-11）</b></dd></div>
+        <div><dt>AI 提及率</dt><dd>客戶會問的問題裡，AI 回答提到您的比例。<b>例：15 題中 14 題（<span class="nw">2026-10-30</span>）</b></dd></div>
+        <div><dt>網站引用率</dt><dd>AI 回答把您的網站列為來源的次數。<b>例：45 則回答中 26 則；第一次檢測是 0（<span class="nw">2026-10-26 → 10-30</span>）</b></dd></div>
+        <div><dt>同業比較</dt><dd>同一組問題，AI 提到您和提到您指定同業的比例。<b>例：58%，最接近的同業 36%（<span class="nw">2026-10-30</span>，同業名稱不公開）</b></dd></div>
+        <div><dt>Copilot 引用</dt><dd>Bing Webmaster Tools 回報 Microsoft Copilot 引用您網站的次數。<b>例：最近 30 天 176 次（<span class="nw">2026-11-11</span>）</b></dd></div>
       </dl>
       <h3 class="side-h">Google</h3>
       <dl class="spec wide">
-        <div><dt>Google 造訪</dt><dd>Search Console 裡每 28 天來自 Google 搜尋的點擊，和前 28 天比。<b>例：145 次，多 51%（2026-11-11）</b></dd></div>
-        <div><dt>前 3 名字詞</dt><dd>排在 Google 前 3 名的搜尋字詞數量。<b>例：5 個 → 21 個（2026-10-30 → 11-08）</b></dd></div>
+        <div><dt>Google 造訪</dt><dd>Search Console 裡每 28 天來自 Google 搜尋的點擊，和前 28 天比。<b>例：145 次，多 51%（<span class="nw">2026-11-11</span>）</b></dd></div>
+        <div><dt>前 3 名字詞</dt><dd>排在 Google 前 3 名的搜尋字詞數量。<b>例：5 個 → 21 個（<span class="nw">2026-10-30 → 11-08</span>）</b></dd></div>
         <div><dt>AI 摘要引用</dt><dd>重要的搜尋裡，有幾個出現 Google AI 摘要、其中幾個引用您的網站。<b>例：7 個搜尋中 6 個有 AI 摘要，2 個引用事務所（2026 年 11 月）</b></dd></div>
       </dl>
       <h3 class="side-h">生意</h3>
       <dl class="spec wide">
-        <div><dt>預約點擊</dt><dd>預約按鈕、表單與聯絡連結的點擊，記錄客人從哪裡來、先看哪一頁，不記錄姓名或 Email。<b>例：最近 30 天 19 次，追蹤的頭 30 天 0 次（2026-11-11）</b></dd></div>
+        <div><dt>預約點擊</dt><dd>預約按鈕、表單與聯絡連結的點擊，記錄客人從哪裡來、先看哪一頁，不記錄姓名或 Email。<b>例：最近 30 天 19 次，追蹤的頭 30 天 0 次（<span class="nw">2026-11-11</span>）</b></dd></div>
       </dl>
     </div>
   </div>
@@ -543,8 +543,8 @@
       <p class="sub">客戶會先問 AI、再決定找誰的服務，都適合。公司不大、行業小眾也可以。</p>
     </div>
     <ol class="rules">
-      <li><b>跨境專業服務</b><span>律師、會計、移民、不動產。例：「台北有哪些做台美跨境繼承的律師？」<a href="#case">律師事務所案例</a></span></li>
-      <li><b>觀光、交通與預約</b><span>接駁、包車、導覽、住宿。例：「台北出發雪山登山口接駁推薦」<a href="#case-gohike">登山接駁案例</a></span></li>
+      <li><b>跨境專業服務</b><span>律師、會計、移民、不動產。例：「台北有哪些做台美跨境繼承的律師？」 <a href="#case">律師事務所案例</a></span></li>
+      <li><b>觀光、交通與預約</b><span>接駁、包車、導覽、住宿。例：「台北出發雪山登山口接駁推薦」 <a href="#case-gohike">登山接駁案例</a></span></li>
       <li><b>企業培訓與 B2B 服務</b><span>客戶會比較很多家才決定。例：「台灣有哪些企業 ESG 培訓課程？」</span></li>
       <li><b>在地店家與體驗</b><span>課程、工作室、餐廳、活動。例：「台北適合團體的室內活動推薦」</span></li>
     </ol>
@@ -742,7 +742,7 @@
   </div>
 </footer>
 
-<script src="/assets/home/home.js" defer></script>
+<script src="/assets/home/home.js?v=2" defer></script>
 <script src="/assets/home/motion.js?v=1" defer></script>
 <script src="/assets/booking.js" defer></script>
 <script>

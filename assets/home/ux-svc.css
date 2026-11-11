@@ -84,16 +84,21 @@ html { scroll-padding-top: calc(var(--hdr-h, 60px) + 16px); }
   .lnav-cta .arr { color: var(--accent); transition: transform .5s var(--ease); }
   .lnav-cta:hover .arr { transform: translateX(3px); }
 }
+@media (min-width: 960px) {
+  /* when the list is wider than the bar (the English guide at 1440 with the free-check link) it scrolls; fade both ends so a cut-off item never shows a sliced word */
+  .lnav ol { -webkit-mask-image: linear-gradient(90deg, transparent, #000 20px, #000 calc(100% - 20px), transparent); mask-image: linear-gradient(90deg, transparent, #000 20px, #000 calc(100% - 20px), transparent); }
+  .lnav ol li:first-child { padding-left: 20px; } .lnav ol li:last-child { padding-right: 20px; }
+  .lnav ol { margin-left: -20px; gap: 0 22px; } /* the fade lives in the gutter, so the first item still lines up with the page's left edge */
+}
 @media (min-width: 960px) and (max-width: 1279px) {
   .lnav-cta { display: none; }
-  .lnav ol { gap: 0 22px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 20px, #000 calc(100% - 20px), transparent); mask-image: linear-gradient(90deg, transparent, #000 20px, #000 calc(100% - 20px), transparent); }
-  .lnav ol li:first-child { padding-left: 20px; } .lnav ol li:last-child { padding-right: 20px; }
+  .lnav ol { gap: 0 22px; }
   .lnav ol a { font-size: 13px; }
 }
 @media print { .lnav { display: none !important; } }
 
 /* ---------- 2. engine road (service page) ---------- */
-.road li > small { display: block; margin-top: -6px; font-family: var(--mono); font-size: 11px; letter-spacing: .02em; color: var(--ink-3); font-weight: 400; }
+.road li > small { display: block; margin-top: -6px; font-family: var(--mono); font-size: 12px; letter-spacing: .02em; color: var(--ink-3); font-weight: 400; }
 .mo .road li > small { opacity: .45; }
 .mo .road.in li > small { opacity: 1; transition: opacity .5s ease var(--t); }
 @media (max-width: 599px) { .road li > small { display: none; } } /* too narrow for the English names; the step headings carry them */
@@ -149,3 +154,65 @@ html[lang="zh-Hant"] .cta-end .state .ph:first-child { margin-right: .25em; } /*
 /* CTA links set as list items inside a plan card: give them a full 44px tap row */
 .plan li > a { display: inline-flex; align-items: center; min-height: 44px; }
 .plan li:has(> a)::before { top: 19px; }
+
+/* ---------- 7. right-column lists at desktop (960–1440) ----------
+   In a split section the right column is only ~440px at 1000px. A fixed 12em label column left the definitions
+   9 CJK characters wide, and the three-column step list left its descriptions ~130px wide. */
+@media (min-width: 600px) {
+  /* also tablets: a 6.4em label column split quoted labels mid-word ("「一定要重做網 / 站」") */
+  .split .rhs .spec.wide > div, html .split .rhs .spec.wide > div { grid-template-columns: minmax(7.5em, 30%) minmax(0, 1fr); gap: 24px; }
+}
+@media (min-width: 960px) {
+  .split .rhs ol.rules li { grid-template-columns: 48px minmax(0, 1fr); row-gap: 6px; }
+  .split .rhs ol.rules li > b, .split .rhs ol.rules li > span { grid-column: 2; }
+}
+
+/* ---------- 8. headings that start a line with a full-width bracket ----------
+   "（GEO）是什麼" always starts the guide headline's second line; the brackets' empty halves read as a stray indent
+   and a gap before 是. Pull them in by half a glyph (the CJK fallback font has no halt feature to do it). */
+h1 .pk-o { margin-left: -.48em; }
+h1 .pk-c { margin-right: -.4em; }
+
+/* ---------- 9. line breaking ----------
+   Dates and sources in the metric notes never split ("10 月 30 / 日"); body copy avoids a last line of one or two characters. */
+.nw { white-space: nowrap; }
+.prose p, .sub, .lede, .spec dd, .rules span, .plan li, .plan .what, .step p, .delta p, .case, .honest, .faq-list p, .shot-cap { text-wrap: pretty; }
+
+/* ---------- 10. service steps ---------- */
+/* the screenshot captions inherited the 17px step paragraph size and out-shouted the copy beside them */
+.step .shot-cap { font-size: 12px; line-height: 1.6; margin-top: 12px; max-width: none; color: var(--ink-3); }
+@media (min-width: 960px) { .step .shot-cap { font-size: 13px; } }
+/* a paragraph right under a definition list sat on its closing rule */
+.rhs .spec + .prose { margin-top: 28px; }
+/* the last step's closing rule sat 60–120px above the next section's rule and read as a double line */
+#process .step:last-child, #engine .step:last-child { border-bottom: 0; padding-bottom: 0; }
+
+/* ---------- 11. definition lists on phones ----------
+   Side by side, a 6.4em label left the definitions 9–10 characters wide and split labels ("SEO 搜尋引擎優 / 化").
+   Under 600px the label sits on top, the definition takes the full measure. */
+@media (max-width: 599px) {
+  html body .spec.wide > div, html #how-ai .spec > div { grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 14px 0 16px; }
+  .spec.wide dt { padding-top: 0; }
+}
+
+/* ---------- 12. service steps on tablets (600–959) ----------
+   The tall screenshot is capped at 420px and left an empty column beside it: put its caption in that column.
+   The approval card matches the full-width list and mock around it instead of stopping at 420px. */
+@media (min-width: 600px) and (max-width: 959px) {
+  .step .fig:has(> .shot.tall) { display: grid; grid-template-columns: 420px minmax(0, 1fr); column-gap: 28px; align-items: end; }
+  .step .fig:has(> .shot.tall) .shot-cap { margin-top: 0; }
+  .step .fig .okm { max-width: none; }
+}
+
+/* ---------- 13. closing rules on phones and tablets ----------
+   Below 960px a list's closing ink line sat ~65px above the next section's ink rule and read as a double line.
+   The list closes on a hairline there; the section rule stays the strong divider. */
+@media (max-width: 959px) {
+  .sec ol.rules li:last-child, .faq-list details:last-child { border-bottom-color: var(--hair); }
+}
+/* the source name may wrap in a half-width phone cell ("Google Search Console" is wider than 165px in English) */
+.delta .src .nw:last-child { white-space: normal; }
+/* guide contents: a two-line entry splits evenly instead of leaving one word ("now") on the second line */
+#toc ol.rules a { text-wrap: balance; }
+/* Chinese definition labels break only at their spaces, never inside a word ("「加了 FAQ 和 Schema 就 / 好」") */
+html[lang="zh-Hant"] .spec dt { word-break: keep-all; overflow-wrap: break-word; }

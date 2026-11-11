@@ -7,6 +7,15 @@
   function $(s, r) { return (r || document).querySelector(s); }
   function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
 
+  /* ---------- sticky header: a hairline once the page has moved ---------- */
+  var hdr = $('.hdr');
+  if (hdr) {
+    var scrolled = false;
+    var onHdr = function () { var s = (window.scrollY || window.pageYOffset || 0) > 8; if (s !== scrolled) { scrolled = s; hdr.classList.toggle('is-scrolled', s); } };
+    window.addEventListener('scroll', onHdr, { passive: true });
+    onHdr();
+  }
+
   /* ---------- reveal (fade up). Anything already on screen is shown at once. ---------- */
   if (!reduce && 'IntersectionObserver' in window) {
     doc.classList.add('motion');

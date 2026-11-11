@@ -3,7 +3,7 @@
 
 /* ---------- tap targets ---------- */
 .hdr .pill.sm { min-height: 44px; }
-.idx a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; display: inline-block; padding: 12px 0; margin: -12px 0; }
+.idx a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; display: inline-block; padding: 13px 10px; margin: -13px -10px; }
 
 /* ---------- projects: featured heading is now an h2 (heading order) ---------- */
 .feat h2 { font-size: clamp(34px, 8.6vw, 64px); line-height: 1.06; letter-spacing: -.02em; margin-top: 14px; }
@@ -52,3 +52,35 @@ html[lang="en"] .policy p, html[lang="en"] .policy li { line-height: 1.7; }
 @media (min-width: 960px) {
   .policy-sec { padding-top: 88px; }
 }
+
+/* ---------- UX round 2: line breaks, spacing, captions ---------- */
+.nw { white-space: nowrap; }
+/* zh headings break at phrase edges (checker and privacy don't load motion.css) */
+html[lang^="zh"] h1, html[lang^="zh"] h2, html[lang^="zh"] h3 { word-break: keep-all; overflow-wrap: anywhere; }
+/* FAQ questions, stat labels and side notes: balanced lines, no 1-2 character tails */
+details summary > span:nth-child(2), .delta p, .shot-cap { text-wrap: balance; }
+html[lang^="zh"] .faq-list details p, html[lang^="zh"] .tl ul { max-width: 36em; }
+/* text links inside spec rows: 44px tall hit area without moving the text */
+.spec dd a:not(.mono) { display: inline; padding: 12px 0; margin: 0; white-space: nowrap; }
+/* checker: screenshot captions read as captions, not body copy */
+.step .shot-cap { font-size: 12px; line-height: 1.6; margin-top: 12px; max-width: none; color: var(--ink-3); }
+/* checker: status line dot sits on the first line when the text wraps */
+.status-pill { align-items: flex-start; line-height: 1.6; }
+.status-pill::before { flex: none; margin-top: calc(.8em - 4px); }
+@media (min-width: 960px) {
+  /* projects: the featured block opens right under the hero, no double spacing */
+  #agents { padding-top: 128px; }
+  #agents .feat { margin-top: 0; }
+  /* about: label column of the services table fits a 960-1279 content column */
+  .split .spec.wide > div { grid-template-columns: 9em 1fr; }
+  /* checker: the dashboard heading sits in a half column; size it like other split headings */
+  #dashboard .state { font-size: clamp(40px, 4.2vw, 64px); }
+  .step .shot-cap { font-size: 13px; }
+}
+@media (min-width: 960px) and (max-width: 1199px) {
+  html[lang="en"] .feat h2 { font-size: 4.6vw; } /* "AI Visibility Checker" on one line */
+}
+@media (min-width: 1280px) { .split .spec.wide > div { grid-template-columns: 12em 1fr; } }
+/* projects hero: on tablets the render stays a supporting image, the lede stays near the fold */
+@media (min-width: 600px) and (max-width: 959px) { .phero.has-obj .obj-h { padding: 0 27%; margin-top: 8px; } }
+.cmp td, .cmp th, .spec dd { text-wrap: pretty; }

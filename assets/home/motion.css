@@ -10,9 +10,6 @@
   html { scroll-behavior: smooth; }
 }
 .pill:active { transform: translateY(0) scale(.98); }
-.pill:focus-visible, .tlink:focus-visible, .hidx a:focus-visible, .ctable a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-.pill:focus-visible { outline-offset: 3px; }
-.tlink:focus-visible { background-size: 0 1px; }
 .ctable a .u { transition: transform .5s var(--mo-ease); }
 .ctable a:hover .u { transform: translate(2px, -2px); }
 .more-d > summary, .faq-list summary { transition: color .3s; }
@@ -214,40 +211,14 @@ html[lang="zh-Hant"] .figs.f4 .fig-n .v small { font-size: .3em; letter-spacing:
 /* ---------- case numbers on the service page count up ---------- */
 .delta .v b[data-count] { display: inline-block; }
 
-/* Site-wide fixes from the UX audit (2026-11-11) */
 /* Headlines rise without fading, so they paint at once (LCP). */
 @keyframes mo-rise-t { from { transform: translateY(22px); } }
 @media (prefers-reduced-motion: no-preference) {
   .hero h1, .phero h1, .hero h1 .ln { animation-name: mo-rise-t; }
 }
-/* Header button: 44px tap target everywhere. */
-.hdr .pill.sm { min-height: 44px; display: inline-flex; align-items: center; }
-/* Small orange numbers in the hero index: darker orange for AA contrast. */
-.hidx .n { color: #b4501f; }
-/* Phones and tablets: the main menu as a scrollable row under the header (it was hidden below 960px). */
-@media (max-width: 959px) {
-  .hdr .wrap { height: auto; min-height: 60px; flex-wrap: wrap; row-gap: 0; }
-  .hdr .nav { display: flex; order: 10; flex: 0 0 100%; gap: 22px; overflow-x: auto; white-space: nowrap; scrollbar-width: none; margin: -4px 0 0; padding: 0 0 2px; -webkit-overflow-scrolling: touch; }
-  .hdr .nav::-webkit-scrollbar { display: none; }
-  .hdr .nav a { padding: 10px 0; min-height: 44px; display: inline-flex; align-items: center; font-size: 14px; }
-}
 
-/* UI sweep fixes (2026-11-11) */
-/* Page headlines that use .one were picking up the grey lede colour. */
-h1.one { color: var(--ink); }
-/* Chinese headings: break at spaces, not in the middle of a word ("夏裕 AI / 曝光引擎", not "曝 / 光引擎"); still wrap if a word can't fit. */
-html[lang^="zh"] h1, html[lang^="zh"] h2, html[lang^="zh"] h3 { word-break: keep-all; overflow-wrap: anywhere; }
-/* Long single-line headings get a size that fits their column. */
-#proof-h { font-size: clamp(32px, 6vw, 84px); }
+/* ---------- homepage-only sizing (kept here until it moves to ux-home.css) ---------- */
+#proof-h { font-size: clamp(32px, 6vw, 84px); } /* long single-line heading sized to its column */
 @media (min-width: 960px) and (max-width: 1199px) {
-  /* Hero service bar: the subtitles don't fit three across at this width. */
-  .hidx .t small { display: none; }
-  /* Two-column section headings sit in a narrow left column here. */
-  .how .state, .faq .state { font-size: 30px; }
-  .feat h2 { font-size: 48px; }
-  /* Footer: links get a full row instead of three ragged ones. */
-  .foot .cols { grid-template-columns: 1fr 1fr; }
-  .foot .cols > nav { grid-column: 1 / -1; order: 3; }
+  .hidx .t small { display: none; } /* hero service bar subtitles don't fit three across */
 }
-/* The shaded 每天的成效 band started too far below the section before it. */
-@media (min-width: 960px) { .plate { margin-top: 112px; } }
