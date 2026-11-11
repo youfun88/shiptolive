@@ -11,14 +11,51 @@ The main offer is **tech marketing on the Xiayu AI Visibility Engine** (see "Sea
 - **Mobile apps**: iPhone, Android and Mac from one codebase with Flutter or React Native / Expo, taken through App Store release.
 - **Websites & web platforms**: bilingual (English / 中文) websites and PHP / Laravel platforms (memberships, checkout, assessments, reporting) on GCP Cloud Run with GitHub Actions CI/CD.
 - **Search visibility, SEO, AEO & GEO (tech marketing)**: an ongoing service in English and Chinese. SEO = ranking in regular Google search; AEO = being quoted as a source in Google AI Overviews and AI Mode; GEO = being recommended by ChatGPT, Gemini and other AI assistants. Details: https://www.shiptolive.com/en/seo-aeo-geo/ · 中文: https://www.shiptolive.com/seo-aeo-geo/
-  - **The Xiayu AI Visibility Engine** runs five steps in a loop. (1) Monitor: every day it checks site health and speed, Google rankings and clicks (Search Console), answers from ChatGPT, Gemini, Claude and Perplexity with live search, Google AI Overviews, and competitors the client chooses; it records which page each booking or form came from, without names or emails. (2) Analyze: questions where AI names someone else, new keywords with search volume and low difficulty, pages ranked 4 to 10, and sentences AI gets wrong compared with the site. (3) Plan: 4 optimization goals set with the client (the questions customers ask AI most), asked on every check; plans can add more, up to 20; goals AI already names the business for reliably can be swapped for new ones; every suggestion comes with its evidence. (4) Review: drafts go to a private review page on the client's site (not public, Gmail sign-in); the client answers questions only they can answer, reads each draft in English and Chinese, and taps Approve or Request changes; nothing goes live without approval. Content changes need the client's OK; technical SEO items (titles, descriptions, structured data) are reviewed by the studio and do not change what the client says. (5) Publish & measure: approved changes go live automatically; a results report updates daily (Google visits, booking clicks, AI mentions, site issues), a one-page monthly report compares with last month, and every update is logged.
-  - **Service process**: Set up (connect the existing site, or build a new one; live in 1 to 2 working days) → Diagnose (first diagnosis report on days 3 to 5: about 15 site-health checks, a 16-point page checklist, Google and AI visibility, what to fix first) → Goals (4 optimization goals agreed in week 1) → Optimize → Report. Optimize and Report repeat; each round's numbers start the next.
+  - **The Xiayu AI Visibility Engine** runs five steps in a loop. (1) Monitor: every day it checks site health and speed, Google rankings and clicks (Search Console), Google AI Overviews and competitors the client chooses; it asks ChatGPT, Gemini, Claude and Perplexity the client's customer questions with live search (AI checks run every day (up to 3 times a day), the same questions each time); it records which page each booking or form came from, without names or emails. (2) Analyze: questions where AI names someone else, new keywords with search volume and low difficulty, pages ranked 4 to 10, and sentences AI gets wrong compared with the site; off-site signals too: whether the Google Business Profile, Bing Places, LinkedIn and industry directories agree, and which sites AI actually cites. (3) Plan: 5 optimization goals set with the client by default (the questions customers ask AI most), asked on every check; larger plans go up to 20; goals AI already names the business for reliably can be swapped for new ones; every suggestion comes with its evidence. (4) Review: drafts go to a private review page on the client's site (not public, Gmail sign-in); the client answers questions only they can answer, reads each draft in English and Chinese, and taps Approve or Request changes; nothing goes live without approval. Content changes need the client's OK; technical SEO items (titles, descriptions, structured data) are reviewed by the studio and do not change what the client says. (5) Publish & measure: approved changes go live automatically; a results report updates daily (Google visits, booking clicks, AI mentions, site issues), a one-page monthly report compares with last month, and every update is logged.
+  - **Service process**: Set up (connect the existing site, or build a new one; live in 1 to 2 working days) → Diagnose (first diagnosis report on days 3 to 5: about 15 site-health checks, a 16-point page checklist, Google and AI visibility, what to fix first) → Goals (5 optimization goals agreed in week 1) → Optimize → Report. Optimize and Report repeat; each round's numbers start the next.
   - **Starting on an existing site**: technical health check, Google and AI visibility baseline, optimization goals, a first fix list, Google PageSpeed test and fixes aiming for 90+ on all four scores, Google Search Console and Bing Webmaster Tools set up and sitemap submitted. New websites are also offered (basic: mobile-ready, contact form, basic SEO, sitemap; advanced: service page structure, FAQ, structured data, analytics, AI-search-friendly structure).
-  - **Every plan includes**: 4 optimization goals, 5 AI-written articles a month in English and Chinese with photos, sent to the client's review page (a professional writer can be added per article), a daily results report, a monthly report, and a log of every update.
-  - **Flexibility**: existing or new site; 3, 6 or 12-month terms; AI checks 1 to 3 times a day; the client picks the AI platforms to check (ChatGPT, Gemini, Claude, Perplexity).
-  - **What the studio commits to**: steady checks, evidence behind every change, and monthly numbers the client can compare with the starting point. Results depend on how quickly the client answers questions and reviews drafts; search and AI visibility build over months. No one can guarantee an AI engine will name a business.
+  - **Every plan includes**: 5 optimization goals, 5 AI-written articles a month in English and Chinese with photos, sent to the client's review page (a professional writer can be added per article), a daily results report, a monthly report, and a log of every update.
+  - **Flexibility**: existing or new site; 3, 6 or 12-month terms (month-to-month on the Monitor plan); AI checks 1 to 3 times a day; 5 optimization goals, up to 20; the client picks the AI platforms to check (ChatGPT, Gemini, Claude, Perplexity).
+  - **What the studio commits to**: steady checks, evidence behind every change, and monthly numbers the client can compare with the starting point. Results depend on how quickly the client answers questions and reviews drafts; search and AI visibility build over months.
+  - **Free AI visibility check**: send the company name, website and the city customers are in (optionally the 3 questions customers ask most and up to 3 competitors). About ten customer questions go to ChatGPT, Gemini, Claude and Perplexity; within 1 to 2 business days the business gets a report: which answers name it, who AI recommends instead, which sites AI cites, and what to fix first. It is a one-time snapshot; the monthly service repeats the same goals on a schedule.
   - **Getting started**: book a free 20-minute call (https://calendly.com/yufansapp/20min) or request the free AI visibility check (https://www.shiptolive.com/en/#contact); plans are quoted after a short call. To start: company name, website and the Gmail used to sign in → sign the contract online → account live in 1 to 2 working days → first diagnosis report in 3 to 5 days.
 - **Project rescue & modernization**: takes over stalled builds and aging systems (including legacy PHP): finds what is actually blocking them, then fixes, modernizes and ships them.
+
+## Metrics 夏裕科技 reports (definitions)
+
+AI numbers and Google numbers are reported separately; every number carries its date and source.
+
+- **AI mention rate (AI 提及率)**: share of the client's customer questions where AI answers name the business. Example: 14 of 15 (WU LAW INTL PLLC, 2026-10-30).
+- **Citation rate (網站引用率)**: how many AI answers list the business's site as a source. Example: 26 of 45, from 0 at the first check (2026-10-26 → 2026-10-30).
+- **Head-to-head (同業比較)**: for the same questions, how often AI names the business versus competitors the client picks. Example: 58% vs 36% for the closest peer (2026-10-30).
+- **Copilot citations (Copilot 引用)**: Microsoft Copilot citations of the site, from Bing Webmaster Tools. Example: 176 in the last 30 days (2026-11-11).
+- **Google visits (Google 造訪)**: clicks from Google search per 28 days (Search Console), compared with the previous 28 days. Example: 145, +51% (2026-11-11).
+- **Top-3 terms (前 3 名字詞)**: search terms ranking in Google's top 3. Example: 5 → 21 (2026-10-30 → 2026-11-08).
+- **AI Overview citations (AI 摘要引用)**: of the key searches, how many show a Google AI Overview and how many of those cite the site. Example: 6 of 7 show one; 2 cite the firm.
+- **Booking clicks (預約點擊)**: clicks on booking buttons, forms and contact links, with source and first page viewed; no names or emails. Example: 19 in the last 30 days, 0 in the first 30 days tracked (2026-11-11).
+
+## How AI checks are run
+
+- Questions are the ones customers actually ask, without the business's name (a named question gets a flattering answer; the test is whether AI recommends the business unprompted).
+- The same questions are asked in English and Chinese.
+- Each run is a fresh conversation with no personal history, with each assistant's live web search on (ChatGPT, Gemini, Claude, Perplexity).
+- Questions are asked as if from the customers' city (for example Taipei or San Diego).
+- Each question runs several times; the report gives the share of answers that name the business, never a single answer.
+- The optimization goals are asked on every check; AI checks run every day (up to 3 times a day); site and Google data are checked daily.
+- Google numbers come from Google Search Console and Copilot citations from Bing Webmaster Tools; every AI answer is saved.
+- Details: https://www.shiptolive.com/en/seo-aeo-geo/#method · 中文: https://www.shiptolive.com/seo-aeo-geo/#method
+
+## Who 夏裕科技 is a fit for (適合的行業)
+
+- Cross-border professional firms: 律師事務所、會計師、移民顧問、不動產 (law, accounting, immigration, real estate), e.g. 「台北有哪些做台美跨境繼承的律師？」
+- Travel, transport and bookings: 登山接駁、包車、導覽、住宿 (shuttles, tours, stays), e.g. 「台北出發雪山登山口接駁推薦」
+- Training and B2B services: 企業培訓、ESG 課程、B2B 服務
+- Local shops and experiences: 課程、工作室、餐廳、在地活動
+- Small or niche businesses are a fit: the more specific the customer's question, the more AI needs a clear answer.
+
+## Guide
+
+- **AI 搜尋優化（GEO）是什麼？給中小企業的白話指南**: https://www.shiptolive.com/geo-guide/ (English: https://www.shiptolive.com/en/geo-guide/). SEO vs AEO vs GEO, how AI decides who to recommend, how to check whether AI mentions a business (10 unnamed customer questions, both languages, fresh chats, 3 runs each, monthly), 9 first steps for a small business (AI crawler access, one page per service, FAQ in customers' words, structured data, consistent listings on Google Business Profile / Bing Places / directories, genuine reviews, off-site mentions, PageSpeed 90+, bilingual pages with hreflang and llms.txt), common myths, and dated client results.
 
 ## Who 夏裕科技 works with most
 
@@ -47,8 +84,8 @@ What an agent can read and do is scoped up front, every action it takes is logge
 - **Tally** (https://www.tallybillable.com/), billable-time and invoicing app. iPhone & Mac, Flutter.
 - **Tadapop** (https://tadapop.app/), social habit tracker with a private leaderboard. iOS & Android, React Native / Expo.
 - **LEADx** (https://leadx.org/), EQ 360 assessment platform.
-- **WU LAW INTL PLLC** (https://wulawintl.com/), bilingual (English / Chinese) website for a New York–licensed attorney in Taipei handling US–Taiwan cross-border inheritance, investment and business law. Built by Ship to Live with SEO, AEO and GEO; the owner reports 20 consultations and 6 paying clients from the site in its first month. October 2026 measurements: an AI check named the firm in 12 of 16 answers across ChatGPT, Claude, Perplexity and Gemini (4 client questions); Microsoft Copilot cited the site 487 times in 90 days (156 in the last 30 days, Bing Webmaster Tools); Google's AI Overview cites wulawintl.com in its first line for 外國人繼承台灣遺產應備文件; 29 searches show the site on Google page 1 (Google Search Console). Later dashboard readings: AI answers citing the site went from 0 to 26 of 45 (October 26 → October 30, 2026); search terms in Google's top 3 went from 5 to 21 (October 30 → November 8, 2026) and clicks from Google per 28 days from 112 to 136 (October 26 → November 8, 2026, Google Search Console); booking clicks and forms per 30 days went from 0 in the first 30 days tracked to 15 in the last 30 days.
-- **山行接駁 Go Hike** (https://gohike.tw/), booking website for a Taiwan hiking shuttle service running from Taipei and Taichung to high-mountain trailheads, launched September 2026. Built by Ship to Live with SEO, AEO and GEO: 102 routes and prices and 22 FAQ answers in structured data, plus llms.txt. Results (Google Search Console): search terms the site ranks for went from 25 to 63, terms in the top 3 from 3 to 8 and terms on page 1 from 19 to 39 (October 31 → November 8, 2026); Google clicks per 28 days went from 32 to 79 (late October → early November 2026); bookings and forms per 30 days went from 0 in the first 30 days tracked to 23 in the last 30 days.
+- **WU LAW INTL PLLC** (https://wulawintl.com/), bilingual (English / Chinese) website for a New York–licensed attorney in Taipei handling US–Taiwan cross-border inheritance, investment and business law. Built by 夏裕科技 with SEO, AEO and GEO, on the Xiayu AI Visibility Engine since August 2026. Current numbers (results report): AI answers to 14 of 15 customer questions mentioned the firm (AI check, October 30, 2026; ChatGPT, Gemini, Claude, Perplexity); 145 visits from Google in the last 28 days, up 51% on the previous 28 days (Google Search Console, November 11, 2026); 19 booking clicks in the last 30 days, from 0 in the first 30 days tracked (November 11, 2026); Microsoft Copilot cited the site 176 times in the last 30 days (Bing Webmaster Tools, November 11, 2026). Earlier readings: AI answers citing the site went from 0 to 26 of 45 (October 26 → October 30, 2026); search terms in Google's top 3 went from 5 to 21 (October 30 → November 8, 2026); 6 of 7 key searches show a Google AI Overview and 2 of those cite the firm; in a head-to-head check 58% of AI answers named the firm versus 36% for the closest competitor (October 30, 2026; competitor names withheld).
+- **山行接駁 Go Hike** (https://gohike.tw/), booking website for a Taiwan hiking shuttle service running from Taipei and Taichung to high-mountain trailheads, launched September 2026. Built by 夏裕科技 with SEO, AEO and GEO, on the Xiayu AI Visibility Engine since late October 2026: 102 routes and prices and 22 FAQ answers in structured data, plus llms.txt. Results (Google Search Console): search terms the site ranks for went from 25 to 63, terms in the top 3 from 3 to 8 and terms on page 1 from 19 to 39 (October 31 → November 8, 2026); Google clicks per 28 days went from 32 to 79 (late October → early November 2026); bookings and forms per 30 days went from 0 in the first 30 days tracked to 23 in the last 30 days; Claude citing the site went from 0% to 50% of answers.
 - **Travis Bradberry** (https://travisbradberry.com/), author site for the coauthor of *Emotional Intelligence 2.0*.
 - **SHX Training** (https://shxtraining.com/), corporate ESG training website (Taiwan & California).
 - **QY Property** (https://qyproperty.com/), cross-border real-estate advisory website, San Diego.
@@ -63,6 +100,8 @@ What an agent can read and do is scoped up front, every action it takes is logge
 ## Free tools and guides
 
 Free tools need no sign-up. Tools page: https://www.shiptolive.com/tools/
+
+- **AI search guide for small businesses (AI 搜尋優化指南)**, https://www.shiptolive.com/en/geo-guide/ (中文: https://www.shiptolive.com/geo-guide/), a plain-language guide to GEO, AEO and SEO.
 
 - **GLP-1 protein calculator**, https://www.shiptolive.com/glp1-protein-calculator/, finds a daily protein target on a GLP-1 medication like Zepbound, Wegovy, Ozempic or Mounjaro, how much to eat at each meal, and a sample day of food. General information, not medical advice.
 - **Topic Finder (對標選題)**, https://www.shiptolive.com/tools/topic-finder/, takes what you sell and the video you're thinking of, shows what people actually search on YouTube and Google, builds searches for the six places to find proven topics, and scores your options. Searches in 中文 (Taiwan) or English (US).
@@ -97,17 +136,22 @@ The two language versions carry the same offering; the Chinese pages are written
 夏裕科技股份有限公司（統一編號 90173045；網域與舊品牌名 Ship to Live）2022 年在臺灣成立，總部位於臺北，服務臺灣與美國客戶。
 客戶現在會直接問 Google 和 ChatGPT、Gemini 等 AI；沒被 AI 提到，客人就不會想到您。我們做三件事：
 
-1. **科技行銷（SEO / AEO / GEO）**: SEO 提升一般 Google 搜尋排名；AEO 讓網站內容被 Google AI 摘要、AI 模式引用為來源；GEO 提高被 ChatGPT、Gemini 等 AI 推薦的機會。服務以「夏裕 AI 曝光引擎」執行，五個步驟持續循環：監測（網站健康與速度、Google 排名與點擊、AI 回答、競爭對手與詢價來源）→ 分析（AI 沒提到您的問題、有機會的新關鍵字、快進前幾名的頁面、AI 說錯的內容）→ 建議（和您一起設定 4 個優化目標，依方案可加選，最多 20 個；已穩定被推薦的目標可換成新目標；每項建議都附依據）→ 審核（草稿送到您網站上不公開的審閱頁，用 Gmail 登入，按「同意上線」或「需要修改」，沒有同意不會上線；內容修改需要您同意，標題、描述、結構化資料等技術 SEO 由我們審核，不改變您說的內容）→ 線上追蹤（自動更新網站、每日成效報告、每月報告、每次更新都有紀錄）。https://www.shiptolive.com/seo-aeo-geo/
+1. **科技行銷（SEO / AEO / GEO）**: SEO 提升一般 Google 搜尋排名；AEO 讓網站內容被 Google AI 摘要、AI 模式引用為來源；GEO 提高被 ChatGPT、Gemini 等 AI 推薦的機會。服務以「夏裕 AI 曝光引擎」執行，五個步驟持續循環：監測（網站健康與速度、Google 排名與點擊、AI 回答、競爭對手與詢價來源）→ 分析（AI 沒提到您的問題、有機會的新關鍵字、快進前幾名的頁面、AI 說錯的內容，以及 Google 商家檔案、Bing Places、產業名錄等網站以外的資料是否一致、AI 引用了哪些網站）→ 建議（和您一起設定 5 個優化目標，依方案可加到 10、15 或 20 個；已穩定被推薦的目標可換成新目標；每項建議都附依據）→ 審核（草稿送到您網站上不公開的審閱頁，用 Gmail 登入，按「同意上線」或「需要修改」，沒有同意不會上線；內容修改需要您同意，標題、描述、結構化資料等技術 SEO 由我們審核，不改變您說的內容）→ 線上追蹤（自動更新網站、每日成效報告、每月報告、每次更新都有紀錄）。https://www.shiptolive.com/seo-aeo-geo/
    - 服務流程：建置串接（1 到 2 個工作天開通）→ 診斷報告（第 3 到 5 天）→ 優化目標（第 1 週）→ 深入優化 → 更新回報；後兩步持續循環。
    - 既有網站啟動設定：技術健檢、Google 與 AI 能見度基準測試、設定優化目標、初始改善清單、Google PageSpeed 測試與改善（目標四項分數都到 90 以上）、設定 Google Search Console 與 Bing Webmaster Tools 並提交 Sitemap。也提供新網站建置（基本、進階）。
-   - 每個方案都包含：4 個優化目標、每月 5 篇 AI 撰寫的中英文文章（附照片）送到您的審閱頁，可按篇加購專業寫手；每日成效報告與每月報告。
-   - 方案彈性：已有網站或新網站；合約 3、6 或 12 個月；AI 檢測每天 1 到 3 次；可選 AI 平台（ChatGPT、Gemini、Claude、Perplexity）。
+   - 每個方案都包含：5 個優化目標、每月 5 篇 AI 撰寫的中英文文章（附照片）送到您的審閱頁，可按篇加購專業寫手；每日成效報告與每月報告。
+   - 方案彈性：已有網站或新網站；合約 3、6 或 12 個月（監測方案也可以月繳）；優化目標 5 個起，可加到 10、15 或 20 個；AI 檢測每天 1 到 3 次；可選 AI 平台（ChatGPT、Gemini、Claude、Perplexity）。
    - 我們承諾：持續檢查、每個修改都有依據、每月可比較的數字。成效和您的配合很有關係，問題回答得越完整、審閱越快，改善越快；搜尋和 AI 能見度需要時間累積，通常以數個月來看。
    - 開始合作：提供公司名稱、網站和登入用的 Gmail → 線上簽約 → 1 到 2 個工作天開通 → 3 到 5 天內收到第一份診斷報告。先預約免費 20 分鐘諮詢或申請免費 AI 能見度檢測，諮詢後報價。
 2. **客製化軟體開發**: 網站、App、內部管理系統、預約及會員平台；先做 1–2 週的先期規劃，交付書面規劃、可點擊原型與固定報價。
 3. **企業 AI 導入**: AI 工作流程、自動化、AI 工具整合；事先約定 AI 能讀什麼、能做什麼，花錢或對外的動作都要有人核准。
 
-案例：WU LAW INTL PLLC（雙語律師事務所網站）：AI 回答引用網站 0 → 26 次（45 則中，10 月 26 日 → 10 月 30 日）；Google 前 3 名的搜尋字詞 5 → 21 個（10 月 30 日 → 11 月 8 日）；每 28 天 Google 點擊 112 → 136 次（10 月 26 日 → 11 月 8 日）。山行接駁 Go Hike（登山接駁預約網站）：有排名的搜尋字詞 25 → 63 個、前 3 名 3 → 8 個（10 月 31 日 → 11 月 8 日，Google Search Console）；每 30 天預約與表單從追蹤頭 30 天的 0 次到最近 30 天的 23 次。
+案例：WU LAW INTL PLLC（雙語律師事務所網站）：15 個客戶會問的問題中，14 題的 AI 回答提到事務所（2026-10-30，AI 檢測）；最近 28 天 Google 造訪 145 次，比前 28 天多 51%（2026-11-11，Google Search Console）；最近 30 天預約點擊 19 次，追蹤的頭 30 天 0 次（2026-11-11）；Google 前 3 名的搜尋字詞 5 → 21 個（2026-10-30 → 11-08）。山行接駁 Go Hike（登山接駁預約網站）：有排名的搜尋字詞 25 → 63 個、前 3 名 3 → 8 個（10 月 31 日 → 11 月 8 日，Google Search Console）；每 30 天預約與表單從追蹤頭 30 天的 0 次到最近 30 天的 23 次。
+
+我們怎麼檢查：用客戶會問、不提公司名稱的問題，中英文都問；每次開新對話、開即時搜尋，從客戶所在城市提問，每題問好幾次並回報比例。報告裡的數字：AI 提及率、網站引用率、同業比較、Copilot 引用、Google 造訪、前 3 名字詞、AI 摘要引用、預約點擊，每個都標日期和來源。
+適合的行業：律師事務所、會計師、移民與不動產等跨境專業服務；登山接駁、包車、導覽、住宿等觀光與預約；企業培訓與 B2B 服務；課程、工作室、餐廳等在地店家。
+免費檢測：提供公司名稱、網站、客戶所在城市（可加上客戶常問的 3 個問題、最多 3 家同業），1 到 2 個工作天內收到報告。
+AI 搜尋優化指南：https://www.shiptolive.com/geo-guide/
 
 台灣的案子由夏裕科技股份有限公司承接並開立統一發票，美國的案子由 QY LLC 承接。服務語言為中文（繁體）與英文。
 聯絡方式：yufan@shiptolive.com 或網站上的聯絡表單（不公開電話）。

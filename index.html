@@ -40,8 +40,21 @@
   .proof .more .tlink + .tlink { margin-left: 22px; }
   .how .lhs .sub { margin-top: 16px; }
   @media (max-width: 959px) {
-    #process ol.rules { grid-template-columns: 1fr; }
-    #process .rules li:nth-last-child(2) { border-bottom-color: var(--hair); }
+    #process ol.rules, #fit ol.rules { grid-template-columns: 1fr; }
+    #process .rules li:nth-last-child(2), #fit .rules li:nth-last-child(2) { border-bottom-color: var(--hair); }
+  }
+  .rules span a { margin-left: 6px; white-space: nowrap; }
+  /* proof: four dated numbers (the motion pass may restyle this) */
+  .figs.f4 .fig-n:nth-child(2) { border-bottom-color: var(--hair); }
+  .figs.f4 .fig-n:nth-child(3) { border-bottom-color: var(--hair); }
+  .figs.f4 .fig-n:nth-child(4) { grid-column: 1 / -1; }
+  .fig-n .lbl + .src { margin-top: 8px; }
+  @media (min-width: 960px) {
+    .figs.f4 { grid-template-columns: repeat(4, 1fr); }
+    .figs.f4 .fig-n, .figs.f4 .fig-n:nth-child(4) { grid-column: auto; }
+    .figs.f4 .fig-n .v, .figs.f4 .fig-n:nth-child(n+2) .v { font-size: clamp(76px, 7.4vw, 124px); }
+    .figs.f4 .fig-n { padding-right: 20px; padding-left: 20px; }
+    .figs.f4 .fig-n:first-child { padding-left: 0; }
   }
 </style>
 <script type="application/ld+json">
@@ -134,7 +147,7 @@
           "name": "你們能保證 ChatGPT 或 Google 會推薦我們嗎？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "不能。沒有人能控制 Google 的排名或 AI 的回答。我們承諾的是：持續檢查您的網站、每一個修改都有依據、每個月都有可以和開始時比較的數字。AI 回答可能幾週內就有變化，Google 排名和整體能見度通常以數個月來看。"
+            "text": "我們承諾的是：持續檢查您的網站、每一個修改都有依據、每個月都有可以和開始時比較的數字。AI 回答可能幾週內就有變化，Google 排名和整體能見度通常以數個月來看。"
           }
         },
         {
@@ -151,6 +164,22 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "先預約免費 20 分鐘諮詢，或申請免費檢測，我們依您的需求報價。決定合作後：填寫公司名稱、網站和 Gmail，線上簽約，1 到 2 個工作天開通，3 到 5 天內收到第一份診斷報告。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "免費檢測要給什麼？會拿到什麼？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "給我們公司名稱和網站、客戶在哪個城市；有的話，再加上客戶最常問的 3 個問題，和最多 3 家想比較的同業。我們用約十個客戶會問的問題，詢問 ChatGPT、Gemini、Claude、Perplexity，1–2 個工作天內寄給您：哪些回答提到您、AI 推薦了誰、引用了哪些網站，以及最該先修的地方。不用先談預算。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "我們公司不大、行業也小眾，適合嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "適合。客戶會先問 AI、再決定找誰的服務，都值得做：跨境專業服務、觀光與預約、企業培訓與 B2B、在地店家與體驗。行業越小眾，問題越具體，清楚回答的網站越容易被 AI 引用。先做免費檢測，看 AI 現在怎麼回答您的客戶。"
           }
         },
         {
@@ -198,8 +227,7 @@
 <!-- ============ HERO ============ -->
 <section class="hero" aria-labelledby="h1">
   <div class="wrap g12">
-    <p class="idx mono"><span>夏裕科技 — 台北・聖地牙哥</span><span>中文・English</span></p>
-    <h1 id="h1" class="one"><span class="ph">成為 AI 眼中的主角</span></h1>
+    <h1 id="h1" class="one"><span class="ph">敢想。敢作。敢創新。</span></h1>
     <div class="hero-obj">
       <div class="drift blend" data-drift="-0.06">
         <picture>
@@ -215,7 +243,6 @@
         <a class="pill" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約免費 20 分鐘諮詢 <span class="arr" aria-hidden="true">→</span></a>
         <a class="tlink" href="#contact" data-topic="免費 AI 能見度檢測">申請免費檢測：AI 有沒有提到您</a>
       </div>
-      <p class="note mono">中文或英文都可以。先聽您的狀況；不適合就直說，不推銷。</p>
     </div>
     <nav class="hidx" aria-label="服務目錄">
       <a href="#mk"><span class="n">01</span><span class="t">科技行銷<small>讓 Google 和 AI 找得到您</small></span><span class="a" aria-hidden="true">↓</span></a>
@@ -229,7 +256,7 @@
 <section class="sec catalog" id="services" aria-labelledby="cat-h">
   <div class="wrap g12">
     <div class="rule" aria-hidden="true"></div>
-    <h2 class="state rv" id="cat-h"><span class="ph">科技不該只是工具，</span><span class="ph">而是您的競爭力。</span></h2>
+    <h2 class="state rv" id="cat-h"><span class="ph">讓客戶找到您。</span><span class="ph">讓科技幫您賺錢。</span></h2>
   </div>
 
   <!-- 01 -->
@@ -245,9 +272,9 @@
         <span class="num rv" aria-hidden="true">01</span>
         <h3 id="mk-h">科技行銷</h3>
         <p class="big rv"><span class="ph">讓客戶在 Google 和 AI</span> <span class="ph">都找得到您。</span></p>
-        <p class="one">客戶問 ChatGPT、Gemini 或 Google 時，答案裡要有您。夏裕 AI 曝光引擎每天檢查您的網站，找出沒被提到的地方，寫好建議，您同意才上線。</p>
+        <p class="one">客戶問 ChatGPT、Gemini 或 Google 時，答案裡要有您。<b>夏裕 AI 曝光引擎</b>每天檢查您的網站，找出沒被提到的地方，寫好建議，您按「同意上線」才更新。</p>
         <dl class="spec">
-          <div><dt>怎麼做</dt><dd>和您一起設定 4 個優化目標：客戶最常問 AI 的問題，每次檢測都拿來比較</dd></div>
+          <div><dt>怎麼做</dt><dd>和您一起設定 5 個優化目標：客戶最常問 AI 的問題，每次檢測都拿來比較</dd></div>
           <div><dt>每月內容</dt><dd>每月 5 篇 AI 撰寫的文章，中英文、附照片，送到您的審閱頁</dd></div>
           <div><dt>您說了算</dt><dd>按「同意上線」才更新網站；審閱頁用 Gmail 登入，不公開</dd></div>
           <div><dt>方案</dt><dd>從免費檢測開始 · 依您的需求報價</dd></div>
@@ -290,7 +317,7 @@
         <dl class="spec">
           <div><dt>先期規劃</dt><dd>1–2 週，固定費用。交付書面規劃、可點的原型與固定報價</dd></div>
           <div><dt>您會拿到</dt><dd>上線與交接文件；程式碼與帳號都歸您</dd></div>
-          <div><dt>台灣案例</dt><dd>山行接駁 Go Hike：台北、台中到玉山、雪山的接駁預約，102 條路線與價格 <a class="mono" href="https://gohike.tw" target="_blank" rel="noopener">gohike.tw ↗</a></dd></div>
+          <div><dt>自家 App</dt><dd>Tadapop：和朋友一起養成習慣。約好目標，每天用照片或影片打卡，即時排行榜記分。iOS、Android 免費下載，React Native／Expo 開發 <a class="mono" href="https://tadapop.app/" target="_blank" rel="noopener">tadapop.app ↗</a></dd></div>
         </dl>
         <details class="more-d">
           <summary><span>看細節</span><span class="pm" aria-hidden="true"></span></summary>
@@ -371,32 +398,38 @@
 <section class="sec proof" id="work" aria-labelledby="proof-h">
   <div class="wrap g12">
     <div class="rule" aria-hidden="true"></div>
-    <h2 class="state rv" id="proof-h"><span class="ph">一間台北的</span><span class="ph">律師事務所，</span><span class="ph">三個數字。</span></h2>
-    <p class="case"><span>WU LAW INTL PLLC，美國紐約執照律師，處理美台跨境繼承。網站上線第一個月：20 次諮詢、6 位付費客戶（業主提供）。2026 年 10 月量測：</span> <a class="mono" href="https://wulawintl.com" target="_blank" rel="noopener">wulawintl.com ↗</a></p>
-    <div class="figs">
-      <div class="fig-n rv">
-        <span class="v">12<small>/16</small></span>
-        <p>16 次問 AI，12 次提到這家事務所。</p>
-        <p class="src mono">來源：AI 檢查，ChatGPT、Claude、Perplexity、Gemini 各 4 題</p>
+    <h2 class="state rv" id="proof-h"><span class="ph">一間台北律師事務所，</span><span class="ph">現在的四個數字</span></h2>
+    <p class="case"><span>WU LAW INTL PLLC 是紐約州律師在台北的事務所，專辦台美跨境繼承。網站是我們做的，2026 年 8 月開始用夏裕 AI 曝光引擎。數字來自成效報告，每一個都標了日期和來源。</span> <a class="mono" href="https://wulawintl.com" target="_blank" rel="noopener">wulawintl.com ↗</a></p>
+    <div class="figs f4" data-case="wulaw" data-measured="2026-11-11">
+      <div class="fig-n rv" data-stat="ai-mentions">
+        <span class="v"><span class="n" data-count="14" data-total="15">14</span><small class="u">/15</small></span>
+        <p class="lbl">15 個客戶會問的問題，14 題的 AI 回答提到這家事務所。</p>
+        <p class="src mono"><time datetime="2026-10-30">2026-10-30</time>・夏裕 AI 能見度檢測：ChatGPT、Gemini、Claude、Perplexity</p>
       </div>
-      <div class="fig-n rv d1">
-        <span class="v">487</span>
-        <p>90 天內，微軟 Copilot 引用網站 487 次。</p>
-        <p class="src mono">來源：Bing Webmaster Tools（近 30 天 156 次）</p>
+      <div class="fig-n rv d1" data-stat="google-visits">
+        <span class="v"><span class="n" data-count="145">145</span></span>
+        <p class="lbl">最近 28 天來自 Google 的造訪，比前 28 天多 51%。</p>
+        <p class="src mono"><time datetime="2026-11-11">2026-11-11</time>・Google Search Console</p>
       </div>
-      <div class="fig-n rv d2">
-        <span class="v">29</span>
-        <p>29 個搜尋，網站出現在 Google 第一頁。</p>
-        <p class="src mono">來源：Google Search Console</p>
+      <div class="fig-n rv d2" data-stat="booking-clicks">
+        <span class="v"><span class="n" data-count="19" data-from="0">19</span></span>
+        <p class="lbl">最近 30 天的預約點擊。追蹤的頭 30 天是 0。</p>
+        <p class="src mono"><time datetime="2026-11-11">2026-11-11</time>・網站記錄，不記錄姓名或 Email</p>
+      </div>
+      <div class="fig-n rv d2" data-stat="google-top3">
+        <span class="v"><span class="n" data-count="21" data-from="5">21</span><small class="u">個</small></span>
+        <p class="lbl">排在 Google 前 3 名的搜尋字詞，從 5 個增加到 21 個。</p>
+        <p class="src mono"><time datetime="2026-10-30">2026-10-30</time> → <time datetime="2026-11-08">2026-11-08</time>・Google Search Console</p>
       </div>
     </div>
+    <p class="case"><span>山行接駁 Go Hike（登山接駁預約）：30 天內的預約與表單從 0 到 23 筆（追蹤的頭 30 天 → 2026 年 11 月初的最近 30 天，網站記錄）。</span> <a class="mono" href="/seo-aeo-geo/#case-gohike">看完整案例 →</a></p>
 
     <div class="clients">
       <div class="lhs"><h3 class="ctitle">客戶與作品</h3><p class="sub hide-m" style="margin-top:10px">網站、系統與平台，都在線上。</p></div>
       <div class="rhs">
         <div class="ctable">
-          <a href="https://wulawintl.com" target="_blank" rel="noopener"><span class="i">01</span><span class="nm">WU LAW INTL PLLC</span><span class="wh">雙語律師事務所網站，Google 與 AI 搜尋</span><span class="u">↗</span></a>
-          <a href="https://gohike.tw" target="_blank" rel="noopener"><span class="i">02</span><span class="nm">山行接駁 Go Hike</span><span class="wh">登山接駁預約網站，Google 與 AI 搜尋</span><span class="u">↗</span></a>
+          <a href="https://wulawintl.com" target="_blank" rel="noopener"><span class="i">01</span><span class="nm">WU LAW INTL PLLC</span><span class="wh">雙語律師事務所網站・AI 回答 15 題中 14 題提到（2026-10-30）</span><span class="u">↗</span></a>
+          <a href="https://gohike.tw" target="_blank" rel="noopener"><span class="i">02</span><span class="nm">山行接駁 Go Hike</span><span class="wh">登山接駁預約網站・30 天預約與表單 0 → 23（2026-11）</span><span class="u">↗</span></a>
           <a href="https://leadx.org" target="_blank" rel="noopener"><span class="i">03</span><span class="nm">LEADx · EQ 360</span><span class="wh">線上測驗平台：計分、管理後台、點數系統</span><span class="u">↗</span></a>
           <a href="https://azwrealty.com" target="_blank" rel="noopener"><span class="i">04</span><span class="nm">Azure Waves Realty</span><span class="wh">不動產網站</span><span class="u">↗</span></a>
           <a href="https://travisbradberry.com" target="_blank" rel="noopener"><span class="i">05</span><span class="nm">Travis Bradberry</span><span class="wh">《EQ 2.0》共同作者的個人網站</span><span class="u">↗</span></a>
@@ -410,18 +443,35 @@
   </div>
 </section>
 
+<!-- ============ WHO IT'S FOR ============ -->
+<section class="sec how" id="fit" aria-labelledby="fit-h">
+  <div class="wrap g12">
+    <div class="rule" aria-hidden="true"></div>
+    <div class="lhs">
+      <h2 class="state rv" id="fit-h"><span class="ph">適合哪些行業</span></h2>
+      <p class="sub">客戶會先問 AI、再決定找誰的服務，都適合。公司不大、行業小眾也可以：問題越具體，AI 越需要清楚的答案。</p>
+    </div>
+    <ol class="rules">
+      <li><b>跨境專業服務</b><span>律師、會計、移民、不動產。例：「台北有哪些做台美跨境繼承的律師？」<a href="/seo-aeo-geo/#case">看律師事務所案例</a></span></li>
+      <li><b>觀光、交通與預約</b><span>接駁、包車、導覽、住宿，中英文客人都要接。例：「台北出發雪山登山口接駁推薦」<a href="/seo-aeo-geo/#case-gohike">看登山接駁案例</a></span></li>
+      <li><b>企業培訓與 B2B 服務</b><span>客戶比較很多家才決定。例：「台灣有哪些企業 ESG 培訓課程？」</span></li>
+      <li><b>在地店家與體驗</b><span>課程、工作室、餐廳、活動。例：「台北適合團體的室內活動推薦」</span></li>
+    </ol>
+  </div>
+</section>
+
 <!-- ============ HOW WE WORK ============ -->
 <section class="sec how" id="process" aria-labelledby="how-h">
   <div class="wrap g12">
     <div class="rule" aria-hidden="true"></div>
     <div class="lhs">
-      <h2 class="state rv" id="how-h"><span class="ph">開通後 3 到 5 天，</span><span class="ph">就有診斷報告。</span></h2>
+      <h2 class="state rv" id="how-h"><span class="ph">開通後 3 到 5 天，</span><span class="ph">就有診斷報告</span></h2>
       <p class="sub">科技行銷的服務流程。前三步只在開始時做一次，後兩步一直循環。</p>
     </div>
     <ol class="rules">
       <li><b>建置串接</b><span>已有網站就串接到系統；還沒有網站，先建置。1 到 2 個工作天開通。</span></li>
       <li><b>診斷報告</b><span>第 3 到 5 天：網站、Google 和 AI 的現況，以及優先要改的地方。</span></li>
-      <li><b>優化目標</b><span>第 1 週：一起確認 4 個客戶最常問 AI 的問題。</span></li>
+      <li><b>優化目標</b><span>第 1 週：一起確認 5 個客戶最常問 AI 的問題。</span></li>
       <li><b>深入優化</b><span>整理建議、寫好內容，送到審閱頁等您同意。</span></li>
       <li><b>更新回報</b><span>依您同意的內容更新網站，每天追蹤、每月回報。</span></li>
     </ol>
@@ -433,7 +483,7 @@
   <div class="wrap g12">
     <div class="rule" aria-hidden="true"></div>
     <div class="rhs">
-      <h2 class="state rv" id="f-h"><span class="ph">從診斷到上線，</span><span class="ph">同一個團隊負責。</span></h2>
+      <h2 class="state rv" id="f-h"><span class="ph">從診斷到上線，</span><span class="ph">同一個團隊負責</span></h2>
       <p class="who">Yufan Chen<span class="mono">創辦人暨首席工程師</span></p>
       <p class="bio">曾任 TalentSmartEQ 技術長，負責在 26 個國家使用的線上測驗平台。UC San Diego 資訊工程，Johns Hopkins 代理式 AI（Agentic AI）證書。</p>
       <p class="more"><a class="tlink" href="/about/">關於我們</a></p>
@@ -445,7 +495,7 @@
 <section class="sec faq" id="faq" aria-labelledby="faq-h">
   <div class="wrap g12">
     <div class="rule" aria-hidden="true"></div>
-    <div class="lhs"><h2 class="state rv" id="faq-h"><span class="ph">開始之前，</span><span class="ph">您可能想問。</span></h2></div>
+    <div class="lhs"><h2 class="state rv" id="faq-h"><span class="ph">開始之前，</span><span class="ph">您可能想問</span></h2></div>
     <div class="faq-list">
       <details>
         <summary><span class="i">01</span><span>夏裕科技做哪些事？</span><span class="pm" aria-hidden="true"></span></summary>
@@ -453,7 +503,7 @@
       </details>
       <details>
         <summary><span class="i">02</span><span>你們能保證 ChatGPT 或 Google 會推薦我們嗎？</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>不能。沒有人能控制 Google 的排名或 AI 的回答。我們承諾的是：持續檢查您的網站、每一個修改都有依據、每個月都有可以和開始時比較的數字。AI 回答可能幾週內就有變化，Google 排名和整體能見度通常以數個月來看。</p>
+        <p>我們承諾的是：持續檢查您的網站、每一個修改都有依據、每個月都有可以和開始時比較的數字。AI 回答可能幾週內就有變化，Google 排名和整體能見度通常以數個月來看。</p>
       </details>
       <details>
         <summary><span class="i">03</span><span>沒經過我同意，會有內容上線嗎？</span><span class="pm" aria-hidden="true"></span></summary>
@@ -464,11 +514,19 @@
         <p>先預約免費 20 分鐘諮詢，或申請免費檢測，我們依您的需求報價。決定合作後：填寫公司名稱、網站和 Gmail，線上簽約，1 到 2 個工作天開通，3 到 5 天內收到第一份診斷報告。</p>
       </details>
       <details>
-        <summary><span class="i">05</span><span>軟體專案怎麼報價？做到一半可以停嗎？</span><span class="pm" aria-hidden="true"></span></summary>
+        <summary><span class="i">05</span><span>免費檢測要給什麼？會拿到什麼？</span><span class="pm" aria-hidden="true"></span></summary>
+        <p>給我們公司名稱和網站、客戶在哪個城市；有的話，再加上客戶最常問的 3 個問題，和最多 3 家想比較的同業。我們用約十個客戶會問的問題，詢問 ChatGPT、Gemini、Claude、Perplexity，1–2 個工作天內寄給您：哪些回答提到您、AI 推薦了誰、引用了哪些網站，以及最該先修的地方。不用先談預算。</p>
+      </details>
+      <details>
+        <summary><span class="i">06</span><span>我們公司不大、行業也小眾，適合嗎？</span><span class="pm" aria-hidden="true"></span></summary>
+        <p>適合。客戶會先問 AI、再決定找誰的服務，都值得做：跨境專業服務、觀光與預約、企業培訓與 B2B、在地店家與體驗。行業越小眾，問題越具體，清楚回答的網站越容易被 AI 引用。先做免費檢測，看 AI 現在怎麼回答您的客戶。</p>
+      </details>
+      <details>
+        <summary><span class="i">07</span><span>軟體專案怎麼報價？做到一半可以停嗎？</span><span class="pm" aria-hidden="true"></span></summary>
         <p>先做 1–2 週、固定費用的先期規劃，交付書面規劃、可點擊原型與固定報價；即使不繼續，這份規劃也歸您。之後每 2 週交付一次可操作的版本，每個階段結束都可以停下來。軟體與 AI 專案依專案報價。</p>
       </details>
       <details>
-        <summary><span class="i">06</span><span>導入 AI 會不會讓公司資料外流？</span><span class="pm" aria-hidden="true"></span></summary>
+        <summary><span class="i">08</span><span>導入 AI 會不會讓公司資料外流？</span><span class="pm" aria-hidden="true"></span></summary>
         <p>我們在開始前先講清楚 AI 能讀哪些資料、能做哪些動作；每個動作都留下紀錄，花錢或對外的動作一定由人確認。導入時也會一起擬定公司的 AI 使用守則。</p>
       </details>
     </div>
@@ -481,10 +539,9 @@
   <div class="wrap g12">
     <div class="rule" aria-hidden="true"></div>
     <div class="cta-col">
-      <h2 class="state rv" id="c-h"><span class="ph">說說您</span><span class="ph">卡在哪裡。</span></h2>
-      <p class="sub">1–2 個工作天內回覆。</p>
+      <h2 class="state rv" id="c-h"><span class="ph">說說您</span><span class="ph">卡在哪裡</span></h2>
+      <p class="sub">1–2 個工作天內回覆。想先申請免費檢測，在訊息裡寫：網站、客戶在哪個城市；有的話，再加上客戶最常問的 3 個問題和最多 3 家同業。您會收到一份報告：AI 有沒有提到您、推薦了誰、最該先修什麼。</p>
       <a class="pill" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約免費 20 分鐘諮詢 <span class="arr" aria-hidden="true">→</span></a>
-      <p class="note mono">中文或英文都可以。先聽您的狀況；不適合就直說，不推銷。</p>
       <p class="mail"><a class="tlink" href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a></p>
     </div>
     <form class="pform" id="contactForm" novalidate>
@@ -503,7 +560,7 @@
           <option value="還不確定" selected>還不確定</option>
         </select>
       </label>
-      <label class="fld"><span>訊息</span><textarea name="message" rows="4" required placeholder="您的網站或公司、想解決的事"></textarea></label>
+      <label class="fld"><span>訊息</span><textarea name="message" rows="4" required placeholder="您的網站、客戶在哪個城市、想解決的事（申請免費檢測：可加上客戶常問的 3 個問題、最多 3 家同業）"></textarea></label>
       <input name="_honey" type="text" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
       <div class="send">
         <button class="pill" type="submit">送出</button>
@@ -520,7 +577,7 @@
     <div class="cols">
       <p class="mono"><b>夏裕科技</b><br>夏裕科技股份有限公司・統一編號 90173045・可開統一發票<br>台北・聖地牙哥</p>
       <nav aria-label="頁尾連結">
-        <a href="/seo-aeo-geo/">科技行銷</a><a href="/projects/">作品</a><a href="/about/">關於</a><a href="/tools/">工具</a><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a><a href="/privacy/">隱私權政策</a><a href="/en/" hreflang="en" lang="en">English</a>
+        <a href="/seo-aeo-geo/">科技行銷</a><a href="/geo-guide/">AI 搜尋優化指南</a><a href="/projects/">作品</a><a href="/about/">關於</a><a href="/tools/">工具</a><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a><a href="/privacy/">隱私權政策</a><a href="/en/" hreflang="en" lang="en">English</a>
       </nav>
       <p class="mono">頁面上的陶土物件為示意渲染，不是客戶作品。<br>© 2026 夏裕科技</p>
     </div>

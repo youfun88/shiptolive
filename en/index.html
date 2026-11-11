@@ -36,6 +36,24 @@
 </script>
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/home/home.css?v=5">
+<style>
+  .rules span a { margin-left: 6px; white-space: nowrap; }
+  @media (max-width: 959px) {
+    #fit ol.rules { grid-template-columns: 1fr; }
+    #fit .rules li:nth-last-child(2) { border-bottom-color: var(--hair); }
+  }
+  /* proof: four dated numbers (the motion pass may restyle this) */
+  .figs.f4 .fig-n:nth-child(2) { border-bottom-color: var(--hair); }
+  .figs.f4 .fig-n:nth-child(3) { border-bottom-color: var(--hair); }
+  .figs.f4 .fig-n:nth-child(4) { grid-column: 1 / -1; }
+  @media (min-width: 960px) {
+    .figs.f4 { grid-template-columns: repeat(4, 1fr); }
+    .figs.f4 .fig-n, .figs.f4 .fig-n:nth-child(4) { grid-column: auto; }
+    .figs.f4 .fig-n .v, .figs.f4 .fig-n:nth-child(n+2) .v { font-size: clamp(76px, 7.4vw, 124px); }
+    .figs.f4 .fig-n { padding-right: 20px; padding-left: 20px; }
+    .figs.f4 .fig-n:first-child { padding-left: 0; }
+  }
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -117,8 +135,10 @@
       "inLanguage": "en",
       "mainEntity": [
         { "@type": "Question", "name": "What does 夏裕科技 (Xiayu Technology) do?", "acceptedAnswer": { "@type": "Answer", "text": "Three things: tech marketing (so Google and AI assistants like ChatGPT find you and name you, run on our AI visibility engine), custom software (turning your processes into a system or app you own), and AI adoption (handing repetitive work to AI with automations your team approves). We were founded in Taiwan in 2022, are headquartered in Taipei, and serve clients in Taiwan and the US. Every engagement starts with a diagnosis and ends with something live." } },
-        { "@type": "Question", "name": "Can you guarantee ChatGPT or Google will recommend us?", "acceptedAnswer": { "@type": "Answer", "text": "No one controls what an AI says or what Google ranks. What we commit to: steady checks, evidence behind every change, and monthly numbers you can compare with where you started. We ask AI the same customer questions on every check and fix what leaves you out. AI answers can shift within weeks; Google rankings usually take months." } },
+        { "@type": "Question", "name": "Can you guarantee ChatGPT or Google will recommend us?", "acceptedAnswer": { "@type": "Answer", "text": "What we commit to: steady checks, evidence behind every change, and monthly numbers you can compare with where you started. We ask AI the same customer questions on every check and fix what leaves you out. AI answers can shift within weeks; Google rankings usually take months." } },
         { "@type": "Question", "name": "Will anything go live without my approval?", "acceptedAnswer": { "@type": "Answer", "text": "No. Drafts wait on a private review page on your site. It isn't public, and you sign in with Gmail. Nothing is published until you tap Approve, and you can tap Request changes instead. Technical SEO items like titles and structured data are reviewed by us and don't change what you say." } },
+        { "@type": "Question", "name": "What do I send for the free check, and what do I get back?", "acceptedAnswer": { "@type": "Answer", "text": "Your company name and website, and the city your customers are in. If you can, add the 3 questions customers ask most and up to 3 competitors to compare. We put about ten customer questions to ChatGPT, Gemini, Claude and Perplexity and email you a report within 1–2 business days: which answers name you, who AI recommends instead, which sites it cites, and what to fix first. No budget talk needed." } },
+        { "@type": "Question", "name": "We're a small business in a niche field. Is this for us?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. It suits any business whose customers ask AI before they choose: cross-border professional firms, travel and bookings, training and B2B services, local shops and experiences. The more niche the field, the more specific the questions, and the easier it is for a site with clear answers to get cited. Start with the free check to see how AI answers your customers today." } },
         { "@type": "Question", "name": "How are software projects priced, and can we stop halfway?", "acceptedAnswer": { "@type": "Answer", "text": "We start with discovery (1–2 weeks, fixed fee), which ends with a written plan, a clickable prototype and a fixed quote; the plan is yours even if you stop there. After that we ship a working version every two weeks, and you can stop after any phase. Software and AI work is quoted per project." } },
         { "@type": "Question", "name": "Will adopting AI leak our company data?", "acceptedAnswer": { "@type": "Answer", "text": "We agree up front what the AI can read and what it can do. Every action is logged, and anything that costs money or goes out to customers needs a person to approve it. Adoption also includes drafting your company's AI usage policy." } }
       ]
@@ -149,8 +169,7 @@
 
 <section class="hero" aria-labelledby="h1">
   <div class="wrap g12">
-    <p class="idx mono"><span>夏裕科技 — Taipei · San Diego</span><span>English · 中文</span></p>
-    <h1 id="h1"><span class="ln">We Build.</span><span class="ln">We Ship.</span><span class="ln">We Innovate.</span></h1>
+    <h1 id="h1"><span class="ln">Dare to think.</span><span class="ln">Dare to build.</span><span class="ln">Dare to innovate.</span></h1>
     <div class="hero-obj">
       <div class="drift blend" data-drift="-0.06">
         <picture>
@@ -166,7 +185,6 @@
         <a class="pill" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">Book a free 20-minute call <span class="arr" aria-hidden="true">→</span></a>
         <a class="tlink" href="#contact" data-topic="Free AI visibility check">Request the free check</a>
       </div>
-      <p class="note mono">In English or 中文. We listen first; if we’re not a fit, we’ll say so. No sales pitch.</p>
     </div>
     <nav class="hidx" aria-label="Services">
       <a href="#mk"><span class="n">01</span><span class="t">Tech marketing<small>Get found by Google and AI</small></span><span class="a" aria-hidden="true">↓</span></a>
@@ -179,7 +197,7 @@
 <section class="sec catalog" id="services" aria-labelledby="cat-h">
   <div class="wrap g12">
     <div class="rule" aria-hidden="true"></div>
-    <h2 class="state rv" id="cat-h">Three services. Each one shipped&nbsp;live.</h2>
+    <h2 class="state rv" id="cat-h">Get found. Let technology make you&nbsp;money.</h2>
   </div>
 
   <article class="entry" id="mk" aria-labelledby="mk-h">
@@ -198,7 +216,7 @@
         <dl class="spec">
           <div><dt>Engine</dt><dd>Monitor → Analyze → Plan → Review → Publish &amp; Measure, on repeat</dd></div>
           <div><dt>You decide</dt><dd>Drafts wait on a private review page until you tap Approve</dd></div>
-          <div><dt>Every plan</dt><dd>4 optimization goals, 5 AI-written articles a month (English + 中文), daily and monthly reports</dd></div>
+          <div><dt>Every plan</dt><dd>5 optimization goals, 5 AI-written articles a month (English + 中文), daily and monthly reports</dd></div>
           <div><dt>Start</dt><dd>Live in 1–2 working days · we quote after a short call</dd></div>
         </dl>
         <details class="more-d">
@@ -206,7 +224,7 @@
           <dl class="spec">
             <div class="step"><dt><i>1</i>Monitor</dt><dd>Site health and speed, Google rankings and clicks, answers from ChatGPT, Gemini, Claude and Perplexity, competitors</dd></div>
             <div class="step"><dt><i>2</i>Analyze</dt><dd>Questions where AI names someone else, new keywords, pages close to the top, things AI gets wrong</dd></div>
-            <div class="step"><dt><i>3</i>Plan</dt><dd>4 goals set with you: the questions customers ask AI most. Every suggestion has its evidence</dd></div>
+            <div class="step"><dt><i>3</i>Plan</dt><dd>5 goals set with you: the questions customers ask AI most. Every suggestion has its evidence</dd></div>
             <div class="step"><dt><i>4</i>Review</dt><dd>You read each draft in English and 中文, then tap Approve or Request changes</dd></div>
             <div class="step"><dt><i>5</i>Publish &amp; Measure</dt><dd>Approved changes go live; results report every day, monthly report every month</dd></div>
             <div><dt>Why</dt><dd>Brands cited in Google’s AI Overview get about 2.2× the organic clicks <a class="mono" href="https://www.seerinteractive.com/blog/aio-impact-on-google-ctr-2026-update" target="_blank" rel="noopener">Seer Interactive, 2026</a></dd></div>
@@ -238,7 +256,7 @@
         <dl class="spec">
           <div><dt>Discovery</dt><dd>1–2 weeks, fixed fee. A written plan, a clickable prototype and a fixed quote</dd></div>
           <div><dt>You get</dt><dd>Launch and handover docs. The code and accounts are yours</dd></div>
-          <div><dt>Example</dt><dd>Go Hike (Taiwan): shuttle booking from Taipei and Taichung to Yushan and Xueshan, 102 routes with prices <a class="mono" href="https://gohike.tw" target="_blank" rel="noopener">gohike.tw ↗</a></dd></div>
+          <div><dt>Our own app</dt><dd>Tadapop: habit challenges with friends. Agree on a goal, check in every day with a photo or video, and a live leaderboard keeps score. Free on iOS and Android, built with React Native / Expo <a class="mono" href="https://tadapop.app/" target="_blank" rel="noopener">tadapop.app ↗</a></dd></div>
         </dl>
         <details class="more-d">
           <summary><span>See details</span><span class="pm" aria-hidden="true"></span></summary>
@@ -299,7 +317,7 @@
 
 <section class="plate" id="report" aria-labelledby="plate-h">
   <div class="wrap g12">
-    <h2 class="state rv" id="plate-h">Every number, every day, in the&nbsp;open.</h2>
+    <h2 class="state rv" id="plate-h">Every number, every day, in the&nbsp;open</h2>
     <p class="sub">Whether AI names you, where you rank on Google, what we changed: a results report that updates daily, a monthly report, and a log of every update.</p>
     <figure class="stage">
       <div class="print print-wide" aria-hidden="true">
@@ -316,33 +334,38 @@
 <section class="sec proof" id="work" aria-labelledby="proof-h">
   <div class="wrap g12">
     <div class="rule" aria-hidden="true"></div>
-    <h2 class="state rv" id="proof-h">Real clients. Dated&nbsp;numbers.</h2>
-    <p class="case"><span>WU LAW INTL PLLC, a New York–licensed attorney handling US–Taiwan inheritance. First month after launch: 20 consultations, 6 paying clients (owner-reported). Measured October 2026:</span> <a class="mono" href="https://wulawintl.com" target="_blank" rel="noopener">wulawintl.com ↗</a></p>
-    <div class="figs">
-      <div class="fig-n rv">
-        <span class="v">12<small>/16</small></span>
-        <p>We asked AI 16 times; 12 answers named the firm.</p>
-        <p class="src mono">Source: AI check, 4 questions each to ChatGPT, Claude, Perplexity, Gemini</p>
+    <h2 class="state rv" id="proof-h">A Taipei law firm, four numbers today</h2>
+    <p class="case"><span>WU LAW INTL PLLC is a New York–licensed attorney’s firm in Taipei handling US–Taiwan inheritance. We built its bilingual site, and it has run on the Xiayu AI Visibility Engine since August 2026. Every number comes from the results report, with its date and source.</span> <a class="mono" href="https://wulawintl.com" target="_blank" rel="noopener">wulawintl.com ↗</a></p>
+    <div class="figs f4" data-case="wulaw" data-measured="2026-11-11">
+      <div class="fig-n rv" data-stat="ai-mentions">
+        <span class="v"><span class="n" data-count="14" data-total="15">14</span><small class="u">/15</small></span>
+        <p class="lbl">Of 15 questions customers ask, AI answers to 14 named the firm.</p>
+        <p class="src mono"><time datetime="2026-10-30">Oct 30, 2026</time> · our AI visibility check: ChatGPT, Gemini, Claude, Perplexity</p>
       </div>
-      <div class="fig-n rv d1">
-        <span class="v">487</span>
-        <p>Microsoft Copilot cited the site 487 times in 90 days.</p>
-        <p class="src mono">Source: Bing Webmaster Tools (156 in the last 30)</p>
+      <div class="fig-n rv d1" data-stat="google-visits">
+        <span class="v"><span class="n" data-count="145">145</span></span>
+        <p class="lbl">Visits from Google in the last 28 days, up 51% on the 28 days before.</p>
+        <p class="src mono"><time datetime="2026-11-11">Nov 11, 2026</time> · Google Search Console</p>
       </div>
-      <div class="fig-n rv d2">
-        <span class="v">29</span>
-        <p>29 searches show the site on Google page&nbsp;1.</p>
-        <p class="src mono">Source: Google Search Console</p>
+      <div class="fig-n rv d2" data-stat="booking-clicks">
+        <span class="v"><span class="n" data-count="19" data-from="0">19</span></span>
+        <p class="lbl">Booking clicks in the last 30 days. The first 30 days tracked: zero.</p>
+        <p class="src mono"><time datetime="2026-11-11">Nov 11, 2026</time> · site log, no names or emails</p>
+      </div>
+      <div class="fig-n rv d2" data-stat="google-top3">
+        <span class="v"><span class="n" data-count="21" data-from="5">21</span></span>
+        <p class="lbl">Search terms in Google’s top 3, up from 5.</p>
+        <p class="src mono"><time datetime="2026-10-30">Oct 30</time> → <time datetime="2026-11-08">Nov 8, 2026</time> · Google Search Console</p>
       </div>
     </div>
-    <p class="case"><span>Go Hike 山行接駁, a Taiwan hiking-shuttle booking site we built: search terms it ranks for on Google went from 25 to 63, and terms in the top 3 from 3 to 8 (October 31 → November 8, 2026, Google Search Console). Bookings and forms in 30 days: 0 in the first 30 days tracked, 23 in the last 30.</span> <a class="mono" href="/en/seo-aeo-geo/#case">Both cases →</a></p>
+    <p class="case"><span>Go Hike 山行接駁, a hiking-shuttle booking site: bookings and forms in 30 days went from 0 (first 30 days tracked) to 23 (last 30 days, early November 2026, site log).</span> <a class="mono" href="/en/seo-aeo-geo/#case">Both cases →</a></p>
 
     <div class="clients">
       <div class="lhs"><h3 class="ctitle">Clients and work</h3><p class="sub hide-m" style="margin-top:10px">Sites, systems and platforms. All live.</p></div>
       <div class="rhs">
         <div class="ctable">
-          <a href="https://wulawintl.com" target="_blank" rel="noopener"><span class="i">01</span><span class="nm">WU LAW INTL PLLC</span><span class="wh">Bilingual law-firm site, Google &amp; AI search</span><span class="u">↗</span></a>
-          <a href="https://gohike.tw" target="_blank" rel="noopener"><span class="i">02</span><span class="nm">Go Hike 山行接駁</span><span class="wh">Hiking-shuttle booking site, Taiwan</span><span class="u">↗</span></a>
+          <a href="https://wulawintl.com" target="_blank" rel="noopener"><span class="i">01</span><span class="nm">WU LAW INTL PLLC</span><span class="wh">Bilingual law-firm site · named by AI on 14 of 15 questions (Oct 30, 2026)</span><span class="u">↗</span></a>
+          <a href="https://gohike.tw" target="_blank" rel="noopener"><span class="i">02</span><span class="nm">Go Hike 山行接駁</span><span class="wh">Hiking-shuttle booking site · bookings in 30 days 0 → 23 (Nov 2026)</span><span class="u">↗</span></a>
           <a href="https://leadx.org" target="_blank" rel="noopener"><span class="i">03</span><span class="nm">LEADx · EQ 360</span><span class="wh">Assessment platform: scoring, admin console, credits</span><span class="u">↗</span></a>
           <a href="https://azwrealty.com" target="_blank" rel="noopener"><span class="i">04</span><span class="nm">Azure Waves Realty</span><span class="wh">Real-estate website</span><span class="u">↗</span></a>
           <a href="https://travisbradberry.com" target="_blank" rel="noopener"><span class="i">05</span><span class="nm">Travis Bradberry</span><span class="wh">Author site, coauthor of <i>Emotional Intelligence 2.0</i></span><span class="u">↗</span></a>
@@ -356,10 +379,26 @@
   </div>
 </section>
 
+<section class="sec how" id="fit" aria-labelledby="fit-h">
+  <div class="wrap g12">
+    <div class="rule" aria-hidden="true"></div>
+    <div class="lhs">
+      <h2 class="state rv" id="fit-h">Who it’s&nbsp;for</h2>
+      <p class="sub">Any business whose customers ask AI before they choose. Small or niche is fine: the more specific the question, the more AI needs a clear answer.</p>
+    </div>
+    <ol class="rules">
+      <li><b>Cross-border professional firms</b><span>Law, accounting, immigration, real estate. “Which lawyers in Taipei handle US–Taiwan inheritance?” <a href="/en/seo-aeo-geo/#case">Law-firm case</a></span></li>
+      <li><b>Travel, transport and bookings</b><span>Shuttles, tours, stays, serving guests in English and 中文. “Private hiking shuttle from Taipei to the Xueshan trailhead” <a href="/en/seo-aeo-geo/#case">Shuttle case</a></span></li>
+      <li><b>Training and B2B services</b><span>Buyers compare several providers first. “Corporate ESG training in Taiwan”</span></li>
+      <li><b>Local shops and experiences</b><span>Classes, studios, restaurants, activities. “Indoor group activities in Taipei”</span></li>
+    </ol>
+  </div>
+</section>
+
 <section class="sec how" id="process" aria-labelledby="how-h">
   <div class="wrap g12">
     <div class="rule" aria-hidden="true"></div>
-    <div class="lhs"><h2 class="state rv" id="how-h">What you can count&nbsp;on.</h2></div>
+    <div class="lhs"><h2 class="state rv" id="how-h">What you can count&nbsp;on</h2></div>
     <ol class="rules">
       <li><b>You see the numbers</b><span>Same questions on every check, where you started next to where you are.</span></li>
       <li><b>You decide</b><span>Every change waits for your Approve.</span></li>
@@ -373,7 +412,7 @@
   <div class="wrap g12">
     <div class="rule" aria-hidden="true"></div>
     <div class="rhs">
-      <h2 class="state rv" id="f-h">One team, from diagnosis to&nbsp;launch.</h2>
+      <h2 class="state rv" id="f-h">One team, from diagnosis to&nbsp;launch</h2>
       <p class="who">Yufan Chen<span class="mono">Founder &amp; principal engineer</span></p>
       <p class="bio">Former CTO of TalentSmartEQ, running assessment platforms used in 26 countries. UC San Diego computer science; Johns Hopkins Agentic AI certificate.</p>
       <p class="more"><a class="tlink" href="/en/about/">About us</a></p>
@@ -384,7 +423,7 @@
 <section class="sec faq" id="faq" aria-labelledby="faq-h">
   <div class="wrap g12">
     <div class="rule" aria-hidden="true"></div>
-    <div class="lhs"><h2 class="state rv" id="faq-h">Before we&nbsp;start.</h2></div>
+    <div class="lhs"><h2 class="state rv" id="faq-h">Before we&nbsp;start</h2></div>
     <div class="faq-list">
       <details>
         <summary><span class="i">01</span><span>What does 夏裕科技 (Xiayu Technology) do?</span><span class="pm" aria-hidden="true"></span></summary>
@@ -392,18 +431,26 @@
       </details>
       <details>
         <summary><span class="i">02</span><span>Can you guarantee ChatGPT or Google will recommend us?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>No one controls what an AI says or what Google ranks. What we commit to: steady checks, evidence behind every change, and monthly numbers you can compare with where you started. We ask AI the same customer questions on every check and fix what leaves you out. AI answers can shift within weeks; Google rankings usually take months.</p>
+        <p>What we commit to: steady checks, evidence behind every change, and monthly numbers you can compare with where you started. We ask AI the same customer questions on every check and fix what leaves you out. AI answers can shift within weeks; Google rankings usually take months.</p>
       </details>
       <details>
         <summary><span class="i">03</span><span>Will anything go live without my approval?</span><span class="pm" aria-hidden="true"></span></summary>
         <p>No. Drafts wait on a private review page on your site. It isn't public, and you sign in with Gmail. Nothing is published until you tap Approve, and you can tap Request changes instead. Technical SEO items like titles and structured data are reviewed by us and don't change what you say.</p>
       </details>
       <details>
-        <summary><span class="i">04</span><span>How are software projects priced, and can we stop halfway?</span><span class="pm" aria-hidden="true"></span></summary>
+        <summary><span class="i">04</span><span>What do I send for the free check, and what do I get back?</span><span class="pm" aria-hidden="true"></span></summary>
+        <p>Your company name and website, and the city your customers are in. If you can, add the 3 questions customers ask most and up to 3 competitors to compare. We put about ten customer questions to ChatGPT, Gemini, Claude and Perplexity and email you a report within 1–2 business days: which answers name you, who AI recommends instead, which sites it cites, and what to fix first. No budget talk needed.</p>
+      </details>
+      <details>
+        <summary><span class="i">05</span><span>We’re a small business in a niche field. Is this for us?</span><span class="pm" aria-hidden="true"></span></summary>
+        <p>Yes. It suits any business whose customers ask AI before they choose: cross-border professional firms, travel and bookings, training and B2B services, local shops and experiences. The more niche the field, the more specific the questions, and the easier it is for a site with clear answers to get cited. Start with the free check to see how AI answers your customers today.</p>
+      </details>
+      <details>
+        <summary><span class="i">06</span><span>How are software projects priced, and can we stop halfway?</span><span class="pm" aria-hidden="true"></span></summary>
         <p>We start with discovery (1–2 weeks, fixed fee), which ends with a written plan, a clickable prototype and a fixed quote; the plan is yours even if you stop there. After that we ship a working version every two weeks, and you can stop after any phase. Software and AI work is quoted per project.</p>
       </details>
       <details>
-        <summary><span class="i">05</span><span>Will adopting AI leak our company data?</span><span class="pm" aria-hidden="true"></span></summary>
+        <summary><span class="i">07</span><span>Will adopting AI leak our company data?</span><span class="pm" aria-hidden="true"></span></summary>
         <p>We agree up front what the AI can read and what it can do. Every action is logged, and anything that costs money or goes out to customers needs a person to approve it. Adoption also includes drafting your company's AI usage policy.</p>
       </details>
     </div>
@@ -415,10 +462,9 @@
   <div class="wrap g12">
     <div class="rule" aria-hidden="true"></div>
     <div class="cta-col">
-      <h2 class="state rv" id="c-h">Tell us what’s&nbsp;stuck.</h2>
-      <p class="sub">We reply within 1–2 business days.</p>
+      <h2 class="state rv" id="c-h">Tell us what’s&nbsp;stuck</h2>
+      <p class="sub">We reply within 1–2 business days. For the free check, tell us your website and the city your customers are in; if you can, add the 3 questions they ask most and up to 3 competitors. You get a report: whether AI names you, who it names instead, and what to fix first.</p>
       <a class="pill" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">Book a free 20-minute call <span class="arr" aria-hidden="true">→</span></a>
-      <p class="note mono">In English or 中文. We listen first; if we’re not a fit, we’ll say so. No sales pitch.</p>
       <p class="mail"><a class="tlink" href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a></p>
     </div>
     <form class="pform" id="contactForm" novalidate>
@@ -436,7 +482,7 @@
           <option selected>Not sure yet</option>
         </select>
       </label>
-      <label class="fld"><span>Message</span><textarea name="message" rows="4" required placeholder="Your website or company, and what you want to fix"></textarea></label>
+      <label class="fld"><span>Message</span><textarea name="message" rows="4" required placeholder="Your website, where your customers are, and what you want to fix (for the free check: up to 3 customer questions and 3 competitors)"></textarea></label>
       <input name="_honey" type="text" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
       <div class="send">
         <button class="pill" type="submit">Send</button>
@@ -453,7 +499,7 @@
     <div class="cols">
       <p class="mono"><b>夏裕科技 Xiayu Technology</b><br>Taiwan: 夏裕科技股份有限公司 · 統一編號 90173045<br>US: QY LLC, San Diego</p>
       <nav aria-label="Footer">
-        <a href="/en/seo-aeo-geo/">Tech marketing</a><a href="/en/projects/">Work</a><a href="/en/about/">About</a><a href="/tools/">Tools</a><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a><a href="/en/privacy/">Privacy</a><a href="/" hreflang="zh-Hant" lang="zh-Hant">中文</a>
+        <a href="/en/seo-aeo-geo/">Tech marketing</a><a href="/en/geo-guide/">AI search guide</a><a href="/en/projects/">Work</a><a href="/en/about/">About</a><a href="/tools/">Tools</a><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a><a href="/en/privacy/">Privacy</a><a href="/" hreflang="zh-Hant" lang="zh-Hant">中文</a>
       </nav>
       <p class="mono">The clay objects on this page are illustrative renders, not client work.<br>© 2026 夏裕科技 Xiayu Technology</p>
     </div>

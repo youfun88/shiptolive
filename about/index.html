@@ -29,6 +29,11 @@
     #why .spec dt { color: var(--ink); }
     #why .spec dd a { margin-left: 6px; white-space: nowrap; }
     #why .prose { margin-top: 28px; }
+    #approach .sub a { white-space: nowrap; }
+    @media (max-width: 959px) {
+      #approach ol.rules { display: block; }
+      #approach .rules li:nth-last-child(2) { border-bottom-color: var(--hair); }
+    }
   </style>
   <script type="application/ld+json">
 {
@@ -140,7 +145,7 @@
 
 <section class="phero" aria-labelledby="h1">
   <div class="wrap g12">
-    <p class="idx mono"><span>關於我們 — 夏裕科技</span><span>2022 年在臺灣成立</span></p>
+    <p class="idx mono"><span>關於我們</span><span>2022 年在臺灣成立</span></p>
     <h1 id="h1"><span class="ph">夏裕科技，</span><span class="ph">把事情做到上線。</span></h1>
     <p class="lede">夏裕科技 2022 年在臺灣成立，總部位於臺北，服務臺灣與美國客戶。我們做三件事：科技行銷、客製化軟體開發、企業 AI 導入。每個專案都從找出問題開始，做到正式上線。</p>
   </div>
@@ -149,7 +154,7 @@
 <section class="sec split" id="why" aria-labelledby="why-h">
   <div class="wrap g12">
     <div class="rule" aria-hidden="true"></div>
-    <div class="lhs"><h2 class="state rv" id="why-h"><span class="ph">我們做</span><span class="ph">三件事。</span></h2></div>
+    <div class="lhs"><h2 class="state rv" id="why-h"><span class="ph">我們做</span><span class="ph">三件事</span></h2></div>
     <div class="rhs rv">
       <dl class="spec wide">
         <div><dt>科技行銷</dt><dd>SEO、Google 與 AI 搜尋曝光。夏裕 AI 曝光引擎持續檢查、改善您的網站，定期回報成果。<a href="/seo-aeo-geo/">看曝光引擎怎麼運作</a></dd></div>
@@ -161,6 +166,24 @@
         <p>交付的是跑在您真實資料上的成果，有紀錄、有權限控管、有交接文件，程式碼與帳號都歸您。每個修改都先給您審閱，您同意才上線。</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="sec how" id="approach" aria-labelledby="ap-h">
+  <div class="wrap g12">
+    <div class="rule" aria-hidden="true"></div>
+    <div class="lhs">
+      <h2 class="state rv" id="ap-h"><span class="ph">我們怎麼做事</span></h2>
+      <p class="sub">每個合作都照這六條走。<a href="/seo-aeo-geo/#method">看我們怎麼檢查 AI 的回答</a></p>
+    </div>
+    <ol class="rules">
+      <li><b>先診斷，再動手</b><span>先找出真正卡住的地方：網站沒人找得到、少了一個串接，或是一套沒人敢碰的舊系統。</span></li>
+      <li><b>每個修改都有依據</b><span>每一項建議都附上數據和原因，您知道為什麼改。</span></li>
+      <li><b>您同意才上線</b><span>會改變您對客戶說的話，一定先送到審閱頁，您按「同意上線」才更新。</span></li>
+      <li><b>數字標日期和來源</b><span>開始和現在並排，退步也照實列出，下一步寫在旁邊。</span></li>
+      <li><b>網站和資料歸您</b><span>程式碼、網域、帳號與資料都在您名下，附交接文件。</span></li>
+      <li><b>不適合就直說</b><span>現成工具夠用、或我們不是最好的選擇，第一次談就告訴您。</span></li>
+    </ol>
   </div>
 </section>
 
@@ -182,7 +205,7 @@
 <section class="sec exp" id="experience" aria-labelledby="exp-h">
   <div class="wrap g12">
     <div class="rule" aria-hidden="true"></div>
-    <div class="lhs"><h2 class="state rv" id="exp-h"><span class="ph">工程師、技術長，</span><span class="ph">現在為客戶開發。</span></h2></div>
+    <div class="lhs"><h2 class="state rv" id="exp-h"><span class="ph">工程師、技術長，</span><span class="ph">現在為客戶開發</span></h2></div>
     <ol class="tl">
       <li class="rv">
         <p class="when mono">2026 – 現在 · 聖地牙哥與台北</p>
@@ -243,7 +266,7 @@
   <div class="wrap g12">
     <div class="rule" aria-hidden="true"></div>
     <div class="lhs">
-      <h2 class="state rv" id="co-h"><span class="ph">臺灣與美國</span><span class="ph">都能在地簽約。</span></h2>
+      <h2 class="state rv" id="co-h"><span class="ph">臺灣與美國</span><span class="ph">都能在地簽約</span></h2>
       <p class="sub">您跟所在國家的公司簽約，合約、發票與稅務都在當地處理。</p>
     </div>
     <div class="cos">
@@ -264,7 +287,7 @@
 <section class="sec faq" id="about-faq" aria-labelledby="faq-h">
   <div class="wrap g12">
     <div class="rule" aria-hidden="true"></div>
-    <div class="lhs"><h2 class="state rv" id="faq-h">常見問題。</h2></div>
+    <div class="lhs"><h2 class="state rv" id="faq-h">常見問題</h2></div>
     <div class="faq-list">
       <details open>
         <summary><span class="i">01</span><span>夏裕科技是什麼時候成立的？</span><span class="pm" aria-hidden="true"></span></summary>
@@ -306,7 +329,6 @@
         <a class="tlink" href="/#contact">留言給我們</a>
         <a class="tlink" href="/projects/">看我們的作品</a>
       </div>
-      <p class="note mono">中文或英文都可以。先聽您的狀況；不適合就直說，不推銷。</p>
     </div>
   </div>
 </section>
@@ -318,7 +340,7 @@
     <div class="cols">
       <p class="mono"><b>夏裕科技</b><br>夏裕科技股份有限公司・統一編號 90173045・可開統一發票<br>台北・聖地牙哥</p>
       <nav aria-label="頁尾連結">
-        <a href="/seo-aeo-geo/">科技行銷</a><a href="/projects/">作品</a><a href="/about/">關於</a><a href="/tools/">工具</a><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a><a href="/privacy/">隱私權政策</a><a href="/en/" hreflang="en" lang="en">English</a>
+        <a href="/seo-aeo-geo/">科技行銷</a><a href="/geo-guide/">AI 搜尋優化指南</a><a href="/projects/">作品</a><a href="/about/">關於</a><a href="/tools/">工具</a><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a><a href="/privacy/">隱私權政策</a><a href="/en/" hreflang="en" lang="en">English</a>
       </nav>
       <p class="mono">頁面上的陶土物件為示意渲染，不是客戶作品。<br>© 2026 夏裕科技</p>
     </div>
