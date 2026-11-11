@@ -19,12 +19,14 @@
   <meta property="og:url" content="https://www.shiptolive.com/seo-aeo-geo/" />
   <meta property="og:image" content="https://www.shiptolive.com/assets/img/og.png?v=4" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin />
   <link rel="stylesheet" href="/assets/home/home.css?v=5" />
   <link rel="stylesheet" href="/assets/home/pages.css?v=7" />
-  <link rel="stylesheet" href="/assets/home/motion.css?v=1" />
+  <link rel="stylesheet" href="/assets/home/motion.css?v=2" />
+  <link rel="stylesheet" href="/assets/home/ux-svc.css?v=1" />
   <style>
     .spec.flow dt { color: var(--ink); }
     .spec.flow dt i { font-style: normal; color: var(--accent); margin-right: 8px; }
@@ -249,10 +251,14 @@
       <a href="/projects/">作品</a>
       <a href="/about/">關於</a>
     </nav>
-    <a class="lang" href="/en/seo-aeo-geo/" hreflang="en" lang="en" aria-label="English version">EN</a>
+    <a class="lang" href="/en/seo-aeo-geo/" hreflang="en" lang="en" aria-label="EN – English version">EN</a>
     <a class="pill sm" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約諮詢</a>
   </div>
 </header>
+
+<nav class="lnav" aria-label="本頁段落" data-start=".phero">
+  <div class="wrap"><button class="lnav-tg" type="button" aria-expanded="false" aria-controls="lnav-list"><span class="k">目錄</span><span class="cur">曝光引擎</span><span class="cv" aria-hidden="true"></span></button><ol id="lnav-list"><li><a href="#process">曝光引擎</a></li><li><a href="#checks">檢查項目</a></li><li><a href="#method">檢查方法</a></li><li><a href="#case">案例</a></li><li><a href="#metrics">數字定義</a></li><li><a href="#pricing">方案</a></li><li><a href="#faq">常見問題</a></li></ol><a class="lnav-cta" href="/?topic=%E5%85%8D%E8%B2%BB%20AI%20%E8%83%BD%E8%A6%8B%E5%BA%A6%E6%AA%A2%E6%B8%AC#contact">申請免費檢測 <span class="arr" aria-hidden="true">→</span></a></div>
+</nav>
 
 <main id="main">
 
@@ -295,7 +301,7 @@
     <div class="rule" aria-hidden="true"></div>
     <h2 class="state rv" id="how-h">夏裕 AI 曝光引擎</h2>
     <p class="sub">夏裕 AI 曝光引擎是我們自己開發的系統。監測、分析、建議、審核、線上追蹤，五個步驟一直循環，每一輪的結果就是下一輪的起點。系統自動執行，我們的團隊把關。</p>
-    <div class="road" aria-hidden="true"><span class="trk"><span class="fill"></span></span><ol><li><i><span>1</span></i><span>監測</span></li><li><i><span>2</span></i><span>分析</span></li><li><i><span>3</span></i><span>建議</span></li><li><i><span>4</span></i><span>審核</span></li><li><i><span class="halo"></span><span>5</span></i><span>線上追蹤</span></li></ol></div>
+    <div class="road" aria-hidden="true"><span class="trk"><span class="fill"></span></span><ol><li><i><span>1</span></i><span>監測</span><small>Monitor</small></li><li><i><span>2</span></i><span>分析</span><small>Analyze</small></li><li><i><span>3</span></i><span>建議</span><small>Plan</small></li><li><i><span>4</span></i><span>審核</span><small>Review</small></li><li><i><span class="halo"></span><span>5</span></i><span>線上追蹤</span><small>Publish &amp; Measure</small></li></ol></div>
     <div class="steps">
       <div class="step">
         <div class="txt">
@@ -701,19 +707,23 @@
 <section class="sec cta-end" aria-labelledby="c-h">
   <div class="wrap g12">
     <div class="rule" aria-hidden="true"></div>
-    <div>
-      <h2 class="state rv" id="c-h"><span class="ph">先看看 AI</span><span class="ph">怎麼介紹您</span></h2>
-      <p class="sub">免費檢測：用客戶會問的問題詢問 AI，看誰被推薦，以及最該先修的地方。</p>
-      <div class="ctas">
-        <a class="pill" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約免費 20 分鐘諮詢 <span class="arr" aria-hidden="true">→</span></a>
-        <a class="tlink" href="/?topic=%E5%85%8D%E8%B2%BB%20AI%20%E8%83%BD%E8%A6%8B%E5%BA%A6%E6%AA%A2%E6%B8%AC#contact">申請免費檢測</a>
+    <div class="cta-grid">
+      <div class="cta-main">
+        <h2 class="state rv" id="c-h"><span class="ph">先看看 AI</span><span class="ph">怎麼介紹您</span></h2>
+        <p class="sub">免費檢測：用客戶會問的問題詢問 AI，看誰被推薦，以及最該先修的地方。</p>
+        <div class="ctas">
+          <a class="pill" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約免費 20 分鐘諮詢 <span class="arr" aria-hidden="true">→</span></a>
+          <a class="tlink" href="/?topic=%E5%85%8D%E8%B2%BB%20AI%20%E8%83%BD%E8%A6%8B%E5%BA%A6%E6%AA%A2%E6%B8%AC#contact">申請免費檢測</a>
+        </div>
       </div>
-      <ol class="rules" aria-label="免費檢測">
-        <li><b>您給我們</b><span>公司名稱和網站、客戶在哪個城市。有的話，再加上客戶最常問的 3 個問題、最多 3 家想比較的同業。</span></li>
-        <li><b>我們去問</b><span>約十個客戶會問的問題，中英文，問 ChatGPT、Gemini、Claude、Perplexity。</span></li>
-        <li><b>您會收到</b><span>一份報告：哪些回答提到您、AI 推薦了誰、引用了哪些網站，以及最該先修的地方。</span></li>
-        <li><b>1–2 個工作天</b><span>報告寄到您的信箱。不用先談預算。</span></li>
-      </ol>
+      <div class="cta-side">
+        <ol class="rules" aria-label="免費檢測">
+          <li><b>您給我們</b><span>公司名稱和網站、客戶在哪個城市。有的話，再加上客戶最常問的 3 個問題、最多 3 家想比較的同業。</span></li>
+          <li><b>我們去問</b><span>約十個客戶會問的問題，中英文，問 ChatGPT、Gemini、Claude、Perplexity。</span></li>
+          <li><b>您會收到</b><span>一份報告：哪些回答提到您、AI 推薦了誰、引用了哪些網站，以及最該先修的地方。</span></li>
+          <li><b>1–2 個工作天</b><span>報告寄到您的信箱。不用先談預算。</span></li>
+        </ol>
+      </div>
     </div>
   </div>
 </section>
@@ -735,5 +745,40 @@
 <script src="/assets/home/home.js" defer></script>
 <script src="/assets/home/motion.js?v=1" defer></script>
 <script src="/assets/booking.js" defer></script>
+<script>
+/* local nav: appears past the intro, marks the section in view, steps aside at the closing CTA.
+   Phones: a bottom pill that opens the list. Desktop: a bar under the header. */
+(function () {
+  var d = document, root = d.documentElement, n = d.querySelector('.lnav'); if (!n || !window.requestAnimationFrame) return;
+  root.classList.add('lnav-js');
+  var links = [].slice.call(n.querySelectorAll('ol a')), secs = links.map(function (a) { return d.getElementById(a.hash.slice(1)); });
+  var start = d.querySelector(n.getAttribute('data-start')), end = d.querySelector('.cta-end'), ol = n.querySelector('ol'), hdr = d.querySelector('.hdr');
+  var tg = n.querySelector('.lnav-tg'), curEl = tg && tg.querySelector('.cur');
+  var cur = -1, on = false, tick = false, rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function hh() { if (hdr) root.style.setProperty('--hdr-h', Math.round(hdr.getBoundingClientRect().height) + 'px'); }
+  function top(el) { return (el.firstElementChild || el).getBoundingClientRect().top; }
+  function open(v) { n.classList.toggle('open', v); if (tg) tg.setAttribute('aria-expanded', v ? 'true' : 'false'); }
+  function upd() {
+    tick = false; var vh = window.innerHeight;
+    var show = start.getBoundingClientRect().bottom < 0 && (!end || end.getBoundingClientRect().top > vh * 0.55);
+    if (show !== on) { on = show; n.classList.toggle('on', on); if (!on) open(false); }
+    var i = -1; secs.forEach(function (s, k) { if (s && top(s) < vh * 0.4) i = k; });
+    if (i === cur) return;
+    if (cur > -1) links[cur].removeAttribute('aria-current');
+    cur = i; if (i < 0) return;
+    links[i].setAttribute('aria-current', 'location');
+    if (curEl) curEl.textContent = links[i].textContent;
+    if (ol.scrollWidth > ol.clientWidth + 1) { var li = links[i].parentNode; ol.scrollTo({ left: li.offsetLeft - ol.offsetLeft - (ol.clientWidth - li.offsetWidth) / 2, behavior: rm ? 'auto' : 'smooth' }); }
+  }
+  if (tg) tg.addEventListener('click', function () { open(!n.classList.contains('open')); });
+  links.forEach(function (a) { a.addEventListener('click', function () { open(false); }); });
+  d.addEventListener('click', function (e) { if (n.classList.contains('open') && !n.contains(e.target)) open(false); });
+  d.addEventListener('keydown', function (e) { if (e.key === 'Escape' && n.classList.contains('open')) { open(false); tg.focus(); } });
+  window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(upd); } }, { passive: true });
+  window.addEventListener('resize', function () { hh(); upd(); });
+  window.addEventListener('load', hh);
+  hh(); upd();
+})();
+</script>
 </body>
 </html>

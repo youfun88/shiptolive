@@ -19,11 +19,13 @@
   <meta property="og:url" content="https://www.shiptolive.com/en/projects/ai-visibility-checker/" />
   <meta property="og:image" content="https://www.shiptolive.com/assets/img/og.png?v=4" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin />
   <link rel="stylesheet" href="/assets/home/home.css?v=5" />
   <link rel="stylesheet" href="/assets/home/pages.css?v=7" />
+  <link rel="stylesheet" href="/assets/home/ux-pages.css?v=1" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -33,7 +35,7 @@
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
   "url": "https://www.shiptolive.com/en/projects/ai-visibility-checker/",
-  "description": "Asks ChatGPT, Perplexity, Gemini and Claude a business's real customer questions, in English and Chinese, and reports whether the business is named, who is named instead, which sites the AI cites, and what to fix. Runs monthly for Ship to Live clients inside their dashboard.",
+  "description": "Asks ChatGPT, Perplexity, Gemini and Claude a business's real customer questions, in English and Chinese, and reports whether the business is named, who is named instead, which sites the AI cites, and what to fix. Runs every day for Xiayu Technology clients inside their dashboard.",
   "author": { "@id": "https://www.shiptolive.com/#service" },
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free first check for businesses in the US and Taiwan." }
 }
@@ -80,12 +82,12 @@
 
 <section class="phero" aria-labelledby="h1">
   <div class="wrap g12">
-    <p class="idx mono"><span><a href="/en/projects/" style="text-decoration:none">Projects</a> / AI Visibility Checker</span><span>In production</span></p>
+    <p class="idx mono"><span><a href="/en/projects/">Work</a> / AI Visibility Checker</span><span>In production</span></p>
     <h1 id="h1">Does AI recommend your&nbsp;business?</h1>
     <p class="lede">Your customers now ask ChatGPT, Perplexity, Gemini and Claude who to hire. The AI Visibility Checker asks those same questions, in English and 中文, and counts whether your business gets named, who gets named instead, and which websites the AI trusted for its answer.</p>
-    <p class="status-pill">In production · runs every month for our clients, inside their dashboard · self-serve version next</p>
+    <p class="status-pill">In production · runs every day for our clients, inside their dashboard · self-serve version next</p>
     <div class="ctas">
-      <a class="tlink" href="/en/?topic=Free%20AI%20visibility%20check#contact">Request a free first check</a>
+      <a class="pill" href="/en/?topic=Free%20AI%20visibility%20check#contact">Request a free first check <span class="arr" aria-hidden="true">→</span></a>
       <a class="tlink" href="#dashboard">See the dashboard</a>
     </div>
   </div>
@@ -126,7 +128,7 @@
           <tr><th scope="row">Location</th><td data-label="Yourself">Wherever you happen to be</td><td class="us" data-label="Checker">Asked as if from the cities your customers are in</td></tr>
           <tr><th scope="row">Competitors</th><td data-label="Yourself">Not shown</td><td class="us" data-label="Checker">Who gets named instead of you, and how often</td></tr>
           <tr><th scope="row">Sources</th><td data-label="Yourself">Usually hidden</td><td class="us" data-label="Checker">The sites AI cited, and whether you're listed on them</td></tr>
-          <tr><th scope="row">Over time</th><td data-label="Yourself">Nothing to compare against</td><td class="us" data-label="Checker">The same questions every month, so you see the trend</td></tr>
+          <tr><th scope="row">Over time</th><td data-label="Yourself">Nothing to compare against</td><td class="us" data-label="Checker">The same questions every day, so you see the trend</td></tr>
         </tbody>
       </table>
     </div>
@@ -141,7 +143,7 @@
       <li><b>Ask like a customer</b><span>15 real customer questions in English and 中文, sent to ChatGPT, Perplexity, Gemini and Claude with live web search, from your customers' cities.</span></li>
       <li><b>Read every answer</b><span>Was your business named? In what position? Who was named instead, and which websites did the AI cite?</span></li>
       <li><b>Check your website</b><span>Structured data, llms.txt, whether AI crawlers are blocked, page speed: what AI engines rely on to understand and trust a site.</span></li>
-      <li><b>Repeat monthly</b><span>Same questions, same engines, same cities, so each month's numbers compare with the last.</span></li>
+      <li><b>Repeat every day</b><span>Same questions, same engines, same cities, so the numbers compare over time, summed up in a monthly report.</span></li>
     </ol>
   </div>
 </section>
@@ -190,7 +192,7 @@
     <div class="lhs"><h2 class="state rv" id="b-h">Built and run&nbsp;in-house</h2></div>
     <div class="rhs prose rv">
       <p>Python and LangGraph, calling each engine's own web-search API so the answers match what real users see. Every answer is saved, every run logs its cost, and the scoring is checked against businesses whose results we already know.</p>
-      <p>It has run in production since October 2026 as part of our <a href="/en/seo-aeo-geo/">tech marketing</a> service: the monthly check feeds the to-do list, and the results live in each client's dashboard. A self-serve version, where you enter your business and get the report by email, is the next step.</p>
+      <p>It has run in production since October 2026 as part of our <a href="/en/seo-aeo-geo/">tech marketing</a> service: the daily check feeds the to-do list, and the results live in each client's dashboard. A self-serve version, where you enter your business and get the report by email, is the next step.</p>
     </div>
   </div>
 </section>
@@ -217,7 +219,7 @@
     <div class="cols">
       <p class="mono"><b>Ship to Live 夏裕科技</b><br>Taiwan: 夏裕科技股份有限公司 · 統一編號 90173045<br>US: QY LLC, San Diego</p>
       <nav aria-label="Footer">
-        <a href="/en/seo-aeo-geo/">Tech marketing</a><a href="/en/geo-guide/">AI search guide</a><a href="/en/projects/">Work</a><a href="/en/about/">About</a><a href="/tools/">Tools</a><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a><a href="/projects/ai-visibility-checker/" hreflang="zh-Hant" lang="zh-Hant">中文</a>
+        <a href="/en/seo-aeo-geo/">Tech marketing</a><a href="/en/geo-guide/">AI search guide</a><a href="/en/projects/">Work</a><a href="/en/about/">About</a><a href="/tools/">Tools</a><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a><a href="/en/privacy/">Privacy</a><a href="/projects/ai-visibility-checker/" hreflang="zh-Hant" lang="zh-Hant">中文</a>
       </nav>
       <p class="mono">Dashboard views show real data for WU LAW INTL PLLC, shared with the client's consent; peer names are blurred.<br>© 2026 Ship to Live 夏裕科技</p>
     </div>

@@ -126,7 +126,7 @@ html[lang="zh-Hant"] .figs.f4 .fig-n .v small { font-size: .3em; letter-spacing:
 .mo .road li i { color: var(--ink-3); }
 .mo .road li i::before { transform: scale(0); }
 .mo .road li i { box-shadow: inset 0 0 0 1px rgba(22, 21, 19, .28); background: var(--paper); }
-.mo .road li > span { opacity: .45; }
+.mo .road li > span { opacity: .75; }
 .mo .road .halo { opacity: 0; }
 .mo .road.in .fill { transform: none; transition: transform 2.4s var(--mo-io) .2s; }
 .mo .road.in .fill::after { animation: mo-comet 2.5s linear .2s both; }
@@ -213,3 +213,21 @@ html[lang="zh-Hant"] .figs.f4 .fig-n .v small { font-size: .3em; letter-spacing:
 
 /* ---------- case numbers on the service page count up ---------- */
 .delta .v b[data-count] { display: inline-block; }
+
+/* Site-wide fixes from the UX audit (2026-11-11) */
+/* Headlines rise without fading, so they paint at once (LCP). */
+@keyframes mo-rise-t { from { transform: translateY(22px); } }
+@media (prefers-reduced-motion: no-preference) {
+  .hero h1, .phero h1, .hero h1 .ln { animation-name: mo-rise-t; }
+}
+/* Header button: 44px tap target everywhere. */
+.hdr .pill.sm { min-height: 44px; display: inline-flex; align-items: center; }
+/* Small orange numbers in the hero index: darker orange for AA contrast. */
+.hidx .n { color: #b4501f; }
+/* Phones and tablets: the main menu as a scrollable row under the header (it was hidden below 960px). */
+@media (max-width: 959px) {
+  .hdr .wrap { height: auto; min-height: 60px; flex-wrap: wrap; row-gap: 0; }
+  .hdr .nav { display: flex; order: 10; flex: 0 0 100%; gap: 22px; overflow-x: auto; white-space: nowrap; scrollbar-width: none; margin: -4px 0 0; padding: 0 0 2px; -webkit-overflow-scrolling: touch; }
+  .hdr .nav::-webkit-scrollbar { display: none; }
+  .hdr .nav a { padding: 10px 0; min-height: 44px; display: inline-flex; align-items: center; font-size: 14px; }
+}

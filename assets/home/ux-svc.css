@@ -1,0 +1,151 @@
+/* UX polish for the service page (/seo-aeo-geo/) and the guide (/geo-guide/), zh + en.
+   Loaded after home.css, pages.css and motion.css on those four pages only.
+   1. .lnav: a quiet local nav that appears once the reader is past the intro, marks the section in view,
+      and steps aside at the closing CTA (bottom pill on phones, bar under the header on desktop).
+   2. Engine road spans the full measure at desktop, with the English step names under it.
+   3. Guide table of contents: whole rows are tap targets; two columns on desktop.
+   4. Closing CTA: heading + buttons left, "what you get" list right on desktop.
+   Resting state is always the final state; nothing here animates under prefers-reduced-motion. */
+
+/* ---------- 1. local nav ----------
+   Phones/tablets (<960px): a small floating "目錄 · <current section>" pill at the bottom (thumb reach) that opens
+   the section list; the site header already takes two rows there, so a third bar on top would be too much.
+   Desktop: a slim bar under the header, Apple-style, with the free-check link on the right.
+   --hdr-h is measured by the page script (the header's height changes with the menu row on phones). */
+html { scroll-padding-top: calc(var(--hdr-h, 60px) + 16px); }
+.sec[id] { scroll-margin-top: -36px; } /* land on the section's rule, not on its top padding */
+.lnav { display: none; }
+.lnav-js .lnav { display: block; position: fixed; z-index: 19; visibility: hidden; opacity: 0; }
+.lnav-js .lnav.on { visibility: visible; opacity: 1; }
+.lnav ol { margin: 0; padding: 0; list-style: none; }
+.lnav ol a { position: relative; display: flex; align-items: center; min-height: 44px; white-space: nowrap; color: var(--ink-2); text-decoration: none; transition: color .25s; }
+.lnav ol a:hover, .lnav ol a[aria-current] { color: var(--ink); }
+.lnav ol a[aria-current] { font-weight: 600; }
+.lnav-cta { display: none; }
+
+@media (max-width: 959px) {
+  .lnav-js .lnav {
+    left: 16px; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    display: flex; justify-content: center; pointer-events: none;
+    transform: translateY(24px);
+    transition: transform .5s var(--ease), opacity .3s ease, visibility 0s linear .5s;
+  }
+  .lnav-js .lnav.on { transform: none; transition: transform .5s var(--ease), opacity .3s ease, visibility 0s; }
+  .lnav .wrap { position: relative; padding: 0; margin: 0; max-width: 100%; pointer-events: auto; }
+  .lnav-tg {
+    display: inline-flex; align-items: center; gap: 10px; max-width: 100%; min-height: 44px; padding: 0 16px 0 18px;
+    border: 0; border-radius: 999px; background: rgba(22, 21, 19, .92); color: var(--paper);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    font: 500 14px/1.2 var(--sans); letter-spacing: .01em; cursor: pointer;
+    box-shadow: 0 1px 2px rgba(22, 21, 19, .2), 0 14px 30px -12px rgba(22, 21, 19, .55);
+  }
+  .lnav-tg .k { font-family: var(--mono); font-size: 12px; color: rgba(239, 235, 230, .62); flex: none; }
+  .lnav-tg .cur { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .lnav-tg .cv { width: 8px; height: 8px; flex: none; margin: -3px 0 0 2px; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(-135deg) translate(-2px, -2px); transition: transform .3s var(--ease); }
+  .lnav.open .lnav-tg .cv { transform: rotate(45deg); }
+  .lnav ol {
+    position: absolute; left: 50%; bottom: calc(100% + 10px); width: min(320px, calc(100vw - 32px));
+    max-height: min(62vh, 520px); overflow-y: auto; padding: 8px 0;
+    background: #f7f4ef; border-radius: 18px; box-shadow: 0 1px 2px rgba(60, 40, 20, .12), 0 30px 60px -24px rgba(60, 40, 20, .5);
+    opacity: 0; visibility: hidden; transform: translate(-50%, 8px) scale(.98); transform-origin: 50% 100%;
+    transition: opacity .2s ease, transform .3s var(--ease), visibility 0s linear .3s;
+  }
+  .lnav.open ol { opacity: 1; visibility: visible; transform: translate(-50%, 0); transition: opacity .2s ease, transform .3s var(--ease), visibility 0s; }
+  .lnav ol a { padding: 10px 20px 10px 38px; font-size: 15px; white-space: normal; line-height: 1.4; }
+  .lnav ol a[aria-current]::before { content: ""; position: absolute; left: 20px; top: 50%; width: 6px; height: 6px; margin-top: -3px; border-radius: 50%; background: var(--accent); }
+  .lnav li + li a { border-top: 1px solid var(--hair); }
+}
+
+@media (min-width: 960px) {
+  html { scroll-padding-top: calc(var(--hdr-h, 64px) + 64px); }
+  .sec[id] { scroll-margin-top: -132px; }
+  .lnav-tg { display: none; }
+  .lnav-js .lnav {
+    left: 0; right: 0; top: var(--hdr-h, 64px);
+    background: rgba(239, 235, 230, .9); -webkit-backdrop-filter: saturate(1.4) blur(14px); backdrop-filter: saturate(1.4) blur(14px);
+    border-bottom: 1px solid var(--hair);
+    transform: translateY(-100%);
+    transition: transform .5s var(--ease), opacity .3s ease, visibility 0s linear .5s;
+  }
+  .lnav-js .lnav.on { transform: none; transition: transform .5s var(--ease), opacity .3s ease, visibility 0s; }
+  .lnav .wrap { display: flex; align-items: center; gap: 24px; }
+  .lnav ol { display: flex; gap: 0 28px; flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+  .lnav ol::-webkit-scrollbar { display: none; }
+  .lnav ol a { min-height: 48px; font-size: 14px; }
+  .lnav ol a::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--accent);
+    transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease);
+  }
+  .lnav ol a[aria-current]::after { transform: none; }
+  .lnav-cta {
+    display: inline-flex; align-items: center; gap: 6px; min-height: 48px; flex: none; white-space: nowrap;
+    font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none;
+  }
+  .lnav-cta .arr { color: var(--accent); transition: transform .5s var(--ease); }
+  .lnav-cta:hover .arr { transform: translateX(3px); }
+}
+@media (min-width: 960px) and (max-width: 1279px) {
+  .lnav-cta { display: none; }
+  .lnav ol { gap: 0 22px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 20px, #000 calc(100% - 20px), transparent); mask-image: linear-gradient(90deg, transparent, #000 20px, #000 calc(100% - 20px), transparent); }
+  .lnav ol li:first-child { padding-left: 20px; } .lnav ol li:last-child { padding-right: 20px; }
+  .lnav ol a { font-size: 13px; }
+}
+@media print { .lnav { display: none !important; } }
+
+/* ---------- 2. engine road (service page) ---------- */
+.road li > small { display: block; margin-top: -6px; font-family: var(--mono); font-size: 11px; letter-spacing: .02em; color: var(--ink-3); font-weight: 400; }
+.mo .road li > small { opacity: .45; }
+.mo .road.in li > small { opacity: 1; transition: opacity .5s ease var(--t); }
+@media (max-width: 599px) { .road li > small { display: none; } } /* too narrow for the English names; the step headings carry them */
+@media (min-width: 960px) {
+  #process > .wrap > .road, #engine > .wrap > .road { max-width: none; margin-top: 72px; margin-bottom: 8px; }
+  #process > .wrap > .road li, #engine > .wrap > .road li { font-size: 17px; gap: 14px; }
+  #process > .wrap > .road li > span, #engine > .wrap > .road li > span { max-width: none; }
+  #process > .wrap > .road li > small, #engine > .wrap > .road li > small { font-size: 12px; margin-top: -8px; }
+  #process > .wrap > .road li i, #engine > .wrap > .road li i { width: 40px; height: 40px; font-size: 13px; }
+  #process > .wrap > .road .trk, #engine > .wrap > .road .trk { top: 8px; }
+  #process > .wrap > .steps, #engine > .wrap > .steps { margin-top: 56px; }
+}
+
+/* ---------- 3. guide table of contents ---------- */
+#toc ol.rules li { padding: 0; align-items: start; }
+#toc ol.rules li::before { padding-top: 16px; }
+#toc ol.rules a { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; padding: 10px 0; }
+#toc ol.rules a::after { content: "↓"; font-family: var(--mono); font-size: 13px; color: var(--ink-3); transition: transform .4s var(--ease), color .25s; }
+#toc ol.rules a:hover::after { color: var(--accent); transform: translateY(2px); }
+@media (max-width: 959px) {
+  #toc ol.rules li { grid-template-columns: 32px 1fr; }
+  #toc ol.rules a { grid-column: 2; }
+}
+@media (min-width: 960px) {
+  #toc ol.rules { display: grid; grid-auto-flow: column; grid-template-rows: repeat(4, auto); grid-template-columns: 1fr 1fr; column-gap: 32px; }
+  #toc ol.rules li { grid-template-columns: 40px 1fr; padding: 0; }
+  #toc ol.rules li::before { padding-top: 22px; }
+  #toc ol.rules a { grid-column: 2; min-height: 60px; padding: 14px 0; }
+  #toc ol.rules li:nth-child(4) { border-bottom-color: var(--ink); }
+}
+
+/* ---------- 4. closing CTA ---------- */
+html[lang="zh-Hant"] .cta-end .state .ph:first-child { margin-right: .25em; } /* "先看看 AI" + "怎麼介紹您": keep the space between Latin and Han */
+@media (min-width: 960px) {
+  .cta-end .cta-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; align-items: start; }
+  .cta-end .cta-main { grid-column: 1 / 7; }
+  .cta-end .cta-side { grid-column: 8 / -1; padding-top: 56px; }
+  .cta-end .cta-side ol.rules { max-width: none; margin-top: 0; }
+  .cta-end .cta-side .side-h { margin-top: 40px; }
+  .cta-end .cta-side .side-h + ol.rules { margin-top: 10px; }
+  .cta-end ol.rules li { grid-template-columns: 40px 1fr; padding: 16px 0; }
+  .cta-end ol.rules span { grid-column: 2; }
+}
+
+/* ---------- 5. headings that wrapped awkwardly at desktop ---------- */
+@media (min-width: 960px) {
+  #case .state { font-size: clamp(48px, 4.6vw, 68px); }
+}
+
+/* ---------- 6. small fixes ---------- */
+/* the site link at the end of a case intro kept a 44px box inline, which opened up its line; keep the tap area, drop the line gap */
+.case a { min-height: 0; padding: 12px 0; margin: -12px 0; display: inline-block; line-height: 1.5; }
+/* CTA links set as list items inside a plan card: give them a full 44px tap row */
+.plan li > a { display: inline-flex; align-items: center; min-height: 44px; }
+.plan li:has(> a)::before { top: 19px; }
