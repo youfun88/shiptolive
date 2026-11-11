@@ -231,3 +231,23 @@ html[lang="zh-Hant"] .figs.f4 .fig-n .v small { font-size: .3em; letter-spacing:
   .hdr .nav::-webkit-scrollbar { display: none; }
   .hdr .nav a { padding: 10px 0; min-height: 44px; display: inline-flex; align-items: center; font-size: 14px; }
 }
+
+/* UI sweep fixes (2026-11-11) */
+/* Page headlines that use .one were picking up the grey lede colour. */
+h1.one { color: var(--ink); }
+/* Chinese headings: break at spaces, not in the middle of a word ("夏裕 AI / 曝光引擎", not "曝 / 光引擎"); still wrap if a word can't fit. */
+html[lang^="zh"] h1, html[lang^="zh"] h2, html[lang^="zh"] h3 { word-break: keep-all; overflow-wrap: anywhere; }
+/* Long single-line headings get a size that fits their column. */
+#proof-h { font-size: clamp(32px, 6vw, 84px); }
+@media (min-width: 960px) and (max-width: 1199px) {
+  /* Hero service bar: the subtitles don't fit three across at this width. */
+  .hidx .t small { display: none; }
+  /* Two-column section headings sit in a narrow left column here. */
+  .how .state, .faq .state { font-size: 30px; }
+  .feat h2 { font-size: 48px; }
+  /* Footer: links get a full row instead of three ragged ones. */
+  .foot .cols { grid-template-columns: 1fr 1fr; }
+  .foot .cols > nav { grid-column: 1 / -1; order: 3; }
+}
+/* The shaded 每天的成效 band started too far below the section before it. */
+@media (min-width: 960px) { .plate { margin-top: 112px; } }
