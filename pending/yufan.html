@@ -99,7 +99,7 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </script>
 <h1>Developer review · SEO / AEO / GEO</h1>
 <p>Search and AI-visibility changes for Yufan to approve: titles, descriptions, schema, internal links, llms.txt, sitemap, keywords. Content changes go to the owner at <a href="/pending/">/pending</a>. Not linked from the site and not indexed. The GX10 job applies approved changes at its next run (every 8 hours).</p>
-<p class="updated">Updated 2026-11-10.</p>
+<p class="updated">Updated 2026-11-11.</p>
 
 <!-- review-ui (/pending/review-ui.js + .css, shared by /pending and /pending/yufan):
   - Language: an EN / 中文 switch shows one language. Write every explanation, note, label and question twice, each in
@@ -130,7 +130,17 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </div>
 -->
 <h2>Waiting for approval</h2>
-<p>Nothing yet.</p>
+<div class="item" data-item="[Yufan] Privacy pages: breadcrumb schema" data-type="setting" data-status="approved" data-approved="2026-11-11">
+<h3>1. [Yufan] Privacy pages: breadcrumb schema</h3>
+<p lang="en">Page checklist re-run 2026-11-11 10:00 UTC (score 91, was 92): the two privacy pages added on 2026-11-11, <a href="/privacy/" target="_blank" rel="noopener">/privacy/</a> and <a href="/en/privacy/" target="_blank" rel="noopener">/en/privacy/</a>, are the only pages that fail "breadcrumb". They have no structured data at all. This adds BreadcrumbList JSON-LD in the same form as the 9 pages fixed on 2026-11-10 (home name from the page's language, then the page name from its H1). Branch <code>seo/privacy-breadcrumb</code> (2 files). No visible change.</p>
+<p lang="zh-Hant">頁面檢查清單 2026-11-11 10:00 UTC 重跑（91 分，原 92）：今天新增的兩頁隱私權政策是唯一沒通過「麵包屑」的頁面，它們完全沒有結構化資料。這次加上 BreadcrumbList JSON-LD，格式和 2026-11-10 修好的 9 頁相同（首頁名稱依頁面語言，再接頁面 H1 名稱）。分支 <code>seo/privacy-breadcrumb</code>（2 個檔案）。頁面外觀不變。</p>
+<ul>
+<li data-pair="1"><strong lang="en">/privacy/ structured data:</strong><strong lang="zh-Hant">/privacy/ 結構化資料：</strong><span class="ba was"><b>Before</b>(none)</span><span class="ba now"><b>After</b>BreadcrumbList: 夏裕科技 (https://www.shiptolive.com/) › 隱私權政策 (https://www.shiptolive.com/privacy/)</span></li>
+<li data-pair="2"><strong lang="en">/en/privacy/ structured data:</strong><strong lang="zh-Hant">/en/privacy/ 結構化資料：</strong><span class="ba was"><b>Before</b>(none)</span><span class="ba now"><b>After</b>BreadcrumbList: 夏裕科技 Xiayu Technology (https://www.shiptolive.com/en/) › Privacy Policy (https://www.shiptolive.com/en/privacy/)</span></li>
+</ul>
+<p lang="en">Same run, already live as a technical fix: the sitemap entries for both privacy pages now list x-default like the page heads (hreflang check: "only the page head has x-default", 2 of 14 pages).</p>
+<p lang="zh-Hant">同一次執行已直接上線的技術修正：sitemap 裡兩頁隱私權政策補上 x-default，和頁面 head 一致（hreflang 檢查：「只有頁面 head 有 x-default」，14 頁中 2 頁）。</p>
+</div>
 <script>
 (function(){
   var API='https://admin.shiptolive.com/api/contact';
