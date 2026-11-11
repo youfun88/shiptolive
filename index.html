@@ -47,7 +47,7 @@
   }
   .rules span a { margin-left: 6px; white-space: nowrap; }
 </style>
-<link rel="stylesheet" href="/assets/home/ux-home.css?v=3">
+<link rel="stylesheet" href="/assets/home/ux-home.css?v=4">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -367,16 +367,62 @@
 <!-- ============ PLATE: dashboard ============ -->
 <section class="plate" id="report" aria-labelledby="plate-h">
   <div class="wrap g12">
-    <h2 class="state rv" id="plate-h" style="grid-column:1/-1;max-width:none"><span class="ph">每天的成效，都看得到</span></h2>
-    <p class="sub">成效報告每天更新：Google 造訪、預約點擊、AI 提及、網站問題。變化較慢的數字，每月整理成報告，和上個月比較。</p>
+    <div class="rp-txt">
+      <h2 class="state rv" id="plate-h"><span class="ph">每天的成效，</span><span class="ph">都看得到</span></h2>
+      <p class="sub">您隨時打開成效報告，看到的都是最新的數字。下面是一間律師事務所的真實畫面。</p>
+    </div>
+    <dl class="rp-cad rv d1">
+      <div><dt>每天更新</dt><dd>Google 造訪、網站聯絡、AI 提及、網站問題</dd></div>
+      <div><dt>每月整理</dt><dd>變化較慢的數字整理成報告，和上個月比較</dd></div>
+    </dl>
     <figure class="stage">
-      <div class="print print-wide" aria-hidden="true">
-        <div class="scr"><img src="/assets/img/home/dash-zh-overview.webp" width="1180" height="1252" loading="lazy" decoding="async" alt=""></div>
+      <div class="win" aria-hidden="true">
+        <div class="win-bar"><span class="win-dots"><i></i><i></i><i></i></span><span class="win-addr"><svg viewBox="0 0 10 12" width="9" height="11"><path d="M2.5 5V3.5a2.5 2.5 0 0 1 5 0V5" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x=".5" y="5" width="9" height="6.5" rx="1.5" fill="currentColor"/></svg><span class="wa-t"><span class="wa-pre">成效報告｜</span>WU LAW INTL PLLC</span></span><span class="win-dots ghost"></span></div>
+        <div class="dash">
+          <div class="d-top"><span class="d-logo"><i></i><i></i></span><b>夏裕 AI 曝光引擎</b><span class="d-mute">成效報告</span><span class="d-nav">您的網站</span><span class="d-lang"><i>EN</i><i class="on">中文</i></span></div>
+          <div class="d-body">
+            <div class="d-name">WU LAW INTL PLLC</div>
+            <div class="d-meta"><u>wulawintl.com</u><span class="d-mo"> · 2026年11月</span> · 更新於 2026年11月11日</div>
+            <div class="d-tabs"><span class="on">摘要</span><span>聯絡</span><span>別人怎麼找到您</span><span>待核准的內容<em>4</em></span><span>每月報告</span></div>
+            <p class="d-lead">近 28 天網站聯絡 <b>19</b> 次；Google 搜尋點進網站 <b>145</b> 次，比前 28 天 <b class="up">+51%</b>。最近一次 AI 檢測，15 題中有 <b>14</b> 題的回答提到您。</p>
+            <div class="d-h">有更多人找到您的公司嗎？</div>
+            <div class="d-tiles">
+              <div class="d-tile">
+                <span class="t-l">Google 造訪</span>
+                <span class="t-row"><span class="t-v">145</span><svg class="spark" viewBox="-4 0 128 44" width="96" height="34"><path class="sa" d="M0 31.4 L97.5 14.1 L120 7.6 L120 44 L0 44Z"/><path class="sl" pathLength="1" d="M0 31.4 L97.5 14.1 L120 7.6"/><circle cx="120" cy="7.6" r="3.6"/></svg></span>
+                <span class="t-d up"><b>▲ +51%</b> <span>比前 28 天</span></span>
+                <span class="t-m">上次檢查 11月11日</span>
+              </div>
+              <div class="d-tile">
+                <span class="t-l">網站聯絡</span>
+                <span class="t-row"><span class="t-v">19</span></span>
+                <span class="t-d">近 28 天</span>
+                <span class="t-m">即時記錄</span>
+              </div>
+              <div class="d-tile">
+                <span class="t-l">AI 回答提及</span>
+                <span class="t-row"><span class="t-v">14<small>/ 15 題</small></span><span class="t-cells"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i></span></span>
+                <span class="t-d">15 題中 14 題提到您</span>
+                <span class="t-m">上次檢查 10月30日</span>
+              </div>
+              <div class="d-tile">
+                <span class="t-l">網站問題</span>
+                <span class="t-row"><span class="t-v">1</span></span>
+                <span class="t-d"><i class="t-dot"></i>我們處理中</span>
+                <span class="t-m">上次檢查 11月11日</span>
+              </div>
+            </div>
+            <div class="d-next"><div><span class="t-l">現在最重要的事</span><b>審閱等待中的草稿，先看兩篇赴美設公司的文章</b></div><span class="d-btn">查看我們在做的事</span></div>
+            <div class="d-health">
+              <svg class="ring" viewBox="0 0 44 44" width="52" height="52"><circle cx="22" cy="22" r="19"/><circle class="arc" cx="22" cy="22" r="19" pathLength="100" style="--p:98"/></svg>
+              <div><span class="t-l">AI 搜尋健康分數 <em>估計值</em></span><span class="t-v">98<small>/ 100</small></span></div>
+              <span class="t-m">上次檢查 11月11日</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="print print-phone drift" data-drift="-0.04">
-        <div class="scr"><img src="/assets/img/home/dash-zh-mobile.webp" width="390" height="1055" loading="lazy" decoding="async" alt="成效報告的手機畫面：在 AI 回答中被提到的比例、Copilot 與 Google 點擊的變化，以及本月檢查清單。"></div>
-      </div>
-      <figcaption class="cap mono">成效報告實際畫面，數字為示範資料</figcaption>
+      <p class="sr">WU LAW INTL PLLC 的成效報告摘要：近 28 天網站聯絡 19 次；Google 搜尋點進網站 145 次，比前 28 天多 51%；最近一次 AI 檢測，15 題中有 14 題的回答提到這家事務所；網站問題 1 個，處理中；AI 搜尋健康分數估計 98 分。</p>
+      <figcaption class="cap mono">WU LAW INTL PLLC 的成效報告，<time datetime="2026-11-11">2026-11-11</time> 的真實數字（經客戶同意）</figcaption>
     </figure>
   </div>
 </section>
@@ -385,32 +431,32 @@
 <section class="sec proof" id="work" aria-labelledby="proof-h">
   <div class="wrap g12">
     <div class="rule" aria-hidden="true"></div>
-    <h2 class="state rv" id="proof-h"><span class="ph">一間台北律師事務所，</span><span class="ph">現在的四個數字</span></h2>
+    <h2 class="state rv" id="proof-h"><span class="ph">一間台北律師事務所，</span><span class="ph">之前與現在</span></h2>
     <p class="case"><span>WU LAW INTL PLLC 是紐約州律師在台北的事務所，專辦台美跨境繼承。網站是我們做的，2026 年 8 月開始用夏裕 AI 曝光引擎。數字來自成效報告，每一個都標了日期和來源。</span> <a class="mono" href="https://wulawintl.com" target="_blank" rel="noopener">wulawintl.com ↗</a></p>
-    <div class="figs f4" data-case="wulaw" data-measured="2026-11-11">
-      <div class="fig-n rv" data-stat="ai-mentions">
-        <span class="v"><span class="n" data-count="14" data-total="15">14</span><small class="u">/15</small></span>
-        <div class="mtr" aria-hidden="true"><span class="seg"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i></span><span class="dlt"><b>14</b> / 15</span></div>
-        <p class="lbl">15 個客戶會問的問題，14 題的 AI 回答提到這家事務所。</p>
-        <p class="src mono"><time datetime="2026-10-30">2026-10-30</time>・夏裕 AI 能見度檢測：ChatGPT、Gemini、Claude、Perplexity</p>
+    <div class="figs f4 ba2" data-case="wulaw" data-measured="2026-11-11">
+      <div class="fig-n rv" data-stat="ai-citations">
+        <p class="lbl">AI 回答引用網站</p>
+        <span class="v"><span class="was"><span class="sr">從 </span>0</span><span class="to"><span aria-hidden="true">→</span><span class="sr">到</span></span><span class="n" data-count="26" data-from="0">26</span><small class="u">/ 45 則</small></span>
+        <div class="mtr" aria-hidden="true"><span class="trk" style="--from:0;--to:.578"><span class="base"></span><span class="gain all"></span></span></div>
+        <p class="src mono"><span><time datetime="2026-10-26">2026-10-26</time> → <time datetime="2026-10-30">10-30</time></span><span>我們的 AI 檢測</span></p>
       </div>
-      <div class="fig-n rv d1" data-stat="google-visits">
-        <span class="v"><span class="n" data-count="145">145</span></span>
-        <div class="mtr" aria-hidden="true"><span class="trk" style="--from:.662"><span class="base"></span><span class="gain"></span></span><span class="dlt"><b>+51%</b></span></div>
-        <p class="lbl">最近 28 天來自 Google 的造訪，比前 28 天多 51%。</p>
-        <p class="src mono"><time datetime="2026-11-11">2026-11-11</time>・Google Search Console</p>
+      <div class="fig-n rv d1" data-stat="google-top3">
+        <p class="lbl">排在 Google 前 3 名的搜尋字詞</p>
+        <span class="v"><span class="was"><span class="sr">從 </span>5</span><span class="to"><span aria-hidden="true">→</span><span class="sr">到</span></span><span class="n" data-count="21" data-from="5">21</span><small class="u">個</small></span>
+        <div class="mtr" aria-hidden="true"><span class="trk" style="--from:.238"><span class="base"></span><span class="gain"></span></span></div>
+        <p class="src mono"><span><time datetime="2026-10-30">2026-10-30</time> → <time datetime="2026-11-08">11-08</time></span><span>Google Search Console</span></p>
       </div>
-      <div class="fig-n rv d2" data-stat="booking-clicks">
-        <span class="v"><span class="n" data-count="19" data-from="0">19</span></span>
-        <div class="mtr" aria-hidden="true"><span class="trk"><span class="base"></span><span class="gain all"></span></span><span class="dlt">0 → <b>19</b></span></div>
-        <p class="lbl">最近 30 天的預約點擊。追蹤的頭 30 天是 0。</p>
-        <p class="src mono"><time datetime="2026-11-11">2026-11-11</time>・網站記錄，不記錄姓名或 Email</p>
+      <div class="fig-n rv" data-stat="google-clicks">
+        <p class="lbl">28 天內從 Google 搜尋點進網站</p>
+        <span class="v"><span class="was"><span class="sr">從 </span>112</span><span class="to"><span aria-hidden="true">→</span><span class="sr">到</span></span><span class="n" data-count="145" data-from="112">145</span><small class="u">次</small></span>
+        <div class="mtr" aria-hidden="true"><span class="trk" style="--from:.772"><span class="base"></span><span class="gain"></span></span></div>
+        <p class="src mono"><span><time datetime="2026-10-26">2026-10-26</time> → <time datetime="2026-11-11">11-11</time></span><span>Google Search Console</span></p>
       </div>
-      <div class="fig-n rv d2" data-stat="google-top3">
-        <span class="v"><span class="n" data-count="21" data-from="5">21</span><small class="u">個</small></span>
-        <div class="mtr" aria-hidden="true"><span class="trk" style="--from:.238"><span class="base"></span><span class="gain"></span></span><span class="dlt">5 → <b>21</b></span></div>
-        <p class="lbl">排在 Google 前 3 名的搜尋字詞，從 5 個增加到 21 個。</p>
-        <p class="src mono"><time datetime="2026-10-30">2026-10-30</time> → <time datetime="2026-11-08">2026-11-08</time>・Google Search Console</p>
+      <div class="fig-n rv d1" data-stat="booking-clicks">
+        <p class="lbl">30 天內的預約點擊</p>
+        <span class="v"><span class="was"><span class="sr">從 </span>0</span><span class="to"><span aria-hidden="true">→</span><span class="sr">到</span></span><span class="n" data-count="19" data-from="0">19</span><small class="u">次</small></span>
+        <div class="mtr" aria-hidden="true"><span class="trk"><span class="base"></span><span class="gain all"></span></span></div>
+        <p class="src mono"><span>追蹤的頭 30 天 → <time datetime="2026-11-11">2026-11-11</time></span><span>網站記錄，不記錄姓名或 Email</span></p>
       </div>
     </div>
     <p class="case"><span>山行接駁 Go Hike（登山接駁預約）：30 天內的預約與表單從 0 到 23 筆（追蹤的頭 30 天 → 2026 年 11 月初的最近 30 天，網站記錄）。</span> <a class="mono" href="/seo-aeo-geo/#case-gohike">看完整案例 →</a></p>
