@@ -45,7 +45,7 @@
     #fit .rules li:nth-last-child(2) { border-bottom-color: var(--hair); }
   }
 </style>
-<link rel="stylesheet" href="/assets/home/ux-home.css?v=4">
+<link rel="stylesheet" href="/assets/home/ux-home.css?v=5">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -368,35 +368,73 @@
 <section class="sec proof" id="work" aria-labelledby="proof-h">
   <div class="wrap g12">
     <div class="rule" aria-hidden="true"></div>
-    <h2 class="state rv" id="proof-h">A Taipei law firm, before and&nbsp;now</h2>
-    <p class="case"><span>WU LAW INTL PLLC is a New York–licensed attorney’s firm in Taipei handling US–Taiwan inheritance. We built its bilingual site, and it has run on the Xiayu AI Visibility Engine since August 2026. Every number comes from the results report, with its date and source.</span> <a class="mono" href="https://wulawintl.com" target="_blank" rel="noopener">wulawintl.com ↗</a></p>
-    <div class="figs f4 ba2" data-case="wulaw" data-measured="2026-11-11">
-      <div class="fig-n rv" data-stat="ai-citations">
-        <p class="lbl">AI answers citing the site</p>
-        <span class="v"><span class="was"><span class="sr">from </span>0</span><span class="to"><span aria-hidden="true">→</span><span class="sr">to</span></span><span class="n" data-count="26" data-from="0">26</span><small class="u">of 45</small></span>
-        <div class="mtr" aria-hidden="true"><span class="trk" style="--from:0;--to:.578"><span class="base"></span><span class="gain all"></span></span></div>
-        <p class="src mono"><span><time datetime="2026-10-26">Oct 26</time> → <time datetime="2026-10-30">Oct 30, 2026</time></span><span>our AI check</span></p>
+    <h2 class="state rv" id="proof-h"><span class="ph">Customers ask AI.</span> <span class="ph">AI names our&nbsp;clients.</span></h2>
+    <p class="case"><span>These are the AI answers, word for word. The firm they name is our client <span class="nw">WU LAW INTL PLLC</span>, a Taipei practice focused on US–Taiwan inheritance. We built its bilingual site, and it has run on the Xiayu AI Visibility Engine since August 2026.</span> <a class="mono" href="https://wulawintl.com" target="_blank" rel="noopener">wulawintl.com ↗</a></p>
+
+    <div class="pf-ai">
+      <div class="pf-hl delta rv" data-case="wulaw">
+        <p class="pf-k">AI answers citing the site</p>
+        <p class="pf-big"><span class="was"><span class="sr">from </span>0</span><span class="to"><span aria-hidden="true">→</span><span class="sr">to</span></span><b data-count="26" data-from="0">26</b><small>of 45</small></p>
+        <p class="pf-t">First check (<time datetime="2026-10-26">Oct 26, 2026</time>): AI answers cited the site 0 times. Four days later (<time datetime="2026-10-30">Oct 30</time>): 26 of 45 answers cited it.</p>
+        <div class="pf-q15">
+          <p class="pf-q15-n">14<small>of 15</small></p>
+          <p class="pf-t">Of 15 questions customers ask, AI answers to 14 named the firm (<time datetime="2026-10-30">Oct 30, 2026</time>)</p>
+          <span class="pf-cells" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i></span>
+        </div>
       </div>
-      <div class="fig-n rv d1" data-stat="google-top3">
-        <p class="lbl">Search terms in Google’s top 3</p>
-        <span class="v"><span class="was"><span class="sr">from </span>5</span><span class="to"><span aria-hidden="true">→</span><span class="sr">to</span></span><span class="n" data-count="21" data-from="5">21</span></span>
-        <div class="mtr" aria-hidden="true"><span class="trk" style="--from:.238"><span class="base"></span><span class="gain"></span></span></div>
-        <p class="src mono"><span><time datetime="2026-10-30">Oct 30</time> → <time datetime="2026-11-08">Nov 8, 2026</time></span><span>Google Search Console</span></p>
-      </div>
-      <div class="fig-n rv" data-stat="google-clicks">
-        <p class="lbl">Clicks from Google search in 28 days</p>
-        <span class="v"><span class="was"><span class="sr">from </span>112</span><span class="to"><span aria-hidden="true">→</span><span class="sr">to</span></span><span class="n" data-count="145" data-from="112">145</span></span>
-        <div class="mtr" aria-hidden="true"><span class="trk" style="--from:.772"><span class="base"></span><span class="gain"></span></span></div>
-        <p class="src mono"><span><time datetime="2026-10-26">Oct 26</time> → <time datetime="2026-11-11">Nov 11, 2026</time></span><span>Google Search Console</span></p>
-      </div>
-      <div class="fig-n rv d1" data-stat="booking-clicks">
-        <p class="lbl">Booking clicks in 30 days</p>
-        <span class="v"><span class="was"><span class="sr">from </span>0</span><span class="to"><span aria-hidden="true">→</span><span class="sr">to</span></span><span class="n" data-count="19" data-from="0">19</span></span>
-        <div class="mtr" aria-hidden="true"><span class="trk"><span class="base"></span><span class="gain all"></span></span></div>
-        <p class="src mono"><span>First 30 days tracked → <time datetime="2026-11-11">Nov 11, 2026</time></span><span>site log, no names or emails</span></p>
+
+      <div class="pf-chats">
+        <figure class="chat rv">
+          <div class="chat-card">
+            <p class="chat-who"><i aria-hidden="true"></i>ChatGPT</p>
+            <p class="chat-q" lang="zh-Hant"><span class="sr" lang="en">Customer asks: </span>美國公民在台灣有帳戶和房產，要怎麼做資產規劃避免子女之後繼承麻煩？<span class="chat-q-tr" lang="en"><span class="mono">Translated</span> As a US citizen with accounts and property in Taiwan, how should I plan my assets so my children avoid inheritance trouble later?</span></p>
+            <blockquote class="chat-a" lang="zh-Hant"><p><span class="sr" lang="en">AI answer: </span><mark>WU LAW INTL PLLC</mark>（台北｜中英雙語跨境繼承）— 專做海外繼承人代辦台灣遺產稅結算、銀行繼承與地政過戶，網站有英/中FAQ，對您這類「美國公民＋台灣資產」情境很上手。</p></blockquote>
+            <p class="chat-tr"><span class="mono">Translated</span> <b>WU LAW INTL PLLC</b> (Taipei | bilingual Chinese–English cross-border inheritance) — focuses on handling Taiwan estate tax settlement, bank inheritance and land-office title transfers for overseas heirs; its site has English/Chinese FAQs, and it knows situations like yours (“US citizen + Taiwan assets”) well.</p>
+          </div>
+          <figcaption class="chat-src mono">Verbatim excerpt from the AI answer · <span class="nw"><time datetime="2026-10-30">Oct 30, 2026</time> AI visibility check</span></figcaption>
+        </figure>
+        <figure class="chat rv d1">
+          <div class="chat-card">
+            <p class="chat-who"><i aria-hidden="true"></i>Gemini</p>
+            <p class="chat-q" lang="zh-Hant"><span class="sr" lang="en">Customer asks: </span>推薦處理台美跨境繼承的律師<span class="chat-q-tr" lang="en"><span class="mono">Translated</span> Recommend a lawyer for US–Taiwan cross-border inheritance</span></p>
+            <blockquote class="chat-a" lang="zh-Hant"><p><span class="sr" lang="en">AI answer: </span><mark>WU LAW INTL PLLC</mark> 國際法律顧問（<mark><span class="nw">吳家華律師</span> / <span class="nw">Queenie Wu</span></mark>）… 推薦理由：吳家華律師為美國紐約州執照律師暨台灣外國法事務律師，在台北與紐約皆有辦公室，專精於協助在美僑胞及二代移民遠端處理台灣遺產申報、不動產繼承與授權代辦…</p></blockquote>
+            <p class="chat-tr"><span class="mono">Translated</span> <b>WU LAW INTL PLLC</b> International Legal Counsel (<b>attorney Queenie Wu</b>) … Why it’s recommended: Attorney Wu is a New York–licensed attorney and a registered foreign legal consultant in Taiwan, with offices in both Taipei and New York, focused on helping Taiwanese Americans and second-generation immigrants handle Taiwan estate filings, real-estate inheritance and authorized representation remotely…</p>
+          </div>
+          <figcaption class="chat-src mono">Verbatim excerpt from the AI answer · <span class="nw"><time datetime="2026-10-30">Oct 30, 2026</time> AI visibility check</span></figcaption>
+        </figure>
+        <figure class="chat rv">
+          <div class="chat-card">
+            <p class="chat-who"><i aria-hidden="true"></i>ChatGPT</p>
+            <p class="chat-q"><span class="sr">Customer asks: </span>English-speaking lawyer in Taipei for US-Taiwan cross-border inheritance?</p>
+            <blockquote class="chat-a"><p><span class="sr">AI answer: </span><mark>WU LAW INTL PLLC / WU LAW GROUP</mark> (Taipei) — assists overseas heirs with Taiwan inheritance registration, TECO authentication, estate tax filings, and coordination with US probate counsel</p></blockquote>
+          </div>
+          <figcaption class="chat-src mono">Verbatim excerpt from the AI answer · <span class="nw"><time datetime="2026-10-30">Oct 30, 2026</time> AI visibility check</span></figcaption>
+        </figure>
       </div>
     </div>
-    <p class="case"><span>Go Hike 山行接駁, a hiking-shuttle booking site: bookings and forms in 30 days went from 0 (first 30 days tracked) to 23 (last 30 days, early November 2026, site log).</span> <a class="mono" href="/en/seo-aeo-geo/#case">Both cases →</a></p>
+
+    <div class="pf-duo">
+      <div class="pf-duo-h">
+        <h3 class="pf-h3">Two clients, before and after</h3>
+        <p class="sub">The large figure is the change; the raw numbers, dates and sources sit under it.</p>
+      </div>
+      <article class="pf-cl delta" data-case="wulaw" aria-labelledby="pf-wu">
+        <header class="pf-cl-h"><h4 id="pf-wu">WU LAW INTL PLLC</h4><p>Taipei law firm · US–Taiwan inheritance</p></header>
+        <div class="pf-r"><p class="pf-l">Search terms in Google’s top 3</p><p class="pf-x">4<small class="x">×</small></p><p class="pf-s mono"><span>5 → 21</span><span><time datetime="2026-10-30">Oct 30</time> → <time datetime="2026-11-08">Nov 8, 2026</time></span><span>Search Console</span></p></div>
+        <div class="pf-r"><p class="pf-l">Clicks from Google search</p><p class="pf-x">+<b data-count="51" data-from="0">51</b><small>%</small></p><p class="pf-s mono"><span>145 in the last 28 days vs the 28 before</span><span><time datetime="2026-11-11">Nov 11, 2026</time></span><span>Search Console</span></p></div>
+        <div class="pf-r"><p class="pf-l">Booking clicks in 30 days</p><p class="pf-x"><span class="was"><span class="sr">from </span>0</span><span class="to"><span aria-hidden="true">→</span><span class="sr">to</span></span><b data-count="19" data-from="0">19</b></p><p class="pf-s mono"><span>First 30 days tracked → latest 30</span><span><time datetime="2026-11-11">Nov 11, 2026</time></span><span>site log, no names or emails</span></p></div>
+        <div class="pf-r"><p class="pf-l">AI answers citing the site</p><p class="pf-x"><span class="was"><span class="sr">from </span>0</span><span class="to"><span aria-hidden="true">→</span><span class="sr">to</span></span>26<small>of 45</small></p><p class="pf-s mono"><span><time datetime="2026-10-26">Oct 26</time> → <time datetime="2026-10-30">Oct 30, 2026</time></span><span>our AI visibility check</span></p></div>
+        <a class="pf-go mono" href="https://wulawintl.com" target="_blank" rel="noopener">wulawintl.com ↗</a>
+      </article>
+      <article class="pf-cl delta" data-case="gohike" aria-labelledby="pf-gh">
+        <header class="pf-cl-h"><h4 id="pf-gh">Go Hike 山行接駁</h4><p>Private hiking shuttles · gohike.tw</p></header>
+        <div class="pf-r"><p class="pf-l">Search terms on Google’s page 1</p><p class="pf-x">2<small class="x">×</small></p><p class="pf-s mono"><span>19 → 39</span><span><time datetime="2026-10-31">Oct 31</time> → <time datetime="2026-11-08">Nov 8, 2026</time></span><span>Search Console</span></p></div>
+        <div class="pf-r"><p class="pf-l">Google clicks per 28 days</p><p class="pf-x">2.5<small class="x">×</small></p><p class="pf-s mono"><span>32 → 79</span><span>within one month</span><span>Search Console</span></p></div>
+        <div class="pf-r"><p class="pf-l">Bookings and forms in 30 days</p><p class="pf-x"><span class="was"><span class="sr">from </span>0</span><span class="to"><span aria-hidden="true">→</span><span class="sr">to</span></span><b data-count="23" data-from="0">23</b></p><p class="pf-s mono"><span>First 30 days tracked → latest 30</span><span>early Nov 2026</span><span>site log</span></p></div>
+        <div class="pf-r"><p class="pf-l">Claude citing the site</p><p class="pf-x"><span class="was"><span class="sr">from </span>0%</span><span class="to"><span aria-hidden="true">→</span><span class="sr">to</span></span><b data-count="50" data-from="0">50</b><small>%</small></p><p class="pf-s mono"><span><time datetime="2026-10">Oct</time> → <time datetime="2026-11">Nov 2026</time></span><span> · our AI visibility check</span></p></div>
+        <a class="pf-go mono" href="/en/seo-aeo-geo/#case">Full case →</a>
+      </article>
+    </div>
 
     <div class="clients">
       <div class="lhs"><h3 class="ctitle">Clients and work</h3><p class="sub hide-m" style="margin-top:10px">Sites, systems and platforms. All live.</p></div>
