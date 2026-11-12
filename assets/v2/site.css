@@ -286,3 +286,4 @@ a.card:hover { border-color: var(--ink3); transform: translateY(-2px); }
 }
 .why-art { width: 100%; height: auto; border-radius: 10px; margin-bottom: 8px; }
 .cap-art { width: 100%; height: auto; border-radius: 10px; margin-bottom: 16px; }
+.office-art { width: 100%; max-width: 520px; height: auto; margin-top: 28px; border-radius: var(--r); }
