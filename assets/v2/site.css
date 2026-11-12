@@ -605,3 +605,4 @@ body { font-size: 16px; }
 @keyframes mcpop { 0% { opacity: 0; transform: scale(.4); } 100% { opacity: 1; transform: scale(1); } }
 .mc-flash { animation: mcflash .6s ease; } @keyframes mcflash { 0% { background: #fff6c9; } 100% { background: transparent; } }
 @media (max-width: 520px) { .mc-cards b { font-size: 20px; } .mc-cards small { display: none; } .mc-body { padding: 12px; } }
+

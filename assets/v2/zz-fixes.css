@@ -1,0 +1,9 @@
+/* ---------- contrast fixes (Lighthouse, WCAG AA) ---------- */
+:root { --ink3: #625e58; --accent-ink: #a3441a; }
+.pill.orange, .cta-box .pill.orange { background: #b8501d; border-color: #b8501d; }
+.pill.orange:hover { background: #9c4317; border-color: #9c4317; }
+.hero .motto b, .hv-ai .cite { color: var(--accent-ink); }
+.hv-ai .cite { background: #b8501d; color: #fff; }
+.kpi .d.up { color: #1f5e37; }
+.dash-top span, .dash figcaption { color: #5d5953; }
+.lk { color: #2a62c4; text-decoration: underline; }
