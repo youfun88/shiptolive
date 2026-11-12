@@ -15,7 +15,7 @@ import json, re, sys, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = pathlib.Path(sys.argv[1])
 BASE = 'https://www.shiptolive.com'
-V = '29'
+V = '30'
 CSS = ''
 
 PAGES = {  # slug -> (zh path, en path)
@@ -69,6 +69,7 @@ def header(lang, slug):
         </div>
       </div>
       <a href="{p(lang,'engine')}"{cur('engine')}>{t['engine']}</a>
+      {'<a href="/ai-search/"' + (' aria-current="page"' if slug == 'articles' else '') + '>知識庫</a>' if lang == 'zh' else ''}
       <a href="{p(lang,'about')}"{cur('about')}>{t['about']}</a>
       <a href="{p(lang,'home')}#contact">{t['contact']}</a>
       <a class="lang" href="{p(other,slug)}" hreflang="{L[other]['htmllang']}" lang="{L[other]['htmllang']}" aria-label="{t['other_label']}">{t['other']}</a>

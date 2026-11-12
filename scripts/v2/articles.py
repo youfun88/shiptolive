@@ -113,7 +113,7 @@ def run(b):
     <div class="grid3">{''.join(card(x) for x in related)}</div>
   </div>
 </section>'''
-        html = b.head('zh', 'articles', meta) + b.header('zh', 'seo-aeo-geo') + '\n<main id="main">\n' + body + '\n</main>\n' + b.footer('zh') + \
+        html = b.head('zh', 'articles', meta) + b.header('zh', 'articles') + '\n<main id="main">\n' + body + '\n</main>\n' + b.footer('zh') + \
             f'\n<script src="/assets/v2/all.js?v={css_v}" defer></script>\n</body>\n</html>\n'
         out = b.ROOT / url.strip('/') / 'index.html'
         out.parent.mkdir(parents=True, exist_ok=True)
@@ -183,7 +183,7 @@ def run(b):
   <div class="wrap">{groups}
   </div>
 </section>'''
-    html = b.head('zh', 'articles', meta) + b.header('zh', 'seo-aeo-geo') + '\n<main id="main">\n' + body + '\n</main>\n' + b.footer('zh') + \
+    html = b.head('zh', 'articles', meta) + b.header('zh', 'articles') + '\n<main id="main">\n' + body + '\n</main>\n' + b.footer('zh') + \
         f'\n<script src="/assets/v2/all.js?v={css_v}" defer></script>\n</body>\n</html>\n'
     out = b.ROOT / HUB.strip('/') / 'index.html'
     out.parent.mkdir(parents=True, exist_ok=True)
