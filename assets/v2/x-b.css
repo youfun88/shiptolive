@@ -166,3 +166,37 @@
   @keyframes ctafloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
   @keyframes ctanudge { 0%, 60%, 100% { transform: none; } 30% { transform: translateX(4px); } }
 }
+
+/* ---------- AI search page: why-us, start steps (audit B, 2026-11-13) ---------- */
+.hx-more { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; font-size: 15px; }
+.hx-more span { color: var(--ink3); }
+.why4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+@media (max-width: 1000px) { .why4 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .why4 { grid-template-columns: 1fr; } }
+.why4 > div { background: var(--card); border: 1px solid var(--hair); border-radius: var(--r); padding: 22px 22px 24px; display: grid; gap: 8px; align-content: start; }
+.why4 i { width: 46px; height: 46px; border-radius: 12px; background: var(--ink); display: grid; place-items: center; margin-bottom: 6px; }
+.why4 i svg { width: 24px; height: 24px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.why4 > div:first-child i { background: var(--accent); }
+.why4 b { font-size: 18px; }
+.why4 p { color: var(--ink2); font-size: 15px; }
+.start3 { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; position: relative; }
+@media (max-width: 900px) { .start3 { grid-template-columns: 1fr; } }
+.start3 li { background: var(--card); border: 1px solid var(--hair); border-radius: var(--r); padding: 24px 24px 22px; display: grid; gap: 8px; align-content: start; position: relative; }
+.start3 .s-n { width: 40px; height: 40px; border-radius: 50%; background: var(--ink); color: #fff; font: 700 16px/40px var(--mono); text-align: center; }
+.start3 li:first-child .s-n { background: var(--accent); }
+.start3 b { font-size: 19px; margin-top: 4px; }
+.start3 p { color: var(--ink2); font-size: 15px; }
+.start3 .tlink { justify-self: start; margin-top: 6px; }
+@media (min-width: 901px) { .start3 li + li::before { content: ""; position: absolute; left: -18px; top: 44px; width: 18px; height: 2px; background: var(--accent); } }
+@media (prefers-reduced-motion: no-preference) {
+  .js .why4.rv > div, .js .start3.rv li { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .7s var(--ease); }
+  .js .why4.rv.in > div, .js .start3.rv.in li { opacity: 1; transform: none; }
+  .js .why4.rv.in > div:nth-child(2), .js .start3.rv.in li:nth-child(2) { transition-delay: .12s; }
+  .js .why4.rv.in > div:nth-child(3), .js .start3.rv.in li:nth-child(3) { transition-delay: .24s; }
+  .js .why4.rv.in > div:nth-child(4) { transition-delay: .36s; }
+}
+/* SEO/AEO/GEO chips: keep text contrast during the highlight transition */
+@media (prefers-reduced-motion: no-preference) {
+  .js .hv-ai .c3 span { background: #ece7e0; color: #3d3a36; box-shadow: inset 0 0 0 1.5px transparent; transition: background .4s, box-shadow .4s; }
+  .js .hv-ai .c3 span.on { background: #fbeee6; color: #8f3a12; box-shadow: inset 0 0 0 1.5px #d7612a; }
+}

@@ -101,3 +101,6 @@
 /* dashboard inside a dark section (About 自主研發) keeps dark text */
 .sec.dark .dash { color: var(--ink); }
 .sec.dark .dash .dash-h, .sec.dark .dash .kpi b, .sec.dark .dash .now p, .sec.dark .dash .health b, .sec.dark .dash .health p { color: var(--ink); }
+
+/* auditor A: booking alternative beside the free-check form */
+.book-alt { margin-top: 20px; font-weight: 600; font-size: 15.5px; }

@@ -29,6 +29,7 @@ ld: [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "沒有�
     <li><a href="#types">中小企業先做哪幾種</a></li>
     <li><a href="#how">怎麼加、怎麼檢查</a></li>
     <li><a href="#limits">它做不到的事</a></li>
+    <li><a href="#fields">LocalBusiness 欄位檢查表</a></li>
     <li><a href="#faq">常見問題</a></li>
   </ol>
 </nav>
@@ -102,6 +103,23 @@ ld: [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "沒有�
 <h2 id="limits">結構化資料做不到的事</h2>
 <p>結構化資料不能讓 AI「一定」推薦您，也不能取代頁面內容。Google 在說明 AI 摘要與 AI 模式時明確寫到：沒有需要特別加入的 schema.org 結構化資料，也不需要另外做給 AI 看的檔案；能不能出現，仍取決於一般搜尋的基本功，例如頁面被收錄、內容以文字呈現、結構化資料與頁面文字一致。</p>
 <p>所以順序很重要：先把<strong>頁面上的答案寫清楚</strong>，再用結構化資料把關鍵資訊標示正確。如果結構化資料寫的和頁面不一樣，例如標示了頁面上沒有的評價或價格，反而可能被視為誤導。想了解完整的 AI 搜尋優化做法，可以看<a href="/seo-aeo-geo/">夏裕科技的 AI 搜尋優化服務</a>或<a href="/geo-guide/">GEO 指南</a>。</p>
+
+<h2 id="fields">LocalBusiness 欄位檢查表</h2>
+<p>在地業者最常用的是 LocalBusiness 類型。Google 的說明文件把 <code>name</code> 與 <code>address</code> 列為必要欄位，其他是建議欄位。可以用這張表檢查自己的網站：</p>
+<table>
+  <thead><tr><th>欄位</th><th>Google 文件</th><th>填什麼</th></tr></thead>
+  <tbody>
+    <tr><td><code>name</code></td><td>必要</td><td>公司或店家名稱，和招牌、商家檔案一致</td></tr>
+    <tr><td><code>address</code></td><td>必要</td><td>完整地址，含行政區與郵遞區號</td></tr>
+    <tr><td><code>telephone</code></td><td>建議</td><td>主要聯絡電話</td></tr>
+    <tr><td><code>url</code></td><td>建議</td><td>這個據點的網頁網址</td></tr>
+    <tr><td><code>openingHoursSpecification</code></td><td>建議</td><td>營業日與營業時間</td></tr>
+    <tr><td><code>geo</code></td><td>建議</td><td>經緯度</td></tr>
+    <tr><td><code>priceRange</code></td><td>建議</td><td>價格區間的簡短描述</td></tr>
+  </tbody>
+</table>
+<figure class="dg"><svg viewBox="0 0 860 274" role="img" aria-label="結構化資料檢查清單：四個項目" font-family="Inter, 'PingFang TC', 'Noto Sans TC', sans-serif" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="860" height="274" fill="#f7f5f2"/><rect x="24" y="20" width="812" height="234" rx="16" fill="#fff" stroke="#ddd6cd"/><text x="52" y="60" font-size="17" fill="#161513" font-weight="700" text-anchor="start">加上結構化資料後的檢查</text><rect x="52" y="88" width="24" height="24" rx="6" fill="#fbeee6" stroke="#d7612a"/><path d="M57 100 l5 5 9-10" fill="none" stroke="#d7612a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="90" y="106" font-size="15" fill="#161513" font-weight="400" text-anchor="start">用 Google 的複合式搜尋結果測試檢查錯誤</text><rect x="52" y="132" width="24" height="24" rx="6" fill="#fbeee6" stroke="#d7612a"/><path d="M57 144 l5 5 9-10" fill="none" stroke="#d7612a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="90" y="150" font-size="15" fill="#161513" font-weight="400" text-anchor="start">結構化資料的內容和頁面上看得到的文字一致</text><rect x="52" y="176" width="24" height="24" rx="6" fill="#fbeee6" stroke="#d7612a"/><path d="M57 188 l5 5 9-10" fill="none" stroke="#d7612a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="90" y="194" font-size="15" fill="#161513" font-weight="400" text-anchor="start">名稱、地址、電話和商家檔案一致</text><rect x="52" y="220" width="24" height="24" rx="6" fill="#fbeee6" stroke="#d7612a"/><path d="M57 232 l5 5 9-10" fill="none" stroke="#d7612a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="90" y="238" font-size="15" fill="#161513" font-weight="400" text-anchor="start">營業時間調整時一起更新</text></svg><figcaption>結構化資料要和頁面內容一致，否則可能被忽略。</figcaption></figure>
+<p class="src">參考資料：Google 搜尋中心，<a href="https://developers.google.com/search/docs/appearance/structured-data/local-business" rel="noopener">Local business (LocalBusiness) structured data</a>。</p>
 
 <section class="faq" id="faq" aria-labelledby="faq-h">
   <h2 id="faq-h">常見問題</h2>

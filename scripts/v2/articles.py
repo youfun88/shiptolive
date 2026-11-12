@@ -82,7 +82,9 @@ def run(b):
         related = [x for x in arts if x is not a and x.get('category') == a.get('category')][:3]
         if len(related) < 3:
             related += [x for x in arts if x is not a and x not in related][:3 - len(related)]
-        body = f'''<article class="post">
+        body = f'''<div class="readbar" aria-hidden="true"><i></i></div>
+<script>(function(){{var b=document.querySelector('.readbar i'),a=document.querySelector('.post-body');if(!b||!a)return;var t=0;function u(){{t=0;var r=a.getBoundingClientRect(),h=r.height-innerHeight*.6,p=h>0?Math.min(1,Math.max(0,-r.top/h)):1;b.style.transform='scaleX('+p+')';}}addEventListener('scroll',function(){{if(!t)t=requestAnimationFrame(u);}},{{passive:true}});u();}})();</script>
+<article class="post">
   <header class="post-head">
     <div class="wrap">
       <p class="crumbs"><a href="/">首頁</a> / <a href="{HUB}">{HUB_NAME}</a> / {a.get('category', '')}</p>
@@ -176,6 +178,25 @@ def run(b):
           <circle cx="360" cy="412" r="13" fill="#d7612a"/><path d="M354 412 l4 4 8 -9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
         </g>
       </svg>
+    </div>
+  </div>
+</section>
+<section class="sec hub-start" aria-labelledby="start-h">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">START HERE</p><h2 class="h2" id="start-h">第一次接觸 AI 搜尋優化？照這 3 篇讀</h2></div>
+    <ol class="start-path">
+      <li><a href="{HUB}what-is-geo/"><span class="n">1</span><b>先懂觀念</b><span>GEO 是什麼？讓 AI 推薦您的公司</span></a></li>
+      <li><a href="{HUB}check-ai-visibility/"><span class="n">2</span><b>再看現況</b><span>怎麼檢查 ChatGPT、Gemini 有沒有提到您</span></a></li>
+      <li><a href="{HUB}sme-30-day-plan/"><span class="n">3</span><b>開始動手</b><span>中小企業 AI 搜尋優化 30 天行動清單</span></a></li>
+    </ol>
+    <h2 class="h2" style="margin:56px 0 18px">依您的問題找文章</h2>
+    <div class="qmap">
+      <a href="{HUB}choose-geo-agency/"><span class="q">台北有哪些公司在做 AI 搜尋優化（GEO）？</span><span class="go">台北 GEO 公司怎麼選 →</span></a>
+      <a href="{HUB}get-recommended-by-chatgpt/"><span class="q">想讓 ChatGPT 推薦我的公司，該怎麼做？</span><span class="go">怎麼讓 ChatGPT 推薦我的公司 →</span></a>
+      <a href="{HUB}google-ai-overviews/"><span class="q">怎麼讓公司出現在 Google 的 AI 摘要裡？</span><span class="go">Google AI 摘要的做法 →</span></a>
+      <a href="{HUB}seo-company-ai/"><span class="q">找台北 SEO 公司，要不要一起做 AEO、GEO？</span><span class="go">找 SEO 公司前先問這些 →</span></a>
+      <a href="{HUB}sme-30-day-plan/"><span class="q">中小企業要怎麼提升在 AI 搜尋的曝光？</span><span class="go">30 天行動清單 →</span></a>
+      <a href="{HUB}geo-cost/"><span class="q">AI 搜尋優化（GEO）費用大概怎麼算？</span><span class="go">影響報價的因素 →</span></a>
     </div>
   </div>
 </section>

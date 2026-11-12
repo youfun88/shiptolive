@@ -57,3 +57,11 @@ main:has(#services) :is(h2, .svc .hook, .results .l) { text-wrap: balance; }
   #results .results > div:nth-child(3) { border-left: 0; padding-left: 0; }
   #results .results > div:nth-child(n+3) { border-top: 1px solid var(--hair); }
 }
+
+/* auditor A: homepage hero tertiary link, CTA rows */
+.hero-sub-link { margin-top: 14px; font-size: 15px; }
+.cta-box .btns { flex-wrap: wrap; }
+@media (max-width: 520px) { .hero .btns .pill { flex: 1 1 100%; } .cta-box .btns .pill { flex: 1 1 100%; } }
+/* second button on orange CTA boxes: dark fill keeps AA contrast */
+.cta-box .pill.cta-ghost { background: #161513; border-color: #161513; color: #fff; }
+.cta-box .pill.cta-ghost:hover { background: #fff; border-color: #fff; color: #161513; }

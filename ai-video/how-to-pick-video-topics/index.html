@@ -101,6 +101,11 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
   .compare { grid-template-columns: 1fr; }
   .tool { grid-template-columns: 1fr; }
 }
+@media (max-width: 600px) {
+  .stats { grid-template-columns: 1fr; }
+  .stats > * { min-width: 0; }
+  table { display: block; overflow-x: auto; max-width: 100%; }
+}
 </style>
 <link rel="stylesheet" href="/assets/home/article.css?v=1">
 <!-- Google tag (gtag.js) -->
@@ -184,16 +189,16 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr">
   <div class="wrap">
-    <a class="brand" href="/en/" aria-label="夏裕科技 首頁 · home"><b lang="zh-Hant"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect x="20" y="16" width="38" height="12" rx="6" fill="currentColor"/><rect x="6" y="36" width="31" height="12" rx="6" fill="currentColor"/><circle cx="49" cy="42" r="7.5" fill="#d7612a"/></svg>夏裕科技</b><span class="mono">Taipei · San Diego</span></a>
+    <a class="brand" href="/en/" aria-label="夏裕科技 首頁 · home"><b lang="zh-Hant"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect x="20" y="16" width="38" height="12" rx="6" fill="currentColor"/><rect x="6" y="36" width="31" height="12" rx="6" fill="currentColor"/><circle cx="49" cy="42" r="7.5" fill="#d7612a"/></svg>夏裕科技</b></a>
     <nav class="nav" aria-label="Main">
+      <a href="/en/seo-aeo-geo/">AI Search</a>
       <a href="/en/website/">Websites</a>
       <a href="/en/software/">Software</a>
-      <a href="/en/seo-aeo-geo/">AI Search</a>
       <a href="/en/ai-visibility-engine/">AI Visibility Engine</a>
       <a href="/en/about/">About</a>
     </nav>
     <a class="lang" href="/" hreflang="zh-Hant" lang="zh-Hant" aria-label="中文版">中文</a>
-    <a class="pill sm" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">Book a call</a>
+    <a class="pill sm" href="/en/ai-visibility-engine/#check" style="background:#b8501d;border-color:#b8501d;color:#fff">Free AI check</a>
   </div>
 </header>
 <main class="wrap" id="main">
