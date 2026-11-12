@@ -314,3 +314,11 @@ a.card:hover { border-color: var(--ink3); transform: translateY(-2px); }
 .items.illus .card img { width: 100%; height: auto; aspect-ratio: 960 / 520; object-fit: cover; border-bottom: 1px solid var(--hair); margin-bottom: 20px; }
 .items.illus .card b, .items.illus .card p { padding: 0 24px; }
 .items.illus .card b { margin-bottom: 8px; }
+
+/* service card titles stand out */
+.svc h3 { font-size: clamp(25px, 2.5vw, 31px); font-weight: 800; letter-spacing: -.015em; line-height: 1.2; padding-bottom: 14px; position: relative; }
+.svc h3::after { content: ""; position: absolute; left: 0; bottom: 0; width: 44px; height: 4px; border-radius: 2px; background: var(--accent); }
+.svc .hook { color: var(--accent-ink); font-size: 16.5px; margin-top: 2px; }
+.svc h3 { color: var(--accent); }
+.svc h3::after { background: var(--ink); }
+.svc .hook { color: var(--ink); }
