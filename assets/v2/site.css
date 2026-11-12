@@ -305,3 +305,12 @@ a.card:hover { border-color: var(--ink3); transform: translateY(-2px); }
   .loop b, .loop small, .loop p { grid-column: 2; }
   .loop p { margin-top: 2px; max-width: none; }
 }
+
+/* illustrated service items (service pages) */
+.items.illus { grid-template-columns: repeat(3, 1fr); gap: 20px; border-top: 0; }
+@media (max-width: 980px) { .items.illus { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .items.illus { grid-template-columns: 1fr; } }
+.items.illus .card { padding: 0 0 24px; overflow: hidden; gap: 0; border-bottom: 1px solid var(--hair); }
+.items.illus .card img { width: 100%; height: auto; aspect-ratio: 960 / 520; object-fit: cover; border-bottom: 1px solid var(--hair); margin-bottom: 20px; }
+.items.illus .card b, .items.illus .card p { padding: 0 24px; }
+.items.illus .card b { margin-bottom: 8px; }
