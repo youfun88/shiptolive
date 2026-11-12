@@ -35,7 +35,8 @@ addEventListener('load',function(){setTimeout(function(){var s=document.createEl
    "name": "夏裕科技股份有限公司",
    "alternateName": [
     "Ship to Live",
-    "夏裕科技"
+    "夏裕科技",
+    "Xiayu Technology"
    ],
    "legalName": "夏裕科技股份有限公司",
    "taxID": "90173045",
@@ -44,9 +45,11 @@ addEventListener('load',function(){setTimeout(function(){var s=document.createEl
    "email": "yufan@shiptolive.com",
    "logo": "https://www.shiptolive.com/assets/logo/logo-512.png",
    "slogan": "敢想。敢作。敢創新。",
+   "description": "Taipei software company serving Taiwan and the US: websites and digital marketing, custom software development, and AI search optimization (AEO/GEO) on its own Ship to Live AI Visibility Engine (夏裕 AI 曝光引擎).",
    "address": {
     "@type": "PostalAddress",
     "addressLocality": "Taipei",
+    "addressRegion": "Taipei City",
     "addressCountry": "TW"
    },
    "areaServed": [
@@ -59,11 +62,89 @@ addEventListener('load',function(){setTimeout(function(){var s=document.createEl
      "name": "United States"
     }
    ],
+   "knowsLanguage": [
+    "zh-Hant",
+    "en"
+   ],
+   "knowsAbout": [
+    "Website design and development",
+    "Search engine optimization (SEO)",
+    "Answer engine optimization (AEO)",
+    "Generative engine optimization (GEO)",
+    "AI search visibility",
+    "Custom software development",
+    "App development",
+    "Booking and membership platforms",
+    "API and system integration",
+    "AI workflow automation",
+    "Multilingual websites"
+   ],
    "founder": {
     "@type": "Person",
     "@id": "https://www.shiptolive.com/#yufan",
     "name": "Yufan Chen",
-    "jobTitle": "Founder & CTO"
+    "jobTitle": "Founder & CTO",
+    "sameAs": [
+     "https://www.linkedin.com/in/yufanchen8/"
+    ]
+   },
+   "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "email": "yufan@shiptolive.com",
+    "availableLanguage": [
+     "zh-Hant",
+     "en"
+    ],
+    "url": "https://www.shiptolive.com/#contact"
+   },
+   "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "夏裕科技 services",
+    "itemListElement": [
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "@id": "https://www.shiptolive.com/seo-aeo-geo/#service",
+       "name": "AI 搜尋優化（AEO／GEO）",
+       "alternateName": "AI Search Optimization (AEO/GEO)",
+       "url": "https://www.shiptolive.com/seo-aeo-geo/"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "@id": "https://www.shiptolive.com/website/#service",
+       "name": "網站建置與數位行銷",
+       "alternateName": "Websites and Digital Marketing",
+       "url": "https://www.shiptolive.com/website/"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "@id": "https://www.shiptolive.com/software/#service",
+       "name": "客製化軟體開發",
+       "alternateName": "Custom Software Development",
+       "url": "https://www.shiptolive.com/software/"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "SoftwareApplication",
+       "@id": "https://www.shiptolive.com/ai-visibility-engine/#product",
+       "name": "夏裕 AI 曝光引擎",
+       "alternateName": "Ship to Live AI Visibility Engine",
+       "applicationCategory": "BusinessApplication",
+       "operatingSystem": "Web",
+       "url": "https://www.shiptolive.com/ai-visibility-engine/"
+      }
+     }
+    ]
    }
   },
   {
@@ -116,26 +197,52 @@ addEventListener('load',function(){setTimeout(function(){var s=document.createEl
     "競爭同業分析",
     "網站優化建議",
     "專屬成效後台",
-    "內容審核"
-   ]
+    "內容審核",
+    "每天循環偵測"
+   ],
+   "@id": "https://www.shiptolive.com/ai-visibility-engine/#product"
   },
   {
    "@type": "FAQPage",
    "mainEntity": [
     {
      "@type": "Question",
-     "name": "免費 AI 曝光檢測要提供什麼？",
+     "name": "夏裕 AI 曝光引擎是什麼？",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "網站網址與主要服務城市；可選填客戶最常問的 3 個問題與最多 3 家競爭同業。我們於 1–2 個工作天內回覆檢測報告。"
+      "text": "夏裕 AI 曝光引擎是夏裕科技自主研發的 AI 搜尋分析系統，用客戶會問的問題詢問 ChatGPT、Gemini 等 AI，記錄哪些回答提到您、推薦了哪些同業，並整理出網站優先改善的項目。"
      }
     },
     {
      "@type": "Question",
-     "name": "檢測報告包含哪些內容？",
+     "name": "和一般 SEO 工具有什麼不同？",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "AI 有沒有提到您的品牌、推薦了哪些同業，以及網站優先改善項目。"
+      "text": "一般 SEO 工具看的是 Google 排名。夏裕 AI 曝光引擎另外詢問 ChatGPT、Gemini、Claude、Perplexity 等 AI，看它們在回答中提到誰、引用了哪些網站。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "多久檢測一次？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "每天自動重新檢測 AI 回答、Google 搜尋與網站健康，AI 檢測最多一天 3 次，每次都問同一組問題，數字才能前後比較。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "系統會自動修改我的網站嗎？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "不會在您不知道的情況下修改。涉及網站內容發布的修改，都先交由您確認後才上線。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "免費 AI 曝光檢測要提供什麼？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "網站網址與主要服務城市；可選填客戶最常問的 3 個問題與最多 3 家競爭同業。我們於 1–2 個工作天內回覆檢測報告，內容包含 AI 有沒有提到您的品牌、推薦了哪些同業，以及網站優先改善項目。"
      }
     }
    ]
@@ -245,6 +352,18 @@ addEventListener('load',function(){setTimeout(function(){var s=document.createEl
         <p class="status" role="status" aria-live="polite"></p>
       </div>
     </form>
+  </div>
+</section>
+<section class="sec alt faq" id="faq" aria-labelledby="faq-h">
+  <div class="wrap faqx">
+    <div class="faq-l"><div class="sec-head rv"><p class="eyebrow">FAQ</p><h2 class="h2" id="faq-h">常見問題</h2></div><img class="faq-art rv" src="/assets/v2/img/svc/freq_daily.jpg" width="960" height="520" alt="" loading="lazy"><p class="faq-more rv">還有其他問題？ <a class="tlink" href="/#contact">直接問我們</a></p></div>
+    <div class="faq-r rv">
+      <details open><summary>夏裕 AI 曝光引擎是什麼？</summary><p>夏裕 AI 曝光引擎是夏裕科技自主研發的 AI 搜尋分析系統，用客戶會問的問題詢問 ChatGPT、Gemini 等 AI，記錄哪些回答提到您、推薦了哪些同業，並整理出網站優先改善的項目。</p></details>
+      <details><summary>和一般 SEO 工具有什麼不同？</summary><p>一般 SEO 工具看的是 Google 排名。夏裕 AI 曝光引擎另外詢問 ChatGPT、Gemini、Claude、Perplexity 等 AI，看它們在回答中提到誰、引用了哪些網站。</p></details>
+      <details><summary>多久檢測一次？</summary><p>每天自動重新檢測 AI 回答、Google 搜尋與網站健康，AI 檢測最多一天 3 次，每次都問同一組問題，數字才能前後比較。</p></details>
+      <details><summary>系統會自動修改我的網站嗎？</summary><p>不會在您不知道的情況下修改。涉及網站內容發布的修改，都先交由您確認後才上線。</p></details>
+      <details><summary>免費 AI 曝光檢測要提供什麼？</summary><p>網站網址與主要服務城市；可選填客戶最常問的 3 個問題與最多 3 家競爭同業。我們於 1–2 個工作天內回覆檢測報告，內容包含 AI 有沒有提到您的品牌、推薦了哪些同業，以及網站優先改善項目。</p></details>
+    </div>
   </div>
 </section>
 </main>

@@ -1,102 +1,45 @@
-# Yufan Chen — robots.txt
+# robots.txt for www.shiptolive.com (夏裕科技 Ship to Live)
 
+# Search engines: the whole public site. The archive and the business cards
+# carry their own noindex tag, so search engines may fetch them to see it.
 User-agent: *
 Allow: /
 Disallow: /pending
 Disallow: /log
+Disallow: /scripts/
 
-# The digital business cards are shared deliberately, by QR or link.
-# They carry direct phone numbers, so they are not for indexing or for
-# training/answer crawlers. Search engines are left able to fetch them so
-# they can see the noindex tag on the pages themselves.
-
-# AI / generative engines — welcome on the site, not on the cards
+# AI search and answer engines are welcome on the public site.
+# Not on: review pages, change logs, the digital business cards (they carry
+# direct phone numbers), or the archived copy of the previous site.
 User-agent: GPTBot
-Allow: /
-Disallow: /pending
-Disallow: /log
-Disallow: /card/
-Disallow: /zh/card/
 User-agent: OAI-SearchBot
-Allow: /
-Disallow: /pending
-Disallow: /log
-Disallow: /card/
-Disallow: /zh/card/
 User-agent: ChatGPT-User
-Allow: /
-Disallow: /pending
-Disallow: /log
-Disallow: /card/
-Disallow: /zh/card/
-User-agent: PerplexityBot
-Allow: /
-Disallow: /pending
-Disallow: /log
-Disallow: /card/
-Disallow: /zh/card/
-User-agent: Google-Extended
-Allow: /
-Disallow: /pending
-Disallow: /log
-Disallow: /card/
-Disallow: /zh/card/
 User-agent: ClaudeBot
-Allow: /
-Disallow: /pending
-Disallow: /log
-Disallow: /card/
-Disallow: /zh/card/
+User-agent: Claude-SearchBot
+User-agent: Claude-User
 User-agent: Claude-Web
-Allow: /
-Disallow: /pending
-Disallow: /log
-Disallow: /card/
-Disallow: /zh/card/
+User-agent: anthropic-ai
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: GoogleOther
 User-agent: Applebot-Extended
-Allow: /
-Disallow: /pending
-Disallow: /log
-Disallow: /card/
-Disallow: /zh/card/
+User-agent: DuckAssistBot
+User-agent: MistralAI-User
 User-agent: CCBot
-Allow: /
-Disallow: /pending
-Disallow: /log
-Disallow: /card/
-Disallow: /zh/card/
 User-agent: Amazonbot
-Allow: /
-Disallow: /pending
-Disallow: /log
-Disallow: /card/
-Disallow: /zh/card/
 User-agent: Meta-ExternalAgent
-Allow: /
-Disallow: /pending
-Disallow: /log
-Disallow: /card/
-Disallow: /zh/card/
 User-agent: cohere-ai
-Allow: /
-Disallow: /pending
-Disallow: /log
-Disallow: /card/
-Disallow: /zh/card/
 User-agent: Bytespider
-Allow: /
-Disallow: /pending
-Disallow: /log
-Disallow: /card/
-Disallow: /zh/card/
 User-agent: PetalBot
 Allow: /
 Disallow: /pending
 Disallow: /log
 Disallow: /card/
 Disallow: /zh/card/
+Disallow: /old-2026-11/
+Disallow: /scripts/
 
-# Plain-text summary written for language models.
-# https://www.shiptolive.com/llms.txt
+# Plain-text summary for language models: https://www.shiptolive.com/llms.txt
 
 Sitemap: https://www.shiptolive.com/sitemap.xml
