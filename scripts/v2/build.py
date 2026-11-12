@@ -55,7 +55,7 @@ def header(lang, slug):
     return f'''<a class="skip" href="#main">{t['skip']}</a>
 <header class="hdr">
   <div class="wrap">
-    <a class="brand" href="{p(lang,'home')}" aria-label="{t['brand']} {t['home']}">{MARK}<span>{t['brand']}<br><small>{t['brand_sub']}</small></span></a>
+    <a class="brand" href="{p(lang,'home')}" aria-label="{t['brand']} {t['home']}">{MARK}<span>{t['brand']}</span></a>
     <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="{t['menu']}"><span></span></button>
     <nav class="nav" id="nav" aria-label="{t['menu']}">
       <a href="{p(lang,'home')}"{cur('home')}>{t['home']}</a>
