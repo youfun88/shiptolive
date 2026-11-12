@@ -274,3 +274,14 @@ fieldset.need legend { font-size: 14px; font-weight: 600; margin-bottom: 8px; pa
 
 a.card { text-decoration: none; color: inherit; transition: border-color .15s, transform .15s; }
 a.card:hover { border-color: var(--ink3); transform: translateY(-2px); }
+
+/* homepage hero illustration */
+.hero-art { width: 100%; max-width: 600px; justify-self: end; }
+.hero-art svg { width: 100%; height: auto; display: block; overflow: visible; font-family: var(--sans); }
+@media (max-width: 900px) { .hero-art { justify-self: center; } }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-art .fl { animation: fl 7s ease-in-out infinite; transform-box: fill-box; }
+  .hero-art .fl2 { animation-delay: -2.3s; } .hero-art .fl3 { animation-delay: -4.6s; }
+  @keyframes fl { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+}
+.why-art { width: 100%; height: auto; border-radius: 10px; margin-bottom: 8px; }

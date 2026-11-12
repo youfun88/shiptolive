@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="Inter, -apple-system, Helvetica, Arial, sans-serif">
+<rect width="480" height="300" fill="#e9e4dd"/>
+<circle cx="400" cy="60" r="90" fill="#e1dad1"/>
+<g>
+<rect x="40" y="38" width="290" height="206" rx="12" fill="#fff" stroke="#d6cfc6"/>
+<path d="M40 64V50a12 12 0 0 1 12-12h266a12 12 0 0 1 12 12v14z" fill="#efebe6"/>
+<circle cx="56" cy="51" r="4" fill="#d3cdc5"/><circle cx="69" cy="51" r="4" fill="#d3cdc5"/><circle cx="82" cy="51" r="4" fill="#d3cdc5"/>
+<rect x="98" y="44" width="150" height="14" rx="7" fill="#fff"/>
+<rect x="268" y="44" width="50" height="14" rx="7" fill="#161513"/><text x="281" y="54.5" font-size="9" font-weight="700" fill="#fff">EN</text><text x="298" y="54.5" font-size="9" font-weight="700" fill="#d7612a">中</text>
+<rect x="60" y="80" width="250" height="70" rx="8" fill="#f3d9cb"/>
+<circle cx="270" cy="115" r="22" fill="#d7612a"/><path d="M200 150 l30-34 22 22 18-16 40 28z" fill="#e8a27f"/>
+<rect x="72" y="96" width="100" height="11" rx="5.5" fill="#161513"/><rect x="72" y="114" width="80" height="7" rx="3.5" fill="#8f8981"/>
+<rect x="72" y="129" width="48" height="13" rx="6.5" fill="#d7612a"/>
+<rect x="60" y="164" width="76" height="62" rx="8" fill="#efebe6"/><rect x="146" y="164" width="76" height="62" rx="8" fill="#efebe6"/><rect x="232" y="164" width="78" height="62" rx="8" fill="#efebe6"/>
+<rect x="70" y="174" width="26" height="26" rx="6" fill="#161513"/><rect x="156" y="174" width="26" height="26" rx="6" fill="#d7612a"/><rect x="242" y="174" width="26" height="26" rx="6" fill="#161513"/>
+<rect x="70" y="208" width="50" height="6" rx="3" fill="#bdb6ad"/><rect x="156" y="208" width="50" height="6" rx="3" fill="#bdb6ad"/><rect x="242" y="208" width="50" height="6" rx="3" fill="#bdb6ad"/>
+</g>
+<g>
+<rect x="300" y="96" width="88" height="170" rx="16" fill="#161513"/><rect x="306" y="110" width="76" height="144" rx="6" fill="#fff"/>
+<rect x="312" y="118" width="64" height="40" rx="5" fill="#f3d9cb"/><circle cx="360" cy="134" r="9" fill="#d7612a"/>
+<rect x="312" y="166" width="50" height="7" rx="3.5" fill="#161513"/><rect x="312" y="179" width="60" height="5" rx="2.5" fill="#bdb6ad"/><rect x="312" y="189" width="44" height="5" rx="2.5" fill="#bdb6ad"/>
+<rect x="312" y="202" width="40" height="12" rx="6" fill="#d7612a"/>
+</g>
+<g>
+<rect x="352" y="186" width="104" height="80" rx="12" fill="#fff" stroke="#d6cfc6"/>
+<rect x="366" y="244" width="10" height="10" rx="2" fill="#ddd6cd"/><rect x="382" y="236" width="10" height="18" rx="2" fill="#ddd6cd"/><rect x="398" y="226" width="10" height="28" rx="2" fill="#e8a27f"/><rect x="414" y="212" width="10" height="42" rx="2" fill="#d7612a"/><rect x="430" y="200" width="10" height="54" rx="2" fill="#d7612a"/>
+<text x="366" y="206" font-size="11" font-weight="800" fill="#161513">SEO</text>
+</g>
+<g><circle cx="105" cy="250" r="20" fill="#fff" stroke="#161513" stroke-width="5"/><path d="M119 264 l18 18" stroke="#161513" stroke-width="7" stroke-linecap="round"/><path d="M96 252 l6 6 12-13" fill="none" stroke="#d7612a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

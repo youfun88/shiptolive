@@ -29,6 +29,21 @@
     rv.forEach(function (el) { io.observe(el); });
   } else rv.forEach(function (el) { el.classList.add('in'); });
 
+
+  // count-up numbers (track record stats)
+  var counts = $$('[data-count]');
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function run(el) {
+    var to = +el.getAttribute('data-count'), suf = el.getAttribute('data-suffix') || '', t0 = null, dur = 1600;
+    function step(ts) { if (!t0) t0 = ts; var k = Math.min(1, (ts - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      el.textContent = Math.round(to * e) + suf; if (k < 1) requestAnimationFrame(step); }
+    el.textContent = '0' + suf; requestAnimationFrame(step);
+  }
+  if (counts.length && !reduce && 'IntersectionObserver' in window) {
+    var cio = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { run(en.target); cio.unobserve(en.target); } }); }, { threshold: 0.6 });
+    counts.forEach(function (el) { el.style.fontVariantNumeric = 'tabular-nums'; cio.observe(el); });
+  }
+
   // ?need=ai|web|software|other preselects the inquiry type
   try {
     var need = new URLSearchParams(location.search).get('need');
