@@ -119,6 +119,33 @@
     show(0, now);
   }
   onSeen($$('.scan'), runScan, 0.3);
+
+  // animated monthly-check chart: line draws point by point, numbers and table follow
+  function runChart(fig, now) {
+    var d = JSON.parse(fig.getAttribute('data-mc')), V = [0, 7, 16, 26, 35, 43], X = [40, 132, 224, 316, 408, 500];
+    var clip = $('.mc-cliprect', fig), pts = $$('.mc-pt', fig), ns = $$('.mc-n', fig), date = $('.mc-date', fig), rows = $$('.mc-tbl tbody tr', fig);
+    var cur = 0;
+    function tween(el, to) { var from = +el.textContent || 0, t0 = null; function st(ts) { if (!t0) t0 = ts; var k = Math.min(1, (ts - t0) / 600); el.textContent = Math.round(from + (to - from) * k); if (k < 1) requestAnimationFrame(st); } requestAnimationFrame(st); }
+    function step(i, instant) {
+      clip.setAttribute('width', i === 5 ? 540 : X[i] + 8);
+      pts.forEach(function (p, k) { p.classList.toggle('on', k <= i); });
+      ns.forEach(function (n) { instant ? (n.textContent = V[i]) : tween(n, V[i]); });
+      date.textContent = d.dates[i];
+      rows.forEach(function (r, k) {
+        var c = r.querySelectorAll('.mc-r'), v = d.per[i][k], pv = i ? d.per[i - 1][k] : 0, dl = r.querySelector('.mc-dl');
+        c.forEach(function (e) { instant ? (e.textContent = v) : tween(e, v); });
+        dl.textContent = i ? d.up.replace('{n}', v - pv) : d.same; dl.className = 'mc-dl' + (i ? '' : ' first');
+      });
+      if (!instant) { var on = $('.mc-cards .on', fig); on.classList.remove('mc-flash'); void on.offsetWidth; on.classList.add('mc-flash'); }
+    }
+    if (now) { step(5, true); return; }
+    clip.style.transition = 'none'; step(0, true); void clip.getBoundingClientRect(); clip.style.transition = '';
+    (function play() {
+      cur = 0; clip.style.transition = 'none'; step(0, true); void clip.getBoundingClientRect(); clip.style.transition = '';
+      var iv = setInterval(function () { cur++; step(cur); if (cur >= 5) { clearInterval(iv); setTimeout(play, 6000); } }, 900);
+    })();
+  }
+  onSeen($$('.mchart'), runChart, 0.35);
   window.STL = { $: $, $$: $$, onSeen: onSeen, typeInto: typeInto, zh: zh, still: still };
 
   // ?need=ai|web|software|other preselects the inquiry type
