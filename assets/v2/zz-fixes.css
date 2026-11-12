@@ -8,3 +8,11 @@
 .dash-top span, .dash figcaption { color: #5d5953; }
 .lk { color: #2a62c4; text-decoration: underline; }
 .bw-top .lg b.on, .hv .app .ah { background: #b8501d; }
+
+/* LCP: hero content is visible from the first paint; entrance motion is slide-only (no fade from 0) */
+@media (prefers-reduced-motion: no-preference) {
+  .js .hero .rv { opacity: 1; }
+  .js .hero .hv-web .bw-body > *, .js .hero .hv-web .pm, .js .hero .hv-web .rank, .js .hero .hv-web .row3 .b,
+  .js .hero .hv-sw .app, .js .hero .ab-art .ab-c { opacity: 1; }
+  @keyframes post-rise { from { opacity: 1; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+}
