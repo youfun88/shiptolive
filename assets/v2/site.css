@@ -341,3 +341,5 @@ a.card:hover { border-color: var(--ink3); transform: translateY(-2px); }
 /* illustration at the top of plain cards */
 .card > .card-art { width: calc(100% + 2 * clamp(22px, 2.4vw, 30px)); max-width: none; margin: calc(-1 * clamp(22px, 2.4vw, 30px)) calc(-1 * clamp(22px, 2.4vw, 30px)) 14px; height: auto; aspect-ratio: 960 / 520; object-fit: cover; border-bottom: 1px solid var(--hair); }
 .card:has(> .card-art) { overflow: hidden; }
+.svc h3 .tsm { font-size: .62em; font-weight: 700; letter-spacing: 0; }
+:lang(zh-Hant) .svc h3:has(.tsm) { white-space: nowrap; }
