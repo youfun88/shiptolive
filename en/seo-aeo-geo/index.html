@@ -1,644 +1,292 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Tech marketing for Google and AI answers | 夏裕科技 Xiayu Technology</title>
-  <meta name="description" content="Customers now ask Google and AI who to hire. Our AI visibility engine checks what ChatGPT, Gemini and Google say about you, then fixes it with your approval." />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-  <meta name="theme-color" content="#eee9e3" />
-  <link rel="canonical" href="https://www.shiptolive.com/en/seo-aeo-geo/" />
-  <link rel="alternate" hreflang="en" href="https://www.shiptolive.com/en/seo-aeo-geo/" />
-  <link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/seo-aeo-geo/" />
-  <link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/seo-aeo-geo/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="夏裕科技 Xiayu Technology" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="Get recommended by Google and by AI | 夏裕科技 Xiayu Technology" />
-  <meta property="og:description" content="The Xiayu AI Visibility Engine: monitor, analyze, plan, review, publish and measure. Real client numbers: AI answers citing the site 0 → 26, Google top-3 terms 5 → 21." />
-  <meta property="og:url" content="https://www.shiptolive.com/en/seo-aeo-geo/" />
-  <meta property="og:image" content="https://www.shiptolive.com/assets/img/og.png?v=4" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="preconnect" href="https://www.googletagmanager.com" />
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
-  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin />
-  <link rel="stylesheet" href="/assets/home/home.css?v=7" />
-  <link rel="stylesheet" href="/assets/home/pages.css?v=8" />
-  <link rel="stylesheet" href="/assets/home/motion.css?v=4" />
-  <link rel="stylesheet" href="/assets/home/ux-svc.css?v=13" />
-  <style>
-    /* page-local: lists that sit in a step's figure column, and the second case */
-    .step .fig .spec { margin-top: 0; }
-    .step .fig ol.rules { margin-top: 0; }
-    .step .fig .shot-cap + ol.rules, .step .fig .shot-cap + .spec { margin-top: 10px; }
-    #case .side-h.case-h { grid-column: 1 / -1; margin-top: 72px; }
-    #process .shot { margin-top: 32px; }
-    #pricing .side-h { margin-top: 48px; }
-    .cta-end ol.rules { max-width: 36em; margin-top: 36px; }
-    #metrics .spec dd b, #method .spec dd b { font-weight: 600; color: var(--ink); }
-    #metrics .side-h + .spec { margin-top: 8px; }
-    #metrics .spec + .side-h { margin-top: 36px; }
-    #method .honest a, .rules span a { white-space: nowrap; }
-    @media (min-width: 960px) { #metrics .rhs, #method .rhs { padding-top: 56px; } }
-    @media (max-width: 959px) {
-      #engine ol.rules, #process ol.rules, #fit ol.rules, #ask ol.rules, .cta-end ol.rules { display: block; }
-      #engine .rules li:nth-last-child(2), #process .rules li:nth-last-child(2), #fit .rules li:nth-last-child(2), #ask .rules li:nth-last-child(2), .cta-end .rules li:nth-last-child(2) { border-bottom-color: var(--hair); }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Search Optimization (AEO/GEO) | Ship to Live</title>
+<meta name="description" content="When customers ask AI, does your company show up in the answer? Ship to Live uses its own AI Visibility Engine to check whether ChatGPT, Gemini and other AI tools mention you, then improves your site with AEO/GEO work, competitor analysis and tracking.">
+<link rel="canonical" href="https://www.shiptolive.com/en/seo-aeo-geo/">
+<link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/seo-aeo-geo/">
+<link rel="alternate" hreflang="en" href="https://www.shiptolive.com/en/seo-aeo-geo/">
+<link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/seo-aeo-geo/">
+<meta name="theme-color" content="#efebe6">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ship to Live">
+<meta property="og:title" content="AI Search Optimization (AEO/GEO) | Ship to Live">
+<meta property="og:description" content="When customers ask AI, does your company show up in the answer? Ship to Live uses its own AI Visibility Engine to check whether ChatGPT, Gemini and other AI tools mention you, then improves your site with AEO/GEO work, competitor analysis and tracking.">
+<meta property="og:url" content="https://www.shiptolive.com/en/seo-aeo-geo/">
+<meta property="og:image" content="https://www.shiptolive.com/assets/img/og.png?v=5">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta name="twitter:card" content="summary_large_image">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5W92T6J80C"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5W92T6J80C');</script>
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/v2/site.css?v=1">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.shiptolive.com/#org",
+   "name": "夏裕科技股份有限公司",
+   "alternateName": [
+    "Ship to Live",
+    "夏裕科技"
+   ],
+   "legalName": "夏裕科技股份有限公司",
+   "taxID": "90173045",
+   "foundingDate": "2022",
+   "url": "https://www.shiptolive.com/",
+   "email": "yufan@shiptolive.com",
+   "logo": "https://www.shiptolive.com/assets/logo/logo-512.png",
+   "slogan": "敢想。敢作。敢創新。",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Taipei",
+    "addressCountry": "TW"
+   },
+   "areaServed": [
+    {
+     "@type": "Country",
+     "name": "Taiwan"
+    },
+    {
+     "@type": "Country",
+     "name": "United States"
     }
-  </style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "@id": "https://www.shiptolive.com/en/seo-aeo-geo/#webpage",
-  "url": "https://www.shiptolive.com/en/seo-aeo-geo/",
-  "name": "Tech marketing for Google and AI answers | 夏裕科技 Xiayu Technology",
-  "inLanguage": "en",
-  "dateModified": "2026-11-11",
-  "isPartOf": { "@id": "https://www.shiptolive.com/#website" },
-  "about": { "@id": "https://www.shiptolive.com/en/seo-aeo-geo/#service" },
-  "mentions": [
-    { "@type": "Organization", "name": "WU LAW INTL PLLC", "url": "https://wulawintl.com/" },
-    { "@type": "Organization", "name": "Go Hike 山行接駁", "url": "https://gohike.tw/" }
-  ],
-  "relatedLink": ["https://www.shiptolive.com/en/geo-guide/", "https://www.shiptolive.com/en/projects/ai-visibility-checker/"]
-}
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": "https://www.shiptolive.com/en/seo-aeo-geo/#service",
-  "name": "Tech marketing: SEO, AEO & GEO",
-  "alternateName": ["科技行銷（SEO、AEO、GEO）", "Xiayu AI Visibility Engine", "夏裕 AI 曝光引擎"],
-  "serviceType": "Generative engine optimization (GEO)",
-  "url": "https://www.shiptolive.com/en/seo-aeo-geo/",
-  "inLanguage": "en",
-  "description": "Gets a business found and recommended on Google and in answers from ChatGPT, Gemini, Claude and Perplexity. The Xiayu AI Visibility Engine runs in five steps that repeat: monitor (site health and speed, Google rankings and clicks, AI answers, competitors and lead sources), analyze, plan (5 optimization goals set with the client by default, up to 20 on larger plans), review (drafts on a private review page; nothing goes live without the client's approval) and publish & measure (daily results report, monthly report, a log of every update). Every plan includes 5 AI-written articles a month in English and Chinese. Setup on an existing site takes 1 to 2 working days; the first diagnosis report follows in 3 to 5 days. Quoted after a short call.",
-  "provider": { "@id": "https://www.shiptolive.com/#service" },
-  "areaServed": ["United States", "Taiwan"],
-  "availableLanguage": ["en", "zh-Hant"],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Tech marketing packages",
-    "itemListElement": [
-      { "@type": "Offer", "name": "Free AI visibility check", "price": "0", "priceCurrency": "USD", "description": "About ten customer questions sent to four AI engines, with the top fixes." }
-    ]
+   ],
+   "founder": {
+    "@type": "Person",
+    "@id": "https://www.shiptolive.com/#yufan",
+    "name": "Yufan Chen",
+    "jobTitle": "Founder & CTO"
+   }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://www.shiptolive.com/en/seo-aeo-geo/#page",
+   "url": "https://www.shiptolive.com/en/seo-aeo-geo/",
+   "name": "AI Search Optimization (AEO/GEO) | Ship to Live",
+   "description": "When customers ask AI, does your company show up in the answer? Ship to Live uses its own AI Visibility Engine to check whether ChatGPT, Gemini and other AI tools mention you, then improves your site with AEO/GEO work, competitor analysis and tracking.",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://www.shiptolive.com/#site",
+    "url": "https://www.shiptolive.com/",
+    "name": "夏裕科技 Ship to Live"
+   },
+   "publisher": {
+    "@id": "https://www.shiptolive.com/#org"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.shiptolive.com/en/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "AI Search Optimization (AEO/GEO)",
+     "item": "https://www.shiptolive.com/en/seo-aeo-geo/"
+    }
+   ]
+  },
+  {
+   "@type": "Service",
+   "name": "AI Search Optimization (AEO/GEO)",
+   "serviceType": "AI search optimization",
+   "provider": {
+    "@id": "https://www.shiptolive.com/#org"
+   },
+   "areaServed": [
+    {
+     "@type": "Country",
+     "name": "Taiwan"
+    },
+    {
+     "@type": "Country",
+     "name": "United States"
+    }
+   ],
+   "description": "Checks brand visibility on AI search platforms such as ChatGPT and Gemini with the Ship to Live AI Visibility Engine, plus AEO/GEO optimization, competitor analysis, content improvements and tracking."
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is the difference between SEO, AEO and GEO?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "SEO improves your ranking in Google Search. AEO (answer engine optimization) gets your content cited in answers such as Google AI Overviews. GEO (generative engine optimization) raises the chance that ChatGPT, Gemini and other AI tools recommend you. They work best together."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why not just ask ChatGPT myself?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A single chat is shaped by your name, location and chat history, so you don't see what customers see. The engine uses a fresh chat and the same set of questions every time, in Chinese and English, so results can be compared over time."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Will my website content change without my approval?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Any change that publishes content on your site goes to you for approval first."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can you guarantee AI will recommend us?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No one can guarantee that a given platform will recommend you or that rankings will rise. We measure, find the reasons, improve your content, and track the change in your dashboard."
+     }
+    }
+   ]
   }
+ ]
 }
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "夏裕科技 Xiayu Technology", "item": "https://www.shiptolive.com/en/" },
-    { "@type": "ListItem", "position": 2, "name": "Tech marketing", "item": "https://www.shiptolive.com/en/seo-aeo-geo/" }
-  ]
-}
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type": "Question", "name": "What is tech marketing?", "acceptedAnswer": {"@type": "Answer", "text": "Getting your business named and recommended when customers look for what you do, on Google and in AI assistants like ChatGPT, Gemini and Perplexity. Our AI visibility engine checks your site, Google and AI answers, writes pages that answer customers' questions directly, and measures again with the same questions, so you can see whether AI names you more often."}},
-    {"@type": "Question", "name": "How long until we see results?", "acceptedAnswer": {"@type": "Answer", "text": "AI engines search the web live, so fixes to your site and listings can show up in their answers within weeks. Our client WU LAW INTL PLLC went from 0 to 26 AI answers citing the site four days after the first check. Google rankings for competitive searches usually take three to six months, and visibility keeps building over months. You get numbers every day and every month, so you can see what is moving."}},
-    {"@type": "Question", "name": "Can you guarantee ChatGPT or Google will recommend us?", "acceptedAnswer": {"@type": "Answer", "text": "AI answers change from run to run, so we compare with the same questions over time. What we commit to: steady checks, evidence behind every change, and monthly numbers you can compare with where you started, so you can judge the results yourself."}},
-    {"@type": "Question", "name": "Do we need a new website?", "acceptedAnswer": {"@type": "Answer", "text": "Usually not. We connect the site you already have, including WordPress, Shopify, Webflow and custom sites. We recommend a rebuild only when the platform blocks the basics: speed, structured data or access for AI crawlers. If you don't have a site yet, we build one, basic or advanced."}},
-    {"@type": "Question", "name": "Who writes the content, and can anything go live without my approval?", "acceptedAnswer": {"@type": "Answer", "text": "Every plan includes 5 AI-written articles a month, in English and Chinese with photos, and you can add a professional writer per article. Every draft goes to a private review page on your site. It isn't public, and you sign in with Gmail. You tap Approve or Request changes. Nothing goes live without your OK. Technical SEO items, like titles, descriptions and structured data, are reviewed by us and don't change what you say."}},
-    {"@type": "Question", "name": "What do I see each month?", "acceptedAnswer": {"@type": "Answer", "text": "A results report that updates every day: Google visits, booking clicks, AI mentions and site issues. A one-page monthly report compared with last month, which you can print or save as a PDF. And a log of every update: what went live, which drafts were added and what was fixed."}},
-    {"@type": "Question", "name": "What do you need from me to get started?", "acceptedAnswer": {"@type": "Answer", "text": "Your company name, your website and the Gmail you'll sign in with. You sign the contract online. Your account is live in 1 to 2 working days, and your first diagnosis report arrives in 3 to 5 days. After that you do three things: answer questions only you can answer, review drafts, and tell us anything you want changed."}},
-    {"@type": "Question", "name": "What is the difference between SEO, AEO and GEO?", "acceptedAnswer": {"@type": "Answer", "text": "SEO gets your pages ranked in Google and Bing results. AEO (answer engine optimization) gets your pages quoted as a source in Google's AI Overviews and AI Mode. GEO (generative engine optimization) gets your business recommended in answers from ChatGPT, Gemini, Claude, Perplexity and Copilot. All three rest on fast pages, clear answers, structured data, an llms.txt file and consistent listings. We call the whole thing tech marketing."}},
-    {"@type": "Question", "name": "How do I know whether AI mentions us?", "acceptedAnswer": {"@type": "Answer", "text": "Ask ChatGPT, Gemini, Claude and Perplexity the questions customers ask, without your name in them: fresh chats, live search on, several runs per question, and count the share of answers that name you. Asking ChatGPT once yourself usually misleads, because your name is in the question and the answer is tailored to your location and history. The free check does this properly, once."}},
-    {"@type": "Question", "name": "What if AI says something wrong about us?", "acceptedAnswer": {"@type": "Answer", "text": "We compare every sentence AI writes about you with your site and sort them into “contradicts your site” and “not supported by your site”. Contradictions get fixed on your site and on listings like your Google Business Profile. Unsupported claims we check with you first, then write the correct version clearly. AI searches the web live, so the next check usually shows the change."}},
-    {"@type": "Question", "name": "Do we need llms.txt? Are FAQ and structured data enough?", "acceptedAnswer": {"@type": "Answer", "text": "llms.txt is a short file on your site written for AI to read. It’s cheap and worth having, but it isn’t the deciding step. FAQ and structured data are groundwork too, not the whole job. Who AI recommends also depends on whether it can read your site, whether your answers are clear, and what other places say about you: your Google Business Profile, industry directories, reviews and press. The Xiayu AI Visibility Engine checks all three."}},
-    {"@type": "Question", "name": "We’re small and in a niche field. Does this suit us?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It suits any business whose customers ask AI before they choose. In a niche field the questions are more specific, and a site that answers them clearly is easier to cite. Start with the free check to see how AI answers your customers today."}},
-    {"@type": "Question", "name": "What do I send for the free check, and how is it different from the monthly service?", "acceptedAnswer": {"@type": "Answer", "text": "Your company name, website and the city your customers are in; if you can, the 3 questions they ask most and up to 3 competitors. No budget talk needed. The free check is a snapshot: about ten customer questions, four AI engines, and within 1–2 business days a report on who gets named, which sites AI cites and what to fix first. The monthly service runs on the Xiayu AI Visibility Engine: daily checks of your site and Google data, regular AI checks with the same goals, drafted fixes and 5 articles a month, nothing live without your approval, and a monthly comparison."}},
-    {"@type": "Question", "name": "Can we pay to have ChatGPT recommend us?", "acceptedAnswer": {"@type": "Answer", "text": "Who AI recommends in its answers isn’t for sale. We work on the recommendations AI writes on its own: making sure it can read your site, understand your services and find you mentioned elsewhere. Advertising is a separate thing and not part of our service."}},
-    {"@type": "Question", "name": "How should we handle forums and online reviews?", "acceptedAnswer": {"@type": "Answer", "text": "AI reads online discussions and reviews, so reputation matters. We keep your Google Business Profile and listings consistent, remind you to ask happy customers for genuine reviews, and answer the questions people ask on forums clearly on your site. We don’t post fake reviews or write paid word-of-mouth posts."}}
-  ]
-}
-  </script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5W92T6J80C"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-5W92T6J80C');
-  </script>
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-
 <header class="hdr">
   <div class="wrap">
-    <a class="brand" href="/en/" aria-label="夏裕科技 首頁 · home"><b lang="zh-Hant"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect x="20" y="16" width="38" height="12" rx="6" fill="currentColor"/><rect x="6" y="36" width="31" height="12" rx="6" fill="currentColor"/><circle cx="49" cy="42" r="7.5" fill="#d7612a"/></svg>夏裕科技</b><span class="mono">Taipei · San Diego</span></a>
-    <nav class="nav" aria-label="Main">
-      <a href="/en/seo-aeo-geo/" aria-current="page">Marketing</a>
-      <a href="/en/#sw">Software</a>
-      <a href="/en/#ai">AI</a>
-      <a href="/en/projects/">Work</a>
+    <a class="brand" href="/en/" aria-label="Ship to Live Home"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="20" y="16" width="38" height="12" rx="6" fill="currentColor"/><rect x="6" y="36" width="31" height="12" rx="6" fill="currentColor"/><circle cx="49" cy="42" r="7.5" fill="#d7612a"/></svg><span>Ship to Live<br><small>夏裕科技 · TAIPEI</small></span></a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span></button>
+    <nav class="nav" id="nav" aria-label="Menu">
+      <a href="/en/">Home</a>
+      <div class="dd"><button type="button" aria-expanded="false" aria-haspopup="true">Services</button>
+        <div class="menu">
+          <a href="/en/website/">Websites & Digital Marketing<small>Company sites, SEO, multilingual</small></a>
+          <a href="/en/software/">Custom Software Development<small>Business systems, apps, integration</small></a>
+          <a href="/en/seo-aeo-geo/" aria-current="page">AI Search Optimization (AEO/GEO)<small>Get named by ChatGPT and Gemini</small></a>
+        </div>
+      </div>
+      <a href="/en/ai-visibility-engine/">AI Visibility Engine</a>
       <a href="/en/about/">About</a>
+      <a href="/en/#contact">Contact</a>
+      <a class="lang" href="/seo-aeo-geo/" hreflang="zh-Hant" lang="zh-Hant" aria-label="中文版">中文</a>
+      <a class="pill sm orange cta-m" href="/en/ai-visibility-engine/#check">Free AI visibility check</a>
     </nav>
-    <a class="lang" href="/seo-aeo-geo/" hreflang="zh-Hant" lang="zh-Hant" aria-label="中文版">中文</a>
-    <a class="pill sm" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">Book a call</a>
+    <a class="pill sm orange cta" href="/en/ai-visibility-engine/#check">Free AI visibility check</a>
   </div>
 </header>
-
-<nav class="lnav" aria-label="On this page" data-start=".phero">
-  <div class="wrap"><button class="lnav-tg" type="button" aria-expanded="false" aria-controls="lnav-list"><span class="k">Contents</span><span class="cur">The engine</span><span class="cv" aria-hidden="true"></span></button><ol id="lnav-list"><li><a href="#engine">The engine</a></li><li><a href="#checks">What we check</a></li><li><a href="#method">Method</a></li><li><a href="#case">Results</a></li><li><a href="#metrics">Metrics</a></li><li><a href="#pricing">Plans</a></li><li><a href="#faq">FAQ</a></li></ol><a class="lnav-cta" href="/en/?topic=Free%20AI%20visibility%20check#contact">Request the free check <span class="arr" aria-hidden="true">→</span></a></div>
-</nav>
-
 <main id="main">
-
-<section class="phero" aria-labelledby="h1">
-  <div class="wrap g12">
-    <p class="idx mono"><span>Tech marketing</span><span>Xiayu AI Visibility Engine</span></p>
-    <h1 id="h1">Get recommended by Google, and by&nbsp;AI.</h1>
-    <p class="lede">Customers now ask Google, ChatGPT and Gemini who to hire. If AI doesn’t name you, they don’t think of you. The Xiayu AI Visibility Engine checks what Google and AI say about you, writes the fixes, and publishes them once you approve. You see the numbers every day.</p>
-    <div class="ctas">
-      <a class="pill" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">Book a free 20-minute call <span class="arr" aria-hidden="true">→</span></a>
-      <a class="tlink" href="/en/?topic=Free%20AI%20visibility%20check#contact">Request the free check</a>
+<section class="hero page" aria-labelledby="h1">
+  <div class="wrap g">
+    <div>
+      <p class="crumbs"><a href="/en/">Home</a> / Services</p>
+      <p class="eyebrow">03 · AI SEARCH OPTIMIZATION</p>
+      <h1 id="h1">AI Search Optimization (AEO/GEO)</h1>
+      <p class="sub2">When customers ask AI, does your company show up in the answer?</p>
+      <p class="lede">More and more people use ChatGPT, Gemini and other AI tools to find products and services.</p>
+      <p class="lede" style="margin-top:12px;margin-bottom:28px">We built the Ship to Live AI Visibility Engine to show you whether AI mentions your brand, which competitors it recommends, and what on your website is worth improving.</p>
+      <div class="btns">
+        <a class="pill orange" href="/en/ai-visibility-engine/#check">Get a free AI visibility check <span class="arr" aria-hidden="true">→</span></a>
+        <a class="pill ghost" href="/en/ai-visibility-engine/">About the AI Visibility Engine</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="sec split" id="how-ai" aria-labelledby="why-h">
-  <div class="wrap g12">
-    <div class="rule" aria-hidden="true"></div>
-    <div class="lhs"><h2 class="state rv" id="why-h">How does AI decide who to&nbsp;recommend?</h2>
-      <div class="ask" aria-hidden="true"><p class="q"><span class="gh">which lawyers in Taipei handle cross-border inheritance?</span></p><p class="a"><span class="dots"><b></b><b></b><b></b></span><i></i><i></i><i></i></p></div></div>
-    <div class="rhs prose rv">
-      <p>When a customer asks an AI “which lawyers in Taipei handle cross-border inheritance?”, the AI reads a few dozen websites on the spot and writes two or three names into its answer. Its criteria are plainer than they sound: <strong>it can read your site, your pages answer the question clearly, and other places mention you too.</strong></p>
-      <p>All three are in your hands. That is what SEO, AEO and GEO cover:</p>
-      <dl class="spec wide">
-        <div><dt>SEO</dt><dd>Rank higher in regular Google search.</dd></div>
-        <div><dt>AEO</dt><dd>Get your pages quoted as a source in Google’s AI Overviews and AI Mode.</dd></div>
-        <div><dt>GEO</dt><dd>Get recommended by ChatGPT, Gemini and other AI assistants.</dd></div>
-      </dl>
-      <p>Clear, correct content makes you easier to find, cite and recommend. That brings more visits, and visits turn into bookings and inquiries. It only works if it keeps running, so we built a system that does: the Xiayu AI Visibility Engine.</p>
-      <p>New to this? Start with our <a href="/en/geo-guide/">plain-language guide to AI search optimization (GEO)</a>.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="engine" aria-labelledby="eng-h">
+<section class="sec alt" id="items" aria-labelledby="items-h">
   <div class="wrap">
-    <div class="rule" aria-hidden="true"></div>
-    <h2 class="state rv" id="eng-h">The Xiayu AI Visibility&nbsp;Engine</h2>
-    <p class="sub">One system that monitors, analyzes and improves your site, in five steps that repeat. It runs on its own; our team checks its work. Every number and every update shows up in your results report.</p>
-    <div class="road" aria-hidden="true"><span class="trk"><span class="fill"></span></span><ol><li><i><span>1</span></i><span>Monitor</span></li><li><i><span>2</span></i><span>Analyze</span></li><li><i><span>3</span></i><span>Plan</span></li><li><i><span>4</span></i><span>Review</span></li><li><i><span class="halo"></span><span>5</span></i><span>Publish &amp; Measure</span></li></ol></div>
-    <div class="steps">
-      <div class="step">
-        <div class="txt">
-          <span class="n rv" aria-hidden="true">01</span>
-          <h3>Monitor</h3>
-          <p>Every day the engine checks your site’s health and speed, your Google rankings and clicks, and how you compare with the competitors you choose. It also asks ChatGPT, Gemini, Claude and Perplexity your customers’ questions and records which answers name you and cite your site: every day (up to 3 times a day), the same questions each time. <b>It also records which page each booking or form came from, without names or emails.</b></p>
-        </div>
-        <div class="fig rv">
-          <div class="shot tall"><img src="/assets/img/marketing/en/ai-trend.webp" width="563" height="864" loading="lazy" decoding="async" alt="The dashboard's AI visibility check: 26 of 45 answers mention WU LAW INTL PLLC; a line chart rises from 0 on October 26 to 26 on October 30; below it, mentions per assistant for Claude, ChatGPT and Gemini."></div>
-          <p class="shot-cap mono">WU LAW INTL PLLC. First check on <span class="nw">October 26</span>: 0 of 45 answers cited the site. <span class="nw">October 30</span>: 26.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="txt">
-          <span class="n rv" aria-hidden="true">02</span>
-          <h3>Analyze</h3>
-          <p>It sorts what it finds into four kinds of opportunity: questions where AI names someone else, searches people make that aren’t crowded yet, pages ranked 4 to 10 that a small edit can lift, and sentences AI gets wrong about you. It also looks beyond your site: whether your Google Business Profile, Bing Places, LinkedIn and industry directories agree with each other, and which sites AI actually cites, which often points to new places to be listed. <b>Each one becomes a specific fix.</b></p>
-        </div>
-        <div class="fig rv">
-          <div class="shot"><img src="/assets/img/marketing/en/google-rank.webp" width="1072" height="345" loading="lazy" decoding="async" alt="The dashboard's Google ranking distribution: 46 search terms on October 30 with 5 in the top 3; 69 terms on November 6 with 18 in the top 3."></div>
-          <p class="shot-cap mono">Search terms on Google page 1 went from 29 to 48, and top-3 terms from 5 to 18. <span class="nw">October 30</span> → <span class="nw">November 6</span>.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="txt">
-          <span class="n rv" aria-hidden="true">03</span>
-          <h3>Plan</h3>
-          <p>We set 5 optimization goals with you: the questions your customers ask AI most. Every check asks the same goals, so progress is easy to see. You can add more: 10, 15 or 20, and goals AI already names you for reliably can be swapped for new ones. <b>Every suggestion comes with the evidence behind it.</b></p>
-        </div>
-        <div class="fig rv">
-          <p class="shot-cap mono">Example goals for Go Hike 山行接駁, asked in English and 中文</p>
-          <ol class="rules">
-            <li><b>Who offers private hiking shuttles from Taipei to the Yushan trailhead?</b></li>
-            <li><b>How do I get from Taipei to Hehuanshan for hiking without a car?</b></li>
-            <li><b lang="zh-Hant">台北出發雪山登山口接駁包車推薦</b></li>
-            <li><b lang="zh-Hant">台中到合歡山登山接駁哪家好？</b></li>
-          </ol>
-        </div>
-      </div>
-      <div class="step">
-        <div class="txt">
-          <span class="n rv" aria-hidden="true">04</span>
-          <h3>Review</h3>
-          <p>Drafts go to a private review page on your own site. It isn’t public, and you sign in with Gmail. You answer the questions only you can answer, read each draft in English and 中文, and tap Approve or Request changes. You can also ask for any change, any time. <b>Nothing goes live without your approval.</b></p>
-        </div>
-        <div class="fig rv">
-          <div class="okm" aria-hidden="true"><span class="okm-h">Review page</span><div class="row"><span class="b b1"><svg class="ck" viewBox="0 0 16 16"><path d="M3 8.6l3.1 3L13 4.6"/></svg><span class="lb">Approve</span><span class="rip"></span><svg class="hand" viewBox="0 0 64 64"><path d="M24 30V12a5 5 0 0 1 10 0v15l3-1a5 5 0 0 1 6 3l1 2 2-1a5 5 0 0 1 6 3l1 3 1 0a5 5 0 0 1 5 6v6c0 9-7 16-16 16h-6a16 16 0 0 1-13-7L14 41a5 5 0 0 1 8-6z" fill="#fff" stroke="#161513" stroke-width="3" stroke-linejoin="round"/></svg></span><span class="b">Request changes</span></div></div>
-          <dl class="spec wide">
-            <div><dt>You approve</dt><dd>Anything that changes what you tell customers: articles, prices, service descriptions.</dd></div>
-            <div><dt>We review</dt><dd>Technical SEO items: titles, descriptions, structured data. Each one shows its reason and the before and after side by side. These don’t change what you say.</dd></div>
-          </dl>
-        </div>
-      </div>
-      <div class="step" id="dashboard">
-        <div class="txt">
-          <span class="n rv" aria-hidden="true">05</span>
-          <h3>Publish &amp; Measure</h3>
-          <p>Approved changes go live automatically. Your results report updates every day: Google visits, booking clicks, AI mentions and site issues. Slower numbers, like competitors and keywords, go into a one-page monthly report next to last month. <b>Every update is logged, and the new numbers start the next round.</b></p>
-        </div>
-        <div class="fig rv">
-          <div class="shot"><img src="/assets/img/marketing/en/leads.webp" width="1072" height="345" loading="lazy" decoding="async" alt="The dashboard’s leads section: 12 booking clicks and form submissions in the last 90 days, plus 21 clicks on contact links; visitor sources ranked as direct, Google, Bing and ChatGPT."></div>
-          <p class="shot-cap mono">Leads: booking clicks and forms in the last 90 days, and where those visitors came from.</p>
-        </div>
-      </div>
+    <div class="sec-head rv">
+      <p class="eyebrow">SERVICES</p>
+      <h2 class="h2" id="items-h">What we do</h2>
+    </div>
+    <div class="items rv">
+      <div><b><a class="tlink" href="/en/ai-visibility-engine/">Ship to Live AI Visibility Engine</a></b><p>Our own system keeps analyzing how your brand shows up on the major AI search platforms.</p></div>
+      <div><b>AI visibility checks</b><p>See whether ChatGPT, Gemini and other AI platforms mention your company, and which competitors they recommend.</p></div>
+      <div><b>AEO/GEO optimization</b><p>Improve your content and site structure so AI search is more likely to find your brand.</p></div>
+      <div><b>Competitor analysis</b><p>Compare how you and your competitors show up in AI search results.</p></div>
+      <div><b>Website content improvements</b><p>Recommendations based on each check, updated on your site once you approve them.</p></div>
+      <div><b>Tracking</b><p>A private dashboard shows brand visibility, search performance and every website change.</p></div>
     </div>
   </div>
 </section>
 
-<section class="sec split" id="checks" aria-labelledby="chk-h">
-  <div class="wrap g12">
-    <div class="rule" aria-hidden="true"></div>
-    <div class="lhs">
-      <h2 class="state rv" id="chk-h">What the engine&nbsp;checks</h2>
-      <p class="sub">Each check turns into a specific change to your site, then gets measured again. The AI and data tools behind it are included in your plan. No tools to buy, no separate API bills.</p>
-    </div>
-    <div class="rhs rv">
-      <h3 class="side-h">AI assistants</h3>
-      <dl class="spec wide">
-        <div><dt>AI visibility check</dt><dd>Your goal questions put to ChatGPT, Claude, Perplexity and Gemini with live search: how many answers name you, and whose sites they cite. <b>Where you’re not named, we write a page that answers that question.</b></dd></div>
-        <div><dt>What AI says about you</dt><dd>Each sentence AI writes about you, compared with your site. <b>Anything wrong gets fixed at the source; anything unsupported, we check with you.</b></dd></div>
-        <div><dt>AI crawler visits</dt><dd>Which AI crawlers read your site in the last 30 days, and which pages. <b>We make sure nothing is shutting them out.</b></dd></div>
-      </dl>
-      <h3 class="side-h">Google’s AI answers</h3>
-      <dl class="spec wide">
-        <div><dt>AI Overviews and AI Mode</dt><dd>For your important searches, whether Google’s AI summary cites your site, and who it cites instead. <b>We tune the top of each page so Google has something to quote.</b></dd></div>
-      </dl>
-      <h3 class="side-h">Google search</h3>
-      <dl class="spec wide">
-        <div><dt>Keywords</dt><dd>Monthly search volume, ranking difficulty, and terms one step from the top. <b>Page-1 terms not yet in the top 3 come first.</b></dd></div>
-        <div><dt>Search Console</dt><dd>Clicks, impressions and ranking spread every 28 days, compared with the period before.</dd></div>
-        <div><dt>Indexing</dt><dd>Whether every page is indexed, and whether Google recognizes your business. <b>Unindexed pages get fixed; wrong facts get corrected.</b></dd></div>
-        <div><dt>Peers and links</dt><dd>Which terms your peers rank for, who links to you and who mentions you. <b>We fill the topics you’re missing.</b></dd></div>
-      </dl>
-      <h3 class="side-h">Your site</h3>
-      <dl class="spec wide">
-        <div><dt>Site health</dt><dd>About 15 checks: speed, SSL, domain expiry, titles, structured data, sitemap, crawler access, broken links. <b>Errors are listed by priority and fixed first.</b></dd></div>
-        <div><dt>Page checklist</dt><dd>16 conditions on every page, such as one H1, a title under 60 characters, a short answer up top, FAQ structured data and breadcrumbs. <b>New pages must pass before they go live.</b></dd></div>
-        <div><dt>Notify Bing</dt><dd>Changed pages go straight to Bing, so Microsoft Copilot reads them sooner.</dd></div>
-      </dl>
-    </div>
-  </div>
-</section>
-
-<section class="sec split" id="method" aria-labelledby="m-h">
-  <div class="wrap g12">
-    <div class="rule" aria-hidden="true"></div>
-    <div class="lhs">
-      <h2 class="state rv" id="m-h">How we check AI&nbsp;answers</h2>
-      <p class="sub">AI answers vary from run to run, so the method stays fixed. That is what makes this month comparable with last month.</p>
-    </div>
-    <div class="rhs rv">
-      <dl class="spec wide">
-        <div><dt>Real customer questions</dt><dd>The questions your customers actually ask, without your company’s name. <b>Put your name in the question and AI almost always says something nice. The real test is whether it recommends you when nobody mentions you.</b></dd></div>
-        <div><dt>English and 中文</dt><dd>The same questions in both languages. Plenty of businesses show up in one and vanish in the other.</dd></div>
-        <div><dt>Fresh chats, live search</dt><dd>A new conversation every time, with no personal history, and each assistant’s live web search turned on, so the answers match what customers see.</dd></div>
-        <div><dt>From your customers’ city</dt><dd>Questions are asked as if from where your customers are, such as Taipei or San Diego. “Near me” and “best” questions change with location.</dd></div>
-        <div><dt>More than one run</dt><dd>Each question runs several times and we report the share of answers that name you, never a single answer.</dd></div>
-        <div><dt>Same set, steady schedule</dt><dd>Your goals are asked on every check. AI checks run every day (up to 3 times a day); your site and Google data are checked daily too.</dd></div>
-        <div><dt>Raw sources</dt><dd>Google numbers come from Google Search Console and Copilot citations from Bing Webmaster Tools. Every AI answer is saved, so you can read exactly what it said.</dd></div>
-      </dl>
-      <p class="honest">Why not just ask ChatGPT yourself? One chat is shaped by your name, your location and your history, so it isn’t what customers see. <a href="/en/projects/ai-visibility-checker/">How the AI visibility check works</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="sec split" id="process" aria-labelledby="how-h">
-  <div class="wrap g12">
-    <div class="rule" aria-hidden="true"></div>
-    <div class="lhs">
-      <h2 class="state rv" id="how-h">From sign-up to steady&nbsp;progress</h2>
-      <p class="sub">The first three steps happen once. The last two repeat, and each round’s numbers start the next one.</p>
-    </div>
-    <div class="rhs rv">
-      <ol class="rules">
-        <li><b>Set up · live in 1–2 working days</b><span>Have a site? We connect it to the engine, no rebuild. No site yet? We build one Google and AI can read, in English, 中文 or both.</span></li>
-        <li><b>Diagnose · days 3–5</b><span>Your first diagnosis report: site health, a page-by-page checklist, where you stand on Google and in AI answers, and what to fix first.</span></li>
-        <li><b>Goals · week 1</b><span>We agree on your 5 optimization goals. Every check after that compares against them.</span></li>
-        <li><b>Optimize · ongoing</b><span>The engine drafts new content and page fixes, each with its reason, and sends them to your review page.</span></li>
-        <li><b>Report · ongoing</b><span>Approved changes go live. We track Google and AI every day and send a monthly report with what comes next.</span></li>
-      </ol>
-      <div class="shot"><img src="/assets/img/marketing/en/speed.webp" width="1072" height="356" loading="lazy" decoding="async" alt="The dashboard's page speed check: mobile performance 98, with accessibility, best practices and SEO at 100; desktop at 100 on all four."></div>
-      <p class="shot-cap mono">Part of the diagnosis: Google PageSpeed for the WU LAW INTL PLLC homepage, mobile 98, desktop 100. <span class="nw">November 6, 2026</span>.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec proof" id="case" aria-labelledby="case-h">
-  <div class="wrap g12">
-    <div class="rule" aria-hidden="true"></div>
-    <h2 class="state rv" id="case-h">Two clients, after they&nbsp;started</h2>
-    <p class="case"><span>WU LAW INTL PLLC is a New York–licensed attorney’s firm in Taipei handling US–Taiwan inheritance. We built the bilingual site and started tech marketing in August 2026. These are real numbers from the dashboard, each with its date.</span> <a class="mono" href="https://wulawintl.com" target="_blank" rel="noopener">wulawintl.com ↗</a></p>
-    <div class="delta" style="grid-column:1/-1">
-      <div class="rv"><span class="v">0<small>→</small><b data-from="0" data-count="26">26</b></span><p>AI answers citing the site (of 45)</p><p class="src mono"><span class="nw">Oct 26</span> → <span class="nw">Oct 30</span> · <span class="nw">our AI check</span></p></div>
-      <div class="rv d1"><span class="v">5<small>→</small><b data-from="5" data-count="21">21</b></span><p>Search terms in Google's top 3</p><p class="src mono"><span class="nw">Oct 30</span> → <span class="nw">Nov 8</span> · <span class="nw">Google Search Console</span></p></div>
-      <div class="rv d2"><span class="v">112<small>→</small><b data-from="112" data-count="136">136</b></span><p>Clicks from Google in 28 days</p><p class="src mono"><span class="nw">Oct 26</span> → <span class="nw">Nov 8</span> · <span class="nw">Google Search Console</span></p></div>
-      <div class="rv d2"><span class="v">0<small>→</small><b data-from="0" data-count="19">19</b></span><p>Booking clicks in 30 days</p><p class="src mono"><span class="nw">first 30 days tracked</span> → <span class="nw">30 days to Nov 11, 2026</span> · <span class="nw">site log</span></p></div>
-    </div>
-    <div class="fig rv" style="grid-column:1/-1;margin-top:44px">
-      <div class="shot"><img src="/assets/img/marketing/en/compare.webp" width="1072" height="465" loading="lazy" decoding="async" alt="The dashboard's head-to-head view: WU LAW INTL PLLC is named in 58% of 45 AI answers, compared one by one with five peers whose names are blurred."></div>
-      <p class="shot-cap mono">Head-to-head with peers (<span class="nw">October 30</span> check). Peer names are blurred here; your dashboard shows the competitors you choose.</p>
-    </div>
-    <h3 class="side-h case-h">Go Hike 山行接駁</h3>
-    <p class="case" style="grid-column:1/-1;margin-top:12px"><span>Go Hike runs hiking shuttles from Taipei and Taichung to Taiwan’s high-mountain trailheads. We built the booking site, launched in September 2026, and it moved onto the Xiayu AI Visibility Engine in late October 2026.</span> <a class="mono" href="https://gohike.tw" target="_blank" rel="noopener">gohike.tw ↗</a></p>
-    <div class="delta" style="grid-column:1/-1">
-      <div class="rv"><span class="v">25<small>→</small><b data-from="25" data-count="63">63</b></span><p>Search terms the site ranks for</p><p class="src mono"><span class="nw">Oct 31</span> → <span class="nw">Nov 8</span> · <span class="nw">Google Search Console</span></p></div>
-      <div class="rv d1"><span class="v">3<small>→</small><b data-from="3" data-count="8">8</b></span><p>Search terms in Google's top 3</p><p class="src mono"><span class="nw">Oct 31</span> → <span class="nw">Nov 8</span> · <span class="nw">Google Search Console</span></p></div>
-      <div class="rv d2"><span class="v">32<small>→</small><b data-from="32" data-count="79">79</b></span><p>Clicks from Google in 28 days</p><p class="src mono"><span class="nw">late Oct</span> → <span class="nw">early Nov</span> · <span class="nw">Google Search Console</span></p></div>
-      <div class="rv d2"><span class="v">0<small>→</small><b data-from="0" data-count="23">23</b></span><p>Bookings and forms in 30 days</p><p class="src mono"><span class="nw">first 30 days tracked</span> → <span class="nw">last 30 days</span> · <span class="nw">site log</span></p></div>
-    </div>
-    <p class="honest" style="grid-column:1/-1;max-width:40em">Every number has its date and source. Your starting point will be different, and you’ll see your own numbers from the first diagnosis report.</p>
-  </div>
-</section>
-
-<section class="sec split" id="metrics" aria-labelledby="mt-h">
-  <div class="wrap g12">
-    <div class="rule" aria-hidden="true"></div>
-    <div class="lhs">
-      <h2 class="state rv" id="mt-h">What each number&nbsp;means</h2>
-      <p class="sub">Every number says how it’s counted and where it comes from. AI numbers and Google numbers are reported separately. Examples are real WU LAW INTL PLLC numbers.</p>
-    </div>
-    <div class="rhs rv">
-      <h3 class="side-h">AI answers</h3>
-      <dl class="spec wide">
-        <div><dt>AI mention rate</dt><dd>The share of customer questions where AI answers name you. <b>Example: 14 of 15 questions (<span class="nw">Oct 30, 2026</span>)</b></dd></div>
-        <div><dt>Citation rate</dt><dd>How many AI answers list your site as a source. <b>Example: 26 of 45 answers, up from 0 at the first check (<span class="nw">Oct 26</span> → <span class="nw">Oct 30, 2026</span>)</b></dd></div>
-        <div><dt>Head-to-head</dt><dd>For the same questions, how often AI names you versus the competitors you pick. <b>Example: 58% versus 36% for the closest peer (<span class="nw">Oct 30, 2026</span>; peer names withheld)</b></dd></div>
-        <div><dt>Copilot citations</dt><dd>How often Microsoft Copilot cited your site, from Bing Webmaster Tools. <b>Example: 176 in the last 30 days (<span class="nw">Nov 11, 2026</span>)</b></dd></div>
-      </dl>
-      <h3 class="side-h">Google</h3>
-      <dl class="spec wide">
-        <div><dt>Google visits</dt><dd>Clicks from Google search in the last 28 days (Search Console), against the 28 days before. <b>Example: 145, up 51% (<span class="nw">Nov 11, 2026</span>)</b></dd></div>
-        <div><dt>Top-3 terms</dt><dd>How many search terms rank in Google’s top 3. <b>Example: 5 → 21 (<span class="nw">Oct 30</span> → <span class="nw">Nov 8, 2026</span>)</b></dd></div>
-        <div><dt>AI Overview citations</dt><dd>Of your key searches, how many show a Google AI Overview, and how many of those cite you. <b>Example: 6 of 7 show one; 2 cite the firm (<span class="nw">November 2026</span>)</b></dd></div>
-      </dl>
-      <h3 class="side-h">Business</h3>
-      <dl class="spec wide">
-        <div><dt>Booking clicks</dt><dd>Clicks on booking buttons, forms and contact links, with the source and first page viewed. No names or emails. <b>Example: 19 in the last 30 days, 0 in the first 30 days tracked (<span class="nw">Nov 11, 2026</span>)</b></dd></div>
-      </dl>
-    </div>
-  </div>
-</section>
-
-<section class="sec how" id="fit" aria-labelledby="fit-h">
-  <div class="wrap g12">
-    <div class="rule" aria-hidden="true"></div>
-    <div class="lhs">
-      <h2 class="state rv" id="fit-h">Who it’s&nbsp;for</h2>
-      <p class="sub">Any business whose customers ask AI before they choose. Small or niche is fine.</p>
-    </div>
-    <ol class="rules">
-      <li><b>Cross-border professional firms</b><span>Law, accounting, immigration, real estate. “Which lawyers in Taipei handle US–Taiwan inheritance?” <a href="#case">Law-firm case</a></span></li>
-      <li><b>Travel, transport and bookings</b><span>Shuttles, tours, stays. “Private hiking shuttle from Taipei to the Xueshan trailhead”</span></li>
-      <li><b>Training and B2B services</b><span>Buyers compare several providers first. “Corporate ESG training in Taiwan”</span></li>
-      <li><b>Local shops and experiences</b><span>Classes, studios, restaurants, activities. “Indoor group activities in Taipei”</span></li>
-    </ol>
-  </div>
-</section>
-
-<section class="sec" id="pricing" aria-labelledby="price-h">
+<section class="sec" id="terms" aria-labelledby="terms-h">
   <div class="wrap">
-    <div class="rule" aria-hidden="true"></div>
-    <h2 class="state rv" id="price-h">How plans&nbsp;work</h2>
-    <p class="sub">Every plan runs on the Xiayu AI Visibility Engine. Where you start and how much we do depends on your site and your goals.</p>
-    <div class="plans">
-      <article class="plan rv">
-        <h3>Start on your existing site</h3>
-        <p class="what">You already have a site. No rebuild needed.</p>
-        <ul>
-          <li>Technical health check, plus a Google and AI visibility baseline</li>
-          <li>Optimization goals set with you, and a first fix list</li>
-          <li>Google PageSpeed test and fixes, aiming for 90+ on all four scores</li>
-          <li>Google Search Console and Bing Webmaster Tools set up, sitemap submitted</li>
-        </ul>
-      </article>
-      <article class="plan rv d1">
-        <h3>A new website</h3>
-        <p class="what">No site yet, or the current one can’t carry the basics? We build one that Google and AI can read, in English, 中文 or both.</p>
-        <ul>
-          <li>Basic: mobile-ready, contact form, basic SEO, sitemap, submitted to Google and Bing</li>
-          <li>Advanced: service page structure, FAQ, Schema structured data, analytics, AI-search-friendly structure</li>
-        </ul>
-      </article>
-      <article class="plan rv d2">
-        <h3>Every plan includes</h3>
-        <ul>
-          <li>5 optimization goals: the questions your customers ask AI most, set with you; add more: 10, 15 or 20</li>
-          <li>5 AI-written articles a month, in English and 中文 with photos, sent to your review page</li>
-          <li>A professional writer, added per article if you want one</li>
-          <li>A daily results report, a monthly report and a log of every update</li>
-          <li>Nothing changes on your site until you tap Approve</li>
-        </ul>
-      </article>
-      <article class="plan wide rv">
-        <h3>Shaped around you</h3>
-        <ul>
-          <li>Connect your existing site, or start with a new one</li>
-          <li>3, 6 or 12-month terms (month-to-month on the Monitor plan)</li>
-          <li>AI checks 1 to 3 times a day</li>
-          <li>Pick the AI platforms to check: ChatGPT, Gemini, Claude, Perplexity</li>
-          <li>Goals that AI already names you for reliably can be swapped for new ones</li>
-        </ul>
-      </article>
-      <article class="plan rv">
-        <h3>We quote after a short call</h3>
-        <p class="what">A free 20-minute call to understand your site and goals, then a written quote.</p>
-        <ul>
-          <li><a href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">Book a free 20-minute call →</a></li>
-          <li><a href="/en/?topic=Free%20AI%20visibility%20check#contact">Request the free check →</a></li>
-        </ul>
-      </article>
+    <div class="sec-head rv">
+      <p class="eyebrow">SEO · AEO · GEO</p>
+      <h2 class="h2" id="terms-h">Google and AI, handled together</h2>
+      <p class="lede">When AI answers a question, it reads websites in real time and picks a few to name. A site it can read, clear answers, and mentions elsewhere all raise your chances.</p>
     </div>
-    <h3 class="side-h rv">What we commit to</h3>
-    <dl class="spec wide" style="max-width:44em">
-      <div><dt>Steady checks</dt><dd>Your site and Google data every day, and AI answers every day (up to 3 times a day), with the same questions every time.</dd></div>
-      <div><dt>Evidence</dt><dd>Every suggestion comes with the data and the reason, so you know why it changes.</dd></div>
-      <div><dt>Numbers</dt><dd>Every month, where you started and where you are now, side by side.</dd></div>
-    </dl>
-    <p class="honest" style="max-width:44em">Results move faster when questions get answered and drafts get reviewed quickly. Search and AI visibility build over months.</p>
+    <div class="grid3">
+      <div class="card rv"><span class="num">SEO</span><h3>Search engine optimization</h3><p>Rank higher in Google Search.</p></div>
+      <div class="card rv"><span class="num">AEO</span><h3>Answer engine optimization</h3><p>Get your content cited as a source in answers such as Google AI Overviews.</p></div>
+      <div class="card rv"><span class="num">GEO</span><h3>Generative engine optimization</h3><p>Raise the chance that ChatGPT, Gemini and other AI tools recommend you.</p></div>
+    </div>
+    <p class="muted rv" style="margin-top:22px">New to this? Read our <a class="tlink" href="/en/geo-guide/">AI search optimization guide for small businesses</a>.</p>
   </div>
 </section>
 
-<section class="sec how" id="ask" aria-labelledby="ask-h">
-  <div class="wrap g12">
-    <div class="rule" aria-hidden="true"></div>
-    <div class="lhs">
-      <h2 class="state rv" id="ask-h">Six questions to ask before you&nbsp;choose</h2>
-      <p class="sub">Whoever you hire, these are worth a clear answer. Here are ours.</p>
-    </div>
-    <ol class="rules">
-      <li><b>Which AI platforms?</b><span>ChatGPT, Gemini, Claude and Perplexity, plus citations in Google AI Overviews and Microsoft Copilot.</span></li>
-      <li><b>Which questions?</b><span>5 optimization goals set with you: questions customers ask without naming you, the same set every time.</span></li>
-      <li><b>How often?</b><span>Site and Google data every day. AI checks every day, up to 3 times a day.</span></li>
-      <li><b>Are AI and Google reported separately?</b><span>Yes. Mention and citation rates sit apart from Google visits and rankings, each with its date and source.</span></li>
-      <li><b>Who approves content?</b><span>You. Anything that changes what you tell customers waits on your review page for your Approve.</span></li>
-      <li><b>Who owns the site and data?</b><span>You do. Site, domain, accounts and data stay in your name.</span></li>
-    </ol>
-  </div>
-</section>
-
-<section class="sec faq" id="faq" aria-labelledby="faq-h">
-  <div class="wrap g12">
-    <div class="rule" aria-hidden="true"></div>
-    <div class="lhs"><h2 class="state rv" id="faq-h">What owners&nbsp;ask</h2></div>
-    <div class="faq-list">
-      <details open>
-        <summary><span class="i">01</span><span>What is tech marketing?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>Getting your business named and recommended when customers look for what you do, on Google and in AI assistants like ChatGPT, Gemini and Perplexity. Our AI visibility engine checks your site, Google and AI answers, writes pages that answer customers' questions directly, and measures again with the same questions, so you can see whether AI names you more often.</p>
-      </details>
-      <details>
-        <summary><span class="i">02</span><span>How long until we see results?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>AI engines search the web live, so fixes to your site and listings can show up in their answers within weeks. Our client WU LAW INTL PLLC went from 0 to 26 AI answers citing the site four days after the first check. Google rankings for competitive searches usually take three to six months, and visibility keeps building over months. You get numbers every day and every month, so you can see what is moving.</p>
-      </details>
-      <details>
-        <summary><span class="i">03</span><span>Can you guarantee ChatGPT or Google will recommend us?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>AI answers change from run to run, so we compare with the same questions over time. What we commit to: steady checks, evidence behind every change, and monthly numbers you can compare with where you started, so you can judge the results yourself.</p>
-      </details>
-      <details>
-        <summary><span class="i">04</span><span>Do we need a new website?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>Usually not. We connect the site you already have, including WordPress, Shopify, Webflow and custom sites. We recommend a rebuild only when the platform blocks the basics: speed, structured data or access for AI crawlers. If you don't have a site yet, we build one, basic or advanced.</p>
-      </details>
-      <details>
-        <summary><span class="i">05</span><span>Who writes the content, and can anything go live without my approval?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>Every plan includes 5 AI-written articles a month, in English and Chinese with photos, and you can add a professional writer per article. Every draft goes to a private review page on your site. It isn't public, and you sign in with Gmail. You tap Approve or Request changes. Nothing goes live without your OK. Technical SEO items, like titles, descriptions and structured data, are reviewed by us and don't change what you say.</p>
-      </details>
-      <details>
-        <summary><span class="i">06</span><span>What do I see each month?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>A results report that updates every day: Google visits, booking clicks, AI mentions and site issues. A one-page monthly report compared with last month, which you can print or save as a PDF. And a log of every update: what went live, which drafts were added and what was fixed.</p>
-      </details>
-      <details>
-        <summary><span class="i">07</span><span>What do you need from me to get started?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>Your company name, your website and the Gmail you'll sign in with. You sign the contract online. Your account is live in 1 to 2 working days, and your first diagnosis report arrives in 3 to 5 days. After that you do three things: answer questions only you can answer, review drafts, and tell us anything you want changed.</p>
-      </details>
-      <details>
-        <summary><span class="i">08</span><span>What is the difference between SEO, AEO and GEO?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>SEO gets your pages ranked in Google and Bing results. AEO (answer engine optimization) gets your pages quoted as a source in Google's AI Overviews and AI Mode. GEO (generative engine optimization) gets your business recommended in answers from ChatGPT, Gemini, Claude, Perplexity and Copilot. All three rest on fast pages, clear answers, structured data, an llms.txt file and consistent listings. We call the whole thing tech marketing.</p>
-      </details>
-      <details>
-        <summary><span class="i">09</span><span>How do I know whether AI mentions us?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>Ask ChatGPT, Gemini, Claude and Perplexity the questions customers ask, without your name in them: fresh chats, live search on, several runs per question, and count the share of answers that name you. Asking ChatGPT once yourself usually misleads, because your name is in the question and the answer is tailored to your location and history. The free check does this properly, once. <a href="#method">How we check</a></p>
-      </details>
-      <details>
-        <summary><span class="i">10</span><span>What if AI says something wrong about us?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>We compare every sentence AI writes about you with your site and sort them into “contradicts your site” and “not supported by your site”. Contradictions get fixed on your site and on listings like your Google Business Profile. Unsupported claims we check with you first, then write the correct version clearly. AI searches the web live, so the next check usually shows the change.</p>
-      </details>
-      <details>
-        <summary><span class="i">11</span><span>Do we need llms.txt? Are FAQ and structured data enough?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>llms.txt is a short file on your site written for AI to read. It’s cheap and worth having, but it isn’t the deciding step. FAQ and structured data are groundwork too, not the whole job. Who AI recommends also depends on whether it can read your site, whether your answers are clear, and what other places say about you: your Google Business Profile, industry directories, reviews and press. The Xiayu AI Visibility Engine checks all three.</p>
-      </details>
-      <details>
-        <summary><span class="i">12</span><span>We’re small and in a niche field. Does this suit us?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>Yes. It suits any business whose customers ask AI before they choose. In a niche field the questions are more specific, and a site that answers them clearly is easier to cite. Start with the free check to see how AI answers your customers today.</p>
-      </details>
-      <details>
-        <summary><span class="i">13</span><span>What do I send for the free check, and how is it different from the monthly service?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>Your company name, website and the city your customers are in; if you can, the 3 questions they ask most and up to 3 competitors. No budget talk needed. The free check is a snapshot: about ten customer questions, four AI engines, and within 1–2 business days a report on who gets named, which sites AI cites and what to fix first. The monthly service runs on the Xiayu AI Visibility Engine: daily checks of your site and Google data, regular AI checks with the same goals, drafted fixes and 5 articles a month, nothing live without your approval, and a monthly comparison.</p>
-      </details>
-      <details>
-        <summary><span class="i">14</span><span>Can we pay to have ChatGPT recommend us?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>Who AI recommends in its answers isn’t for sale. We work on the recommendations AI writes on its own: making sure it can read your site, understand your services and find you mentioned elsewhere. Advertising is a separate thing and not part of our service.</p>
-      </details>
-      <details>
-        <summary><span class="i">15</span><span>How should we handle forums and online reviews?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>AI reads online discussions and reviews, so reputation matters. We keep your Google Business Profile and listings consistent, remind you to ask happy customers for genuine reviews, and answer the questions people ask on forums clearly on your site. We don’t post fake reviews or write paid word-of-mouth posts.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<section class="sec cta-end" id="get-started" aria-labelledby="c-h">
-  <div class="wrap g12">
-    <div class="rule" aria-hidden="true"></div>
-    <div class="cta-grid">
-      <div class="cta-main">
-        <h2 class="state rv" id="c-h">See what AI says about you&nbsp;first</h2>
-        <p class="sub">Free check: about ten questions your customers ask, four AI engines, who gets named, and what to fix first.</p>
-        <div class="ctas">
-          <a class="pill" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">Book a free 20-minute call <span class="arr" aria-hidden="true">→</span></a>
-          <a class="tlink" href="/en/?topic=Free%20AI%20visibility%20check#contact">Request the free check</a>
+<section class="sec dark" id="engine" aria-labelledby="eng-h">
+  <div class="wrap">
+    <div class="engine">
+      <div class="rv">
+        <p class="eyebrow">BUILT IN-HOUSE</p>
+        <h2 class="h2" id="eng-h" style="margin:14px 0 16px">See how AI describes you</h2>
+        <div class="prose">
+          <p>The engine asks AI the questions your customers ask, records which answers mention you and which competitors they recommend, and turns that into a prioritized list of website fixes. After each change it measures again, and the results stay in your dashboard.</p>
         </div>
+        <p style="margin-top:26px"><a class="tlink" style="color:#fff" href="/en/ai-visibility-engine/">About the AI Visibility Engine</a></p>
       </div>
-      <div class="cta-side">
-        <ol class="rules" aria-label="Free check">
-          <li><b>You send</b><span>Company name, website and the city your customers are in. If you can: the 3 questions they ask most and up to 3 competitors.</span></li>
-          <li><b>We ask</b><span>About ten customer questions, in English and 中文, to ChatGPT, Gemini, Claude and Perplexity.</span></li>
-          <li><b>You get</b><span>A report within 1–2 business days: which answers name you, who AI recommends instead, which sites it cites and what to fix first.</span></li>
-        </ol>
-        <h3 class="side-h">Starting the monthly service</h3>
-        <ol class="rules" aria-label="Getting started">
-          <li><b>Send three things</b><span>Your company name, your website and the Gmail you’ll sign in with.</span></li>
-          <li><b>Sign online</b><span>The contract is signed online. No meeting needed.</span></li>
-          <li><b>Live in 1–2 working days</b><span>You get two links: your results report and your review page.</span></li>
-          <li><b>First diagnosis in 3–5 days</b><span>Then we set your 5 goals and start improving.</span></li>
-        </ol>
-      </div>
+      <figure class="shot rv">
+        <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Head to head</span></div>
+        <img src="/assets/v2/img/engine-compare-en.jpg" width="1600" height="641" alt="Ship to Live AI Visibility Engine: how often AI answers mention you versus each competitor" loading="lazy">
+        <figcaption>Real system screen (demo data): for the same questions, how often AI mentions you versus a competitor</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
+<section class="sec alt faq" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head rv"><p class="eyebrow">FAQ</p><h2 class="h2" id="faq-h">Questions</h2></div>
+    <div class="rv">
+      <details><summary>What is the difference between SEO, AEO and GEO?</summary><p>SEO improves your ranking in Google Search. AEO (answer engine optimization) gets your content cited in answers such as Google AI Overviews. GEO (generative engine optimization) raises the chance that ChatGPT, Gemini and other AI tools recommend you. They work best together.</p></details>
+      <details><summary>Why not just ask ChatGPT myself?</summary><p>A single chat is shaped by your name, location and chat history, so you don't see what customers see. The engine uses a fresh chat and the same set of questions every time, in Chinese and English, so results can be compared over time.</p></details>
+      <details><summary>Will my website content change without my approval?</summary><p>No. Any change that publishes content on your site goes to you for approval first.</p></details>
+      <details><summary>Can you guarantee AI will recommend us?</summary><p>No one can guarantee that a given platform will recommend you or that rankings will rise. We measure, find the reasons, improve your content, and track the change in your dashboard.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="cta-h">
+  <div class="wrap">
+    <div class="cta-box rv" style="margin-top:0">
+      <div><h3 id="cta-h">Will AI recommend your company?</h3><p>Send your website and main city. We reply with a check report within 1–2 business days.</p></div>
+      <a class="pill" href="/en/ai-visibility-engine/#check">Get a free AI visibility check <span class="arr" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
 </main>
-
 <footer class="foot">
   <div class="wrap">
     <div class="cols">
-      <p class="mono"><b>夏裕科技 Xiayu Technology</b><br>Taiwan: 夏裕科技股份有限公司 · 統一編號 90173045<br>US: QY LLC, San Diego</p>
-      <nav aria-label="Footer">
-        <a href="/en/seo-aeo-geo/">Tech marketing</a><a href="/en/geo-guide/">AI search guide</a><a href="/en/projects/">Work</a><a href="/en/about/">About</a><a href="/tools/">Tools</a><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a><a href="/en/privacy/">Privacy</a><a href="/seo-aeo-geo/" hreflang="zh-Hant" lang="zh-Hant">中文</a>
-      </nav>
-      <p class="mono">Dashboard views show real data for WU LAW INTL PLLC, shared with the client's consent; peer names are blurred.<br>© 2026 夏裕科技 Xiayu Technology</p>
+      <div><b>Ship to Live</b>Ship to Live (夏裕科技股份有限公司)<br>Taiwan tax ID 90173045<br>Headquartered in Taipei, serving Taiwan and the US<p class="motto">Dare to think. Dare to build. Dare to innovate.</p></div>
+      <nav aria-label="Services"><b>Services</b><a href="/en/website/">Websites & Digital Marketing</a><a href="/en/software/">Custom Software Development</a><a href="/en/seo-aeo-geo/">AI Search Optimization (AEO/GEO)</a><a href="/en/ai-visibility-engine/">AI Visibility Engine</a></nav>
+      <nav aria-label="More"><b>More</b><a href="/en/about/">About</a><a href="/en/geo-guide/">AI search optimization guide</a><a href="/en/projects/">Past work</a><a href="/tools/">Free tools</a><a href="/en/privacy/">Privacy policy</a></nav>
+      <nav aria-label="Contact"><b>Contact</b><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a><a href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">Book a free consultation</a><a href="/en/ai-visibility-engine/#check">Free AI visibility check</a></nav>
     </div>
+    <div class="legal"><span>© 2026 Ship to Live (夏裕科技股份有限公司)</span><span><a href="/" style="display:inline">中文版</a></span></div>
   </div>
 </footer>
-
-<script src="/assets/home/home.js?v=2" defer></script>
-<script src="/assets/home/motion.js?v=1" defer></script>
-<script src="/assets/booking.js" defer></script>
-<script>
-/* local nav: appears past the intro, marks the section in view, steps aside at the closing CTA.
-   Phones: a bottom pill that opens the list. Desktop: a bar under the header. */
-(function () {
-  var d = document, root = d.documentElement, n = d.querySelector('.lnav'); if (!n || !window.requestAnimationFrame) return;
-  root.classList.add('lnav-js');
-  var links = [].slice.call(n.querySelectorAll('ol a')), secs = links.map(function (a) { return d.getElementById(a.hash.slice(1)); });
-  var start = d.querySelector(n.getAttribute('data-start')), end = d.querySelector('.cta-end'), ol = n.querySelector('ol'), hdr = d.querySelector('.hdr');
-  var tg = n.querySelector('.lnav-tg'), curEl = tg && tg.querySelector('.cur');
-  var cur = -1, on = false, tick = false, rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function hh() { if (hdr) root.style.setProperty('--hdr-h', Math.round(hdr.getBoundingClientRect().height) + 'px'); }
-  function top(el) { return (el.firstElementChild || el).getBoundingClientRect().top; }
-  function open(v) { n.classList.toggle('open', v); if (tg) tg.setAttribute('aria-expanded', v ? 'true' : 'false'); }
-  function upd() {
-    tick = false; var vh = window.innerHeight;
-    var show = start.getBoundingClientRect().bottom < 0 && (!end || end.getBoundingClientRect().top > vh * 0.55);
-    if (show !== on) { on = show; n.classList.toggle('on', on); if (!on) open(false); }
-    var i = -1; secs.forEach(function (s, k) { if (s && top(s) < vh * 0.4) i = k; });
-    if (i === cur) return;
-    if (cur > -1) links[cur].removeAttribute('aria-current');
-    cur = i; if (i < 0) return;
-    links[i].setAttribute('aria-current', 'location');
-    if (curEl) curEl.textContent = links[i].textContent;
-    if (ol.scrollWidth > ol.clientWidth + 1) { var li = links[i].parentNode; ol.scrollTo({ left: li.offsetLeft - ol.offsetLeft - (ol.clientWidth - li.offsetWidth) / 2, behavior: rm ? 'auto' : 'smooth' }); }
-  }
-  if (tg) tg.addEventListener('click', function () { open(!n.classList.contains('open')); });
-  links.forEach(function (a) { a.addEventListener('click', function () { open(false); }); });
-  d.addEventListener('click', function (e) { if (n.classList.contains('open') && !n.contains(e.target)) open(false); });
-  d.addEventListener('keydown', function (e) { if (e.key === 'Escape' && n.classList.contains('open')) { open(false); tg.focus(); } });
-  window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(upd); } }, { passive: true });
-  window.addEventListener('resize', function () { hh(); upd(); });
-  window.addEventListener('load', hh);
-  hh(); upd();
-})();
-</script>
+<script src="/assets/v2/site.js?v=1" defer></script>
 </body>
 </html>

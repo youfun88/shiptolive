@@ -1,784 +1,292 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>科技行銷：讓客戶在 Google 和 AI 都找得到您｜夏裕科技</title>
-  <meta name="description" content="客戶現在會直接問 Google 和 ChatGPT、Gemini。夏裕 AI 曝光引擎每天檢查您的網站，找出 AI 沒提到您的問題，寫好建議，您同意才上線。中英文，依您的需求報價。" />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-  <meta name="theme-color" content="#eee9e3" />
-  <link rel="canonical" href="https://www.shiptolive.com/seo-aeo-geo/" />
-  <link rel="alternate" hreflang="en" href="https://www.shiptolive.com/en/seo-aeo-geo/" />
-  <link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/seo-aeo-geo/" />
-  <link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/seo-aeo-geo/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="夏裕科技" />
-  <meta property="og:locale" content="zh_TW" />
-  <meta property="og:title" content="科技行銷：讓客戶在 Google 和 AI 都找得到您｜夏裕科技" />
-  <meta property="og:description" content="夏裕 AI 曝光引擎：監測、分析、建議、審核、線上追蹤。真實客戶數字：AI 回答引用網站 0 → 26 次、Google 前 3 名字詞 5 → 21 個。" />
-  <meta property="og:url" content="https://www.shiptolive.com/seo-aeo-geo/" />
-  <meta property="og:image" content="https://www.shiptolive.com/assets/img/og.png?v=4" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="preconnect" href="https://www.googletagmanager.com" />
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
-  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin />
-  <link rel="stylesheet" href="/assets/home/home.css?v=7" />
-  <link rel="stylesheet" href="/assets/home/pages.css?v=8" />
-  <link rel="stylesheet" href="/assets/home/motion.css?v=4" />
-  <link rel="stylesheet" href="/assets/home/ux-svc.css?v=13" />
-  <style>
-    .spec.flow dt { color: var(--ink); }
-    .spec.flow dt i { font-style: normal; color: var(--accent); margin-right: 8px; }
-    .spec.flow dt small { display: block; font-size: 12px; color: var(--ink-3); margin-top: 4px; }
-    #flow .fig { margin-top: 32px; }
-    .step .fig .mock { margin-top: 0; }
-    .step .fig .spec { margin-top: 0; }
-    .quote-end { margin-top: 36px; }
-    .quote-end h3 { font-size: clamp(24px, 5.4vw, 32px); letter-spacing: -.02em; }
-    .quote-end .sub { margin-top: 10px; }
-    @media (max-width: 959px) { .spec.flow > div, #how-ai .spec > div { grid-template-columns: 8.6em 1fr; } }
-    #metrics .spec dd b, #method .spec dd b { font-weight: 600; color: var(--ink); }
-    #metrics .side-h + .spec { margin-top: 8px; }
-    #metrics .spec + .side-h { margin-top: 36px; }
-    #method .honest a, .rules span a { white-space: nowrap; }
-    @media (min-width: 960px) { #metrics .rhs, #method .rhs { padding-top: 56px; } }
-    @media (max-width: 959px) {
-      #fit ol.rules, #ask ol.rules, .cta-end ol.rules { display: block; }
-      #fit .rules li:nth-last-child(2), #ask .rules li:nth-last-child(2), .cta-end .rules li:nth-last-child(2) { border-bottom-color: var(--hair); }
-    }
-    .cta-end ol.rules { max-width: 36em; margin-top: 36px; }
-  </style>
-  <script type="application/ld+json">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI 搜尋優化（AEO／GEO）｜夏裕科技</title>
+<meta name="description" content="當客戶問 AI，您的公司會出現在答案裡嗎？夏裕科技以自主研發的「夏裕 AI 曝光引擎」檢測 ChatGPT、Gemini 等 AI 是否提到您，提供 AEO／GEO 優化、競爭同業分析與成效追蹤。">
+<link rel="canonical" href="https://www.shiptolive.com/seo-aeo-geo/">
+<link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/seo-aeo-geo/">
+<link rel="alternate" hreflang="en" href="https://www.shiptolive.com/en/seo-aeo-geo/">
+<link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/seo-aeo-geo/">
+<meta name="theme-color" content="#efebe6">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="夏裕科技">
+<meta property="og:title" content="AI 搜尋優化（AEO／GEO）｜夏裕科技">
+<meta property="og:description" content="當客戶問 AI，您的公司會出現在答案裡嗎？夏裕科技以自主研發的「夏裕 AI 曝光引擎」檢測 ChatGPT、Gemini 等 AI 是否提到您，提供 AEO／GEO 優化、競爭同業分析與成效追蹤。">
+<meta property="og:url" content="https://www.shiptolive.com/seo-aeo-geo/">
+<meta property="og:image" content="https://www.shiptolive.com/assets/img/og.png?v=5">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5W92T6J80C"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5W92T6J80C');</script>
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/v2/site.css?v=1">
+<script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": "https://www.shiptolive.com/seo-aeo-geo/#service",
-  "name": "科技行銷（SEO、AEO、GEO）",
-  "alternateName": "Tech marketing: SEO, AEO & GEO",
-  "serviceType": "生成式引擎最佳化（GEO）",
-  "brand": { "@type": "Brand", "name": "夏裕 AI 曝光引擎", "alternateName": "Xiayu AI Visibility Engine" },
-  "url": "https://www.shiptolive.com/seo-aeo-geo/",
-  "inLanguage": "zh-Hant",
-  "description": "讓客戶在 Google 搜尋、Google AI 摘要，以及 ChatGPT、Gemini、Claude、Perplexity 的回答中找到您。夏裕 AI 曝光引擎分五步：監測、分析、建議、審核、線上追蹤。每天檢查網站與 Google 資料，用客戶會問的問題詢問 AI，找出沒被提到的地方，寫好建議與文章，送到客戶的私人審閱頁；客戶按「同意上線」才更新網站。成效報告每天更新，另有每月報告。",
-  "provider": { "@id": "https://www.shiptolive.com/#service" },
-  "areaServed": ["Taiwan", "United States"],
-  "availableLanguage": ["zh-Hant", "en"],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "科技行銷方案",
-    "itemListElement": [
-      { "@type": "Offer", "name": "免費 AI 能見度檢測", "price": "0", "priceCurrency": "TWD", "description": "約十個客戶會問的問題，送進四個 AI 引擎，附上最優先的修正項目。" }
-    ]
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.shiptolive.com/#org",
+   "name": "夏裕科技股份有限公司",
+   "alternateName": [
+    "Ship to Live",
+    "夏裕科技"
+   ],
+   "legalName": "夏裕科技股份有限公司",
+   "taxID": "90173045",
+   "foundingDate": "2022",
+   "url": "https://www.shiptolive.com/",
+   "email": "yufan@shiptolive.com",
+   "logo": "https://www.shiptolive.com/assets/logo/logo-512.png",
+   "slogan": "敢想。敢作。敢創新。",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Taipei",
+    "addressCountry": "TW"
+   },
+   "areaServed": [
+    {
+     "@type": "Country",
+     "name": "Taiwan"
+    },
+    {
+     "@type": "Country",
+     "name": "United States"
+    }
+   ],
+   "founder": {
+    "@type": "Person",
+    "@id": "https://www.shiptolive.com/#yufan",
+    "name": "Yufan Chen",
+    "jobTitle": "Founder & CTO"
+   }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://www.shiptolive.com/seo-aeo-geo/#page",
+   "url": "https://www.shiptolive.com/seo-aeo-geo/",
+   "name": "AI 搜尋優化（AEO／GEO）｜夏裕科技",
+   "description": "當客戶問 AI，您的公司會出現在答案裡嗎？夏裕科技以自主研發的「夏裕 AI 曝光引擎」檢測 ChatGPT、Gemini 等 AI 是否提到您，提供 AEO／GEO 優化、競爭同業分析與成效追蹤。",
+   "inLanguage": "zh-Hant",
+   "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://www.shiptolive.com/#site",
+    "url": "https://www.shiptolive.com/",
+    "name": "夏裕科技 Ship to Live"
+   },
+   "publisher": {
+    "@id": "https://www.shiptolive.com/#org"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "首頁",
+     "item": "https://www.shiptolive.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "AI 搜尋優化（AEO／GEO）",
+     "item": "https://www.shiptolive.com/seo-aeo-geo/"
+    }
+   ]
+  },
+  {
+   "@type": "Service",
+   "name": "AI 搜尋優化（AEO／GEO）",
+   "serviceType": "AI 搜尋優化",
+   "provider": {
+    "@id": "https://www.shiptolive.com/#org"
+   },
+   "areaServed": [
+    {
+     "@type": "Country",
+     "name": "Taiwan"
+    },
+    {
+     "@type": "Country",
+     "name": "United States"
+    }
+   ],
+   "description": "以夏裕 AI 曝光引擎檢測品牌在 ChatGPT、Gemini 等 AI 搜尋平台的曝光情況，並提供 AEO／GEO 優化、競爭同業分析、網站內容優化與成效追蹤。"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "SEO、AEO、GEO 有什麼不同？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "SEO 是提升在 Google 搜尋的排名；AEO（答案引擎優化）是讓網站內容被 Google AI 摘要等答案引用；GEO（生成式引擎優化）是提高被 ChatGPT、Gemini 等 AI 推薦的機會。三者需要一起做。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "為什麼不自己問 ChatGPT 就好？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "一次對話會受您的名字、所在地和對話紀錄影響，看不到客戶看到的答案。夏裕 AI 曝光引擎每次用全新對話、固定的一組問題，並以中英文提問，數字才能前後比較。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "網站內容會在我不知道的情況下被修改嗎？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "不會。涉及網站內容發布的修改，都會先交由您確認後才上線。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "可以保證 AI 一定推薦我們嗎？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "沒有人能保證特定平台一定會推薦或排名提升。我們持續量測、找出原因並改善網站內容，再用後台追蹤變化。"
+     }
+    }
+   ]
   }
+ ]
 }
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "@id": "https://www.shiptolive.com/seo-aeo-geo/#webpage",
-  "url": "https://www.shiptolive.com/seo-aeo-geo/",
-  "name": "科技行銷：讓客戶在 Google 和 AI 都找得到您｜夏裕科技",
-  "inLanguage": "zh-Hant",
-  "dateModified": "2026-11-11",
-  "isPartOf": { "@id": "https://www.shiptolive.com/#website" },
-  "about": { "@id": "https://www.shiptolive.com/seo-aeo-geo/#service" },
-  "mentions": [
-    { "@type": "Organization", "name": "WU LAW INTL PLLC", "url": "https://wulawintl.com/" },
-    { "@type": "Organization", "name": "山行接駁 Go Hike", "url": "https://gohike.tw/" }
-  ],
-  "relatedLink": ["https://www.shiptolive.com/geo-guide/", "https://www.shiptolive.com/projects/ai-visibility-checker/"]
-}
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "夏裕科技", "item": "https://www.shiptolive.com/" },
-    { "@type": "ListItem", "position": 2, "name": "科技行銷", "item": "https://www.shiptolive.com/seo-aeo-geo/" }
-  ]
-}
-  </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "科技行銷是什麼？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "讓客戶在找您這類服務時，Google 搜尋、Google AI 摘要，以及 ChatGPT、Gemini 這些 AI 都會提到、推薦您。我們用夏裕 AI 曝光引擎每天檢查您的網站，找出 AI 沒提到您的問題，寫好內容和修改建議，您同意後才上線，再用同一組問題追蹤進步。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "多久會看到效果？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AI 會即時搜尋網路，網站修好之後，幾週內就可能出現在回答裡；WU LAW INTL PLLC 在第一次檢測後四天，AI 回答引用網站的次數從 0 變 26。Google 排名和整體能見度需要時間累積，通常以數個月來看。成效也和您的配合有關：問題回答得越完整、審閱越快，改善就越快。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "可以保證 ChatGPT 或 Google 一定推薦我們嗎？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AI 每次的回答可能不同，所以我們用同一組問題持續比較。我們承諾的是：持續檢查您的網站、每一個修改都附依據、每個月都有可以和開始時比較的數字。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "需要重做網站嗎？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "通常不用。已經有網站，就串接到系統，從既有網站啟動設定開始；WordPress、Shopify、Webflow 與自建網站都可以。還沒有網站，或平台本身擋住了速度、結構化資料或 AI 爬蟲存取，我們才會建議建置新網站。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "內容由誰來寫？會不會沒經過我同意就上線？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "每個方案每月包含 5 篇 AI 撰寫的文章，中英文、附照片；需要時，可以按篇加選專業寫手撰寫。所有草稿都送到您的私人審閱頁，用 Gmail 登入，不公開。您按「同意上線」或「需要修改」，沒有您同意，不會上線。標題、描述、結構化資料這類技術 SEO 調整由我們審核，不會改變您對客戶說的內容。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "我會看到什麼？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "成效報告每天更新：Google 造訪、預約點擊、AI 提及、網站問題。報告裡也有和同業的比較、Google 排名與點擊、詢價從哪裡來，以及每一次更新的紀錄。變化較慢的數字整理成每月報告，和上個月比較，可以存成 PDF。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "怎麼開始？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "先預約免費 20 分鐘諮詢，或申請免費檢測，我們依您的需求報價。決定合作後：填寫公司名稱、網站和登入用的 Gmail，線上簽約，1 到 2 個工作天開通，3 到 5 天內收到第一份診斷報告。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "SEO、AEO、GEO 有什麼不一樣？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "SEO（搜尋引擎優化）提升您在 Google 與 Bing 搜尋結果的排名。AEO（答案引擎優化）讓網站內容被 Google AI 摘要、AI 模式引用為來源。GEO（生成式引擎優化）提高被 ChatGPT、Gemini、Claude、Perplexity、Copilot 推薦的機會。三者的基礎都是快速的網頁、清楚的答案、結構化資料、llms.txt 與一致的網路名錄資料。我們統稱為科技行銷。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "怎麼知道 AI 有沒有提到我？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "用客戶會問、但不提您名字的問題，去問 ChatGPT、Gemini、Claude、Perplexity：開新對話、開即時搜尋，每題問好幾次，看提到您的比例。自己問一次 ChatGPT 通常不準，因為問題帶著您的名字，回答也會依您的所在地和對話紀錄調整。免費檢測就是用這個方法幫您做一次。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "AI 介紹我們的資訊有錯，怎麼辦？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "我們把 AI 回答裡關於您的句子，和網站逐句比對，分成「和網站不符」與「網站上找不到根據」。和網站不符的，修正網站和 Google 商家檔案等平台的資料；找不到根據的，先請您確認是不是事實，再把正確的說法寫清楚。AI 會即時搜尋網路，修正後的下一次檢測通常就看得到變化。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "需要 llms.txt 嗎？只加 FAQ 和結構化資料夠嗎？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "llms.txt 是放在網站上、寫給 AI 讀的說明檔，成本低，有比沒有好，但不是決定性的一步。FAQ 和結構化資料也是基本功，不是全部。AI 推薦誰，還要看網站讀不讀得到、答案清不清楚，以及別的地方怎麼說您，例如 Google 商家檔案、產業名錄、評論與報導。夏裕 AI 曝光引擎三邊一起檢查。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "我們這行很小眾、公司不大，也適合嗎？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "適合。客戶會先問 AI、再決定找誰的服務，都值得做。行業越小眾，客戶的問題越具體，清楚回答的網站越容易被 AI 引用。先做免費檢測，看 AI 現在怎麼回答您的客戶。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "免費檢測要給什麼？和每月服務差在哪？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "給我們公司名稱和網站、客戶在哪個城市；有的話，再加上客戶最常問的 3 個問題和最多 3 家想比較的同業，不用先談預算。免費檢測是一次快照：約十個客戶會問的問題、四個 AI，1–2 個工作天內告訴您誰被提到、AI 引用了哪些網站、最該先修什麼。每月服務由夏裕 AI 曝光引擎持續執行：每天檢查網站和 Google 資料、用同一組優化目標定期問 AI、寫好建議和每月 5 篇文章，您同意才上線，每月和上個月比較。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "可以付費讓 ChatGPT 推薦我們嗎？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AI 在回答裡推薦誰，不是用買的。我們做的是 AI 自己會寫進回答的推薦：讓它讀得到您的網站、讀得懂您的服務，也在別的地方看到您。廣告是另一回事，不在我們的服務範圍。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Dcard、PTT 和網路評論要怎麼處理？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AI 會參考網路上的討論和評論，所以口碑有影響。我們的做法是：把 Google 商家檔案和各平台的資料整理一致，提醒您請滿意的客人留下真實評論，並在網站上清楚回答大家在論壇常問的問題。我們不發假評論，也不代寫口碑文。"
-      }
-    }
-  ]
-}
-  </script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5W92T6J80C"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-5W92T6J80C');
-  </script>
+</script>
 </head>
 <body>
 <a class="skip" href="#main">跳到主要內容</a>
-
 <header class="hdr">
   <div class="wrap">
-    <a class="brand" href="/" aria-label="夏裕科技 首頁"><b><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect x="20" y="16" width="38" height="12" rx="6" fill="currentColor"/><rect x="6" y="36" width="31" height="12" rx="6" fill="currentColor"/><circle cx="49" cy="42" r="7.5" fill="#d7612a"/></svg>夏裕科技</b><span class="mono">台北・聖地牙哥</span></a>
-    <nav class="nav" aria-label="主選單">
-      <a href="/seo-aeo-geo/" aria-current="page">科技行銷</a>
-      <a href="/#sw">軟體開發</a>
-      <a href="/#ai">AI 導入</a>
-      <a href="/projects/">作品</a>
-      <a href="/about/">關於</a>
+    <a class="brand" href="/" aria-label="夏裕科技 首頁"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="20" y="16" width="38" height="12" rx="6" fill="currentColor"/><rect x="6" y="36" width="31" height="12" rx="6" fill="currentColor"/><circle cx="49" cy="42" r="7.5" fill="#d7612a"/></svg><span>夏裕科技<br><small>SHIP TO LIVE</small></span></a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="選單"><span></span></button>
+    <nav class="nav" id="nav" aria-label="選單">
+      <a href="/">首頁</a>
+      <div class="dd"><button type="button" aria-expanded="false" aria-haspopup="true">服務項目</button>
+        <div class="menu">
+          <a href="/website/">網站建置與數位行銷<small>企業網站、SEO、多語言網站</small></a>
+          <a href="/software/">客製化軟體開發<small>企業系統、App、系統整合</small></a>
+          <a href="/seo-aeo-geo/" aria-current="page">AI 搜尋優化（AEO／GEO）<small>讓 ChatGPT、Gemini 提到您</small></a>
+        </div>
+      </div>
+      <a href="/ai-visibility-engine/">夏裕 AI 曝光引擎</a>
+      <a href="/about/">關於我們</a>
+      <a href="/#contact">聯絡我們</a>
+      <a class="lang" href="/en/seo-aeo-geo/" hreflang="en" lang="en" aria-label="English version">EN</a>
+      <a class="pill sm orange cta-m" href="/ai-visibility-engine/#check">免費 AI 曝光檢測</a>
     </nav>
-    <a class="lang" href="/en/seo-aeo-geo/" hreflang="en" lang="en" aria-label="EN – English version">EN</a>
-    <a class="pill sm" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約諮詢</a>
+    <a class="pill sm orange cta" href="/ai-visibility-engine/#check">免費 AI 曝光檢測</a>
   </div>
 </header>
-
-<nav class="lnav" aria-label="本頁段落" data-start=".phero">
-  <div class="wrap"><button class="lnav-tg" type="button" aria-expanded="false" aria-controls="lnav-list"><span class="k">目錄</span><span class="cur">曝光引擎</span><span class="cv" aria-hidden="true"></span></button><ol id="lnav-list"><li><a href="#process">曝光引擎</a></li><li><a href="#checks">檢查項目</a></li><li><a href="#method">檢查方法</a></li><li><a href="#case">案例</a></li><li><a href="#metrics">數字定義</a></li><li><a href="#pricing">方案</a></li><li><a href="#faq">常見問題</a></li></ol><a class="lnav-cta" href="/?topic=%E5%85%8D%E8%B2%BB%20AI%20%E8%83%BD%E8%A6%8B%E5%BA%A6%E6%AA%A2%E6%B8%AC#contact">申請免費檢測 <span class="arr" aria-hidden="true">→</span></a></div>
-</nav>
-
 <main id="main">
-
-<section class="phero" aria-labelledby="h1">
-  <div class="wrap g12">
-    <p class="idx mono"><span>科技行銷</span><span>夏裕 AI 曝光引擎</span></p>
-    <h1 id="h1" class="one"><span class="ph">成為 AI 眼中的主角</span></h1>
-    <p class="lede">客戶現在會直接問 Google 和 ChatGPT、Gemini 等 AI。AI 沒提到您，客戶就不會想到您。夏裕 AI 曝光引擎每天檢查您的網站，找出沒被提到的地方，寫好改善建議；您同意才上線，每個月都有可以比較的數字。</p>
-    <div class="ctas">
-      <a class="pill" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約免費 20 分鐘諮詢 <span class="arr" aria-hidden="true">→</span></a>
-      <a class="tlink" href="/?topic=%E5%85%8D%E8%B2%BB%20AI%20%E8%83%BD%E8%A6%8B%E5%BA%A6%E6%AA%A2%E6%B8%AC#contact">申請免費檢測</a>
-    </div>
-  </div>
-</section>
-
-<section class="sec split" id="how-ai" aria-labelledby="why-h">
-  <div class="wrap g12">
-    <div class="rule" aria-hidden="true"></div>
-    <div class="lhs"><h2 class="state rv" id="why-h"><span class="ph">AI 怎麼決定</span><span class="ph">推薦誰？</span></h2>
-      <div class="ask" aria-hidden="true"><p class="q"><span class="gh">台北有哪些做跨境遺產的律師？</span></p><p class="a"><span class="dots"><b></b><b></b><b></b></span><i></i><i></i><i></i></p></div></div>
-    <div class="rhs rv">
-      <div class="prose">
-        <p>客戶問 AI「台北有哪些做跨境遺產的律師？」，AI 會即時讀幾十個網站，再挑幾家寫進回答。它挑的標準很單純：<strong>網站讀得到、問題答得清楚、別的地方也提到您。</strong>所以要同時顧好三件事：</p>
-      </div>
-      <dl class="spec wide">
-        <div><dt>SEO 搜尋引擎優化</dt><dd>提升您在 Google 搜尋的排名。</dd></div>
-        <div><dt>AEO 答案引擎優化</dt><dd>讓網站內容被 Google AI 摘要、AI 模式引用為來源。</dd></div>
-        <div><dt>GEO 生成式引擎優化</dt><dd>提高被 ChatGPT、Gemini 等 AI 推薦的機會。</dd></div>
-      </dl>
-      <div class="prose">
-        <p>三件事一步帶動下一步：內容寫清楚，Google 和 AI 更容易找到、引用、推薦您；網站流量增加，預約和詢價也跟著來。這條鏈要持續做才會轉起來，所以我們做了夏裕 AI 曝光引擎。</p>
-        <p>想先弄懂基本觀念，可以看<a href="/geo-guide/">給中小企業的 AI 搜尋優化（GEO）指南</a>。</p>
+<section class="hero page" aria-labelledby="h1">
+  <div class="wrap g">
+    <div>
+      <p class="crumbs"><a href="/">首頁</a> / 服務項目</p>
+      <p class="eyebrow">03 · AI SEARCH OPTIMIZATION</p>
+      <h1 id="h1">AI 搜尋優化（AEO／GEO）</h1>
+      <p class="sub2">當客戶問 AI，您的公司會出現在答案裡嗎？</p>
+      <p class="lede">現在越來越多人透過 ChatGPT、Gemini 等 AI 工具尋找產品與服務。</p>
+      <p class="lede" style="margin-top:12px;margin-bottom:28px">夏裕科技自行開發「夏裕 AI 曝光引擎」，協助企業了解 AI 是否提到自己的品牌、推薦哪些競爭對手，以及網站有哪些地方值得改善。</p>
+      <div class="btns">
+        <a class="pill orange" href="/ai-visibility-engine/#check">免費檢測您的 AI 曝光情況 <span class="arr" aria-hidden="true">→</span></a>
+        <a class="pill ghost" href="/ai-visibility-engine/">了解夏裕 AI 曝光引擎</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sec" id="process" aria-labelledby="how-h">
+<section class="sec alt" id="items" aria-labelledby="items-h">
   <div class="wrap">
-    <div class="rule" aria-hidden="true"></div>
-    <h2 class="state rv" id="how-h">夏裕 AI 曝光引擎</h2>
-    <p class="sub">夏裕 AI 曝光引擎是我們自己開發的系統。監測、分析、建議、審核、線上追蹤，五個步驟一直循環，每一輪的結果就是下一輪的起點。系統自動執行，我們的團隊把關。</p>
-    <div class="road" aria-hidden="true"><span class="trk"><span class="fill"></span></span><ol><li><i><span>1</span></i><span>監測</span><small>Monitor</small></li><li><i><span>2</span></i><span>分析</span><small>Analyze</small></li><li><i><span>3</span></i><span>建議</span><small>Plan</small></li><li><i><span>4</span></i><span>審核</span><small>Review</small></li><li><i><span class="halo"></span><span>5</span></i><span>線上追蹤</span><small>Publish &amp; Measure</small></li></ol></div>
-    <div class="steps">
-      <div class="step">
-        <div class="txt">
-          <span class="n rv" aria-hidden="true">01</span>
-          <h3>監測 Monitor</h3>
-          <p>每天自動檢查網站健康與速度、Google 排名與點擊，以及競爭對手與詢價來源。我們用客戶會問的問題詢問 ChatGPT、Gemini、Claude、Perplexity，記錄哪些回答提到您、引用您的網站。<b>AI 檢測每天一次（可加到每天 3 次），每次都問同一組問題。</b></p>
-        </div>
-        <div class="fig rv">
-          <div class="shot tall"><img src="/assets/img/marketing/ai-trend.webp" width="563" height="864" loading="lazy" decoding="async" alt="成效報告的 AI 能見度檢測：45 則回答中 26 則提到 WU LAW INTL PLLC；折線圖從 10 月 26 日的 0 到 10 月 30 日的 26；下方列出 Claude、ChatGPT、Gemini 各自提到的次數。"></div>
-          <p class="shot-cap mono">WU LAW INTL PLLC：<span class="nw">10 月 26 日</span>第一次檢測，45 則回答引用網站 0 次；<span class="nw">10 月 30 日</span> 26 次。</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="txt">
-          <span class="n rv" aria-hidden="true">02</span>
-          <h3>分析 Analyze</h3>
-          <p>系統把監測到的資料整理成四種改善機會：AI 沒提到您的問題、有機會的新關鍵字、排在第 4 到 10 名、快進前幾名的頁面，以及 AI 說錯的內容。網站以外也看：Google 商家檔案、Bing Places、LinkedIn 與產業名錄上的資料是否一致，以及 AI 實際引用了哪些網站，從中找出新的曝光機會。<b>每一種都對應一件具體要改的事。</b></p>
-        </div>
-        <div class="fig rv">
-          <div class="shot"><img src="/assets/img/marketing/google-rank.webp" width="1072" height="345" loading="lazy" decoding="async" alt="成效報告的 Google 排名分布：10 月 30 日有 46 個搜尋字詞，前 3 名 5 個；11 月 6 日有 69 個，前 3 名 18 個。"></div>
-          <p class="shot-cap mono">WU LAW INTL PLLC：Google 第 1 頁的搜尋字詞從 29 個變 48 個，前 3 名從 5 個變 18 個。<span class="nw">10 月 30 日</span> → <span class="nw">11 月 6 日</span>。</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="txt">
-          <span class="n rv" aria-hidden="true">03</span>
-          <h3>建議 Plan</h3>
-          <p>和您一起設定 5 個優化目標：您的客戶最常問 AI 的問題。每次檢測都問同一組，進步才看得到。依方案可以加到 10、15 或 20 個；已經穩定被推薦的目標，可以換成新的。沒被提到、沒被引用的目標，變成具體的優化建議，<b>每一項都附依據。</b></p>
-        </div>
-        <div class="fig rv">
-          <div class="mock">
-            <div class="mock-head"><b>山行接駁 Go Hike</b><span>優化目標範例</span></div>
-            <p class="mock-q">中英文都問</p>
-            <ul>
-              <li><span>台北出發雪山登山口接駁包車推薦</span></li>
-              <li><span>台中到合歡山登山接駁哪家好？</span></li>
-              <li><span lang="en">Who offers private hiking shuttles from Taipei to the Yushan trailhead?</span></li>
-              <li><span lang="en">How do I get from Taipei to Hehuanshan for hiking without a car?</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="txt">
-          <span class="n rv" aria-hidden="true">04</span>
-          <h3>審核 Review</h3>
-          <p>您只需要做三件事：回答只有您知道的事實，例如服務範圍、價格；審閱草稿，按「同意上線」或「需要修改」；隨時提出想改的地方。審閱頁在您自己的網站上，用 Gmail 登入，不公開。<b>沒有您同意，不會上線。</b></p>
-        </div>
-        <div class="fig rv">
-          <div class="okm" aria-hidden="true"><span class="okm-h">審閱頁</span><div class="row"><span class="b b1"><svg class="ck" viewBox="0 0 16 16"><path d="M3 8.6l3.1 3L13 4.6"/></svg><span class="lb">同意上線</span><span class="rip"></span><svg class="hand" viewBox="0 0 64 64"><path d="M24 30V12a5 5 0 0 1 10 0v15l3-1a5 5 0 0 1 6 3l1 2 2-1a5 5 0 0 1 6 3l1 3 1 0a5 5 0 0 1 5 6v6c0 9-7 16-16 16h-6a16 16 0 0 1-13-7L14 41a5 5 0 0 1 8-6z" fill="#fff" stroke="#161513" stroke-width="3" stroke-linejoin="round"/></svg></span><span class="b">需要修改</span></div></div>
-          <dl class="spec wide">
-            <div><dt>您審內容</dt><dd>文章、價格、服務說明，凡是會改變您對客戶說的話，一定要您同意。</dd></div>
-            <div><dt>我們審 SEO</dt><dd>標題、描述、結構化資料這類技術調整由我們審核，每一項都寫出依據，不改變您說的內容。</dd></div>
-            <div><dt>每月 5 篇文章</dt><dd>每個方案每月包含 5 篇 AI 撰寫的文章，中英文、附照片，送到您的審閱頁；也可以按篇加選專業寫手。</dd></div>
-          </dl>
-        </div>
-      </div>
-      <div class="step">
-        <div class="txt">
-          <span class="n rv" aria-hidden="true">05</span>
-          <h3>線上追蹤 <span class="nw">Publish &amp; Measure</span></h3>
-          <p>您同意的內容自動更新到網站。成效報告每天更新：Google 造訪、預約點擊、AI 提及、網站問題。變化較慢的數字整理成每月報告，和上個月比較。<b>每一次更新都留下紀錄，最新的在最上面。</b></p>
-        </div>
-        <div class="fig rv">
-          <div class="shot"><img src="/assets/img/marketing/leads.webp" width="1072" height="345" loading="lazy" decoding="async" alt="成效報告的詢價區：最近 90 天 12 次預約點擊與表單送出，另有 21 次點擊聯絡連結；訪客來源依序是直接造訪、Google、Bing、ChatGPT。"></div>
-          <p class="shot-cap mono">詢價來源：每一筆預約和表單都記錄客人從哪裡來、先看哪一頁，不記錄姓名或 Email。</p>
-        </div>
-      </div>
+    <div class="sec-head rv">
+      <p class="eyebrow">SERVICES</p>
+      <h2 class="h2" id="items-h">服務項目</h2>
+    </div>
+    <div class="items rv">
+      <div><b><a class="tlink" href="/ai-visibility-engine/">夏裕 AI 曝光引擎</a></b><p>透過自行開發的系統，持續分析品牌在主要 AI 搜尋平台的曝光情況。</p></div>
+      <div><b>AI 曝光檢測</b><p>查看 ChatGPT、Gemini 等 AI 平台是否提到您的公司，以及推薦哪些同業。</p></div>
+      <div><b>AEO／GEO 優化</b><p>改善網站內容與資訊架構，增加品牌被 AI 搜尋發現的機會。</p></div>
+      <div><b>競爭同業分析</b><p>比較企業與競爭同業在 AI 搜尋結果中的曝光表現。</p></div>
+      <div><b>網站內容優化</b><p>根據檢測結果提出改善建議，經客戶確認後更新。</p></div>
+      <div><b>成效追蹤</b><p>透過專屬後台查看品牌曝光、搜尋表現及網站改善紀錄。</p></div>
     </div>
   </div>
 </section>
 
-<section class="sec split" id="checks" aria-labelledby="chk-h">
-  <div class="wrap g12">
-    <div class="rule" aria-hidden="true"></div>
-    <div class="lhs">
-      <h2 class="state rv" id="chk-h"><span class="ph">曝光引擎</span><span class="ph">替您檢查這些</span></h2>
-      <p class="sub">每一項檢查都會變成一件具體要改的事，改完再量一次。檢查用到的 AI 與資料工具都包含在方案裡，您不用另外買工具。</p>
-    </div>
-    <div class="rhs rv">
-      <h3 class="side-h">AI 聊天機器人</h3>
-      <dl class="spec wide">
-        <div><dt>AI 能見度檢測</dt><dd>用客戶會問的問題詢問 ChatGPT、Gemini、Claude、Perplexity，看幾則回答提到您、引用了誰的網站。<b>沒被提到的問題，就寫內容直接回答。</b></dd></div>
-        <div><dt>AI 怎麼描述您</dt><dd>把 AI 回答裡關於您的句子，和您網站上的內容逐句比對。<b>說錯的地方，從網站和各平台修正。</b></dd></div>
-        <div><dt>主題對應</dt><dd>每個主題，AI 把哪些公司連在一起。<b>還沒把您連上的主題，就是下一篇要寫的。</b></dd></div>
-        <div><dt>AI 爬蟲造訪</dt><dd>最近 30 天哪些 AI 來讀過您的網站、讀了哪些頁。<b>確認爬蟲規則沒有把它們擋在外面。</b></dd></div>
-      </dl>
-      <h3 class="side-h">Google 的答案區</h3>
-      <dl class="spec wide">
-        <div><dt>AI 摘要與 AI 模式</dt><dd>您重要的搜尋，Google 的 AI 摘要有沒有引用您的網站，沒有的話引用了誰。<b>有摘要卻沒引用您的，就是要爭取的目標。</b></dd></div>
-      </dl>
-      <h3 class="side-h">Google 搜尋</h3>
-      <dl class="spec wide">
-        <div><dt>關鍵字研究</dt><dd>每月搜尋量、排名難度，以及差一點就到前面的字。<b>先推已經在第一頁、還沒進前三的字。</b></dd></div>
-        <div><dt>Search Console</dt><dd>每 28 天的點擊、曝光與排名分布，和上個月對照。</dd></div>
-        <div><dt>收錄與實體</dt><dd>每一頁有沒有被 Google 收錄；Google 認不認得您的公司。<b>沒收錄的修、認錯的改。</b></dd></div>
-        <div><dt>同業與商家資料</dt><dd>您指定的同業排在哪些字、AI 引用哪些網站，以及 Google 商家檔案、Bing Places 等平台的資料是否一致。<b>名稱和資料一致，AI 更容易信任您。</b></dd></div>
-      </dl>
-      <h3 class="side-h">您的網站</h3>
-      <dl class="spec wide">
-        <div><dt>網站健康</dt><dd>約 15 項檢查：速度、SSL 憑證、網域到期日、頁面標題、結構化資料、網站地圖、AI 爬蟲存取。<b>依優先順序列出要修的地方。</b></dd></div>
-        <div><dt>頁面檢查</dt><dd>每一頁檢查 16 個條件，例如只有一個 H1、開頭有簡短答案、FAQ 結構化資料。<b>新內容上線前也要全部通過。</b></dd></div>
-        <div><dt>通知 Bing</dt><dd>改過的頁面直接送給 Bing，Microsoft Copilot 比較快讀到。</dd></div>
-      </dl>
-    </div>
-  </div>
-</section>
-
-<section class="sec split" id="method" aria-labelledby="m-h">
-  <div class="wrap g12">
-    <div class="rule" aria-hidden="true"></div>
-    <div class="lhs">
-      <h2 class="state rv" id="m-h"><span class="ph">我們怎麼</span><span class="ph">檢查 AI 的回答</span></h2>
-      <p class="sub">AI 每次的回答可能不同，所以方法要固定，數字才能和上個月比。</p>
-    </div>
-    <div class="rhs rv">
-      <dl class="spec wide">
-        <div><dt>問題從客戶來</dt><dd>用客戶真的會問的問題，不提您的公司名稱。<b>問題裡有您的名字，AI 幾乎都會說好話；沒人提起時它會不會推薦您，才是真正的考驗。</b></dd></div>
-        <div><dt>中文、英文都問</dt><dd>同一組問題各用中文和英文問。很多公司在一種語言裡看得到，另一種就消失了。</dd></div>
-        <div><dt>全新對話、即時搜尋</dt><dd>每次都開新的對話，不帶個人紀錄，開啟 ChatGPT、Gemini、Claude、Perplexity 各自的即時網路搜尋，和客戶看到的一致。</dd></div>
-        <div><dt>從客戶的城市問</dt><dd>模擬從客戶所在的城市提問，例如台北或聖地牙哥。「附近」「推薦」這類問題，答案會跟著地點變。</dd></div>
-        <div><dt>不只問一次</dt><dd>每個問題跑好幾次，回報被提到的比例，不拿單一次回答下結論。</dd></div>
-        <div><dt>同一組、固定頻率</dt><dd>優化目標每次都問同一組；AI 檢測每天一次，可加到每天 3 次。網站和 Google 資料也每天檢查。</dd></div>
-        <div><dt>原始資料</dt><dd>Google 的數字來自 Google Search Console，Copilot 引用來自 Bing Webmaster Tools。每一則 AI 回答都保存，您讀得到 AI 說的每一句話。</dd></div>
-      </dl>
-      <p class="honest">為什麼不自己問 ChatGPT 就好？因為一次對話會受您的名字、所在地和對話紀錄影響，看不到客戶看到的答案。 <a href="/projects/ai-visibility-checker/">看 AI 能見度檢測的完整介紹</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="sec split" id="flow" aria-labelledby="flow-h">
-  <div class="wrap g12">
-    <div class="rule" aria-hidden="true"></div>
-    <div class="lhs">
-      <h2 class="state rv" id="flow-h"><span class="ph">從開始</span><span class="ph">到持續優化</span></h2>
-      <p class="sub">前三步只在開始時做一次；後兩步一直循環，每次更新後的數字，就是下一輪優化的起點。</p>
-    </div>
-    <div class="rhs rv">
-      <dl class="spec wide flow">
-        <div><dt><i>01</i>建置串接<small>開通 1–2 個工作天</small></dt><dd>已有網站，不用重做，直接串接到系統；還沒有網站，先建一個 Google 和 AI 容易讀懂的網站，中英文都可以。</dd></div>
-        <div><dt><i>02</i>診斷報告<small>第 3–5 天</small></dt><dd>網站健檢、每一頁的檢查、Google PageSpeed 速度，以及您在 Google 和 AI 的現況，依優先順序列出要改的地方。</dd></div>
-        <div><dt><i>03</i>優化目標<small>第 1 週</small></dt><dd>一起確認 5 個優化目標，之後每次檢測都用來比較。</dd></div>
-        <div><dt><i>04</i>深入優化</dt><dd>整理建議和需要您回答的問題，寫好新內容，送到審閱頁等您同意。</dd></div>
-        <div><dt><i>05</i>更新回報</dt><dd>依您同意的內容更新網站，每天追蹤，每月回報；接著回到第 4 步。</dd></div>
-      </dl>
-      <div class="fig">
-        <div class="shot"><img src="/assets/img/marketing/speed.webp" width="1072" height="356" loading="lazy" decoding="async" alt="成效報告的網頁速度檢查：手機效能 98 分，無障礙、最佳做法、SEO 各 100 分；電腦四項都是 100 分。"></div>
-        <p class="shot-cap mono">診斷報告裡的 Google PageSpeed，以 WU LAW INTL PLLC 首頁為例：手機 98、電腦 100。<span class="nw">2026 年 11 月 6 日</span>。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec proof" id="case" aria-labelledby="case-h">
-  <div class="wrap g12">
-    <div class="rule" aria-hidden="true"></div>
-    <h2 class="state rv" id="case-h"><span class="ph">一家台北事務所，</span><span class="ph">開始後的變化</span></h2>
-    <p class="case"><span>WU LAW INTL PLLC 是一位紐約州律師在台北的事務所，專辦台美跨境繼承。我們做了雙語網站，2026 年 8 月開始科技行銷。以下是成效報告的真實數字，每一個都標了日期。</span> <a class="mono" href="https://wulawintl.com" target="_blank" rel="noopener">wulawintl.com ↗</a></p>
-    <div class="delta" style="grid-column:1/-1">
-      <div class="rv"><span class="v">0<small>→</small><b data-from="0" data-count="26">26</b></span><p>AI 回答引用網站的次數（45 則中）</p><p class="src mono"><span class="nw">10 月 26 日</span> → <span class="nw">10 月 30 日</span>・<span class="nw">我們的 AI 檢測</span></p></div>
-      <div class="rv d1"><span class="v">5<small>→</small><b data-from="5" data-count="21">21</b></span><p>排在 Google 前 3 名的搜尋字詞</p><p class="src mono"><span class="nw">10 月 30 日</span> → <span class="nw">11 月 8 日</span>・<span class="nw">Google Search Console</span></p></div>
-      <div class="rv d2"><span class="v">112<small>→</small><b data-from="112" data-count="136">136</b></span><p>28 天內來自 Google 的點擊</p><p class="src mono"><span class="nw">10 月 26 日</span> → <span class="nw">11 月 8 日</span>・<span class="nw">Google Search Console</span></p></div>
-      <div class="rv d2"><span class="v">0<small>→</small><b data-from="0" data-count="19">19</b></span><p>30 天內的預約點擊</p><p class="src mono"><span class="nw">追蹤的頭 30 天</span> → <span class="nw">截至 2026-11-11</span><span class="nw">的最近 30 天</span>・<span class="nw">網站記錄</span></p></div>
-    </div>
-    <p class="case" style="grid-column:1/-1;max-width:40em">客戶問 Gemini：「美國公民在台灣有帳戶和房產，要怎麼做資產規劃？」Gemini 在回答裡 4 次引用這家事務所：3 次是事務所名稱，1 次是網站。客戶還沒開始找律師，AI 就先介紹了它。</p>
-    <div class="fig rv" style="grid-column:1/-1;margin-top:44px">
-      <div class="shot"><img src="/assets/img/marketing/compare.webp" width="1072" height="465" loading="lazy" decoding="async" alt="成效報告的同業比較：WU LAW INTL PLLC 在 45 則 AI 回答中被提到 58%，分別和五家同業比較，同業的名稱已模糊處理。"></div>
-      <p class="shot-cap mono">和同業比較（<span class="nw">10 月 30 日</span>的檢測）：58% 的回答提到這家事務所。同業名稱已模糊處理；追蹤名單由您決定。</p>
-    </div>
-    <p class="honest" style="grid-column:1/-1;max-width:40em">退步也照實列出。例如 AI 品牌評分從 42 降到 39，下一步就是統一各平台上的名稱、把服務寫清楚。</p>
-  </div>
-</section>
-
-<section class="sec proof" id="case-gohike" aria-labelledby="case2-h">
-  <div class="wrap g12">
-    <div class="rule" aria-hidden="true"></div>
-    <h2 class="state rv" id="case2-h"><span class="ph">一家登山接駁，</span><span class="ph">開始後的變化</span></h2>
-    <p class="case"><span>山行接駁 Go Hike 提供台北、台中到玉山、雪山等登山口的接駁預約。網站是我們做的，2026 年 10 月底開始使用夏裕 AI 曝光引擎。</span> <a class="mono" href="https://gohike.tw" target="_blank" rel="noopener">gohike.tw ↗</a></p>
-    <div class="delta" style="grid-column:1/-1">
-      <div class="rv"><span class="v">25<small>→</small><b data-from="25" data-count="63">63</b></span><p>有排名的搜尋字詞</p><p class="src mono"><span class="nw">10 月 31 日</span> → <span class="nw">11 月 8 日</span>・<span class="nw">Google Search Console</span></p></div>
-      <div class="rv d1"><span class="v">3<small>→</small><b data-from="3" data-count="8">8</b></span><p>排在 Google 前 3 名的搜尋字詞</p><p class="src mono"><span class="nw">10 月 31 日</span> → <span class="nw">11 月 8 日</span>・<span class="nw">Google Search Console</span></p></div>
-      <div class="rv d2"><span class="v">32<small>→</small><b data-from="32" data-count="79">79</b></span><p>28 天內來自 Google 的點擊</p><p class="src mono"><span class="nw">10 月底</span> → <span class="nw">11 月初</span>・<span class="nw">Google Search Console</span></p></div>
-      <div class="rv d2"><span class="v">0<small>→</small><b data-from="0" data-count="23">23</b></span><p>30 天內的預約與表單</p><p class="src mono"><span class="nw">追蹤的頭 30 天</span> → <span class="nw">最近 30 天</span>・<span class="nw">網站記錄</span></p></div>
-    </div>
-    <p class="honest" style="grid-column:1/-1;max-width:40em">同一段時間，平均排名從 2.5 變成 9.4，這不是退步：原來的字詞名次沒變，是新字詞剛起步、排在後面，把平均拉高。新字詞往前爬，平均就會回來。</p>
-  </div>
-</section>
-
-<section class="sec split" id="metrics" aria-labelledby="mt-h">
-  <div class="wrap g12">
-    <div class="rule" aria-hidden="true"></div>
-    <div class="lhs">
-      <h2 class="state rv" id="mt-h"><span class="ph">報告裡的數字，</span><span class="ph">各代表什麼</span></h2>
-      <p class="sub">每個數字都寫清楚怎麼算、從哪裡來。AI 的數字和 Google 的數字分開列。例子是 WU LAW INTL PLLC 的真實數字。</p>
-    </div>
-    <div class="rhs rv">
-      <h3 class="side-h">AI 回答</h3>
-      <dl class="spec wide">
-        <div><dt>AI 提及率</dt><dd>客戶會問的問題裡，AI 回答提到您的比例。<b>例：15 題中 14 題（<span class="nw">2026-10-30</span>）</b></dd></div>
-        <div><dt>網站引用率</dt><dd>AI 回答把您的網站列為來源的次數。<b>例：45 則回答中 26 則；第一次檢測是 0（<span class="nw">2026-10-26 → 10-30</span>）</b></dd></div>
-        <div><dt>同業比較</dt><dd>同一組問題，AI 提到您和提到您指定同業的比例。<b>例：58%，最接近的同業 36%（<span class="nw">2026-10-30</span>，同業名稱不公開）</b></dd></div>
-        <div><dt>Copilot 引用</dt><dd>Bing Webmaster Tools 回報 Microsoft Copilot 引用您網站的次數。<b>例：最近 30 天 176 次（<span class="nw">2026-11-11</span>）</b></dd></div>
-      </dl>
-      <h3 class="side-h">Google</h3>
-      <dl class="spec wide">
-        <div><dt>Google 造訪</dt><dd>Search Console 裡每 28 天來自 Google 搜尋的點擊，和前 28 天比。<b>例：145 次，多 51%（<span class="nw">2026-11-11</span>）</b></dd></div>
-        <div><dt>前 3 名字詞</dt><dd>排在 Google 前 3 名的搜尋字詞數量。<b>例：5 個 → 21 個（<span class="nw">2026-10-30 → 11-08</span>）</b></dd></div>
-        <div><dt>AI 摘要引用</dt><dd>重要的搜尋裡，有幾個出現 Google AI 摘要、其中幾個引用您的網站。<b>例：7 個搜尋中 6 個有 AI 摘要，2 個引用事務所（2026 年 11 月）</b></dd></div>
-      </dl>
-      <h3 class="side-h">生意</h3>
-      <dl class="spec wide">
-        <div><dt>預約點擊</dt><dd>預約按鈕、表單與聯絡連結的點擊，記錄客人從哪裡來、先看哪一頁，不記錄姓名或 Email。<b>例：最近 30 天 19 次，追蹤的頭 30 天 0 次（<span class="nw">2026-11-11</span>）</b></dd></div>
-      </dl>
-    </div>
-  </div>
-</section>
-
-<section class="sec how" id="dashboard" aria-labelledby="dash-h">
-  <div class="wrap g12">
-    <div class="rule" aria-hidden="true"></div>
-    <div class="lhs">
-      <h2 class="state rv" id="dash-h"><span class="ph">我們的承諾</span></h2>
-      <p class="sub">成效和您的配合很有關係：問題回答得越完整、審閱越快，改善越快。搜尋和 AI 能見度需要時間累積，通常以數個月來看。</p>
-    </div>
-    <ol class="rules">
-      <li><b>持續檢查</b><span>每天檢查網站與 Google 資料，定期檢查 AI 怎麼介紹您。</span></li>
-      <li><b>每個修改都有依據</b><span>每一項建議都附上數據和原因，您知道為什麼改。</span></li>
-      <li><b>每月可比較的數字</b><span>開始和現在並排，進步看得到。</span></li>
-      <li><b>您同意才上線</b><span>會改變您對客戶說的話，一定先給您看。</span></li>
-    </ol>
-  </div>
-</section>
-
-<section class="sec how" id="fit" aria-labelledby="fit-h">
-  <div class="wrap g12">
-    <div class="rule" aria-hidden="true"></div>
-    <div class="lhs">
-      <h2 class="state rv" id="fit-h"><span class="ph">適合哪些行業</span></h2>
-      <p class="sub">客戶會先問 AI、再決定找誰的服務，都適合。公司不大、行業小眾也可以。</p>
-    </div>
-    <ol class="rules">
-      <li><b>跨境專業服務</b><span>律師、會計、移民、不動產。例：「台北有哪些做台美跨境繼承的律師？」 <a href="#case">律師事務所案例</a></span></li>
-      <li><b>觀光、交通與預約</b><span>接駁、包車、導覽、住宿。例：「台北出發雪山登山口接駁推薦」 <a href="#case-gohike">登山接駁案例</a></span></li>
-      <li><b>企業培訓與 B2B 服務</b><span>客戶會比較很多家才決定。例：「台灣有哪些企業 ESG 培訓課程？」</span></li>
-      <li><b>在地店家與體驗</b><span>課程、工作室、餐廳、活動。例：「台北適合團體的室內活動推薦」</span></li>
-    </ol>
-  </div>
-</section>
-
-<section class="sec" id="pricing" aria-labelledby="price-h">
+<section class="sec" id="terms" aria-labelledby="terms-h">
   <div class="wrap">
-    <div class="rule" aria-hidden="true"></div>
-    <h2 class="state rv" id="price-h">方案怎麼運作</h2>
-    <p class="sub">每個方案都由夏裕 AI 曝光引擎每天檢查您的網站。從哪裡開始、做多少，依您的網站和目標決定。</p>
-    <div class="plans">
-      <article class="plan rv">
-        <h3>既有網站啟動設定</h3>
-        <p class="what">已經有網站，不用重做，從這裡開始。</p>
-        <ul>
-          <li>技術健檢，Google 與 AI 能見度基準測試</li>
-          <li>和您一起設定優化目標，列出第一份改善清單</li>
-          <li>Google PageSpeed 測試與改善，目標四項分數都到 90 以上</li>
-          <li>設定 Google Search Console 與 Bing Webmaster Tools，提交 Sitemap</li>
-        </ul>
-      </article>
-      <article class="plan rv d1">
-        <h3>新網站建置</h3>
-        <p class="what">還沒有網站，或現有網站撐不起基本條件時，先建一個 Google 和 AI 容易讀懂的網站，中英文都可以。</p>
-        <ul>
-          <li>基礎形象網站：手機版、聯絡表單、基本 SEO、Sitemap、Google 與 Bing 提交</li>
-          <li>進階企業網站：服務頁架構、FAQ、Schema 結構化資料、分析工具串接、AI 搜尋友善結構</li>
-        </ul>
-      </article>
-      <article class="plan rv d2">
-        <h3>每月優化</h3>
-        <p class="what">每個方案都包含：</p>
-        <ul>
-          <li>5 個優化目標：客戶最常問 AI 的問題，和您一起設定</li>
-          <li>每月 5 篇 AI 撰寫的文章，中英文、附照片，送到您的審閱頁</li>
-          <li>需要時，可以按篇加選專業寫手撰寫</li>
-          <li>每天更新的成效報告，以及每月報告</li>
-          <li>您按「同意上線」才更新網站</li>
-        </ul>
-      </article>
-      <article class="plan wide rv">
-        <h3>依您的需求調整</h3>
-        <ul>
-          <li>已有網站就串接，還沒有網站就先建置</li>
-          <li>合約 3、6 或 12 個月（監測方案也可以月繳）</li>
-          <li>AI 檢測每天 1 到 3 次</li>
-          <li>自選要檢查的 AI 平台：ChatGPT、Gemini、Claude、Perplexity</li>
-          <li>優化目標 5 個起，可加到 10、15 或 20 個；已經穩定被推薦的目標，可以換成新的</li>
-        </ul>
-      </article>
-      <article class="plan rv">
-        <h3>怎麼開始</h3>
-        <ul>
-          <li>填寫公司名稱、網站和登入用的 Gmail</li>
-          <li>線上簽約，不用見面</li>
-          <li>1 到 2 個工作天開通</li>
-          <li>3 到 5 天內收到第一份診斷報告</li>
-        </ul>
-      </article>
+    <div class="sec-head rv">
+      <p class="eyebrow">SEO · AEO · GEO</p>
+      <h2 class="h2" id="terms-h"><span class="ph">Google 和 AI，</span><span class="ph">要一起顧好</span></h2>
+      <p class="lede">AI 回答問題時，會即時讀取網站，再挑幾家寫進答案。網站讀得到、問題答得清楚、其他地方也提到您，被挑中的機會就比較高。</p>
     </div>
-    <div class="quote-end">
-      <h3>依您的需求報價</h3>
-      <p class="sub">先花 20 分鐘了解您的網站和目標，再給您書面報價。</p>
-      <div class="ctas">
-        <a class="pill" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約免費 20 分鐘諮詢 <span class="arr" aria-hidden="true">→</span></a>
-        <a class="tlink" href="/?topic=%E5%85%8D%E8%B2%BB%20AI%20%E8%83%BD%E8%A6%8B%E5%BA%A6%E6%AA%A2%E6%B8%AC#contact">申請免費檢測</a>
-      </div>
+    <div class="grid3">
+      <div class="card rv"><span class="num">SEO</span><h3>搜尋引擎優化</h3><p>提升您在 Google 搜尋的排名。</p></div>
+      <div class="card rv"><span class="num">AEO</span><h3>答案引擎優化</h3><p>讓網站內容被 Google AI 摘要等答案引用為來源。</p></div>
+      <div class="card rv"><span class="num">GEO</span><h3>生成式引擎優化</h3><p>提高被 ChatGPT、Gemini 等 AI 推薦的機會。</p></div>
     </div>
+    <p class="muted rv" style="margin-top:22px">想先弄懂基本觀念，可以看<a class="tlink" href="/geo-guide/">給中小企業的 AI 搜尋優化指南</a>。</p>
   </div>
 </section>
 
-<section class="sec how" id="ask" aria-labelledby="ask-h">
-  <div class="wrap g12">
-    <div class="rule" aria-hidden="true"></div>
-    <div class="lhs">
-      <h2 class="state rv" id="ask-h"><span class="ph">選服務之前，</span><span class="ph">可以先問的六件事</span></h2>
-      <p class="sub">不管最後找誰，這六個問題都值得問清楚。這是我們的答案。</p>
-    </div>
-    <ol class="rules">
-      <li><b>檢查哪些 AI？</b><span>ChatGPT、Gemini、Claude、Perplexity，加上 Google AI 摘要與 Microsoft Copilot 的引用。</span></li>
-      <li><b>用哪些問題檢查？</b><span>和您一起設定 5 個優化目標，都是客戶會問、不提您名字的問題，每次都問同一組。</span></li>
-      <li><b>多久檢查一次？</b><span>網站與 Google 資料每天檢查；AI 檢測每天一次（可加到每天 3 次），回報被提到的比例。</span></li>
-      <li><b>AI 和 Google 分開報嗎？</b><span>分開。AI 提及率、引用率和 Google 造訪、排名各自列出，每個都標日期和來源。</span></li>
-      <li><b>內容上線前誰審？</b><span>您。會改變您對客戶說的話，一定先送到審閱頁，您按「同意上線」才更新。</span></li>
-      <li><b>網站和資料歸誰？</b><span>歸您。網站、網域、帳號與資料都在您名下。</span></li>
-    </ol>
-  </div>
-</section>
-
-<section class="sec faq" id="faq" aria-labelledby="faq-h">
-  <div class="wrap g12">
-    <div class="rule" aria-hidden="true"></div>
-    <div class="lhs"><h2 class="state rv" id="faq-h"><span class="ph">老闆們</span><span class="ph">常問的問題</span></h2></div>
-    <div class="faq-list">
-      <details open>
-        <summary><span class="i">01</span><span>科技行銷是什麼？</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>讓客戶在找您這類服務時，Google 搜尋、Google AI 摘要，以及 ChatGPT、Gemini 這些 AI 都會提到、推薦您。我們用夏裕 AI 曝光引擎每天檢查您的網站，找出 AI 沒提到您的問題，寫好內容和修改建議，您同意後才上線，再用同一組問題追蹤進步。</p>
-      </details>
-      <details>
-        <summary><span class="i">02</span><span>多久會看到效果？</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>AI 會即時搜尋網路，網站修好之後，幾週內就可能出現在回答裡；WU LAW INTL PLLC 在第一次檢測後四天，AI 回答引用網站的次數從 0 變 26。Google 排名和整體能見度需要時間累積，通常以數個月來看。成效也和您的配合有關：問題回答得越完整、審閱越快，改善就越快。</p>
-      </details>
-      <details>
-        <summary><span class="i">03</span><span>可以保證 ChatGPT 或 Google 一定推薦我們嗎？</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>AI 每次的回答可能不同，所以我們用同一組問題持續比較。我們承諾的是：持續檢查您的網站、每一個修改都附依據、每個月都有可以和開始時比較的數字。</p>
-      </details>
-      <details>
-        <summary><span class="i">04</span><span>需要重做網站嗎？</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>通常不用。已經有網站，就串接到系統，從既有網站啟動設定開始；WordPress、Shopify、Webflow 與自建網站都可以。還沒有網站，或平台本身擋住了速度、結構化資料或 AI 爬蟲存取，我們才會建議建置新網站。</p>
-      </details>
-      <details>
-        <summary><span class="i">05</span><span>內容由誰來寫？會不會沒經過我同意就上線？</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>每個方案每月包含 5 篇 AI 撰寫的文章，中英文、附照片；需要時，可以按篇加選專業寫手撰寫。所有草稿都送到您的私人審閱頁，用 Gmail 登入，不公開。您按「同意上線」或「需要修改」，沒有您同意，不會上線。標題、描述、結構化資料這類技術 SEO 調整由我們審核，不會改變您對客戶說的內容。</p>
-      </details>
-      <details>
-        <summary><span class="i">06</span><span>我會看到什麼？</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>成效報告每天更新：Google 造訪、預約點擊、AI 提及、網站問題。報告裡也有和同業的比較、Google 排名與點擊、詢價從哪裡來，以及每一次更新的紀錄。變化較慢的數字整理成每月報告，和上個月比較，可以存成 PDF。</p>
-      </details>
-      <details>
-        <summary><span class="i">07</span><span>怎麼開始？</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>先預約免費 20 分鐘諮詢，或申請免費檢測，我們依您的需求報價。決定合作後：填寫公司名稱、網站和登入用的 Gmail，線上簽約，1 到 2 個工作天開通，3 到 5 天內收到第一份診斷報告。</p>
-      </details>
-      <details>
-        <summary><span class="i">08</span><span>SEO、AEO、GEO 有什麼不一樣？</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>SEO（搜尋引擎優化）提升您在 Google 與 Bing 搜尋結果的排名。AEO（答案引擎優化）讓網站內容被 Google AI 摘要、AI 模式引用為來源。GEO（生成式引擎優化）提高被 ChatGPT、Gemini、Claude、Perplexity、Copilot 推薦的機會。三者的基礎都是快速的網頁、清楚的答案、結構化資料、llms.txt 與一致的網路名錄資料。我們統稱為科技行銷。</p>
-      </details>
-      <details>
-        <summary><span class="i">09</span><span>怎麼知道 AI 有沒有提到我？</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>用客戶會問、但不提您名字的問題，去問 ChatGPT、Gemini、Claude、Perplexity：開新對話、開即時搜尋，每題問好幾次，看提到您的比例。自己問一次 ChatGPT 通常不準，因為問題帶著您的名字，回答也會依您的所在地和對話紀錄調整。免費檢測就是用這個方法幫您做一次。 <a href="#method">看我們怎麼檢查</a></p>
-      </details>
-      <details>
-        <summary><span class="i">10</span><span>AI 介紹我們的資訊有錯，怎麼辦？</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>我們把 AI 回答裡關於您的句子，和網站逐句比對，分成「和網站不符」與「網站上找不到根據」。和網站不符的，修正網站和 Google 商家檔案等平台的資料；找不到根據的，先請您確認是不是事實，再把正確的說法寫清楚。AI 會即時搜尋網路，修正後的下一次檢測通常就看得到變化。</p>
-      </details>
-      <details>
-        <summary><span class="i">11</span><span>需要 llms.txt 嗎？只加 FAQ 和結構化資料夠嗎？</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>llms.txt 是放在網站上、寫給 AI 讀的說明檔，成本低，有比沒有好，但不是決定性的一步。FAQ 和結構化資料也是基本功，不是全部。AI 推薦誰，還要看網站讀不讀得到、答案清不清楚，以及別的地方怎麼說您，例如 Google 商家檔案、產業名錄、評論與報導。夏裕 AI 曝光引擎三邊一起檢查。</p>
-      </details>
-      <details>
-        <summary><span class="i">12</span><span>我們這行很小眾、公司不大，也適合嗎？</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>適合。客戶會先問 AI、再決定找誰的服務，都值得做。行業越小眾，客戶的問題越具體，清楚回答的網站越容易被 AI 引用。先做免費檢測，看 AI 現在怎麼回答您的客戶。</p>
-      </details>
-      <details>
-        <summary><span class="i">13</span><span>免費檢測要給什麼？和每月服務差在哪？</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>給我們公司名稱和網站、客戶在哪個城市；有的話，再加上客戶最常問的 3 個問題和最多 3 家想比較的同業，不用先談預算。免費檢測是一次快照：約十個客戶會問的問題、四個 AI，1–2 個工作天內告訴您誰被提到、AI 引用了哪些網站、最該先修什麼。每月服務由夏裕 AI 曝光引擎持續執行：每天檢查網站和 Google 資料、用同一組優化目標定期問 AI、寫好建議和每月 5 篇文章，您同意才上線，每月和上個月比較。</p>
-      </details>
-      <details>
-        <summary><span class="i">14</span><span>可以付費讓 ChatGPT 推薦我們嗎？</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>AI 在回答裡推薦誰，不是用買的。我們做的是 AI 自己會寫進回答的推薦：讓它讀得到您的網站、讀得懂您的服務，也在別的地方看到您。廣告是另一回事，不在我們的服務範圍。</p>
-      </details>
-      <details>
-        <summary><span class="i">15</span><span>Dcard、PTT 和網路評論要怎麼處理？</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>AI 會參考網路上的討論和評論，所以口碑有影響。我們的做法是：把 Google 商家檔案和各平台的資料整理一致，提醒您請滿意的客人留下真實評論，並在網站上清楚回答大家在論壇常問的問題。我們不發假評論，也不代寫口碑文。</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<section class="sec cta-end" aria-labelledby="c-h">
-  <div class="wrap g12">
-    <div class="rule" aria-hidden="true"></div>
-    <div class="cta-grid">
-      <div class="cta-main">
-        <h2 class="state rv" id="c-h"><span class="ph">先看看 AI</span><span class="ph">怎麼介紹您</span></h2>
-        <p class="sub">免費檢測：用客戶會問的問題詢問 AI，看誰被推薦，以及最該先修的地方。</p>
-        <div class="ctas">
-          <a class="pill" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約免費 20 分鐘諮詢 <span class="arr" aria-hidden="true">→</span></a>
-          <a class="tlink" href="/?topic=%E5%85%8D%E8%B2%BB%20AI%20%E8%83%BD%E8%A6%8B%E5%BA%A6%E6%AA%A2%E6%B8%AC#contact">申請免費檢測</a>
+<section class="sec dark" id="engine" aria-labelledby="eng-h">
+  <div class="wrap">
+    <div class="engine">
+      <div class="rv">
+        <p class="eyebrow">自主研發系統</p>
+        <h2 class="h2" id="eng-h" style="margin:14px 0 16px">用夏裕 AI 曝光引擎，看見 AI 怎麼介紹您</h2>
+        <div class="prose">
+          <p>系統用客戶會問的問題詢問 AI，記錄哪些回答提到您、推薦了哪些同業，整理成網站需要優先改善的項目。改善後再量一次，變化都留在專屬後台。</p>
         </div>
+        <p style="margin-top:26px"><a class="tlink" style="color:#fff" href="/ai-visibility-engine/">了解夏裕 AI 曝光引擎</a></p>
       </div>
-      <div class="cta-side">
-        <ol class="rules" aria-label="免費檢測">
-          <li><b>您給我們</b><span>公司名稱和網站、客戶在哪個城市。有的話，再加上客戶最常問的 3 個問題、最多 3 家想比較的同業。</span></li>
-          <li><b>我們去問</b><span>約十個客戶會問的問題，中英文，問 ChatGPT、Gemini、Claude、Perplexity。</span></li>
-          <li><b>您會收到</b><span>一份報告：哪些回答提到您、AI 推薦了誰、引用了哪些網站，以及最該先修的地方。</span></li>
-          <li><b>1–2 個工作天</b><span>報告寄到您的信箱。不用先談預算。</span></li>
-        </ol>
-      </div>
+      <figure class="shot rv">
+        <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>正面比較</span></div>
+        <img src="/assets/v2/img/engine-compare.jpg" width="1600" height="641" alt="夏裕 AI 曝光引擎：您與競爭同業在 AI 回答中被提到的比例" loading="lazy">
+        <figcaption>實際系統畫面（示範資料）：同一組問題，AI 提到您與提到同業的比例</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
+<section class="sec alt faq" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head rv"><p class="eyebrow">FAQ</p><h2 class="h2" id="faq-h">常見問題</h2></div>
+    <div class="rv">
+      <details><summary>SEO、AEO、GEO 有什麼不同？</summary><p>SEO 是提升在 Google 搜尋的排名；AEO（答案引擎優化）是讓網站內容被 Google AI 摘要等答案引用；GEO（生成式引擎優化）是提高被 ChatGPT、Gemini 等 AI 推薦的機會。三者需要一起做。</p></details>
+      <details><summary>為什麼不自己問 ChatGPT 就好？</summary><p>一次對話會受您的名字、所在地和對話紀錄影響，看不到客戶看到的答案。夏裕 AI 曝光引擎每次用全新對話、固定的一組問題，並以中英文提問，數字才能前後比較。</p></details>
+      <details><summary>網站內容會在我不知道的情況下被修改嗎？</summary><p>不會。涉及網站內容發布的修改，都會先交由您確認後才上線。</p></details>
+      <details><summary>可以保證 AI 一定推薦我們嗎？</summary><p>沒有人能保證特定平台一定會推薦或排名提升。我們持續量測、找出原因並改善網站內容，再用後台追蹤變化。</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="cta-h">
+  <div class="wrap">
+    <div class="cta-box rv" style="margin-top:0">
+      <div><h3 id="cta-h">想知道 AI 會不會推薦您的公司？</h3><p>提供網站網址與主要服務城市，1–2 個工作天內回覆檢測報告。</p></div>
+      <a class="pill" href="/ai-visibility-engine/#check">免費檢測您的 AI 曝光情況 <span class="arr" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
 </main>
-
 <footer class="foot">
   <div class="wrap">
     <div class="cols">
-      <p class="mono"><b>夏裕科技</b><br>夏裕科技股份有限公司・統一編號 90173045・可開統一發票<br>台北・聖地牙哥</p>
-      <nav aria-label="頁尾連結">
-        <a href="/seo-aeo-geo/">科技行銷</a><a href="/geo-guide/">AI 搜尋優化指南</a><a href="/projects/">作品</a><a href="/about/">關於</a><a href="/tools/">工具</a><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a><a href="/privacy/">隱私權政策</a><a href="/en/seo-aeo-geo/" hreflang="en" lang="en">English</a>
-      </nav>
-      <p class="mono">成效報告畫面為 WU LAW INTL PLLC 的真實資料，經客戶同意分享；同業名稱已模糊處理。<br>© 2026 夏裕科技</p>
+      <div><b>夏裕科技</b>夏裕科技股份有限公司 Ship to Live<br>統一編號 90173045・可開統一發票<br>總部：台北・服務台灣與美國<p class="motto">敢想。敢作。敢創新。</p></div>
+      <nav aria-label="服務"><b>服務</b><a href="/website/">網站建置與數位行銷</a><a href="/software/">客製化軟體開發</a><a href="/seo-aeo-geo/">AI 搜尋優化（AEO／GEO）</a><a href="/ai-visibility-engine/">夏裕 AI 曝光引擎</a></nav>
+      <nav aria-label="更多"><b>更多</b><a href="/about/">關於我們</a><a href="/geo-guide/">AI 搜尋優化指南</a><a href="/projects/">過往作品</a><a href="/tools/">免費工具</a><a href="/privacy/">隱私權政策</a></nav>
+      <nav aria-label="聯絡我們"><b>聯絡我們</b><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a><a href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約免費諮詢</a><a href="/ai-visibility-engine/#check">免費 AI 曝光檢測</a></nav>
     </div>
+    <div class="legal"><span>© 2026 夏裕科技股份有限公司 Ship to Live</span><span><a href="/en/" style="display:inline">English version</a></span></div>
   </div>
 </footer>
-
-<script src="/assets/home/home.js?v=2" defer></script>
-<script src="/assets/home/motion.js?v=1" defer></script>
-<script src="/assets/booking.js" defer></script>
-<script>
-/* local nav: appears past the intro, marks the section in view, steps aside at the closing CTA.
-   Phones: a bottom pill that opens the list. Desktop: a bar under the header. */
-(function () {
-  var d = document, root = d.documentElement, n = d.querySelector('.lnav'); if (!n || !window.requestAnimationFrame) return;
-  root.classList.add('lnav-js');
-  var links = [].slice.call(n.querySelectorAll('ol a')), secs = links.map(function (a) { return d.getElementById(a.hash.slice(1)); });
-  var start = d.querySelector(n.getAttribute('data-start')), end = d.querySelector('.cta-end'), ol = n.querySelector('ol'), hdr = d.querySelector('.hdr');
-  var tg = n.querySelector('.lnav-tg'), curEl = tg && tg.querySelector('.cur');
-  var cur = -1, on = false, tick = false, rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function hh() { if (hdr) root.style.setProperty('--hdr-h', Math.round(hdr.getBoundingClientRect().height) + 'px'); }
-  function top(el) { return (el.firstElementChild || el).getBoundingClientRect().top; }
-  function open(v) { n.classList.toggle('open', v); if (tg) tg.setAttribute('aria-expanded', v ? 'true' : 'false'); }
-  function upd() {
-    tick = false; var vh = window.innerHeight;
-    var show = start.getBoundingClientRect().bottom < 0 && (!end || end.getBoundingClientRect().top > vh * 0.55);
-    if (show !== on) { on = show; n.classList.toggle('on', on); if (!on) open(false); }
-    var i = -1; secs.forEach(function (s, k) { if (s && top(s) < vh * 0.4) i = k; });
-    if (i === cur) return;
-    if (cur > -1) links[cur].removeAttribute('aria-current');
-    cur = i; if (i < 0) return;
-    links[i].setAttribute('aria-current', 'location');
-    if (curEl) curEl.textContent = links[i].textContent;
-    if (ol.scrollWidth > ol.clientWidth + 1) { var li = links[i].parentNode; ol.scrollTo({ left: li.offsetLeft - ol.offsetLeft - (ol.clientWidth - li.offsetWidth) / 2, behavior: rm ? 'auto' : 'smooth' }); }
-  }
-  if (tg) tg.addEventListener('click', function () { open(!n.classList.contains('open')); });
-  links.forEach(function (a) { a.addEventListener('click', function () { open(false); }); });
-  d.addEventListener('click', function (e) { if (n.classList.contains('open') && !n.contains(e.target)) open(false); });
-  d.addEventListener('keydown', function (e) { if (e.key === 'Escape' && n.classList.contains('open')) { open(false); tg.focus(); } });
-  window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(upd); } }, { passive: true });
-  window.addEventListener('resize', function () { hh(); upd(); });
-  window.addEventListener('load', hh);
-  hh(); upd();
-})();
-</script>
+<script src="/assets/v2/site.js?v=1" defer></script>
 </body>
 </html>
