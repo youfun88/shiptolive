@@ -34,10 +34,10 @@
   var counts = $$('[data-count]');
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   function run(el) {
-    var to = +el.getAttribute('data-count'), suf = el.getAttribute('data-suffix') || '', t0 = null, dur = 1600;
+    var to = +el.getAttribute('data-count'), from = +(el.getAttribute('data-from') || 0), suf = el.getAttribute('data-suffix') || '', t0 = null, dur = 1600;
     function step(ts) { if (!t0) t0 = ts; var k = Math.min(1, (ts - t0) / dur), e = 1 - Math.pow(1 - k, 3);
-      el.textContent = Math.round(to * e) + suf; if (k < 1) requestAnimationFrame(step); }
-    el.textContent = '0' + suf; requestAnimationFrame(step);
+      el.textContent = Math.round(from + (to - from) * e) + suf; if (k < 1) requestAnimationFrame(step); }
+    el.textContent = from + suf; requestAnimationFrame(step);
   }
   if (counts.length && !reduce && 'IntersectionObserver' in window) {
     var cio = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { run(en.target); cio.unobserve(en.target); } }); }, { threshold: 0.6 });

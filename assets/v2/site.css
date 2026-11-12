@@ -322,3 +322,15 @@ a.card:hover { border-color: var(--ink3); transform: translateY(-2px); }
 .svc h3 { color: var(--accent); }
 .svc h3::after { background: var(--ink); }
 .svc .hook { color: var(--ink); }
+
+/* before → after results band */
+.results { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1.5px solid var(--ink); }
+.results > div { padding: 26px 22px 6px 0; }
+.results > div + div { padding-left: 22px; border-left: 1px solid var(--hair); }
+.results .big { font-size: clamp(40px, 4.6vw, 60px); font-weight: 600; letter-spacing: -.03em; line-height: 1; margin-bottom: 16px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.results .big .to { font-size: .5em; color: var(--ink3); margin: 0 4px; vertical-align: .2em; }
+.results .big b { color: var(--accent); font-weight: 600; }
+.results .l { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.results .s { font: 500 12.5px/1.6 var(--mono); color: var(--ink3); }
+@media (max-width: 980px) { .results { grid-template-columns: 1fr 1fr; } .results > div:nth-child(3) { border-left: 0; padding-left: 0; } .results > div:nth-child(n+3) { border-top: 1px solid var(--hair); } }
+@media (max-width: 520px) { .results { grid-template-columns: 1fr; } .results > div { border-left: 0 !important; padding-left: 0 !important; padding-bottom: 20px; } .results > div + div { border-top: 1px solid var(--hair); } }
