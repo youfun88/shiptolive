@@ -285,3 +285,4 @@ a.card:hover { border-color: var(--ink3); transform: translateY(-2px); }
   @keyframes fl { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 }
 .why-art { width: 100%; height: auto; border-radius: 10px; margin-bottom: 8px; }
+.cap-art { width: 100%; height: auto; border-radius: 10px; margin-bottom: 16px; }
