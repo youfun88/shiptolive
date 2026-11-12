@@ -358,3 +358,105 @@ a.card:hover { border-color: var(--ink3); transform: translateY(-2px); }
 .tcard h3 { font-size: 20px; }
 .tcard .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .tcard > .card-art { aspect-ratio: 16 / 9; object-fit: cover; }
+
+/* ---------- motion: AI question typing (.ask) ---------- */
+:root { --ease: cubic-bezier(.16, 1, .3, 1); }
+.ask { margin-top: 40px; max-width: 26em; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.ask .q { position: relative; margin: 0; padding: 12px 18px; border-radius: 22px 22px 6px 22px; background: var(--ink); color: #f3efe9; font-size: 17px; line-height: 1.5; box-shadow: 0 18px 30px -22px rgba(22,21,19,.6); }
+.ask .ty { position: absolute; left: 18px; right: 18px; top: 12px; }
+.ask .a { position: relative; align-self: stretch; margin: 0 12% 0 0; padding: 14px 18px 16px; border-radius: 22px 22px 22px 6px; background: rgba(22,21,19,.06); display: grid; gap: 9px; }
+.ask .a i { display: block; height: 7px; border-radius: 4px; background: rgba(22,21,19,.13); }
+.ask .a i:nth-of-type(2) { width: 86%; }
+.ask .a i:nth-of-type(3) { width: 58%; background: linear-gradient(90deg, var(--accent) 0 34%, rgba(22,21,19,.13) 34%); }
+.ask .dots { position: absolute; left: 18px; top: 14px; display: none; gap: 5px; }
+.ask .dots b { width: 7px; height: 7px; border-radius: 50%; background: var(--ink3); }
+@keyframes caret { 50% { opacity: 0; } }
+@keyframes hide { to { opacity: 0; visibility: hidden; } }
+@keyframes dot { 0%, 100% { transform: translateY(0); opacity: .5; } 50% { transform: translateY(-4px); opacity: 1; } }
+@media (prefers-reduced-motion: no-preference) {
+  .js .ask .gh { visibility: hidden; }
+  .js .ask .ty::after { content: ""; display: inline-block; width: 2px; height: 1.15em; margin: 0 -4px 0 2px; vertical-align: -.2em; background: currentColor; animation: caret .8s steps(1) infinite; }
+  .js .ask.done .ty::after { animation: caret .8s steps(1) 2 forwards; }
+  .js .ask .a { opacity: 0; transform: translateY(10px); }
+  .js .ask .a i { opacity: 0; transform: scaleX(.3); transform-origin: 0 50%; }
+  .js .ask.done .a { opacity: 1; transform: none; transition: opacity .5s ease .25s, transform .7s var(--ease) .25s; }
+  .js .ask.done .dots { display: flex; animation: hide .2s ease 1.9s forwards; }
+  .js .ask.done .dots b { animation: dot .9s ease-in-out .25s 2; }
+  .js .ask.done .dots b:nth-child(2) { animation-delay: .4s; } .js .ask.done .dots b:nth-child(3) { animation-delay: .55s; }
+  .js .ask.done .a i { opacity: 1; transform: none; transition: opacity .4s ease, transform .8s var(--ease); }
+  .js .ask.done .a i:nth-of-type(1) { transition-delay: 2s; } .js .ask.done .a i:nth-of-type(2) { transition-delay: 2.14s; } .js .ask.done .a i:nth-of-type(3) { transition-delay: 2.28s; }
+
+  /* five-step loop: line draws, circles light up in turn */
+  .js .loop::before { transform: scaleX(0); transform-origin: 0 50%; transition: transform 1.6s var(--ease) .2s; }
+  .js .loop.in::before { transform: none; }
+  .js .loop i { transform: scale(.6); opacity: 0; transition: transform .6s var(--ease), opacity .4s ease; }
+  .js .loop.in i { transform: none; opacity: 1; }
+  .js .loop li:nth-child(2) i { transition-delay: .3s; } .js .loop li:nth-child(3) i { transition-delay: .6s; } .js .loop li:nth-child(4) i { transition-delay: .9s; } .js .loop li:nth-child(5) i { transition-delay: 1.2s; }
+  .js .loop .last i { animation: pulse 2.4s ease-in-out 2s infinite; }
+  @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 8px rgba(215,97,42,.18); } 50% { box-shadow: 0 0 0 14px rgba(215,97,42,.06); } }
+
+  /* homepage hero: the AI answer appears after the question types */
+  .js .hero-art .ha { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .8s var(--ease); transform-box: fill-box; }
+  .js .hero-art.answered .ha { opacity: 1; transform: none; }
+
+  /* service and feature card images: gentle zoom on hover */
+  .card > .card-art, .svc .vis img, .items.illus .card img { transition: transform .6s var(--ease); }
+  .card:hover > .card-art, .svc .card:hover .vis img, .items.illus .card:hover img { transform: scale(1.04); }
+  .svc .vis, .items.illus .card { overflow: hidden; }
+}
+@media (max-width: 860px) { .js .loop::before { transform-origin: 50% 0; } .js .loop:not(.in)::before { transform: scaleY(0); } }
+.spec3 { margin: 22px 0; border-top: 1.5px solid var(--ink); }
+.spec3 div { display: grid; grid-template-columns: 200px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--hair); }
+.spec3 dt { font: 600 14px/1.5 var(--mono); }
+.spec3 dt span { font-family: var(--sans); font-weight: 500; color: var(--ink3); margin-left: 10px; font-size: 13.5px; }
+.spec3 dd { margin: 0; color: var(--ink2); }
+@media (max-width: 600px) { .spec3 div { grid-template-columns: 1fr; gap: 2px; } }
+
+/* ---------- five-step loop v2: track, travelling comet, popping steps (ported from the old site) ---------- */
+#loop .wrap { max-width: 1320px; }
+#loop .sec-head { max-width: 860px; }
+.loopw { position: relative; margin-top: 56px; }
+.loop::before { display: none !important; }
+.loopw .trk { position: absolute; left: 10%; right: 10%; top: 12px; height: 24px; overflow: hidden; pointer-events: none; }
+.loopw .trk::before { content: ""; position: absolute; left: 0; right: 0; top: 11px; height: 2px; background: repeating-linear-gradient(90deg, rgba(22,21,19,.22) 0 6px, transparent 6px 11px); }
+.loopw .fill { position: absolute; inset: 0; }
+.loopw .fill::before { content: ""; position: absolute; left: 0; right: 0; top: 11px; height: 2px; background: var(--accent); }
+.loopw .fill::after { content: ""; position: absolute; right: 0; top: 7px; width: 10px; height: 10px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 3px rgba(215,97,42,.35), 0 0 16px 6px rgba(215,97,42,.45); opacity: 0; }
+.loop { position: relative; z-index: 1; }
+.loop i { isolation: isolate; background: transparent !important; box-shadow: none !important; }
+.loop i::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--ink); z-index: -1; }
+.loop .last i::before { background: var(--accent); }
+.loop i::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--accent); opacity: 0; pointer-events: none; }
+.loop .last i { overflow: visible; }
+.loop .last b::before { content: none; }
+.loop li { --t: .2s; }
+.loop li:nth-child(2) { --t: 1.05s; } .loop li:nth-child(3) { --t: 1.4s; } .loop li:nth-child(4) { --t: 1.75s; } .loop li:nth-child(5) { --t: 2.6s; }
+.loop .halo { position: absolute; inset: -10px; border-radius: 50%; background: rgba(215,97,42,.22); z-index: -2; }
+.loop b { font-size: 19px; }
+.loop p { max-width: 17em; }
+@keyframes pop { 0% { transform: scale(1); } 45% { transform: scale(1.2); } 100% { transform: scale(1); } }
+@keyframes ping { 0% { opacity: .9; transform: scale(1); } 100% { opacity: 0; transform: scale(2.3); } }
+@keyframes comet { 0% { opacity: 0; } 6% { opacity: 1; } 92% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes breathe { 0%, 100% { opacity: 0; transform: scale(.85); } 50% { opacity: 1; transform: scale(1.15); } }
+@media (prefers-reduced-motion: no-preference) {
+  .js .loop i { transform: none !important; opacity: 1 !important; transition: none !important; animation: none; }
+  .js .loopw .fill { transform: translateX(-100%); }
+  .js .loopw .loop i { color: var(--ink3); box-shadow: inset 0 0 0 1px rgba(22,21,19,.28) !important; background: var(--bg) !important; }
+  .js .loopw .loop i::before { transform: scale(0); }
+  .js .loopw .loop b, .js .loopw .loop small, .js .loopw .loop p { opacity: .45; }
+  .js .loopw .halo { opacity: 0; }
+  .js .loopw.in .fill { transform: none; transition: transform 2.4s cubic-bezier(.45,0,.55,1) .2s; }
+  .js .loopw.in .fill::after { animation: comet 2.5s linear .2s both; }
+  .js .loopw.in .loop i { color: #fff; box-shadow: none !important; transition: color .3s ease var(--t) !important; animation: pop .45s cubic-bezier(.2,1.6,.4,1) var(--t) both !important; }
+  .js .loopw.in .loop i::before { transform: none; transition: transform .45s cubic-bezier(.2,1.4,.4,1) var(--t); }
+  .js .loopw.in .loop i::after { animation: ping .9s ease-out var(--t); }
+  .js .loopw.in .loop b, .js .loopw.in .loop small, .js .loopw.in .loop p { opacity: 1; transition: opacity .5s ease var(--t); }
+  .js .loopw.in .halo { animation: breathe 2.4s ease-in-out 3.1s infinite both; }
+}
+@media (max-width: 860px) {
+  .loopw .trk { left: 23px; right: auto; top: 24px; bottom: 60px; width: 2px; height: auto; }
+  .loopw .trk::before { left: 0; top: 0; bottom: 0; right: auto; width: 2px; height: auto; background: repeating-linear-gradient(180deg, rgba(22,21,19,.22) 0 6px, transparent 6px 11px); }
+  .loopw .fill::before { left: 0; top: 0; bottom: 0; width: 2px; height: auto; }
+  .loopw .fill::after { display: none; }
+  .js .loopw .fill { transform: translateY(-100%); }
+}

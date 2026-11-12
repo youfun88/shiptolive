@@ -44,6 +44,35 @@
     counts.forEach(function (el) { el.style.fontVariantNumeric = 'tabular-nums'; cio.observe(el); });
   }
 
+  // AI question typing (.ask) and the homepage hero question
+  function typeInto(el, text, step, done) {
+    var chars = Array.from ? Array.from(text) : text.split(''), i = 0;
+    setTimeout(function tick() {
+      el.textContent = chars.slice(0, ++i).join('');
+      if (i < chars.length) setTimeout(tick, step + (Math.random() * step * 0.6 | 0)); else if (done) done();
+    }, 500);
+  }
+  var still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function onSeen(els, fn, th) {
+    if (!els.length) return;
+    if (still || !('IntersectionObserver' in window)) { els.forEach(function (e) { fn(e, true); }); return; }
+    var o = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { o.unobserve(en.target); fn(en.target, false); } }); }, { threshold: th || 0.3 });
+    els.forEach(function (e) { o.observe(e); });
+  }
+  onSeen($$('.ask'), function (box, now) {
+    var gh = $('.gh', box), q = $('.q', box);
+    if (now) { box.classList.add('done'); return; }
+    var ty = document.createElement('span'); ty.className = 'ty'; ty.setAttribute('aria-hidden', 'true'); q.appendChild(ty);
+    typeInto(ty, gh.textContent, zh ? 85 : 38, function () { box.classList.add('done'); });
+  });
+  onSeen($$('.loopw'), function (el) { el.classList.add('in'); }, 0.35);
+  onSeen($$('.hero-art'), function (art, now) {
+    var t = $('.hq', art);
+    if (!t || now) { art.classList.add('answered'); return; }
+    var full = t.textContent; t.textContent = '';
+    setTimeout(function () { typeInto(t, full, zh ? 90 : 40, function () { setTimeout(function () { art.classList.add('answered'); }, 350); }); }, 300);
+  }, 0.2);
+
   // ?need=ai|web|software|other preselects the inquiry type
   try {
     var need = new URLSearchParams(location.search).get('need');
