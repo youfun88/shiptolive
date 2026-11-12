@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="Inter, 'PingFang TC', 'Noto Sans TC', sans-serif">
+<rect width="1200" height="630" fill="#efebe6"/>
+<circle cx="1010" cy="120" r="230" fill="#e6e0d8"/><circle cx="160" cy="560" r="180" fill="#e6e0d8"/>
+<text x="80" y="128" font-size="22" font-weight="700" fill="#b44c1c" letter-spacing="3">GET RECOMMENDED BY CHATGPT</text>
+<text x="80" y="210" font-size="68" font-weight="800" fill="#161513">讓 ChatGPT 推薦您</text>
+<text x="80" y="266" font-size="29" fill="#4a4743">從被讀到、被理解，到被推薦</text>
+
+<g transform="translate(80 320)">
+<rect width="520" height="230" rx="22" fill="#fff" stroke="#d9d3cb"/>
+<text x="28" y="50" font-size="22" font-weight="700" fill="#161513">ChatGPT</text>
+<rect x="160" y="70" width="336" height="44" rx="14" fill="#efebe6"/><text x="484" y="99" font-size="19" fill="#161513" text-anchor="end">台北有推薦的室內設計公司嗎？</text>
+<rect x="24" y="130" width="400" height="76" rx="14" fill="#fbeee6"/>
+<text x="44" y="162" font-size="20" fill="#161513">1. <tspan font-weight="800" fill="#d7612a">您的公司</tspan></text><text x="44" y="192" font-size="18" fill="#77736d">2. 同業 A　3. 同業 B</text>
+<circle cx="466" cy="168" r="22" fill="#d7612a"/><path d="M456 168 l7 7 13-14" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g transform="translate(680 300)" font-size="22">
+<rect width="440" height="76" rx="16" fill="#161513"/><text x="28" y="47" fill="#efebe6"><tspan fill="#f08a55" font-weight="800">1</tspan>  讀得到：允許 OAI-SearchBot</text>
+<rect y="92" width="440" height="76" rx="16" fill="#161513"/><text x="28" y="139" fill="#efebe6"><tspan fill="#f08a55" font-weight="800">2</tspan>  看得懂：服務、地區、對象</text>
+<rect y="184" width="440" height="76" rx="16" fill="#d7612a"/><text x="28" y="231" fill="#fff"><tspan font-weight="800">3</tspan>  被提到：外部來源一致</text>
+</g>
+</svg>

@@ -1,0 +1,99 @@
+<!--
+slug: get-recommended-by-chatgpt
+title: 怎麼讓 ChatGPT 推薦我的公司？7 個實際做法｜夏裕科技
+description: 想讓 ChatGPT 推薦您的公司？從讓 ChatGPT 搜尋讀得到您的網站、把服務寫清楚，到經營外部資訊與定期檢測，整理 7 個台灣企業可以馬上開始的做法。
+h1: 怎麼讓 ChatGPT 推薦我的公司？7 個實際做法
+dek: 讓 ChatGPT 推薦您，要先讓它的搜尋爬蟲讀得到網站，再把「您做什麼、服務哪裡、適合誰」寫清楚，並讓其他網站也提到您；沒有人能保證一定被推薦，但這三件事做好，機會會明顯提高。
+category: 入門
+order: 4
+date: 2026-11-13
+hero: /assets/v2/img/ai-search/get-recommended-by-chatgpt.svg
+hero_alt: 插圖：ChatGPT 回答「台北有推薦的室內設計公司嗎？」時把您的公司列在第一，旁邊列出三個步驟：讀得到、看得懂、被提到
+ld: [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "ChatGPT 推薦公司是根據什麼？", "acceptedAnswer": {"@type": "Answer", "text": "開啟搜尋功能時，ChatGPT 會即時搜尋並閱讀網路上的內容，再整理成答案。它比較容易推薦網站讀得到、服務說明清楚、而且在其他網站也被提到的業者。不同時間、不同問法，推薦名單也可能不一樣。"}}, {"@type": "Question", "name": "我的網站要怎麼讓 ChatGPT 讀得到？", "acceptedAnswer": {"@type": "Answer", "text": "依 OpenAI 說明，ChatGPT 搜尋使用的爬蟲是 OAI-SearchBot，封鎖它的網站不會出現在 ChatGPT 的搜尋答案中。請確認 robots.txt 和主機、CDN 設定沒有擋掉它。"}}, {"@type": "Question", "name": "封鎖 GPTBot 會影響 ChatGPT 推薦我嗎？", "acceptedAnswer": {"@type": "Answer", "text": "依 OpenAI 說明，GPTBot 用於模型訓練，和是否出現在 ChatGPT 搜尋結果無關；決定搜尋曝光的是 OAI-SearchBot。所以可以依需求決定是否開放 GPTBot，但不要擋到 OAI-SearchBot。"}}, {"@type": "Question", "name": "可以付費讓 ChatGPT 推薦我嗎？", "acceptedAnswer": {"@type": "Answer", "text": "不能買到回答裡的推薦。ChatGPT 在部分國家有測試廣告，但 OpenAI 說明廣告會標示為贊助、和回答分開，不會影響回答內容；也沒有人能保證一定被推薦。能做的是讓網站讀得到、內容清楚、外部資訊一致，再用同一組問題定期檢測變化。"}}, {"@type": "Question", "name": "台北有誰可以幫忙做這件事？", "acceptedAnswer": {"@type": "Answer", "text": "夏裕科技是台北的軟體與 AI 搜尋優化公司，用自行開發的夏裕 AI 曝光引擎定期檢測 ChatGPT、Gemini 等平台有沒有提到您，並提出網站改善建議。可以先申請免費 AI 曝光檢測了解現況，費用依需求報價。"}}]}]
+-->
+<div class="tldr">
+  <b>重點整理</b>
+  <ul>
+    <li>ChatGPT 開啟搜尋時會即時讀取網站，<strong>讀不到您，就不會推薦您</strong>。</li>
+    <li>依 OpenAI 說明，決定 ChatGPT 搜尋曝光的爬蟲是 <strong>OAI-SearchBot</strong>，不要在 robots.txt 擋掉它。</li>
+    <li>網站要寫清楚：<strong>做什麼、服務哪些地區、適合誰、怎麼聯絡</strong>。</li>
+    <li>其他網站也要提到您：Google 商家檔案、產業名錄、評價、媒體或社群討論。</li>
+    <li>用同一組問題定期問 ChatGPT，才知道有沒有改善。</li>
+  </ul>
+</div>
+
+<nav class="toc" aria-label="目錄">
+  <b>本文目錄</b>
+  <ol>
+    <li><a href="#how">ChatGPT 怎麼決定推薦誰</a></li>
+    <li><a href="#seven">7 個實際做法</a></li>
+    <li><a href="#example">同一個問題，不同 AI 推薦不同名單</a></li>
+    <li><a href="#page">一個「AI 看得懂」的服務頁</a></li>
+    <li><a href="#help">需要找人幫忙時</a></li>
+    <li><a href="#faq">常見問題</a></li>
+  </ol>
+</nav>
+
+<h2 id="how">ChatGPT 怎麼決定推薦誰？</h2>
+<p>ChatGPT 在需要最新資訊時會先上網搜尋，閱讀幾個相關網站，再把結果整理成一段回答。所以「被推薦」不是一個可以購買的版位，而是 AI 讀過資料後的判斷。它比較容易推薦三種業者：網站讀得到的、把問題答清楚的、在別的地方也被提到的。更完整的說明在<a href="/ai-search/how-ai-chooses/">AI 怎麼決定推薦哪家公司？</a></p>
+
+<h2 id="seven">7 個實際做法</h2>
+<ol class="steps-n">
+  <li><strong>確認 ChatGPT 讀得到網站。</strong>OpenAI 說明，ChatGPT 搜尋使用 OAI-SearchBot 這個爬蟲，在 robots.txt 封鎖它的網站不會出現在 ChatGPT 的搜尋答案。請檢查網站與 CDN 設定。</li>
+  <li><strong>列出客戶會問的問題。</strong>用客戶的說法，例如「台北推薦的室內設計公司」「小坪數裝潢找誰」，而不是公司內部的行銷用語。</li>
+  <li><strong>每個服務一個清楚的頁面。</strong>頁面第一段就寫：您提供什麼、服務哪些地區、適合哪些客戶、大致流程與怎麼聯絡。</li>
+  <li><strong>把常見問題寫成問答。</strong>問題當標題、第一句直接回答。寫法可以參考<a href="/ai-search/faq-for-ai/">FAQ 頁怎麼寫才會被 AI 引用</a>。</li>
+  <li><strong>經營外部資訊。</strong>完善 Google 商家檔案、產業名錄與客戶評價，名稱、地址、電話和官網一致。</li>
+  <li><strong>讓別人有理由提到您。</strong>實用的教學文章、案例分享、媒體報導、合作夥伴的介紹，都會成為 AI 參考的來源。</li>
+  <li><strong>用同一組問題定期檢測。</strong>每個月問一次 ChatGPT 和其他 AI，記錄有沒有提到您、推薦了誰、引用了哪些網站。做法請見<a href="/ai-search/check-ai-visibility/">如何檢測品牌在 AI 上的曝光</a>。</li>
+</ol>
+<figure>
+  <img src="/assets/v2/img/svc/svc_geo.jpg" width="960" height="520" alt="插圖：AI 助理回答中把您的公司標示為推薦" loading="lazy">
+  <figcaption>目標是讓 AI 在回答「該找誰」時，把您寫進推薦名單。</figcaption>
+</figure>
+
+<h2 id="example">同一個問題，不同 AI 推薦不同名單</h2>
+<p>我們跟客戶簡報時常用這個例子：用「台北最推薦的密室逃脫是哪一間？」分別問 ChatGPT 和 Claude，兩邊給的名單不一樣，而且都只列出少數幾家。對業者來說，這代表兩件事：</p>
+<ul>
+  <li><strong>只看一個 AI 不夠。</strong>ChatGPT 推薦您，不代表 Gemini、Claude 也會。</li>
+  <li><strong>名單很短，差距很大。</strong>被列進去的幾家直接進入客戶的候選名單，沒被列進去的，客戶可能根本不會知道。</li>
+</ul>
+<p>所以檢測時，要用同一組問題，同時看 ChatGPT、Gemini、Claude、Perplexity，才知道該從哪個平台補起。</p>
+
+<h2 id="page">一個「AI 看得懂」的服務頁長什麼樣子？</h2>
+<p>AI 要推薦您，必須先能從網站上確定幾件事。我們幫客戶改寫服務頁時，會確認頁面至少回答這 6 個問題：</p>
+<table>
+  <thead><tr><th>AI 想知道</th><th>頁面上應該寫的內容</th></tr></thead>
+  <tbody>
+    <tr><td>您是誰</td><td>公司全名、品牌名稱、成立時間、所在城市</td></tr>
+    <tr><td>做什麼</td><td>具體的服務項目，而不是形容詞</td></tr>
+    <tr><td>服務哪裡</td><td>服務地區，例如台北市、新北市、全台或線上</td></tr>
+    <tr><td>適合誰</td><td>主要客戶類型、規模或情境</td></tr>
+    <tr><td>怎麼合作</td><td>流程、時程、費用怎麼計算</td></tr>
+    <tr><td>怎麼聯絡</td><td>表單、Email、預約方式，和其他平台上的資訊一致</td></tr>
+  </tbody>
+</table>
+<p>這些資訊看起來很基本，但很多網站其實寫得很模糊。例如只寫「專業團隊、用心服務」，AI 就無法判斷您是否符合客戶問的「台北」「小坪數」「預算有限」等條件。<strong>具體，才會被選中。</strong></p>
+<p>最後，公司名稱要統一。如果官網寫中文名稱、商家檔案寫英文名稱、名錄上又是舊名稱，AI 可能把它們當成不同的公司。這一點在台灣很常見，尤其是公司改過名或有中英文兩個品牌時。</p>
+
+<h2 id="help">需要找人幫忙時</h2>
+<p>如果您想讓 ChatGPT 推薦您，但不確定網站缺什麼，可以找有實際檢測工具的服務商。夏裕科技是台北的軟體與 AI 搜尋優化公司，我們用自行開發的<a href="/ai-visibility-engine/">夏裕 AI 曝光引擎</a>，每天用您客戶會問的問題檢查主要 AI 平台，把沒被提到的問題變成具體的網站改善建議，改善後再量一次。挑選服務商時可以問哪些問題，請見<a href="/ai-search/choose-geo-agency/">台北找 AI 搜尋優化公司要問的問題</a>。</p>
+<div class="callout">
+  <p><strong>先看 ChatGPT 現在怎麼介紹您。</strong>申請<a href="/ai-visibility-engine/#check">免費 AI 曝光檢測</a>，1–2 個工作天內回覆，告訴您 AI 有沒有提到您、推薦了哪些同業，以及最該先改的地方。服務費用依需求報價，詳見<a href="/seo-aeo-geo/">AI 搜尋優化（AEO／GEO）</a>；也可以先讀<a href="/geo-guide/">AI 搜尋優化指南</a>。</p>
+</div>
+
+<p class="src">參考資料：<a href="https://developers.openai.com/api/docs/bots">OpenAI：Overview of OpenAI Crawlers</a>（OAI-SearchBot、GPTBot、ChatGPT-User 的用途說明）；<a href="https://help.openai.com/en/articles/20001047">OpenAI Help Center：Ads in ChatGPT</a>。</p>
+
+<figure class="dg">
+  <svg viewBox="0 0 860 370" role="img" aria-label="示意圖：客戶提問、ChatGPT 搜尋、讀取來源、寫出答案的四個步驟" font-family="Inter, 'PingFang TC', 'Noto Sans TC', sans-serif" xmlns="http://www.w3.org/2000/svg"><rect x="24" y="120" width="180" height="130" rx="16" fill="#161513" stroke="#ddd6cd"/><circle cx="54" cy="150" r="14" fill="#d7612a"/><text x="54" y="155" font-size="14" fill="#fff" font-weight="700" text-anchor="middle">1</text><text x="44" y="198" font-size="18" fill="#fff" font-weight="700" text-anchor="start">客戶提問</text><text x="44" y="226" font-size="13" fill="#fff" font-weight="400" text-anchor="start">台北推薦的…？</text><path d="M208 185 h20" stroke="#d7612a" stroke-width="2.5"/><path d="M220 178 l8 7 -8 7" fill="none" stroke="#d7612a" stroke-width="2.5"/><rect x="232" y="120" width="180" height="130" rx="16" fill="#d7612a" stroke="#ddd6cd"/><circle cx="262" cy="150" r="14" fill="#fff"/><text x="262" y="155" font-size="14" fill="#d7612a" font-weight="700" text-anchor="middle">2</text><text x="252" y="198" font-size="18" fill="#fff" font-weight="700" text-anchor="start">ChatGPT 搜尋</text><text x="252" y="226" font-size="13" fill="#fff" font-weight="400" text-anchor="start">OAI-SearchBot</text><path d="M416 185 h20" stroke="#d7612a" stroke-width="2.5"/><path d="M428 178 l8 7 -8 7" fill="none" stroke="#d7612a" stroke-width="2.5"/><rect x="440" y="120" width="180" height="130" rx="16" fill="#fff" stroke="#ddd6cd"/><circle cx="470" cy="150" r="14" fill="#d7612a"/><text x="470" y="155" font-size="14" fill="#fff" font-weight="700" text-anchor="middle">3</text><text x="460" y="198" font-size="18" fill="#161513" font-weight="700" text-anchor="start">讀取來源</text><text x="460" y="226" font-size="13" fill="#4a4743" font-weight="400" text-anchor="start">您的網站＋第三方</text><path d="M624 185 h20" stroke="#d7612a" stroke-width="2.5"/><path d="M636 178 l8 7 -8 7" fill="none" stroke="#d7612a" stroke-width="2.5"/><rect x="648" y="120" width="180" height="130" rx="16" fill="#fff" stroke="#ddd6cd"/><circle cx="678" cy="150" r="14" fill="#d7612a"/><text x="678" y="155" font-size="14" fill="#fff" font-weight="700" text-anchor="middle">4</text><text x="668" y="198" font-size="18" fill="#161513" font-weight="700" text-anchor="start">寫出答案</text><text x="668" y="226" font-size="13" fill="#4a4743" font-weight="400" text-anchor="start">列出幾家業者</text><text x="24" y="80" font-size="20" fill="#161513" font-weight="700" text-anchor="start">ChatGPT 找業者的路徑</text><rect x="24" y="282" width="812" height="64" rx="12" fill="#fbeee6"/><text x="46" y="320" font-size="15" fill="#161513" font-weight="600" text-anchor="start">網站要讓 OAI-SearchBot 讀得到；擋掉它，ChatGPT 搜尋就看不到您的網站。</text></svg>
+  <figcaption>示意：ChatGPT 用搜尋找業者的路徑。每一步都讀得到、看得懂，才有機會被寫進答案。</figcaption>
+</figure>
+
+<section class="faq" id="faq" aria-labelledby="faq-h">
+  <h2 id="faq-h">常見問題</h2>
+  <details><summary>ChatGPT 推薦公司是根據什麼？</summary><p>開啟搜尋功能時，ChatGPT 會即時搜尋並閱讀網路上的內容，再整理成答案。它比較容易推薦網站讀得到、服務說明清楚、而且在其他網站也被提到的業者。不同時間、不同問法，推薦名單也可能不一樣。</p></details>
+  <details><summary>我的網站要怎麼讓 ChatGPT 讀得到？</summary><p>依 OpenAI 說明，ChatGPT 搜尋使用的爬蟲是 OAI-SearchBot，封鎖它的網站不會出現在 ChatGPT 的搜尋答案中。請確認 robots.txt 和主機、CDN 設定沒有擋掉它。</p></details>
+  <details><summary>封鎖 GPTBot 會影響 ChatGPT 推薦我嗎？</summary><p>依 OpenAI 說明，GPTBot 用於模型訓練，和是否出現在 ChatGPT 搜尋結果無關；決定搜尋曝光的是 OAI-SearchBot。所以可以依需求決定是否開放 GPTBot，但不要擋到 OAI-SearchBot。</p></details>
+  <details><summary>可以付費讓 ChatGPT 推薦我嗎？</summary><p>不能買到回答裡的推薦。ChatGPT 在部分國家有測試廣告，但 OpenAI 說明廣告會標示為贊助、和回答分開，不會影響回答內容；也沒有人能保證一定被推薦。能做的是讓網站讀得到、內容清楚、外部資訊一致，再用同一組問題定期檢測變化。</p></details>
+  <details><summary>台北有誰可以幫忙做這件事？</summary><p>夏裕科技是台北的軟體與 AI 搜尋優化公司，用自行開發的夏裕 AI 曝光引擎定期檢測 ChatGPT、Gemini 等平台有沒有提到您，並提出網站改善建議。可以先申請免費 AI 曝光檢測了解現況，費用依需求報價。</p></details>
+</section>

@@ -1,0 +1,114 @@
+<!--
+slug: check-ai-visibility
+title: 怎麼檢查 ChatGPT、Gemini 有沒有推薦我的公司？自我檢測｜夏裕科技
+description: 用客戶會問的 5 個問題詢問 ChatGPT、Gemini、Claude、Perplexity，記錄有沒有提到您、推薦了誰、引用哪些網站。附步驟、紀錄表與判讀方式。
+h1: 怎麼檢查 ChatGPT、Gemini 有沒有提到我的公司？自我檢測步驟
+dek: 用客戶會問的 5 個問題，分別詢問 ChatGPT、Gemini、Claude、Perplexity，記下每個 AI 有沒有提到您、推薦了哪些同業、引用了哪些網站；每月用同一組問題重測，就能看出變化。
+category: 實作
+order: 10
+hero_alt: 插圖：同一個客戶問題「台北推薦的會計師事務所？」分別詢問 ChatGPT、Gemini、Claude、Perplexity，標示哪些 AI 有提到您（示意）
+date: 2026-11-13
+hero: /assets/v2/img/ai-search/check-ai-visibility.svg
+ld: [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "自己檢測和用工具檢測有什麼不同？", "acceptedAnswer": {"@type": "Answer", "text": "原理相同，都是用同樣的問題詢問 AI 並記錄結果。差別在規模與一致性：工具可以固定時間、固定問題、同時詢問多個平台並保存每次結果，比較容易看出趨勢；自己檢測適合先了解狀況。"}}, {"@type": "Question", "name": "每次問同一題，AI 的回答都不一樣，怎麼辦？", "acceptedAnswer": {"@type": "Answer", "text": "AI 的回答本來就會變動。建議同一題可以多問幾次，看整體傾向；並且每月用同樣的方式重測，以長期趨勢判斷，不要只看單次結果。"}}, {"@type": "Question", "name": "AI 有提到我，但沒有附上我的網站，有關係嗎？", "acceptedAnswer": {"@type": "Answer", "text": "有提到就代表 AI 認識您；但如果引用的是其他網站，表示 AI 參考的資料來源不是您的官網。可以檢查官網是否有直接回答這個問題的內容，提高被引用的機會。"}}, {"@type": "Question", "name": "檢測結果不好，要從哪裡開始改？", "acceptedAnswer": {"@type": "Answer", "text": "先修正說錯的資訊，再補官網上缺少的答案，最後經營外部資料，例如 Google 商家檔案、產業名錄與評論。依這個順序，通常最快看到改善。"}}]}]
+-->
+<div class="tldr">
+  <b>重點整理</b>
+  <ul>
+    <li>檢測 AI 曝光不需要工具，只要<strong>5 個問題、4 個 AI、一張紀錄表</strong>。</li>
+    <li>問題要用<strong>客戶的問法</strong>，而且要是「請 AI 推薦業者」的問題，例如「台北推薦的 XX」。</li>
+    <li>每次都記錄三件事：<strong>有沒有提到您、推薦了誰、引用了哪些網站</strong>。</li>
+    <li>AI 回答會變動，單次結果參考就好；<strong>每月用同一組問題重測</strong>，才看得出趨勢。</li>
+  </ul>
+</div>
+
+<nav class="toc" aria-label="目錄">
+  <b>本文目錄</b>
+  <ol>
+    <li><a href="#why">為什麼要先檢測</a></li>
+    <li><a href="#questions">準備 5 個問題</a></li>
+    <li><a href="#steps">檢測步驟</a></li>
+    <li><a href="#record">紀錄表怎麼做</a></li>
+    <li><a href="#mistakes">常見的 4 個錯誤</a></li>
+    <li><a href="#read">結果怎麼判讀</a></li>
+    <li><a href="#faq">常見問題</a></li>
+  </ol>
+</nav>
+
+<h2 id="why">為什麼做 AI 搜尋優化前要先檢測？</h2>
+<p>因為不先量測，就不知道該改哪裡，也無法證明改了有沒有用。很多業者第一次檢測時會發現：自己以為很有名，AI 卻一次都沒提到；或是 AI 有提到，但把服務項目、地點講錯了。</p>
+<p>我們跟客戶簡報時，常用一個例子：問 AI「台北最推薦的密室逃脫是哪一間？」，ChatGPT 和 Claude 給的名單不一樣，而且每家都只列出少數幾間。客戶的候選名單，就是 AI 列出的那幾家。所以第一步，是先看清楚 AI 現在怎麼回答您客戶的問題。</p>
+<figure>
+  <img src="/assets/v2/img/svc/svc_geo.jpg" width="960" height="520" alt="插圖：同一個問題詢問 ChatGPT、Gemini、Perplexity、Claude，回答中推薦您的公司" loading="lazy">
+  <figcaption>同一個問題，不同的 AI 可能給出不同的名單。檢測要每個平台分開記錄。</figcaption>
+</figure>
+
+<h2 id="questions">檢測用的 5 個問題怎麼準備？</h2>
+<p>問題要符合兩個條件：是<strong>客戶會問的</strong>，而且答案會<strong>列出業者</strong>。可以從這三種類型各挑一兩題：</p>
+<table>
+  <thead><tr><th>類型</th><th>例子（以台北會計師事務所為例）</th></tr></thead>
+  <tbody>
+    <tr><td>推薦型</td><td>台北推薦的會計師事務所有哪些？</td></tr>
+    <tr><td>比較委託型</td><td>台北新創公司記帳報稅要找哪家事務所比較好？</td></tr>
+    <tr><td>費用預約型</td><td>台北公司設立登記找會計師大概多少錢？推薦哪家？</td></tr>
+  </tbody>
+</table>
+<p>避免直接問「XX 公司好不好」。客戶在還不認識您的時候，不會這樣問；我們要測的，是 AI 會不會在客戶還不認識您時主動推薦您。</p>
+
+<h2 id="steps">自我檢測步驟</h2>
+<ol class="steps-n">
+  <li><strong>使用沒有登入、或新的對話視窗。</strong>避免 AI 參考您之前的對話紀錄，讓結果更接近一般客戶看到的答案。</li>
+  <li><strong>確認 AI 有連網搜尋。</strong>ChatGPT、Gemini、Perplexity 都有連網搜尋功能；有搜尋時，回答通常會附上來源連結。</li>
+  <li><strong>一題一題問，原文照貼。</strong>每個 AI 都問同樣的 5 題，不要中途改字。</li>
+  <li><strong>記錄回答。</strong>有沒有提到您、排在第幾個、推薦了哪些同業、引用了哪些網站，截圖存檔。</li>
+  <li><strong>標出說錯的地方。</strong>如果 AI 提到您，但地址、服務或價格講錯，另外記下來，這通常是最快能修正的問題。</li>
+  <li><strong>每月重測一次。</strong>使用同一組問題、同樣的方式，才能比較前後差異。</li>
+</ol>
+
+<h2 id="record">紀錄表怎麼做？</h2>
+<p>用試算表就可以。每一列是一個問題，每個 AI 一欄，記錄方式如下（以下為示意）：</p>
+<table>
+  <thead><tr><th>問題</th><th>ChatGPT</th><th>Gemini</th><th>Claude</th><th>Perplexity</th></tr></thead>
+  <tbody>
+    <tr><td>台北推薦的會計師事務所？</td><td>有，第 2 個</td><td>沒有</td><td>有，第 3 個</td><td>沒有</td></tr>
+    <tr><td>新創記帳報稅找哪家？</td><td>沒有</td><td>沒有</td><td>沒有</td><td>有，引用官網</td></tr>
+  </tbody>
+</table>
+<p>另外開一個分頁，記錄「被推薦的同業」和「被引用的網站」。這兩份清單非常有用：被引用的網站，就是 AI 參考的資料來源，您可以檢查自己在那些網站上有沒有資料。</p>
+<div class="callout">
+  <p><strong>不想自己一題一題問？</strong>夏裕科技提供<a href="/ai-visibility-engine/#check">免費 AI 曝光檢測</a>：我們用您客戶會問的問題詢問主要 AI 平台，整理成報告，告訴您 AI 有沒有提到您、推薦了哪些同業、引用了哪些網站，以及最該先改善的地方。</p>
+</div>
+
+<h2 id="mistakes">自我檢測常見的 4 個錯誤</h2>
+<p>自己檢測最常見的問題，是測法不一致，導致前後結果沒辦法比較。這四個錯誤最好一開始就避免：</p>
+<table>
+  <thead><tr><th>錯誤</th><th>為什麼有問題</th><th>正確做法</th></tr></thead>
+  <tbody>
+    <tr><td>每次換不同問題</td><td>題目不同，結果無法比較</td><td>固定 5 題，半年內不改；要加題另外記錄</td></tr>
+    <tr><td>只問一個 AI</td><td>不同 AI 的名單常常不一樣</td><td>至少問 ChatGPT、Gemini 兩個，最好四個都問</td></tr>
+    <tr><td>直接問「XX 公司好不好」</td><td>這是已經認識您的人才會問的</td><td>問「台北推薦的 XX」這類請 AI 推薦業者的問題</td></tr>
+    <tr><td>只記得「有沒有被提到」</td><td>少了改善的線索</td><td>一併記下推薦的同業與引用的網站</td></tr>
+  </tbody>
+</table>
+
+<h2 id="read">檢測結果怎麼判讀？</h2>
+<p>看結果時，重點不是「這次有沒有被提到」，而是找出原因與下一步：</p>
+<ul>
+  <li><strong>完全沒被提到：</strong>先確認網站讀得到、服務與地區寫清楚，再補 Google 商家檔案與外部名錄。參考<a href="/ai-search/google-business-profile/">Google 商家檔案和 AI 推薦的關係</a>。</li>
+  <li><strong>有被提到，但不是每個 AI 都有：</strong>比較各平台引用的網站，補上缺少的來源。</li>
+  <li><strong>被提到，但資訊錯誤：</strong>修正官網與各平台的資料，讓它們一致；之後的檢測通常會跟著改善，但需要時間。</li>
+  <li><strong>某一題特別難：</strong>代表網站缺少回答這題的內容，可以寫成一篇文章或 FAQ，參考<a href="/ai-search/faq-for-ai/">FAQ 怎麼寫，才會被 AI 引用</a>。</li>
+</ul>
+<p>要持續追蹤很花時間。夏裕科技自行開發的<a href="/ai-visibility-engine/">夏裕 AI 曝光引擎</a>會用同一組問題定期檢測、記錄變化，並整理成改善建議；如果想交給專業團隊處理，可以參考<a href="/seo-aeo-geo/">AI 搜尋優化服務</a>，或先讀<a href="/geo-guide/">GEO 指南</a>了解完整觀念。</p>
+
+<figure class="dg">
+  <svg viewBox="0 0 860 428" role="img" aria-label="示意圖：用同一組 5 個問題詢問 4 個 AI，記錄每則回答有沒有提到您" font-family="Inter, 'PingFang TC', 'Noto Sans TC', sans-serif" xmlns="http://www.w3.org/2000/svg"><rect x="24" y="24" width="812" height="380" rx="16" fill="#fff" stroke="#ddd6cd"/><text x="52" y="66" font-size="18" fill="#161513" font-weight="700" text-anchor="start">AI 曝光紀錄表</text><text x="275.0" y="116" font-size="15" fill="#4a4743" font-weight="600" text-anchor="middle">ChatGPT</text><text x="425.0" y="116" font-size="15" fill="#4a4743" font-weight="600" text-anchor="middle">Gemini</text><text x="575.0" y="116" font-size="15" fill="#4a4743" font-weight="600" text-anchor="middle">Claude</text><text x="725.0" y="116" font-size="15" fill="#4a4743" font-weight="600" text-anchor="middle">Perplexity</text><line x1="52" y1="132" x2="808" y2="132" stroke="#eee8e0"/><text x="60" y="165" font-size="15" fill="#161513" font-weight="600" text-anchor="start">問題 1</text><rect x="229.0" y="145" width="92" height="28" rx="14" fill="#d7612a"/><text x="275.0" y="164" font-size="13" fill="#fff" font-weight="700" text-anchor="middle">有提到</text><rect x="379.0" y="145" width="92" height="28" rx="14" fill="#f2eee9"/><text x="425.0" y="164" font-size="13" fill="#8f8981" font-weight="500" text-anchor="middle">沒提到</text><rect x="529.0" y="145" width="92" height="28" rx="14" fill="#d7612a"/><text x="575.0" y="164" font-size="13" fill="#fff" font-weight="700" text-anchor="middle">有提到</text><rect x="679.0" y="145" width="92" height="28" rx="14" fill="#d7612a"/><text x="725.0" y="164" font-size="13" fill="#fff" font-weight="700" text-anchor="middle">有提到</text><line x1="52" y1="184" x2="808" y2="184" stroke="#eee8e0"/><text x="60" y="217" font-size="15" fill="#161513" font-weight="600" text-anchor="start">問題 2</text><rect x="229.0" y="197" width="92" height="28" rx="14" fill="#f2eee9"/><text x="275.0" y="216" font-size="13" fill="#8f8981" font-weight="500" text-anchor="middle">沒提到</text><rect x="379.0" y="197" width="92" height="28" rx="14" fill="#f2eee9"/><text x="425.0" y="216" font-size="13" fill="#8f8981" font-weight="500" text-anchor="middle">沒提到</text><rect x="529.0" y="197" width="92" height="28" rx="14" fill="#d7612a"/><text x="575.0" y="216" font-size="13" fill="#fff" font-weight="700" text-anchor="middle">有提到</text><rect x="679.0" y="197" width="92" height="28" rx="14" fill="#f2eee9"/><text x="725.0" y="216" font-size="13" fill="#8f8981" font-weight="500" text-anchor="middle">沒提到</text><line x1="52" y1="236" x2="808" y2="236" stroke="#eee8e0"/><text x="60" y="269" font-size="15" fill="#161513" font-weight="600" text-anchor="start">問題 3</text><rect x="229.0" y="249" width="92" height="28" rx="14" fill="#d7612a"/><text x="275.0" y="268" font-size="13" fill="#fff" font-weight="700" text-anchor="middle">有提到</text><rect x="379.0" y="249" width="92" height="28" rx="14" fill="#d7612a"/><text x="425.0" y="268" font-size="13" fill="#fff" font-weight="700" text-anchor="middle">有提到</text><rect x="529.0" y="249" width="92" height="28" rx="14" fill="#f2eee9"/><text x="575.0" y="268" font-size="13" fill="#8f8981" font-weight="500" text-anchor="middle">沒提到</text><rect x="679.0" y="249" width="92" height="28" rx="14" fill="#f2eee9"/><text x="725.0" y="268" font-size="13" fill="#8f8981" font-weight="500" text-anchor="middle">沒提到</text><line x1="52" y1="288" x2="808" y2="288" stroke="#eee8e0"/><text x="60" y="321" font-size="15" fill="#161513" font-weight="600" text-anchor="start">問題 4</text><rect x="229.0" y="301" width="92" height="28" rx="14" fill="#f2eee9"/><text x="275.0" y="320" font-size="13" fill="#8f8981" font-weight="500" text-anchor="middle">沒提到</text><rect x="379.0" y="301" width="92" height="28" rx="14" fill="#f2eee9"/><text x="425.0" y="320" font-size="13" fill="#8f8981" font-weight="500" text-anchor="middle">沒提到</text><rect x="529.0" y="301" width="92" height="28" rx="14" fill="#f2eee9"/><text x="575.0" y="320" font-size="13" fill="#8f8981" font-weight="500" text-anchor="middle">沒提到</text><rect x="679.0" y="301" width="92" height="28" rx="14" fill="#d7612a"/><text x="725.0" y="320" font-size="13" fill="#fff" font-weight="700" text-anchor="middle">有提到</text><line x1="52" y1="340" x2="808" y2="340" stroke="#eee8e0"/><text x="60" y="373" font-size="15" fill="#161513" font-weight="600" text-anchor="start">問題 5</text><rect x="229.0" y="353" width="92" height="28" rx="14" fill="#d7612a"/><text x="275.0" y="372" font-size="13" fill="#fff" font-weight="700" text-anchor="middle">有提到</text><rect x="379.0" y="353" width="92" height="28" rx="14" fill="#f2eee9"/><text x="425.0" y="372" font-size="13" fill="#8f8981" font-weight="500" text-anchor="middle">沒提到</text><rect x="529.0" y="353" width="92" height="28" rx="14" fill="#d7612a"/><text x="575.0" y="372" font-size="13" fill="#fff" font-weight="700" text-anchor="middle">有提到</text><rect x="679.0" y="353" width="92" height="28" rx="14" fill="#f2eee9"/><text x="725.0" y="372" font-size="13" fill="#8f8981" font-weight="500" text-anchor="middle">沒提到</text><text x="808" y="66" font-size="15" fill="#d7612a" font-weight="700" text-anchor="end">示意 · 被提到 9 / 20 則回答</text></svg>
+  <figcaption>示意：用同一組問題詢問四個 AI，逐則記錄有沒有提到您。下次用同一張表比較，就看得出變化。</figcaption>
+</figure>
+
+<section class="faq" id="faq" aria-labelledby="faq-h">
+  <h2 id="faq-h">常見問題</h2>
+  <details><summary>自己檢測和用工具檢測有什麼不同？</summary><p>原理相同，都是用同樣的問題詢問 AI 並記錄結果。差別在規模與一致性：工具可以固定時間、固定問題、同時詢問多個平台並保存每次結果，比較容易看出趨勢；自己檢測適合先了解狀況。</p></details>
+  <details><summary>每次問同一題，AI 的回答都不一樣，怎麼辦？</summary><p>AI 的回答本來就會變動。建議同一題可以多問幾次，看整體傾向；並且每月用同樣的方式重測，以長期趨勢判斷，不要只看單次結果。</p></details>
+  <details><summary>AI 有提到我，但沒有附上我的網站，有關係嗎？</summary><p>有提到就代表 AI 認識您；但如果引用的是其他網站，表示 AI 參考的資料來源不是您的官網。可以檢查官網是否有直接回答這個問題的內容，提高被引用的機會。</p></details>
+  <details><summary>檢測結果不好，要從哪裡開始改？</summary><p>先修正說錯的資訊，再補官網上缺少的答案，最後經營外部資料，例如 Google 商家檔案、產業名錄與評論。依這個順序，通常最快看到改善。</p></details>
+</section>

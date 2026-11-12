@@ -1,0 +1,106 @@
+<!--
+slug: how-ai-chooses
+title: AI 怎麼決定推薦哪家公司？引用來源怎麼運作｜夏裕科技
+description: ChatGPT、Gemini、Google AI 摘要怎麼挑選要推薦的業者？從搜尋、閱讀、比對到寫進答案，用 4 個步驟說明 AI 引用來源的運作方式，以及業者可以影響的地方。
+h1: AI 怎麼決定推薦哪家公司？引用來源怎麼運作
+dek: 有搜尋功能的 AI 會先搜尋網路、閱讀幾個相關網站，比對哪些業者最符合問題，再把它們寫進答案並附上來源；業者能影響的，是網站讀不讀得到、內容答不答得清楚、外部有沒有一致的資訊。
+category: 入門
+order: 5
+date: 2026-11-13
+hero: /assets/v2/img/ai-search/how-ai-chooses.svg
+hero_alt: 插圖：客戶的問題經過 AI 搜尋官網、商家檔案、評價與名錄，比對後把您的公司寫進答案
+ld: [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "AI 推薦的名單為什麼每次都不太一樣？", "acceptedAnswer": {"@type": "Answer", "text": "AI 的回答會隨問法、時間、平台與當下搜尋到的內容改變。同一個問題，ChatGPT 和 Claude 推薦的名單也可能不同。所以要用同一組問題定期檢測，看趨勢，而不是只看單次結果。"}}, {"@type": "Question", "name": "AI 比較相信官網還是第三方網站？", "acceptedAnswer": {"@type": "Answer", "text": "兩者都會參考。官網說明您做什麼、服務哪裡；第三方網站，例如商家檔案、名錄、評價與報導，則幫 AI 確認您真的存在、評價如何。只有官網自己說自己好，說服力有限。"}}, {"@type": "Question", "name": "網站沒有被引用，最常見的原因是什麼？", "acceptedAnswer": {"@type": "Answer", "text": "常見原因包括：爬蟲被擋住或頁面沒被收錄、重要內容只放在圖片裡、服務說明太籠統沒有回答具體問題、各平台上的公司名稱與資訊不一致，以及外部幾乎沒有其他網站提到您。"}}, {"@type": "Question", "name": "我可以要求 AI 不要推薦某些同業嗎？", "acceptedAnswer": {"@type": "Answer", "text": "不行，也不需要。能做的是讓 AI 更容易找到並理解您的資訊。比較有效的方式是看 AI 推薦同業時引用了哪些網站，再評估自己是否也該出現在那些地方。"}}]}]
+-->
+<div class="tldr">
+  <b>重點整理</b>
+  <ul>
+    <li>AI 推薦業者大致分 4 步：<strong>搜尋 → 閱讀 → 比對 → 寫進答案並附上來源</strong>。</li>
+    <li>業者能影響的有三件事：<strong>網站讀得到、問題答得清楚、別的地方也提到您</strong>。</li>
+    <li>AI 推薦同業時引用了哪些網站，是最實用的線索：那些就是您也該出現的地方。</li>
+    <li>名單會隨時間與平台變動，要用同一組問題定期量測。</li>
+  </ul>
+</div>
+
+<nav class="toc" aria-label="目錄">
+  <b>本文目錄</b>
+  <ol>
+    <li><a href="#flow">AI 回答一個問題的 4 個步驟</a></li>
+    <li><a href="#signals">AI 會參考哪些來源</a></li>
+    <li><a href="#citations">引用來源透露了什麼</a></li>
+    <li><a href="#gaps">為什麼有些好公司反而沒被推薦</a></li>
+    <li><a href="#act">業者可以怎麼做</a></li>
+    <li><a href="#faq">常見問題</a></li>
+  </ol>
+</nav>
+
+<h2 id="flow">AI 回答一個問題的 4 個步驟</h2>
+<p>有搜尋功能的 AI 並不是「背」出答案，而是先上網找資料再整理。以客戶問「台北推薦的會計師事務所」為例，過程大致如下：</p>
+<figure>
+  <svg viewBox="0 0 860 240" role="img" aria-label="流程圖：問題、搜尋、閱讀與比對、寫進答案" xmlns="http://www.w3.org/2000/svg" font-family="Inter, 'PingFang TC', 'Noto Sans TC', sans-serif">
+    <rect width="860" height="240" fill="#f7f5f2"/>
+    <g font-size="18" text-anchor="middle">
+      <rect x="20" y="70" width="170" height="100" rx="16" fill="#161513"/><text x="105" y="112" fill="#f08a55" font-weight="700">1 問題</text><text x="105" y="142" fill="#efebe6" font-size="15">客戶問 AI</text>
+      <rect x="230" y="70" width="170" height="100" rx="16" fill="#fff" stroke="#d9d3cb"/><text x="315" y="112" fill="#b44c1c" font-weight="700">2 搜尋</text><text x="315" y="142" fill="#4a4743" font-size="15">找出相關網站</text>
+      <rect x="440" y="70" width="170" height="100" rx="16" fill="#fff" stroke="#d9d3cb"/><text x="525" y="112" fill="#b44c1c" font-weight="700">3 閱讀與比對</text><text x="525" y="142" fill="#4a4743" font-size="15">誰最符合問題</text>
+      <rect x="650" y="70" width="190" height="100" rx="16" fill="#d7612a"/><text x="745" y="112" fill="#fff" font-weight="700">4 寫進答案</text><text x="745" y="142" fill="#fff" font-size="15">附上引用來源</text>
+    </g>
+    <g stroke="#d7612a" stroke-width="3" fill="none"><path d="M194 120 H224"/><path d="M404 120 H434"/><path d="M614 120 H644"/></g>
+  </svg>
+  <figcaption>有搜尋功能的 AI 大致這樣產生推薦：搜尋、閱讀比對，最後寫進答案並附上來源。</figcaption>
+</figure>
+<ol class="steps-n">
+  <li><strong>理解問題。</strong>判斷客戶要找的是什麼服務、在哪個地區、有什麼條件。</li>
+  <li><strong>搜尋。</strong>到網路上找相關頁面。這一步讀不到您的網站，後面就不會有您。</li>
+  <li><strong>閱讀與比對。</strong>從找到的內容裡，比較哪些業者最符合問題，例如服務項目、地區、評價。</li>
+  <li><strong>寫進答案。</strong>挑出少數幾家寫成推薦，並列出參考的網站。</li>
+</ol>
+
+<h2 id="signals">AI 會參考哪些來源？</h2>
+<p>AI 會同時參考業者自己的網站與第三方資訊。我們把它整理成這張表：</p>
+<table>
+  <thead><tr><th>來源</th><th>AI 從這裡知道什麼</th><th>業者可以做的事</th></tr></thead>
+  <tbody>
+    <tr><td>官網</td><td>您做什麼、服務哪裡、適合誰</td><td>每個服務一頁，第一段直接回答</td></tr>
+    <tr><td>Google 商家檔案</td><td>地址、營業時間、類別、評價</td><td>資料完整、與官網一致</td></tr>
+    <tr><td>產業名錄與平台</td><td>您屬於哪個產業、是否真實存在</td><td>登錄主要名錄，資訊一致</td></tr>
+    <tr><td>評價、論壇與社群</td><td>客戶的實際經驗</td><td>鼓勵滿意的客戶留下評價</td></tr>
+    <tr><td>媒體與文章</td><td>專業程度與知名度</td><td>分享有用的知識與案例</td></tr>
+  </tbody>
+</table>
+
+<h2 id="citations">引用來源透露了什麼？</h2>
+<p>AI 推薦同業時附上的來源網站，是最實用的線索。如果 AI 每次推薦都引用同一個名錄網站，而您不在上面，那就是最該補的地方。這也是我們在<a href="/ai-visibility-engine/">夏裕 AI 曝光引擎</a>裡特別記錄「AI 引用了哪些網站」的原因：它直接告訴您，該出現在哪裡。</p>
+<p>另外要記得，名單會變。我們跟客戶簡報時常示範：同一個問題問 ChatGPT 和 Claude，推薦的名單並不相同，每邊也只列幾家。所以要看的是一段時間的趨勢，不是單一次的結果。</p>
+
+<h2 id="gaps">為什麼有些好公司反而沒被推薦？</h2>
+<p>常常不是因為服務不好，而是 AI 找不到、讀不懂，或沒有足夠的資訊確認。我們在檢測時最常看到這幾種情況：</p>
+<ul>
+  <li><strong>讀不到：</strong>網站擋掉了 AI 或搜尋引擎的爬蟲，或重要頁面沒有被收錄。</li>
+  <li><strong>讀不懂：</strong>網站大量使用圖片或動畫呈現文字，或服務說明只有形容詞，沒有具體內容。</li>
+  <li><strong>對不上：</strong>官網、商家檔案、名錄上的公司名稱、地址、電話不一致，AI 無法確定是同一家。</li>
+  <li><strong>沒人提：</strong>除了自己的網站，網路上幾乎沒有其他地方提到這家公司。</li>
+  <li><strong>答錯題：</strong>網站寫的是公司想說的，不是客戶會問的。客戶問「多少錢」「多久」「適合誰」，網站卻沒有回答。</li>
+</ul>
+<p>這些問題都可以修正，而且大多不需要重做網站。我們在<a href="/seo-aeo-geo/">AI 搜尋優化服務</a>中，會先用檢測找出您屬於哪一種情況，再決定從網站內容、技術設定還是外部資訊開始。</p>
+<p>我們跟客戶簡報時，會把整件事說成一條鏈：<strong>優化內容 → 提升能見度 → 增加網站流量 → 更多預約和訂單</strong>。AI 推薦是中間「提升能見度」的一環，前提是內容先準備好。</p>
+
+<h2 id="act">業者可以怎麼做？</h2>
+<ol class="steps-n">
+  <li><strong>先量測。</strong>用客戶會問的 5 個問題，看 AI 有沒有提到您、推薦了誰、引用了哪些網站。</li>
+  <li><strong>補網站內容。</strong>針對沒被提到的問題，補上清楚的服務說明與問答。可參考<a href="/ai-search/get-recommended-by-chatgpt/">怎麼讓 ChatGPT 推薦我的公司</a>。</li>
+  <li><strong>補外部來源。</strong>出現在 AI 常引用的名錄與平台，並確保資訊一致。</li>
+  <li><strong>定期重測。</strong>每個月用同一組問題再量一次，比較變化。</li>
+</ol>
+<div class="callout">
+  <p><strong>想知道 AI 推薦同業時引用了哪些網站？</strong>申請<a href="/ai-visibility-engine/#check">免費 AI 曝光檢測</a>，我們會整理 AI 有沒有提到您、推薦了誰，以及引用的來源。完整服務請見<a href="/seo-aeo-geo/">AI 搜尋優化（AEO／GEO）</a>，入門觀念可以看<a href="/ai-search/what-is-geo/">GEO 是什麼？</a>與<a href="/geo-guide/">AI 搜尋優化指南</a>。</p>
+</div>
+
+<p class="src">參考資料：<a href="https://developers.google.com/search/docs/appearance/ai-features">Google Search Central：AI features and your website</a>；<a href="https://developers.openai.com/api/docs/bots">OpenAI：Overview of OpenAI Crawlers</a>。</p>
+
+<section class="faq" id="faq" aria-labelledby="faq-h">
+  <h2 id="faq-h">常見問題</h2>
+  <details><summary>AI 推薦的名單為什麼每次都不太一樣？</summary><p>AI 的回答會隨問法、時間、平台與當下搜尋到的內容改變。同一個問題，ChatGPT 和 Claude 推薦的名單也可能不同。所以要用同一組問題定期檢測，看趨勢，而不是只看單次結果。</p></details>
+  <details><summary>AI 比較相信官網還是第三方網站？</summary><p>兩者都會參考。官網說明您做什麼、服務哪裡；第三方網站，例如商家檔案、名錄、評價與報導，則幫 AI 確認您真的存在、評價如何。只有官網自己說自己好，說服力有限。</p></details>
+  <details><summary>網站沒有被引用，最常見的原因是什麼？</summary><p>常見原因包括：爬蟲被擋住或頁面沒被收錄、重要內容只放在圖片裡、服務說明太籠統沒有回答具體問題、各平台上的公司名稱與資訊不一致，以及外部幾乎沒有其他網站提到您。</p></details>
+  <details><summary>我可以要求 AI 不要推薦某些同業嗎？</summary><p>不行，也不需要。能做的是讓 AI 更容易找到並理解您的資訊。比較有效的方式是看 AI 推薦同業時引用了哪些網站，再評估自己是否也該出現在那些地方。</p></details>
+</section>

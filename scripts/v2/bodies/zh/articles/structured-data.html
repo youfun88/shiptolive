@@ -1,0 +1,114 @@
+<!--
+slug: structured-data
+title: 結構化資料（Schema）對 AEO、GEO 有幫助嗎？｜夏裕科技
+description: 結構化資料（Schema）用機器讀得懂的格式說明您的公司、服務與地址，幫助搜尋引擎和 AI 正確理解網站。本文說明中小企業該先做哪幾種 Schema、怎麼檢查，以及它做不到的事。
+h1: 結構化資料（Schema）對 AEO、GEO 有什麼幫助？中小企業版
+dek: 結構化資料是用固定格式告訴搜尋引擎「這家公司是誰、在哪裡、提供什麼」，能減少誤解；但它不是讓 AI 推薦您的捷徑，頁面上看得到的內容才是重點。
+category: 實作
+order: 7
+hero_alt: 插圖：網頁內容轉成 LocalBusiness 結構化資料程式碼，名稱、地址、電話與營業時間，並標示與網頁內容一致
+date: 2026-11-13
+hero: /assets/v2/img/ai-search/structured-data.svg
+ld: [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "沒有工程師，也能加結構化資料嗎？", "acceptedAnswer": {"@type": "Answer", "text": "可以。WordPress、Shopify 等常見網站平台有外掛或內建設定可以產生結構化資料；自己寫的網站則需要在 HTML 裡加入一段 JSON-LD。不論哪一種，加完都要用 Google 的複合式搜尋結果測試檢查。"}}, {"@type": "Question", "name": "結構化資料加了，Google 一定會顯示特殊結果嗎？", "acceptedAnswer": {"@type": "Answer", "text": "不一定。結構化資料讓頁面「有資格」顯示某些特殊結果，但 Google 不保證會顯示，是否顯示由搜尋系統決定。"}}, {"@type": "Question", "name": "要用 Organization 還是 LocalBusiness？", "acceptedAnswer": {"@type": "Answer", "text": "有實體地點、會在地圖上被搜尋的業者，例如診所、餐廳、事務所，適合用 LocalBusiness 或更精確的子類型；主要在線上提供服務、沒有開放客人到訪的公司，用 Organization 即可。"}}, {"@type": "Question", "name": "結構化資料會影響 ChatGPT 嗎？", "acceptedAnswer": {"@type": "Answer", "text": "目前沒有公開資料顯示 ChatGPT 會特別依據結構化資料推薦業者。比較確定的是，它能幫助機器正確理解您的基本資料；真正影響推薦的，仍是網站內容是否清楚，以及外部有沒有一致的資訊提到您。"}}]}]
+-->
+<div class="tldr">
+  <b>重點整理</b>
+  <ul>
+    <li><strong>結構化資料</strong>是一段放在網頁裡、給機器看的說明，常用格式是 JSON-LD。</li>
+    <li>它的價值在於<strong>讓機器正確理解</strong>您的公司名稱、地址、服務與頁面內容，減少 AI 說錯的機會。</li>
+    <li>Google 明確表示，出現在 AI 摘要<strong>不需要特別的結構化資料</strong>；它是基礎工作，不是捷徑。</li>
+    <li>中小企業先做三種就夠：<strong>Organization 或 LocalBusiness、Service、BreadcrumbList</strong>，而且內容必須和頁面一致。</li>
+  </ul>
+</div>
+
+<nav class="toc" aria-label="目錄">
+  <b>本文目錄</b>
+  <ol>
+    <li><a href="#what">結構化資料是什麼</a></li>
+    <li><a href="#help">對 AEO、GEO 的實際幫助</a></li>
+    <li><a href="#types">中小企業先做哪幾種</a></li>
+    <li><a href="#how">怎麼加、怎麼檢查</a></li>
+    <li><a href="#limits">它做不到的事</a></li>
+    <li><a href="#faq">常見問題</a></li>
+  </ol>
+</nav>
+
+<h2 id="what">結構化資料是什麼？</h2>
+<p>結構化資料是一段用固定格式寫成的說明，放在網頁的程式碼裡，讓搜尋引擎和其他程式知道頁面在講什麼。Google 的定義是：一種提供網頁資訊、並分類頁面內容的標準化格式。詞彙則由 schema.org 定義，例如 Organization（組織）、LocalBusiness（在地商家）、Service（服務）。</p>
+<p>一般訪客看不到它，但機器讀得到。網頁上寫「本公司位於台北市中山區」，人看得懂；結構化資料則把同一件事寫成 <code>"addressLocality": "台北市"</code>，機器就不用猜。Google 建議使用 JSON-LD 格式，因為它和頁面的 HTML 分開，比較好維護。</p>
+
+<h2 id="help">結構化資料對 AEO、GEO 的實際幫助是什麼？</h2>
+<p>它最大的幫助是<strong>讓機器對您的基本資料有一致、正確的理解</strong>。AI 回答「台北有哪些做 X 的公司」時，需要知道您是誰、在哪裡、做什麼。如果網站、Google 商家檔案、產業名錄上的名稱和地址都不一樣，AI 比較容易混淆，甚至把資料說錯。</p>
+<figure>
+  <svg viewBox="0 0 760 300" role="img" aria-label="示意圖：網站內容、結構化資料、外部資料三者一致，AI 才能正確理解公司" xmlns="http://www.w3.org/2000/svg" font-family="Inter, 'PingFang TC', sans-serif">
+    <rect width="760" height="300" fill="#f7f5f2"/>
+    <g font-size="17">
+      <rect x="30" y="40" width="190" height="90" rx="14" fill="#fff" stroke="#d9d3cb"/><text x="54" y="80" font-weight="700" fill="#161513">網頁內容</text><text x="54" y="108" fill="#4a4743">人看得懂的文字</text>
+      <rect x="30" y="170" width="190" height="90" rx="14" fill="#161513"/><text x="54" y="210" font-weight="700" fill="#f08a55">結構化資料</text><text x="54" y="238" fill="#efebe6">機器讀得懂的格式</text>
+      <rect x="290" y="105" width="190" height="90" rx="14" fill="#fff" stroke="#d9d3cb"/><text x="314" y="145" font-weight="700" fill="#161513">外部資料</text><text x="314" y="173" fill="#4a4743">商家檔案、名錄</text>
+      <path d="M220 85 L 550 150 M220 215 L 550 150 M480 150 L 550 150" stroke="#d7612a" stroke-width="3" fill="none" stroke-dasharray="7 6"/>
+      <circle cx="620" cy="150" r="70" fill="#d7612a"/><text x="620" y="144" text-anchor="middle" font-size="20" font-weight="800" fill="#fff">AI 正確</text><text x="620" y="172" text-anchor="middle" font-size="20" font-weight="800" fill="#fff">理解您</text>
+    </g>
+  </svg>
+  <figcaption>結構化資料是三種資訊來源之一。三者一致，AI 才比較不會把您的名稱、地點或服務說錯。</figcaption>
+</figure>
+<p>具體來說，結構化資料可以幫助：</p>
+<ul>
+  <li><strong>確認身分：</strong>公司正式名稱、品牌名稱、統一編號、地址與聯絡方式。</li>
+  <li><strong>說明服務：</strong>每個服務頁在講哪一項服務、服務哪些地區。</li>
+  <li><strong>串起資料：</strong>用 sameAs 把官網和您的 Google 商家檔案、LinkedIn 等官方頁面連在一起。</li>
+</ul>
+
+<h2 id="types">中小企業先做哪幾種結構化資料？</h2>
+<p>不需要一次做很多種，先把這三種做好、做對：</p>
+<table>
+  <thead><tr><th>類型</th><th>放在哪裡</th><th>寫什麼</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Organization</strong> 或 <strong>LocalBusiness</strong></td><td>首頁（或每一頁的共用區塊）</td><td>公司名稱、Logo、地址、電話、Email、營業時間、官方社群連結（sameAs）。有實體店面或門診，用 LocalBusiness 或更精確的子類型。</td></tr>
+    <tr><td><strong>Service</strong></td><td>各服務頁</td><td>服務名稱、說明、服務地區、提供者（連回公司）。</td></tr>
+    <tr><td><strong>BreadcrumbList</strong></td><td>首頁以外的頁面</td><td>頁面在網站裡的位置，例如「首頁 › 服務 › AI 搜尋優化」。</td></tr>
+  </tbody>
+</table>
+<p>有文章或常見問題的網站，可以再加 Article 和 FAQPage。FAQ 的寫法可以看<a href="/ai-search/faq-for-ai/">FAQ 怎麼寫，才會被 AI 引用</a>。</p>
+
+<h2 id="how">結構化資料怎麼加、怎麼檢查？</h2>
+<p>最常見的做法，是在頁面的 HTML 裡加入一段 JSON-LD。以台北的在地商家為例：</p>
+<pre style="background:#161513;color:#efebe6;border-radius:12px;padding:16px 18px;overflow-x:auto;font:14px/1.7 ui-monospace,Menlo,Consolas,monospace;white-space:pre"><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "您的公司名稱",
+  "url": "https://www.example.com/",
+  "telephone": "+886-2-0000-0000",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "台北市",
+    "addressCountry": "TW"
+  },
+  "sameAs": ["https://www.facebook.com/您的粉專"]
+}
+&lt;/script&gt;</code></pre>
+<p>加好之後，照這個順序檢查：</p>
+<ol class="steps-n">
+  <li><strong>用 Google 的「複合式搜尋結果測試」</strong>貼上網址，確認讀得到、沒有錯誤。</li>
+  <li><strong>用 schema.org 的驗證工具</strong>檢查格式與欄位名稱。</li>
+  <li><strong>逐項對照頁面內容</strong>：名稱、地址、電話、服務說明，要和頁面上看得到的文字一致。</li>
+  <li><strong>對照外部資料</strong>：Google 商家檔案、名錄上的名稱與地址要一模一樣，參考<a href="/ai-search/google-business-profile/">Google 商家檔案和 AI 推薦有什麼關係</a>。</li>
+</ol>
+<div class="callout">
+  <p><strong>不確定網站的結構化資料有沒有問題？</strong><a href="/ai-visibility-engine/#check">免費 AI 曝光檢測</a>會一併檢查 AI 讀不讀得到您的網站，並告訴您 AI 現在怎麼介紹您、最該先改哪裡。</p>
+</div>
+
+<h2 id="limits">結構化資料做不到的事</h2>
+<p>結構化資料不能讓 AI「一定」推薦您，也不能取代頁面內容。Google 在說明 AI 摘要與 AI 模式時明確寫到：沒有需要特別加入的 schema.org 結構化資料，也不需要另外做給 AI 看的檔案；能不能出現，仍取決於一般搜尋的基本功，例如頁面被收錄、內容以文字呈現、結構化資料與頁面文字一致。</p>
+<p>所以順序很重要：先把<strong>頁面上的答案寫清楚</strong>，再用結構化資料把關鍵資訊標示正確。如果結構化資料寫的和頁面不一樣，例如標示了頁面上沒有的評價或價格，反而可能被視為誤導。想了解完整的 AI 搜尋優化做法，可以看<a href="/seo-aeo-geo/">夏裕科技的 AI 搜尋優化服務</a>或<a href="/geo-guide/">GEO 指南</a>。</p>
+
+<section class="faq" id="faq" aria-labelledby="faq-h">
+  <h2 id="faq-h">常見問題</h2>
+  <details><summary>沒有工程師，也能加結構化資料嗎？</summary><p>可以。WordPress、Shopify 等常見網站平台有外掛或內建設定可以產生結構化資料；自己寫的網站則需要在 HTML 裡加入一段 JSON-LD。不論哪一種，加完都要用 Google 的複合式搜尋結果測試檢查。</p></details>
+  <details><summary>結構化資料加了，Google 一定會顯示特殊結果嗎？</summary><p>不一定。結構化資料讓頁面「有資格」顯示某些特殊結果，但 Google 不保證會顯示，是否顯示由搜尋系統決定。</p></details>
+  <details><summary>要用 Organization 還是 LocalBusiness？</summary><p>有實體地點、會在地圖上被搜尋的業者，例如診所、餐廳、事務所，適合用 LocalBusiness 或更精確的子類型；主要在線上提供服務、沒有開放客人到訪的公司，用 Organization 即可。</p></details>
+  <details><summary>結構化資料會影響 ChatGPT 嗎？</summary><p>目前沒有公開資料顯示 ChatGPT 會特別依據結構化資料推薦業者。比較確定的是，它能幫助機器正確理解您的基本資料；真正影響推薦的，仍是網站內容是否清楚，以及外部有沒有一致的資訊提到您。</p></details>
+</section>
+
+<p class="src">參考資料：Google Search Central〈<a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data">Introduction to structured data markup</a>〉；Google Search Central〈<a href="https://developers.google.com/search/docs/appearance/ai-features">AI features and your website</a>〉；<a href="https://schema.org/LocalBusiness">schema.org/LocalBusiness</a>。</p>

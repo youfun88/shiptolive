@@ -116,3 +116,37 @@ Own products: Tally (https://www.tallybillable.com/), a billable-time and invoic
 - Book a free 20-minute call (weekdays 09:00 to 11:30 Taipei time, Google Meet): https://calendly.com/yufansapp/20min
 - Email: yufan@shiptolive.com
 - Phone: not published.
+
+## AI 搜尋優化知識庫 (AI search optimization guides, 繁體中文)
+
+Hub: https://www.shiptolive.com/ai-search/ · 20 articles for Taiwan businesses on GEO (getting recommended by ChatGPT, Gemini, Claude, Perplexity) and AEO (being cited in Google AI Overviews and AI Mode), written by 夏裕科技 (Ship to Live), Taipei. Each answers the question first, then explains how to do it.
+
+### 入門
+- [GEO 是什麼？讓 AI 推薦您的公司：生成式引擎優化完整入門](https://www.shiptolive.com/ai-search/what-is-geo/): GEO（Generative Engine Optimization，生成式引擎優化）是調整網站內容與網路上的品牌資訊，讓 ChatGPT、Gemini 等 AI 回答客戶問題時，提到並推薦您的公司。
+- [AEO 是什麼？和 SEO、GEO 差在哪裡](https://www.shiptolive.com/ai-search/what-is-aeo/): AEO（Answer Engine Optimization，答案引擎優化）是讓您網站上的內容，被 Google AI 摘要、AI 模式這類「直接給答案」的搜尋功能引用為來源；它和 SEO、GEO 的基礎相同，差別在目標。
+- [怎麼讓公司出現在 Google 的 AI 摘要（AI Overviews）裡？](https://www.shiptolive.com/ai-search/google-ai-overviews/): 要出現在 Google AI 摘要，頁面必須先被 Google 收錄、可以顯示搜尋摘要；之後靠的是一般 SEO 的基本功與清楚回答問題的內容，Google 表示不需要特別的 AI 檔案或標記。
+- [怎麼讓 ChatGPT 推薦我的公司？7 個實際做法](https://www.shiptolive.com/ai-search/get-recommended-by-chatgpt/): 讓 ChatGPT 推薦您，要先讓它的搜尋爬蟲讀得到網站，再把「您做什麼、服務哪裡、適合誰」寫清楚，並讓其他網站也提到您；沒有人能保證一定被推薦，但這三件事做好，機會會明顯提高。
+- [AI 怎麼決定推薦哪家公司？引用來源怎麼運作](https://www.shiptolive.com/ai-search/how-ai-chooses/): 有搜尋功能的 AI 會先搜尋網路、閱讀幾個相關網站，比對哪些業者最符合問題，再把它們寫進答案並附上來源；業者能影響的，是網站讀不讀得到、內容答不答得清楚、外部有沒有一致的資訊。
+
+### 實作
+- [FAQ 怎麼寫，才會被 AI 引用？給中小企業的常見問題頁寫法](https://www.shiptolive.com/ai-search/faq-for-ai/): 想讓 AI 引用您的 FAQ，要用客戶真正的問法當題目，第一句就直接回答，一題只講一件事，並把答案寫成不用看上下文也讀得懂的完整句子。
+- [結構化資料（Schema）對 AEO、GEO 有什麼幫助？中小企業版](https://www.shiptolive.com/ai-search/structured-data/): 結構化資料是用固定格式告訴搜尋引擎「這家公司是誰、在哪裡、提供什麼」，能減少誤解；但它不是讓 AI 推薦您的捷徑，頁面上看得到的內容才是重點。
+- [llms.txt 是什麼？網站需要做嗎？](https://www.shiptolive.com/ai-search/llms-txt/): llms.txt 是一份放在網站根目錄、寫給 AI 看的網站導覽。它目前只是社群提案、不是正式標準，做起來成本很低，可以做，但不該排在網站內容與外部資料之前。
+- [Google 商家檔案和 AI 推薦有什麼關係？在地業者必做清單](https://www.shiptolive.com/ai-search/google-business-profile/): Google 商家檔案是在地業者最重要的外部資料：它決定您在 Google 地圖的排名，也是 AI 回答「台北推薦哪一家」時會參考的公開資訊，資料完整、正確、和網站一致最重要。
+- [怎麼檢查 ChatGPT、Gemini 有沒有提到我的公司？自我檢測步驟](https://www.shiptolive.com/ai-search/check-ai-visibility/): 用客戶會問的 5 個問題，分別詢問 ChatGPT、Gemini、Claude、Perplexity，記下每個 AI 有沒有提到您、推薦了哪些同業、引用了哪些網站；每月用同一組問題重測，就能看出變化。
+- [中小企業 AI 搜尋優化 30 天行動清單](https://www.shiptolive.com/ai-search/sme-30-day-plan/): 中小企業可以用 30 天打好 AI 搜尋優化的基礎：第 1 週檢測現況，第 2 週補上網站答案，第 3 週讓外部資訊一致，第 4 週重測並建立追蹤。
+
+### 選擇服務商
+- [台北 AI 搜尋優化（GEO）公司怎麼選？簽約前要問的 10 個問題](https://www.shiptolive.com/ai-search/choose-geo-agency/): 選 GEO 服務商，先看三件事：有沒有方法量測 AI 是否提到您、做法和數據是否透明、合約與交付是否清楚。下面 10 個問題，可以直接拿去問。
+- [找台北 SEO 公司前，先問有沒有做 AEO、GEO](https://www.shiptolive.com/ai-search/seo-company-ai/): 現在的 SEO 不只是 Google 排名。找台北 SEO 公司時，要一併確認他們會不會讓您出現在 Google AI 摘要（AEO），以及 ChatGPT、Gemini 的推薦裡（GEO）。
+
+### 產業應用
+- [診所怎麼讓 AI 推薦？牙醫、醫美、復健科的 AI 搜尋優化](https://www.shiptolive.com/ai-search/clinics/): 想讓病患問 AI 時找到您的診所，關鍵是把看診項目、醫師專長、地點與時間寫清楚，並讓 Google 商家檔案和評價跟網站一致；同時遵守醫療廣告的規範，不誇大療效。
+- [律師、會計師事務所怎麼出現在 AI 的推薦名單？](https://www.shiptolive.com/ai-search/law-accounting-firms/): 事務所要被 AI 推薦，關鍵是把專長領域、承辦人資歷與服務流程寫成具體、可查證的內容，並在名錄、媒體與評價上留下一致的資訊；同時遵守律師、會計師的執業與廣告規範。
+- [補習班、才藝教室怎麼讓家長問 AI 時找到您？](https://www.shiptolive.com/ai-search/education/): 想讓家長問 AI 時找到您，要把適合的年齡、班型、師資、上課地點與時段、試聽方式寫清楚，並讓 Google 商家檔案與家長評價跟網站一致。
+- [餐廳、在地店家怎麼被 AI 推薦？Google 商家檔案與評價的關鍵](https://www.shiptolive.com/ai-search/local-restaurants-retail/): 在地店家要被 AI 推薦，最關鍵的是 Google 商家檔案與評價：資料完整、和官網一致、評價具體且持續更新；官網再補上菜單、特色、適合場合與訂位方式，讓 AI 有內容可以引用。
+- [B2B 製造業、貿易公司的 AI 搜尋優化：讓海外採購問 AI 時找到您](https://www.shiptolive.com/ai-search/b2b-manufacturing/): B2B 公司要被 AI 推薦給海外買家，關鍵是一個資訊完整的英文網站：寫清楚產品規格、產能、認證、出口市場與詢價方式，並在產業名錄與展會資料上保持一致。
+
+### 成效與費用
+- [AI 搜尋優化（GEO）費用怎麼算？影響報價的 6 個因素](https://www.shiptolive.com/ai-search/geo-cost/): GEO 沒有統一價格，報價主要由 6 個因素決定：追蹤幾個客戶問題、檢查哪些 AI 平台、多久檢測一次、每月多少內容、網站現況，以及合約長度。
+- [GEO 多久見效？AI 搜尋優化要追蹤的指標](https://www.shiptolive.com/ai-search/geo-results-timeline/): GEO 通常以月為單位看到變化，因為搜尋引擎和 AI 需要時間重新讀取網站，外部的品牌資訊也需要累積。重點是用同一組問題定期量測，看趨勢而不是看單次結果。

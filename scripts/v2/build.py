@@ -15,7 +15,7 @@ import json, re, sys, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = pathlib.Path(sys.argv[1])
 BASE = 'https://www.shiptolive.com'
-V = '27'
+V = '29'
 CSS = ''
 
 PAGES = {  # slug -> (zh path, en path)
@@ -24,6 +24,7 @@ PAGES = {  # slug -> (zh path, en path)
     'software': ('/software/', '/en/software/'),
     'seo-aeo-geo': ('/seo-aeo-geo/', '/en/seo-aeo-geo/'),
     'engine': ('/ai-visibility-engine/', '/en/ai-visibility-engine/'),
+    'articles': ('/ai-search/', '/en/'),
     'about': ('/about/', '/en/about/'),
 }
 L = {
@@ -86,7 +87,7 @@ def footer(lang):
     <div class="cols">
       <div><b>{t['brand']}</b>{t['f_company']}<br>{t['f_tax']}<br>{t['f_loc']}<p class="motto">{t['motto']}</p></div>
       <nav aria-label="{t['f_svc']}"><b>{t['f_svc']}</b><a href="{p(lang,'seo-aeo-geo')}">{t['ai']}</a><a href="{p(lang,'website')}">{t['web']}</a><a href="{p(lang,'software')}">{t['sw']}</a><a href="{p(lang,'engine')}">{t['engine']}</a></nav>
-      <nav aria-label="{t['f_more']}"><b>{t['f_more']}</b><a href="{p(lang,'about')}">{t['about']}</a><a href="{pre}/geo-guide/">{t['f_guide']}</a><a href="{pre}/projects/">{t['f_work']}</a><a href="/tools/">{t['f_tools']}</a><a href="{pre}/privacy/">{t['f_privacy']}</a></nav>
+      <nav aria-label="{t['f_more']}"><b>{t['f_more']}</b><a href="{p(lang,'about')}">{t['about']}</a><a href="{pre}/geo-guide/">{t['f_guide']}</a>{'<a href="/ai-search/">AI 搜尋優化知識庫</a>' if lang == 'zh' else ''}<a href="{pre}/projects/">{t['f_work']}</a><a href="/tools/">{t['f_tools']}</a><a href="{pre}/privacy/">{t['f_privacy']}</a></nav>
       <nav aria-label="{t['contact']}"><b>{t['contact']}</b><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a><a href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">{t['f_book']}</a><a href="{p(lang,'engine')}#check">{t['cta']}</a></nav>
     </div>
     <div class="legal"><span>© 2026 {t['f_company']}</span><span><a href="{'/en/' if lang=='zh' else '/'}" style="display:inline">{t['other_label']}</a></span></div>
@@ -96,8 +97,10 @@ def footer(lang):
 
 def head(lang, slug, meta):
     t = L[lang]
-    url = BASE + p(lang, slug)
+    url = BASE + meta.get('path', p(lang, slug))
     zh_url, en_url = BASE + p('zh', slug), BASE + p('en', slug)
+    if meta.get('path'):
+        zh_url = url
     org = {
         "@type": "Organization", "@id": BASE + "/#org", "name": "夏裕科技股份有限公司",
         "alternateName": ["Ship to Live", "夏裕科技", "Xiayu Technology"],
@@ -130,13 +133,19 @@ def head(lang, slug, meta):
     graph = [org, {"@type": "WebPage", "@id": url + "#page", "url": url, "name": meta['title'], "description": meta['description'],
                    "inLanguage": t['htmllang'], "isPartOf": {"@type": "WebSite", "@id": BASE + "/#site", "url": BASE + "/", "name": "夏裕科技 Ship to Live"},
                    "publisher": {"@id": BASE + "/#org"}}]
-    if slug != 'home':
+    if meta.get('crumbs'):
+        graph.append({"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "name": n, "item": BASE + u} for i, (n, u) in enumerate(meta['crumbs'])]})
+    elif slug != 'home':
         graph.append({"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": t['home'], "item": BASE + p(lang, 'home')},
             {"@type": "ListItem", "position": 2, "name": meta.get('crumb', meta['title']), "item": url}]})
     graph += meta.get('ld', [])
     ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=1)
-    og = BASE + '/assets/img/og.png?v=5'
+    og = BASE + meta.get('og', '/assets/img/og.png?v=5')
+    alts = (f'<link rel="alternate" hreflang="zh-Hant" href="{zh_url}">\n<link rel="alternate" hreflang="x-default" href="{zh_url}">' if meta.get('zh_only') else
+            f'<link rel="alternate" hreflang="zh-Hant" href="{zh_url}">\n<link rel="alternate" hreflang="en" href="{en_url}">\n<link rel="alternate" hreflang="x-default" href="{zh_url}">')
+    robots = '<meta name="robots" content="noindex, nofollow">\n' if meta.get('draft') else ''
     return f'''<!doctype html>
 <html lang="{t['htmllang']}">
 <head>
@@ -144,14 +153,12 @@ def head(lang, slug, meta):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{meta['title']}</title>
 <meta name="description" content="{meta['description']}">
-<link rel="canonical" href="{url}">
-<link rel="alternate" hreflang="zh-Hant" href="{zh_url}">
-<link rel="alternate" hreflang="en" href="{en_url}">
-<link rel="alternate" hreflang="x-default" href="{zh_url}">
+{robots}<link rel="canonical" href="{url}">
+{alts}
 <meta name="theme-color" content="#efebe6">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
-<meta property="og:type" content="website">
+<meta property="og:type" content="{meta.get('og_type', 'website')}">
 <meta property="og:site_name" content="{t['brand']}">
 <meta property="og:title" content="{meta['title']}">
 <meta property="og:description" content="{meta['description']}">
@@ -194,7 +201,7 @@ def build(lang, slug):
 
 def bundle():
     a = ROOT / 'assets' / 'v2'
-    css = '\n'.join((a / f).read_text() for f in ('site.css', 'x-a.css', 'x-b.css', 'x-c.css', 'zz-fixes.css'))
+    css = '\n'.join((a / f).read_text() for f in ('site.css', 'x-a.css', 'x-b.css', 'x-c.css', 'x-post.css', 'zz-fixes.css'))
     css = re.sub(r'/\*.*?\*/', '', css, flags=re.S)
     css = re.sub(r'\s+', ' ', css)
     css = re.sub(r'\s*([{};:,>])\s*', r'\1', css).replace(';}', '}')
@@ -210,3 +217,5 @@ if __name__ == '__main__':
         for slug in PAGES:
             o = build(lang, slug)
             print(('wrote ' + str(o)) if o else f'skip {lang}/{slug} (no body)')
+    import articles
+    articles.run(sys.modules[__name__])

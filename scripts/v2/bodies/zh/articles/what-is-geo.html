@@ -1,0 +1,86 @@
+<!--
+slug: what-is-geo
+title: GEO 是什麼？生成式引擎優化完整入門（2026）｜夏裕科技
+description: GEO（生成式引擎優化）是讓 ChatGPT、Gemini、Claude 等 AI 在回答時提到並推薦您的公司。本文說明 GEO 怎麼運作、和 SEO 的差別，以及台灣企業可以從哪裡開始。
+h1: GEO 是什麼？讓 AI 推薦您的公司：生成式引擎優化完整入門
+dek: GEO（Generative Engine Optimization，生成式引擎優化）是調整網站內容與網路上的品牌資訊，讓 ChatGPT、Gemini 等 AI 回答客戶問題時，提到並推薦您的公司。
+category: 入門
+order: 1
+date: 2026-11-13
+hero: /assets/v2/img/ai-search/what-is-geo.svg
+hero_alt: 插圖：AI 助理回答「台北推薦的設計公司？」並推薦您的公司，旁邊列出 AI 會看的三件事：網站讀得到、問題答得清楚、別的地方也提到您
+ld: [{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"GEO 和 SEO 有什麼不同？","acceptedAnswer":{"@type":"Answer","text":"SEO 的目標是讓網站在 Google 搜尋結果排名靠前；GEO 的目標是讓 ChatGPT、Gemini 等 AI 在回答中直接提到並推薦您。兩者的基礎相同：網站讀得到、內容清楚正確，所以通常一起做。"}},{"@type":"Question","name":"GEO 可以保證 AI 一定推薦我嗎？","acceptedAnswer":{"@type":"Answer","text":"不能。AI 的回答會隨問題、時間與平台改變，沒有人能保證特定平台一定推薦。能做的是持續量測 AI 有沒有提到您、找出原因並改善網站與外部資訊，再追蹤變化。"}},{"@type":"Question","name":"中小企業需要做 GEO 嗎？","acceptedAnswer":{"@type":"Answer","text":"如果您的客戶會用 AI 找產品、服務或廠商，就值得開始。AI 回答通常只列出少數幾家，被列進去和沒被列進去的差別很大。可以先做一次 AI 曝光檢測，了解目前狀況再決定。"}},{"@type":"Question","name":"GEO 多久會看到效果？","acceptedAnswer":{"@type":"Answer","text":"通常以月為單位。網站修改後，搜尋引擎與 AI 需要時間重新讀取，外部的品牌資訊也需要累積。建議用同一組問題定期檢測，比較前後變化。"}}]}]
+-->
+<div class="tldr">
+  <b>重點整理</b>
+  <ul>
+    <li><strong>GEO（生成式引擎優化）</strong>是讓 AI 在回答客戶問題時，提到並推薦您的公司。</li>
+    <li>AI 推薦誰，主要看三件事：<strong>網站讀得到、問題答得清楚、別的地方也提到您</strong>。</li>
+    <li>GEO 和 SEO 的基礎相同，差別在目標：SEO 爭取排名，GEO 爭取被 AI 寫進答案。</li>
+    <li>第一步不是改網站，而是先檢測：AI 現在有沒有提到您、推薦了誰。</li>
+  </ul>
+</div>
+
+<nav class="toc" aria-label="目錄">
+  <b>本文目錄</b>
+  <ol>
+    <li><a href="#why">為什麼現在要關心 GEO</a></li>
+    <li><a href="#how">AI 怎麼決定推薦誰</a></li>
+    <li><a href="#vs">GEO、AEO、SEO 差在哪裡</a></li>
+    <li><a href="#start">台灣企業可以從哪裡開始</a></li>
+    <li><a href="#faq">常見問題</a></li>
+  </ol>
+</nav>
+
+<h2 id="why">為什麼現在要關心 GEO？</h2>
+<p>因為越來越多客戶不再自己翻搜尋結果，而是直接問 AI：「台北有哪些推薦的會計師事務所？」「適合公司聚餐的餐廳？」AI 會讀過許多網站後，直接寫出一段答案，通常只列出幾家業者。</p>
+<p>這代表一件事：<strong>被 AI 寫進答案的業者，會直接進入客戶的候選名單；沒被提到的，客戶可能根本不會知道。</strong>過去在 Google 排第 5 名，客戶還有機會往下看；在 AI 的回答裡，沒被提到就是沒有出現。</p>
+<p>「GEO」這個名稱來自 2023 年一篇研究論文〈GEO: Generative Engine Optimization〉，研究者測試了哪些內容寫法，比較容易被生成式 AI 引用。之後這個詞被廣泛用來描述「讓 AI 推薦您」的優化工作。</p>
+
+<h2 id="how">AI 怎麼決定推薦誰？</h2>
+<p>ChatGPT、Gemini、Perplexity 這類有連網搜尋功能的 AI，回答時會即時讀取網路上的內容，再整理成答案。它挑選業者的邏輯，可以簡化成三件事：</p>
+<figure>
+  <img src="/assets/v2/img/svc/svc_geo.jpg" width="960" height="520" alt="插圖：AI 回答中把「您的公司」列為推薦" loading="lazy">
+  <figcaption>AI 會讀多個網站後寫出答案。網站內容清楚、外部資訊一致的業者，比較容易被列進去。</figcaption>
+</figure>
+<ol class="steps-n">
+  <li><strong>網站讀得到。</strong>AI 的爬蟲要能讀取您的網站。如果網站擋掉 AI 爬蟲、內容藏在圖片或需要登入才看得到，AI 就讀不到。</li>
+  <li><strong>問題答得清楚。</strong>客戶問「台北哪家做 X 比較好」，AI 會找能直接回答的內容：您做什麼、服務哪些地區、適合誰、怎麼收費、怎麼聯絡。寫得越具體，越容易被引用。</li>
+  <li><strong>別的地方也提到您。</strong>AI 會參考第三方來源：Google 商家檔案、產業名錄、媒體報導、論壇討論、客戶評價。只有自己網站說自己好，說服力有限。</li>
+</ol>
+
+<h2 id="vs">GEO、AEO、SEO 差在哪裡？</h2>
+<p>三者目標不同，但基礎相同，所以實務上通常一起做：</p>
+<table>
+  <thead><tr><th>名稱</th><th>目標</th><th>出現在哪裡</th></tr></thead>
+  <tbody>
+    <tr><td><strong>SEO</strong> 搜尋引擎優化</td><td>網站在搜尋結果排名靠前</td><td>Google、Bing 的一般搜尋結果</td></tr>
+    <tr><td><strong>AEO</strong> 答案引擎優化</td><td>網站內容被引用為答案來源</td><td>Google AI 摘要（AI Overviews）、AI 模式、精選摘要</td></tr>
+    <tr><td><strong>GEO</strong> 生成式引擎優化</td><td>品牌被 AI 提到並推薦</td><td>ChatGPT、Gemini、Claude、Perplexity 的回答</td></tr>
+  </tbody>
+</table>
+<p>如果想深入了解 AEO，可以看<a href="/ai-search/what-is-aeo/">AEO 是什麼？和 SEO、GEO 差在哪裡</a>；想知道 AI 實際怎麼挑選業者，可以看<a href="/ai-search/how-ai-chooses/">AI 怎麼決定推薦哪家公司</a>。</p>
+
+<h2 id="start">台灣企業可以從哪裡開始？</h2>
+<p>建議照這個順序，先量測，再改善：</p>
+<ol class="steps-n">
+  <li><strong>列出客戶會問 AI 的 5 個問題。</strong>用客戶的說法，而不是行銷用語。例如「台北推薦的牙醫診所」，而不是「全方位口腔照護」。</li>
+  <li><strong>檢測 AI 現在怎麼回答。</strong>用這些問題問 ChatGPT、Gemini、Claude、Perplexity，記錄有沒有提到您、推薦了哪些同業、引用了哪些網站。</li>
+  <li><strong>補上網站缺的答案。</strong>針對沒被提到的問題，補上服務說明、常見問題、地區與適用對象，並確認 AI 爬蟲讀得到。</li>
+  <li><strong>經營外部資訊。</strong>完善 Google 商家檔案、產業名錄與評價，讓別的地方也提到您，資訊和網站一致。</li>
+  <li><strong>定期用同一組問題重測。</strong>每月比較一次，才看得出改善是否有效。</li>
+</ol>
+<p>夏裕科技的 <a href="/seo-aeo-geo/">AI 搜尋優化（AEO／GEO）服務</a>就是照這個順序進行，用自主研發的系統每天追蹤變化；想先自己動手，可以參考<a href="/ai-search/check-ai-visibility/">自我檢測步驟</a>和<a href="/ai-search/sme-30-day-plan/">30 天行動清單</a>。</p>
+<div class="callout">
+  <p><strong>不知道 AI 現在怎麼介紹您？</strong>夏裕科技提供<a href="/ai-visibility-engine/#check">免費 AI 曝光檢測</a>：我們用您客戶會問的問題詢問主要 AI 平台，告訴您 AI 有沒有提到您、推薦了哪些同業，以及最該先改善的地方。</p>
+</div>
+
+<section class="faq" id="faq" aria-labelledby="faq-h">
+  <h2 id="faq-h">常見問題</h2>
+  <details><summary>GEO 和 SEO 有什麼不同？</summary><p>SEO 的目標是讓網站在 Google 搜尋結果排名靠前；GEO 的目標是讓 ChatGPT、Gemini 等 AI 在回答中直接提到並推薦您。兩者的基礎相同：網站讀得到、內容清楚正確，所以通常一起做。</p></details>
+  <details><summary>GEO 可以保證 AI 一定推薦我嗎？</summary><p>不能。AI 的回答會隨問題、時間與平台改變，沒有人能保證特定平台一定推薦。能做的是持續量測 AI 有沒有提到您、找出原因並改善網站與外部資訊，再追蹤變化。</p></details>
+  <details><summary>中小企業需要做 GEO 嗎？</summary><p>如果您的客戶會用 AI 找產品、服務或廠商，就值得開始。AI 回答通常只列出少數幾家，被列進去和沒被列進去的差別很大。可以先做一次 AI 曝光檢測，了解目前狀況再決定。</p></details>
+  <details><summary>GEO 多久會看到效果？</summary><p>通常以月為單位。網站修改後，搜尋引擎與 AI 需要時間重新讀取，外部的品牌資訊也需要累積。建議用同一組問題定期檢測，比較前後變化。</p></details>
+</section>
+
+<p class="src">參考資料：Aggarwal 等人，<a href="https://arxiv.org/abs/2311.09735">〈GEO: Generative Engine Optimization〉，arXiv:2311.09735（2023）</a>。</p>
