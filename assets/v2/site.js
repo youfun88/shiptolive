@@ -119,6 +119,7 @@
     show(0, now);
   }
   onSeen($$('.scan'), runScan, 0.3);
+  window.STL = { $: $, $$: $$, onSeen: onSeen, typeInto: typeInto, zh: zh, still: still };
 
   // ?need=ai|web|software|other preselects the inquiry type
   try {

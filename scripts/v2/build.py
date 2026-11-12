@@ -15,7 +15,7 @@ import json, re, sys, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = pathlib.Path(sys.argv[1])
 BASE = 'https://www.shiptolive.com'
-V = '22'
+V = '23'
 
 PAGES = {  # slug -> (zh path, en path)
     'home': ('/', '/en/'),
@@ -142,6 +142,9 @@ def head(lang, slug, meta):
 <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-5W92T6J80C');</script>
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/v2/site.css?v={V}">
+<link rel="stylesheet" href="/assets/v2/x-a.css?v={V}">
+<link rel="stylesheet" href="/assets/v2/x-b.css?v={V}">
+<link rel="stylesheet" href="/assets/v2/x-c.css?v={V}">
 <script type="application/ld+json">
 {ld}
 </script>
@@ -163,7 +166,7 @@ def build(lang, slug):
         meta[k.strip()] = json.loads(v) if k.strip() == 'ld' else v
     body = raw[m.end():]
     html = head(lang, slug, meta) + header(lang, slug) + '\n<main id="main">\n' + body.strip() + '\n</main>\n' + footer(lang) + \
-        f'\n<script src="/assets/v2/site.js?v={V}" defer></script>\n</body>\n</html>\n'
+        f'\n<script src="/assets/v2/site.js?v={V}" defer></script>\n<script src="/assets/v2/x-a.js?v={V}" defer></script>\n<script src="/assets/v2/x-b.js?v={V}" defer></script>\n<script src="/assets/v2/x-c.js?v={V}" defer></script>\n</body>\n</html>\n'
     out = ROOT / p(lang, slug).strip('/') / 'index.html'
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html)
