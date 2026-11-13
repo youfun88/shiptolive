@@ -15,7 +15,7 @@ import json, re, sys, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = pathlib.Path(sys.argv[1])
 BASE = 'https://www.shiptolive.com'
-V = '44'
+V = '45'
 CSS = ''
 
 PAGES = {  # slug -> (zh path, en path)
@@ -146,7 +146,7 @@ def head(lang, slug, meta):
             {"@type": "ListItem", "position": 2, "name": meta.get('crumb', meta['title']), "item": url}]})
     graph += meta.get('ld', [])
     ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=1)
-    og = BASE + meta.get('og', '/assets/img/og.png?v=5')
+    og = BASE + meta.get('og', f"/assets/img/og-{'en' if lang == 'en' else 'zh'}.png?v=1")
     alts = (f'<link rel="alternate" hreflang="zh-Hant" href="{zh_url}">\n<link rel="alternate" hreflang="x-default" href="{zh_url}">' if meta.get('zh_only') else
             f'<link rel="alternate" hreflang="zh-Hant" href="{zh_url}">\n<link rel="alternate" hreflang="en" href="{en_url}">\n<link rel="alternate" hreflang="x-default" href="{zh_url}">')
     robots = '<meta name="robots" content="noindex, nofollow">\n' if meta.get('draft') else ''
@@ -171,6 +171,7 @@ def head(lang, slug, meta):
 <meta property="og:locale" content="{t['locale']}">
 <meta property="og:locale:alternate" content="{t['alt_locale']}">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{og}">
 <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-5W92T6J80C');
 addEventListener('load',function(){{setTimeout(function(){{var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-5W92T6J80C';document.head.appendChild(s);}},1500);}});</script>
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
