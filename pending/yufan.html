@@ -99,7 +99,7 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </script>
 <h1>Developer review · SEO / AEO / GEO</h1>
 <p>Search and AI-visibility changes for Yufan to approve: titles, descriptions, schema, internal links, llms.txt, sitemap, keywords. Content changes go to the owner at <a href="/pending/">/pending</a>. Not linked from the site and not indexed. The GX10 job applies approved changes at its next run (every 8 hours).</p>
-<p class="updated">Updated 2026-11-11.</p>
+<p class="updated">Updated 2026-11-13.</p>
 
 <!-- review-ui (/pending/review-ui.js + .css, shared by /pending and /pending/yufan):
   - Language: an EN / 中文 switch shows one language. Write every explanation, note, label and question twice, each in
@@ -130,7 +130,22 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </div>
 -->
 <h2>Waiting for approval</h2>
-<p class="nothing">Nothing yet.</p>
+<div class="item" data-item="[Yufan] English home page: title under 60 characters" data-type="setting" data-status="approved" data-approved="2026-11-13">
+<h3>1. [Yufan] English home page: title under 60 characters</h3>
+<p lang="en">Page checklist 2026-11-13 02:00 UTC (score 99): <a href="/en/" target="_blank" rel="noopener">/en/</a> fails "title" at 85 characters after the 2026-11-12 headline change (limit 60, Google cuts the rest). The new title keeps the brand, the main keyword (AI Search Optimization) and Taipei; websites and software stay in the meta description. Branch <code>seo/en-home-title</code> (body front-matter + rebuilt page; the title also feeds og:title and the WebPage name).</p>
+<p lang="zh-Hant">頁面檢查清單 2026-11-13 02:00 UTC（99 分）：<a href="/en/" target="_blank" rel="noopener">/en/</a> 在 2026-11-12 改標語後，標題 85 個字元，沒通過「標題」（上限 60，超過的會被 Google 截掉）。新標題保留品牌、主要關鍵字 AI Search Optimization 和 Taipei；網站和軟體仍寫在 meta description 裡。分支 <code>seo/en-home-title</code>（body 前置資料和重建後的頁面；標題同時用在 og:title 和 WebPage name）。</p>
+<ul>
+<li><strong lang="en">/en/ &lt;title&gt;, og:title, WebPage name:</strong><strong lang="zh-Hant">/en/ 標題、og:title、WebPage name：</strong><span class="ba was"><b>Before</b>Ship to Live | AI Search Optimization (GEO), Website Design &amp; Custom Software, Taipei</span><span class="ba now"><b>After</b>Ship to Live | AI Search Optimization &amp; Websites, Taipei</span></li>
+</ul>
+</div>
+<div class="item" data-item="[Yufan] Knowledge base, choosing an SEO company: question-style heading" data-type="setting" data-status="approved" data-approved="2026-11-13">
+<h3>2. [Yufan] Knowledge base, choosing an SEO company: question-style heading</h3>
+<p lang="en">Page checklist 2026-11-13 02:00 UTC: <a href="/ai-search/seo-company-ai/" target="_blank" rel="noopener">/ai-search/seo-company-ai/</a> fails "question-style H2" (no H2 ends in ？). This rewords one H2 and its table-of-contents link as a question with the same meaning; the anchor #three stays, so no link breaks. Branch <code>seo/seo-company-ai-qh2</code> (article body + rebuilt page).</p>
+<p lang="zh-Hant">頁面檢查清單 2026-11-13 02:00 UTC：<a href="/ai-search/seo-company-ai/" target="_blank" rel="noopener">/ai-search/seo-company-ai/</a> 沒通過「問句式 H2」（沒有 H2 以？結尾）。這次把一個 H2 和目錄裡的連結改成意思相同的問句；錨點 #three 不變，不會有連結失效。分支 <code>seo/seo-company-ai-qh2</code>（文章 body 和重建後的頁面）。</p>
+<ul>
+<li><strong lang="en">H2 and table of contents:</strong><strong lang="zh-Hant">H2 和目錄：</strong><span class="ba was"><b>Before</b>SEO、AEO、GEO 三件事</span><span class="ba now"><b>After</b>SEO、AEO、GEO 是哪三件事？</span></li>
+</ul>
+</div>
 <script>
 (function(){
   var API='https://admin.shiptolive.com/api/contact';
