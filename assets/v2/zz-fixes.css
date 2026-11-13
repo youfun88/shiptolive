@@ -101,3 +101,4 @@
 @media (min-width: 900px) { :lang(en) .hero .btns { flex-wrap: nowrap; } }
 /* dashboard "now" row: tinted block, no side bar (DESIGN.md) */
 .now { border-left: 1px solid var(--hair) !important; background: #f3ece4 !important; }
+.faq-more { margin: 14px 0 0; font-size: 15px; }

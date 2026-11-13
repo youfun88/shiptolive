@@ -86,38 +86,47 @@ def run(b):
         related = [x for x in arts if x is not a and x.get('category') == a.get('category')][:3]
         if len(related) < 3:
             related += [x for x in arts if x is not a and x not in related][:3 - len(related)]
+        # TOC moves out of the body into a rail (sticky on desktop, collapsed on phones)
+        body_html = a['body']
+        toc_m = re.search(r'\s*<nav class="toc"[^>]*>.*?</nav>\s*', body_html, re.S)
+        toc_items = ''
+        if toc_m:
+            body_html = body_html[:toc_m.start()] + '\n' + body_html[toc_m.end():]
+            ol = re.search(r'<ol>.*?</ol>', toc_m.group(0), re.S)
+            toc_items = ol.group(0) if ol else ''
+        # hero art sits after the first section instead of above the first paragraph
+        hero_fig = (f'<figure class="art-fig"><img src="{a["hero"]}" width="1200" height="630" alt="{a.get("hero_alt", "")}" loading="lazy"></figure>\n')
+        h2s = [m.start() for m in re.finditer(r'\n<h2 ', body_html)]
+        if len(h2s) >= 2:
+            body_html = body_html[:h2s[1]] + '\n' + hero_fig + body_html[h2s[1]:]
+        rail = (f'<aside class="post-rail" aria-label="本文目錄"><details class="rail-toc" id="rail-toc"><summary>本文目錄</summary>{toc_items}</details></aside>'
+                if toc_items else '')
         body = f'''<div class="readbar" aria-hidden="true"><i></i></div>
 <script>(function(){{var b=document.querySelector('.readbar i'),a=document.querySelector('.post-body');if(!b||!a)return;var t=0;function u(){{t=0;var r=a.getBoundingClientRect(),h=r.height-innerHeight*.6,p=h>0?Math.min(1,Math.max(0,-r.top/h)):1;b.style.transform='scaleX('+p+')';}}addEventListener('scroll',function(){{if(!t)t=requestAnimationFrame(u);}},{{passive:true}});u();}})();</script>
 <article class="post">
-  <header class="post-head">
-    <div class="wrap">
+  <div class="wrap post-grid">
+    <header class="post-head">
       <p class="crumbs"><a href="/">首頁</a> / <a href="{HUB}">{HUB_NAME}</a> / {a.get('category', '')}</p>
       <h1 id="h1">{a['h1']}</h1>
       <p class="dek">{a.get('dek', '')}</p>
       <p class="post-meta"><time datetime="{a['date']}">{int(a['date'][:4])} 年 {int(a['date'][5:7])} 月 {int(a['date'][8:10])} 日更新</time>・約 {mins} 分鐘</p>
-    </div>
-  </header>
-  <figure class="post-hero"><div class="wrap"><img src="{a['hero']}" width="1200" height="630" alt="{a.get('hero_alt', '')}" fetchpriority="high"></div></figure>
-  <div class="wrap post-wrap">
+    </header>
+    {rail}
     <div class="post-body">
-{a['body']}
-      <aside class="book" aria-label="預約諮詢">
-        <div><b>想直接聊聊您的情況？</b><p>預約 20 分鐘免費線上諮詢，和夏裕科技聊聊您的產業、客戶會問 AI 的問題，以及可以從哪裡開始。不推銷，先聽您的需求。</p></div>
-        <a class="pill orange" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約免費諮詢</a>
-      </aside>
+{body_html}
     </div>
+    <footer class="post-end">
+      <h2 class="h2" id="rel-h">延伸閱讀</h2>
+      <ul class="aindex">{''.join(row(x) for x in related)}</ul>
+      <div class="cta-box end-cta">
+        <div><h3>AI 會推薦 <span class="you-tag">您的公司</span> 嗎？</h3><p>免費檢測 ChatGPT、Gemini 等 AI 是否提到您、推薦了哪些同業，以及網站最該先改善的地方。1–2 個工作天內回覆；也可以直接預約 20 分鐘線上諮詢。</p></div>
+        <div class="btns"><a class="pill" href="/ai-visibility-engine/#check">申請免費 AI 曝光檢測 <span class="arr" aria-hidden="true">→</span></a><a class="pill cta-ghost" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約 20 分鐘免費諮詢</a></div>
+      </div>
+    </footer>
   </div>
 </article>
-<section class="sec alt post-next" aria-labelledby="rel-h">
-  <div class="wrap">
-    <div class="cta-box">
-      <div><h3>想知道 AI 會不會推薦您的公司？</h3><p>免費檢測 ChatGPT、Gemini 等 AI 是否提到您、推薦了哪些同業，以及網站最該先改善的地方。1–2 個工作天內回覆。</p></div>
-      <div class="btns"><a class="pill" href="/ai-visibility-engine/#check">立即申請免費 AI 曝光檢測 <span class="arr" aria-hidden="true">→</span></a><a class="pill ghost cta-ghost" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約 20 分鐘免費諮詢</a></div>
-    </div>
-    <h2 class="h2" id="rel-h" style="margin:56px 0 24px">延伸閱讀</h2>
-    <ul class="aindex">{''.join(row(x) for x in related)}</ul>
-  </div>
-</section>'''
+<script>(function(){{var d=document.getElementById('rail-toc');if(d){{var mq=matchMedia('(min-width: 1100px)');var s=function(){{d.open=mq.matches;}};s();mq.addEventListener&&mq.addEventListener('change',s);d.addEventListener('click',function(e){{if(e.target.tagName==='A'&&!mq.matches)d.open=false;}});}}
+var f=document.querySelector('.post-body .faq'),pb=document.querySelector('.post-body'),t=0;function u(){{t=0;var m=document.querySelector('.mcta');if(!m||!pb)return;var r=pb.getBoundingClientRect(),h=r.height,p=h>0?(-r.top+innerHeight)/h:1,ok=p>=.6||(f&&f.getBoundingClientRect().top<innerHeight);m.classList.toggle('late-ok',!!ok);}}addEventListener('scroll',function(){{if(!t)t=requestAnimationFrame(u);}},{{passive:true}});addEventListener('load',u);}})();</script>'''
         html = b.head('zh', 'articles', meta) + b.header('zh', 'articles') + '\n<main id="main">\n' + body + '\n</main>\n' + b.footer('zh') + \
             f'\n<script src="/assets/v2/all.js?v={css_v}" defer></script>\n</body>\n</html>\n'
         out = b.ROOT / url.strip('/') / 'index.html'
