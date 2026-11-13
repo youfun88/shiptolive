@@ -78,6 +78,10 @@ body { min-height:100svh; background:var(--bg); color:var(--ink); font:400 16px/
 .actions svg { width:20px; height:20px; flex:none; }
 .note { font-size:13px; color:var(--ink3); text-align:center; line-height:1.6; }
 .note a { color:var(--ink2); }
+.front .brand, .front .ai, .front .foot { position:relative; z-index:2; }
+.dot, .dot2 { z-index:0; }
+@media (max-width: 520px) { .dot { width:130px; height:130px; right:-46px; top:-52px; } .front .ai { max-width:86%; } }
+.bubble { background:#2b2824; color:#e8e3dc; }
 :focus-visible { outline:2px solid var(--or); outline-offset:3px; }
 @media (prefers-reduced-motion: reduce) { .card { transition:none; } }
 </style>
