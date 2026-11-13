@@ -88,6 +88,11 @@ body { min-height:100svh; background:var(--bg); color:var(--ink); font:400 16px/
 .svc em { font-style:normal; color:var(--ink3); grid-row:1 / span 2; grid-column:3; }
 .note { font-size:13px; color:var(--ink3); text-align:center; line-height:1.6; }
 .note a { color:var(--ink2); }
+.front .mid { align-self:center; display:grid; grid-template-columns:auto 1fr; gap:clamp(10px,3vw,24px); align-items:center; position:relative; z-index:2; }
+.front .mid .ai { max-width:none; } .front .mid .answer { white-space:nowrap; }
+.fsvc { list-style:none; margin:0; padding:0; display:grid; gap:clamp(4px,1.2vw,8px); font-size:clamp(10.5px,2.5vw,13.5px); font-weight:600; color:#e8e3dc; white-space:nowrap; }
+.fsvc li { display:flex; align-items:center; gap:7px; }
+.fsvc li::before { content:""; width:6px; height:6px; border-radius:50%; background:var(--or); flex:none; }
 .front .brand, .front .ai, .front .foot { position:relative; z-index:2; }
 .dot, .dot2 { z-index:0; }
 /* iOS Safari ignores backface-visibility on layered children: hide the turned-away face at the flip midpoint */
@@ -112,9 +117,16 @@ body { min-height:100svh; background:var(--bg); color:var(--ink); font:400 16px/
       <div class="face front" aria-hidden="false">
         <i class="dot"></i><i class="dot2"></i>
         <div class="brand"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="20" y="16" width="38" height="12" rx="6" fill="currentColor"/><rect x="6" y="36" width="31" height="12" rx="6" fill="currentColor"/><circle cx="49" cy="42" r="7.5" fill="#d7612a"/></svg><span>夏裕科技<small>SHIP TO LIVE</small></span></div>
+        <div class="mid">
+        <ul class="fsvc" aria-label="三大服務">
+          <li data-zh="AI 搜尋優化" data-en="AI search">AI 搜尋優化</li>
+          <li data-zh="網站建置" data-en="Websites">網站建置</li>
+          <li data-zh="客製化軟體" data-en="Software">客製化軟體</li>
+        </ul>
         <div class="ai">
-          <span class="bubble" data-zh="推薦台北做 AI 搜尋優化的公司？" data-en="Who does AI search optimization in Taipei?">推薦台北做 AI 搜尋優化的公司？</span>
+          <span class="bubble" data-zh="推薦台北做 AI 搜尋優化的公司？" data-en="Best AI search firm in Taipei?">推薦台北做 AI 搜尋優化的公司？</span>
           <span class="answer"><span data-zh="我推薦" data-en="I recommend">我推薦</span><span class="tag" data-zh="您的公司" data-en="your company">您的公司</span></span>
+        </div>
         </div>
         <div class="foot"><span class="motto">敢想。<b>敢作。</b>敢創新。</span><span class="hint" data-zh="點一下翻面 ↻" data-en="TAP TO FLIP ↻">點一下翻面 ↻</span></div>
       </div>
@@ -151,7 +163,7 @@ body { min-height:100svh; background:var(--bg); color:var(--ink); font:400 16px/
     <ul>
       <li><a href="/seo-aeo-geo/" data-en-href="/en/seo-aeo-geo/"><i></i><b data-zh="AI 搜尋優化（AEO／GEO）" data-en="AI search optimization (AEO/GEO)">AI 搜尋優化（AEO／GEO）</b><span data-zh="讓 ChatGPT、Gemini 推薦您，每月檢測" data-en="Get named by ChatGPT and Gemini, checked every month">讓 ChatGPT、Gemini 推薦您，每月檢測</span><em aria-hidden="true">→</em></a></li>
       <li><a href="/website/" data-en-href="/en/website/"><i></i><b data-zh="網站建置" data-en="Website design">網站建置</b><span data-zh="快速、好找、AI 讀得懂的品牌官網" data-en="Fast sites that Google and AI can read">快速、好找、AI 讀得懂的品牌官網</span><em aria-hidden="true">→</em></a></li>
-      <li><a href="/software/" data-en-href="/en/software/"><i></i><b data-zh="客製化軟體開發" data-en="Custom software">客製化軟體開發</b><span data-zh="內部系統、App 與 AI 自動化" data-en="Internal systems, apps and AI automation">內部系統、App 與 AI 自動化</span><em aria-hidden="true">→</em></a></li>
+      <li><a href="/software/" data-en-href="/en/software/"><i></i><b data-zh="客製化軟體開發" data-en="Software">客製化軟體開發</b><span data-zh="內部系統、App 與 AI 自動化" data-en="Internal systems, apps and AI automation">內部系統、App 與 AI 自動化</span><em aria-hidden="true">→</em></a></li>
     </ul>
   </section>
   <p class="note"><a href="/ai-visibility-engine/#check" id="chk" data-zh="免費檢測：AI 會提到您的公司嗎？" data-en="Free check: does AI name your company?">免費檢測：AI 會提到您的公司嗎？</a></p>
