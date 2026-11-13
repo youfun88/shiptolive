@@ -53,3 +53,16 @@
 @media (max-width: 1100px) { .start6 { grid-template-columns: repeat(3, 1fr); row-gap: 30px; } }
 @media (max-width: 640px) { .start6 { grid-template-columns: 1fr; row-gap: 14px; } .start6 li.paid:nth-child(3) { margin-top: 18px; } }
 @media (prefers-reduced-motion: no-preference) { .js .start6.rv li { opacity: 1; transform: translateY(14px); transition: transform .7s var(--ease); } .js .start6.rv.in li { transform: none; } }
+
+/* engine hero: checklist on the left, more compact dashboard on the right */
+.hero-checks { list-style: none; padding: 0; margin: 22px 0 28px; display: grid; gap: 10px; }
+.hero-checks li { position: relative; padding-left: 30px; font-size: 15.5px; line-height: 1.6; color: var(--ink2); }
+.hero-checks li::before { content: ""; position: absolute; left: 0; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: #b8501d url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.4l2.6 2.6L12 5.6' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat; }
+.hero-checks b { color: var(--ink); margin-right: 8px; }
+.dash .dash-body { padding: 18px; gap: 12px; }
+.dash .kpi { padding: 12px 14px 8px; }
+.dash .kpi b { font-size: clamp(26px, 2.4vw, 32px); }
+.dash .kpi svg { height: 22px; margin-top: 2px; }
+.dash .health { padding: 10px 14px; }
+.dash .health svg { width: 50px; height: 50px; }
+.dash .health b { font-size: 24px; }
