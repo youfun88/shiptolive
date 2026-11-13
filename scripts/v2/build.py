@@ -15,7 +15,7 @@ import json, re, sys, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = pathlib.Path(sys.argv[1])
 BASE = 'https://www.shiptolive.com'
-V = '40'
+V = '42'
 CSS = ''
 
 PAGES = {  # slug -> (zh path, en path)
@@ -205,7 +205,7 @@ def build(lang, slug):
 
 def bundle():
     a = ROOT / 'assets' / 'v2'
-    css = '\n'.join((a / f).read_text() for f in ('site.css', 'x-a.css', 'x-b.css', 'x-c.css', 'x-post.css', 'zz-fixes.css'))
+    css = '\n'.join((a / f).read_text() for f in ('site.css', 'x-a.css', 'x-b.css', 'x-c.css', 'x-post.css', 'x-aipage.css', 'zz-fixes.css'))
     css = re.sub(r'/\*.*?\*/', '', css, flags=re.S)
     css = re.sub(r'\s+', ' ', css)
     css = re.sub(r'\s*([{};:,>])\s*', r'\1', css).replace(';}', '}')

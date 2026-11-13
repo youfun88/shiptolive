@@ -97,3 +97,5 @@
 #engine .prose p + p { margin-top: 12px; }
 /* article: space between hero image and the summary box */
 .post-hero { margin-bottom: 30px; }
+/* EN hero: buttons stay side by side on desktop */
+@media (min-width: 900px) { :lang(en) .hero .btns { flex-wrap: nowrap; } }

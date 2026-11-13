@@ -1,0 +1,29 @@
+/* AI search page (/seo-aeo-geo/): frontend-design pass 2026-11-13 */
+/* services: 2-column list with hairlines */
+.svc-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; border-top: 1.5px solid var(--ink); }
+.svc-list li { padding: 20px 0; border-bottom: 1px solid var(--hair); }
+.svc-list b { display: block; font-size: 18px; margin-bottom: 6px; }
+.svc-list p { color: var(--ink2); font-size: 15.5px; line-height: 1.75; }
+@media (max-width: 760px) { .svc-list { grid-template-columns: 1fr; } .svc-list li { padding: 16px 0; } }
+/* merged engine section: text + live console, then the loop */
+#engine .eng-merged { align-items: center; }
+#engine .eng-merged .prose p + p { margin-top: 12px; }
+#engine .loopw { margin-top: clamp(48px, 6vw, 80px); }
+/* how to start: two grouped rows (free 1-2, working together 3-6) */
+#start .start6 { grid-template-columns: repeat(4, 1fr); row-gap: 34px; }
+#start .start6 li.free { grid-column: span 2; }
+#start .start6 li { padding: 40px 22px 20px; }
+#start .start6 li:nth-child(3)::before { display: none; }
+#start .start6 li + li::before { top: 57px; }
+@media (max-width: 1100px) { #start .start6 { grid-template-columns: 1fr 1fr; } #start .start6 li.free { grid-column: span 1; } #start .start6 li::before { display: none; } }
+@media (max-width: 640px) { #start .start6 { grid-template-columns: 1fr; row-gap: 10px; } #start .start6 li { padding: 34px 16px 14px; } #start .start6 li.paid:nth-child(3) { margin-top: 20px; } }
+/* proof */
+#proof .engine { align-items: center; }
+#proof .mchart .mc-cop { display: none; }
+/* faq without illustration */
+#faq .faq-l .sec-head { margin-bottom: 0; }
+/* phones: shorter */
+@media (max-width: 640px) {
+  .hx .hv { display: none; }
+  #how-ai .ask { margin-top: 20px; }
+}
