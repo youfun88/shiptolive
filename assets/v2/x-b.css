@@ -200,3 +200,30 @@
   .js .hv-ai .c3 span { background: #ece7e0; color: #3d3a36; box-shadow: inset 0 0 0 1.5px transparent; transition: background .4s, box-shadow .4s; }
   .js .hv-ai .c3 span.on { background: #fbeee6; color: #8f3a12; box-shadow: inset 0 0 0 1.5px #d7612a; }
 }
+
+/* ---------- /website/ page: real work, website process, on-page inquiry (2026-11-13) ---------- */
+.wb-frame { background: #fff; border: 1px solid var(--hair); border-radius: 12px; overflow: hidden; }
+.wb-bar { display: flex; align-items: center; gap: 6px; height: 30px; padding: 0 12px; background: #ebe7e1; border-bottom: 1px solid var(--hair); }
+.wb-bar i { width: 9px; height: 9px; border-radius: 50%; background: #d3cdc5; }
+.wb-bar span { margin-left: 8px; font: 500 11.5px/1 var(--mono); color: var(--ink3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wb-frame img { width: 100%; height: auto; display: block; }
+.wb-hero { position: relative; margin: 0; width: 100%; max-width: 560px; justify-self: end; padding: 0 44px 40px 0; }
+.wb-hero .wb-phone { position: absolute; right: 0; bottom: 0; width: 27%; height: auto; border-radius: 18px; border: 6px solid var(--ink); background: var(--ink); }
+.wb-hero figcaption { margin-top: 12px; font-size: 13px; color: var(--ink3); }
+.wb-mshot { display: none; }
+@media (max-width: 900px) {
+  .wb-hero { display: none; }
+  .wb-mshot { display: block; width: 100%; height: auto; margin-top: 24px; border-radius: 12px; border: 1px solid var(--hair); aspect-ratio: 16 / 10; object-fit: cover; object-position: top center; }
+}
+.wb-work { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+@media (max-width: 900px) { .wb-work { grid-template-columns: 1fr; gap: 28px; } }
+.wb-work a { display: grid; gap: 6px; text-decoration: none; color: inherit; }
+.wb-work .wb-frame { margin-bottom: 8px; transition: border-color .15s; }
+.wb-work a:hover .wb-frame { border-color: var(--ink3); }
+.wb-work b { font-size: 18px; }
+.wb-work a:hover b { color: var(--accent-ink); }
+.wb-work span { color: var(--ink2); font-size: 15px; line-height: 1.6; }
+.wb-ai { margin-top: 32px; padding: 18px 20px; border-radius: 12px; background: #f3ece4; border: 1px solid var(--hair); font-size: 16px; line-height: 1.8; max-width: 60em; }
+.wb-other { margin-top: 20px; color: #cfc9c1; font-size: 15px; line-height: 1.8; }
+.wb-other .tlink { color: #fff; }
+.wb-work .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
