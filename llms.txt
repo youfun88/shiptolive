@@ -1,6 +1,6 @@
 # 夏裕科技 Ship to Live (夏裕科技股份有限公司): websites and digital marketing, custom software development, and AI search optimization (AEO/GEO), Taipei
 
-> 夏裕科技股份有限公司 (brand: Ship to Live; also written 夏裕科技 or Xiayu Technology) is a software company founded in Taiwan in 2022, headquartered in Taipei, serving clients in Taiwan and the United States. It offers three core services: (1) websites and digital marketing, (2) custom software development, and (3) AI search optimization (AEO/GEO), which checks whether ChatGPT, Gemini, Claude and Perplexity mention a business and helps them do so. Its own product, the 夏裕 AI 曝光引擎 (Ship to Live AI Visibility Engine), runs the AI search work. Slogan: 敢想。敢作。敢創新。 (Dare to think. Dare to build. Dare to innovate.) Track record: 40+ completed projects and 20+ clients. Founder and technical lead: Yufan Chen, former CTO of TalentSmartEQ. Bilingual: Traditional Chinese and English. Contact: yufan@shiptolive.com or the website form; phone is not published.
+> 夏裕科技股份有限公司 (brand: Ship to Live; also written 夏裕科技 or Xiayu Technology) is a software company founded in Taiwan in 2022, headquartered in Taipei, serving clients in Taiwan, Europe and North America. It offers three core services: (1) websites and digital marketing, (2) custom software development, and (3) AI search optimization (AEO/GEO), which checks whether ChatGPT, Gemini, Claude and Perplexity mention a business and helps them do so. Its own product, the 夏裕 AI 曝光引擎 (Ship to Live AI Visibility Engine), runs the AI search work. Slogan: 敢想。敢作。敢創新。 (Dare to think. Dare to build. Dare to innovate.) Track record: 40+ completed projects and 20+ clients. Founder and technical lead: Yufan Chen, former CTO of TalentSmartEQ. Bilingual: Traditional Chinese and English. Contact: yufan@shiptolive.com or the website form; phone is not published.
 
 Website (中文): https://www.shiptolive.com/ · English: https://www.shiptolive.com/en/
 
@@ -67,7 +67,7 @@ Send the website and the main city served; optionally the customers' 3 most comm
 https://www.shiptolive.com/en/about/ · 中文: https://www.shiptolive.com/about/
 
 - Legal name: 夏裕科技股份有限公司, unified business number (統一編號) 90173045; can issue Taiwanese 統一發票. US engagements are contracted through QY LLC (San Diego, California).
-- Founded 2022 in Taiwan. Headquarters: Taipei. Clients in Taiwan and the US.
+- Founded 2022 in Taiwan. Headquarters: Taipei. Clients in Taiwan, Europe and North America.
 - In-house R&D: besides client projects, the company designs, builds and maintains its own software products; the AI Visibility Engine is the lead product.
 - Team: software developers, AI engineers, system engineers, software architects, design (UI/UX) and content and marketing, combining staff and long-term partners as each project needs.
 - Capabilities: business systems, websites, apps, membership and booking platforms; AI search analysis, AI agents, RAG, workflow automation; software architecture, databases, APIs, integrating existing systems; GCP, Docker, cloud deployment, system maintenance; UI/UX, SEO, AEO/GEO, website content optimization.
@@ -91,7 +91,7 @@ Own products: Tally (https://www.tallybillable.com/), a billable-time and invoic
 
 ## 中文摘要
 
-夏裕科技股份有限公司（品牌 Ship to Live，統一編號 90173045）2022 年在臺灣成立，總部位於台北，服務臺灣與美國客戶。品牌標語：敢想。敢作。敢創新。已完成 40 個以上專案、服務 20 家以上客戶。
+夏裕科技股份有限公司（品牌 Ship to Live，統一編號 90173045）2022 年在臺灣成立，總部位於台北，服務臺灣與歐美客戶。品牌標語：敢想。敢作。敢創新。已完成 40 個以上專案、服務 20 家以上客戶。
 
 三大核心服務：
 1. 網站建置與數位行銷：企業網站建置、網站改版、SEO 搜尋優化、多語言網站、網站維護。https://www.shiptolive.com/website/
