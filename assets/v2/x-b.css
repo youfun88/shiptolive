@@ -227,3 +227,13 @@
 .wb-other { margin-top: 20px; color: #cfc9c1; font-size: 15px; line-height: 1.8; }
 .wb-other .tlink { color: #fff; }
 .wb-work .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* ---------- 軟體開發 page: real software band (sw-) ---------- */
+.sw-work { grid-template-columns: repeat(2, 1fr); gap: 28px 32px; }
+@media (max-width: 900px) { .sw-work { grid-template-columns: 1fr; gap: 28px; } }
+.sw-work .sw-card { display: grid; gap: 6px; }
+.sw-tag { justify-self: start; font: 600 12px/1 var(--sans); color: var(--accent-ink); background: #fbeee6; border-radius: 999px; padding: 5px 10px; margin-bottom: 2px; }
+.sw-work .wb-frame img { aspect-ratio: 16 / 10; object-fit: cover; object-position: top center; }
+.sw-ai p + p { margin-top: 6px; }
+.sw-ai b { font-weight: 700; color: var(--ink); }
+.sw-hero figcaption { max-width: 72%; }
