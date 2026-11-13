@@ -79,8 +79,7 @@ Yufan Chen, founder and technical lead. Former Chief Technology Officer of Talen
 
 ## Clients and work
 
-Clients shown on the site: WU LAW, 睿律, TIVA, EQ360, Realgift, SHX, Hans and Travis Bradberry. Some public work:
-- WU LAW INTL PLLC (https://wulawintl.com/): bilingual English and Chinese website for a law firm in Taipei.
+Clients shown on the site: Azure Waves Realty, 睿律, TIVA, EQ360, Realgift, SHX, Hans and Travis Bradberry. Some public work:
 - IL Solutions 睿律 (https://ilsolutions.com.tw/): legal services website, Taiwan.
 - Travis Bradberry (https://travisbradberry.com/): author site for the coauthor of Emotional Intelligence 2.0.
 - EQ360 / LEADx (https://leadx.org/): EQ 360 assessment platform.
