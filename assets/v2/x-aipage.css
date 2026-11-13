@@ -27,3 +27,10 @@
   .hx .hv { display: none; }
   #how-ai .ask { margin-top: 20px; }
 }
+/* proof section mirrors the homepage engine section */
+#proof .engine { align-items: center; }
+#proof .mchart .mc-cop, #proof .mchart .mc-sum { display: none; }
+#proof .eng-btns { margin-top: 28px; }
+#proof .eng-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.7); }
+#proof .eng-ghost:hover { background: #fff; color: var(--ink); }
+#proof .prose p + p { margin-top: 12px; }
