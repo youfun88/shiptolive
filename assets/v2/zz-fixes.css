@@ -66,3 +66,25 @@
 .dash .health { padding: 10px 14px; }
 .dash .health svg { width: 50px; height: 50px; }
 .dash .health b { font-size: 24px; }
+
+/* ---------- homepage deslop pass (2026-11-13) ---------- */
+/* signature: the orange "your company" tag, the thing AI names */
+.you-tag { display: inline-block; padding: .02em .42em .08em; margin: 0 .12em; border-radius: 999px; background: #b8501d; color: #fff; font-weight: 800; line-height: 1.15; white-space: nowrap; font-size: .92em; vertical-align: .04em; }
+.sec.dark .you-tag, .cta-box .you-tag { background: #fff; color: #b8501d; }
+/* why: split layout instead of a third 3-card grid */
+.why-split { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(28px, 5vw, 72px); align-items: start; }
+.why-list { list-style: none; margin: 0; padding: 0; border-top: 1.5px solid var(--ink); }
+.why-list li { display: grid; grid-template-columns: 200px 1fr; gap: 16px; padding: 22px 0; border-bottom: 1px solid var(--hair); }
+.why-list b { font-size: 18px; }
+.why-list p { color: var(--ink2); font-size: 16px; line-height: 1.75; }
+@media (max-width: 860px) { .why-split { grid-template-columns: 1fr; } .why-list li { grid-template-columns: 1fr; gap: 4px; } }
+/* one edge style: defined border, no big diffuse shadow */
+.shot, .dash, .scan, .mchart, .cta-box { box-shadow: none !important; }
+/* client names: static typographic row, no marquee, no boxes */
+.logos { display: flex !important; flex-wrap: wrap; justify-content: center; gap: 12px 44px !important; }
+.logos li { background: none !important; border: 0 !important; height: auto !important; padding: 6px 0 !important; filter: none !important; opacity: 1 !important; }
+.logos .word { font-size: 20px; letter-spacing: .06em; color: var(--ink3); }
+/* entrance motion only on key visuals; text and cards are visible and still */
+@media (prefers-reduced-motion: no-preference) {
+  .js .rv:not(figure):not(.hero-art):not(.scan):not(.dash):not(.loopw):not(.ask) { opacity: 1 !important; transform: none !important; transition: none !important; }
+}

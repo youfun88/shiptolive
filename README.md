@@ -53,3 +53,5 @@ These 12 pages are **generated**. Do not edit their `index.html` directly; the n
 - Labeled demo content stays labeled: the homepage 示範案例 results band (accounting firm), the 每月檢測 chart and dashboards captioned 示範資料 / 示意. Do not relabel them as real or add dates or sources to them.
 - `/old-2026-11/` is an archived copy of the previous site (noindex). Leave it alone: no edits, no links to it, not in the sitemap or llms.txt.
 - Older hand-written pages (geo-guide, projects, tools, ai-video, ideas, privacy and others) are still plain HTML and can be edited directly.
+
+- Visual rules (DESIGN.md): read DESIGN.md before changing layout or styles; keep the signature tag, labeled demo data, and the no-kicker / no-marquee rules.

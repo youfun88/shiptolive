@@ -76,14 +76,14 @@
   // AI scan console: type a question, ask each AI in turn, show who gets named, fill the meter, suggest a fix
   var SCAN = zh ? {
     you: '您的公司', set: [
-      { q: '台北有哪些好玩的密室逃脫？', r: [['you', '同業 A'], ['同業 A', '同業 B'], ['you', '同業 C'], ['you', '同業 B']], tip: '建議：Gemini 沒有提到您。補上「適合幾人、多久、價格」的 FAQ。' },
-      { q: '推薦適合公司團康的密室逃脫？', r: [['同業 B', '同業 A'], ['you', '同業 B'], ['同業 C'], ['you']], tip: '建議：新增「企業包場」頁面，寫清楚人數與包場方式。' },
-      { q: '週末帶小孩可以玩的密室逃脫？', r: [['you', '同業 C'], ['you'], ['you', '同業 A'], ['同業 A', 'you']], tip: '4 個 AI 都提到您。接下來每天持續追蹤，確保排名不掉。' }
+      { q: '台北有哪些好吃的中餐餐廳？', r: [['you', '同業 A'], ['同業 A', '同業 B'], ['you', '同業 C'], ['you', '同業 B']], tip: '建議：Gemini 沒有提到您。補上「招牌菜、人均價格、可否訂位」的 FAQ。' },
+      { q: '推薦適合公司聚餐的中餐廳？', r: [['同業 B', '同業 A'], ['you', '同業 B'], ['同業 C'], ['you']], tip: '建議：新增「包廂與聚餐」頁面，寫清楚人數、套餐與訂位方式。' },
+      { q: '週末適合帶小孩的中餐廳？', r: [['you', '同業 C'], ['you'], ['you', '同業 A'], ['同業 A', 'you']], tip: '4 個 AI 都提到您。接下來每天持續追蹤，確保排名不掉。' }
     ] } : {
     you: 'Your company', set: [
-      { q: 'What are the most fun escape rooms in Taipei?', r: [['you', 'Rival A'], ['Rival A', 'Rival B'], ['you', 'Rival C'], ['you', 'Rival B']], tip: 'Fix: Gemini skipped you. Add an FAQ on group size, length and price.' },
-      { q: 'Escape rooms in Taipei for a team outing?', r: [['Rival B', 'Rival A'], ['you', 'Rival B'], ['Rival C'], ['you']], tip: 'Fix: add a "private bookings for companies" page with group sizes.' },
-      { q: 'Kid-friendly escape rooms in Taipei this weekend?', r: [['you', 'Rival C'], ['you'], ['you', 'Rival A'], ['Rival A', 'you']], tip: 'All 4 AIs name you. Daily checks keep it that way.' }
+      { q: 'What are the best Chinese restaurants in Taipei?', r: [['you', 'Rival A'], ['Rival A', 'Rival B'], ['you', 'Rival C'], ['you', 'Rival B']], tip: 'Fix: Gemini skipped you. Add an FAQ on signature dishes, price per person and reservations.' },
+      { q: 'Chinese restaurants in Taipei for a team dinner?', r: [['Rival B', 'Rival A'], ['you', 'Rival B'], ['Rival C'], ['you']], tip: 'Fix: add a "private rooms and group dinners" page with sizes, set menus and booking.' },
+      { q: 'Kid-friendly Chinese restaurants in Taipei this weekend?', r: [['you', 'Rival C'], ['you'], ['you', 'Rival A'], ['Rival A', 'you']], tip: 'All 4 AIs name you. Daily checks keep it that way.' }
     ] };
   function runScan(box, now) {
     var SCAN0 = SCAN; try { if (box.getAttribute('data-scan')) SCAN0 = JSON.parse(box.getAttribute('data-scan')); } catch (e) {}
