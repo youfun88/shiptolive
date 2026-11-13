@@ -108,3 +108,27 @@
 .qmap .go { font-size: 14px; color: var(--accent-ink); }
 .qmap a:hover .q { color: var(--accent-ink); }
 @media (max-width: 860px) { .start-path { grid-template-columns: 1fr; } .qmap { grid-template-columns: 1fr; } }
+
+/* ---------- frontend-design pass (2026-11-13) ---------- */
+/* chrome: no side bars */
+.post-body .tldr { border-left: 1px solid var(--hair); background: #f3ece4; }
+.post-body .mid-cta { border-left: 1px solid var(--hair); }
+/* faster start: smaller hero, hidden on phones */
+.post-hero { margin: 18px 0 0; }
+.post-hero .wrap { max-width: 860px; }
+.post-hero img { max-width: 620px; }
+@media (max-width: 640px) { .post-hero { display: none; } }
+/* calmer step lists: numbered list with hairlines, not boxed cards */
+.post-body .steps-n { gap: 0; border-top: 1px solid var(--hair); }
+.post-body .steps-n li { background: none; border: 0; border-bottom: 1px solid var(--hair); border-radius: 0; padding: 16px 0 16px 48px; }
+.post-body .steps-n li::before { left: 0; top: 16px; width: 30px; height: 30px; background: none; color: var(--accent-ink); border: 1.5px solid currentColor; font-size: 13px; line-height: 27px; }
+/* text-led index for the hub categories and related reading */
+.aindex { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; border-top: 1.5px solid var(--ink); }
+.aindex li { border-bottom: 1px solid var(--hair); }
+.aindex a { display: grid; gap: 4px; padding: 16px 0; text-decoration: none; color: inherit; }
+.aindex b { font-size: 17.5px; line-height: 1.45; }
+.aindex span { color: var(--ink2); font-size: 15px; line-height: 1.65; }
+.aindex a:hover b { color: var(--accent-ink); }
+@media (max-width: 760px) { .aindex { grid-template-columns: 1fr; } }
+.hub .aindex + .hub-cat { margin-top: 56px; }
+.acard p { -webkit-line-clamp: unset; display: block; overflow: visible; }

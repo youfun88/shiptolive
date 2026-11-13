@@ -49,6 +49,10 @@ def reading_minutes(html):
     return max(3, round(cjk / 450 + words / 220))
 
 
+def row(a):
+    return f'<li><a href="{HUB}{a["slug"]}/"><b>{a["h1"]}</b><span>{a.get("dek", "")}</span></a></li>'
+
+
 def card(a):
     return (f'<a class="card acard" href="{HUB}{a["slug"]}/"><img class="card-art" src="{a["hero"]}" width="1200" height="630" alt="" loading="lazy">'
             f'<span class="acat">{a.get("category", "")}</span><h3>{a["h1"]}</h3><p>{a.get("dek", "")}</p></a>')
@@ -88,10 +92,9 @@ def run(b):
   <header class="post-head">
     <div class="wrap">
       <p class="crumbs"><a href="/">首頁</a> / <a href="{HUB}">{HUB_NAME}</a> / {a.get('category', '')}</p>
-      <p class="eyebrow">{HUB_NAME} · {a.get('category', '')}</p>
       <h1 id="h1">{a['h1']}</h1>
       <p class="dek">{a.get('dek', '')}</p>
-      <p class="post-meta">夏裕科技 · <time datetime="{a['date']}">{a['date']}</time> · 約 {mins} 分鐘閱讀</p>
+      <p class="post-meta"><time datetime="{a['date']}">{int(a['date'][:4])} 年 {int(a['date'][5:7])} 月 {int(a['date'][8:10])} 日更新</time>・約 {mins} 分鐘</p>
     </div>
   </header>
   <figure class="post-hero"><div class="wrap"><img src="{a['hero']}" width="1200" height="630" alt="{a.get('hero_alt', '')}" fetchpriority="high"></div></figure>
@@ -100,7 +103,7 @@ def run(b):
 {a['body']}
       <aside class="book" aria-label="預約諮詢">
         <div><b>想直接聊聊您的情況？</b><p>預約 20 分鐘免費線上諮詢，和夏裕科技聊聊您的產業、客戶會問 AI 的問題，以及可以從哪裡開始。不推銷，先聽您的需求。</p></div>
-        <a class="pill orange" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約免費諮詢 <span class="arr" aria-hidden="true">→</span></a>
+        <a class="pill orange" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約免費諮詢</a>
       </aside>
     </div>
   </div>
@@ -112,7 +115,7 @@ def run(b):
       <div class="btns"><a class="pill" href="/ai-visibility-engine/#check">立即申請免費 AI 曝光檢測 <span class="arr" aria-hidden="true">→</span></a><a class="pill ghost cta-ghost" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約 20 分鐘免費諮詢</a></div>
     </div>
     <h2 class="h2" id="rel-h" style="margin:56px 0 24px">延伸閱讀</h2>
-    <div class="grid3">{''.join(card(x) for x in related)}</div>
+    <ul class="aindex">{''.join(row(x) for x in related)}</ul>
   </div>
 </section>'''
         html = b.head('zh', 'articles', meta) + b.header('zh', 'articles') + '\n<main id="main">\n' + body + '\n</main>\n' + b.footer('zh') + \
@@ -128,7 +131,7 @@ def run(b):
     for c in CATS + sorted({a.get('category', '') for a in arts} - set(CATS)):
         items = [a for a in arts if a.get('category', '') == c]
         if items:
-            groups += f'\n    <h2 class="h2 hub-cat">{c}</h2>\n    <div class="grid3">{"".join(card(a) for a in items)}</div>'
+            groups += f'\n    <h2 class="h2 hub-cat">{c}</h2>\n    <ul class="aindex">{"".join(row(a) for a in items)}</ul>'
     item_list = {"@type": "ItemList", "itemListElement": [
         {"@type": "ListItem", "position": i + 1, "url": f'{b.BASE}{HUB}{a["slug"]}/', "name": a['h1']} for i, a in enumerate(arts)]}
     meta = {
@@ -140,11 +143,10 @@ def run(b):
     body = f'''<section class="hero inner hub-hero" aria-labelledby="h1">
   <div class="wrap g"><div>
     <p class="crumbs"><a href="/">首頁</a> / {HUB_NAME}</p>
-    <p class="eyebrow">AI SEARCH OPTIMIZATION · GEO · AEO</p>
     <h1 id="h1">{HUB_NAME}</h1>
     <p class="sub2">客戶開始問 AI 找廠商了。這裡整理讓 AI 找得到、也願意推薦您的方法。</p>
     <p class="lede">從 GEO、AEO 的基本觀念，到網站要改什麼、怎麼檢測、怎麼選服務商，以及不同產業的做法。每篇都先給答案，再說明怎麼做。</p>
-    <div class="btns"><a class="pill orange" href="/ai-visibility-engine/#check">免費 AI 曝光檢測 <span class="arr" aria-hidden="true">→</span></a><a class="pill ghost" href="/seo-aeo-geo/">AI 搜尋優化服務</a></div>
+    <div class="btns"><a class="pill orange" href="/ai-visibility-engine/#check">免費 AI 曝光檢測</a><a class="pill ghost" href="/seo-aeo-geo/">AI 搜尋優化服務</a></div>
   </div>
     <div class="hero-art hub-art" role="img" aria-label="插圖：知識庫的文章卡片，與 AI 回答引用這些文章">
       <svg viewBox="0 0 560 470" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -183,7 +185,7 @@ def run(b):
 </section>
 <section class="sec hub-start" aria-labelledby="start-h">
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">START HERE</p><h2 class="h2" id="start-h">第一次接觸 AI 搜尋優化？照這 3 篇讀</h2></div>
+    <div class="sec-head"><h2 class="h2" id="start-h">第一次接觸 AI 搜尋優化？照這 3 篇讀</h2></div>
     <ol class="start-path">
       <li><a href="{HUB}what-is-geo/"><span class="n">1</span><b>先懂觀念</b><span>GEO 是什麼？讓 AI 推薦您的公司</span></a></li>
       <li><a href="{HUB}check-ai-visibility/"><span class="n">2</span><b>再看現況</b><span>怎麼檢查 ChatGPT、Gemini 有沒有提到您</span></a></li>

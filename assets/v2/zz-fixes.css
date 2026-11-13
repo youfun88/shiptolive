@@ -88,3 +88,12 @@
 @media (prefers-reduced-motion: no-preference) {
   .js .rv:not(figure):not(.hero-art):not(.scan):not(.dash):not(.loopw):not(.ask) { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
+/* homepage engine: balance the columns (shorter chart card, fuller left column) */
+#engine .mchart .mc-cop, #engine .mchart .mc-sum { display: none; }
+#engine .engine { align-items: center; }
+#engine .eng-btns { margin-top: 28px; }
+#engine .eng-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.7); }
+#engine .eng-ghost:hover { background: #fff; color: var(--ink); }
+#engine .prose p + p { margin-top: 12px; }
+/* article: space between hero image and the summary box */
+.post-hero { margin-bottom: 30px; }
