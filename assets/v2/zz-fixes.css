@@ -16,3 +16,24 @@
   .js .hero .hv-sw .app, .js .hero .ab-art .ab-c { opacity: 1; }
   @keyframes post-rise { from { opacity: 1; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 }
+
+/* homepage: merged about + capabilities */
+.capmini-h { font-size: 17px; margin: 26px 0 10px; }
+.capmini { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.capmini li { background: var(--card); border: 1px solid var(--hair); border-radius: 12px; padding: 12px 14px; font-size: 14.5px; line-height: 1.55; }
+.capmini b { display: block; font-size: 15.5px; margin-bottom: 2px; }
+.capmini span { color: var(--ink2); }
+@media (max-width: 520px) { .capmini { grid-template-columns: 1fr; } }
+/* homepage AI demo on a light background */
+#ask .scan { max-width: 560px; justify-self: center; width: 100%; }
+
+/* phones: sticky bottom CTA */
+.mcta { display: none; }
+@media (max-width: 760px) {
+  .mcta { display: flex; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 70; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(239,235,230,.96); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-top: 1px solid var(--hair); transform: translateY(110%); transition: transform .3s ease; }
+  .mcta.on { transform: none; }
+  .mcta a { flex: 1; min-height: 46px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; font: 700 14.5px/1.2 var(--sans); text-decoration: none; text-align: center; padding: 0 10px; }
+  .mcta .a1 { background: #b8501d; color: #fff; }
+  .mcta .a2 { background: #fff; color: var(--ink); border: 1px solid var(--ink); }
+  body.has-mcta .foot { padding-bottom: 96px; }
+}

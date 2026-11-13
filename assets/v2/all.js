@@ -86,16 +86,17 @@
       { q: 'Kid-friendly escape rooms in Taipei this weekend?', r: [['you', 'Rival C'], ['you'], ['you', 'Rival A'], ['Rival A', 'you']], tip: 'All 4 AIs name you. Daily checks keep it that way.' }
     ] };
   function runScan(box, now) {
+    var SCAN0 = SCAN; try { if (box.getAttribute('data-scan')) SCAN0 = JSON.parse(box.getAttribute('data-scan')); } catch (e) {}
     var txt = $('.txt', box), rows = $$('.scan-ai li', box), bar = $('.scan-meter i', box), cnt = $('.cnt', box), tip = $('.scan-tip', box), tipP = $('p', tip), qn = $('.qn', box), car = $('.car', box);
     function paint(k, idx) {
-      var res = $('.res', rows[k]), names = SCAN.set[idx].r[k], hit = names.indexOf('you') > -1;
-      res.innerHTML = names.map(function (n) { return n === 'you' ? '<span class="tag you">' + SCAN.you + '</span>' : '<span class="tag">' + n + '</span>'; }).join('');
+      var res = $('.res', rows[k]), names = SCAN0.set[idx].r[k], hit = names.indexOf('you') > -1;
+      res.innerHTML = names.map(function (n) { return n === 'you' ? '<span class="tag you">' + SCAN0.you + '</span>' : '<span class="tag">' + n + '</span>'; }).join('');
       rows[k].className = hit ? 'hit' : 'miss';
       return hit;
     }
     function show(idx, instant) {
-      var item = SCAN.set[idx], hits = 0;
-      qn.textContent = (idx + 1) + ' / ' + SCAN.set.length;
+      var item = SCAN0.set[idx], hits = 0;
+      qn.textContent = (idx + 1) + ' / ' + SCAN0.set.length;
       rows.forEach(function (r) { r.className = ''; $('.res', r).innerHTML = ''; });
       bar.style.width = '0'; cnt.textContent = '0 / 4'; tip.classList.remove('on');
       if (instant) {
@@ -109,7 +110,7 @@
         car.style.display = 'none';
         var k = 0;
         (function next() {
-          if (k >= rows.length) { setTimeout(function () { tipP.textContent = item.tip; tip.classList.add('on'); setTimeout(function () { show((idx + 1) % SCAN.set.length); }, 3800); }, 400); return; }
+          if (k >= rows.length) { setTimeout(function () { tipP.textContent = item.tip; tip.classList.add('on'); setTimeout(function () { show((idx + 1) % SCAN0.set.length); }, 3800); }, 400); return; }
           $('.res', rows[k]).innerHTML = '<span class="ld"><i></i><i></i><i></i></span>';
           var kk = k;
           setTimeout(function () { if (paint(kk, idx)) hits++; bar.style.width = hits * 25 + '%'; cnt.textContent = hits + ' / 4'; k++; next(); }, 750);
@@ -146,6 +147,19 @@
     })();
   }
   onSeen($$('.mchart'), runChart, 0.35);
+
+  // phones: sticky bottom CTA, shown after the hero, hidden while a form or the footer is on screen
+  var mcta = $('.mcta');
+  if (mcta) {
+    document.body.classList.add('has-mcta');
+    var hide = 0, past = false;
+    var upd = function () { mcta.classList.toggle('on', past && hide === 0); };
+    window.addEventListener('scroll', function () { var p2 = window.scrollY > 520; if (p2 !== past) { past = p2; upd(); } }, { passive: true });
+    if ('IntersectionObserver' in window) {
+      var mo = new IntersectionObserver(function (es) { es.forEach(function (en) { hide += en.isIntersecting ? 1 : -1; if (hide < 0) hide = 0; }); upd(); });
+      $$('form[data-form], .foot, #check, #contact').forEach(function (el) { mo.observe(el); });
+    }
+  }
   window.STL = { $: $, $$: $$, onSeen: onSeen, typeInto: typeInto, zh: zh, still: still };
 
   // ?need=ai|web|software|other preselects the inquiry type

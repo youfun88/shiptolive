@@ -15,7 +15,7 @@ import json, re, sys, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = pathlib.Path(sys.argv[1])
 BASE = 'https://www.shiptolive.com'
-V = '32'
+V = '33'
 CSS = ''
 
 PAGES = {  # slug -> (zh path, en path)
@@ -83,7 +83,10 @@ def header(lang, slug):
 def footer(lang):
     t = L[lang]
     pre = '/en' if lang == 'en' else ''
-    return f'''<footer class="foot">
+    chk = p(lang, 'engine') + '#check'
+    mcta = (f'<div class="mcta" aria-label="{t["cta"]}"><a class="a1" href="{chk}">{t["cta"]}</a>'
+            f'<a class="a2" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">{"預約免費諮詢" if lang == "zh" else "Book a free call"}</a></div>')
+    return mcta + f'''<footer class="foot">
   <div class="wrap">
     <div class="cols">
       <div><b>{t['brand']}</b>{t['f_company']}<br>{t['f_tax']}<br>{t['f_loc']}<p class="motto">{t['motto']}</p></div>
