@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="Inter, 'PingFang TC', 'Noto Sans TC', sans-serif">
 <rect width="1200" height="630" fill="#efebe6"/>
 <circle cx="1010" cy="120" r="230" fill="#e6e0d8"/><circle cx="160" cy="560" r="180" fill="#e6e0d8"/>
-<text x="80" y="128" font-size="22" font-weight="700" fill="#b44c1c" letter-spacing="3">GENERATIVE ENGINE OPTIMIZATION</text>
-<text x="80" y="210" font-size="76" font-weight="800" fill="#161513">什麼是 GEO？</text>
-<text x="80" y="268" font-size="30" fill="#4a4743">讓 ChatGPT、Gemini 回答時推薦您</text>
-<g transform="translate(80 330)">
+
+
+
+<g transform="translate(80 215)">
 <rect width="460" height="200" rx="22" fill="#fff" stroke="#d9d3cb"/>
 <circle cx="40" cy="42" r="14" fill="#d7612a"/><path d="M40 32 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3z" fill="#fff"/>
 <text x="66" y="50" font-size="22" font-weight="700" fill="#161513">AI 助理</text>
@@ -12,7 +12,7 @@
 <rect x="24" y="132" width="330" height="48" rx="14" fill="#fbeee6"/><text x="44" y="164" font-size="21" fill="#161513">我推薦 <tspan font-weight="800" fill="#d7612a">您的公司</tspan></text>
 <circle cx="398" cy="156" r="20" fill="#d7612a"/><path d="M389 156 l6 6 12-13" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-<g transform="translate(640 160)">
+<g transform="translate(640 130)">
 <rect width="480" height="370" rx="22" fill="#161513"/>
 <text x="34" y="56" font-size="20" font-weight="700" fill="#f08a55" letter-spacing="2">AI 會看的三件事</text>
 <g font-size="24" fill="#efebe6">

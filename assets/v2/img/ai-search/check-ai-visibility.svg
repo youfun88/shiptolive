@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="Inter, 'PingFang TC', 'Noto Sans TC', sans-serif">
 <rect width="1200" height="630" fill="#efebe6"/>
 <circle cx="1010" cy="120" r="230" fill="#e6e0d8"/><circle cx="160" cy="560" r="180" fill="#e6e0d8"/>
-<text x="80" y="128" font-size="22" font-weight="700" fill="#b44c1c" letter-spacing="3">CHECK YOUR AI VISIBILITY</text>
-<text x="80" y="208" font-size="64" font-weight="800" fill="#161513">AI 有沒有提到我？</text>
-<text x="80" y="284" font-size="64" font-weight="800" fill="#161513">自我檢測步驟</text>
-<text x="80" y="342" font-size="28" fill="#4a4743">同一組問題，問四個 AI，記下結果</text>
-<g transform="translate(660 120)">
+
+
+
+
+<g transform="translate(660 105)">
 <rect width="462" height="420" rx="22" fill="#161513"/>
 <text x="26" y="50" font-size="18" font-weight="700" fill="#f08a55" letter-spacing="2">客戶問題</text>
 <text x="26" y="86" font-size="22" font-weight="700" fill="#fff">台北推薦的會計師事務所？</text>
 <rect x="26" y="110" width="410" height="54" rx="12" fill="#26231f"/><text x="48" y="144" font-size="20" font-weight="700" fill="#cfc9c1">ChatGPT</text><rect x="200" y="124" width="120" height="28" rx="14" fill="#d7612a"/><text x="216" y="144" font-size="16" font-weight="800" fill="#fff">有提到您</text><rect x="26" y="176" width="410" height="54" rx="12" fill="#26231f"/><text x="48" y="210" font-size="20" font-weight="700" fill="#cfc9c1">Gemini</text><rect x="200" y="190" width="120" height="28" rx="14" fill="#3a3733"/><text x="216" y="210" font-size="16" fill="#cfc9c1">沒有提到</text><rect x="26" y="242" width="410" height="54" rx="12" fill="#26231f"/><text x="48" y="276" font-size="20" font-weight="700" fill="#cfc9c1">Claude</text><rect x="200" y="256" width="120" height="28" rx="14" fill="#d7612a"/><text x="216" y="276" font-size="16" font-weight="800" fill="#fff">有提到您</text><rect x="26" y="308" width="410" height="54" rx="12" fill="#26231f"/><text x="48" y="342" font-size="20" font-weight="700" fill="#cfc9c1">Perplexity</text><rect x="200" y="322" width="120" height="28" rx="14" fill="#3a3733"/><text x="216" y="342" font-size="16" fill="#cfc9c1">沒有提到</text>
 <text x="26" y="400" font-size="18" fill="#b9b3ab">被提到 2 / 4（示意）</text>
 </g>
-<g transform="translate(80 400)"><rect width="140" height="140" rx="70" fill="#fff" stroke="#161513" stroke-width="6"/><path d="M128 128 l48 48" stroke="#161513" stroke-width="14" stroke-linecap="round"/><path d="M45 72 l18 18 36-40" fill="none" stroke="#d7612a" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(80 227)"><rect width="140" height="140" rx="70" fill="#fff" stroke="#161513" stroke-width="6"/><path d="M128 128 l48 48" stroke="#161513" stroke-width="14" stroke-linecap="round"/><path d="M45 72 l18 18 36-40" fill="none" stroke="#d7612a" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></g>
 </svg>

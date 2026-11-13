@@ -132,3 +132,19 @@
 @media (max-width: 760px) { .aindex { grid-template-columns: 1fr; } }
 .hub .aindex + .hub-cat { margin-top: 56px; }
 .acard p { -webkit-line-clamp: unset; display: block; overflow: visible; }
+
+/* ---------- audit C (2026-11-13): code, template quote, figures, tables ---------- */
+.post-body pre.code { background: #161513; color: #efebe6; border-radius: 12px; padding: 16px 18px; overflow-x: auto; font: 14px/1.7 ui-monospace, "SF Mono", Menlo, Consolas, monospace; white-space: pre; tab-size: 2; }
+.post-body pre.code code { font: inherit; background: none; padding: 0; color: inherit; }
+@media (max-width: 600px) { .post-body pre.code { font-size: 12.5px; padding: 14px; margin-left: -4px; margin-right: -4px; } }
+.post-body blockquote { border-left: 0; padding: 0; color: var(--ink2); }
+.post-body blockquote.tpl { background: #f3ece4; border: 1px solid var(--hair); border-radius: 12px; padding: 16px 20px; color: var(--ink); font-size: 16px; line-height: 1.9; }
+.post-body blockquote.tpl .tpl-l { display: block; font-size: 13px; font-weight: 700; color: var(--accent-ink); margin-bottom: 6px; }
+/* figures and diagrams: one treatment (defined edge, no shadow) */
+.post-body figure img, .post-body figure svg, .post-body figure.dg { box-shadow: none; }
+.post-body figure.dg { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+/* tables on phones: scroll with a visible hint */
+@media (max-width: 640px) {
+  .post-body table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; background: linear-gradient(90deg, var(--bg) 30%, transparent) left / 24px 100% no-repeat local, linear-gradient(270deg, var(--bg) 30%, transparent) right / 24px 100% no-repeat local, linear-gradient(90deg, rgba(22,21,19,.12), transparent) left / 10px 100% no-repeat scroll, linear-gradient(270deg, rgba(22,21,19,.12), transparent) right / 10px 100% no-repeat scroll; }
+  .post-body th, .post-body td { min-width: 120px; font-size: 14px; }
+}

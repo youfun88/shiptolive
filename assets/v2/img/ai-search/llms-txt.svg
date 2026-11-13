@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="Inter, 'PingFang TC', 'Noto Sans TC', sans-serif">
 <rect width="1200" height="630" fill="#efebe6"/>
 <circle cx="1010" cy="120" r="230" fill="#e6e0d8"/><circle cx="160" cy="560" r="180" fill="#e6e0d8"/>
-<text x="80" y="128" font-size="22" font-weight="700" fill="#b44c1c" letter-spacing="3">LLMS.TXT</text>
-<text x="80" y="208" font-size="64" font-weight="800" fill="#161513">llms.txt 是什麼？</text>
-<text x="80" y="284" font-size="64" font-weight="800" fill="#161513">網站需要做嗎？</text>
-<text x="80" y="342" font-size="28" fill="#4a4743">給 AI 看的網站導覽，做之前先了解現況</text>
-<g transform="translate(680 130)">
+
+
+
+
+<g transform="translate(680 95)">
 <rect width="430" height="440" rx="20" fill="#fff" stroke="#d9d3cb"/>
 <rect width="430" height="54" rx="20" fill="#161513"/><rect y="34" width="430" height="20" fill="#161513"/>
 <text x="26" y="36" font-size="20" font-family="ui-monospace, Menlo, monospace" fill="#efebe6">/llms.txt</text>
@@ -18,5 +18,5 @@
 <text x="26" y="328" font-weight="800" fill="#b44c1c">## Optional</text>
 <text x="26" y="366" fill="#161513">- [常見問題](…)</text>
 </g></g>
-<g transform="translate(80 400)"><rect width="420" height="130" rx="18" fill="#161513"/><text x="28" y="54" font-size="22" font-weight="700" fill="#f08a55">現況</text><text x="28" y="96" font-size="22" fill="#efebe6">社群提案，不是正式標準</text></g>
+<g transform="translate(80 250)"><rect width="420" height="130" rx="18" fill="#161513"/><text x="28" y="54" font-size="22" font-weight="700" fill="#f08a55">現況</text><text x="28" y="96" font-size="22" fill="#efebe6">社群提案，不是正式標準</text></g>
 </svg>

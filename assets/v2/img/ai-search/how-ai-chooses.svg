@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="Inter, 'PingFang TC', 'Noto Sans TC', sans-serif">
 <rect width="1200" height="630" fill="#efebe6"/>
 <circle cx="1010" cy="120" r="230" fill="#e6e0d8"/><circle cx="160" cy="560" r="180" fill="#e6e0d8"/>
-<text x="80" y="128" font-size="22" font-weight="700" fill="#b44c1c" letter-spacing="3">HOW AI CHOOSES</text>
-<text x="80" y="210" font-size="68" font-weight="800" fill="#161513">AI 怎麼挑業者？</text>
-<text x="80" y="266" font-size="29" fill="#4a4743">搜尋、閱讀、比對，再寫進答案</text>
 
-<g transform="translate(80 330)">
+
+
+
+<g transform="translate(77 215)">
 <circle cx="60" cy="100" r="54" fill="#161513"/><text x="60" y="110" font-size="26" fill="#fff" text-anchor="middle" font-weight="800">問題</text>
 <path d="M120 100 H190" stroke="#d7612a" stroke-width="4" stroke-dasharray="8 7"/>
 <g transform="translate(200 0)">

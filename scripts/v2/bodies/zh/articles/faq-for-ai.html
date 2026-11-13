@@ -81,7 +81,7 @@ ld: [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "FAQ 頁�
 <h2 id="schema">要不要加 FAQ 結構化資料？</h2>
 <p>可以加，但不要期待它單獨帶來效果，重點仍是頁面上看得到的內容。Google 已在 2026 年停止在搜尋結果顯示 FAQ 複合式結果（就是搜尋結果下方展開問答的那種格式），而 Google 對 AI 摘要的官方說法也是：不需要特別的結構化資料。</p>
 <p>即使如此，FAQPage 結構化資料仍然是一種清楚的標示方式，讓機器知道哪一句是問題、哪一句是答案。如果要加，請遵守一個原則：<strong>結構化資料裡的問答，必須和頁面上看得到的文字一致</strong>。格式大致如下：</p>
-<pre style="background:#161513;color:#efebe6;border-radius:12px;padding:16px 18px;overflow-x:auto;font:14px/1.7 ui-monospace,Menlo,Consolas,monospace;white-space:pre"><code>&lt;script type="application/ld+json"&gt;
+<pre class="code"><code>&lt;script type="application/ld+json"&gt;
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",

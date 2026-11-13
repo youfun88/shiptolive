@@ -65,3 +65,7 @@ main:has(#services) :is(h2, .svc .hook, .results .l) { text-wrap: balance; }
 /* second button on orange CTA boxes: dark fill keeps AA contrast */
 .cta-box .pill.cta-ghost { background: #161513; border-color: #161513; color: #fff; }
 .cta-box .pill.cta-ghost:hover { background: #fff; border-color: #fff; color: #161513; }
+@media (min-width: 901px) { .faqx .faq-l { position: sticky; top: 96px; align-self: start; } }
+/* auditor A: AA contrast on the orange CTA box body text */
+.cta-box { background: #b8501d; }
+.cta-box p { color: #fff; }

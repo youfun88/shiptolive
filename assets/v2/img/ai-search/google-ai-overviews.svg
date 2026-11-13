@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="Inter, 'PingFang TC', 'Noto Sans TC', sans-serif">
 <rect width="1200" height="630" fill="#efebe6"/>
 <circle cx="1010" cy="120" r="230" fill="#e6e0d8"/><circle cx="160" cy="560" r="180" fill="#e6e0d8"/>
-<text x="80" y="128" font-size="22" font-weight="700" fill="#b44c1c" letter-spacing="3">GOOGLE AI OVERVIEWS</text>
-<text x="80" y="210" font-size="68" font-weight="800" fill="#161513">出現在 AI 摘要裡</text>
-<text x="80" y="266" font-size="29" fill="#4a4743">Google 搜尋結果最上方的那一段</text>
 
-<g transform="translate(80 310)">
+
+
+
+<g transform="translate(80 190)">
 <rect width="1040" height="250" rx="22" fill="#fff" stroke="#d9d3cb"/>
 <rect x="24" y="22" width="600" height="44" rx="22" fill="#efebe6"/><circle cx="54" cy="44" r="10" fill="none" stroke="#77736d" stroke-width="3"/><text x="78" y="52" font-size="20" fill="#4a4743">台北 記帳士 推薦</text>
 <rect x="24" y="86" width="700" height="140" rx="16" fill="#fbeee6"/>

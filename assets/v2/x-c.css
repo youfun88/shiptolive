@@ -79,7 +79,7 @@
 @keyframes ptl-glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(215,97,42,.35); } 50% { box-shadow: 0 0 0 10px rgba(215,97,42,0); } }
 
 /* ---------- Engine page: report preview next to the free-check form ---------- */
-.rep { background: var(--card); border: 1px solid var(--hair); border-radius: 14px; padding: 16px 18px; box-shadow: 0 24px 48px -36px rgba(22,21,19,.45); }
+.rep { background: var(--card); border: 1px solid var(--hair); border-radius: 14px; padding: 16px 18px; }
 .rep-h { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 10px; padding-bottom: 12px; border-bottom: 1px solid var(--hair); }
 .rep-h b { font-size: 15.5px; }
 .rep-h em { font-style: normal; margin-left: auto; font: 600 12px/1 var(--mono); color: #2c7a4b; background: #dcefe0; padding: 5px 9px; border-radius: 999px; }
@@ -104,3 +104,16 @@
 
 /* auditor A: booking alternative beside the free-check form */
 .book-alt { margin-top: 20px; font-weight: 600; font-size: 15.5px; }
+
+/* auditor A (2026-11-13): team as horizontal rows, so it differs from the capability card grid below */
+.team-rows { grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
+.team-rows .card { display: grid; grid-template-columns: 168px 1fr; grid-template-rows: auto 1fr; column-gap: 20px; row-gap: 6px; align-items: start; padding: 16px !important; }
+.team-rows .card > .card-art { grid-row: 1 / span 2; width: 168px !important; margin: 0 !important; aspect-ratio: 960 / 520; border: 1px solid var(--hair); border-radius: 10px; }
+.team-rows .card h3 { margin-top: 4px; font-size: 18px; }
+.team-rows .card p { font-size: 15px; }
+@media (max-width: 860px) { .team-rows { grid-template-columns: 1fr !important; } }
+@media (max-width: 480px) { .team-rows .card { grid-template-columns: 1fr; } .team-rows .card > .card-art { grid-row: auto; width: 100% !important; } }
+/* auditor A: R&D checklist on dark background; sticky FAQ heading */
+.sec.dark .hero-checks.rd-checks li { color: #cfc9c1; }
+.sec.dark .hero-checks.rd-checks b { color: #fff; }
+@media (min-width: 901px) { .faqx .faq-l { position: sticky; top: 96px; align-self: start; } }

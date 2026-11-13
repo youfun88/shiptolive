@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="Inter, 'PingFang TC', 'Noto Sans TC', sans-serif">
 <rect width="1200" height="630" fill="#efebe6"/>
 <circle cx="1010" cy="120" r="230" fill="#e6e0d8"/><circle cx="160" cy="560" r="180" fill="#e6e0d8"/>
-<text x="80" y="128" font-size="22" font-weight="700" fill="#b44c1c" letter-spacing="3">FAQ FOR AI SEARCH</text>
-<text x="80" y="208" font-size="64" font-weight="800" fill="#161513">FAQ 怎麼寫，</text>
-<text x="80" y="284" font-size="64" font-weight="800" fill="#161513">才會被 AI 引用？</text>
-<text x="80" y="342" font-size="28" fill="#4a4743">一問一答，第一句就給答案</text>
-<g transform="translate(80 390)">
+
+
+
+
+<g transform="translate(80 220)">
 <rect width="500" height="190" rx="20" fill="#fff" stroke="#d9d3cb"/>
 <text x="28" y="48" font-size="22" font-weight="800" fill="#161513">Q 費用怎麼算？</text>
 <rect x="28" y="66" width="440" height="3" fill="#d7612a"/>
 <text x="28" y="108" font-size="20" fill="#4a4743">A 依專案報價，先確認需求。</text>
 <rect x="28" y="128" width="380" height="10" rx="5" fill="#e3ddd5"/><rect x="28" y="150" width="300" height="10" rx="5" fill="#e3ddd5"/>
 </g>
-<g transform="translate(680 150)">
+<g transform="translate(680 115)">
 <rect width="440" height="400" rx="22" fill="#161513"/>
 <circle cx="44" cy="46" r="15" fill="#d7612a"/><path d="M44 36 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3z" fill="#fff"/>
 <text x="70" y="54" font-size="22" font-weight="700" fill="#efebe6">AI 回答</text>

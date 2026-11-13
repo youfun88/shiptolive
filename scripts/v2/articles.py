@@ -69,7 +69,7 @@ def run(b):
     for a in arts:
         url = f'{HUB}{a["slug"]}/'
         mins = reading_minutes(a['body'])
-        og = a.get('og') or re.sub(r'\.svg$', '.png', a['hero'])
+        og = a.get('og') or re.sub(r'\.svg$', '-og.png', a['hero'])  # og keeps the titled render; on-page SVG has no title text
         article_ld = {
             "@type": "Article", "@id": b.BASE + url + "#article", "headline": a['h1'], "description": a['description'],
             "inLanguage": "zh-Hant", "datePublished": a['date'], "dateModified": a.get('updated', a['date']),
@@ -193,12 +193,12 @@ def run(b):
     </ol>
     <h2 class="h2" style="margin:56px 0 18px">依您的問題找文章</h2>
     <div class="qmap">
-      <a href="{HUB}choose-geo-agency/"><span class="q">台北有哪些公司在做 AI 搜尋優化（GEO）？</span><span class="go">台北 GEO 公司怎麼選 →</span></a>
-      <a href="{HUB}get-recommended-by-chatgpt/"><span class="q">想讓 ChatGPT 推薦我的公司，該怎麼做？</span><span class="go">怎麼讓 ChatGPT 推薦我的公司 →</span></a>
-      <a href="{HUB}google-ai-overviews/"><span class="q">怎麼讓公司出現在 Google 的 AI 摘要裡？</span><span class="go">Google AI 摘要的做法 →</span></a>
-      <a href="{HUB}seo-company-ai/"><span class="q">找台北 SEO 公司，要不要一起做 AEO、GEO？</span><span class="go">找 SEO 公司前先問這些 →</span></a>
-      <a href="{HUB}sme-30-day-plan/"><span class="q">中小企業要怎麼提升在 AI 搜尋的曝光？</span><span class="go">30 天行動清單 →</span></a>
-      <a href="{HUB}geo-cost/"><span class="q">AI 搜尋優化（GEO）費用大概怎麼算？</span><span class="go">影響報價的因素 →</span></a>
+      <a href="{HUB}choose-geo-agency/"><span class="q">台北有哪些公司在做 AI 搜尋優化（GEO）？</span><span class="go">台北 GEO 公司怎麼選</span></a>
+      <a href="{HUB}get-recommended-by-chatgpt/"><span class="q">想讓 ChatGPT 推薦我的公司，該怎麼做？</span><span class="go">怎麼讓 ChatGPT 推薦我的公司</span></a>
+      <a href="{HUB}google-ai-overviews/"><span class="q">怎麼讓公司出現在 Google 的 AI 摘要裡？</span><span class="go">Google AI 摘要的做法</span></a>
+      <a href="{HUB}seo-company-ai/"><span class="q">找台北 SEO 公司，要不要一起做 AEO、GEO？</span><span class="go">找 SEO 公司前先問這些</span></a>
+      <a href="{HUB}sme-30-day-plan/"><span class="q">中小企業要怎麼提升在 AI 搜尋的曝光？</span><span class="go">30 天行動清單</span></a>
+      <a href="{HUB}geo-cost/"><span class="q">AI 搜尋優化（GEO）費用大概怎麼算？</span><span class="go">影響報價的因素</span></a>
     </div>
   </div>
 </section>

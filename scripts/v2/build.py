@@ -15,7 +15,7 @@ import json, re, sys, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = pathlib.Path(sys.argv[1])
 BASE = 'https://www.shiptolive.com'
-V = '42'
+V = '43'
 CSS = ''
 
 PAGES = {  # slug -> (zh path, en path)
@@ -36,7 +36,7 @@ L = {
                f_svc='服務', f_more='更多', f_guide='AI 搜尋優化指南', f_work='過往作品', f_tools='免費工具', f_privacy='隱私權政策',
                f_book='預約免費諮詢', motto='敢想。敢作。敢創新。', locale='zh_TW', alt_locale='en_US'),
     'en': dict(htmllang='en', brand='Ship to Live', brand_sub='夏裕科技 · TAIPEI', place='TAIPEI · SAN DIEGO', home='Home', services='Services',
-               web='Websites & Digital Marketing', web_s='Company sites, SEO, multilingual', sw='Custom Software Development', sw_s='Business systems, apps, integration',
+               web='Website Design & Digital Marketing', web_s='Company sites, SEO, multilingual', sw='Custom Software Development', sw_s='Business systems, apps, integration',
                ai='AI Search Optimization (AEO/GEO)', ai_s='Get named by ChatGPT and Gemini', engine='AI Visibility Engine', about='About',
                contact='Contact', cta='Free AI visibility check', other='中文', other_label='中文版', menu='Menu', skip='Skip to content',
                f_company='Ship to Live (夏裕科技股份有限公司)', f_tax='Taiwan tax ID 90173045', f_loc='Headquartered in Taipei, serving Taiwan, Europe and North America',
