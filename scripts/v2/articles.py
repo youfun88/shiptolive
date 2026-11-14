@@ -194,7 +194,7 @@ var f=document.querySelector('.post-body .faq'),pb=document.querySelector('.post
 </section>
 <section class="sec hub-start" aria-labelledby="start-h">
   <div class="wrap">
-    <div class="sec-head"><h2 class="h2" id="start-h">第一次接觸 AI 搜尋優化？照這 3 篇讀</h2></div>
+    <div class="sec-head"><h2 class="h2" id="start-h">第一次接觸 AI 搜尋優化，該先讀哪 3 篇？</h2></div>
     <ol class="start-path">
       <li><a href="{HUB}what-is-geo/"><span class="n">1</span><b>先懂觀念</b><span>GEO 是什麼？讓 AI 推薦您的公司</span></a></li>
       <li><a href="{HUB}check-ai-visibility/"><span class="n">2</span><b>再看現況</b><span>怎麼檢查 ChatGPT、Gemini 有沒有提到您</span></a></li>
