@@ -15,7 +15,7 @@ import json, re, sys, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = pathlib.Path(sys.argv[1])
 BASE = 'https://www.shiptolive.com'
-V = '47'
+V = '48'
 CSS = ''
 
 PAGES = {  # slug -> (zh path, en path)
@@ -179,6 +179,7 @@ addEventListener('load',function(){{setTimeout(function(){{var s=document.create
 <script type="application/ld+json">
 {ld}
 </script>
+<script src="https://admin.shiptolive.com/stl-track.js" data-site="shiptolive" defer></script>
 </head>
 <body>
 '''

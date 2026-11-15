@@ -216,7 +216,7 @@
       btn.disabled = true; var label = btn.textContent; btn.textContent = T.sending;
       fetch('https://admin.shiptolive.com/api/contact', {
         method: 'POST', headers: { 'Content-Type': 'text/plain' },
-        body: JSON.stringify({ name: name, email: email, topic: topic, message: message, lang: doc.lang, page: location.pathname })
+        body: JSON.stringify({ name: name, email: email, topic: topic, message: message, heard: (function () { var h = form.elements.heard; return h && h.value ? h.value + ': ' + h.options[h.selectedIndex].text : ''; })(), lang: doc.lang, page: location.pathname })
       }).then(function (r) {
         if (!r.ok) throw new Error('bad');
         form.reset(); status.textContent = okMsg; status.classList.add('ok');
