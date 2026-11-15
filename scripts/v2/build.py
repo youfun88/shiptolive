@@ -137,6 +137,8 @@ def head(lang, slug, meta):
     graph = [org, {"@type": "WebPage", "@id": url + "#page", "url": url, "name": meta['title'], "description": meta['description'],
                    "inLanguage": t['htmllang'], "isPartOf": {"@type": "WebSite", "@id": BASE + "/#site", "url": BASE + "/", "name": "夏裕科技 Ship to Live"},
                    "publisher": {"@id": BASE + "/#org"}}]
+    if meta.get('updated'):
+        graph[1]["dateModified"] = meta['updated']
     if meta.get('crumbs'):
         graph.append({"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": i + 1, "name": n, "item": BASE + u} for i, (n, u) in enumerate(meta['crumbs'])]})
