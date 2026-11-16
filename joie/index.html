@@ -83,6 +83,7 @@
   .pad { margin-top: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 10px; }
   .padtools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px; }
   .padtools .lbl { margin-right: auto; color: var(--muted); font-size: 15px; }
+  button { touch-action: manipulation; -webkit-user-select: none; user-select: none; }
   .padtools button { min-height: 44px; padding: 0 14px; color: var(--ink); background: #fff; border: 2px solid var(--line); border-radius: 10px; font-size: 16px; }
   .padtools button.on { border-color: var(--accent); background: #e8f0fa; font-weight: 600; }
   .pad canvas {
@@ -817,7 +818,15 @@ function scratch(item) {
   var ctx = cv.getContext('2d'), mode = 'pen', cur = null;
   var strokes = pads.get(item); if (!strokes) { strokes = []; pads.set(item, strokes); }
   tools.appendChild(el('span', 'lbl', '草稿紙：用筆在這裡算'));
-  function tool(label, fn) { var b = el('button', '', label); b.type = 'button'; b.onclick = fn; tools.appendChild(b); return b; }
+  // Act on pointerdown: an Apple Pencil tap often moves a little, and iPad Safari then drops the click.
+  // The click handler stays for keyboard use; it skips the click that follows a handled pointerdown.
+  function tool(label, fn) {
+    var b = el('button', '', label), last = 0;
+    b.type = 'button';
+    b.addEventListener('pointerdown', function (e) { e.preventDefault(); last = Date.now(); fn(); });
+    b.addEventListener('click', function () { if (Date.now() - last > 1000) fn(); });
+    tools.appendChild(b); return b;
+  }
   var penB = tool('✏️ 筆', function () { setMode('pen'); });
   var eraseB = tool('🧽 橡皮擦', function () { setMode('erase'); });
   tool('↩ 上一步', function () { strokes.pop(); redraw(); });
