@@ -813,6 +813,28 @@ function show() {
 var TOUCH = window.matchMedia && matchMedia('(pointer: coarse)').matches;
 var pads = new Map(), padResize = null, penSeen = false;
 window.addEventListener('resize', function () { if (padResize) padResize(); });
+// 🔄 reloads the page and comes back to this same question with the drawing kept.
+var REOPEN = 'joie-reopen';
+function reloadHere(item, strokes) {
+  if (fullRun) {
+    savePlace();
+    try { sessionStorage.setItem(REOPEN, JSON.stringify({ title: unit.title, at: at, strokes: strokes })); } catch (e) {}
+  }
+  location.reload();
+}
+function reopen() {
+  var r = null;
+  try { r = JSON.parse(sessionStorage.getItem(REOPEN)); sessionStorage.removeItem(REOPEN); } catch (e) {}
+  var u = r && UNITS.filter(function (x) { return x.title === r.title; })[0];
+  if (!u || !placeOf(u)) return;
+  unit = u; titleEl.textContent = u.title; subEl.textContent = u.sub;
+  resume(u);
+  if (typeof r.at === 'number' && quiz[r.at]) {
+    at = r.at;
+    if (r.strokes && r.strokes.length) pads.set(quiz[at], r.strokes);
+    show();
+  }
+}
 function scratch(item) {
   var wrap = el('div', 'pad'), tools = el('div', 'padtools'), cv = el('canvas');
   var ctx = cv.getContext('2d'), mode = 'pen', cur = null;
@@ -831,6 +853,7 @@ function scratch(item) {
   var eraseB = tool('🧽 橡皮擦', function () { setMode('erase'); });
   tool('↩ 上一步', function () { strokes.pop(); redraw(); });
   tool('🗑 全部擦掉', function () { strokes.length = 0; redraw(); });
+  tool('🔄 重新整理', function () { reloadHere(item, strokes); });
   function setMode(m) { mode = m; penB.classList.toggle('on', m === 'pen'); eraseB.classList.toggle('on', m === 'erase'); }
   setMode('pen');
   wrap.appendChild(tools); wrap.appendChild(cv);
@@ -856,6 +879,8 @@ function scratch(item) {
 
   function at(e) { var r = cv.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; }
   cv.addEventListener('pointerdown', function (e) {
+    // A focused answer box lets iPad Scribble grab the pencil; let go of it first.
+    if (document.activeElement && document.activeElement.tagName === 'INPUT') document.activeElement.blur();
     if (e.pointerType === 'pen') penSeen = true;
     if (penSeen && e.pointerType === 'touch') return;
     e.preventDefault();
@@ -878,7 +903,9 @@ function scratch(item) {
   function end() { cur = null; }
   cv.addEventListener('pointerup', end);
   cv.addEventListener('pointercancel', end);
-  cv.addEventListener('touchmove', function (e) { if (cur) e.preventDefault(); }, { passive: false });
+  // Always keep touches on the pad for drawing (no scroll, no Scribble, no magnifier).
+  cv.addEventListener('touchstart', function (e) { e.preventDefault(); }, { passive: false });
+  cv.addEventListener('touchmove', function (e) { e.preventDefault(); }, { passive: false });
   return wrap;
 }
 
@@ -953,6 +980,7 @@ function done() {
 }
 
 menu();
+reopen();
 pull();
 </script>
 </body>
