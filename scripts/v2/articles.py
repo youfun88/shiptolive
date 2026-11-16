@@ -58,7 +58,89 @@ def card(a):
             f'<span class="acat">{a.get("category", "")}</span><h3>{a["h1"]}</h3><p>{a.get("dek", "")}</p></a>')
 
 
+EN_RELATED = [  # en has no knowledge-base hub yet, so en articles point at the en service pages
+    ('/en/seo-aeo-geo/', 'AI Search Optimization (AEO/GEO)', 'How we get businesses named and cited by ChatGPT, Gemini and Google AI Overviews.'),
+    ('/en/ai-visibility-engine/', 'AI Visibility Engine', 'Our own system that checks AI answers, Google search and site health every day.'),
+    ('/en/about/', 'About Ship to Live', 'Who we are, where we work, and how we work with clients.'),
+]
+
+
+def run_en(b):
+    """English articles: scripts/v2/bodies/en/articles/*.html -> /en/ai-search/<slug>/ (same front-matter as zh; hero optional)."""
+    src = b.HERE / 'bodies' / 'en' / 'articles'
+    if not src.exists():
+        return
+    for a in sorted((parse(f) for f in src.glob('*.html')), key=lambda a: (a['order'], a['slug'])):
+        url = f'/en/ai-search/{a["slug"]}/'
+        mins = reading_minutes(a['body'])
+        og = a.get('og') or (re.sub(r'\.svg$', '-og.png', a['hero']) if a.get('hero') else '/assets/img/og-en.png?v=1')
+        article_ld = {
+            "@type": "Article", "@id": b.BASE + url + "#article", "headline": a['h1'], "description": a['description'],
+            "inLanguage": "en", "datePublished": a['date'], "dateModified": a.get('updated', a['date']),
+            "image": b.BASE + og.split('?')[0], "mainEntityOfPage": b.BASE + url,
+            "author": {"@id": b.BASE + "/#yufan"}, "publisher": {"@id": b.BASE + "/#org"},
+            "about": [{"@id": b.BASE + "/seo-aeo-geo/#service"}],
+        }
+        meta = {
+            'title': a['title'], 'description': a['description'], 'path': url, 'en_only': True, 'draft': a['draft'],
+            'og': og, 'og_type': 'article',
+            'crumbs': [('Home', '/en/'), ('AI Search Optimization', '/en/seo-aeo-geo/'), (a['h1'], url)],
+            'ld': [article_ld] + a.get('ld', []),
+        }
+        body_html = a['body']
+        toc_m = re.search(r'\s*<nav class="toc"[^>]*>.*?</nav>\s*', body_html, re.S)
+        toc_items = ''
+        if toc_m:
+            body_html = body_html[:toc_m.start()] + '\n' + body_html[toc_m.end():]
+            ol = re.search(r'<ol>.*?</ol>', toc_m.group(0), re.S)
+            toc_items = ol.group(0) if ol else ''
+        if a.get('hero'):
+            hero_fig = f'<figure class="art-fig"><img src="{a["hero"]}" width="1200" height="630" alt="{a.get("hero_alt", "")}" loading="lazy"></figure>\n'
+            h2s = [m.start() for m in re.finditer(r'\n<h2 ', body_html)]
+            if len(h2s) >= 2:
+                body_html = body_html[:h2s[1]] + '\n' + hero_fig + body_html[h2s[1]:]
+        rail = (f'<aside class="post-rail" aria-label="On this page"><details class="rail-toc" id="rail-toc"><summary>On this page</summary>{toc_items}</details></aside>'
+                if toc_items else '')
+        d = a['date'] if not a.get('updated') else a['updated']
+        import datetime
+        dtxt = datetime.date.fromisoformat(d).strftime('%B %-d, %Y')
+        rel = ''.join(f'<li><a href="{u}"><b>{n}</b><span>{s}</span></a></li>' for u, n, s in EN_RELATED)
+        body = f'''<div class="readbar" aria-hidden="true"><i></i></div>
+<script>(function(){{var b=document.querySelector('.readbar i'),a=document.querySelector('.post-body');if(!b||!a)return;var t=0;function u(){{t=0;var r=a.getBoundingClientRect(),h=r.height-innerHeight*.6,p=h>0?Math.min(1,Math.max(0,-r.top/h)):1;b.style.transform='scaleX('+p+')';}}addEventListener('scroll',function(){{if(!t)t=requestAnimationFrame(u);}},{{passive:true}});u();}})();</script>
+<article class="post">
+  <div class="wrap post-grid">
+    <header class="post-head">
+      <p class="crumbs"><a href="/en/">Home</a> / <a href="/en/seo-aeo-geo/">AI Search Optimization</a> / {a.get('category', '')}</p>
+      <h1 id="h1">{a['h1']}</h1>
+      <p class="dek">{a.get('dek', '')}</p>
+      <p class="post-meta"><time datetime="{d}">Updated {dtxt}</time> · {mins} min read</p>
+    </header>
+    {rail}
+    <div class="post-body">
+{body_html}
+    </div>
+    <footer class="post-end">
+      <h2 class="h2" id="rel-h">Related</h2>
+      <ul class="aindex">{rel}</ul>
+      <div class="cta-box end-cta">
+        <div><h3>Does AI recommend <span class="you-tag">your business</span>?</h3><p>A free check: we ask ChatGPT, Gemini and other AI assistants your customers' questions and tell you whether they name you, which competitors they recommend, and what to fix first. Reply in 1–2 business days, or book a 20-minute call.</p></div>
+        <div class="btns"><a class="pill" href="/en/ai-visibility-engine/#check">Request a free AI visibility check <span class="arr" aria-hidden="true">→</span></a><a class="pill cta-ghost" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">Book a free 20-minute call</a></div>
+      </div>
+    </footer>
+  </div>
+</article>
+<script>(function(){{var d=document.getElementById('rail-toc');if(d){{var mq=matchMedia('(min-width: 1100px)');var s=function(){{d.open=mq.matches;}};s();mq.addEventListener&&mq.addEventListener('change',s);d.addEventListener('click',function(e){{if(e.target.tagName==='A'&&!mq.matches)d.open=false;}});}}
+var f=document.querySelector('.post-body .faq'),pb=document.querySelector('.post-body'),t=0;function u(){{t=0;var m=document.querySelector('.mcta');if(!m||!pb)return;var r=pb.getBoundingClientRect(),h=r.height,p=h>0?(-r.top+innerHeight)/h:1,ok=p>=.6||(f&&f.getBoundingClientRect().top<innerHeight);m.classList.toggle('late-ok',!!ok);}}addEventListener('scroll',function(){{if(!t)t=requestAnimationFrame(u);}},{{passive:true}});addEventListener('load',u);}})();</script>'''
+        html = b.head('en', 'articles', meta) + b.header('en', 'articles') + '\n<main id="main">\n' + body + '\n</main>\n' + b.footer('en') + \
+            f'\n<script src="/assets/v2/all.js?v={b.V}" defer></script>\n</body>\n</html>\n'
+        out = b.ROOT / url.strip('/') / 'index.html'
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(html)
+        print('wrote', out)
+
+
 def run(b):
+    run_en(b)
     src = b.HERE / 'bodies' / 'zh' / 'articles'
     if not src.exists():
         return

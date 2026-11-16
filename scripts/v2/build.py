@@ -150,6 +150,7 @@ def head(lang, slug, meta):
     ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=1)
     og = BASE + meta.get('og', f"/assets/img/og-{'en' if lang == 'en' else 'zh'}.png?v=1")
     alts = (f'<link rel="alternate" hreflang="zh-Hant" href="{zh_url}">\n<link rel="alternate" hreflang="x-default" href="{zh_url}">' if meta.get('zh_only') else
+            f'<link rel="alternate" hreflang="en" href="{url}">\n<link rel="alternate" hreflang="x-default" href="{url}">' if meta.get('en_only') else
             f'<link rel="alternate" hreflang="zh-Hant" href="{zh_url}">\n<link rel="alternate" hreflang="en" href="{en_url}">\n<link rel="alternate" hreflang="x-default" href="{zh_url}">')
     robots = '<meta name="robots" content="noindex, nofollow">\n' if meta.get('draft') else ''
     return f'''<!doctype html>
