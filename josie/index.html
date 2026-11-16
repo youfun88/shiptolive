@@ -123,6 +123,26 @@
   .field.zhfield { font-size: 34px; text-align: center; letter-spacing: 4px; min-height: 72px; }
   hr.divider { border: 0; border-top: 2px solid var(--line); margin: 30px 0 4px; }
   :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  /* Drag a word into the sentence (phonics) */
+  .bank { display: flex; flex-wrap: wrap; gap: 10px; margin: 4px 0 14px; }
+  .chip {
+    min-height: 52px; padding: 8px 18px; font: inherit; font-size: 22px; font-weight: 600; color: var(--ink);
+    background: #fff7e0; border: 2px solid #e2b93b; border-radius: 999px; cursor: grab;
+    touch-action: none; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
+  }
+  .chip[aria-pressed="true"] { opacity: .45; }
+  .chip:disabled { opacity: .5; cursor: default; }
+  .chip.right { opacity: 1; background: var(--good-bg); border-color: var(--good); }
+  .chip.ghost { position: fixed; z-index: 50; pointer-events: none; opacity: 1; transform: translate(-50%, -60%) scale(1.1); box-shadow: 0 8px 20px rgba(0,0,0,.22); }
+  .blank.slot { min-width: 6em; min-height: 1.4em; padding: 0 8px; text-align: center; color: var(--accent); background: #f2f6fc; border-radius: 6px 6px 0 0; cursor: pointer; }
+  .blank.slot.over { background: #d6e5f8; }
+  .blank.slot.filled { font-weight: 700; }
+  .blank.slot.right { color: var(--good); background: var(--good-bg); border-bottom-color: var(--good); }
+  .blank.slot.wrong { color: var(--bad); background: var(--bad-bg); border-bottom-color: var(--bad); }
+  /* Read aloud: record yourself and compare */
+  .reader { display: grid; gap: 10px; }
+  .reader .rec.live { color: #fff; background: var(--bad); border-color: var(--bad); }
+  .reader .note { color: var(--muted); font-size: 16px; }
 </style>
 <script src="https://admin.shiptolive.com/stl-track.js" data-site="shiptolive" defer></script>
 </head>
@@ -1107,8 +1127,100 @@ MID_PARTS.push({ title: 'Part 8. Use the words in new sentences', items: midUse(
   ['The coach had to ___ “Time out!” across the noisy gym.', 'bellow', 'Bellow: shout in a loud, deep voice.']
 ]) });
 
+/* ---------- Phonics book, Week 10: long a (ai, ay, eigh), high-frequency words, compound words ---------- */
+// New sentences with the words from the book pages (58–60). Drag the word into the sentence.
+var DRAG_ASK = 'Drag the word into the sentence. (You can also tap the word.)';
+function dragList(bank, rows, ask) {
+  return rows.map(function (r) { return { kind: 'drag', q: r[0], a: r[1], options: r[2] || bank, tip: r[3] || r[2], ask: ask || DRAG_ASK }; });
+}
+var W10_A = ['mail', 'snail', 'paid', 'chain', 'gray', 'eight', 'train', 'weigh'];
+var W10_A2 = ['rain', 'tail', 'stay', 'tray', 'sleigh', 'neighbor', 'wait', 'paint'];
+var W10_HF = ['way', 'play', 'great', 'may', 'say', 'away', 'their', 'made'];
+var W10_CW = ['playdate', 'sunset', 'paintbrush', 'raindrops', 'himself', 'notepad', 'become', 'goldfish', 'railway', 'lifelike', 'landslide', 'nowhere'];
+function cwRows(rows) {
+  return rows.map(function (r) {
+    var others = shuffle(W10_CW.filter(function (w) { return w !== r[1]; })).slice(0, 2);
+    return [r[0], r[1], others.concat([r[1]]), r[2]];
+  });
+}
+var READ_ASK = 'Tap 🔊 Read it to me and listen. Then record yourself reading it and compare.';
+function readList(rows) {
+  return rows.map(function (q) { return { kind: 'read', q: q, a: plain(q), ask: READ_ASK }; });
+}
+var W10_PARTS = [
+  { title: 'Part 1. Long a words: ai, ay, eigh', items: dragList(W10_A, [
+    ['The ___ left a shiny, slimy trail on the leaf.', 'snail', null, 'Snail: ai says the long a sound.'],
+    ['Grandma sent me a birthday card in the ___.', 'mail', null, 'Mail: letters and cards that come to your house.'],
+    ['A spider has ___ legs.', 'eight', null, 'Eight: eigh says the long a sound. 8 = eight.'],
+    ['The ___ stopped at the station, and we got on.', 'train', null, 'Train: it rides on tracks.'],
+    ['Mom ___ ten dollars for the pizza.', 'paid', null, 'Paid: gave money for something.'],
+    ['My bike lock has a long metal ___.', 'chain', null, 'Chain: metal rings joined together.'],
+    ['The old cat has ___ fur and white paws.', 'gray', null, 'Gray: the color between black and white. ay says long a.'],
+    ['The nurse will ___ me to see how heavy I am.', 'weigh', null, 'Weigh: find out how heavy something is.']
+  ]) },
+  { title: 'Part 2. More long a words (challenge)', items: dragList(W10_A2, [
+    ['Take your umbrella. It might ___ today.', 'rain', null, 'Rain: ai in the middle of the word.'],
+    ['The puppy wags its ___ when it is happy.', 'tail', null, 'Tail: ai in the middle of the word.'],
+    ['Santa rides in a ___ pulled by reindeer.', 'sleigh', null, 'Sleigh: eigh, like eight and weigh.'],
+    ['Please ___ in line until it is your turn.', 'wait', null, 'Wait: stay until something happens.'],
+    ['Our ___ next door has a big brown dog.', 'neighbor', null, 'Neighbor: a person who lives near you. eigh again!'],
+    ['Can I ___ at Mia’s house for one more hour?', 'stay', null, 'Stay: ay at the end of the word.'],
+    ['The waiter carried four cups on a ___.', 'tray', null, 'Tray: a flat thing for carrying food. ay at the end.'],
+    ['We used blue ___ for the sky in our picture.', 'paint', null, 'Paint: ai in the middle of the word.']
+  ]) },
+  { title: 'Part 3. High-frequency words', items: dragList(W10_HF, [
+    ['Is this the ___ to the library?', 'way', null, 'Way: the road or path to get somewhere.'],
+    ['Can you come out and ___ after lunch?', 'play', null, 'Play: have fun with games or toys.'],
+    ['The kids hung ___ coats on the hooks.', 'their', null, 'Their: belongs to them. Their coats = the kids’ coats.'],
+    ['Did you ___ thank you to Grandpa?', 'say', null, 'Say: tell with your voice.'],
+    ['Look at the dark clouds. It ___ rain later.', 'may', null, 'May: it could happen (maybe).'],
+    ['The bird flew ___ when the cat came close.', 'away', null, 'Away: to another place, not here.'],
+    ['We ___ cookies for the bake sale.', 'made', null, 'Made: built or cooked something (past of make).'],
+    ['You did a ___ job on your drawing!', 'great', null, 'Great: very good.'],
+    ['Kick the ball my ___!', 'way', null, 'My way = toward me. In the book: “A kid hit a ball Jill’s way.”'],
+    ['A goal now ___ win the game for us.', 'may', null, 'May = might. It could happen. In the book: “Jill got a hit that may win the game.”'],
+    ['Later it was ___ turn to bat.', 'their', null, 'Their turn = the turn that belongs to them. In the book: “Later it was their time to bat.”'],
+    ['Sam and Lily took ___ dog to the park.', 'their', null, 'Their dog = the dog that belongs to Sam and Lily.'],
+    ['If you finish your homework, you ___ watch a show.', 'may', null, 'May = you are allowed to.']
+  ]) },
+  { title: 'Part 4. Compound words', items: dragList(null, cwRows([
+    ['We watched the orange ___ from the beach.', 'sunset', 'Sunset = sun + set. When the sun goes down.'],
+    ['Our ___ swims around and around in its bowl.', 'goldfish', 'Goldfish = gold + fish.'],
+    ['The ___ goes past the farm, so we hear the train every day.', 'railway', 'Railway = rail + way. The tracks for a train.'],
+    ['Mia and I had a ___ at the park on Saturday.', 'playdate', 'Playdate = play + date. A time to play with a friend.'],
+    ['I wrote the shopping list on a small ___.', 'notepad', 'Notepad = note + pad. Paper for writing notes.'],
+    ['The toy dog looks so real. It is very ___.', 'lifelike', 'Lifelike = life + like. It looks real.'],
+    ['After the storm, a ___ covered the mountain road with mud and rocks.', 'landslide', 'Landslide = land + slide. Dirt and rocks slide down a hill.'],
+    ['I looked everywhere for my sock, but it was ___.', 'nowhere', 'Nowhere = no + where. Not in any place.'],
+    ['Leo tied his shoes all by ___.', 'himself', 'Himself = him + self. With no help.'],
+    ['Wash your ___ before you use a new color.', 'paintbrush', 'Paintbrush = paint + brush.'],
+    ['Little tadpoles grow and ___ frogs.', 'become', 'Become = turn into.'],
+    ['___ tapped on the window all night.', 'raindrops', 'Raindrops = rain + drops.']
+  ]), 'Drag the word that makes sense into the sentence. (You can also tap it.)').concat([
+    P('Which two small words make [[paintbrush]]?', ['paint + brush', 'pain + brush', 'paint + bush'], 'paint + brush', { shuffle: true, tip: 'Paintbrush = paint + brush. A brush for paint.' }),
+    P('Which two small words make [[railway]]?', ['rail + way', 'rain + way', 'rail + day'], 'rail + way', { shuffle: true, tip: 'Railway = rail + way.' }),
+    P('Which two small words make [[nowhere]]?', ['no + where', 'now + here', 'not + here'], 'no + where', { shuffle: true, tip: 'Nowhere = no + where: in no place. (Now + here would be “now here”.)' }),
+    P('Which two small words make [[himself]]?', ['him + self', 'he + self', 'his + elf'], 'him + self', { shuffle: true, tip: 'Himself = him + self.' })
+  ]) },
+  { title: 'Part 5. Read it out loud', items: readList([
+    'The [[gray]] [[snail]] is slow, but it gets there in the end.',
+    'We [[paid]] [[eight]] dollars to ride the [[train]].',
+    'Mom [[made]] a [[great]] cake for my [[playdate]].',
+    '[[May]] I use my [[paintbrush]] to [[paint]] the [[sunset]]?',
+    'When the [[raindrops]] fell, the kids ran [[away]] to [[their]] house.',
+    'Dad will [[weigh]] the [[mail]] on the scale.',
+    'The [[goldfish]] swam this [[way]] and that [[way]].',
+    '[[Say]] thank you to our [[neighbor]] for the [[tray]] of cookies.',
+    'Aiden [[made]] a [[notepad]] all by [[himself]].',
+    '[[Wait]] for the [[train]] to stop before you get on.'
+  ]) }
+];
+
 var MENU = [
-  { group: 'Midterm', top: true, tests: [
+  { group: 'Phonics Book', top: true, tests: [
+    { id: 'ph-w10', title: 'Week 10: Long a, Sight Words, Compound Words', sub: 'Drag the word into the sentence, then read it out loud', parts: W10_PARTS }
+  ] },
+  { group: 'Midterm', tests: [
     { id: 'mid-rd', title: 'Grade 2 Reading Midterm', sub: 'Fall 2026 · the same 7 parts as the paper, plus the words in new sentences', parts: MID_PARTS }
   ] },
   { group: 'Social Studies', tests: [
@@ -1246,6 +1358,8 @@ function writeCheck(item, text) {
 function grade(item, resp) {
   if (item.kind === 'mc') return { ok: resp === item.w };
   if (item.kind === 'pick') return { ok: resp === item.a || item.alt.indexOf(resp) >= 0 };
+  if (item.kind === 'drag') return { ok: resp === item.a };
+  if (item.kind === 'read') return { ok: resp === 'ok' };
   if (item.kind === 'multi') return { ok: same(resp, item.a) };
   if (item.kind === 'type') {
     var list = [item.a].concat(item.alts || []);
@@ -1286,7 +1400,8 @@ function say(parts) {
     v.speak(u);
   });
 }
-function hush() { if (clip) { clip.pause(); clip = null; } if (window.speechSynthesis) window.speechSynthesis.cancel(); }
+function hush() { if (clip) { clip.pause(); clip = null; } if (window.speechSynthesis) window.speechSynthesis.cancel(); if (recStop) recStop(); }
+var recStop = null;
 function speakButton(label, parts) {
   var b = el('button', 'speak', '🔊 ' + label);
   b.type = 'button';
@@ -1582,6 +1697,9 @@ function answerArea(item, card) {
     } };
   }
 
+  if (kind === 'drag') return dragArea(item, card);
+  if (kind === 'read') return readArea(item);
+
   if (kind === 'multi') {
     box.className = 'choices inline chips';
     var chosen = [];
@@ -1641,6 +1759,133 @@ function answerArea(item, card) {
     f.classList.add(ok ? 'right' : 'wrong');
     go2.hidden = true;
   } };
+}
+
+// Drag a word from the bank into the blank in the sentence. Tapping a word also puts it in.
+// Tap the blank to take the word out again.
+function dragArea(item, card) {
+  var slot = card.querySelector('.blank'), placed = null, locked = false;
+  slot.classList.add('slot');
+  slot.setAttribute('role', 'button');
+  var wrap = el('div'), bank = el('div', 'bank');
+  var opts = orders[at] = orders[at] || shuffle(item.options);
+  var go = el('button', 'primary', 'Check');
+  go.type = 'button';
+  go.disabled = true;
+  function place(w) {
+    if (locked) return;
+    placed = w;
+    slot.textContent = w || ' ';
+    slot.classList.toggle('filled', !!w);
+    go.disabled = !w;
+    bank.querySelectorAll('.chip').forEach(function (c) { c.setAttribute('aria-pressed', c.dataset.opt === w ? 'true' : 'false'); });
+  }
+  slot.onclick = function () { place(null); };
+  opts.forEach(function (w) {
+    var c = el('button', 'chip', w), ghost = null, sx = 0, sy = 0, pid = null;
+    c.type = 'button';
+    c.dataset.opt = w;
+    function over(e) { var t = document.elementFromPoint(e.clientX, e.clientY); return t === slot || slot.contains(t); }
+    c.addEventListener('pointerdown', function (e) {
+      if (locked) return;
+      e.preventDefault();
+      pid = e.pointerId; sx = e.clientX; sy = e.clientY;
+      try { c.setPointerCapture(pid); } catch (x) {}
+    });
+    c.addEventListener('pointermove', function (e) {
+      if (pid !== e.pointerId) return;
+      if (!ghost && Math.abs(e.clientX - sx) + Math.abs(e.clientY - sy) > 8) {
+        ghost = el('span', 'chip ghost', w);
+        document.body.appendChild(ghost);
+      }
+      if (ghost) {
+        ghost.style.left = e.clientX + 'px'; ghost.style.top = e.clientY + 'px';
+        slot.classList.toggle('over', over(e));
+      }
+    });
+    function end(e) {
+      if (pid !== e.pointerId) return;
+      pid = null;
+      slot.classList.remove('over');
+      if (ghost) { ghost.remove(); ghost = null; if (e.type === 'pointerup' && over(e)) place(w); }
+      else if (e.type === 'pointerup') place(w);
+    }
+    c.addEventListener('pointerup', end);
+    c.addEventListener('pointercancel', end);
+    c.addEventListener('click', function (e) { if (e.detail === 0) place(w); });
+    bank.appendChild(c);
+  });
+  go.onclick = function () { if (placed) submit(placed); };
+  wrap.appendChild(bank);
+  wrap.appendChild(go);
+  return { el: wrap, box: bank, lock: function (resp, ok) {
+    locked = true;
+    slot.textContent = resp;
+    slot.classList.add('filled', ok ? 'right' : 'wrong');
+    slot.onclick = null;
+    go.hidden = true;
+    bank.querySelectorAll('.chip').forEach(function (c) {
+      c.disabled = true;
+      c.setAttribute('aria-pressed', 'false');
+      if (c.dataset.opt === item.a) c.classList.add('right');
+    });
+  } };
+}
+
+// Read aloud: hear it (the "Read it to me" button), record herself, play hers, then hers and the right one.
+function readArea(item) {
+  var wrap = el('div', 'reader');
+  var rec = el('button', 'secondary rec', '🎙 Record me reading');
+  var mine = el('button', 'secondary', '▶ Play my reading');
+  var both = el('button', 'secondary', '🔁 Mine, then the right one');
+  var note = el('div', 'note', 'Tap 🎙, read the sentence out loud, then tap ⏹ Stop.');
+  var good = el('button', 'primary', '✓ I read it right');
+  [rec, mine, both, good].forEach(function (b) { b.type = 'button'; });
+  mine.hidden = both.hidden = true;
+  var mr = null, url = null, timer = null;
+  var hasMic = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+  if (!hasMic) { rec.hidden = true; note.textContent = 'Tap 🔊 Read it to me, then read it out loud to a grown-up.'; }
+  function stop() { clearTimeout(timer); if (mr && mr.state === 'recording') mr.stop(); }
+  function playMine(then) {
+    if (!url) return;
+    hush();
+    var a = new Audio(url);
+    clip = a;
+    if (then) a.onended = function () { if (clip === a) { clip = null; say([[plain(item.q), 'en-US']]); } };
+    a.play().catch(function () {});
+  }
+  rec.onclick = function () {
+    if (mr && mr.state === 'recording') { stop(); return; }
+    hush();
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+      var chunks = [];
+      mr = new MediaRecorder(stream);
+      mr.ondataavailable = function (e) { if (e.data && e.data.size) chunks.push(e.data); };
+      mr.onstop = function () {
+        stream.getTracks().forEach(function (t) { t.stop(); });
+        rec.classList.remove('live');
+        rec.textContent = '🎙 Record again';
+        if (!chunks.length) return;
+        if (url) URL.revokeObjectURL(url);
+        url = URL.createObjectURL(new Blob(chunks, { type: mr.mimeType || 'audio/mp4' }));
+        mine.hidden = both.hidden = false;
+        note.textContent = 'Listen to yours and the right one. Do they sound the same?';
+      };
+      mr.start();
+      recStop = function () { recStop = null; stop(); };
+      rec.classList.add('live');
+      rec.textContent = '⏹ Stop';
+      note.textContent = 'Recording… read the sentence now.';
+      timer = setTimeout(stop, 30000);
+    }).catch(function () {
+      note.textContent = 'The microphone is not allowed. Tap 🔊 Read it to me, then read it out loud to a grown-up.';
+    });
+  };
+  mine.onclick = function () { playMine(false); };
+  both.onclick = function () { playMine(true); };
+  good.onclick = function () { stop(); submit('ok'); };
+  [rec, mine, both, note, good].forEach(function (b) { wrap.appendChild(b); });
+  return { el: wrap, lock: function () { good.hidden = true; } };
 }
 
 var area, submit;
@@ -1720,6 +1965,7 @@ function reveal(item, resp, a, card) {
   }
   var head;
   if (item.kind === 'write') head = ok ? 'Looks good!' : 'Almost. Check the list.';
+  else if (item.kind === 'read') head = 'Great reading!';
   else if (ok) head = 'Correct!';
   else if (item.kind === 'mc') head = 'Not quite. The answer is ' + cap(item.w) + '.';
   else head = 'Not quite. The answer is: ' + answerText(item);
