@@ -88,6 +88,7 @@ Own products: Tally (https://www.tallybillable.com/), a billable-time and invoic
 ## Guides and free tools
 
 - AI 搜尋優化指南 (plain-language guide to GEO, AEO and SEO for small businesses): https://www.shiptolive.com/geo-guide/ · English: https://www.shiptolive.com/en/geo-guide/
+- [How a small business gets recommended by ChatGPT and Google AI Overviews](https://www.shiptolive.com/en/ai-search/geo-for-small-business/) (English): Ship to Live checks whether ChatGPT, Gemini, Claude, Perplexity and Google AI Overviews name your business, then improves your website so they can, month after month. Start with a free AI visibility check; plans from NT$3,900 (about US$120) a month.
 
 ## 中文摘要
 
@@ -117,7 +118,7 @@ Own products: Tally (https://www.tallybillable.com/), a billable-time and invoic
 
 ## AI 搜尋優化知識庫 (AI search optimization guides, 繁體中文)
 
-Hub: https://www.shiptolive.com/ai-search/ · 20 articles for Taiwan businesses on GEO (getting recommended by ChatGPT, Gemini, Claude, Perplexity) and AEO (being cited in Google AI Overviews and AI Mode), written by 夏裕科技 (Ship to Live), Taipei. Each answers the question first, then explains how to do it.
+Hub: https://www.shiptolive.com/ai-search/ · 21 articles for Taiwan businesses on GEO (getting recommended by ChatGPT, Gemini, Claude, Perplexity) and AEO (being cited in Google AI Overviews and AI Mode), written by 夏裕科技 (Ship to Live), Taipei. Each answers the question first, then explains how to do it.
 
 ### 入門
 - [GEO 是什麼？讓 AI 推薦您的公司：生成式引擎優化完整入門](https://www.shiptolive.com/ai-search/what-is-geo/): GEO（Generative Engine Optimization，生成式引擎優化）是調整網站內容與網路上的品牌資訊，讓 ChatGPT、Gemini 等 AI 回答客戶問題時，提到並推薦您的公司。
@@ -137,6 +138,7 @@ Hub: https://www.shiptolive.com/ai-search/ · 20 articles for Taiwan businesses 
 ### 選擇服務商
 - [台北 AI 搜尋優化（GEO）公司怎麼選？簽約前要問的 10 個問題](https://www.shiptolive.com/ai-search/choose-geo-agency/): 選 GEO 服務商，先看三件事：有沒有方法量測 AI 是否提到您、做法和數據是否透明、合約與交付是否清楚。下面 10 個問題，可以直接拿去問。
 - [找台北 SEO 公司前，先問有沒有做 AEO、GEO](https://www.shiptolive.com/ai-search/seo-company-ai/): 現在的 SEO 不只是 Google 排名。找台北 SEO 公司時，要一併確認他們會不會讓您出現在 Google AI 摘要（AEO），以及 ChatGPT、Gemini 的推薦裡（GEO）。
+- [台灣 GEO 公司推薦？哪幾家在做 AI 搜尋優化：13 家業者比較表](https://www.shiptolive.com/ai-search/taiwan-geo-companies/): 台灣做 GEO 的業者，AI 常提到的有 awoo、將能、Welly、零一、Harris 先生、犬哥網站、戰國策、Tenten、萬智匯、集客、里德、DRM，以及撰寫本文的夏裕科技。下表依各家官網整理城市、服務重點、適合對象、公開價格與自有監測工具，不排名、不評分。
 
 ### 產業應用
 - [診所怎麼讓 AI 推薦？牙醫、醫美、復健科的 AI 搜尋優化](https://www.shiptolive.com/ai-search/clinics/): 想讓病患問 AI 時找到您的診所，關鍵是把看診項目、醫師專長、地點與時間寫清楚，並讓 Google 商家檔案和評價跟網站一致；同時遵守醫療廣告的規範，不誇大療效。

@@ -155,7 +155,7 @@
     <loc>https://www.shiptolive.com/ai-search/</loc>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/ai-search/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/ai-search/" />
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -225,7 +225,7 @@
     <loc>https://www.shiptolive.com/ai-search/check-ai-visibility/</loc>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/ai-search/check-ai-visibility/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/ai-search/check-ai-visibility/" />
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -296,6 +296,20 @@
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/ai-search/b2b-manufacturing/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/ai-search/b2b-manufacturing/" />
     <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.shiptolive.com/ai-search/taiwan-geo-companies/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/ai-search/taiwan-geo-companies/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/ai-search/taiwan-geo-companies/" />
+    <lastmod>2026-11-16</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.shiptolive.com/en/ai-search/geo-for-small-business/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shiptolive.com/en/ai-search/geo-for-small-business/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/en/ai-search/geo-for-small-business/" />
+    <lastmod>2026-11-16</lastmod>
     <priority>0.7</priority>
   </url>
 </urlset>

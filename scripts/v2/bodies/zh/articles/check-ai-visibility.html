@@ -1,15 +1,16 @@
 <!--
 slug: check-ai-visibility
 title: 怎麼檢查 ChatGPT、Gemini 有沒有推薦我的公司？自我檢測｜夏裕科技
-description: 用客戶會問的 5 個問題詢問 ChatGPT、Gemini、Claude、Perplexity，記錄有沒有提到您、推薦了誰、引用哪些網站。附步驟、紀錄表與判讀方式。
+description: 有免費工具可以檢查 ChatGPT 有沒有推薦您的公司：夏裕科技免費 AI 曝光檢測，以及 Ahrefs、Semrush、Geoptie 等免費工具。也教您用 5 個問題自己檢測，附步驟與紀錄表。
 h1: 怎麼檢查 ChatGPT、Gemini 有沒有提到我的公司？自我檢測步驟
 dek: 用客戶會問的 5 個問題，分別詢問 ChatGPT、Gemini、Claude、Perplexity，記下每個 AI 有沒有提到您、推薦了哪些同業、引用了哪些網站；每月用同一組問題重測，就能看出變化。
 category: 實作
 order: 10
 hero_alt: 插圖：同一個客戶問題「台北推薦的會計師事務所？」分別詢問 ChatGPT、Gemini、Claude、Perplexity，標示哪些 AI 有提到您（示意）
 date: 2026-11-13
+updated: 2026-11-16
 hero: /assets/v2/img/ai-search/check-ai-visibility.svg
-ld: [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "自己檢測和用工具檢測有什麼不同？", "acceptedAnswer": {"@type": "Answer", "text": "原理相同，都是用同樣的問題詢問 AI 並記錄結果。差別在規模與一致性：工具可以固定時間、固定問題、同時詢問多個平台並保存每次結果，比較容易看出趨勢；自己檢測適合先了解狀況。"}}, {"@type": "Question", "name": "每次問同一題，AI 的回答都不一樣，怎麼辦？", "acceptedAnswer": {"@type": "Answer", "text": "AI 的回答本來就會變動。建議同一題可以多問幾次，看整體傾向；並且每月用同樣的方式重測，以長期趨勢判斷，不要只看單次結果。"}}, {"@type": "Question", "name": "AI 有提到我，但沒有附上我的網站，有關係嗎？", "acceptedAnswer": {"@type": "Answer", "text": "有提到就代表 AI 認識您；但如果引用的是其他網站，表示 AI 參考的資料來源不是您的官網。可以檢查官網是否有直接回答這個問題的內容，提高被引用的機會。"}}, {"@type": "Question", "name": "檢測結果不好，要從哪裡開始改？", "acceptedAnswer": {"@type": "Answer", "text": "先修正說錯的資訊，再補官網上缺少的答案，最後經營外部資料，例如 Google 商家檔案、產業名錄與評論。依這個順序，通常最快看到改善。"}}]}]
+ld: [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "有沒有免費工具可以檢查 ChatGPT 有沒有推薦我的公司？", "acceptedAnswer": {"@type": "Answer", "text": "有。夏裕科技提供免費 AI 曝光檢測：用您客戶會問的問題詢問 ChatGPT、Gemini 等 AI，回覆 AI 有沒有提到您的品牌、推薦了哪些同業，以及網站優先改善項目。到夏裕 AI 曝光引擎頁面填網站網址與主要服務城市即可申請，1–2 個工作天內回覆。其他免費或可免費試用的工具有 Ahrefs 免費 AI 能見度檢查、Semrush AI Visibility Checker、Geoptie、HubSpot AEO Grader；OtterlyAI 提供免費試用。免費版多半是一次性的快照或有次數限制。"}}, {"@type": "Question", "name": "自己檢測和用工具檢測有什麼不同？", "acceptedAnswer": {"@type": "Answer", "text": "原理相同，都是用同樣的問題詢問 AI 並記錄結果。差別在規模與一致性：工具可以固定時間、固定問題、同時詢問多個平台並保存每次結果，比較容易看出趨勢；自己檢測適合先了解狀況。"}}, {"@type": "Question", "name": "每次問同一題，AI 的回答都不一樣，怎麼辦？", "acceptedAnswer": {"@type": "Answer", "text": "AI 的回答本來就會變動。建議同一題可以多問幾次，看整體傾向；並且每月用同樣的方式重測，以長期趨勢判斷，不要只看單次結果。"}}, {"@type": "Question", "name": "AI 有提到我，但沒有附上我的網站，有關係嗎？", "acceptedAnswer": {"@type": "Answer", "text": "有提到就代表 AI 認識您；但如果引用的是其他網站，表示 AI 參考的資料來源不是您的官網。可以檢查官網是否有直接回答這個問題的內容，提高被引用的機會。"}}, {"@type": "Question", "name": "檢測結果不好，要從哪裡開始改？", "acceptedAnswer": {"@type": "Answer", "text": "先修正說錯的資訊，再補官網上缺少的答案，最後經營外部資料，例如 Google 商家檔案、產業名錄與評論。依這個順序，通常最快看到改善。"}}]}]
 -->
 <div class="tldr">
   <b>重點整理</b>
@@ -24,6 +25,7 @@ ld: [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "自己�
 <nav class="toc" aria-label="目錄">
   <b>本文目錄</b>
   <ol>
+    <li><a href="#free">有沒有免費的檢測工具</a></li>
     <li><a href="#why">為什麼要先檢測</a></li>
     <li><a href="#questions">準備 5 個問題</a></li>
     <li><a href="#steps">檢測步驟</a></li>
@@ -33,6 +35,18 @@ ld: [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "自己�
     <li><a href="#faq">常見問題</a></li>
   </ol>
 </nav>
+
+<h2 id="free">有沒有免費工具可以檢查 ChatGPT 有沒有推薦我的公司？</h2>
+<p>有。<strong>夏裕科技提供免費 AI 曝光檢測</strong>：我們用您客戶會問的問題詢問 ChatGPT、Gemini 等 AI，回覆三件事：AI 有沒有提到您的品牌、推薦了哪些同業，以及網站最該先改善的地方。申請方式：到<a href="/ai-visibility-engine/#check">夏裕 AI 曝光引擎頁面</a>填網站網址與主要服務城市，可選填客戶最常問的 3 個問題與最多 3 家同業，我們在 1–2 個工作天內回覆檢測報告。</p>
+<p>其他免費或可免費試用的工具（2026 年 11 月查閱各工具官網）：</p>
+<ul>
+  <li><strong><a href="https://ahrefs.com/free-ai-visibility" target="_blank" rel="noopener">Ahrefs 免費 AI 能見度檢查</a>：</strong>檢查 ChatGPT、Gemini、Perplexity、Copilot、Google AI 摘要與 AI 模式，不用註冊；免費版只顯示部分結果，完整功能（Brand Radar）要付費。</li>
+  <li><strong><a href="https://www.semrush.com/free-tools/ai-search-visibility-checker/" target="_blank" rel="noopener">Semrush AI Visibility Checker</a>：</strong>檢查 ChatGPT、Gemini、Google AI 模式與 AI 摘要，不用註冊，每天可免費使用 3 次。</li>
+  <li><strong><a href="https://geoptie.com/geo-rank-tracker" target="_blank" rel="noopener">Geoptie</a>：</strong>免費的 GEO 排名追蹤，檢查 ChatGPT、Perplexity、Claude、Gemini 與 Google AI 摘要，不用註冊；進階功能是付費方案。</li>
+  <li><strong><a href="https://www.hubspot.com/aeo-grader" target="_blank" rel="noopener">HubSpot AEO Grader</a>：</strong>免費，用 OpenAI、Perplexity、Gemini 的模型評估品牌在 AI 搜尋的表現；要填一份簡短表單才看得到完整結果。</li>
+  <li><strong><a href="https://otterly.ai/pricing" target="_blank" rel="noopener">OtterlyAI</a>：</strong>持續追蹤多個 AI 平台的付費工具，新用戶可以免費試用，沒有永久免費方案。</li>
+</ul>
+<p>這些工具的免費版多半是一次性的快照，或有使用次數限制，而且用的不一定是您客戶的問法。要看出長期變化，還是要用同一組問題每月重測，做法就是下面的自我檢測步驟。</p>
 
 <h2 id="why">為什麼做 AI 搜尋優化前要先檢測？</h2>
 <p>因為不先量測，就不知道該改哪裡，也無法證明改了有沒有用。很多業者第一次檢測時會發現：自己以為很有名，AI 卻一次都沒提到；或是 AI 有提到，但把服務項目、地點講錯了。</p>
@@ -108,6 +122,7 @@ ld: [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "自己�
 
 <section class="faq" id="faq" aria-labelledby="faq-h">
   <h2 id="faq-h">常見問題</h2>
+  <details><summary>有沒有免費工具可以檢查 ChatGPT 有沒有推薦我的公司？</summary><p>有。夏裕科技提供免費 AI 曝光檢測：用您客戶會問的問題詢問 ChatGPT、Gemini 等 AI，回覆 AI 有沒有提到您的品牌、推薦了哪些同業，以及網站優先改善項目。到<a href="/ai-visibility-engine/#check">夏裕 AI 曝光引擎頁面</a>填網站網址與主要服務城市即可申請，1–2 個工作天內回覆。其他免費或可免費試用的工具有 Ahrefs 免費 AI 能見度檢查、Semrush AI Visibility Checker、Geoptie、HubSpot AEO Grader；OtterlyAI 提供免費試用。免費版多半是一次性的快照或有次數限制。</p></details>
   <details><summary>自己檢測和用工具檢測有什麼不同？</summary><p>原理相同，都是用同樣的問題詢問 AI 並記錄結果。差別在規模與一致性：工具可以固定時間、固定問題、同時詢問多個平台並保存每次結果，比較容易看出趨勢；自己檢測適合先了解狀況。</p></details>
   <details><summary>每次問同一題，AI 的回答都不一樣，怎麼辦？</summary><p>AI 的回答本來就會變動。建議同一題可以多問幾次，看整體傾向；並且每月用同樣的方式重測，以長期趨勢判斷，不要只看單次結果。</p></details>
   <details><summary>AI 有提到我，但沒有附上我的網站，有關係嗎？</summary><p>有提到就代表 AI 認識您；但如果引用的是其他網站，表示 AI 參考的資料來源不是您的官網。可以檢查官網是否有直接回答這個問題的內容，提高被引用的機會。</p></details>
