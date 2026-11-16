@@ -79,6 +79,19 @@
   .ba.now { color: var(--good); background: var(--good-bg); }
   .missed .how { color: var(--muted); font-size: 16px; white-space: pre-line; }
   :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  /* Scratch pad for the pencil (math units) */
+  .pad { margin-top: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 10px; }
+  .padtools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .padtools .lbl { margin-right: auto; color: var(--muted); font-size: 15px; }
+  .padtools button { min-height: 44px; padding: 0 14px; color: var(--ink); background: #fff; border: 2px solid var(--line); border-radius: 10px; font-size: 16px; }
+  .padtools button.on { border-color: var(--accent); background: #e8f0fa; font-weight: 600; }
+  .pad canvas {
+    display: block; width: 100%; height: 520px; border-radius: 8px; touch-action: none;
+    -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
+    background-color: #fff;
+    background-image: linear-gradient(#edf0f4 1px, transparent 1px), linear-gradient(90deg, #edf0f4 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
 </style>
 <script src="https://admin.shiptolive.com/stl-track.js" data-site="shiptolive" defer></script>
 </head>
@@ -787,8 +800,77 @@ function show() {
     check.onclick = function () { form.requestSubmit ? form.requestSubmit() : form.onsubmit(new Event('submit')); };
   }
   app.appendChild(card);
+  if (!/^(社會|自然)/.test(unit.title)) app.appendChild(scratch(item));
   if (done) reveal(item, card);
-  else if (!item.mc) setTimeout(function () { var x = card.querySelector('input'); if (x) x.focus(); }, 50);
+  // No auto-focus on the iPad: the keyboard would cover the scratch pad.
+  else if (!item.mc && !TOUCH) setTimeout(function () { var x = card.querySelector('input'); if (x) x.focus(); }, 50);
+}
+
+/* ---------- Scratch pad: write the working with the Apple Pencil (or a finger) ---------- */
+// Each question keeps its own drawing while the page is open, so going back shows the work.
+// Once a pencil has touched the pad, finger and palm touches are ignored (palm rejection).
+var TOUCH = window.matchMedia && matchMedia('(pointer: coarse)').matches;
+var pads = new Map(), padResize = null, penSeen = false;
+window.addEventListener('resize', function () { if (padResize) padResize(); });
+function scratch(item) {
+  var wrap = el('div', 'pad'), tools = el('div', 'padtools'), cv = el('canvas');
+  var ctx = cv.getContext('2d'), mode = 'pen', cur = null;
+  var strokes = pads.get(item); if (!strokes) { strokes = []; pads.set(item, strokes); }
+  tools.appendChild(el('span', 'lbl', '草稿紙：用筆在這裡算'));
+  function tool(label, fn) { var b = el('button', '', label); b.type = 'button'; b.onclick = fn; tools.appendChild(b); return b; }
+  var penB = tool('✏️ 筆', function () { setMode('pen'); });
+  var eraseB = tool('🧽 橡皮擦', function () { setMode('erase'); });
+  tool('↩ 上一步', function () { strokes.pop(); redraw(); });
+  tool('🗑 全部擦掉', function () { strokes.length = 0; redraw(); });
+  function setMode(m) { mode = m; penB.classList.toggle('on', m === 'pen'); eraseB.classList.toggle('on', m === 'erase'); }
+  setMode('pen');
+  wrap.appendChild(tools); wrap.appendChild(cv);
+
+  function style(s) {
+    ctx.globalCompositeOperation = s.erase ? 'destination-out' : 'source-over';
+    ctx.lineWidth = s.erase ? 26 : s.w; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = '#1d2433';
+  }
+  function paint(s) {
+    style(s); ctx.beginPath();
+    s.p.forEach(function (pt, i) { if (i) ctx.lineTo(pt[0], pt[1]); else ctx.moveTo(pt[0], pt[1]); });
+    if (s.p.length === 1) ctx.lineTo(s.p[0][0] + 0.1, s.p[0][1]);
+    ctx.stroke();
+  }
+  function redraw() { ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, cv.width, cv.height); ctx.restore(); strokes.forEach(paint); }
+  function size() {
+    var r = cv.getBoundingClientRect(), d = window.devicePixelRatio || 1;
+    if (!r.width) return;
+    cv.width = Math.round(r.width * d); cv.height = Math.round(r.height * d);
+    ctx.setTransform(d, 0, 0, d, 0, 0); redraw();
+  }
+  padResize = size; requestAnimationFrame(size);
+
+  function at(e) { var r = cv.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; }
+  cv.addEventListener('pointerdown', function (e) {
+    if (e.pointerType === 'pen') penSeen = true;
+    if (penSeen && e.pointerType === 'touch') return;
+    e.preventDefault();
+    try { cv.setPointerCapture(e.pointerId); } catch (x) {}
+    cur = { erase: mode === 'erase', w: 3, p: [at(e)] };
+    strokes.push(cur); paint(cur);
+  });
+  cv.addEventListener('pointermove', function (e) {
+    if (!cur) return;
+    e.preventDefault();
+    var evs = e.getCoalescedEvents ? e.getCoalescedEvents() : [e];
+    if (!evs.length) evs = [e];
+    style(cur);
+    evs.forEach(function (ev) {
+      var a = cur.p[cur.p.length - 1], b = at(ev);
+      cur.p.push(b);
+      ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+    });
+  });
+  function end() { cur = null; }
+  cv.addEventListener('pointerup', end);
+  cv.addEventListener('pointercancel', end);
+  cv.addEventListener('touchmove', function (e) { if (cur) e.preventDefault(); }, { passive: false });
+  return wrap;
 }
 
 function reveal(item, card) {
