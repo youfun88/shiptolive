@@ -60,7 +60,7 @@ def card(a):
 
 EN_RELATED = [  # en has no knowledge-base hub yet, so en articles point at the en service pages
     ('/en/seo-aeo-geo/', 'AI Search Optimization (AEO/GEO)', 'How we get businesses named and cited by ChatGPT, Gemini and Google AI Overviews.'),
-    ('/en/ai-visibility-engine/', 'AI Visibility Engine', 'Our own system that checks AI answers, Google search and site health every day.'),
+    ('/en/ai-visibility-engine/', 'AI Visibility Engine', 'Our own system that checks AI answers every month, and Google search and site health every day.'),
     ('/en/about/', 'About Ship to Live', 'Who we are, where we work, and how we work with clients.'),
 ]
 

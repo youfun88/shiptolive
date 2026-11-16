@@ -48,7 +48,7 @@ An AI search analysis and website improvement system built in-house by 夏裕科
 - Website recommendations: site structure and content analyzed, with what to fix first.
 - Private results dashboard: every check result, improvement and record in one place.
 - Content approval: any change that publishes content on the client's site goes to the client first.
-- Daily monitoring: every day it re-checks AI answers, Google search and site health (up to 3 times a day) and flags anything that changed or dropped.
+- Ongoing monitoring: every month it re-checks AI answers, and every day it checks Google search and site health (once a day by default, more as an add-on); it flags anything that changed or dropped.
 How it works, in five steps that repeat: monitor, analyze, plan, review (drafts go to a private review page; nothing goes live without approval), publish and measure. Each round's results start the next.
 
 ## Free AI visibility check (免費 AI 曝光檢測)
@@ -99,7 +99,7 @@ Own products: Tally (https://www.tallybillable.com/), a billable-time and invoic
 2. 客製化軟體開發：企業系統開發、App 開發、預約與會員平台、系統整合、既有系統維護、AI 流程自動化；先把需求談清楚，分階段開發，依專案報價。https://www.shiptolive.com/software/
 3. AI 搜尋優化（AEO／GEO）：AI 曝光檢測、AEO／GEO 優化、競爭同業分析、網站內容優化、成效追蹤。沒有人能保證特定平台一定推薦或排名一定提升；我們持續量測、改善並記錄變化。https://www.shiptolive.com/seo-aeo-geo/
 
-主推系統：夏裕 AI 曝光引擎，夏裕科技自主研發的 AI 搜尋分析與網站優化管理系統。功能：AI 曝光檢測、競爭同業分析、網站優化建議、專屬成效後台、內容審核、每天循環偵測（每天最多 3 次）。監測、分析、建議、審核、線上追蹤五個步驟持續循環。https://www.shiptolive.com/ai-visibility-engine/
+主推系統：夏裕 AI 曝光引擎，夏裕科技自主研發的 AI 搜尋分析與網站優化管理系統。功能：AI 曝光檢測、競爭同業分析、網站優化建議、專屬成效後台、內容審核、循環偵測（AI 回答每月檢測一次，網站每天檢查）。監測、分析、建議、審核、線上追蹤五個步驟持續循環。https://www.shiptolive.com/ai-visibility-engine/
 
 免費 AI 曝光檢測：提供網站網址與主要服務城市，可選填客戶最常問的 3 個問題與最多 3 家競爭同業，1 到 2 個工作天內收到報告（AI 是否提到您的品牌、推薦了哪些同業、優先改善項目）。https://www.shiptolive.com/ai-visibility-engine/#check
 
