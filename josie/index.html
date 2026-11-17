@@ -1216,8 +1216,186 @@ var W10_PARTS = [
   ]) }
 ];
 
+/* ---------- Social Studies Chapter 3 Lesson 1: rights, responsibilities, rules and laws (from her worksheet) ---------- */
+// Same five sections as the paper (A–E), then the words in new sentences and a write-your-own part.
+var SS3_BANK = ['right', 'court', 'consequence', 'law'];
+var SS3_BANK2 = ['right', 'court', 'consequence', 'law', 'responsibility', 'rule'];
+var RR = ['Right', 'Responsibility'];
+var SS3_PARTS = [
+  { title: 'Part A. Fill in the blanks', items: dragList(SS3_BANK, [
+    ['___: something we are free to do', 'right', null, 'A right is something we are free to do.'],
+    ['___: a rule we obey', 'law', null, 'A law is a rule we obey.'],
+    ['___: a place where people decide if someone has broken a law', 'court', null, 'A court is a place where people decide if someone has broken a law.'],
+    ['___: something that happens as a result of an action', 'consequence', null, 'A consequence is something that happens as a result of an action.']
+  ], 'Drag the word next to its meaning. (You can also tap the word.)') },
+  { title: 'Part B. Right or responsibility?', items: midList([
+    ['A right is ___.', ['something we are free to do', 'something we should do', 'a place where people decide if someone has broken a law', 'something that happens as a result of an action'], 'something we are free to do', 'Right = free to do. Responsibility = should do.'],
+    ['A responsibility is ___.', ['something we should do', 'something we are free to do', 'a rule we obey', 'a kind of game'], 'something we should do', 'A responsibility is a job or a duty: something you should do.']
+  ], { ask: 'Pick the meaning.', shuffle: true }).concat(midList([
+    ['I can go to school and learn.', RR, 'Right', 'You are free to go to school and learn. That is a right.'],
+    ['I do my homework and try my best.', RR, 'Responsibility', 'Homework is something you should do. That is a responsibility.'],
+    ['I can share my ideas and say what I think.', RR, 'Right', 'You are free to say what you think. That is a right.'],
+    ['I listen when other people are talking.', RR, 'Responsibility', 'Listening to others is something you should do.'],
+    ['I can play and rest.', RR, 'Right', 'You are free to play and rest. That is a right.'],
+    ['I follow the rules at home and at school.', RR, 'Responsibility', 'Following rules is something you should do.'],
+    ['I can be safe and be treated fairly.', RR, 'Right', 'Everyone is free to be safe and treated fairly. That is a right.'],
+    ['I clean up after myself and take care of my things.', RR, 'Responsibility', 'Cleaning up is your job. That is a responsibility.'],
+    ['I can join a team or a club.', RR, 'Right', 'You are free to join a group. That is a right.'],
+    ['I treat other people with respect.', RR, 'Responsibility', 'Being respectful is something you should do.']
+  ], { ask: 'Is it a right (free to do) or a responsibility (should do)?' })) },
+  { title: 'Part C. Rules at home and their consequences', items: midList([
+    ['Which one is a rule you follow AT HOME?', ['Make your bed in the morning.', 'Raise your hand before you speak.', 'Line up after recess.', 'Stop at the red light.'], 'Make your bed in the morning.', 'Your bed is at home. Raising your hand and lining up are school rules. The red light is a law.'],
+    ['Which one is also a rule AT HOME?', ['Put your toys away after you play.', 'Walk in the hallway.', 'Listen to the teacher.', 'Return your library book on time.'], 'Put your toys away after you play.', 'The other three are rules at school.'],
+    ['What is a consequence?', ['something that happens as a result of an action', 'a rule we obey', 'something we are free to do', 'a place where people decide if someone has broken a law'], 'something that happens as a result of an action', 'You do something (action), and then something happens (consequence).'],
+    ['Rule at home: Brush your teeth before bed. What is a consequence if you don’t follow it?', ['You may get cavities.', 'You get a gold star.', 'You grow taller.', 'Your teeth get cleaner.'], 'You may get cavities.', 'Action: not brushing. Result: cavities. That result is the consequence.'],
+    ['Rule at home: Put your toys away. What is a consequence if you don’t follow it?', ['Someone may trip on them, or the toys may get lost.', 'The toys put themselves away.', 'You get more toys.', 'The room gets bigger.'], 'Someone may trip on them, or the toys may get lost.', 'Toys on the floor can make someone fall, and they are easy to lose.'],
+    ['Rule at home: Go to bed on time. What is a consequence if you don’t follow it?', ['You are tired at school the next day.', 'You wake up early and full of energy.', 'The night gets longer.', 'You finish your homework faster.'], 'You are tired at school the next day.', 'Not enough sleep makes you tired. Tired is the consequence.'],
+    ['Rule at home: Homework first, then screen time. What is a consequence if you don’t follow it?', ['You may lose your screen time.', 'You get extra screen time.', 'Your homework does itself.', 'Your teacher gives you a prize.'], 'You may lose your screen time.', 'Parents often take away screen time when the rule is broken.'],
+    ['Mia follows the rule and finishes her homework first. What is the consequence?', ['She has time to play after.', 'She loses her screen time.', 'She is in trouble.', 'She has to do it again.'], 'She has time to play after.', 'A consequence can be good too! Following a rule often has a good result.']
+  ], { ask: 'Rules at home. Pick the best answer.', shuffle: true }) },
+  { title: 'Part D. Rules at school and their consequences', items: midList([
+    ['Which one is a rule you follow AT SCHOOL?', ['Raise your hand before you speak.', 'Make your bed.', 'Feed the dog.', 'Set the dinner table.'], 'Raise your hand before you speak.', 'The other three are rules or jobs at home.'],
+    ['Which one is also a rule AT SCHOOL?', ['Walk, don’t run, in the hallway.', 'Brush your teeth before bed.', 'Take out the trash.', 'Go to bed at nine o’clock.'], 'Walk, don’t run, in the hallway.', 'Hallway rules are school rules.'],
+    ['Rule at school: Walk in the hallway. What is a consequence if you don’t follow it?', ['You may fall or bump into someone and get hurt.', 'You get to class first and win a prize.', 'The hallway gets shorter.', 'Your teacher lets you run every day.'], 'You may fall or bump into someone and get hurt.', 'Running inside is not safe. Getting hurt is the consequence.'],
+    ['Rule at school: Raise your hand before you speak. What is a consequence if nobody follows it?', ['Everyone talks at the same time, and no one can hear.', 'The class gets very quiet.', 'Everyone gets a turn.', 'The lesson ends early.'], 'Everyone talks at the same time, and no one can hear.', 'The rule gives everyone a turn. Without it, it is too noisy to learn.'],
+    ['Rule at school: Keep your hands to yourself. What is a consequence if you don’t follow it?', ['Someone may get hurt, and you may have to sit out.', 'You make more friends.', 'You get extra recess.', 'Your hands get cleaner.'], 'Someone may get hurt, and you may have to sit out.', 'Pushing or hitting hurts people. Sitting out is a consequence.'],
+    ['Rule at school: Line up quietly. What is a consequence if the class doesn’t follow it?', ['The class has to line up again and is late.', 'The class goes to recess early.', 'The line gets shorter.', 'The teacher gives everyone candy.'], 'The class has to line up again and is late.', 'Doing it again takes time, so the class is late.'],
+    ['Leo follows the rule and waits for his turn. What is the consequence?', ['The game is fair, and everyone has fun.', 'He has to sit out.', 'He loses his turn.', 'The teacher is upset.'], 'The game is fair, and everyone has fun.', 'Following a rule has a good consequence.']
+  ], { ask: 'Rules at school. Pick the best answer.', shuffle: true }) },
+  { title: 'Part E. Why should we follow rules and laws?', items: midList([
+    ['Why should we follow rules and laws?', ['They keep us safe.', 'They make us taller.', 'They make school longer.', 'They stop us from having any fun.'], 'They keep us safe.', 'Rules and laws keep people safe, like stopping at a red light.'],
+    ['Which is another good reason to follow rules and laws?', ['They help us get along and be fair to each other.', 'They help us win every game.', 'They let us do anything we want.', 'They are only for grown-ups.'], 'They help us get along and be fair to each other.', 'When everyone follows the same rules, things are fair and people get along.'],
+    ['Which one is NOT a reason to follow rules and laws?', ['So we can do anything we want.', 'To keep people safe.', 'To be fair to everyone.', 'To help people get along.'], 'So we can do anything we want.', 'Rules and laws are not for doing anything we want. They keep us safe and fair.'],
+    ['A law says cars must stop at a red light. Why is this a good law?', ['It keeps people safe on the road.', 'It makes cars go faster.', 'It makes the light change color.', 'It helps drivers sleep.'], 'It keeps people safe on the road.', 'If cars did not stop, people could get hurt.'],
+    ['What could happen if nobody followed the rules in a game?', ['The game would not be fair, and people would argue.', 'Everyone would win.', 'The game would be more fun for everyone.', 'Nothing would change.'], 'The game would not be fair, and people would argue.', 'Rules make a game fair.'],
+    ['Where do people decide if someone has broken a law?', ['in a court', 'in a park', 'in a store', 'in a library'], 'in a court', 'A court is a place where people decide if someone has broken a law.'],
+    ['Who has to obey laws?', ['everyone', 'only children', 'only grown-ups', 'only teachers'], 'everyone', 'Laws are rules for everyone.']
+  ], { ask: 'Pick the best answer.', shuffle: true }) },
+  { title: 'Part F. Use the words in new sentences', items: dragList(SS3_BANK2, [
+    ['Every child has the ___ to go to school.', 'right', null, 'Right: something we are free to do.'],
+    ['Wearing a seat belt in the car is a ___. Everyone must obey it.', 'law', null, 'Law: a rule we obey.'],
+    ['The judge listened to both people in ___.', 'court', null, 'Court: a place where people decide if someone has broken a law.'],
+    ['Leo forgot his umbrella. The ___ was that he got wet.', 'consequence', null, 'Consequence: something that happens as a result of an action.'],
+    ['Feeding my fish every day is my ___.', 'responsibility', null, 'Responsibility: something you should do.'],
+    ['Our classroom ___ is to raise your hand before you speak.', 'rule', null, 'Rule: it tells us what to do or not to do.'],
+    ['A person who breaks a law may have to go to ___.', 'court', null, 'Court: where people decide if a law was broken.'],
+    ['If you stay up too late, one ___ is feeling tired at school.', 'consequence', null, 'Staying up late is the action. Feeling tired is the consequence.'],
+    ['You have the ___ to say what you think.', 'right', null, 'Right: you are free to do it.'],
+    ['Drivers must stop at a red light. It is the ___.', 'law', null, 'Law: a rule everyone must obey.'],
+    ['It is my ___ to put my homework in my school bag.', 'responsibility', null, 'Responsibility: your job, something you should do.'],
+    ['Amy shared her snack. A good ___ was that she made a new friend.', 'consequence', null, 'A consequence can be good, too.']
+  ]) },
+  { title: 'Part G. Write your own (like parts B to E on the paper)', items: [
+    W('Write one right you have. Begin with “I can”.', { end: ['.'], start: 'I can', sample: 'I can go to school and learn.' }),
+    W('Write one responsibility you have. Begin with “I should”.', { end: ['.'], start: 'I should', sample: 'I should do my homework.' }),
+    W('Write one rule you follow at home.', { end: ['.', '!'], sample: 'I put my toys away after I play.' }),
+    W('What is the consequence if you don’t follow that rule at home? Begin with “If I”.', { end: ['.', '!'], start: 'If I', min: 5, sample: 'If I leave my toys out, someone may trip on them.' }),
+    W('Write one rule you follow at school.', { end: ['.', '!'], sample: 'I raise my hand before I speak.' }),
+    W('What is the consequence if you don’t follow that rule at school? Begin with “If I”.', { end: ['.', '!'], start: 'If I', min: 5, sample: 'If I run in the hallway, I may fall and get hurt.' }),
+    W('Why should we follow rules and laws? Begin with “Rules and laws”.', { end: ['.'], start: 'Rules and laws', min: 5, sample: 'Rules and laws keep us safe.' })
+  ] }
+];
+
+/* ---------- 國語 二上 第七課 不一樣的美食 (from her 第七課練習單) ---------- */
+// Same five sections as the worksheet (課文大意, 多音字, 造句, 造詞和部首, 選擇題), then 聽寫.
+var ZH7_PARTS = [
+  { title: '一、課文大意', items: Zq([
+    ['第一段：___活動時，明光問小星為什麼要帶竹筒飯來。', ['郊外', '教室', '晚上', '游泳']],
+    ['第一段：郊外活動時，明光問小星為什麼要帶___來。', ['竹筒飯', '艾粄', '便當', '粽子']],
+    ['帶竹筒飯來的是誰？', ['小星', '明光', '小花', '奶奶']],
+    ['第二段：小星說這是竹筒飯，有___的愛心和祖先的故事。', ['奶奶', '媽媽', '老師', '小花']],
+    ['第二段：竹筒飯有奶奶的愛心和___的故事。', ['祖先', '明光', '客家', '清明節']],
+    ['竹筒飯有什麼的香味？', ['竹子', '艾草', '花朵', '青草'], '小星說：「這是竹筒飯，有竹子的香味。」'],
+    ['「有奶奶的愛心」是什麼意思？', ['竹筒飯是奶奶用心準備的', '竹筒飯是愛心的形狀', '奶奶很愛吃竹筒飯', '奶奶把竹筒飯吃掉了'], '奶奶用心幫小星準備，所以說飯裡有奶奶的愛心。'],
+    ['第三段：小花說客家___不但好吃，又可以保平安。', ['艾粄', '竹筒飯', '湯圓', '月餅']],
+    ['第三段：小花說客家艾粄不但___，又可以保平安。', ['好吃', '好看', '便宜', '好玩']],
+    ['第三段：小花說客家艾粄不但好吃，又可以___。', ['保平安', '變聰明', '長高', '不用睡覺']],
+    ['說艾粄的故事的是誰？', ['小花', '小星', '明光', '奶奶']],
+    ['什麼節日吃艾粄？', ['清明節', '中秋節', '端午節', '新年'], '「清明節吃艾粄，艾粄不但好吃，還可以保平安。」'],
+    ['第四段：明光下星期請誰到學校說故事？', ['家人', '老師', '小星', '小花']]
+  ], '想一想課文，選出答案。') },
+  { title: '二、多音字：便、好', items: Zq([
+    ['「方便」的「便」怎麼念？', ['ㄅㄧㄢˋ', 'ㄆㄧㄢˊ', 'ㄅㄧㄢˇ', 'ㄆㄧㄢˋ']],
+    ['「便宜」的「便」怎麼念？', ['ㄆㄧㄢˊ', 'ㄅㄧㄢˋ', 'ㄅㄧㄢˇ', 'ㄆㄧㄢˋ'], '只有「便宜」的「便」念 ㄆㄧㄢˊ。'],
+    ['「便當」的「便」怎麼念？', ['ㄅㄧㄢˋ', 'ㄆㄧㄢˊ', 'ㄅㄧㄢ', 'ㄆㄧㄢ']],
+    ['哪一個「便」念 ㄆㄧㄢˊ？', ['便宜', '方便', '便當', '順便']],
+    ['「好吃」的「好」怎麼念？', ['ㄏㄠˇ', 'ㄏㄠˋ', 'ㄏㄠˊ', 'ㄏㄠ']],
+    ['「好奇」的「好」怎麼念？', ['ㄏㄠˋ', 'ㄏㄠˇ', 'ㄏㄠˊ', 'ㄏㄠ'], '「好」是「喜歡」的意思時念 ㄏㄠˋ，像好奇、愛好。'],
+    ['「愛好」的「好」怎麼念？', ['ㄏㄠˋ', 'ㄏㄠˇ', 'ㄏㄠˊ', 'ㄏㄠ'], '愛好是喜歡做的事，「好」念 ㄏㄠˋ。'],
+    ['「好朋友」的「好」怎麼念？', ['ㄏㄠˇ', 'ㄏㄠˋ', 'ㄏㄠˊ', 'ㄏㄠ']],
+    ['哪一個「好」念 ㄏㄠˋ？', ['好奇', '好吃', '好人', '好看']],
+    ['這枝筆很___，只要十元。', ['便宜', '方便', '便當', '好奇'], '便宜（ㄆㄧㄢˊ ㄧˊ）：價錢不貴。'],
+    ['搭捷運上學又快又___。', ['方便', '便宜', '便當', '好吃'], '方便（ㄈㄤ ㄅㄧㄢˋ）：很容易、不麻煩。'],
+    ['媽媽幫我準備了好吃的___。', ['便當', '方便', '便宜', '好奇']],
+    ['弟弟很___，什麼事都想問為什麼。', ['好奇', '好吃', '方便', '便宜'], '好奇（ㄏㄠˋ ㄑㄧˊ）：很想知道。']
+  ], '多音字：選出正確的讀音或語詞。') },
+  { title: '三、造句：不但……還……', items: Zq([
+    ['清明節吃艾粄，艾粄不但好吃，___可以保平安。', ['還', '卻', '就', '才'], '「不但……還……」用來說兩件都對的事。'],
+    ['大掃除時，姐姐不但擦窗戶，___幫忙掃地。', ['還', '卻', '但是', '所以']],
+    ['大掃除時，姐姐___擦窗戶，還幫忙掃地。', ['不但', '因為', '如果', '雖然']],
+    ['弟弟不但會畫畫，還會___。', ['唱歌', '畫畫', '很累', '弟弟'], '後面要接另一件會做的事。'],
+    ['這顆蘋果不但大，還很___。', ['甜', '大', '小', '蘋果']],
+    ['奶奶做的竹筒飯不但很香，還___。', ['很好吃', '很難吃', '不想吃', '沒有味道'], '「不但……還……」前後兩件事要是同一個方向，都是好的。'],
+    ['哪一句用對了「不但……還……」？', ['妹妹不但會跳舞，還會彈琴。', '妹妹不但會跳舞，還不會跳舞。', '今天不但很冷，還很熱。', '我不但吃飽了，還肚子餓。']],
+    ['哪一句用對了「不但……還……」？', ['圖書館不但很安靜，還有很多書。', '圖書館不但很安靜，還很吵。', '他不但跑得快，還跑得慢。', '這本書不但好看，還很難看。']],
+    ['哪一句和「艾粄不但好吃，還可以保平安。」意思一樣？', ['艾粄好吃，也可以保平安。', '艾粄不好吃，可是可以保平安。', '艾粄好吃，可是不能保平安。', '因為艾粄好吃，所以不能保平安。']]
+  ], '「不但……還……」句型。') },
+  { title: '四、造詞和部首：當、奇、活、清', items: Zb([
+    ['當', ['田', '口', '小', '冖']],
+    ['奇', ['大', '可', '口', '一']],
+    ['活', ['水', '舌', '口', '千'], '「氵」就是水部。'],
+    ['清', ['水', '青', '月', '土'], '「氵」就是水部。扣掉聲音「青」，剩下的「氵」就是部首。']
+  ]).concat(Zw([
+    ['___(ㄉㄤ)時我還很小，什麼都不記得了。', ['當', '噹', '鐺', '檔']],
+    ['弟弟對什麼事都很好___(ㄑㄧˊ)。', ['奇', '騎', '旗', '其']],
+    ['郊外___(ㄏㄨㄛˊ)動時，大家一起吃午餐。', ['活', '話', '火', '或']],
+    ['___(ㄑㄧㄥ)明節吃艾粄。', ['清', '晴', '睛', '請'], '清明的「清」是「氵」；放晴的「晴」是「日」；眼睛的「睛」是「目」。']
+  ])).concat(Zq([
+    ['___我難過的時候，媽媽會抱抱我。', ['當', '還', '又', '卻'], '「當……的時候」。'],
+    ['那是去年的事了，___我才一年級。', ['當時', '當面', '當然', '活動'], '當時：那個時候。'],
+    ['謝謝要___說，才有禮貌。', ['當面', '當時', '清楚', '奇怪'], '當面：在對方的面前。'],
+    ['這個魔術好神___，兔子怎麼不見了？', ['奇', '清', '活', '當'], '神奇。'],
+    ['是誰在半夜唱歌？真___！', ['奇怪', '清楚', '生活', '當面']],
+    ['搬到新家後，我們的___過得很快樂。', ['生活', '活動', '奇怪', '清楚']],
+    ['下星期學校有郊外___，我好期待。', ['活動', '生活', '活潑', '清潔']],
+    ['小狗跑來跑去，好___。', ['活潑', '清楚', '當時', '奇怪']],
+    ['老師說得很___，我一聽就懂了。', ['清楚', '清潔', '活潑', '好奇']],
+    ['大掃除後，教室變得很___。', ['清潔', '清楚', '活動', '當面'], '清潔：很乾淨。']
+  ], '選出正確的語詞。')) },
+  { title: '五、選擇題', items: Zq([
+    ['下面哪一組語詞「不是」相反詞？', ['正好／剛好', '香味／臭味', '祖先／後代', '不一樣／相同'], '「正好」和「剛好」意思一樣，是相近詞。'],
+    ['「香味」的相反詞是？', ['臭味', '氣味', '味道', '香氣']],
+    ['「祖先」的相反詞是？', ['後代', '先生', '古代', '祖母'], '祖先是很久以前的家人；後代是以後的子孫。'],
+    ['「不一樣」的相反詞是？', ['相同', '不同', '奇怪', '特別']],
+    ['「正好」和哪一個意思相近？', ['剛好', '不好', '好玩', '正面']],
+    ['下面「」中的字，哪一個用字錯誤？', ['「坪」板電腦', '「郊」外活動', '「保」育動物', '大「客」車'], '平板電腦的「平」沒有「土」字旁。'],
+    ['下面「」中的字，哪一個用字錯誤？', ['「青」明節', '「竹」筒飯', '「祖」先', '「香」味'], '清明節的「清」有「氵」。'],
+    ['___(ㄆㄧㄥˊ)板電腦', ['平', '坪', '評', '瓶']],
+    ['___(ㄐㄧㄠ)外活動', ['郊', '交', '教', '校']],
+    ['___(ㄅㄠˇ)育動物', ['保', '堡', '寶', '飽']],
+    ['大___(ㄎㄜˋ)車', ['客', '課', '刻', '克']],
+    ['小星說：「這是竹筒飯，有竹子的香味，有奶奶的愛心，還有祖先的故事。」從這句話可以推論出什麼？', ['竹筒飯是奶奶幫小星準備的', '祖先都喜歡吃竹筒飯', '為了讓大家知道祖先的故事，才用竹筒來盛飯', '不論是誰準備的竹筒飯，裡面都會有奶奶的愛心'], '「有奶奶的愛心」表示這是奶奶用心準備的。'],
+    ['小星說竹筒飯「還有祖先的故事」，可以知道什麼？', ['竹筒飯是從祖先那時候傳下來的食物', '祖先正在旁邊說故事', '竹筒裡放了一本故事書', '小星不知道竹筒飯是什麼']]
+  ], '選出正確的答案。') },
+  { title: '第七課 聽寫', items: Zd(7, [
+    ['郊外', '下星期學校有___(ㄐㄧㄠ ㄨㄞˋ)活動。'], ['活動', '郊外___(ㄏㄨㄛˊ ㄉㄨㄥˋ)時，大家一起吃午餐。'], ['竹子', '有___(ㄓㄨˊ ㄗ˙)的香味。'],
+    ['香味', '有竹子的___(ㄒㄧㄤ ㄨㄟˋ)。'], ['奶奶', '有___(ㄋㄞˇ ㄋㄞ˙)的愛心。'], ['愛心', '有奶奶的___(ㄞˋ ㄒㄧㄣ)。'],
+    ['祖先', '還有___(ㄗㄨˇ ㄒㄧㄢ)的故事。'], ['故事', '祖先的___(ㄍㄨˋ ㄕˋ)。'], ['客家', '小花說___(ㄎㄜˋ ㄐㄧㄚ)艾粄很好吃。'],
+    ['不但', '艾粄___(ㄅㄨˊ ㄉㄢˋ)好吃，還可以保平安。'], ['好吃', '艾粄不但___(ㄏㄠˇ ㄔ)，還可以保平安。'], ['平安', '還可以保___(ㄆㄧㄥˊ ㄢ)。'],
+    ['清明節', '___(ㄑㄧㄥ ㄇㄧㄥˊ ㄐㄧㄝˊ)吃艾粄。'], ['美食', '不一樣的___(ㄇㄟˇ ㄕˊ)。'], ['當時', '___(ㄉㄤ ㄕˊ)我還很小。'],
+    ['好奇', '弟弟對什麼事都很___(ㄏㄠˋ ㄑㄧˊ)。'], ['生活', '我們的___(ㄕㄥ ㄏㄨㄛˊ)很快樂。'], ['清楚', '老師說得很___(ㄑㄧㄥ ㄔㄨˇ)。'],
+    ['方便', '搭捷運上學很___(ㄈㄤ ㄅㄧㄢˋ)。'], ['便宜', '這枝筆很___(ㄆㄧㄢˊ ㄧˊ)。']
+  ]) }
+];
+
 var MENU = [
-  { group: 'Phonics Book', top: true, tests: [
+  { group: 'Social Studies · Chapter 3', tests: [
+    { id: 'ss-ch3-l1', title: 'Chapter 3 Lesson 1: Rights, Rules, and Laws', sub: 'The same parts as the worksheet (A to E), plus the words in new sentences', parts: SS3_PARTS }
+  ] },
+  { group: '國語 二上 · 第七課', top: true, tests: [
+    { id: 'zh-l7', title: '國語 第七課 不一樣的美食', sub: '課文大意、多音字、不但……還……、造詞、選擇題和聽寫', parts: ZH7_PARTS }
+  ] },
+  { group: 'Phonics Book', tests: [
     { id: 'ph-w10', title: 'Week 10: Long a, Sight Words, Compound Words', sub: 'Drag the word into the sentence, then read it out loud', parts: W10_PARTS }
   ] },
   { group: 'Midterm', tests: [
