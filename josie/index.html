@@ -1388,11 +1388,50 @@ var ZH7_PARTS = [
   ]) }
 ];
 
+/* ---------- 國語習作 第七課 第50頁 一、寫國字或注音 (the same two passages, blank by blank, in the paper's order) ---------- */
+// Zx = 看注音寫國字 (she writes the character). Zz = 寫注音, here as pick-one because zhuyin can't be handwritten into the box.
+function Zx(rows) { return rows.map(function (r) { return { kind: 'type', lang: 'zh-TW', fixed: true, q: r[0], a: r[1], alts: [], tip: r[2], ask: '看注音，把國字寫在格子裡。' }; }); }
+function Zz(rows) { return rows.map(function (r) { return ZQ(r[0], r[1], r[1][0], { ask: '這個字的注音是什麼？', fixed: true, tip: r[2] }); }); }
+var ZH7_P50 = [
+  { title: '第 1 題', items: Zx([
+    ['上個星期二，老師帶我們去___(ㄐㄧㄠ)遊。', '郊'],
+    ['___(ㄏㄨㄛˊ)動日那天，大家的便當盒裡裝了不同口味的美食。', '活'],
+    ['活動日那天，大家的___(ㄅㄧㄢˋ ㄉㄤ ㄏㄜˊ)裡裝了不同口味的美食。', '便當盒'],
+    ['大家的便當盒裡裝了不同口___(ㄨㄟˋ)的美食。', '味'],
+    ['大家的便當盒裡裝了不同口味的美___(ㄕˊ)。', '食'],
+    ['有竹___(ㄊㄨㄥˇ)飯，有客家艾粄，還有越南春捲。', '筒'],
+    ['有竹筒飯，有___(ㄎㄜˋ)家艾粄，還有越南春捲。', '客']
+  ]).concat(Zz([
+    ['有客家「艾粄」。「艾粄」的注音是什麼？', ['ㄞˋ ㄅㄢˇ', 'ㄞˋ ㄅㄢˋ', 'ㄧˋ ㄅㄢˇ', 'ㄞˊ ㄅㄢ']]
+  ])).concat(Zx([
+    ['有竹筒飯，有客家艾粄，還有越___(ㄋㄢˊ)春捲。', '南']
+  ])).concat(Zz([
+    ['還有越南春「捲」。「捲」的注音是什麼？', ['ㄐㄩㄢˇ', 'ㄐㄩㄢˋ', 'ㄑㄩㄢˊ', 'ㄐㄩㄢ']]
+  ])).concat(Zx([
+    ['每一___(ㄧㄤˋ)都香氣撲鼻，好新奇啊！', '樣'],
+    ['每一樣都___(ㄒㄧㄤ)氣撲鼻，好新奇啊！', '香'],
+    ['每一樣都香氣撲鼻，好新___(ㄑㄧˊ)啊！', '奇']
+  ])) },
+  { title: '第 2 題', items: Zx([
+    ['___(ㄑㄧㄥ)明節時，我們去掃墓。', '清', '清明的「清」有「氵」。'],
+    ['清明___(ㄐㄧㄝˊ)時，我們去掃墓。', '節']
+  ]).concat(Zz([
+    ['希望「祖」先能保佑大家的平安。「祖」的注音是什麼？', ['ㄗㄨˇ', 'ㄗㄨˊ', 'ㄓㄨˇ', 'ㄘㄨˇ']]
+  ])).concat(Zx([
+    ['希望祖先能___(ㄅㄠˇ)佑大家的平安。', '保'],
+    ['希望祖先能保佑大家的___(ㄆㄧㄥˊ ㄢ)。', '平安']
+  ])) },
+  { title: '金頭腦', items: [
+    M('第 1 題中，提到了哪三種美食？', ['艾粄', '竹筒飯', '越南春捲', '水果'], ['艾粄', '竹筒飯', '越南春捲'], { lang: 'zh-TW', fixed: true, ask: '複選：把對的都選起來。', tip: '第 1 題說：「有竹筒飯，有客家艾粄，還有越南春捲。」沒有提到水果。' })
+  ] }
+];
+
 var MENU = [
   { group: 'Social Studies · Chapter 3', tests: [
     { id: 'ss-ch3-l1', title: 'Chapter 3 Lesson 1: Rights, Rules, and Laws', sub: 'The same parts as the worksheet (A to E), plus the words in new sentences', parts: SS3_PARTS }
   ] },
   { group: '國語 二上 · 第七課', top: true, tests: [
+    { id: 'zh-l7-p50', title: '國語習作 第七課 第50頁：寫國字或注音', sub: '和習作一樣的兩題，加上金頭腦', parts: ZH7_P50 },
     { id: 'zh-l7', title: '國語 第七課 不一樣的美食', sub: '課文大意、多音字、不但……還……、造詞、選擇題和聽寫', parts: ZH7_PARTS }
   ] },
   { group: 'Phonics Book', tests: [
@@ -1761,7 +1800,8 @@ var fullRun = true;
 function items() { return typeof cur.items === 'function' ? cur.items() : cur.items; }
 
 function start(list) {
-  quiz = shuffle(list);
+  // Items marked fixed stay in the paper's order (a passage read from start to end).
+  quiz = list.length && list.every(function (i) { return i.fixed; }) ? list.slice() : shuffle(list);
   at = 0;
   picks = [];
   orders = [];
@@ -1816,7 +1856,7 @@ function stem(item) {
   return wrap;
 }
 function readQuestion(item, box) {
-  if (item.lang) return [[plain(item.q).replace(/___\(([^)]*)\)/g, item.a).replace(/___/g, '，什麼，') + '。' + item.options.join('，'), item.lang]];
+  if (item.lang) return [[plain(item.q).replace(/___\(([^)]*)\)/g, item.a).replace(/___/g, '，什麼，') + '。' + (item.options || []).join('，'), item.lang]];
   if (item.spell) return [[speakAnswer(item), 'en-US']];
   var parts = [[plain(item.q).replace(/___/g, 'blank').replace(/\s+[+·→]\s+/g, ', '), 'en-US']];
   if (item.kind === 'mc') {
