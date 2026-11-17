@@ -123,24 +123,36 @@
   .field.zhfield { font-size: 34px; text-align: center; letter-spacing: 4px; min-height: 72px; }
   /* Writing pad: one 田字格 box for each character, zhuyin beside it like the 習作 */
   .pad { display: grid; gap: 12px; margin-top: 4px; }
+  main:has(.pad) { max-width: 860px; } /* a writing question uses more of the iPad's width */
   .padtools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-  .padtools[hidden], .padbtns[hidden] { display: none; }
+  .padtools[hidden], .padbtns[hidden], .padsurf[hidden] { display: none; }
   .padtools .lbl { margin-right: auto; color: var(--muted); font-size: 15px; }
   .padtools button { min-height: 44px; padding: 0 14px; color: var(--ink); background: #fff; border: 2px solid var(--line); border-radius: 10px; font: inherit; font-size: 16px; cursor: pointer; touch-action: manipulation; -webkit-user-select: none; user-select: none; }
   .padtools button.on { border-color: var(--accent); background: #e8f0fa; font-weight: 600; }
-  .padrow { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
-  .padcell { display: flex; align-items: stretch; }
-  .padcell canvas {
-    width: 150px; height: 150px; border: 2px solid var(--accent); border-radius: 6px 0 0 6px; touch-action: none; cursor: crosshair;
+  /* One big drawing surface (like the /joie scratch pad) so a resting hand lands on it too.
+     The 田字格 boxes sit under a see-through canvas, so the eraser can't rub them out. */
+  .padsurf {
+    position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; touch-action: none;
     -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
+    background-color: #fff;
+    background-image: linear-gradient(#edf0f4 1px, transparent 1px), linear-gradient(90deg, #edf0f4 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .padsurf canvas { position: absolute; left: 0; top: 0; width: 100%; touch-action: none; cursor: crosshair; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+  .padguide, .padmodel { display: flex; justify-content: center; gap: 16px; padding-top: 12px; }
+  .padmodel { padding-top: 0; }
+  .padcell { display: flex; align-items: stretch; }
+  .padbox {
+    width: var(--b, 200px); height: var(--b, 200px); box-sizing: border-box; border: 2px solid var(--accent); border-radius: 6px;
     background: linear-gradient(#d3dbe6, #d3dbe6) center / 1px 100% no-repeat, linear-gradient(#d3dbe6, #d3dbe6) center / 100% 1px no-repeat, #fff;
   }
-  .padcell .pz { display: flex; align-items: center; justify-content: center; width: 34px; border: 2px solid var(--accent); border-left: 0; border-radius: 0 6px 6px 0; background: #dbe7f5; color: var(--ink); font-size: 17px; }
-  .padcell .model { width: 150px; height: 150px; display: flex; align-items: center; justify-content: center; margin-left: 10px; font-size: 104px; line-height: 1; font-family: "BiauKaiTC", "BiauKai", "DFKai-SB", "Kaiti TC", "PingFang TC", serif; color: var(--good); border: 2px dashed var(--good); border-radius: 6px; background: #fff; }
+  .padbox.zyd { border-radius: 6px 0 0 6px; }
+  .padcell .pz { display: flex; align-items: center; justify-content: center; width: 36px; box-sizing: border-box; border: 2px solid var(--accent); border-left: 0; border-radius: 0 6px 6px 0; background: #dbe7f5; color: var(--ink); font-size: 19px; }
+  .padmodel .padbox { display: flex; align-items: center; justify-content: center; border: 2px dashed var(--good); border-radius: 6px; background: #fff; color: var(--good); font-size: calc(var(--b, 200px) * .72); line-height: 1; font-family: "BiauKaiTC", "BiauKai", "DFKai-SB", "Kaiti TC", "PingFang TC", serif; }
+  .padmodel .pz { visibility: hidden; }
   .padbtns { display: grid; gap: 10px; }
   .padbtns.two { grid-template-columns: 1fr 1fr; }
   .padask { text-align: center; font-weight: 600; margin: 0; }
-  @media (max-width: 420px) { .padcell canvas, .padcell .model { width: 110px; height: 110px; } .padcell .model { font-size: 76px; } }
   hr.divider { border: 0; border-top: 2px solid var(--line); margin: 30px 0 4px; }
   :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
   /* Drag a word into the sentence (phonics) */
@@ -976,11 +988,11 @@ var ZH_PARTS = [
   { title: '第六課 草叢裡的星星', items: ZH_L6 }
 ];
 
-/* 聽寫: the iPad reads the word and its sentence; she writes it (Apple Pencil Scribble or handwriting keyboard). */
+/* 聽寫: the iPad reads the word and its sentence; she writes it on the writing pad (padArea). */
 function Zd(n, rows) {
   return rows.map(function (r, i) {
     var said = r[1].replace(/___\([^)]*\)/, r[0]);
-    return { kind: 'type', listen: true, lang: 'zh-TW', a: r[0], alts: r[2] || [], q: r[1], zh: r[1],
+    return { kind: 'type', pad: true, listen: true, lang: 'zh-TW', a: r[0], alts: r[2] || [], q: r[1], zh: r[1],
       say: r[0] + '。' + said + '。' + r[0] + '。', audio: 'audio/d' + n + '-' + (i + 1) + '.mp3', ans: 'audio/d' + n + '-' + (i + 1) + 'a.mp3', ask: '按 🔊 聽，再把聽到的國字寫在格子裡。' };
   });
 }
@@ -2001,13 +2013,19 @@ function answerArea(item, card) {
   } };
 }
 
-// Writing pad: she writes each character in its own 田字格 with a finger or Apple Pencil.
-// Nothing reads the handwriting. 對答案 shows the right character next to hers and she
+// Writing pad: she writes each character in its 田字格 with the Apple Pencil (or a finger).
+// Nothing reads the handwriting. 對答案 shows the right character under hers and she
 // (or a grown-up) says if it matches. Saved answer: item.a when right, PAD_NO when wrong.
-var PAD_NO = '（寫錯了）', penSeen = false;
+// Each question keeps its writing while the page is open, so going back shows it.
+var PAD_NO = '（寫錯了）', penSeen = false, padInk = new Map(), padResize = null;
+window.addEventListener('resize', function () { if (padResize) padResize(); });
 function padArea(item) {
-  var chars = Array.from(item.a), zy = ((item.q.match(/___\(([^)]*)\)/) || [])[1] || '').split(' ');
-  var wrap = el('div', 'pad'), tools = el('div', 'padtools'), row = el('div', 'padrow'), cells = [], order = [], locked = false, mode = 'pen';
+  var chars = Array.from(item.a), n = chars.length;
+  // 聽寫 shows no zhuyin beside the boxes: hearing the word is the test.
+  var zy = item.listen ? [] : ((item.q.match(/___\(([^)]*)\)/) || [])[1] || '').split(' ').filter(Boolean);
+  var wrap = el('div', 'pad'), tools = el('div', 'padtools'), surf = el('div', 'padsurf'), cv = el('canvas');
+  var ctx = cv.getContext('2d'), mode = 'pen', cur = null, curId = null, locked = false, B = 200;
+  var strokes = padInk.get(item); if (!strokes) { strokes = []; padInk.set(item, strokes); }
   tools.appendChild(el('span', 'lbl', '用筆把字寫在格子裡'));
   // Act on pointerdown: an Apple Pencil tap often moves a little, and iPad Safari then drops the click.
   // The click handler stays for keyboard use; it skips the click that follows a handled pointerdown.
@@ -2020,79 +2038,116 @@ function padArea(item) {
   }
   var penB = tool('✏️ 筆', function () { setMode('pen'); });
   var eraseB = tool('🧽 橡皮擦', function () { setMode('erase'); });
-  tool('↩ 上一步', function () { var c = order.pop(); if (c) { c.strokes.pop(); c.redraw(); } });
-  tool('🗑 全部擦掉', function () { order.length = 0; cells.forEach(function (c) { c.strokes.length = 0; c.redraw(); }); });
+  tool('↩ 上一步', function () { strokes.pop(); redraw(); });
+  tool('🗑 全部擦掉', function () { strokes.length = 0; redraw(); });
   function setMode(m) { mode = m; penB.classList.toggle('on', m === 'pen'); eraseB.classList.toggle('on', m === 'erase'); }
   setMode('pen');
-  chars.forEach(function (ch, i) {
-    var box = el('div', 'padcell'), cv = el('canvas'), g = cv.getContext('2d'), now = null;
-    var cell = { box: box, ch: ch, strokes: [] };
-    cv.width = 450; cv.height = 450;
-    cv.setAttribute('aria-label', '在這裡寫第 ' + (i + 1) + ' 個字');
-    function style(st) {
-      g.globalCompositeOperation = st.erase ? 'destination-out' : 'source-over';
-      g.lineWidth = st.erase ? 70 : 12; g.lineCap = 'round'; g.lineJoin = 'round'; g.strokeStyle = '#1d2433';
-    }
-    function paint(st) {
-      style(st); g.beginPath();
-      st.p.forEach(function (pt, k) { if (k) g.lineTo(pt[0], pt[1]); else g.moveTo(pt[0], pt[1]); });
-      if (st.p.length === 1) g.lineTo(st.p[0][0] + 0.1, st.p[0][1]);
-      g.stroke();
-    }
-    cell.redraw = function () { g.clearRect(0, 0, cv.width, cv.height); cell.strokes.forEach(paint); };
-    function pos(e) { var r = cv.getBoundingClientRect(); return [(e.clientX - r.left) * cv.width / r.width, (e.clientY - r.top) * cv.height / r.height]; }
-    cv.addEventListener('pointerdown', function (e) {
-      if (locked) return;
-      // Once the Pencil has been used, a resting hand doesn't draw.
-      if (e.pointerType === 'pen') penSeen = true;
-      if (penSeen && e.pointerType === 'touch') return;
-      e.preventDefault();
-      try { cv.setPointerCapture(e.pointerId); } catch (x) {}
-      now = { erase: mode === 'erase', p: [pos(e)] };
-      cell.strokes.push(now); order.push(cell); paint(now);
-      note('');
+
+  function boxes(cls, fill) {
+    var rowEl = el('div', cls);
+    chars.forEach(function (ch, i) {
+      var cell = el('div', 'padcell');
+      cell.appendChild(el('div', zy.length ? 'padbox zyd' : 'padbox', fill ? ch : ''));
+      if (zy.length) {
+        var z = el('span', 'pz'), m = zy[i] || '', tone = (m.match(/[ˊˇˋ˙]/) || [''])[0];
+        z.appendChild(el('span', 'zl', m.replace(tone, '')));
+        if (tone) z.appendChild(el('span', 'zt', tone));
+        cell.appendChild(z);
+      }
+      rowEl.appendChild(cell);
     });
-    cv.addEventListener('pointermove', function (e) {
-      if (!now || locked) return;
-      e.preventDefault();
-      var evs = e.getCoalescedEvents ? e.getCoalescedEvents() : [e];
-      if (!evs.length) evs = [e];
-      style(now);
-      evs.forEach(function (ev) {
-        var a = now.p[now.p.length - 1], b = pos(ev);
-        now.p.push(b);
-        g.beginPath(); g.moveTo(a[0], a[1]); g.lineTo(b[0], b[1]); g.stroke();
-      });
-    });
-    function end() { now = null; }
-    cv.addEventListener('pointerup', end);
-    cv.addEventListener('pointercancel', end);
-    // Always keep touches on the pad for drawing (no scroll, no Scribble, no magnifier).
-    cv.addEventListener('touchstart', function (e) { e.preventDefault(); }, { passive: false });
-    cv.addEventListener('touchmove', function (e) { e.preventDefault(); }, { passive: false });
-    box.appendChild(cv);
-    var z = el('span', 'pz');
-    if (zy[i]) {
-      var m = zy[i], tone = (m.match(/[ˊˇˋ˙]/) || [''])[0];
-      z.appendChild(el('span', 'zl', m.replace(tone, '')));
-      if (tone) z.appendChild(el('span', 'zt', tone));
-    }
-    box.appendChild(z);
-    row.appendChild(box);
-    cells.push(cell);
-  });
+    return rowEl;
+  }
+  surf.appendChild(boxes('padguide'));
+  surf.appendChild(cv);
   wrap.appendChild(tools);
-  wrap.appendChild(row);
+  wrap.appendChild(surf);
+
+  function style(st) {
+    ctx.globalCompositeOperation = st.erase ? 'destination-out' : 'source-over';
+    ctx.lineWidth = st.erase ? 30 : 4.5; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = '#1d2433';
+  }
+  function paint(st) {
+    style(st); ctx.beginPath();
+    st.p.forEach(function (pt, k) { if (k) ctx.lineTo(pt[0], pt[1]); else ctx.moveTo(pt[0], pt[1]); });
+    if (st.p.length === 1) ctx.lineTo(st.p[0][0] + 0.1, st.p[0][1]);
+    ctx.stroke();
+  }
+  function redraw() { ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, cv.width, cv.height); ctx.restore(); strokes.forEach(paint); }
+  // Boxes as big as the card allows (up to 250px), plus room under them for the hand to rest.
+  var ROOM = 150, lastW = 0;
+  function size() {
+    var w = surf.clientWidth, d = window.devicePixelRatio || 1;
+    if (!w || w === lastW) return;
+    lastW = w;
+    B = Math.max(84, Math.min(250, Math.floor((w - 24 - (n - 1) * 16) / n) - (zy.length ? 36 : 0)));
+    wrap.style.setProperty('--b', B + 'px');
+    var h = 12 + B + ROOM;
+    if (!locked) surf.style.height = h + 'px';
+    cv.style.height = h + 'px';
+    cv.width = Math.round(w * d); cv.height = Math.round(h * d);
+    ctx.setTransform(d, 0, 0, d, 0, 0); redraw();
+  }
+  // Size it as soon as it is on the page, and again whenever its width changes (turning the iPad).
+  padResize = size; requestAnimationFrame(size); setTimeout(size, 0);
+  if (window.ResizeObserver) new ResizeObserver(size).observe(surf);
+
+  function pos(e) { var r = cv.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; }
+  cv.addEventListener('pointerdown', function (e) {
+    if (locked) return;
+    // A focused text box lets iPad Scribble grab the pencil; let go of it first.
+    var act = document.activeElement;
+    if (act && (act.tagName === 'INPUT' || act.tagName === 'TEXTAREA')) act.blur();
+    // Once the Pencil has been used, a resting hand doesn't draw.
+    if (e.pointerType === 'pen') {
+      // A mark the hand was making when the Pencil first came down is not writing.
+      if (cur && !penSeen) { var k = strokes.indexOf(cur); if (k >= 0) strokes.splice(k, 1); redraw(); }
+      penSeen = true;
+    } else if (penSeen && e.pointerType === 'touch') return;
+    else if (cur) return;
+    e.preventDefault();
+    try { cv.setPointerCapture(e.pointerId); } catch (x) {}
+    curId = e.pointerId;
+    cur = { erase: mode === 'erase', p: [pos(e)] };
+    strokes.push(cur); paint(cur);
+    note('');
+  });
+  cv.addEventListener('pointermove', function (e) {
+    if (!cur || locked || e.pointerId !== curId) return;
+    e.preventDefault();
+    var evs = e.getCoalescedEvents ? e.getCoalescedEvents() : [e];
+    if (!evs.length) evs = [e];
+    style(cur);
+    evs.forEach(function (ev) {
+      var a = cur.p[cur.p.length - 1], b = pos(ev);
+      cur.p.push(b);
+      ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+    });
+  });
+  // Only the pointer that is drawing ends the stroke: a hand lifting off must not cut the Pencil's line.
+  function end(e) { if (e.pointerId === curId) { cur = null; curId = null; } }
+  cv.addEventListener('pointerup', end);
+  cv.addEventListener('pointercancel', end);
+  // Keep every touch on the surface for writing: no scroll, no pinch zoom (Pencil + resting hand
+  // looks like two fingers to Safari), no Scribble, no magnifier.
+  ['touchstart', 'touchmove', 'gesturestart', 'gesturechange'].forEach(function (t) {
+    surf.addEventListener(t, function (e) { e.preventDefault(); }, { passive: false });
+  });
+
   var btns = el('div', 'padbtns'), go = el('button', 'primary', '對答案');
   go.type = 'button';
   function note(text) { var old = wrap.querySelector('.padask'); if (old) wrap.removeChild(old); if (text) wrap.insertBefore(el('p', 'padask', text), btns); }
-  function model() { cells.forEach(function (c) { if (!c.shown) { c.shown = true; c.box.appendChild(el('span', 'model', c.ch)); } }); }
-  function written(c) { return c.strokes.some(function (st) { return !st.erase; }); }
-  go.onclick = function () {
-    if (!cells.every(written)) { note('先把字寫在格子裡喔！'); return; }
+  function finish() {
     locked = true;
     tools.hidden = true;
-    model();
+    // Her boxes on top, the answer boxes right under them, nothing in between.
+    surf.style.height = (12 + B + 12) + 'px';
+    if (!strokes.some(function (st) { return !st.erase; })) surf.hidden = true;
+    if (!wrap.querySelector('.padmodel')) wrap.insertBefore(boxes('padmodel', true), surf.nextSibling);
+  }
+  go.onclick = function () {
+    if (!strokes.some(function (st) { return !st.erase; })) { note('先把字寫在格子裡喔！'); return; }
+    finish();
     note('綠色的是答案。你寫的一樣嗎？');
     btns.className = 'padbtns two';
     btns.textContent = '';
@@ -2106,8 +2161,7 @@ function padArea(item) {
   wrap.appendChild(btns);
   return { el: wrap, lock: function () {
     locked = true;
-    tools.hidden = true;
-    model();
+    setTimeout(function () { size(); finish(); }, 0);
     note('');
     btns.hidden = true;
   } };
@@ -2352,7 +2406,7 @@ function reveal(item, resp, a, card) {
   if (item.lang && item.kind === 'type' && !ok) {
     var again2 = el('button', 'secondary', '✏️ 擦掉重寫');
     again2.type = 'button';
-    again2.onclick = function () { picks[at] = undefined; savePlace(); show(); };
+    again2.onclick = function () { padInk.delete(item); picks[at] = undefined; savePlace(); show(); };
     f.appendChild(again2);
   }
   card.appendChild(f);
