@@ -15,7 +15,7 @@ import json, re, sys, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = pathlib.Path(sys.argv[1])
 BASE = 'https://www.shiptolive.com'
-V = '51'
+V = '53'
 CSS = ''
 
 PAGES = {  # slug -> (zh path, en path)
