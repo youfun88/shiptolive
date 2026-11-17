@@ -80,10 +80,16 @@
 @media (max-width: 860px) { .why-split { grid-template-columns: 1fr; } .why-list li { grid-template-columns: 1fr; gap: 4px; } }
 /* one edge style: defined border, no big diffuse shadow */
 .shot, .dash, .scan, .mchart, .cta-box { box-shadow: none !important; }
-/* client names: static typographic row, no marquee, no boxes */
-.logos { display: flex !important; flex-wrap: wrap; justify-content: center; gap: 12px 44px !important; }
-.logos li { background: none !important; border: 0 !important; height: auto !important; padding: 6px 0 !important; filter: none !important; opacity: 1 !important; }
-.logos .word { font-size: 20px; letter-spacing: .06em; color: var(--ink3); }
+/* client logos: one row drifting slowly left (static wrapped row without JS or with reduced motion) */
+.logos { display: flex !important; flex-wrap: wrap; justify-content: center; align-items: center; gap: 26px 0 !important; }
+.logos li { background: none !important; border: 0 !important; height: auto !important; padding: 0 30px !important; filter: none !important; opacity: 1 !important; flex: none; display: flex; align-items: center; }
+.logos img { display: block; height: var(--h, 40px); width: auto; max-width: none; max-height: none; }
+.logos a { display: block; border-radius: 6px; }
+.mq.run { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
+.mq.run .logos { flex-wrap: nowrap; justify-content: flex-start; width: max-content; gap: 0 !important; padding: 6px 0; animation: mq 80s linear infinite; }
+.mq.run:hover .logos, .mq.run:focus-within .logos { animation-play-state: paused; }
+@keyframes mq { to { transform: translateX(-50%); } }
+@media (max-width: 600px) { .logos li { padding: 0 20px !important; } .logos img { height: calc(var(--h, 40px) * .82); } .mq.run .logos { animation-duration: 64s; } }
 /* entrance motion only on key visuals; text and cards are visible and still */
 @media (prefers-reduced-motion: no-preference) {
   .js .rv:not(figure):not(.hero-art):not(.scan):not(.dash):not(.loopw):not(.ask) { opacity: 1 !important; transform: none !important; transition: none !important; }

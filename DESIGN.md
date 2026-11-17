@@ -43,7 +43,7 @@ Warm paper + ink + one orange, flat illustration and real product UI. Brand colo
 - **Layouts:** do not stack identical 3-card grids back to back; vary with split layouts (statement left, list right), timelines, and real UI.
 - **Numbers:** 01/02/03 markers only for real sequences (process steps).
 - **Proof:** real product UI (dashboards, the monthly-check chart) over illustration. Demo data is always labeled 示範資料 / 示範案例; client names and numbers only with written consent.
-- **Motion:** entrance motion only on key visuals (demo console, dashboard, charts, loop). Text and cards are visible at rest. No marquees. Respect `prefers-reduced-motion`.
+- **Motion:** entrance motion only on key visuals (demo console, dashboard, charts, loop). Text and cards are visible at rest. No marquees, with one exception: the home page client logo row drifts slowly left (Yufan's request, 2026-11-17); it pauses on hover and is a static wrapped row with `prefers-reduced-motion` or without JS. Respect `prefers-reduced-motion`.
 - **CTAs:** one primary (orange `#b8501d`) per block; secondary is outlined.
 - **Accessibility:** WCAG AA contrast, visible focus, 44px targets on phones, labels on every input.
 
@@ -54,3 +54,4 @@ Warm paper + ink + one orange, flat illustration and real product UI. Brand colo
 ## Changelog
 
 - 2026-11-13: created.
+- 2026-11-17: client names row became a logo row (`assets/v2/img/clients/`, transparent WebP, light-background versions of the dark logos). Each logo sets its own height with `--h` so marks and wordmarks look the same size. Logos are not links unless 「客戶 Logo 連結」 is on in the admin (then new tab + `rel="nofollow noopener"`, added by `x-a.js`).
