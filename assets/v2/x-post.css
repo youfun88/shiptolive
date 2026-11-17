@@ -204,3 +204,17 @@
 .post-end .end-cta p { color: #fff; }
 /* phones: sticky bottom bar only later in an article */
 @media (max-width: 760px) { body:has(.post-body) .mcta:not(.late-ok) { transform: translateY(110%) !important; } }
+/* wide comparison table (7 columns): fixed column widths, scrolls inside its wrapper when narrow */
+.post-body .cmp-wrap { margin: 26px 0; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--hair); border-radius: 12px; background: var(--card); }
+.post-body table.cmp { display: table; table-layout: fixed; width: 100%; min-width: 780px; margin: 0; font-size: 14px; line-height: 1.6; background: none; line-break: strict; }
+.post-body table.cmp caption { caption-side: bottom; text-align: left; padding: 10px 14px 12px; font-size: 12.5px; line-height: 1.6; color: var(--ink3); }
+.post-body table.cmp th, .post-body table.cmp td { min-width: 0; padding: 12px 10px; font-size: 14px; color: var(--ink2); overflow-wrap: anywhere; }
+.post-body table.cmp th:first-child, .post-body table.cmp td:first-child { padding-left: 14px; }
+.post-body table.cmp thead th { background: none; color: var(--ink3); font-size: 12.5px; font-weight: 600; letter-spacing: .02em; border-bottom: 1px solid var(--ink); vertical-align: bottom; }
+.post-body table.cmp tbody th { font-weight: 700; color: var(--ink); }
+.post-body table.cmp tbody tr:last-child th, .post-body table.cmp tbody tr:last-child td { border-bottom: 1px solid var(--hair); }
+.post-body table.cmp .c-co { width: 13%; } .post-body table.cmp .c-city { width: 10%; } .post-body table.cmp .c-svc { width: 19%; } .post-body table.cmp .c-fit { width: 18%; } .post-body table.cmp .c-price { width: 16%; } .post-body table.cmp .c-tool { width: 13%; } .post-body table.cmp .c-src { width: 11%; }
+.post-body table.cmp th:last-child, .post-body table.cmp td:last-child { padding-right: 14px; }
+.post-body table.cmp td:last-child a { display: block; font-size: 13px; white-space: nowrap; }
+.post-body table.cmp .nw { white-space: nowrap; }
+@media (max-width: 640px) { .post-body table.cmp { display: table; min-width: 840px; background: none; } .post-body table.cmp th, .post-body table.cmp td { min-width: 0; font-size: 13.5px; } }
