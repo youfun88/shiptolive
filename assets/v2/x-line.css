@@ -9,7 +9,7 @@
 .lc-top { display: flex; align-items: center; gap: 10px; padding: 13px 16px; border-bottom: 1px solid var(--hair); }
 .lc-av { width: 34px; height: 34px; border-radius: 50%; background: var(--ink); color: #fff; display: grid; place-items: center; font-size: 14px; font-weight: 700; flex: none; }
 .lc-top b { font-size: 15.5px; }
-.lc-oa { margin-left: auto; font-size: 11.5px; font-weight: 700; color: #fff; background: #06c755; padding: 4px 9px; border-radius: 999px; white-space: nowrap; }
+.lc-oa { margin-left: auto; font-size: 11.5px; font-weight: 700; color: #fff; background: #067a35; padding: 4px 9px; border-radius: 999px; white-space: nowrap; }
 .lc-body { background: #e4eaf0; padding: 16px 14px 18px; display: grid; gap: 10px; }
 .lc-day { justify-self: center; font: 600 11.5px/1 var(--mono); color: #4f5d6b; background: rgba(255,255,255,.75); padding: 5px 10px; border-radius: 999px; }
 .lc-r { display: flex; align-items: flex-end; gap: 6px; }
@@ -125,26 +125,26 @@
 .la-plan { position: relative; background: #fff; border: 1px solid var(--hair); border-radius: 22px; padding: 28px 26px 24px; }
 .la-plan.hot { border: 2px solid #06c755; }
 .la-plan h3 { font: 700 22px/1.3 var(--sans); margin: 0 0 6px; }
-.la-for { color: var(--muted, #6b6762); font-size: 14.5px; margin: 0 0 18px; }
+.la-for { color: var(--ink3); font-size: 14.5px; margin: 0 0 18px; }
 .la-price { margin: 0; display: flex; align-items: baseline; gap: 4px; }
 .la-price b { font: 800 38px/1 var(--sans); letter-spacing: -.01em; }
-.la-price span { color: var(--muted, #6b6762); font-size: 15px; }
-.la-setup { margin: 8px 0 18px; font-size: 14.5px; color: var(--muted, #6b6762); }
+.la-price span { color: var(--ink3); font-size: 15px; }
+.la-setup { margin: 8px 0 18px; font-size: 14.5px; color: var(--ink3); }
 .la-plan ul { list-style: none; padding: 16px 0 0; margin: 0; border-top: 1px solid var(--hair); display: grid; gap: 9px; font-size: 15px; }
 .la-plan li::before { content: "✓"; color: #06c755; font-weight: 700; margin-right: 8px; }
-.la-tag { position: absolute; top: -12px; right: 22px; background: #06c755; color: #fff; font: 700 12.5px/1 var(--sans); padding: 6px 12px; border-radius: 999px; }
-.la-note { grid-column: 1 / -1; font-size: 13.5px; color: var(--muted, #6b6762); line-height: 1.7; margin: 4px 0 0; }
+.la-tag { position: absolute; top: -12px; right: 22px; background: #067a35; color: #fff; font: 700 12.5px/1 var(--sans); padding: 6px 12px; border-radius: 999px; }
+.la-note { grid-column: 1 / -1; font-size: 13.5px; color: var(--ink3); line-height: 1.7; margin: 4px 0 0; }
 @media (max-width: 760px) { .la-plans { grid-template-columns: 1fr; } }
 
 .la-addon { grid-column: 1 / -1; background: #fff; border: 1px dashed var(--hair); border-radius: 18px; padding: 18px 22px; }
 .la-addon b { font: 700 16px/1.4 var(--sans); }
-.la-addon p { margin: 6px 0 0; font-size: 14.5px; line-height: 1.7; color: var(--muted, #6b6762); }
+.la-addon p { margin: 6px 0 0; font-size: 14.5px; line-height: 1.7; color: var(--ink3); }
 
 .la-launch { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; background: #e9f9ef; border: 1px solid #b7ebc8; border-radius: 16px; padding: 14px 20px; }
-.la-launch b { color: #058a3b; font: 700 15.5px/1.4 var(--sans); }
+.la-launch b { color: #04692d; font: 700 15.5px/1.4 var(--sans); }
 .la-launch span { font-size: 14.5px; line-height: 1.6; }
 .la-setup s { color: var(--muted, #6b6762); }
-.la-off { color: #058a3b; font-weight: 700; margin-left: 4px; }
+.la-off { color: #04692d; font-weight: 700; margin-left: 4px; }
 
 .la-addon-p { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 6px; font-size: 14.5px; line-height: 1.6; }
 .la-addon-p b { margin-right: 8px; }
@@ -156,3 +156,18 @@
 .la-try a span { transition: transform .15s; text-decoration: none; }
 .la-try a:hover span { transform: translateX(3px); }
 .la-try.dk a { color: #7ee2a3; }
+.la-aeo { margin-top: -4px; font-size: 14px; color: var(--ink2); }
+.la-aeo b { color: var(--ink); }
+
+/* hero: the free demo as its own tappable row, not a third button */
+.la-trycard { margin-top: 18px; display: flex; align-items: center; gap: 14px; max-width: 580px; padding: 14px 18px 14px 14px; border-radius: var(--r); background: #fff; border: 1px solid var(--hair); color: var(--ink); text-decoration: none; transition: border-color .15s; }
+.la-trycard:hover { border-color: #2c7a4b; }
+.la-trycard:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.la-trycard-i { flex: none; width: 44px; height: 44px; border-radius: 12px; background: #dcefe0; display: grid; place-items: center; }
+.la-trycard-i svg { width: 24px; height: 24px; fill: none; stroke: #2c7a4b; stroke-width: 1.8; stroke-linejoin: round; stroke-linecap: round; }
+.la-trycard-t { display: grid; gap: 2px; min-width: 0; }
+.la-trycard-t b { font-size: 16.5px; }
+.la-trycard-t span { font-size: 14px; line-height: 1.55; color: var(--ink2); }
+.la-trycard-a { margin-left: auto; flex: none; font-size: 20px; color: #2c7a4b; transition: transform .15s; }
+.la-trycard:hover .la-trycard-a { transform: translateX(3px); }
+.la-trycard + .la-note { margin-top: 16px; }

@@ -15,7 +15,7 @@ import json, re, sys, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = pathlib.Path(sys.argv[1])
 BASE = 'https://www.shiptolive.com'
-V = '62'
+V = '63'
 # LINE AI demo (/line-ai/demo/): the demo LINE Official Account 「夏裕 AI 客服體驗」 and the admin API it talks to.
 DEMO_OA_ID = '@372xwcta'
 DEMO_API = 'https://admin.shiptolive.com'
@@ -90,11 +90,14 @@ LINE_URL = 'https://line.me/R/ti/p/@680uqtou'
 LINE_ICON = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11.1c0 4 3.6 7.4 8.4 8 .3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.5-1.6 2.2-3.2 2.2-4.9C22 6.6 17.5 3 12 3zM8.3 13.4H6.3c-.3 0-.5-.2-.5-.5V9c0-.3.2-.5.5-.5s.5.2.5.5v3.4h1.5c.3 0 .5.2.5.5s-.2.5-.5.5zm2.1-.5c0 .3-.2.5-.5.5s-.5-.2-.5-.5V9c0-.3.2-.5.5-.5s.5.2.5.5v3.9zm4.8 0c0 .2-.1.4-.3.5h-.2c-.2 0-.3-.1-.4-.2l-2-2.7v2.4c0 .3-.2.5-.5.5s-.5-.2-.5-.5V9c0-.2.1-.4.3-.5h.2c.2 0 .3.1.4.2l2 2.7V9c0-.3.2-.5.5-.5s.5.2.5.5v3.9zm3.2-2.5c.3 0 .5.2.5.5s-.2.5-.5.5h-1.5v.9h1.5c.3 0 .5.2.5.5s-.2.5-.5.5h-2c-.3 0-.5-.2-.5-.5V9c0-.3.2-.5.5-.5h2c.3 0 .5.2.5.5s-.2.5-.5.5h-1.5v.9h1.5z"/></svg>'
 
 
-def footer(lang):
+def footer(lang, meta=None):
     t = L[lang]
     pre = '/en' if lang == 'en' else ''
     chk = p(lang, 'engine') + '#check'
-    mcta = (f'<div class="mcta" aria-label="{t["cta"]}"><a class="a1" href="{chk}">{t["cta"]}</a>'
+    # A page may swap the phone bar's first button with front-matter "mcta: label|href" (e.g. the LINE AI pages).
+    m1, _, m2 = ((meta or {}).get('mcta') or '').partition('|')
+    a1_label, a1_href = (m1.strip(), m2.strip()) if m1 and m2 else (t['cta'], chk)
+    mcta = (f'<div class="mcta" aria-label="{a1_label}"><a class="a1" href="{a1_href}">{a1_label}</a>'
             f'<a class="a2" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">{"預約免費諮詢" if lang == "zh" else "Book a free call"}</a></div>')
     # LINE Official Account 夏裕科技 (@680uqtou, free basic ID): floating button on the Chinese pages.
     fab = (f'<a class="line-fab" href="{LINE_URL}" target="_blank" rel="noopener" aria-label="加 LINE 好友，用 LINE 聯絡我們">{LINE_ICON}<span>LINE 聯絡</span></a>'
@@ -220,7 +223,7 @@ def build(lang, slug):
     body = raw[m.end():]
     # Placeholders a body may use: {{DEMO_OA_ID}}, {{DEMO_API}}, {{V}}.
     body = body.replace('{{DEMO_OA_ID}}', DEMO_OA_ID).replace('{{DEMO_API}}', DEMO_API).replace('{{V}}', V)
-    html = head(lang, slug, meta) + header(lang, slug) + '\n<main id="main">\n' + body.strip() + '\n</main>\n' + footer(lang) + \
+    html = head(lang, slug, meta) + header(lang, slug) + '\n<main id="main">\n' + body.strip() + '\n</main>\n' + footer(lang, meta) + \
         f'\n<script src="/assets/v2/all.js?v={V}" defer></script>\n' + \
         (f'<script src="/assets/v2/{meta["js"]}?v={V}" defer></script>\n' if meta.get('js') else '') + '</body>\n</html>\n'
     out = ROOT / p(lang, slug).strip('/') / 'index.html'
