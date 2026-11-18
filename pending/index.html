@@ -99,7 +99,7 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 </script>
 <h1>Drafts for review</h1>
 <p>Website updates for the Ship to Live owner to review. Not linked from the site and not indexed. Nothing goes live until approved. Use the buttons under each draft to approve or request changes.</p>
-<p class="updated">Updated 2026-11-18.</p>
+<p class="updated">Updated 2026-11-19.</p>
 
 <!-- review-ui (/pending/review-ui.js + .css, shared by /pending and /pending/yufan):
   - Language: an EN / 中文 switch shows one language. Write every explanation, note, label and question twice, each in
@@ -136,64 +136,43 @@ document.querySelector('.tab-close').addEventListener('click',function(){
 <summary>想修改網站嗎？ · Suggest a change</summary>
 <p>隨時都可以在這裡告訴我們想改什麼，例如文字、價格或新的內容。系統每 8 小時會處理一次：簡單的修改會直接更新，較大的內容會先放到這頁讓您確認。Tell us anything you'd like changed. It's handled every 8 hours: simple edits go live, and bigger content comes back here for your OK first.</p>
 </details>
-<div class="item" data-item="Questions" data-type="question" data-status="review">
-<h3>想請您確認 · Questions</h3>
-<p lang="zh-Hant">AI 最常推薦的台北業者（將能、awoo、Harris 先生等），被引用的頁面都寫了可以查證的具體數字，例如服務年資、服務過幾家企業、客戶名稱。我們的網站目前只寫了「2022 年成立」和一家會計事務所的匿名案例。為了不自己編數字，想請您回答（可以用題號回覆）：</p>
-<p lang="en">The Taipei firms AI recommends most (Sonar, awoo, Harris and others) all state checkable specifics on the pages AI cites: years in business, how many businesses they serve, client names. Our site states only "founded 2022" and one anonymous accounting-firm case. To avoid making up numbers, please answer (by number is fine):</p>
-<ol class="q">
-<li><span lang="zh-Hant">夏裕 AI 曝光引擎目前每天檢測幾個客戶網站？可以寫在 AI 搜尋優化頁上嗎？</span><span lang="en">How many client sites does the AI Visibility Engine check every day right now, and may the AI search page say so?</span></li>
-<li><span lang="zh-Hant">有沒有客戶同意被列名（名稱或網站），當作 AI 搜尋優化的實例？</span><span lang="en">Has any client agreed to be named (name or site) as an AI search optimization example?</span></li>
-<li><span lang="zh-Hant">您（Yufan）做網站與軟體開發幾年了？可以寫在關於頁和 AI 搜尋優化頁嗎？</span><span lang="en">How many years have you (Yufan) built websites and software, and may the About and AI search pages say so?</span></li>
-</ol>
-<p lang="zh-Hant">回覆後，我們會把答案寫成一段短文字，先放在這頁讓您確認。</p><p lang="en">With your answers we will draft a short passage and put it here for your OK first.</p>
-</div>
-<div class="item" data-item="AI Visibility Engine page (English): FAQ &quot;Is there a service that checks whether ChatGPT recommends my business?&quot;" data-type="section" data-page="AI Visibility Engine (English)" data-page-zh="英文夏裕 AI 曝光引擎" data-status="review">
-<h3>AI Visibility Engine page (English): FAQ "Is there a service that checks whether ChatGPT recommends my business?"</h3>
-<p lang="zh-Hant">在英文 AI 曝光引擎頁的常見問題第 2 題，新增一題，問法和 AI 檢測第 7 題一樣，答案直接回答「有」，再說明引擎檢查什麼、搭配搜尋優化服務改網站、每項修改先經您同意。頁面和 FAQ 結構化資料都加上。</p>
-<p lang="en">Adds one FAQ, second in the list on the English AI Visibility Engine page, worded like question 7 of the AI check. The answer opens with "Yes", then says what the engine checks, that the search optimization service improves the site, and that every change needs your approval. Added to the page and to the FAQ schema.</p>
-<p lang="zh-Hant">原因：2026-11-16 的 AI 檢測第 7 題「Is there a service that checks whether ChatGPT recommends my business and fixes my website so it does?」，4 個回答都沒有提到我們（0/4），領先的是 OtterlyAI（2 個 AI）和 First Page Sage（2 個）。被引用的頁面把客戶的問題直接寫成標題或問答（例如 Local Falcon 的第一個 H2 就是這個問題）；我們的頁面沒有一題用這個問法。標題和描述已在今天改成這個問法（Yufan 項目）。</p>
-<p lang="en">Why: the 2026-11-16 AI check, question 7 "Is there a service that checks whether ChatGPT recommends my business and fixes my website so it does?": none of the 4 answers named us (0/4); the leaders are OtterlyAI (2 engines) and First Page Sage (2). The pages AI cited put the customer's question itself in a heading or Q&amp;A (Local Falcon's first H2 is this question); no FAQ on our page uses that wording. The title and description switched to this wording today (Yufan item).</p>
+<div class="item" data-item="AI Visibility Engine page (中文): how many client sites it checks every day" data-type="update" data-page="AI Visibility Engine" data-page-zh="夏裕 AI 曝光引擎" data-status="review">
+<h3>AI Visibility Engine page (中文): how many client sites it checks every day</h3>
+<p lang="zh-Hant">在中文 AI 曝光引擎頁常見問題第 1 題「夏裕 AI 曝光引擎是什麼？」的答案最後加一句：目前（2026 年 11 月）系統每天檢查 8 個客戶網站。頁面和 FAQ 結構化資料都加上。寫上月份，數字變了再更新。</p>
+<p lang="en">Adds one sentence at the end of the first FAQ answer ("夏裕 AI 曝光引擎是什麼？") on the Chinese AI Visibility Engine page: as of November 2026 the system checks 8 client websites every day. In the page and in the FAQ schema. It carries the month so it can be updated when the number changes.</p>
+<p lang="zh-Hant">原因：您在「想請您確認」第 1 題回答了 8。AI 最常推薦的台北業者（將能、awoo 等），被引用的頁面都寫了可以查證的具體數字；2026-11-18 的 AI 檢測，11 題 44 個回答都沒有提到我們（0/44），領先的 awoo 被提到 9 次。第 2 題（客戶列名）您說先不要，第 3 題（年資）您比較不想寫，所以這兩項都沒有放。</p>
+<p lang="en">Why: you answered 8 to question 1 in the Questions box. The Taipei firms AI recommends most (Sonar, awoo and others) state checkable numbers on the pages AI cites; in the 2026-11-18 AI check, none of the 44 answers to 11 questions named us (0/44), and the leader, awoo, was named 9 times. You said "not now" to question 2 (naming clients) and preferred not to state your years (question 3), so neither is included.</p>
 <ul>
-<li><strong lang="zh-Hant">位置：常見問題第 2 題（頁面與 FAQ 結構化資料）</strong><strong lang="en">Where: FAQ, item 2 (page and FAQ schema)</strong><span class="ba was"><b>Before</b>(none)</span><span class="ba now"><b>After</b>Is there a service that checks whether ChatGPT recommends my business and fixes my website? Yes. The AI Visibility Engine asks ChatGPT, Gemini, Claude and Perplexity the questions your customers ask, and records whether they name your business and who they recommend instead. With our AEO/GEO search optimization service, we then improve your website based on what the check finds. Every change goes to you for approval before it goes live, and the next monthly check shows whether AI names you.</span></li>
-</ul>
-<p lang="zh-Hant">新增的部分在預覽頁上以黃色標出，預覽會自動打開這一題。</p><p lang="en">The new part is yellow on the preview, which opens at that question.</p>
-<div class="links"><a href="/pending/en-engine-faq/#faq" target="_blank" rel="noopener">預覽 Preview</a><a href="/en/ai-visibility-engine/" target="_blank" rel="noopener">目前的版本 Current</a></div>
-</div>
-
-<div class="item" data-item="AI Visibility Engine page (中文): FAQ「有沒有服務可以檢查 ChatGPT 有沒有推薦我的公司？」" data-type="section" data-page="AI Visibility Engine" data-page-zh="夏裕 AI 曝光引擎" data-status="review">
-<h3>AI Visibility Engine page (中文): FAQ「有沒有服務可以檢查 ChatGPT 有沒有推薦我的公司？」</h3>
-<p lang="zh-Hant">英文頁那一題的中文版，放在中文 AI 曝光引擎頁常見問題第 2 題，頁面和 FAQ 結構化資料都加上。兩個項目可以分開同意。</p>
-<p lang="en">The Chinese version of the English FAQ above, second in the FAQ on the Chinese AI Visibility Engine page, in the page and the FAQ schema. The two items can be approved separately.</p>
-<p lang="zh-Hant">原因：同上（2026-11-16 AI 檢測第 7 題，0/4）。中文客戶也會這樣問，而中文頁目前沒有一題用這個問法。</p>
-<p lang="en">Why: same finding (2026-11-16 AI check, question 7, 0/4). Chinese-speaking customers ask the same thing, and no FAQ on the Chinese page uses that wording.</p>
-<ul>
-<li><strong lang="zh-Hant">位置：常見問題第 2 題（頁面與 FAQ 結構化資料）</strong><strong lang="en">Where: FAQ, item 2 (page and FAQ schema)</strong><span class="ba was"><b>Before</b>（無）</span><span class="ba now"><b>After</b>有沒有服務可以檢查 ChatGPT 有沒有推薦我的公司，還幫我改網站？有。夏裕 AI 曝光引擎用您客戶會問的問題詢問 ChatGPT、Gemini、Claude、Perplexity，記錄 AI 有沒有提到您、推薦了哪些同業。搭配 AEO／GEO 搜尋優化服務，我們再依檢測結果改善您的網站。每一項修改都先由您同意才上線，下個月的檢測就看得出 AI 有沒有開始提到您。</span></li>
-</ul>
-<p lang="zh-Hant">新增的部分在預覽頁上以黃色標出，預覽會自動打開這一題。</p><p lang="en">The new part is yellow on the preview, which opens at that question.</p>
-<div class="links"><a href="/pending/engine-faq/#faq" target="_blank" rel="noopener">預覽 Preview</a><a href="/ai-visibility-engine/" target="_blank" rel="noopener">目前的版本 Current</a></div>
-</div>
-
-<div class="item" data-item="New English article: how to check whether ChatGPT recommends your business" data-type="new" data-status="review">
-<h3>New English article: how to check whether ChatGPT recommends your business</h3>
-<p lang="zh-Hant">新增一篇英文文章 /en/ai-search/check-ai-visibility/，是中文文章〈怎麼檢查 ChatGPT、Gemini 有沒有提到我的公司？〉的英文版。開頭第一段直接回答「有沒有免費工具」：我們的免費 AI 曝光檢測（1–2 個工作天回覆），再列 Ahrefs、Semrush、Geoptie、HubSpot、OtterlyAI（和中文版同樣的事實，2026 年 11 月查閱）。接著是 5 個問題的自我檢測步驟、紀錄表、常見錯誤、結果判讀和 5 題常見問題（含 FAQ 結構化資料）。例子改成「聖地牙哥的會計師事務所」，並標明是示意；沒有新的數字或客戶。不含價格。</p>
-<p lang="en">A new English article at /en/ai-search/check-ai-visibility/, the English version of the Chinese guide on checking whether ChatGPT and Gemini name your business. The first paragraph answers "is there a free tool" directly: our free AI visibility check (reply in 1–2 business days), then Ahrefs, Semrush, Geoptie, HubSpot and OtterlyAI (the same facts as the Chinese page, checked November 2026). Then the 5-question self-check, the log template, common mistakes, how to read the results, and 5 FAQs (with FAQ schema). The example is a San Diego accounting firm, marked as an example; no new numbers or clients. No prices.</p>
-<p lang="zh-Hant">原因：AI 檢測（2026-11-16）的待辦清單第 5 項：「Add English versions of the ChatGPT and AI visibility check guides」。英文問題（例如第 7 題）4 個回答都沒有提到我們（0/4），而這類檢測指南目前只有中文版。這篇的第一個 H2 用的就是客戶的問法「Is there a free tool that checks whether ChatGPT recommends my business?」。上線後會加進 sitemap 和 llms.txt。</p>
-<p lang="en">Why: action 5 of the AI check's to-do list (2026-11-16): "Add English versions of the ChatGPT and AI visibility check guides". English questions such as question 7 got 0 of 4 answers naming us, and this guide exists only in Chinese. The first H2 uses the customer's own question, "Is there a free tool that checks whether ChatGPT recommends my business?". Once live it goes into the sitemap and llms.txt.</p>
-<p lang="zh-Hant">11 月 18 日修改：網頁標題縮短為「Check if ChatGPT Recommends Your Business | Ship to Live」（原本 63 個字元，超過 60 個字元的建議長度，搜尋結果會被截斷）。內文沒有改。</p><p lang="en">Revised Nov 18: the page title is now "Check if ChatGPT Recommends Your Business | Ship to Live" (it was 63 characters, over the 60-character guideline, so search results would cut it off). The article text is unchanged.</p>
-<div class="links"><a href="/pending/en-check-ai-visibility/" target="_blank" rel="noopener">預覽 Preview (English)</a><a href="/ai-search/check-ai-visibility/" target="_blank" rel="noopener">中文版 Chinese version (live)</a></div>
-</div>
-
-<div class="item" data-item="GEO company guide: who Ship to Live fits" data-type="section" data-page="Knowledge base: choosing a GEO company" data-page-zh="知識庫：GEO 公司怎麼選" data-status="review">
-<h3>GEO company guide: who Ship to Live fits</h3>
-<p lang="zh-Hant">在〈台北 AI 搜尋優化（GEO）公司怎麼選？〉「在台北找服務商的實際建議」一節，介紹夏裕科技的那段後面加一句「比較適合哪些企業」。內容都來自網站已有的說法：中英雙語、服務台灣與歐美客戶、看得到每次檢測結果、內容修改先由業主同意。</p>
-<p lang="en">In the article on choosing a GEO company, section "在台北找服務商的實際建議", adds one sentence after the Ship to Live paragraph saying who we fit best. Every point is already stated on the site: bilingual (Chinese and English), clients in Taiwan and in the US and Europe, raw results of every check, and content changes approved by the owner first.</p>
-<p lang="zh-Hant">原因：AI 檢測的待辦清單（2026-11-16）第 1 項建議在這篇加上「夏裕科技適合誰」（清單的依據：第 1 到 5 題都在問該找哪家服務商，每一題我們都是 0/4）。第 3、5 題是對照題，這一句不是針對它們寫的，也不改它們對應的頁面。</p>
-<p lang="en">Why: item 1 of the AI check's to-do list (2026-11-16) suggests saying on this article who Ship to Live fits (its basis: questions 1 to 5 all ask which provider to pick, and we are named in 0 of 4 answers on each). Questions 3 and 5 are control questions; this sentence is not written for them and their pages do not change.</p>
-<ul>
-<li><strong lang="zh-Hant">位置：「在台北找服務商的實際建議」介紹夏裕科技的段落之後</strong><strong lang="en">Where: after the Ship to Live paragraph in "在台北找服務商的實際建議"</strong><span class="ba was"><b>Before</b>（無）</span><span class="ba now"><b>After</b>夏裕科技比較適合這幾種企業：要讓中文和英文的客戶問題都被 AI 找到、同時服務台灣與歐美客戶的中小企業；想看到每一次檢測的原始結果、而不只是一份總結報告的團隊；以及希望網站上的每一項內容修改都先由自己同意的業主。</span></li>
+<li><strong lang="zh-Hant">位置：常見問題第 1 題的答案（頁面與 FAQ 結構化資料）</strong><strong lang="en">Where: answer to FAQ 1 (page and FAQ schema)</strong><span class="ba was"><b>Before</b>……記錄哪些回答提到您、推薦了哪些同業，並整理出網站優先改善的項目。</span><span class="ba now"><b>After</b>……記錄哪些回答提到您、推薦了哪些同業，並整理出網站優先改善的項目。目前（2026 年 11 月）系統每天檢查 8 個客戶網站。</span></li>
 </ul>
 <p lang="zh-Hant">新增的部分在預覽頁上以黃色標出。</p><p lang="en">The new part is yellow on the preview.</p>
-<div class="links"><a href="/pending/choose-geo-agency-fit/#taipei" target="_blank" rel="noopener">預覽 Preview</a><a href="/ai-search/choose-geo-agency/" target="_blank" rel="noopener">目前的文章 Current</a></div>
+<div class="links"><a href="/pending/engine-sites/#faq" target="_blank" rel="noopener">預覽 Preview</a><a href="/ai-visibility-engine/" target="_blank" rel="noopener">目前的版本 Current</a></div>
+</div>
+
+<div class="item" data-item="AI Visibility Engine page (English): how many client sites it checks every day" data-type="update" data-page="AI Visibility Engine (English)" data-page-zh="英文夏裕 AI 曝光引擎" data-status="review">
+<h3>AI Visibility Engine page (English): how many client sites it checks every day</h3>
+<p lang="zh-Hant">上一項的英文版：英文 AI 曝光引擎頁常見問題第 1 題的答案最後加一句「As of November 2026, it checks 8 client websites every day.」頁面和 FAQ 結構化資料都加上。兩個項目可以分開同意。</p>
+<p lang="en">The English version of the item above: one sentence at the end of the first FAQ answer on the English AI Visibility Engine page, "As of November 2026, it checks 8 client websites every day." In the page and in the FAQ schema. The two items can be approved separately.</p>
+<p lang="zh-Hant">原因：同上（您回答的 8；2026-11-18 AI 檢測 0/44）。英文問題第 6、7 題 4 個回答都沒有提到我們，領先的 First Page Sage、Otterly.AI 各被 2 個 AI 提到。</p>
+<p lang="en">Why: same as above (your answer, 8; 2026-11-18 AI check 0/44). The English questions 6 and 7 got 0 of 4 answers naming us; the leaders, First Page Sage and Otterly.AI, were named by 2 engines each.</p>
+<ul>
+<li><strong lang="zh-Hant">位置：常見問題第 1 題的答案（頁面與 FAQ 結構化資料）</strong><strong lang="en">Where: answer to FAQ 1 (page and FAQ schema)</strong><span class="ba was"><b>Before</b>…records which answers mention you and which competitors they recommend, and lists what to improve on your site first.</span><span class="ba now"><b>After</b>…records which answers mention you and which competitors they recommend, and lists what to improve on your site first. As of November 2026, it checks 8 client websites every day.</span></li>
+</ul>
+<p lang="zh-Hant">新增的部分在預覽頁上以黃色標出。</p><p lang="en">The new part is yellow on the preview.</p>
+<div class="links"><a href="/pending/en-engine-sites/#faq" target="_blank" rel="noopener">預覽 Preview</a><a href="/en/ai-visibility-engine/" target="_blank" rel="noopener">目前的版本 Current</a></div>
+</div>
+
+<div class="item" data-item="LINE AI page (中文): FAQ「診所或事務所可以用 AI 自動回覆 LINE 嗎？」" data-type="section" data-page="LINE AI customer service" data-page-zh="LINE 官方帳號＋AI 客服" data-status="review">
+<h3>LINE AI page (中文): FAQ「診所或事務所可以用 AI 自動回覆 LINE 嗎？」</h3>
+<p lang="zh-Hant">在 /line-ai/ 常見問題第 2 題新增一題，問法和 AI 檢測第 9 題一樣。答案只用頁面上已經寫的事實：LINE 內建 AI 說明醫療、法律、金融等業別可能無法使用；我們的方案這些業者都可以用；AI 只依您的資料回答，醫療或法律等專業問題、報價和客訴轉給您。頁面和 FAQ 結構化資料都加上。</p>
+<p lang="en">Adds an FAQ, second on /line-ai/, worded like question 9 of the AI check. The answer uses only facts the page already states: LINE says its built-in AI may not be available to medical, legal and financial businesses; our plans work for them; the AI answers only from your material, and hands medical or legal questions that need professional judgment, quotes and complaints to you. In the page and the FAQ schema.</p>
+<p lang="zh-Hant">原因：2026-11-18 的 AI 檢測第 9 題「診所或事務所想用 AI 自動回覆 LINE 客人的訊息，有推薦的廠商嗎？」，4 個回答都沒有提到我們（0/4），最常被提到的是 Omnichat（2 個 AI）。被引用的 BotBonnie 頁面有一整節「看 AI 客服在你的產業怎麼工作」；我們的頁面把診所、事務所寫在開頭和比較表，但沒有一題直接回答這個問法。/line-ai/ 在檢測當天才上線，AI 可能還沒讀到，所以下次檢測才看得出效果。</p>
+<p lang="en">Why: the 2026-11-18 AI check, question 9 "診所或事務所想用 AI 自動回覆 LINE 客人的訊息，有推薦的廠商嗎？": none of the 4 answers named us (0/4); Omnichat was named most (2 engines). The BotBonnie page AI cited has a whole section on how AI customer service works in each industry; our page mentions clinics and firms in the intro and the comparison table, but no FAQ answers this question directly. /line-ai/ went live the day of the check, so AI may not have read it yet; the next check will show the effect.</p>
+<ul>
+<li><strong lang="zh-Hant">位置：常見問題第 2 題（頁面與 FAQ 結構化資料）</strong><strong lang="en">Where: FAQ, item 2 (page and FAQ schema)</strong><span class="ba was"><b>Before</b>（無）</span><span class="ba now"><b>After</b>診所或事務所可以用 AI 自動回覆 LINE 客人的訊息嗎？可以。LINE 官方帳號內建的 AI 聊天機器人，LINE 說明醫療、法律、金融等業別可能無法使用；我們的方案診所、事務所和金融相關業者都可以用。AI 只根據您提供的資料回答客人常問的問題；需要專業判斷的醫療或法律問題、報價和客訴，AI 不自己回答，會通知您接手。</span></li>
+</ul>
+<p lang="zh-Hant">新增的部分在預覽頁上以黃色標出，預覽會自動打開這一題。</p><p lang="en">The new part is yellow on the preview, which opens at that question.</p>
+<div class="links"><a href="/pending/line-ai-clinic-faq/#faq" target="_blank" rel="noopener">預覽 Preview</a><a href="/line-ai/" target="_blank" rel="noopener">目前的版本 Current</a></div>
 </div>
 
 </div>

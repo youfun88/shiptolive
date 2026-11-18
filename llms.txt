@@ -102,6 +102,7 @@ Own products: Tally (https://www.tallybillable.com/), a billable-time and invoic
 
 - AI 搜尋優化指南 (plain-language guide to GEO, AEO and SEO for small businesses): https://www.shiptolive.com/geo-guide/ · English: https://www.shiptolive.com/en/geo-guide/
 - [How a small business gets recommended by ChatGPT and Google AI Overviews](https://www.shiptolive.com/en/ai-search/geo-for-small-business/) (English): Ship to Live checks whether ChatGPT, Gemini, Claude, Perplexity and Google AI Overviews name your business, then improves your website so they can, month after month. Start with a free AI visibility check; plans from NT$3,900 (about US$120) a month.
+- [How to check whether ChatGPT and Gemini recommend your business](https://www.shiptolive.com/en/ai-search/check-ai-visibility/) (English): ask ChatGPT, Gemini, Claude and Perplexity the 5 questions your customers ask, and write down whether each one names you, which competitors it recommends and which websites it cites. Repeat the same questions every month to see what changes.
 
 ## 中文摘要
 
