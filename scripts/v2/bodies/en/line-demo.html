@@ -1,0 +1,149 @@
+<!--
+title: Try LINE AI Customer Service Free: Enter Your Q&A, Ask on LINE | Ship to Live
+description: A free demo of our LINE Official Account with 24/7 AI customer service. Pick an industry or describe your business, edit the Q&A, tone and demo inventory, get a demo code, and ask the AI on LINE or on this page. Demo data is deleted after 24 hours.
+crumb: Free demo
+mcta: See plans and prices|/en/line-ai/#pricing
+css: x-line-demo.css
+js: x-line-demo.js
+crumbs: [["Home", "/en/"], ["LINE AI customer service", "/en/line-ai/"], ["Free demo", "/en/line-ai/demo/"]]
+ld: [{"@type": "WebApplication", "@id": "https://www.shiptolive.com/en/line-ai/demo/#app", "name": "LINE AI customer service free demo", "url": "https://www.shiptolive.com/en/line-ai/demo/", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "inLanguage": "en", "isAccessibleForFree": true, "provider": {"@id": "https://www.shiptolive.com/#org"}, "isPartOf": {"@id": "https://www.shiptolive.com/line-ai/#service"}, "description": "A demo of LINE Official Account with 24/7 AI customer service: visitors enter or generate Q&A, a tone guide and a demo inventory, get a 4-digit demo code, and ask the AI on a demo LINE Official Account or on the page. Demo data only, deleted after 24 hours."}]
+-->
+<section class="hero page ld-hero" aria-labelledby="h1">
+  <div class="wrap">
+    <p class="crumbs"><a href="/en/">Home</a> / <a href="/en/line-ai/">LINE AI customer service</a> / Free demo</p>
+    <h1 id="h1">Try it free: enter your Q&amp;A, <span class="ph">then ask on LINE</span></h1>
+    <p class="lede">Pick an industry, or describe your business in a sentence or two, and we draft the common questions and answers (Q&amp;A) for you. Press "Start the demo" and ask the AI like a customer would, on LINE on your phone or right on this page.</p>
+    <ol class="ld-steps" id="ld-steps" aria-label="Demo steps">
+      <li data-s="1"><b>Pick an industry</b><span>Use a sample, or describe your business</span></li>
+      <li data-s="2"><b>Start the demo</b><span>Get a code, ask on LINE or here</span></li>
+      <li data-s="3"><b>Make it yours</b><span>Edit questions, answers and tone, then try again</span></li>
+    </ol>
+    <p class="ld-demo-note"><span class="ld-badge">Demo</span>Please use made-up business details, not personal information. Everything is deleted after 24 hours.</p>
+  </div>
+</section>
+
+<section class="sec alt ld-main" id="build" aria-labelledby="b-h">
+  <div class="wrap ld-grid">
+    <div class="ld-pickbox">
+      <h2 class="h2" id="b-h"><span class="ld-n">1</span>Pick an industry</h2>
+      <form class="ld-pick" id="ld-pick" novalidate>
+        <fieldset>
+          <legend class="sr">Sample industries</legend>
+          <div class="ld-chips">
+            <label><input type="radio" name="preset" value="bakery" checked><span>Bakery</span></label>
+            <label><input type="radio" name="preset" value="dental"><span>Dental clinic</span></label>
+            <label><input type="radio" name="preset" value="cram"><span>Tutoring center</span></label>
+            <label><input type="radio" name="preset" value="custom"><span>Other: describe my business</span></label>
+          </div>
+        </fieldset>
+        <label class="fld ld-custom" hidden><span>Describe your business in a sentence or two</span><textarea name="description" rows="3" maxlength="300" enterkeyhint="done" placeholder="For example: a bubble tea shop in Taichung. We deliver, we're closed Tuesdays, and we take group orders of 20 cups or more."></textarea></label>
+        <div class="hp" aria-hidden="true"><input name="_honey" tabindex="-1" autocomplete="off"></div>
+        <div class="ld-row">
+          <button class="pill" type="submit" id="ld-gen">Write my Q&amp;A</button>
+          <p class="ld-status" id="ld-gen-status" role="status" aria-live="polite">Sample Bakery is filled in below. You can start the demo right away.</p>
+        </div>
+      </form>
+    </div>
+
+    <aside class="ld-side" aria-labelledby="s-h">
+      <div class="ld-start" id="ld-start">
+        <h2 class="h2" id="s-h"><span class="ld-n">2</span>Start the demo</h2>
+        <p class="ld-help">We set up a demo AI assistant from the content below and give you a 4-digit demo code. It works for 24 hours. If you edit the content later, press the button again.</p>
+        <button class="pill orange" type="button" id="ld-go">Start the demo</button>
+        <p class="ld-status" id="ld-go-status" role="status" aria-live="polite"></p>
+        <div class="ld-code" id="ld-code" hidden tabindex="-1" aria-labelledby="ld-code-l">
+          <div class="ld-code-top">
+            <span id="ld-code-l">Your demo code</span>
+            <b id="ld-code-n">----</b>
+            <button class="ld-copy" type="button" id="ld-copy" aria-describedby="ld-code-n">Copy</button>
+            <small id="ld-code-exp"></small>
+          </div>
+          <a class="pill line" id="ld-line" href="https://line.me/R/ti/p/{{DEMO_OA_ID}}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11.1c0 4 3.6 7.4 8.4 8 .3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.5-1.6 2.2-3.2 2.2-4.9C22 6.6 17.5 3 12 3z"/></svg>Open the demo account in LINE</a>
+          <button class="pill ghost" type="button" id="ld-to-chat">Skip LINE, ask on this page</button>
+          <figure class="ld-qrf">
+            <div class="ld-qr" id="ld-qr" role="img" aria-label="QR code: scan with LINE on your phone to open the demo account with your demo code typed in"></div>
+            <figcaption>Reading this on a computer? Scan this QR code with LINE on your phone.</figcaption>
+          </figure>
+          <ol class="ld-how">
+            <li>Add our demo account, 夏裕 AI 客服體驗, as a friend. Its welcome message is in Chinese. The next step switches the demo to English.</li>
+            <li>Send the message that's already typed in: "Demo code <span class="ld-code-inline">----</span>". If it isn't there, press "Copy", paste it and send.</li>
+            <li>Ask what a customer would ask. The AI answers from this Q&amp;A and tone, in the language you write in.</li>
+          </ol>
+        </div>
+      </div>
+
+      <figure class="lc ld-chat" id="ld-chat" aria-labelledby="ld-chat-cap">
+        <div class="lc-ph">
+          <div class="lc-top"><span class="lc-av" id="ld-av" aria-hidden="true">B</span><b id="ld-name">Sample Bakery</b><span class="lc-oa">Demo</span></div>
+          <div class="lc-body ld-log" id="ld-log" role="log" aria-live="polite" aria-label="Web demo chat">
+            <span class="lc-day">Web demo</span>
+            <p class="ld-empty" id="ld-empty">Press "Start the demo" above, then ask questions here like a customer would.</p>
+          </div>
+          <div class="ld-sugg" id="ld-sugg" hidden><span>Try:</span></div>
+          <form class="ld-in" id="ld-ask" novalidate>
+            <label class="sr" for="ld-q">Type a message</label>
+            <input id="ld-q" name="q" maxlength="300" placeholder="Press &quot;Start the demo&quot; first" autocomplete="off" enterkeyhint="send" disabled>
+            <div class="hp" aria-hidden="true"><input name="_honey" tabindex="-1" autocomplete="off"></div>
+            <button type="submit" id="ld-send" disabled aria-label="Send"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-8-6 16-2.5-6.5z"/></svg></button>
+          </form>
+        </div>
+        <figcaption id="ld-chat-cap">Web demo: answers with the same setup as on LINE (demo)</figcaption>
+      </figure>
+    </aside>
+
+    <div class="ld-edit" id="ld-edit">
+      <h2 class="h2" id="e-h"><span class="ld-n">3</span>Make it yours<small>Optional</small></h2>
+      <p class="ld-help ld-lead">The AI answers only from what's here. After editing, press "Start the demo" again to use the new content.</p>
+      <div class="ld-card">
+        <label class="fld"><span>About the business</span><input id="ld-business" maxlength="300"></label>
+      </div>
+
+      <div class="ld-card">
+        <div class="ld-card-h"><h3>Common questions and answers</h3><span class="ld-count" id="ld-qa-count"></span></div>
+        <p class="ld-help">How customers might ask, and how you want the AI to answer. For questions marked "Hand off" (quotes or complaints, for example), the AI replies to the customer first, then notifies you to reply yourself.</p>
+        <div class="ld-qa" id="ld-qa" role="list"></div>
+        <button class="pill ghost sm" type="button" id="ld-qa-add">+ Add a question</button>
+      </div>
+
+      <div class="ld-card">
+        <div class="ld-card-h"><h3>Tone</h3></div>
+        <label class="fld"><span>How to talk to customers</span><textarea id="ld-style" rows="2" maxlength="300"></textarea></label>
+        <div class="ld-ex-h"><b>Example replies</b><span class="ld-count" id="ld-ex-count"></span></div>
+        <p class="ld-help">The AI copies the voice of these replies. When you go live on the Standard plan, we use 20 to 50 replies you've written yourself.</p>
+        <div class="ld-ex" id="ld-ex"></div>
+        <button class="pill ghost sm" type="button" id="ld-ex-add">+ Add an example</button>
+      </div>
+
+      <div class="ld-card">
+        <div class="ld-card-h"><h3>Demo inventory / open slots</h3><span class="ld-count" id="ld-inv-count"></span></div>
+        <p class="ld-help">When a customer asks "Do you still have any?" or "Any openings Saturday?", the AI checks this table. 0 means sold out or full. Leave the number empty if the owner needs to check. When you go live, this can connect to a Google Sheet, POS or booking system (add-on).</p>
+        <div class="ld-inv" id="ld-inv"></div>
+        <button class="pill ghost sm" type="button" id="ld-inv-add">+ Add an item</button>
+      </div>
+      <p class="ld-again"><a class="tlink" href="#ld-start" id="ld-again">Done editing? Back to "Start the demo"</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="notes" aria-labelledby="n-h">
+  <div class="wrap why-split">
+    <div>
+      <h2 class="h2" id="n-h">About this demo</h2>
+      <p class="lede" style="margin-top:14px">The demo answers the same way our live service does. It skips the steps we take before launch: we organize the Q&amp;A with you, test it question by question on real questions, and set up hand-off emails.</p>
+      <div class="btns ld-btns">
+        <a class="pill" href="/en/line-ai/#pricing">See plans and prices</a>
+        <a class="pill ghost" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">Book a free 20-minute call</a>
+      </div>
+    </div>
+    <ul class="why-list">
+      <li><b>Replies in your language</b><p>The AI answers in the language you write in. Ask in English and it answers in English, even if the Q&amp;A is in Chinese. The demo's own notes on LINE are in English when your code comes from this page.</p></li>
+      <li><b>Kept for 24 hours only</b><p>What you enter and the chat are used only for this demo. After 24 hours the code stops working and the data is deleted. We don't collect names, phone numbers or emails.</p></li>
+      <li><b>Please use made-up details</b><p>This is a public demo. Don't enter personal information, passwords or anything you want to keep private.</p></li>
+      <li><b>Hand-off is only shown</b><p>When the AI hands a chat to a person in the demo, it shows a note that the owner would be notified. No email is sent.</p></li>
+      <li><b>Usage limits</b><p>To prevent abuse, each network can generate, start and ask only a limited number of times per hour.</p></li>
+      <li><b>The AI can still get things wrong</b><p>It answers only from what you entered, but an answer can still miss. After launch, we read real chats every month and add to your Q&amp;A.</p></li>
+    </ul>
+  </div>
+</section>
+
+<script>window.LINE_DEMO = { api: '{{DEMO_API}}', oa: '{{DEMO_OA_ID}}' };</script>
