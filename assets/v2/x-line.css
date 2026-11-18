@@ -145,3 +145,7 @@
 .la-launch span { font-size: 14.5px; line-height: 1.6; }
 .la-setup s { color: var(--muted, #6b6762); }
 .la-off { color: #058a3b; font-weight: 700; margin-left: 4px; }
+
+.la-addon-p { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 6px; font-size: 14.5px; line-height: 1.6; }
+.la-addon-p b { margin-right: 8px; }
+.la-addon .la-addon-n { font-size: 13.5px; margin-top: 10px; }
