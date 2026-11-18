@@ -191,6 +191,11 @@
 .la-oa-p b { font: 800 28px/1.1 var(--sans); }
 .la-oa-p span { font-size: 14px; color: var(--ink3); }
 .la-oa-p .tlink { margin-top: 6px; font-size: 15px; }
+.la-oa.la-ent { background: #fff; border: 1px solid var(--hair); scroll-margin-top: 90px; }
+.la-mac p + p { margin-top: 8px; }
+.la-kb { margin: 32px 0 0; padding: 18px 22px; border-radius: 18px; background: var(--bg2); display: grid; gap: 6px; max-width: 860px; }
+.la-kb b { font: 700 17px/1.45 var(--sans); }
+.la-kb span { font-size: 15px; line-height: 1.7; color: var(--ink2); }
 @media (max-width: 1000px) { .la-plans.la-3 { grid-template-columns: 1fr 1fr; } .la-plans.la-3 .la-plan.hot { grid-column: 1 / -1; } }
 @media (max-width: 760px) { .la-plans.la-3 { grid-template-columns: 1fr; } .la-oa { flex-direction: column; align-items: flex-start; } .la-oa .la-oa-p { justify-items: start; text-align: left; } }
 
