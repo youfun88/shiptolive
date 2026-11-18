@@ -15,8 +15,8 @@ import json, re, sys, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = pathlib.Path(sys.argv[1])
 BASE = 'https://www.shiptolive.com'
-V = '66'
-# LINE AI demo (/line-ai/demo/): the demo LINE Official Account 「夏裕 AI 客服體驗」 and the admin API it talks to.
+V = '67'
+# LINE AI demo (/line-ai/demo/, /en/line-ai/demo/): the demo LINE Official Account 「夏裕 AI 客服體驗」 and the admin API it talks to.
 DEMO_OA_ID = '@372xwcta'
 DEMO_API = 'https://admin.shiptolive.com'
 CSS = ''
@@ -28,7 +28,7 @@ PAGES = {  # slug -> (zh path, en path)
     'seo-aeo-geo': ('/seo-aeo-geo/', '/en/seo-aeo-geo/'),
     'engine': ('/ai-visibility-engine/', '/en/ai-visibility-engine/'),
     'line-ai': ('/line-ai/', '/en/line-ai/'),
-    'line-demo': ('/line-ai/demo/', '/en/line-ai/'),  # zh only: try-it-yourself demo of the LINE AI service; the EN switch goes to the EN LINE AI page
+    'line-demo': ('/line-ai/demo/', '/en/line-ai/demo/'),  # try-it-yourself demo of the LINE AI service (x-line-demo.js reads <html lang>)
     'articles': ('/ai-search/', '/en/'),
     'about': ('/about/', '/en/about/'),
 }
