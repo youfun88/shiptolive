@@ -135,3 +135,7 @@
 .la-tag { position: absolute; top: -12px; right: 22px; background: #06c755; color: #fff; font: 700 12.5px/1 var(--sans); padding: 6px 12px; border-radius: 999px; }
 .la-note { grid-column: 1 / -1; font-size: 13.5px; color: var(--muted, #6b6762); line-height: 1.7; margin: 4px 0 0; }
 @media (max-width: 760px) { .la-plans { grid-template-columns: 1fr; } }
+
+.la-addon { grid-column: 1 / -1; background: #fff; border: 1px dashed var(--hair); border-radius: 18px; padding: 18px 22px; }
+.la-addon b { font: 700 16px/1.4 var(--sans); }
+.la-addon p { margin: 6px 0 0; font-size: 14.5px; line-height: 1.7; color: var(--muted, #6b6762); }
