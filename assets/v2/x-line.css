@@ -119,3 +119,19 @@
 
 /* pricing */
 .la-btns { margin-top: 24px; flex-wrap: wrap; }
+
+/* /line-ai/ plans */
+.la-plans { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
+.la-plan { position: relative; background: #fff; border: 1px solid var(--hair); border-radius: 22px; padding: 28px 26px 24px; }
+.la-plan.hot { border: 2px solid #06c755; }
+.la-plan h3 { font: 700 22px/1.3 var(--sans); margin: 0 0 6px; }
+.la-for { color: var(--muted, #6b6762); font-size: 14.5px; margin: 0 0 18px; }
+.la-price { margin: 0; display: flex; align-items: baseline; gap: 4px; }
+.la-price b { font: 800 38px/1 var(--sans); letter-spacing: -.01em; }
+.la-price span { color: var(--muted, #6b6762); font-size: 15px; }
+.la-setup { margin: 8px 0 18px; font-size: 14.5px; color: var(--muted, #6b6762); }
+.la-plan ul { list-style: none; padding: 16px 0 0; margin: 0; border-top: 1px solid var(--hair); display: grid; gap: 9px; font-size: 15px; }
+.la-plan li::before { content: "✓"; color: #06c755; font-weight: 700; margin-right: 8px; }
+.la-tag { position: absolute; top: -12px; right: 22px; background: #06c755; color: #fff; font: 700 12.5px/1 var(--sans); padding: 6px 12px; border-radius: 999px; }
+.la-note { grid-column: 1 / -1; font-size: 13.5px; color: var(--muted, #6b6762); line-height: 1.7; margin: 4px 0 0; }
+@media (max-width: 760px) { .la-plans { grid-template-columns: 1fr; } }

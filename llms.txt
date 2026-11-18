@@ -48,7 +48,7 @@ For shops, clinics, cram schools, professional firms and B2B companies in Taiwan
 - Included: LINE Official Account setup (profile, welcome message, hours), the AI knowledge base, hand-off emails, a lead log of new chats in the 夏裕科技 admin, and a monthly Q&A tune-up based on real chats.
 - What the business provides: common questions with standard answers, services and public prices, hours and address, booking or ordering steps, return and cancellation rules, which cases must go to a person, brand tone, and things the AI must not say. 夏裕科技 can draft the first Q&A from the website, menu, price list or past chats.
 - Live demo: 夏裕科技's own LINE Official Account runs this exact setup: https://line.me/R/ti/p/@680uqtou
-Pricing: quoted by the number of Q&A entries and integration needs; consultation is free.
+Pricing: 輕量 (Light) NT$2,490/month with NT$9,900 setup (up to 40 Q&A, about 300 conversations a month, quarterly Q&A review); 標準 (Standard, recommended) NT$4,900/month with NT$19,900 setup (up to 150 Q&A, about 1,000 conversations a month, monthly Q&A tune-up from real chats). 6-month contracts, prices before 5% VAT; the business pays LINE directly (most stay on LINE's free plan, since AI replies use free reply messages). AI search optimization clients get half-price setup and 10% off monthly. Consultation is free.
 
 ## Product: 夏裕 AI 曝光引擎 (Ship to Live AI Visibility Engine)
 https://www.shiptolive.com/en/ai-visibility-engine/ · 中文: https://www.shiptolive.com/ai-visibility-engine/
@@ -110,7 +110,7 @@ Own products: Tally (https://www.tallybillable.com/), a billable-time and invoic
 2. 客製化軟體開發：企業系統開發、App 開發、預約與會員平台、系統整合、既有系統維護、AI 流程自動化；先把需求談清楚，分階段開發，依專案報價。https://www.shiptolive.com/software/
 3. AI 搜尋優化（AEO／GEO）：AI 曝光檢測、AEO／GEO 優化、競爭同業分析、網站內容優化、成效追蹤。沒有人能保證特定平台一定推薦或排名一定提升；我們持續量測、改善並記錄變化。https://www.shiptolive.com/seo-aeo-geo/
 
-新服務：LINE 官方帳號＋AI 24 小時客服。幫店家、診所、補習班、事務所與 B2B 業者開好 LINE 官方帳號（或接上現有帳號），把企業自己的 Q&A 整理成 AI 知識庫：AI 幾秒內用客人的語言回答，只根據企業公開的資訊；報價、合約、付款、客訴或客人要找真人時，通知負責人並寄 Email（附對話內容），負責人可用 LINE 官方帳號 App 或 chat.line.biz 回覆。費用依問答數量與串接需求報價，諮詢免費。夏裕科技自己的 LINE 官方帳號就是這套設定：https://line.me/R/ti/p/@680uqtou 。https://www.shiptolive.com/line-ai/
+新服務：LINE 官方帳號＋AI 24 小時客服。幫店家、診所、補習班、事務所與 B2B 業者開好 LINE 官方帳號（或接上現有帳號），把企業自己的 Q&A 整理成 AI 知識庫：AI 幾秒內用客人的語言回答，只根據企業公開的資訊；報價、合約、付款、客訴或客人要找真人時，通知負責人並寄 Email（附對話內容），負責人可用 LINE 官方帳號 App 或 chat.line.biz 回覆。方案：輕量 NT$2,490／月（首次設定 NT$9,900）、標準 NT$4,900／月（首次設定 NT$19,900），6 個月合約，未稅；諮詢免費。夏裕科技自己的 LINE 官方帳號就是這套設定：https://line.me/R/ti/p/@680uqtou 。https://www.shiptolive.com/line-ai/
 
 主推系統：夏裕 AI 曝光引擎，夏裕科技自主研發的 AI 搜尋分析與網站優化管理系統。功能：AI 曝光檢測、競爭同業分析、網站優化建議、專屬成效後台、內容審核、循環偵測（AI 回答每月檢測一次，網站每天檢查）。監測、分析、建議、審核、線上追蹤五個步驟持續循環。https://www.shiptolive.com/ai-visibility-engine/
 
