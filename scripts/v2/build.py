@@ -15,7 +15,7 @@ import json, re, sys, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = pathlib.Path(sys.argv[1])
 BASE = 'https://www.shiptolive.com'
-V = '70'
+V = '71'
 # LINE AI demo (/line-ai/demo/, /en/line-ai/demo/): the demo LINE Official Account 「夏裕 AI 客服體驗」 and the admin API it talks to.
 DEMO_OA_ID = '@372xwcta'
 DEMO_API = 'https://admin.shiptolive.com'
@@ -55,7 +55,7 @@ def p(lang, slug):
     return PAGES[slug][0 if lang == 'zh' else 1]
 
 
-def header(lang, slug):
+def header(lang, slug, other_href=None):
     t = L[lang]
     other = 'en' if lang == 'zh' else 'zh'
     cur = lambda s: ' aria-current="page"' if s == slug else ''
@@ -78,7 +78,7 @@ def header(lang, slug):
       {'<a href="/ai-search/"' + (' aria-current="page"' if slug == 'articles' else '') + '>知識庫</a>' if lang == 'zh' else ''}
       <a href="{p(lang,'about')}"{cur('about')}>{t['about']}</a>
       <a href="{p(lang,'home')}#contact">{t['contact']}</a>
-      <a class="lang" href="{p(other,slug)}" hreflang="{L[other]['htmllang']}" lang="{L[other]['htmllang']}" aria-label="{t['other_label']}">{t['other']}</a>
+      <a class="lang" href="{other_href or p(other,slug)}" hreflang="{L[other]['htmllang']}" lang="{L[other]['htmllang']}" aria-label="{t['other_label']}">{t['other']}</a>
       <a class="pill sm orange cta-m" href="{p(lang,'engine')}#check">{t['cta']}</a>
     </nav>
     <a class="pill sm orange cta" href="{p(lang,'engine')}#check">{t['cta']}</a>
@@ -168,8 +168,10 @@ def head(lang, slug, meta):
     graph += meta.get('ld', [])
     ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=1)
     og = BASE + meta.get('og', f"/assets/img/og-{'en' if lang == 'en' else 'zh'}.png?v=1")
-    alts = (f'<link rel="alternate" hreflang="zh-Hant" href="{zh_url}">\n<link rel="alternate" hreflang="x-default" href="{zh_url}">' if meta.get('zh_only') else
-            f'<link rel="alternate" hreflang="en" href="{url}">\n<link rel="alternate" hreflang="x-default" href="{url}">' if meta.get('en_only') else
+    if meta.get('pair'):  # a page with its own zh/en counterpart outside PAGES (e.g. /line-ai/guide/ and /en/line-ai/guide/)
+        zh_url, en_url = (url, BASE + meta['pair']) if lang == 'zh' else (BASE + meta['pair'], url)
+    alts = (f'<link rel="alternate" hreflang="zh-Hant" href="{zh_url}">\n<link rel="alternate" hreflang="x-default" href="{zh_url}">' if meta.get('zh_only') and not meta.get('pair') else
+            f'<link rel="alternate" hreflang="en" href="{url}">\n<link rel="alternate" hreflang="x-default" href="{url}">' if meta.get('en_only') and not meta.get('pair') else
             f'<link rel="alternate" hreflang="zh-Hant" href="{zh_url}">\n<link rel="alternate" hreflang="en" href="{en_url}">\n<link rel="alternate" hreflang="x-default" href="{zh_url}">')
     robots = '<meta name="robots" content="noindex, nofollow">\n' if meta.get('draft') else ''
     # Page-only stylesheet (front-matter css: x-line-demo.css), so one page's styles don't ride along in every page's inline CSS.

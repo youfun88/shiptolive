@@ -13,6 +13,9 @@ date: 2026-11-13
 hero: /assets/v2/img/ai-search/<slug>.svg
 hero_alt: <alt text>
 draft: true                            (noindex, kept out of sitemap; remove the line to publish)
+section: line                          (optional: an article that belongs to another service, see SECTIONS: own URL via
+path: /line-ai/guide/                   `path`, that service's breadcrumb, related links and CTA; `pair` = the other
+pair: /en/line-ai/guide/                language's path, for hreflang and the language switch)
 ld: [ ...extra JSON-LD objects, e.g. FAQPage... ]
 -->
 then the article body HTML (sections with <h2>, paragraphs, figures, tables, the FAQ <section class="faq">).
@@ -49,12 +52,36 @@ def reading_minutes(html):
     return max(3, round(cjk / 450 + words / 220))
 
 
+# Articles about another service (front-matter `section:`): breadcrumb parent, Article "about", related links, end CTA.
+_LINE_BTN = '<a class="pill" href="{demo}">{try_} <span class="arr" aria-hidden="true">→</span></a><a class="pill cta-ghost" href="https://line.me/R/ti/p/@680uqtou" target="_blank" rel="noopener">{line}</a>'
+SECTIONS = {
+    'line': {
+        'zh': dict(parent=('LINE 官方帳號＋AI 客服', '/line-ai/'), about='/line-ai/#service',
+                   related=[('/line-ai/', 'LINE 官方帳號＋AI 24 小時客服', '方案、價格、AI 會做與不會做的事，以及 LINE 內建 AI 和我們的比較。'),
+                            ('/line-ai/demo/', '免費體驗 LINE AI 客服', '選您的行業，拿一組體驗碼，用 LINE 或網頁問 AI。不用留資料。'),
+                            ('/ai-search/clinics/', '診所怎麼讓 AI 推薦？', '病患問 ChatGPT 找診所時，怎麼讓 AI 找到您。')],
+                   cta=('想先看看 AI 怎麼回答 <span class="you-tag">您的客人</span>？', '用免費體驗輸入您的問答，拿體驗碼在 LINE 上直接問 AI；或加我們的 LINE 官方帳號 @680uqtou，問問看我們自己的 AI 客服。',
+                        _LINE_BTN.format(demo='/line-ai/demo/', try_='免費體驗 LINE AI 客服', line='加 LINE @680uqtou'))),
+        'en': dict(parent=('LINE AI customer service', '/en/line-ai/'), about='/line-ai/#service',
+                   related=[('/en/line-ai/', 'LINE Official Account + 24/7 AI customer service', 'Plans, prices, what the AI does and doesn\'t do, and how it compares with LINE\'s built-in AI.'),
+                            ('/en/line-ai/demo/', 'Try the LINE AI assistant free', 'Pick your industry, get a code, and ask the AI on LINE or on the page. No sign-up.'),
+                            ('/en/ai-search/geo-for-small-business/', 'Get recommended by ChatGPT', 'How a small business gets named by AI assistants and Google AI Overviews.')],
+                   cta=('See how the AI would answer <span class="you-tag">your customers</span>', 'Enter your own Q&amp;A in the free demo and ask the AI on LINE, or add our LINE Official Account @680uqtou and try our own assistant.',
+                        _LINE_BTN.format(demo='/en/line-ai/demo/', try_='Try it free', line='Add us on LINE @680uqtou'))),
+    },
+}
+
+
+def url_of(a, lang='zh'):
+    return a.get('path') or (f'{HUB}{a["slug"]}/' if lang == 'zh' else f'/en/ai-search/{a["slug"]}/')
+
+
 def row(a):
-    return f'<li><a href="{HUB}{a["slug"]}/"><b>{a["h1"]}</b><span>{a.get("dek", "")}</span></a></li>'
+    return f'<li><a href="{url_of(a)}"><b>{a["h1"]}</b><span>{a.get("dek", "")}</span></a></li>'
 
 
 def card(a):
-    return (f'<a class="card acard" href="{HUB}{a["slug"]}/"><img class="card-art" src="{a["hero"]}" width="1200" height="630" alt="" loading="lazy">'
+    return (f'<a class="card acard" href="{url_of(a)}"><img class="card-art" src="{a["hero"]}" width="1200" height="630" alt="" loading="lazy">'
             f'<span class="acat">{a.get("category", "")}</span><h3>{a["h1"]}</h3><p>{a.get("dek", "")}</p></a>')
 
 
@@ -71,7 +98,8 @@ def run_en(b):
     if not src.exists():
         return
     for a in sorted((parse(f) for f in src.glob('*.html')), key=lambda a: (a['order'], a['slug'])):
-        url = f'/en/ai-search/{a["slug"]}/'
+        url = url_of(a, 'en')
+        sec = SECTIONS.get(a.get('section', ''), {}).get('en')
         mins = reading_minutes(a['body'])
         og = a.get('og') or (re.sub(r'\.svg$', '-og.png', a['hero']) if a.get('hero') else '/assets/img/og-en.png?v=1')
         article_ld = {
@@ -79,12 +107,13 @@ def run_en(b):
             "inLanguage": "en", "datePublished": a['date'], "dateModified": a.get('updated', a['date']),
             "image": b.BASE + og.split('?')[0], "mainEntityOfPage": b.BASE + url,
             "author": {"@id": b.BASE + "/#yufan"}, "publisher": {"@id": b.BASE + "/#org"},
-            "about": [{"@id": b.BASE + "/seo-aeo-geo/#service"}],
+            "about": [{"@id": b.BASE + (sec['about'] if sec else "/seo-aeo-geo/#service")}],
         }
+        parent = sec['parent'] if sec else ('AI Search Optimization', '/en/seo-aeo-geo/')
         meta = {
             'title': a['title'], 'description': a['description'], 'path': url, 'en_only': True, 'draft': a['draft'],
-            'og': og, 'og_type': 'article',
-            'crumbs': [('Home', '/en/'), ('AI Search Optimization', '/en/seo-aeo-geo/'), (a['h1'], url)],
+            'og': og, 'og_type': 'article', 'pair': a.get('pair'),
+            'crumbs': [('Home', '/en/'), parent, (a['h1'], url)],
             'ld': [article_ld] + a.get('ld', []),
         }
         body_html = a['body']
@@ -104,13 +133,17 @@ def run_en(b):
         d = a['date'] if not a.get('updated') else a['updated']
         import datetime
         dtxt = datetime.date.fromisoformat(d).strftime('%B %-d, %Y')
-        rel = ''.join(f'<li><a href="{u}"><b>{n}</b><span>{s}</span></a></li>' for u, n, s in EN_RELATED)
+        rel = ''.join(f'<li><a href="{u}"><b>{n}</b><span>{s}</span></a></li>' for u, n, s in (sec['related'] if sec else EN_RELATED))
+        cta_h, cta_p, cta_btns = sec['cta'] if sec else (
+            'Does AI recommend <span class="you-tag">your business</span>?',
+            "A free check: we ask ChatGPT, Gemini and other AI assistants your customers' questions and tell you whether they name you, which competitors they recommend, and what to fix first. Reply in 1–2 business days, or book a 20-minute call.",
+            '<a class="pill" href="/en/ai-visibility-engine/#check">Request a free AI visibility check <span class="arr" aria-hidden="true">→</span></a><a class="pill cta-ghost" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">Book a free 20-minute call</a>')
         body = f'''<div class="readbar" aria-hidden="true"><i></i></div>
 <script>(function(){{var b=document.querySelector('.readbar i'),a=document.querySelector('.post-body');if(!b||!a)return;var t=0;function u(){{t=0;var r=a.getBoundingClientRect(),h=r.height-innerHeight*.6,p=h>0?Math.min(1,Math.max(0,-r.top/h)):1;b.style.transform='scaleX('+p+')';}}addEventListener('scroll',function(){{if(!t)t=requestAnimationFrame(u);}},{{passive:true}});u();}})();</script>
 <article class="post">
   <div class="wrap post-grid">
     <header class="post-head">
-      <p class="crumbs"><a href="/en/">Home</a> / <a href="/en/seo-aeo-geo/">AI Search Optimization</a> / {a.get('category', '')}</p>
+      <p class="crumbs"><a href="/en/">Home</a> / <a href="{parent[1]}">{parent[0]}</a> / {a.get('category', '')}</p>
       <h1 id="h1">{a['h1']}</h1>
       <p class="dek">{a.get('dek', '')}</p>
       <p class="post-meta"><time datetime="{d}">Updated {dtxt}</time> · {mins} min read</p>
@@ -123,15 +156,15 @@ def run_en(b):
       <h2 class="h2" id="rel-h">Related</h2>
       <ul class="aindex">{rel}</ul>
       <div class="cta-box end-cta">
-        <div><h3>Does AI recommend <span class="you-tag">your business</span>?</h3><p>A free check: we ask ChatGPT, Gemini and other AI assistants your customers' questions and tell you whether they name you, which competitors they recommend, and what to fix first. Reply in 1–2 business days, or book a 20-minute call.</p></div>
-        <div class="btns"><a class="pill" href="/en/ai-visibility-engine/#check">Request a free AI visibility check <span class="arr" aria-hidden="true">→</span></a><a class="pill cta-ghost" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">Book a free 20-minute call</a></div>
+        <div><h3>{cta_h}</h3><p>{cta_p}</p></div>
+        <div class="btns">{cta_btns}</div>
       </div>
     </footer>
   </div>
 </article>
 <script>(function(){{var d=document.getElementById('rail-toc');if(d){{var mq=matchMedia('(min-width: 1100px)');var s=function(){{d.open=mq.matches;}};s();mq.addEventListener&&mq.addEventListener('change',s);d.addEventListener('click',function(e){{if(e.target.tagName==='A'&&!mq.matches)d.open=false;}});}}
 var f=document.querySelector('.post-body .faq'),pb=document.querySelector('.post-body'),t=0;function u(){{t=0;var m=document.querySelector('.mcta');if(!m||!pb)return;var r=pb.getBoundingClientRect(),h=r.height,p=h>0?(-r.top+innerHeight)/h:1,ok=p>=.6||(f&&f.getBoundingClientRect().top<innerHeight);m.classList.toggle('late-ok',!!ok);}}addEventListener('scroll',function(){{if(!t)t=requestAnimationFrame(u);}},{{passive:true}});addEventListener('load',u);}})();</script>'''
-        html = b.head('en', 'articles', meta) + b.header('en', 'articles') + '\n<main id="main">\n' + body + '\n</main>\n' + b.footer('en') + \
+        html = b.head('en', 'articles', meta) + b.header('en', 'articles', a.get('pair')) + '\n<main id="main">\n' + body + '\n</main>\n' + b.footer('en') + \
             f'\n<script src="/assets/v2/all.js?v={b.V}" defer></script>\n</body>\n</html>\n'
         out = b.ROOT / url.strip('/') / 'index.html'
         out.parent.mkdir(parents=True, exist_ok=True)
@@ -149,7 +182,8 @@ def run(b):
         return
     css_v = b.V
     for a in arts:
-        url = f'{HUB}{a["slug"]}/'
+        url = url_of(a)
+        sec = SECTIONS.get(a.get('section', ''), {}).get('zh')
         mins = reading_minutes(a['body'])
         og = a.get('og') or re.sub(r'\.svg$', '-og.png', a['hero'])  # og keeps the titled render; on-page SVG has no title text
         article_ld = {
@@ -157,17 +191,25 @@ def run(b):
             "inLanguage": "zh-Hant", "datePublished": a['date'], "dateModified": a.get('updated', a['date']),
             "image": b.BASE + og, "mainEntityOfPage": b.BASE + url,
             "author": {"@id": b.BASE + "/#yufan"}, "publisher": {"@id": b.BASE + "/#org"},
-            "about": [{"@id": b.BASE + "/seo-aeo-geo/#service"}],
+            "about": [{"@id": b.BASE + (sec['about'] if sec else "/seo-aeo-geo/#service")}],
         }
+        parent = sec['parent'] if sec else (HUB_NAME, HUB)
         meta = {
             'title': a['title'], 'description': a['description'], 'path': url, 'zh_only': True, 'draft': a['draft'],
-            'og': og, 'og_type': 'article',
-            'crumbs': [('首頁', '/'), (HUB_NAME, HUB), (a['h1'], url)],
+            'og': og, 'og_type': 'article', 'pair': a.get('pair'),
+            'crumbs': [('首頁', '/'), parent, (a['h1'], url)],
             'ld': [article_ld] + a.get('ld', []),
         }
-        related = [x for x in arts if x is not a and x.get('category') == a.get('category')][:3]
+        geo = [x for x in arts if not x.get('section')]  # related links stay within the AI search guides
+        related = [x for x in geo if x is not a and x.get('category') == a.get('category')][:3]
         if len(related) < 3:
-            related += [x for x in arts if x is not a and x not in related][:3 - len(related)]
+            related += [x for x in geo if x is not a and x not in related][:3 - len(related)]
+        rel_html = (''.join(f'<li><a href="{u}"><b>{n}</b><span>{s}</span></a></li>' for u, n, s in sec['related']) if sec
+                    else ''.join(row(x) for x in related))
+        cta_h, cta_p, cta_btns = sec['cta'] if sec else (
+            'AI 會推薦 <span class="you-tag">您的公司</span> 嗎？',
+            '免費檢測 ChatGPT、Gemini 等 AI 是否提到您、推薦了哪些同業，以及網站最該先改善的地方。1–2 個工作天內回覆；也可以直接預約 20 分鐘線上諮詢。',
+            '<a class="pill" href="/ai-visibility-engine/#check">申請免費 AI 曝光檢測 <span class="arr" aria-hidden="true">→</span></a><a class="pill cta-ghost" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約 20 分鐘免費諮詢</a>')
         # TOC moves out of the body into a rail (sticky on desktop, collapsed on phones)
         body_html = a['body']
         toc_m = re.search(r'\s*<nav class="toc"[^>]*>.*?</nav>\s*', body_html, re.S)
@@ -188,7 +230,7 @@ def run(b):
 <article class="post">
   <div class="wrap post-grid">
     <header class="post-head">
-      <p class="crumbs"><a href="/">首頁</a> / <a href="{HUB}">{HUB_NAME}</a> / {a.get('category', '')}</p>
+      <p class="crumbs"><a href="/">首頁</a> / <a href="{parent[1]}">{parent[0]}</a> / {a.get('category', '')}</p>
       <h1 id="h1">{a['h1']}</h1>
       <p class="dek">{a.get('dek', '')}</p>
       <p class="post-meta"><time datetime="{a['date']}">{int(a['date'][:4])} 年 {int(a['date'][5:7])} 月 {int(a['date'][8:10])} 日更新</time>・約 {mins} 分鐘</p>
@@ -199,17 +241,17 @@ def run(b):
     </div>
     <footer class="post-end">
       <h2 class="h2" id="rel-h">延伸閱讀</h2>
-      <ul class="aindex">{''.join(row(x) for x in related)}</ul>
+      <ul class="aindex">{rel_html}</ul>
       <div class="cta-box end-cta">
-        <div><h3>AI 會推薦 <span class="you-tag">您的公司</span> 嗎？</h3><p>免費檢測 ChatGPT、Gemini 等 AI 是否提到您、推薦了哪些同業，以及網站最該先改善的地方。1–2 個工作天內回覆；也可以直接預約 20 分鐘線上諮詢。</p></div>
-        <div class="btns"><a class="pill" href="/ai-visibility-engine/#check">申請免費 AI 曝光檢測 <span class="arr" aria-hidden="true">→</span></a><a class="pill cta-ghost" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約 20 分鐘免費諮詢</a></div>
+        <div><h3>{cta_h}</h3><p>{cta_p}</p></div>
+        <div class="btns">{cta_btns}</div>
       </div>
     </footer>
   </div>
 </article>
 <script>(function(){{var d=document.getElementById('rail-toc');if(d){{var mq=matchMedia('(min-width: 1100px)');var s=function(){{d.open=mq.matches;}};s();mq.addEventListener&&mq.addEventListener('change',s);d.addEventListener('click',function(e){{if(e.target.tagName==='A'&&!mq.matches)d.open=false;}});}}
 var f=document.querySelector('.post-body .faq'),pb=document.querySelector('.post-body'),t=0;function u(){{t=0;var m=document.querySelector('.mcta');if(!m||!pb)return;var r=pb.getBoundingClientRect(),h=r.height,p=h>0?(-r.top+innerHeight)/h:1,ok=p>=.6||(f&&f.getBoundingClientRect().top<innerHeight);m.classList.toggle('late-ok',!!ok);}}addEventListener('scroll',function(){{if(!t)t=requestAnimationFrame(u);}},{{passive:true}});addEventListener('load',u);}})();</script>'''
-        html = b.head('zh', 'articles', meta) + b.header('zh', 'articles') + '\n<main id="main">\n' + body + '\n</main>\n' + b.footer('zh') + \
+        html = b.head('zh', 'articles', meta) + b.header('zh', 'articles', a.get('pair')) + '\n<main id="main">\n' + body + '\n</main>\n' + b.footer('zh') + \
             f'\n<script src="/assets/v2/all.js?v={css_v}" defer></script>\n</body>\n</html>\n'
         out = b.ROOT / url.strip('/') / 'index.html'
         out.parent.mkdir(parents=True, exist_ok=True)
@@ -224,7 +266,7 @@ var f=document.querySelector('.post-body .faq'),pb=document.querySelector('.post
         if items:
             groups += f'\n    <h2 class="h2 hub-cat">{c}</h2>\n    <ul class="aindex">{"".join(row(a) for a in items)}</ul>'
     item_list = {"@type": "ItemList", "itemListElement": [
-        {"@type": "ListItem", "position": i + 1, "url": f'{b.BASE}{HUB}{a["slug"]}/', "name": a['h1']} for i, a in enumerate(arts)]}
+        {"@type": "ListItem", "position": i + 1, "url": b.BASE + url_of(a), "name": a['h1']} for i, a in enumerate(arts)]}
     meta = {
         'title': 'AI 搜尋優化知識庫：GEO、AEO 教學與實作｜夏裕科技',
         'description': '什麼是 GEO、AEO？怎麼讓 ChatGPT、Gemini 和 Google AI 摘要推薦您的公司？夏裕科技整理給台灣企業的 AI 搜尋優化教學、實作步驟與產業做法。',
@@ -317,7 +359,7 @@ def publish_entries(b=None, base='https://www.shiptolive.com'):
     if not live:
         return ''
     newest = max(a.get('updated', a['date']) for a in live)
-    rows = [(HUB, newest, '0.8')] + [(f'{HUB}{a["slug"]}/', a.get('updated', a['date']), '0.7') for a in live]
+    rows = [(HUB, newest, '0.8')] + [(url_of(a), a.get('updated', a['date']), '0.7') for a in live]
     out = []
     for path, mod, pri in rows:
         u = base + path
