@@ -139,3 +139,9 @@
 .la-addon { grid-column: 1 / -1; background: #fff; border: 1px dashed var(--hair); border-radius: 18px; padding: 18px 22px; }
 .la-addon b { font: 700 16px/1.4 var(--sans); }
 .la-addon p { margin: 6px 0 0; font-size: 14.5px; line-height: 1.7; color: var(--muted, #6b6762); }
+
+.la-launch { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; background: #e9f9ef; border: 1px solid #b7ebc8; border-radius: 16px; padding: 14px 20px; }
+.la-launch b { color: #058a3b; font: 700 15.5px/1.4 var(--sans); }
+.la-launch span { font-size: 14.5px; line-height: 1.6; }
+.la-setup s { color: var(--muted, #6b6762); }
+.la-off { color: #058a3b; font-weight: 700; margin-left: 4px; }
