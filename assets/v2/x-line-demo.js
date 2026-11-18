@@ -40,15 +40,19 @@
     ]
   };
 
+  var KEEP = '您填的內容都還在。';
   var ERR = {
-    rate_ip: '這個網路位址這一小時的使用次數已達上限，請過一陣子再試。',
+    rate_ip: '您目前的網路這一小時已經試用很多次了，請一小時後再試。' + KEEP,
     rate_day: '今天的示範名額已經用完了，明天再來試試，或直接加我們的 LINE 問問看。',
     too_many_qa: 'Q&A 最多 30 題。', too_many_items: '庫存最多 30 項。', too_many_examples: '範例回覆最多 6 則。',
     no_qa: '請至少留一題有問題和答案的 Q&A。', no_business: '請先填寫店家簡介。',
     expired: '體驗碼已過期或已更換，請再按一次「開始體驗」。',
-    too_large: '內容太長了，請刪掉一些再試。', generate: '產生失敗，請再試一次，或直接修改下面的內容。'
+    too_large: '內容太長了，請刪掉一些再試。', generate: '這次沒有產生成功，請再試一次，或直接修改範例內容。',
+    network: '連不上伺服器，請確認網路連線後再試一次。' + KEEP,
+    timeout: '伺服器回應太久，請再試一次。' + KEEP,
+    blocked: '系統暫時無法處理這個請求。請重新整理頁面再試；一直出現的話，直接加我們的 LINE 告訴我們。'
   };
-  var errText = function (code) { return ERR[code] || '暫時無法連線，請稍後再試。'; };
+  var errText = function (code) { return ERR[code] || '暫時無法連線，請稍後再試。' + KEEP; };
 
   var kit = clone(SAMPLE);
   var session = null; // { code, token, expires, link, qr }
@@ -67,12 +71,27 @@
     (kids || []).forEach(function (c) { if (c) n.appendChild(typeof c === 'string' ? document.createTextNode(c) : c); });
     return n;
   }
-  function post(path, body) {
-    return fetch(API + path, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(body) })
-      .then(function (r) { return r.json().catch(function () { return { ok: false, error: 'http' }; }); })
-      .catch(function () { return { ok: false, error: 'network' }; });
+  function post(path, body, ms) {
+    var ctl = 'AbortController' in window ? new AbortController() : null;
+    var timer = ctl && setTimeout(function () { ctl.abort(); }, ms || 30000);
+    return fetch(API + path, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(body), signal: ctl ? ctl.signal : undefined })
+      .then(function (r) { return r.json().catch(function () { return { ok: false, error: r.status === 429 ? 'rate_ip' : 'http' }; }); })
+      .catch(function (e) { return { ok: false, error: e && e.name === 'AbortError' ? 'timeout' : 'network' }; })
+      .then(function (d) { clearTimeout(timer); return d || { ok: false, error: 'http' }; });
   }
-  function status(id, text, isErr) { var s = $(id); s.textContent = text || ''; s.classList.toggle('err', !!isErr); }
+  function status(id, text, isErr, isBusy) { var s = $(id); s.textContent = text || ''; s.classList.toggle('err', !!isErr); s.classList.toggle('busy', !!isBusy); }
+  var narrow = function () { return matchMedia('(max-width: 1000px)').matches; };
+  function reveal(node) { node.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); }
+  // progress: hero steps and the numbered headings
+  function step(n) {
+    Array.prototype.forEach.call(document.querySelectorAll('#ld-steps li'), function (li) {
+      var k = +li.getAttribute('data-s'); li.classList.toggle('done', k < n); li.classList.toggle('on', k === n);
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.ld-main .ld-n'), function (b, i) { b.classList.toggle('done', i + 1 < n && i < 2); });
+  }
+  // textareas grow with their content (field-sizing: content does this where supported)
+  var autoSize = CSS.supports && CSS.supports('field-sizing', 'content') ? function () {} : function (t) { t.style.height = 'auto'; t.style.height = (t.scrollHeight + 2) + 'px'; };
+  function sizeAll() { Array.prototype.forEach.call(document.querySelectorAll('.ld-card textarea'), autoSize); }
   function honey(form) { var h = form && form.querySelector('[name="_honey"]'); return h ? h.value : ''; }
   function changed() {
     if (session && !dirty) { dirty = true; status('ld-go-status', '內容已修改：再按一次「開始體驗」，新的內容才會生效。'); }
@@ -83,7 +102,8 @@
   function field(label, value, max, onInput, multi, extra) {
     var input = el(multi ? 'textarea' : 'input', Object.assign({ maxlength: String(max), 'aria-label': label, rows: multi ? '2' : null }, extra || {}));
     input.value = value == null ? '' : value;
-    input.addEventListener('input', function () { onInput(input.value); changed(); });
+    if (multi) input.rows = 1;
+    input.addEventListener('input', function () { onInput(input.value); if (multi) autoSize(input); changed(); });
     return input;
   }
   function counts() {
@@ -136,7 +156,7 @@
   function renderAll() {
     $('ld-business').value = kit.business || '';
     $('ld-style').value = kit.style || '';
-    renderQA(); renderEx(); renderInv(); header();
+    renderQA(); renderEx(); renderInv(); header(); sizeAll();
   }
   function shortName(b) {
     var s = String(b || '').split(/[：:，,。]/)[0].trim();
@@ -148,7 +168,8 @@
     $('ld-av').textContent = name.replace(/^範例/, '').charAt(0) || '店';
   }
   $('ld-business').addEventListener('input', function () { kit.business = this.value; header(); changed(); });
-  $('ld-style').addEventListener('input', function () { kit.style = this.value; changed(); });
+  $('ld-style').addEventListener('input', function () { kit.style = this.value; autoSize(this); changed(); });
+  var rz; window.addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(sizeAll, 200); });
   $('ld-qa-add').addEventListener('click', function () { if (kit.qa.length < LIM.qa) { kit.qa.push({ q: '', a: '', handoff: false }); renderQA(); changed(); var t = $('ld-qa').querySelectorAll('textarea'); if (t.length) t[t.length - 2].focus(); } });
   $('ld-ex-add').addEventListener('click', function () { if (kit.examples.length < LIM.ex) { kit.examples.push(''); renderEx(); changed(); var t = $('ld-ex').querySelectorAll('textarea'); if (t.length) t[t.length - 1].focus(); } });
   $('ld-inv-add').addEventListener('click', function () { if (kit.inventory.length < LIM.inv) { kit.inventory.push({ item: '', qty: null, price: '', note: '' }); renderInv(); changed(); var t = $('ld-inv').querySelectorAll('.ld-irow:last-child input'); if (t.length) t[0].focus(); } });
@@ -156,21 +177,36 @@
   // ---------- step 1: generate ----------
   var pick = $('ld-pick');
   var custom = pick.querySelector('.ld-custom');
-  pick.addEventListener('change', function () { custom.hidden = pick.preset.value !== 'custom'; if (!custom.hidden) custom.querySelector('textarea').focus(); });
+  var PRESET = { bakery: '烘焙坊', dental: '牙醫診所', cram: '補習班' };
+  pick.addEventListener('change', function (e) {
+    if (e.target.name !== 'preset') return;
+    var v = pick.preset.value;
+    custom.hidden = v !== 'custom';
+    if (!custom.hidden) { custom.querySelector('textarea').focus(); status('ld-gen-status', '寫好後按「幫我產生 Q&A」，大約 10–20 秒。'); }
+    else if (v === 'bakery' && !generated) status('ld-gen-status', '已經放好「範例烘焙坊」的資料，可以直接開始體驗。');
+    else status('ld-gen-status', '按「幫我產生 Q&A」，AI 會產生一份' + PRESET[v] + '的範例，大約 10–20 秒。');
+  });
+  var generated = false;
   pick.addEventListener('submit', function (e) {
     e.preventDefault();
     if (busy) return;
     var preset = pick.preset.value;
     var description = pick.description.value.trim();
     if (preset === 'custom' && description.length < 4) { status('ld-gen-status', '請先用一兩句話描述您的店。', true); pick.description.focus(); return; }
-    var btn = $('ld-gen'); busy = true; btn.setAttribute('aria-busy', 'true'); btn.disabled = true;
-    status('ld-gen-status', 'AI 正在整理 Q&A，大約 10–20 秒…');
-    post('/api/demo/generate', { preset: preset, description: description, _honey: honey(pick) }).then(function (d) {
-      busy = false; btn.removeAttribute('aria-busy'); btn.disabled = false;
+    var btn = $('ld-gen'); busy = true; btn.setAttribute('aria-busy', 'true'); btn.disabled = true; btn.textContent = '產生中…';
+    $('ld-edit').setAttribute('aria-busy', 'true');
+    status('ld-gen-status', 'AI 正在整理 Q&A，大約 10–20 秒…', false, true);
+    var slow = setTimeout(function () { status('ld-gen-status', '比平常久一點，再等一下…', false, true); }, 20000);
+    post('/api/demo/generate', { preset: preset, description: description, _honey: honey(pick) }, 60000).then(function (d) {
+      clearTimeout(slow);
+      busy = false; btn.removeAttribute('aria-busy'); btn.disabled = false; btn.textContent = '幫我產生 Q&A';
+      $('ld-edit').removeAttribute('aria-busy');
       if (!d.ok || !d.kit) { status('ld-gen-status', errText(d.error), true); return; }
       kit = { business: d.kit.business || '', style: d.kit.style || '', examples: d.kit.examples || [], qa: d.kit.qa || [], inventory: (d.kit.inventory || []).map(function (r) { return { item: r.item, qty: r.qty, price: r.price || '', note: r.note || '' }; }) };
+      generated = true;
       renderAll(); changed();
-      status('ld-gen-status', '完成了：' + kit.qa.length + ' 題 Q&A、' + kit.inventory.length + ' 項庫存（示範資料）。請檢查、修改後，按「開始體驗」。');
+      status('ld-gen-status', '完成了：' + kit.qa.length + ' 題 Q&A、' + kit.inventory.length + ' 項庫存（示範資料）。' + (session ? '按「用目前內容重新開始」，換成這份內容。' : '按「開始體驗」試試看，內容之後也能改。'));
+      step(2);
     });
   });
 
@@ -196,15 +232,26 @@
     else qr.textContent = '';
     box.hidden = false;
     var q = $('ld-q'); q.disabled = false; q.placeholder = '像客人一樣問問看'; $('ld-send').disabled = false;
+    suggest();
+  }
+  // a few one-tap questions taken from the visitor's own Q&A (two ordinary ones, one that goes to a person)
+  function suggest() {
+    var box = $('ld-sugg');
+    Array.prototype.slice.call(box.querySelectorAll('button')).forEach(function (b) { b.remove(); });
+    var qs = kit.qa.filter(function (r) { return r.q.trim() && !r.handoff; }).slice(0, 2)
+      .concat(kit.qa.filter(function (r) { return r.q.trim() && r.handoff; }).slice(0, 1))
+      .map(function (r) { return r.q.trim().slice(0, 40); });
+    qs.forEach(function (text) { box.appendChild(el('button', { type: 'button', text: text, on: { click: function () { ask(text); } } })); });
+    box.hidden = !qs.length || !session;
   }
   $('ld-go').addEventListener('click', function () {
     if (busy) return;
     var body = payload();
     if (!body.business.trim()) { status('ld-go-status', errText('no_business'), true); $('ld-business').focus(); return; }
-    if (!body.qa.length) { status('ld-go-status', errText('no_qa'), true); return; }
+    if (!body.qa.length) { status('ld-go-status', errText('no_qa'), true); var f = $('ld-qa').querySelector('textarea'); if (f) f.focus(); return; }
     var btn = this; busy = true; btn.disabled = true; btn.setAttribute('aria-busy', 'true');
-    status('ld-go-status', '建立中…');
-    post('/api/demo/session', { kit: body, oa: OA, _honey: honey(pick) }).then(function (d) {
+    status('ld-go-status', '正在建立您的示範 AI 客服…', false, true);
+    post('/api/demo/session', { kit: body, oa: OA, _honey: honey(pick) }, 30000).then(function (d) {
       busy = false; btn.disabled = false; btn.removeAttribute('aria-busy');
       if (!d.ok || !d.code) { status('ld-go-status', errText(d.error), true); return; }
       var renewed = !!session;
@@ -214,10 +261,24 @@
       showSession();
       resetChat(renewed ? '已換成新的體驗碼 ' + d.code + '，用新的內容回答。' : '');
       btn.textContent = '用目前內容重新開始';
-      status('ld-go-status', '');
-      if (matchMedia('(max-width: 1000px)').matches) $('ld-code').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      status('ld-go-status', renewed ? '已換成新的體驗碼，舊的體驗碼不能再用了。' : '');
+      step(3);
+      reveal($('ld-code')); $('ld-code').focus({ preventScroll: true });
     });
   });
+  // copy the code (with its prefix, the way the demo account expects it)
+  $('ld-copy').addEventListener('click', function () {
+    if (!session) return;
+    var btn = this, text = '體驗碼 ' + session.code;
+    var done = function (ok) { btn.textContent = ok ? '已複製' : '請手動複製'; btn.classList.toggle('ok', ok); setTimeout(function () { btn.textContent = '複製'; btn.classList.remove('ok'); }, 2400); };
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
+    else {
+      var t = el('textarea', { readonly: true, style: 'position:fixed;opacity:0' }); t.value = text; document.body.appendChild(t); t.select();
+      var ok = false; try { ok = document.execCommand('copy'); } catch (e) { /* ignore */ } t.remove(); done(ok);
+    }
+  });
+  $('ld-to-chat').addEventListener('click', function () { reveal($('ld-chat')); setTimeout(function () { $('ld-q').focus({ preventScroll: true }); }, narrow() ? 450 : 0); });
+  $('ld-again').addEventListener('click', function (e) { e.preventDefault(); reveal($('ld-start')); $('ld-go').focus({ preventScroll: true }); });
 
   // ---------- web chat ----------
   var log = $('ld-log');
@@ -237,22 +298,39 @@
     if (msg) note('', msg);
     else bubble('a', '您好，這裡是「' + shortName(kit.business) + '」的 AI 客服（示範）。想問什麼都可以喔！');
   }
-  $('ld-ask').addEventListener('submit', function (e) {
-    e.preventDefault();
+  function setAsking(on) {
     var input = $('ld-q');
-    var q = input.value.trim();
+    if (on) input.dataset.busy = '1'; else delete input.dataset.busy;
+    $('ld-send').disabled = on;
+    Array.prototype.forEach.call($('ld-sugg').querySelectorAll('button'), function (b) { b.disabled = on; });
+  }
+  function ask(q) {
+    var input = $('ld-q');
     if (!q || !session || input.dataset.busy) return;
-    input.value = ''; input.dataset.busy = '1'; $('ld-send').disabled = true;
+    input.value = ''; setAsking(true);
     bubble('c', q);
-    var wait = bubble('a wait'); wait.querySelector('.lc-m').innerHTML = '<i></i><i></i><i></i>';
-    wait.querySelector('.lc-m').setAttribute('aria-label', 'AI 回覆中');
-    post('/api/demo/ask', { code: session.code, token: session.token, question: q.slice(0, LIM.field), _honey: honey($('ld-ask')) }).then(function (d) {
-      wait.remove(); delete input.dataset.busy; $('ld-send').disabled = false; input.focus();
-      if (!d.ok) { note('err', errText(d.error)); if (d.error === 'expired') { session = null; input.disabled = true; $('ld-send').disabled = true; } return; }
+    var wait = bubble('a wait'); var wm = wait.querySelector('.lc-m');
+    wm.innerHTML = '<i></i><i></i><i></i><span class="sr">AI 回覆中</span>';
+    var slow = setTimeout(function () { wm.appendChild(document.createTextNode(' 還在想…')); }, 8000);
+    post('/api/demo/ask', { code: session.code, token: session.token, question: q.slice(0, LIM.field), _honey: honey($('ld-ask')) }, 30000).then(function (d) {
+      clearTimeout(slow); wait.remove(); setAsking(false);
+      if (!narrow()) input.focus({ preventScroll: true });
+      if (!d.ok) {
+        note('err', errText(d.error));
+        if (d.error === 'expired') { session = null; input.disabled = true; $('ld-send').disabled = true; $('ld-sugg').hidden = true; step(2); }
+        else if (!input.value) input.value = q; // keep the question so it can be sent again
+        return;
+      }
       bubble('a', d.reply);
       if (d.handoff) note('hand', d.note || '（示範：這裡會通知負責人接手）');
     });
-  });
+  }
+  $('ld-ask').addEventListener('submit', function (e) { e.preventDefault(); ask($('ld-q').value.trim()); });
+
+  // the floating LINE button and the phone CTA bar would cover inputs and the send button: hide them while the builder is on screen
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) { document.body.classList.toggle('ld-quiet', es[0].isIntersecting); }, { rootMargin: '-80px 0px -80px 0px' }).observe($('build'));
+  }
 
   // ---------- restore after a reload (same tab only) ----------
   try {
@@ -262,8 +340,9 @@
       renderAll(); showSession(); resetChat('');
       $('ld-go').textContent = '用目前內容重新開始';
       status('ld-gen-status', '已載入您這次的內容。');
+      step(3);
       return;
     }
   } catch (e) { /* ignore */ }
-  renderAll();
+  renderAll(); step(1);
 })();
