@@ -152,6 +152,13 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.shiptolive.com/line-ai/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/line-ai/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/line-ai/" />
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.shiptolive.com/ai-search/</loc>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/ai-search/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/ai-search/" />

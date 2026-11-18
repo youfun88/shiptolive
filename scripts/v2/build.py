@@ -15,7 +15,7 @@ import json, re, sys, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = pathlib.Path(sys.argv[1])
 BASE = 'https://www.shiptolive.com'
-V = '56'
+V = '57'
 CSS = ''
 
 PAGES = {  # slug -> (zh path, en path)
@@ -24,6 +24,7 @@ PAGES = {  # slug -> (zh path, en path)
     'software': ('/software/', '/en/software/'),
     'seo-aeo-geo': ('/seo-aeo-geo/', '/en/seo-aeo-geo/'),
     'engine': ('/ai-visibility-engine/', '/en/ai-visibility-engine/'),
+    'line-ai': ('/line-ai/', '/en/'),  # zh only for now; the EN switch goes to the EN home
     'articles': ('/ai-search/', '/en/'),
     'about': ('/about/', '/en/about/'),
 }
@@ -66,6 +67,7 @@ def header(lang, slug):
           <a href="{p(lang,'seo-aeo-geo')}"{cur('seo-aeo-geo')}>{t['ai']}<small>{t['ai_s']}</small></a>
           <a href="{p(lang,'website')}"{cur('website')}>{t['web']}<small>{t['web_s']}</small></a>
           <a href="{p(lang,'software')}"{cur('software')}>{t['sw']}<small>{t['sw_s']}</small></a>
+          {f'<a href="/line-ai/"{cur("line-ai")}>LINE 官方帳號＋AI 客服<small>AI 24 小時回覆客人訊息</small></a>' if lang == 'zh' else ''}
         </div>
       </div>
       <a href="{p(lang,'engine')}"{cur('engine')}>{t['engine']}</a>
@@ -97,7 +99,7 @@ def footer(lang):
   <div class="wrap">
     <div class="cols">
       <div><b>{t['brand']}</b>{t['f_company']}<br>{t['f_tax']}<br>{t['f_loc']}<p class="motto">{t['motto']}</p></div>
-      <nav aria-label="{t['f_svc']}"><b>{t['f_svc']}</b><a href="{p(lang,'seo-aeo-geo')}">{t['ai']}</a><a href="{p(lang,'website')}">{t['web']}</a><a href="{p(lang,'software')}">{t['sw']}</a><a href="{p(lang,'engine')}">{t['engine']}</a></nav>
+      <nav aria-label="{t['f_svc']}"><b>{t['f_svc']}</b><a href="{p(lang,'seo-aeo-geo')}">{t['ai']}</a><a href="{p(lang,'website')}">{t['web']}</a><a href="{p(lang,'software')}">{t['sw']}</a>{'<a href="/line-ai/">LINE 官方帳號＋AI 客服</a>' if lang == 'zh' else ''}<a href="{p(lang,'engine')}">{t['engine']}</a></nav>
       <nav aria-label="{t['f_more']}"><b>{t['f_more']}</b><a href="{p(lang,'about')}">{t['about']}</a><a href="{pre}/geo-guide/">{t['f_guide']}</a>{'<a href="/ai-search/">AI 搜尋優化知識庫</a>' if lang == 'zh' else ''}<a href="{pre}/privacy/">{t['f_privacy']}</a></nav>
       <nav aria-label="{t['contact']}"><b>{t['contact']}</b><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a>{f'<a href="{LINE_URL}" target="_blank" rel="noopener">LINE 官方帳號</a>' if lang == 'zh' else ''}<a href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">{t['f_book']}</a><a href="/business-card/{'?lang=en' if lang == 'en' else ''}">{'電子名片' if lang == 'zh' else 'Business card'}</a><a href="{p(lang,'engine')}#check">{t['cta']}</a></nav>
     </div>
@@ -136,6 +138,8 @@ def head(lang, slug, meta):
                                                 "alternateName": "Websites and Digital Marketing", "url": BASE + "/website/"}},
             {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": BASE + "/software/#service", "name": "客製化軟體開發",
                                                 "alternateName": "Custom Software Development", "url": BASE + "/software/"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": BASE + "/line-ai/#service", "name": "LINE 官方帳號＋AI 24 小時客服",
+                                                "alternateName": "LINE Official Account with a 24/7 AI customer service assistant", "url": BASE + "/line-ai/"}},
             {"@type": "Offer", "itemOffered": {"@type": "SoftwareApplication", "@id": BASE + "/ai-visibility-engine/#product",
                                                 "name": "夏裕 AI 曝光引擎", "alternateName": "Ship to Live AI Visibility Engine",
                                                 "applicationCategory": "BusinessApplication", "operatingSystem": "Web",
@@ -218,7 +222,7 @@ def build(lang, slug):
 
 def bundle():
     a = ROOT / 'assets' / 'v2'
-    css = '\n'.join((a / f).read_text() for f in ('site.css', 'x-a.css', 'x-b.css', 'x-c.css', 'x-post.css', 'x-aipage.css', 'zz-fixes.css'))
+    css = '\n'.join((a / f).read_text() for f in ('site.css', 'x-a.css', 'x-b.css', 'x-c.css', 'x-post.css', 'x-aipage.css', 'x-line.css', 'zz-fixes.css'))
     css = re.sub(r'/\*.*?\*/', '', css, flags=re.S)
     css = re.sub(r'\s+', ' ', css)
     css = re.sub(r'\s*([{};:,>])\s*', r'\1', css).replace(';}', '}')
