@@ -149,3 +149,10 @@
 .la-addon-p { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 6px; font-size: 14.5px; line-height: 1.6; }
 .la-addon-p b { margin-right: 8px; }
 .la-addon .la-addon-n { font-size: 13.5px; margin-top: 10px; }
+
+/* link to the try-it-yourself demo (/line-ai/demo/) */
+.la-try { margin-top: 16px; }
+.la-try a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 700; font-size: 16px; color: #036b2e; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
+.la-try a span { transition: transform .15s; text-decoration: none; }
+.la-try a:hover span { transform: translateX(3px); }
+.la-try.dk a { color: #7ee2a3; }

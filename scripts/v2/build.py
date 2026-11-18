@@ -15,7 +15,10 @@ import json, re, sys, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = pathlib.Path(sys.argv[1])
 BASE = 'https://www.shiptolive.com'
-V = '61'
+V = '62'
+# LINE AI demo (/line-ai/demo/): the demo LINE Official Account 「夏裕 AI 客服體驗」 and the admin API it talks to.
+DEMO_OA_ID = '@372xwcta'
+DEMO_API = 'https://admin.shiptolive.com'
 CSS = ''
 
 PAGES = {  # slug -> (zh path, en path)
@@ -25,6 +28,7 @@ PAGES = {  # slug -> (zh path, en path)
     'seo-aeo-geo': ('/seo-aeo-geo/', '/en/seo-aeo-geo/'),
     'engine': ('/ai-visibility-engine/', '/en/ai-visibility-engine/'),
     'line-ai': ('/line-ai/', '/en/'),  # zh only for now; the EN switch goes to the EN home
+    'line-demo': ('/line-ai/demo/', '/en/'),  # zh only: try-it-yourself demo of the LINE AI service
     'articles': ('/ai-search/', '/en/'),
     'about': ('/about/', '/en/about/'),
 }
@@ -165,6 +169,8 @@ def head(lang, slug, meta):
             f'<link rel="alternate" hreflang="en" href="{url}">\n<link rel="alternate" hreflang="x-default" href="{url}">' if meta.get('en_only') else
             f'<link rel="alternate" hreflang="zh-Hant" href="{zh_url}">\n<link rel="alternate" hreflang="en" href="{en_url}">\n<link rel="alternate" hreflang="x-default" href="{zh_url}">')
     robots = '<meta name="robots" content="noindex, nofollow">\n' if meta.get('draft') else ''
+    # Page-only stylesheet (front-matter css: x-line-demo.css), so one page's styles don't ride along in every page's inline CSS.
+    extra_css = f'<link rel="stylesheet" href="/assets/v2/{meta["css"]}?v={V}">\n' if meta.get('css') else ''
     return f'''<!doctype html>
 <html lang="{t['htmllang']}">
 <head>
@@ -191,7 +197,7 @@ def head(lang, slug, meta):
 addEventListener('load',function(){{setTimeout(function(){{var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-5W92T6J80C';document.head.appendChild(s);}},1500);}});</script>
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>{CSS}</style>
-<script type="application/ld+json">
+{extra_css}<script type="application/ld+json">
 {ld}
 </script>
 <script src="https://admin.shiptolive.com/stl-track.js" data-site="shiptolive" defer></script>
@@ -210,10 +216,13 @@ def build(lang, slug):
     for line in m.group(1).strip().splitlines():
         k, _, v = line.partition(':')
         v = v.strip()
-        meta[k.strip()] = json.loads(v) if k.strip() == 'ld' else v
+        meta[k.strip()] = json.loads(v) if k.strip() in ('ld', 'crumbs') else v
     body = raw[m.end():]
+    # Placeholders a body may use: {{DEMO_OA_ID}}, {{DEMO_API}}, {{V}}.
+    body = body.replace('{{DEMO_OA_ID}}', DEMO_OA_ID).replace('{{DEMO_API}}', DEMO_API).replace('{{V}}', V)
     html = head(lang, slug, meta) + header(lang, slug) + '\n<main id="main">\n' + body.strip() + '\n</main>\n' + footer(lang) + \
-        f'\n<script src="/assets/v2/all.js?v={V}" defer></script>\n</body>\n</html>\n'
+        f'\n<script src="/assets/v2/all.js?v={V}" defer></script>\n' + \
+        (f'<script src="/assets/v2/{meta["js"]}?v={V}" defer></script>\n' if meta.get('js') else '') + '</body>\n</html>\n'
     out = ROOT / p(lang, slug).strip('/') / 'index.html'
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html)

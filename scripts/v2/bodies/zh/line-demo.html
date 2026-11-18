@@ -1,0 +1,135 @@
+<!--
+title: 免費體驗 LINE AI 客服：輸入您的 Q&A，用 LINE 問問看｜夏裕科技
+description: 夏裕科技 LINE 官方帳號＋AI 24 小時客服的免費示範：選一個行業或描述您的店，產生 Q&A、語氣和示範庫存，修改後拿到體驗碼，用 LINE 或網頁直接問 AI。示範資料 24 小時後自動刪除。
+crumb: 免費體驗
+zh_only: 1
+css: x-line-demo.css
+js: x-line-demo.js
+crumbs: [["首頁", "/"], ["LINE 官方帳號＋AI 客服", "/line-ai/"], ["免費體驗", "/line-ai/demo/"]]
+ld: [{"@type": "WebApplication", "@id": "https://www.shiptolive.com/line-ai/demo/#app", "name": "LINE AI 客服免費體驗（示範）", "url": "https://www.shiptolive.com/line-ai/demo/", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "inLanguage": "zh-Hant", "isAccessibleForFree": true, "provider": {"@id": "https://www.shiptolive.com/#org"}, "isPartOf": {"@id": "https://www.shiptolive.com/line-ai/#service"}, "description": "LINE 官方帳號＋AI 24 小時客服的示範：訪客輸入或產生 Q&A、語氣與示範庫存，取得 4 位數體驗碼，在示範 LINE 官方帳號或網頁上詢問 AI。資料為示範用，24 小時後刪除。"}]
+-->
+<section class="hero page ld-hero" aria-labelledby="h1">
+  <div class="wrap">
+    <p class="crumbs"><a href="/">首頁</a> / <a href="/line-ai/">LINE 官方帳號＋AI 客服</a> / 免費體驗</p>
+    <h1 id="h1">免費體驗：輸入您的 Q&amp;A，<span class="ph">用 LINE 問問看</span></h1>
+    <p class="lede">選一個行業，或用一兩句話描述您的店，我們先幫您產生一份 Q&amp;A、回覆語氣和示範庫存。改成您想要的樣子，按「開始體驗」，就能用手機的 LINE 或這個網頁直接問 AI。</p>
+    <ol class="ld-steps" aria-label="體驗步驟">
+      <li><b>選行業，產生 Q&amp;A</b><span>或直接修改下面的範例</span></li>
+      <li><b>修改內容</b><span>問題、答案、語氣、庫存都能改</span></li>
+      <li><b>拿體驗碼，開始問</b><span>用 LINE 掃 QR，或在網頁上問</span></li>
+    </ol>
+    <p class="ld-demo-note"><span class="ld-badge">示範</span>這是示範環境：請填虛構的店家資料，不要填個人資料。資料 24 小時後自動刪除。</p>
+  </div>
+</section>
+
+<section class="sec alt ld-main" id="build" aria-labelledby="b-h">
+  <div class="wrap ld-grid">
+    <div class="ld-edit">
+      <h2 class="h2" id="b-h">1. 選一個行業</h2>
+      <form class="ld-pick" id="ld-pick" novalidate>
+        <fieldset>
+          <legend class="sr">範例行業</legend>
+          <div class="ld-chips">
+            <label><input type="radio" name="preset" value="bakery" checked><span>烘焙坊</span></label>
+            <label><input type="radio" name="preset" value="dental"><span>牙醫診所</span></label>
+            <label><input type="radio" name="preset" value="cram"><span>補習班</span></label>
+            <label><input type="radio" name="preset" value="custom"><span>自訂</span></label>
+          </div>
+        </fieldset>
+        <label class="fld ld-custom" hidden><span>用一兩句話描述您的店</span><textarea name="description" rows="2" maxlength="300" placeholder="例如：台中的手搖飲店，有外送，週二公休，可以預訂 20 杯以上的團購。"></textarea></label>
+        <div class="hp" aria-hidden="true"><input name="_honey" tabindex="-1" autocomplete="off"></div>
+        <div class="ld-row">
+          <button class="pill" type="submit" id="ld-gen">幫我產生 Q&amp;A</button>
+          <p class="ld-status" id="ld-gen-status" role="status" aria-live="polite">下面已經放好「範例烘焙坊」的資料，可以直接改，或產生新的。</p>
+        </div>
+      </form>
+
+      <h2 class="h2 ld-h2" id="e-h">2. 修改內容</h2>
+      <div class="ld-card">
+        <label class="fld"><span>店家簡介</span><input id="ld-business" maxlength="300"></label>
+      </div>
+
+      <div class="ld-card">
+        <div class="ld-card-h"><h3>常見問題（Q&amp;A）</h3><span class="ld-count" id="ld-qa-count"></span></div>
+        <p class="ld-help">勾選「轉真人」的問題，AI 會先回覆客人，再通知負責人接手。</p>
+        <div class="ld-qa" id="ld-qa" role="list"></div>
+        <button class="pill ghost sm" type="button" id="ld-qa-add">＋ 新增一題</button>
+      </div>
+
+      <div class="ld-card">
+        <div class="ld-card-h"><h3>回覆語氣</h3></div>
+        <label class="fld"><span>語氣指引</span><textarea id="ld-style" rows="3" maxlength="300"></textarea></label>
+        <div class="ld-ex-h"><b>範例回覆</b><span class="ld-count" id="ld-ex-count"></span></div>
+        <p class="ld-help">AI 會參考這些回覆的口吻。正式上線時，標準方案用您自己寫過的 20–50 則回覆。</p>
+        <div class="ld-ex" id="ld-ex"></div>
+        <button class="pill ghost sm" type="button" id="ld-ex-add">＋ 新增範例</button>
+      </div>
+
+      <div class="ld-card">
+        <div class="ld-card-h"><h3>示範庫存／預約空檔</h3><span class="ld-count" id="ld-inv-count"></span></div>
+        <p class="ld-help">客人問「還有貨嗎？」「週六還有空位嗎？」時，AI 查這張表回答。數量 0 代表售完或額滿；留空代表要請負責人確認。正式上線時可串接 Google 試算表、POS 或預約系統（加購項目）。</p>
+        <div class="ld-inv" id="ld-inv"></div>
+        <button class="pill ghost sm" type="button" id="ld-inv-add">＋ 新增品項</button>
+      </div>
+    </div>
+
+    <aside class="ld-side" aria-labelledby="s-h">
+      <div class="ld-start" id="ld-start">
+        <h2 class="h2" id="s-h">3. 開始體驗</h2>
+        <p class="ld-help">按下後會用上面的內容建立一個示範 AI 客服，給您一組 4 位數體驗碼，24 小時內有效。</p>
+        <button class="pill orange" type="button" id="ld-go">開始體驗</button>
+        <p class="ld-status" id="ld-go-status" role="status" aria-live="polite"></p>
+        <div class="ld-code" id="ld-code" hidden>
+          <div class="ld-code-top"><span>體驗碼</span><b id="ld-code-n">----</b><small id="ld-code-exp"></small></div>
+          <div class="ld-qr" id="ld-qr" role="img" aria-label="QR code：用手機 LINE 掃描，開啟示範帳號並帶入體驗碼"></div>
+          <a class="pill line" id="ld-line" href="https://line.me/R/ti/p/{{DEMO_OA_ID}}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11.1c0 4 3.6 7.4 8.4 8 .3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.5-1.6 2.2-3.2 2.2-4.9C22 6.6 17.5 3 12 3z"/></svg>用 LINE 開啟示範帳號</a>
+          <ol class="ld-how">
+            <li>手機：點上面的按鈕；電腦：用手機的 LINE 掃 QR code。</li>
+            <li>加入示範帳號「夏裕 AI 客服體驗」，把預先帶好的「體驗碼 <span class="ld-code-inline">----</span>」送出。</li>
+            <li>接著像客人一樣問問題，AI 會用您剛剛的 Q&amp;A 和語氣回答。</li>
+          </ol>
+          <p class="ld-help">改了內容想重新試？再按一次「開始體驗」，會拿到新的體驗碼。</p>
+        </div>
+      </div>
+
+      <figure class="lc ld-chat" id="ld-chat" aria-labelledby="ld-chat-cap">
+        <div class="lc-ph">
+          <div class="lc-top"><span class="lc-av" id="ld-av" aria-hidden="true">烘</span><b id="ld-name">範例烘焙坊</b><span class="lc-oa">示範</span></div>
+          <div class="lc-body ld-log" id="ld-log" aria-live="polite">
+            <span class="lc-day">網頁版體驗・示範</span>
+            <p class="ld-empty" id="ld-empty">不想開 LINE？按「開始體驗」後，直接在這裡問問看。</p>
+          </div>
+          <form class="ld-in" id="ld-ask" novalidate>
+            <label class="sr" for="ld-q">輸入訊息</label>
+            <input id="ld-q" name="q" maxlength="300" placeholder="先按「開始體驗」" autocomplete="off" disabled>
+            <div class="hp" aria-hidden="true"><input name="_honey" tabindex="-1" autocomplete="off"></div>
+            <button type="submit" id="ld-send" disabled aria-label="送出"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-8-6 16-2.5-6.5z"/></svg></button>
+          </form>
+        </div>
+        <figcaption id="ld-chat-cap">網頁版體驗：和 LINE 上用同一套設定回答（示範）</figcaption>
+      </figure>
+    </aside>
+  </div>
+</section>
+
+<section class="sec" id="notes" aria-labelledby="n-h">
+  <div class="wrap why-split">
+    <div>
+      <h2 class="h2" id="n-h">關於這個示範</h2>
+      <p class="lede" style="margin-top:14px">示範用的是和正式服務相同的回答方式，但少了正式上線前的步驟：我們和您一起整理 Q&amp;A、用真實問題逐題測過、設定轉真人 Email 通知。</p>
+      <div class="btns ld-btns">
+        <a class="pill" href="/line-ai/#pricing">看方案與價格</a>
+        <a class="pill ghost" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約 20 分鐘免費諮詢</a>
+      </div>
+    </div>
+    <ul class="why-list">
+      <li><b>資料只放 24 小時</b><p>您填的內容和對話只用來產生這次的示範回答，24 小時後體驗碼失效，資料自動刪除。我們不收集姓名、電話或 Email。</p></li>
+      <li><b>請用虛構的資料</b><p>這是公開的示範環境，請不要填個人資料、密碼或不想公開的資訊。</p></li>
+      <li><b>轉真人只是示意</b><p>示範中 AI 轉真人時，會顯示「這裡會通知負責人接手」，不會真的寄出 Email。</p></li>
+      <li><b>有使用上限</b><p>為了避免濫用，每個網路位址每小時能產生、建立和提問的次數有限制。</p></li>
+      <li><b>AI 仍可能答錯</b><p>AI 只根據您填的資料回答，但仍可能有答得不夠好的時候。正式上線後，我們每月看真實對話補強 Q&amp;A。</p></li>
+    </ul>
+  </div>
+</section>
+
+<script>window.LINE_DEMO = { api: '{{DEMO_API}}', oa: '{{DEMO_OA_ID}}' };</script>
