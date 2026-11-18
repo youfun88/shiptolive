@@ -40,8 +40,8 @@ When customers ask AI, does the company show up in the answer? SEO ranks a site 
 No one can guarantee that a given AI platform will recommend a business or that rankings will rise; the service measures, improves and records the change.
 
 ### 4. LINE Official Account + 24/7 AI customer service (LINE 官方帳號＋AI 24 小時客服)
-中文: https://www.shiptolive.com/line-ai/ (Traditional Chinese only)
-Free try-it-yourself demo (labeled 示範): https://www.shiptolive.com/line-ai/demo/ — pick a sample business (bakery, dental clinic, cram school) or describe your own, edit the generated Q&A, tone and demo inventory, then get a 4-digit code and ask the AI on a demo LINE Official Account or on the page. Demo data is deleted after 24 hours.
+https://www.shiptolive.com/en/line-ai/ · 中文: https://www.shiptolive.com/line-ai/
+Free try-it-yourself demo (labeled 示範, page in Chinese only): https://www.shiptolive.com/line-ai/demo/ — pick a sample business (bakery, dental clinic, cram school) or describe your own, edit the generated Q&A, tone and demo inventory, then get a 4-digit code and ask the AI on a demo LINE Official Account or on the page. Demo data is deleted after 24 hours.
 
 For shops, clinics, cram schools, professional firms and B2B companies in Taiwan whose customers ask questions on LINE. 夏裕科技 sets up the business's LINE Official Account (or connects an existing one) and turns the business's own Q&A into the knowledge base of an AI assistant that answers customers in seconds, at any hour, in the customer's language, only from the business's own published information.
 - Hand-off to a person: for quotes, contracts, payments, complaints, anything the AI is unsure about, or when the customer asks for a person, the AI tells the customer the owner has been notified and the owner gets an email with the conversation. The owner can reply any time from the LINE Official Account app or chat.line.biz.

@@ -15,7 +15,7 @@ import json, re, sys, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = pathlib.Path(sys.argv[1])
 BASE = 'https://www.shiptolive.com'
-V = '64'
+V = '65'
 # LINE AI demo (/line-ai/demo/): the demo LINE Official Account 「夏裕 AI 客服體驗」 and the admin API it talks to.
 DEMO_OA_ID = '@372xwcta'
 DEMO_API = 'https://admin.shiptolive.com'
@@ -27,22 +27,22 @@ PAGES = {  # slug -> (zh path, en path)
     'software': ('/software/', '/en/software/'),
     'seo-aeo-geo': ('/seo-aeo-geo/', '/en/seo-aeo-geo/'),
     'engine': ('/ai-visibility-engine/', '/en/ai-visibility-engine/'),
-    'line-ai': ('/line-ai/', '/en/'),  # zh only for now; the EN switch goes to the EN home
-    'line-demo': ('/line-ai/demo/', '/en/'),  # zh only: try-it-yourself demo of the LINE AI service
+    'line-ai': ('/line-ai/', '/en/line-ai/'),
+    'line-demo': ('/line-ai/demo/', '/en/line-ai/'),  # zh only: try-it-yourself demo of the LINE AI service; the EN switch goes to the EN LINE AI page
     'articles': ('/ai-search/', '/en/'),
     'about': ('/about/', '/en/about/'),
 }
 L = {
     'zh': dict(htmllang='zh-Hant', brand='夏裕科技', brand_sub='SHIP TO LIVE', place='TAIPEI · SAN DIEGO', home='首頁', services='服務項目',
                web='網站建置與數位行銷', web_s='企業網站、SEO、多語言網站', sw='客製化軟體開發', sw_s='企業系統、App、系統整合',
-               ai='AI 搜尋優化（AEO／GEO）', ai_s='讓 ChatGPT、Gemini 提到您', engine='夏裕 AI 曝光引擎', about='關於我們',
+               ai='AI 搜尋優化（AEO／GEO）', ai_s='讓 ChatGPT、Gemini 提到您', engine='夏裕 AI 曝光引擎', line='LINE 官方帳號＋AI 客服', line_s='AI 24 小時回覆客人訊息', about='關於我們',
                contact='聯絡我們', cta='免費 AI 曝光檢測', other='EN', other_label='English version', menu='選單', skip='跳到主要內容',
                f_company='夏裕科技股份有限公司 Ship to Live', f_tax='統一編號 90173045・可開統一發票', f_loc='總部：台北・服務台灣與歐美',
                f_svc='服務', f_more='更多', f_guide='AI 搜尋優化指南', f_work='過往作品', f_tools='免費工具', f_privacy='隱私權政策',
                f_book='預約免費諮詢', motto='敢想。敢作。敢創新。', locale='zh_TW', alt_locale='en_US'),
     'en': dict(htmllang='en', brand='Ship to Live', brand_sub='夏裕科技 · TAIPEI', place='TAIPEI · SAN DIEGO', home='Home', services='Services',
                web='Website Design & Digital Marketing', web_s='Company sites, SEO, multilingual', sw='Custom Software Development', sw_s='Business systems, apps, integration',
-               ai='AI Search Optimization (AEO/GEO)', ai_s='Get named by ChatGPT and Gemini', engine='AI Visibility Engine', about='About',
+               ai='AI Search Optimization (AEO/GEO)', ai_s='Get named by ChatGPT and Gemini', engine='AI Visibility Engine', line='LINE AI customer service', line_s='AI answers customer messages 24/7', about='About',
                contact='Contact', cta='Free AI visibility check', other='中文', other_label='中文版', menu='Menu', skip='Skip to content',
                f_company='Ship to Live (夏裕科技股份有限公司)', f_tax='Taiwan tax ID 90173045', f_loc='Headquartered in Taipei, serving Taiwan, Europe and North America',
                f_svc='Services', f_more='More', f_guide='AI search optimization guide', f_work='Past work', f_tools='Free tools', f_privacy='Privacy policy',
@@ -71,7 +71,7 @@ def header(lang, slug):
           <a href="{p(lang,'seo-aeo-geo')}"{cur('seo-aeo-geo')}>{t['ai']}<small>{t['ai_s']}</small></a>
           <a href="{p(lang,'website')}"{cur('website')}>{t['web']}<small>{t['web_s']}</small></a>
           <a href="{p(lang,'software')}"{cur('software')}>{t['sw']}<small>{t['sw_s']}</small></a>
-          {f'<a href="/line-ai/"{cur("line-ai")}>LINE 官方帳號＋AI 客服<small>AI 24 小時回覆客人訊息</small></a>' if lang == 'zh' else ''}
+          <a href="{p(lang,'line-ai')}"{cur('line-ai')}>{t['line']}<small>{t['line_s']}</small></a>
         </div>
       </div>
       <a href="{p(lang,'engine')}"{cur('engine')}>{t['engine']}</a>
@@ -106,7 +106,7 @@ def footer(lang, meta=None):
   <div class="wrap">
     <div class="cols">
       <div><b>{t['brand']}</b>{t['f_company']}<br>{t['f_tax']}<br>{t['f_loc']}<p class="motto">{t['motto']}</p></div>
-      <nav aria-label="{t['f_svc']}"><b>{t['f_svc']}</b><a href="{p(lang,'seo-aeo-geo')}">{t['ai']}</a><a href="{p(lang,'website')}">{t['web']}</a><a href="{p(lang,'software')}">{t['sw']}</a>{'<a href="/line-ai/">LINE 官方帳號＋AI 客服</a>' if lang == 'zh' else ''}<a href="{p(lang,'engine')}">{t['engine']}</a></nav>
+      <nav aria-label="{t['f_svc']}"><b>{t['f_svc']}</b><a href="{p(lang,'seo-aeo-geo')}">{t['ai']}</a><a href="{p(lang,'website')}">{t['web']}</a><a href="{p(lang,'software')}">{t['sw']}</a><a href="{p(lang,'line-ai')}">{t['line']}</a><a href="{p(lang,'engine')}">{t['engine']}</a></nav>
       <nav aria-label="{t['f_more']}"><b>{t['f_more']}</b><a href="{p(lang,'about')}">{t['about']}</a><a href="{pre}/geo-guide/">{t['f_guide']}</a>{'<a href="/ai-search/">AI 搜尋優化知識庫</a>' if lang == 'zh' else ''}<a href="{pre}/privacy/">{t['f_privacy']}</a></nav>
       <nav aria-label="{t['contact']}"><b>{t['contact']}</b><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a>{f'<a href="{LINE_URL}" target="_blank" rel="noopener">LINE 官方帳號</a>' if lang == 'zh' else ''}<a href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">{t['f_book']}</a><a href="/business-card/{'?lang=en' if lang == 'en' else ''}">{'電子名片' if lang == 'zh' else 'Business card'}</a><a href="{p(lang,'engine')}#check">{t['cta']}</a></nav>
     </div>
