@@ -164,7 +164,7 @@ def run_en(b):
 </article>
 <script>(function(){{var d=document.getElementById('rail-toc');if(d){{var mq=matchMedia('(min-width: 1100px)');var s=function(){{d.open=mq.matches;}};s();mq.addEventListener&&mq.addEventListener('change',s);d.addEventListener('click',function(e){{if(e.target.tagName==='A'&&!mq.matches)d.open=false;}});}}
 var f=document.querySelector('.post-body .faq'),pb=document.querySelector('.post-body'),t=0;function u(){{t=0;var m=document.querySelector('.mcta');if(!m||!pb)return;var r=pb.getBoundingClientRect(),h=r.height,p=h>0?(-r.top+innerHeight)/h:1,ok=p>=.6||(f&&f.getBoundingClientRect().top<innerHeight);m.classList.toggle('late-ok',!!ok);}}addEventListener('scroll',function(){{if(!t)t=requestAnimationFrame(u);}},{{passive:true}});addEventListener('load',u);}})();</script>'''
-        html = b.head('en', 'articles', meta) + b.header('en', 'articles', a.get('pair')) + '\n<main id="main">\n' + body + '\n</main>\n' + b.footer('en') + \
+        html = b.head('en', 'articles', meta) + b.header('en', 'articles', a.get('pair')) + '\n<main id="main">\n' + body + '\n</main>\n' + b.footer('en', {'legal': a.get('section')}) + \
             f'\n<script src="/assets/v2/all.js?v={b.V}" defer></script>\n</body>\n</html>\n'
         out = b.ROOT / url.strip('/') / 'index.html'
         out.parent.mkdir(parents=True, exist_ok=True)
@@ -251,7 +251,7 @@ def run(b):
 </article>
 <script>(function(){{var d=document.getElementById('rail-toc');if(d){{var mq=matchMedia('(min-width: 1100px)');var s=function(){{d.open=mq.matches;}};s();mq.addEventListener&&mq.addEventListener('change',s);d.addEventListener('click',function(e){{if(e.target.tagName==='A'&&!mq.matches)d.open=false;}});}}
 var f=document.querySelector('.post-body .faq'),pb=document.querySelector('.post-body'),t=0;function u(){{t=0;var m=document.querySelector('.mcta');if(!m||!pb)return;var r=pb.getBoundingClientRect(),h=r.height,p=h>0?(-r.top+innerHeight)/h:1,ok=p>=.6||(f&&f.getBoundingClientRect().top<innerHeight);m.classList.toggle('late-ok',!!ok);}}addEventListener('scroll',function(){{if(!t)t=requestAnimationFrame(u);}},{{passive:true}});addEventListener('load',u);}})();</script>'''
-        html = b.head('zh', 'articles', meta) + b.header('zh', 'articles', a.get('pair')) + '\n<main id="main">\n' + body + '\n</main>\n' + b.footer('zh') + \
+        html = b.head('zh', 'articles', meta) + b.header('zh', 'articles', a.get('pair')) + '\n<main id="main">\n' + body + '\n</main>\n' + b.footer('zh', {'legal': a.get('section')}) + \
             f'\n<script src="/assets/v2/all.js?v={css_v}" defer></script>\n</body>\n</html>\n'
         out = b.ROOT / url.strip('/') / 'index.html'
         out.parent.mkdir(parents=True, exist_ok=True)

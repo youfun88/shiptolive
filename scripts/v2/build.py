@@ -15,7 +15,7 @@ import json, re, sys, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = pathlib.Path(sys.argv[1])
 BASE = 'https://www.shiptolive.com'
-V = '73'
+V = '74'
 # LINE AI demo (/line-ai/demo/, /en/line-ai/demo/): the demo LINE Official Account 「夏裕 AI 客服體驗」 and the admin API it talks to.
 DEMO_OA_ID = '@372xwcta'
 DEMO_API = 'https://admin.shiptolive.com'
@@ -29,6 +29,8 @@ PAGES = {  # slug -> (zh path, en path)
     'engine': ('/ai-visibility-engine/', '/en/ai-visibility-engine/'),
     'line-ai': ('/line-ai/', '/en/line-ai/'),
     'line-demo': ('/line-ai/demo/', '/en/line-ai/demo/'),  # try-it-yourself demo of the LINE AI service (x-line-demo.js reads <html lang>)
+    'line-terms': ('/line-ai/terms/', '/en/line-ai/terms/'),  # LINE AI 服務條款 (online subscription terms; not in the main nav)
+    'line-refund': ('/line-ai/refund/', '/en/line-ai/refund/'),  # LINE AI 退款與取消
     'articles': ('/ai-search/', '/en/'),
     'about': ('/about/', '/en/about/'),
 }
@@ -102,12 +104,15 @@ def footer(lang, meta=None):
     # LINE Official Account 夏裕科技 (@680uqtou, free basic ID): floating button on the Chinese pages.
     fab = (f'<a class="line-fab" href="{LINE_URL}" target="_blank" rel="noopener" aria-label="加 LINE 好友，用 LINE 聯絡我們">{LINE_ICON}<span>LINE 聯絡</span></a>'
            if lang == 'zh' else '')
+    # LINE AI pages (front-matter "legal: line", and the LINE AI guide) also link the service terms and the refund policy.
+    legal = (f'<a href="{p(lang,"line-terms")}">{"LINE AI 服務條款" if lang == "zh" else "LINE AI terms of service"}</a>'
+             f'<a href="{p(lang,"line-refund")}">{"退款與取消" if lang == "zh" else "Refunds and cancellation"}</a>') if (meta or {}).get('legal') == 'line' else ''
     return fab + mcta + f'''<footer class="foot">
   <div class="wrap">
     <div class="cols">
       <div><b>{t['brand']}</b>{t['f_company']}<br>{t['f_tax']}<br>{t['f_loc']}<p class="motto">{t['motto']}</p></div>
       <nav aria-label="{t['f_svc']}"><b>{t['f_svc']}</b><a href="{p(lang,'seo-aeo-geo')}">{t['ai']}</a><a href="{p(lang,'website')}">{t['web']}</a><a href="{p(lang,'software')}">{t['sw']}</a><a href="{p(lang,'line-ai')}">{t['line']}</a><a href="{p(lang,'engine')}">{t['engine']}</a></nav>
-      <nav aria-label="{t['f_more']}"><b>{t['f_more']}</b><a href="{p(lang,'about')}">{t['about']}</a><a href="{pre}/geo-guide/">{t['f_guide']}</a>{'<a href="/ai-search/">AI 搜尋優化知識庫</a>' if lang == 'zh' else ''}<a href="{pre}/privacy/">{t['f_privacy']}</a></nav>
+      <nav aria-label="{t['f_more']}"><b>{t['f_more']}</b><a href="{p(lang,'about')}">{t['about']}</a><a href="{pre}/geo-guide/">{t['f_guide']}</a>{'<a href="/ai-search/">AI 搜尋優化知識庫</a>' if lang == 'zh' else ''}<a href="{pre}/privacy/">{t['f_privacy']}</a>{legal}</nav>
       <nav aria-label="{t['contact']}"><b>{t['contact']}</b><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a>{f'<a href="{LINE_URL}" target="_blank" rel="noopener">LINE 官方帳號</a>' if lang == 'zh' else ''}<a href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">{t['f_book']}</a><a href="https://admin.shiptolive.com/card{'?lang=en' if lang == 'en' else ''}">{'電子名片' if lang == 'zh' else 'Business card'}</a><a href="{p(lang,'engine')}#check">{t['cta']}</a></nav>
     </div>
     <div class="legal"><span>© 2026 {t['f_company']}</span><span><a href="{'/en/' if lang=='zh' else '/'}" style="display:inline">{t['other_label']}</a></span></div>

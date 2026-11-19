@@ -200,6 +200,38 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.shiptolive.com/line-ai/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shiptolive.com/en/line-ai/terms/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/line-ai/terms/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/line-ai/terms/" />
+    <lastmod>2026-11-19</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.shiptolive.com/en/line-ai/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shiptolive.com/en/line-ai/terms/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/line-ai/terms/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/line-ai/terms/" />
+    <lastmod>2026-11-19</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.shiptolive.com/line-ai/refund/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shiptolive.com/en/line-ai/refund/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/line-ai/refund/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/line-ai/refund/" />
+    <lastmod>2026-11-19</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.shiptolive.com/en/line-ai/refund/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shiptolive.com/en/line-ai/refund/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/line-ai/refund/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/line-ai/refund/" />
+    <lastmod>2026-11-19</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://www.shiptolive.com/ai-search/</loc>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/ai-search/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/ai-search/" />
