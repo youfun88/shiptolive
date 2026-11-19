@@ -222,3 +222,6 @@
 .la-video { margin: 22px 0 0; }
 .la-video video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 14px; background: #161513; box-shadow: 0 10px 30px rgba(22,21,19,.12); }
 .la-video figcaption { margin-top: 10px; font-size: 13px; color: var(--ink3); }
+/* Plan card 「立即訂閱」 (x-line-sub.js): starts as the contact fallback, same size either way (no layout shift) */
+.la-buy { margin: 16px 0 0; }
+.la-buy .pill { width: 100%; }
