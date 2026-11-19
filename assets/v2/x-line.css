@@ -60,7 +60,7 @@
 .em-log { display: grid; gap: 10px; padding: 14px 16px; border-radius: 10px; background: #efebe6; }
 .em-log p { color: var(--ink); }
 .em-log b { display: block; font: 600 11px/1.4 var(--mono); color: var(--ink3); letter-spacing: .04em; }
-.em-btn { justify-self: start; padding: 10px 16px; border-radius: 999px; background: #06c755; color: #fff; font-size: 14px; font-weight: 700; }
+.em-btn { justify-self: start; padding: 10px 16px; border-radius: 999px; background: #00873c; color: #fff; font-size: 14px; font-weight: 700; }
 .em figcaption { padding: 10px 20px; font-size: 12.5px; color: var(--ink3); border-top: 1px solid var(--hair); background: #fff; }
 
 /* process: four steps instead of five */

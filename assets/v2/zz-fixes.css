@@ -110,10 +110,10 @@
 .faq-more { margin: 14px 0 0; font-size: 15px; }
 
 /* LINE Official Account (夏裕科技, @680uqtou): contact button + floating button on Chinese pages */
-.pill.line { background: #06c755; color: #fff; border-color: #06c755; display: inline-flex; align-items: center; gap: 8px; }
+.pill.line { background: #00873c; color: #fff; border-color: #00873c; display: inline-flex; align-items: center; gap: 8px; }
 .pill.line:hover { background: #05b34c; }
 .contact-g .aside .line-row { margin-top: 14px; }
-.line-fab { position: fixed; right: 20px; bottom: 24px; z-index: 69; display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px 12px 14px; border-radius: 999px; background: #06c755; color: #fff; font: 700 14.5px/1 var(--sans); text-decoration: none; box-shadow: 0 6px 20px rgba(0,0,0,.18); }
-.line-fab:hover { background: #05b34c; }
+.line-fab { position: fixed; right: 20px; bottom: 24px; z-index: 69; display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px 12px 14px; border-radius: 999px; background: #00873c; color: #fff; font: 700 14.5px/1 var(--sans); text-decoration: none; box-shadow: 0 6px 20px rgba(0,0,0,.18); }
+.line-fab:hover { background: #006f31; }
 @media (max-width: 760px) { .line-fab { bottom: calc(80px + env(safe-area-inset-bottom)); right: 14px; padding: 12px; } .line-fab span { display: none; } }
 @media print { .line-fab { display: none; } }
