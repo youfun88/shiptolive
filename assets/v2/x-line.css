@@ -217,3 +217,8 @@
   .la-vs-r p::before { content: attr(data-h); display: block; font: 700 12.5px/1.4 var(--sans); color: var(--ink3); margin-bottom: 2px; }
   .la-vs-r p:last-child::before { color: #04692d; }
 }
+
+/* 4-minute explainer video */
+.la-video { margin: 22px 0 0; }
+.la-video video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 14px; background: #161513; box-shadow: 0 10px 30px rgba(22,21,19,.12); }
+.la-video figcaption { margin-top: 10px; font-size: 13px; color: var(--ink3); }
