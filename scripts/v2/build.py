@@ -15,7 +15,7 @@ import json, re, sys, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = pathlib.Path(sys.argv[1])
 BASE = 'https://www.shiptolive.com'
-V = '78'
+V = '79'
 # LINE AI demo (/line-ai/demo/, /en/line-ai/demo/): the demo LINE Official Account 「夏裕 AI 客服體驗」 and the admin API it talks to.
 DEMO_OA_ID = '@372xwcta'
 DEMO_API = 'https://admin.shiptolive.com'
@@ -215,6 +215,7 @@ addEventListener('load',function(){{setTimeout(function(){{var s=document.create
 {extra_css}<script type="application/ld+json">
 {ld}
 </script>
+<script>if(/[?&]embed=1/.test(location.search)&&window.top!==window.self){{document.documentElement.classList.add('embed');document.write('<base target="_blank">');}}</script>
 <script src="https://admin.shiptolive.com/stl-track.js" data-site="shiptolive" defer></script>
 </head>
 <body>

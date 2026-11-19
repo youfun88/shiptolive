@@ -117,3 +117,6 @@
 .line-fab:hover { background: #006f31; }
 @media (max-width: 760px) { .line-fab { bottom: calc(80px + env(safe-area-inset-bottom)); right: 14px; padding: 12px; } .line-fab span { display: none; } }
 @media print { .line-fab { display: none; } }
+/* ?embed=1 inside a frame (the admin checkout's terms pop-up): page body only. */
+html.embed .hdr, html.embed .foot, html.embed .line-fab, html.embed .toc { display: none !important; }
+html.embed main { padding-top: 8px; }
