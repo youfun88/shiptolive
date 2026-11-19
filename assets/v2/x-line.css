@@ -143,7 +143,7 @@
 .la-launch { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; background: #e9f9ef; border: 1px solid #b7ebc8; border-radius: 16px; padding: 14px 20px; }
 .la-launch b { color: #04692d; font: 700 15.5px/1.4 var(--sans); }
 .la-launch span { font-size: 14.5px; line-height: 1.6; }
-.la-setup s { color: var(--muted, #6b6762); }
+.la-setup s { color: var(--ink2); }
 .la-off { color: #04692d; font-weight: 700; margin-left: 4px; }
 
 .la-addon-p { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 6px; font-size: 14.5px; line-height: 1.6; }
@@ -225,3 +225,58 @@
 /* Plan card 「立即訂閱」 (x-line-sub.js): starts as the contact fallback, same size either way (no layout shift) */
 .la-buy { margin: 16px 0 0; }
 .la-buy .pill { width: 100%; }
+
+/* 2026-11-19 audit: shorter path to the plans */
+.la-from { margin-top: 14px; font-size: 14.5px; color: var(--ink2); }
+.la-from a { color: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.la-buy .pill { min-height: 46px; font-size: 15px; }
+.la-video { max-width: 980px; }
+
+/* prepare: the 8-item checklist folds away; the sample Q&A table stays open */
+.la-more { border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
+.la-more summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; font-weight: 700; font-size: 17px; }
+.la-more summary::-webkit-details-marker { display: none; }
+.la-more summary::after { content: "+"; font-size: 24px; font-weight: 400; color: var(--ink3); }
+.la-more[open] summary::after { content: "–"; }
+.la-more .svc-list { margin-bottom: 18px; }
+
+/* pricing: "which plan fits me?" (x-line-sub.js; hidden without JS, the cards say who each plan is for) */
+.la-fit { display: none; margin: 0; padding: 22px 24px; border: 1px solid var(--hair); border-radius: 18px; background: var(--card); }
+.js .la-fit { display: grid; gap: 14px 40px; grid-template-columns: auto 1fr; align-items: start; }
+.la-fit > h3, .la-fit > p { grid-column: 1 / -1; }
+@media (max-width: 900px) { .js .la-fit { grid-template-columns: 1fr; } .la-fit { padding: 20px 18px; } }
+.la-fit h3 { font: 700 19px/1.4 var(--sans); }
+.la-fit fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.la-fit legend { padding: 0; margin-bottom: 8px; font-size: 15px; font-weight: 600; color: var(--ink2); }
+.la-seg { display: flex; flex-wrap: wrap; gap: 8px; }
+.la-seg label { position: relative; }
+.la-seg input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.la-seg span { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(22,21,19,.3); background: #fff; font-size: 15px; font-weight: 600; cursor: pointer; transition: background .15s, border-color .15s, color .15s; }
+.la-seg input:checked + span { background: var(--ink); border-color: var(--ink); color: #fff; }
+.la-seg input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+.la-fit-r { font-size: 15.5px; line-height: 1.7; color: var(--ink2); }
+.la-fit-r b { color: var(--ink); }
+.la-fit-r a { font-weight: 700; color: #036b2e; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+.la-fit-n { font-size: 13.5px; color: var(--ink3); }
+.la-plans.la-3 .la-plan.fit { outline: 3px solid #b8501d; outline-offset: 3px; }
+.la-oa.fit { outline: 3px solid #b8501d; outline-offset: 3px; }
+.la-plan, .la-oa { scroll-margin-top: 90px; }
+
+/* overage worked examples */
+.la-mac { scroll-margin-top: 90px; }
+.la-mac-x { list-style: none; margin: 12px 0 4px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 920px; }
+.la-mac-x li { padding: 12px 16px; border-radius: 12px; background: var(--bg2); font-size: 15px; line-height: 1.6; }
+.la-mac-x span { display: block; font: 600 12.5px/1.5 var(--sans); color: var(--ink3); }
+@media (max-width: 760px) { .la-mac-x { grid-template-columns: 1fr; } }
+
+/* add-on: folded, price in the summary */
+details.la-addon { padding: 0; scroll-margin-top: 90px; }
+details.la-addon summary { list-style: none; cursor: pointer; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; padding: 16px 48px 16px 22px; position: relative; min-height: 56px; }
+details.la-addon summary::-webkit-details-marker { display: none; }
+details.la-addon summary span { font-size: 14px; color: var(--ink3); }
+details.la-addon summary::after { content: "+"; position: absolute; right: 20px; top: 12px; font-size: 24px; color: var(--ink3); }
+details.la-addon[open] summary::after { content: "–"; }
+details.la-addon > p, details.la-addon > ul { margin-left: 22px; margin-right: 22px; }
+details.la-addon > p:last-child { margin-bottom: 18px; }
+.la-help { grid-column: 1 / -1; margin-top: 8px; font-size: 15.5px; font-weight: 600; line-height: 2; }
+@media (max-width: 600px) { .la-seg { display: grid; grid-template-columns: 1fr 1fr; } .la-seg span { width: 100%; justify-content: center; padding: 0 10px; } .la-fit legend { font-size: 14.5px; } }

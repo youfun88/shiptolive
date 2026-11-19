@@ -15,7 +15,7 @@ import json, re, sys, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = pathlib.Path(sys.argv[1])
 BASE = 'https://www.shiptolive.com'
-V = '76'
+V = '77'
 # LINE AI demo (/line-ai/demo/, /en/line-ai/demo/): the demo LINE Official Account 「夏裕 AI 客服體驗」 and the admin API it talks to.
 DEMO_OA_ID = '@372xwcta'
 DEMO_API = 'https://admin.shiptolive.com'
@@ -99,8 +99,13 @@ def footer(lang, meta=None):
     # A page may swap the phone bar's first button with front-matter "mcta: label|href" (e.g. the LINE AI pages).
     m1, _, m2 = ((meta or {}).get('mcta') or '').partition('|')
     a1_label, a1_href = (m1.strip(), m2.strip()) if m1 and m2 else (t['cta'], chk)
-    mcta = (f'<div class="mcta" aria-label="{a1_label}"><a class="a1" href="{a1_href}">{a1_label}</a>'
-            f'<a class="a2" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">{"預約免費諮詢" if lang == "zh" else "Book a free call"}</a></div>')
+    a1_ext = ' target="_blank" rel="noopener"' if a1_href.startswith('http') else ''
+    # ...and the second one with "mcta2: label|href" (default: book a free call on Calendly).
+    n1, _, n2 = ((meta or {}).get('mcta2') or '').partition('|')
+    a2_label, a2_href = (n1.strip(), n2.strip()) if n1 and n2 else ("預約免費諮詢" if lang == "zh" else "Book a free call", 'https://calendly.com/yufansapp/20min')
+    a2_ext = ' target="_blank" rel="noopener"' if a2_href.startswith('http') else ''
+    mcta = (f'<div class="mcta" aria-label="{a1_label}"><a class="a1" href="{a1_href}"{a1_ext}>{a1_label}</a>'
+            f'<a class="a2" href="{a2_href}"{a2_ext}>{a2_label}</a></div>')
     # LINE Official Account 夏裕科技 (@680uqtou, free basic ID): floating button on the Chinese pages.
     fab = (f'<a class="line-fab" href="{LINE_URL}" target="_blank" rel="noopener" aria-label="加 LINE 好友，用 LINE 聯絡我們">{LINE_ICON}<span>LINE 聯絡</span></a>'
            if lang == 'zh' else '')
