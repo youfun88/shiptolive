@@ -76,8 +76,10 @@
     codeWord: 'Demo code ', fallbackName: 'Demo shop', avatarStrip: /^sample\s+/i,
     nQa: function (n) { return n + ' / ' + LIM.qa; }, nInv: function (n) { return n + ' / ' + LIM.inv; }, nEx: function (n) { return n + ' / ' + LIM.ex; },
     edited: 'You changed the content. Press "Start the demo" again to use it.',
-    q: 'Question', a: 'Standard answer', qL: function (i) { return 'Q&A ' + i + ': question'; }, aL: function (i) { return 'Q&A ' + i + ': standard answer'; },
-    hand: 'Hand off', delQa: function (i) { return 'Delete Q&A ' + i; },
+    qL: function (i) { return 'Q&A ' + i + ': question'; }, aL: function (i) { return 'Q&A ' + i + ': standard answer'; },
+    qPh: 'e.g. Do you open on Sundays?', aPh: 'e.g. Sundays we are closed; Saturday 10:00 to 16:00.',
+    handOff: 'AI answers', handOn: 'Person', handL: function (i) { return 'Q&A ' + i + ': always hand off to a person'; },
+    del: 'Delete', delQa: function (i) { return 'Delete Q&A ' + i; },
     exL: function (i) { return 'Example reply ' + i; }, delEx: function (i) { return 'Delete example reply ' + i; },
     item: 'Item', qty: 'Qty', price: 'Price', note: 'Note',
     itemL: function (n) { return 'Row ' + n + ': item or time slot'; }, qtyL: function (n) { return 'Row ' + n + ': quantity (empty = owner checks)'; },
@@ -102,8 +104,10 @@
     codeWord: '體驗碼 ', fallbackName: '示範店家', avatarStrip: /^範例/,
     nQa: function (n) { return n + '／' + LIM.qa + ' 題'; }, nInv: function (n) { return n + '／' + LIM.inv + ' 項'; }, nEx: function (n) { return n + '／' + LIM.ex + ' 則'; },
     edited: '內容已修改：再按一次「開始體驗」，新的內容才會生效。',
-    q: '問題', a: '標準答案', qL: function (i) { return '第 ' + i + ' 題：問題'; }, aL: function (i) { return '第 ' + i + ' 題：標準答案'; },
-    hand: '轉真人', delQa: function (i) { return '刪除第 ' + i + ' 題'; },
+    qL: function (i) { return '第 ' + i + ' 題：問題'; }, aL: function (i) { return '第 ' + i + ' 題：標準答案'; },
+    qPh: '例：週日有營業嗎？', aPh: '例：週日公休，週六 10:00–16:00 有營業。',
+    handOff: 'AI 回答', handOn: '轉真人', handL: function (i) { return '第 ' + i + ' 題：一定要轉真人'; },
+    del: '刪除', delQa: function (i) { return '刪除第 ' + i + ' 題'; },
     exL: function (i) { return '範例回覆 ' + i; }, delEx: function (i) { return '刪除範例回覆 ' + i; },
     item: '品項', qty: '數量', price: '價格', note: '備註',
     itemL: function (n) { return '第 ' + n + ' 項：品項或時段'; }, qtyL: function (n) { return '第 ' + n + ' 項：數量（留空＝請負責人確認）'; },
@@ -190,7 +194,7 @@
   }
   // textareas grow with their content (field-sizing: content does this where supported)
   var autoSize = CSS.supports && CSS.supports('field-sizing', 'content') ? function () {} : function (t) { t.style.height = 'auto'; t.style.height = (t.scrollHeight + 2) + 'px'; };
-  function sizeAll() { Array.prototype.forEach.call(document.querySelectorAll('.ld-card textarea'), autoSize); }
+  function sizeAll() { Array.prototype.forEach.call(document.querySelectorAll('.ld-edit textarea'), autoSize); }
   function honey(form) { var h = form && form.querySelector('[name="_honey"]'); return h ? h.value : ''; }
   function changed() {
     if (session && !dirty) { dirty = true; status('ld-go-status', T.edited); }
@@ -216,23 +220,29 @@
   function renderQA() {
     var box = $('ld-qa'); box.textContent = '';
     kit.qa.forEach(function (r, i) {
-      var row = el('div', { class: 'ld-qrow' + (r.handoff ? ' hand' : ''), role: 'listitem' });
-      var cb = el('input', { type: 'checkbox' }); cb.checked = !!r.handoff;
-      cb.addEventListener('change', function () { r.handoff = cb.checked; row.classList.toggle('hand', cb.checked); changed(); });
-      row.appendChild(el('div', null, [el('span', { class: 'lbl', 'aria-hidden': 'true', text: T.q }), field(T.qL(i + 1), r.q, LIM.field, function (v) { r.q = v; }, true)]));
-      row.appendChild(el('div', null, [el('span', { class: 'lbl', 'aria-hidden': 'true', text: T.a }), field(T.aL(i + 1), r.a, LIM.field, function (v) { r.a = v; }, true)]));
-      row.appendChild(el('label', { class: 'ld-ho' }, [cb, T.hand]));
-      row.appendChild(el('button', { type: 'button', class: 'ld-x', 'aria-label': T.delQa(i + 1), text: '×', on: { click: function () { kit.qa.splice(i, 1); renderQA(); changed(); } } }));
+      var row = el('li', { class: 'ld-qrow' + (r.handoff ? ' hand' : '') });
+      var cb = el('input', { type: 'checkbox', 'aria-label': T.handL(i + 1) }); cb.checked = !!r.handoff;
+      var chip = el('span', { 'aria-hidden': 'true', text: r.handoff ? T.handOn : T.handOff });
+      cb.addEventListener('change', function () { r.handoff = cb.checked; row.classList.toggle('hand', cb.checked); chip.textContent = cb.checked ? T.handOn : T.handOff; changed(); });
+      row.appendChild(el('span', { class: 'ld-qn', 'aria-hidden': 'true', text: String(i + 1) }));
+      row.appendChild(field(T.qL(i + 1), r.q, LIM.field, function (v) { r.q = v; }, true, { class: 'ld-fq', placeholder: T.qPh }));
+      row.appendChild(field(T.aL(i + 1), r.a, LIM.field, function (v) { r.a = v; }, true, { class: 'ld-fa', placeholder: T.aPh }));
+      row.appendChild(el('span', { class: 'ld-qside' }, [
+        el('label', { class: 'ld-hchip' }, [cb, chip]),
+        del(T.delQa(i + 1), function () { kit.qa.splice(i, 1); renderQA(); changed(); })
+      ]));
       box.appendChild(row);
     });
     counts();
   }
+  // the quiet 刪除 text link (shows on row hover/focus; always on touch screens)
+  function del(label, onClick) { return el('button', { type: 'button', class: 'ld-del', 'aria-label': label, text: T.del, on: { click: onClick } }); }
   function renderEx() {
     var box = $('ld-ex'); box.textContent = '';
     kit.examples.forEach(function (t, i) {
       box.appendChild(el('div', { class: 'ld-exrow' }, [
         field(T.exL(i + 1), t, LIM.field, function (v) { kit.examples[i] = v; }, true),
-        el('button', { type: 'button', class: 'ld-x', 'aria-label': T.delEx(i + 1), text: '×', on: { click: function () { kit.examples.splice(i, 1); renderEx(); changed(); } } })
+        del(T.delEx(i + 1), function () { kit.examples.splice(i, 1); renderEx(); changed(); })
       ]));
     });
     counts();
@@ -247,7 +257,7 @@
         cell(T.qty, field(T.qtyL(n), r.qty == null ? '' : String(r.qty), 6, function (v) { var x = parseInt(v, 10); r.qty = v.trim() === '' || isNaN(x) ? null : Math.max(0, x); }, false, { type: 'number', min: '0', inputmode: 'numeric', placeholder: '?' })),
         cell(T.price, field(T.priceL(n), r.price || '', 60, function (v) { r.price = v; })),
         cell(T.note, field(T.noteL(n), r.note || '', LIM.field, function (v) { r.note = v; })),
-        el('button', { type: 'button', class: 'ld-x', 'aria-label': T.delInv(n), text: '×', on: { click: function () { kit.inventory.splice(i, 1); renderInv(); changed(); } } })
+        del(T.delInv(n), function () { kit.inventory.splice(i, 1); renderInv(); changed(); })
       ]));
     });
     counts();
@@ -268,7 +278,7 @@
     var c = name.replace(T.avatarStrip, '').charAt(0);
     $('ld-av').textContent = EN ? (c || 'S').toUpperCase() : c || '店';
   }
-  $('ld-business').addEventListener('input', function () { kit.business = this.value; header(); changed(); });
+  $('ld-business').addEventListener('input', function () { kit.business = this.value; autoSize(this); header(); changed(); });
   $('ld-style').addEventListener('input', function () { kit.style = this.value; autoSize(this); changed(); });
   var rz; window.addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(sizeAll, 200); });
   $('ld-qa-add').addEventListener('click', function () { if (kit.qa.length < LIM.qa) { kit.qa.push({ q: '', a: '', handoff: false }); renderQA(); changed(); var t = $('ld-qa').querySelectorAll('textarea'); if (t.length) t[t.length - 2].focus(); } });

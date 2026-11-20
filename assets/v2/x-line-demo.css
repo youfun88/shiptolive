@@ -63,55 +63,99 @@
 @keyframes ld-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .ld-status.busy::before { animation: none; } }
 
-/* step 2: editable cards */
-.ld-card { margin-top: 16px; background: var(--card); border: 1px solid var(--hair); border-radius: var(--r); padding: 20px 20px 18px; }
+/* step 3 editor: the admin's LINE 客服 → 標準問答 look (shiptolive-admin app/line/components/line-bot.css,
+   tokens from app/globals.css), 2026-11-20. One white panel per block, hairline rows, text that becomes a field on focus. */
+.ld-edit { --lb-card: #fff; --lb-line: #e7e0d4; --lb-line-soft: #efe9df; --lb-line-strong: #d6ccbb; --lb-ink2: #3b3833; --lb-muted: #67625a; --lb-faint: #8f897f;
+  --lb-warn: #8a5100; --lb-warn-bg: #fdf3e2; --lb-focus: #b8501d; --lb-bad: #b42318; --lb-r: 12px; --lb-r-sm: 8px; }
+.ld-card { margin-top: 28px; container-type: inline-size; }
 .ld-card-h { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
 .ld-card h3 { font-size: 18px; }
-.ld-count { font: 600 12px/1 var(--mono); color: var(--ink3); white-space: nowrap; }
-.ld-card > .pill { margin-top: 12px; }
-.ld-card input, .ld-card textarea { width: 100%; font: 400 15px/1.5 var(--sans); color: var(--ink); background: #fff; border: 1px solid rgba(22,21,19,.2); border-radius: 10px; padding: 9px 12px; min-height: 44px; }
-.ld-card textarea { resize: vertical; min-height: 44px; overflow: hidden; field-sizing: content; }
-.ld-card input, .ld-card textarea, .ld-custom textarea { font-size: 16px; } /* 16px+ keeps iOS from zooming in on focus */
-.ld-custom textarea { width: 100%; min-height: 80px; }
-.ld-card input:focus, .ld-card textarea:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: transparent; }
-.ld-x { flex: none; width: 44px; height: 44px; border-radius: 999px; border: 1px solid transparent; background: transparent; color: var(--ink3); font-size: 20px; line-height: 1; cursor: pointer; display: grid; place-items: center; }
-.ld-x:hover { background: rgba(22,21,19,.06); color: var(--ink); }
+.ld-count { font-size: 13px; color: var(--lb-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ld-card > .ld-help { margin-top: 4px; }
+.ld-panel { margin-top: 12px; background: var(--lb-card); border: 1px solid var(--lb-line); border-radius: var(--lb-r); overflow: clip; }
+.ld-panel:empty, .ld-qa-list:has(.ld-qa:empty), .ld-inv-list:has(.ld-inv:empty) { display: none; }
+.ld-one { padding: 10px 14px 8px; }
+.ld-card.ld-one { margin-top: 20px; }
+.ld-f { display: grid; gap: 0; }
+.ld-fl { padding-left: 10px; font-size: 12px; font-weight: 600; letter-spacing: .02em; color: var(--lb-muted); }
 
-.ld-qa { margin-top: 12px; display: grid; gap: 10px; }
-.ld-qrow { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) auto auto; gap: 8px; align-items: start; padding: 10px; border-radius: 12px; background: #fff; border: 1px solid var(--hair); }
-.ld-qrow textarea { min-height: 44px; }
-.ld-qrow .lbl { display: block; font: 600 11px/1.4 var(--mono); letter-spacing: .04em; color: var(--ink3); margin-bottom: 3px; }
-.ld-ho { display: flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 6px; margin-top: 17px; font-size: 13.5px; font-weight: 600; white-space: nowrap; cursor: pointer; }
-.ld-ho input { width: 18px; height: 18px; min-height: 0; accent-color: #b8501d; }
-.ld-qrow .ld-x { margin-top: 17px; }
-.ld-qrow.hand { border-color: #f0c9b3; background: #fffaf6; }
-@media (max-width: 720px) {
-  .ld-card { padding: 16px 14px 14px; }
-  .ld-qrow { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 8px; }
-  .ld-qrow > div:nth-child(1) { grid-column: 1 / -1; grid-row: 1; }
-  .ld-qrow > div:nth-child(2) { grid-column: 1 / -1; grid-row: 2; }
-  .ld-qrow .ld-ho { grid-column: 1; grid-row: 3; margin-top: 0; padding-left: 0; justify-self: start; }
-  .ld-qrow .ld-x { grid-column: 2; grid-row: 3; margin-top: 0; }
+/* every field: plain text at rest, a white field with the orange focus ring while editing; grows with its text, no resize handle */
+.ld-edit textarea, .ld-edit .ld-panel input { display: block; width: 100%; min-width: 0; min-height: 40px; max-height: 360px; margin: 0; padding: 8px 10px; border: 1px solid transparent; border-radius: var(--lb-r-sm);
+  background: transparent; color: var(--lb-ink2); font: 400 15px/1.6 var(--sans); resize: none; overflow: hidden; field-sizing: content; box-shadow: none; transition: background .12s, border-color .12s; }
+.ld-edit textarea:hover, .ld-edit .ld-panel input:hover { background: var(--lb-card); border-color: var(--lb-line); }
+.ld-qrow.hand textarea:hover { background: color-mix(in oklab, var(--lb-card) 70%, transparent); }
+.ld-edit textarea:focus, .ld-edit .ld-panel input:focus { background: var(--lb-card); border-color: var(--lb-line-strong); outline: 2px solid var(--lb-focus); outline-offset: 0; }
+.ld-edit textarea::placeholder, .ld-edit .ld-panel input::placeholder { color: var(--lb-faint); font-weight: 400; }
+.ld-edit input[type="number"] { -moz-appearance: textfield; appearance: textfield; }
+.ld-edit input[type="number"]::-webkit-inner-spin-button, .ld-edit input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+@media (pointer: coarse) { .ld-edit textarea, .ld-edit .ld-panel input { font-size: 16px; } } /* 16px+ keeps iOS from zooming in on focus */
+.ld-custom textarea { width: 100%; min-height: 80px; font-size: 16px; }
+
+/* Q&A table: # | question | answer | AI 回答 / 轉真人 pill + 刪除 */
+.ld-qa-cols, .ld-qrow { display: grid; grid-template-columns: 26px minmax(0, 1fr) minmax(0, 1.8fr) 158px; gap: 4px 12px; align-items: start; }
+.ld-qa-cols { padding: 10px 14px 8px; border-bottom: 1px solid var(--lb-line); font-size: 12px; font-weight: 600; letter-spacing: .02em; color: var(--lb-muted); }
+.ld-qa-cols span:nth-child(1) { text-align: right; }
+.ld-qa-cols span:nth-child(2), .ld-qa-cols span:nth-child(3) { padding-left: 11px; }
+.ld-qa-cols span:nth-child(4) { text-align: right; padding-right: 54px; }
+.ld-qa { list-style: none; margin: 0; padding: 0; }
+.ld-qrow { padding: 8px 14px; border-top: 1px solid var(--lb-line-soft); transition: background .12s; }
+.ld-qrow:first-child { border-top: 0; }
+.ld-qrow.hand { background: var(--lb-warn-bg); }
+.ld-qn { padding-top: 9px; text-align: right; font-size: 14px; color: var(--lb-muted); font-variant-numeric: tabular-nums; }
+.ld-edit .ld-fq { font-weight: 600; color: var(--ink); }
+.ld-qside { display: flex; align-items: center; justify-content: flex-end; gap: 2px; padding-top: 4px; }
+.ld-hchip { position: relative; display: inline-flex; align-items: center; min-height: 32px; cursor: pointer; }
+.ld-hchip input { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+.ld-hchip span { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 0 12px; border: 1px solid var(--lb-line); border-radius: 999px; background: var(--lb-card); color: var(--lb-muted);
+  font-size: 13px; font-weight: 600; white-space: nowrap; transition: background .12s, border-color .12s, color .12s; }
+.ld-hchip span::before { content: ""; width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid currentColor; }
+.ld-hchip:hover span { border-color: var(--lb-line-strong); color: var(--lb-ink2); }
+.ld-hchip input:checked + span { background: var(--lb-warn); border-color: var(--lb-warn); color: #fff; }
+.ld-hchip input:checked + span::before { background: currentColor; }
+.ld-hchip input:focus-visible + span { outline: 2px solid var(--lb-focus); outline-offset: 2px; }
+.ld-del { flex: none; min-height: 32px; min-width: 32px; padding: 0 8px; border: 0; background: none; color: var(--lb-muted); font: inherit; font-size: 13px; cursor: pointer; opacity: 0; transition: opacity .12s, color .12s; }
+:is(.ld-qrow, .ld-exrow, .ld-irow):is(:hover, :focus-within) .ld-del, .ld-del:focus-visible { opacity: 1; }
+.ld-del:hover { color: var(--lb-bad); text-decoration: underline; text-underline-offset: 3px; }
+.ld-del:focus-visible { outline: 2px solid var(--lb-focus); outline-offset: 2px; border-radius: 4px; }
+@media (hover: none), (pointer: coarse) { .ld-del { opacity: 1; } }
+.ld-add { display: block; width: 100%; min-height: 44px; margin-top: 8px; border: 1px dashed var(--lb-line-strong); border-radius: var(--lb-r); background: transparent; color: var(--lb-ink2); font: 600 14px/1.2 var(--sans); cursor: pointer; }
+.ld-add:hover:not(:disabled) { background: var(--lb-card); border-color: var(--lb-ink2); }
+.ld-add:focus-visible { outline: 2px solid var(--lb-focus); outline-offset: 2px; }
+.ld-add:disabled { opacity: .45; cursor: default; }
+/* narrow column (phones, or a squeezed desktop column): number + question, answer under it, pill + 刪除 under that */
+@container (max-width: 600px) {
+  .ld-qa-cols { display: none; }
+  .ld-qrow { grid-template-columns: 20px minmax(0, 1fr); gap: 0 4px; padding: 8px 10px 8px 6px; }
+  .ld-qrow > .ld-fq, .ld-qrow > .ld-fa, .ld-qrow > .ld-qside { grid-column: 2; }
+  .ld-qside { justify-content: space-between; padding: 4px 0 2px 10px; }
+  .ld-del { opacity: 1; }
 }
 
-.ld-ex-h { display: flex; align-items: baseline; justify-content: space-between; margin-top: 16px; }
+/* example replies: one hairline list */
+.ld-ex-h { display: flex; align-items: baseline; justify-content: space-between; margin-top: 18px; }
 .ld-ex-h b { font-size: 14px; }
-.ld-ex { margin-top: 8px; display: grid; gap: 8px; }
-.ld-exrow { display: flex; gap: 6px; align-items: start; }
+.ld-exrow { display: flex; gap: 6px; align-items: start; padding: 6px 8px 6px 6px; border-top: 1px solid var(--lb-line-soft); }
+.ld-exrow:first-child { border-top: 0; }
+.ld-exrow .ld-del { margin-top: 4px; }
 
-.ld-inv { margin-top: 12px; display: grid; gap: 8px; }
-.ld-irow { display: grid; grid-template-columns: minmax(0, 1.6fr) 86px minmax(0, .9fr) minmax(0, 1fr) auto; gap: 8px; align-items: end; }
-.ld-irow .lbl { display: block; font: 600 11px/1.4 var(--mono); letter-spacing: .04em; color: var(--ink3); margin-bottom: 3px; }
-.ld-irow + .ld-irow .lbl { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-.ld-irow input[type="number"] { -moz-appearance: textfield; }
-@media (max-width: 720px) {
-  .ld-irow { grid-template-columns: 96px minmax(0, 1fr) auto; padding: 10px; border-radius: 12px; background: #fff; border: 1px solid var(--hair); }
+/* inventory: a small table */
+.ld-inv-cols, .ld-irow { display: grid; grid-template-columns: minmax(0, 1.7fr) 56px minmax(0, .7fr) minmax(0, 1.3fr) 52px; gap: 4px 6px; align-items: start; }
+.ld-inv-cols { padding: 10px 10px 8px; border-bottom: 1px solid var(--lb-line); font-size: 12px; font-weight: 600; letter-spacing: .02em; color: var(--lb-muted); }
+.ld-inv-cols span { padding-left: 11px; }
+.ld-irow { padding: 6px 10px; border-top: 1px solid var(--lb-line-soft); }
+.ld-irow:first-child { border-top: 0; }
+.ld-irow > div { min-width: 0; }
+.ld-irow .lbl { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.ld-irow .ld-del { margin-top: 4px; }
+@container (max-width: 600px) {
+  .ld-inv-cols { display: none; }
+  .ld-irow { grid-template-columns: 84px minmax(0, 1fr) auto; padding: 8px 8px 8px 6px; }
   .ld-irow > div:nth-child(1) { grid-column: 1 / 3; grid-row: 1; }
-  .ld-irow > .ld-x { grid-column: 3; grid-row: 1; }
+  .ld-irow > .ld-del { grid-column: 3; grid-row: 1; }
   .ld-irow > div:nth-child(2) { grid-column: 1; grid-row: 2; }
   .ld-irow > div:nth-child(3) { grid-column: 2 / -1; grid-row: 2; }
   .ld-irow > div:nth-child(4) { grid-column: 1 / -1; grid-row: 3; }
-  .ld-irow + .ld-irow .lbl { position: static; width: auto; height: auto; clip: auto; }
+  .ld-irow .lbl { position: static; width: auto; height: auto; overflow: visible; clip: auto; display: block; padding-left: 11px; font-size: 12px; font-weight: 600; color: var(--lb-muted); }
 }
 
 /* step 3: code + QR */

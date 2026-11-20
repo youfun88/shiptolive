@@ -95,31 +95,39 @@ ld: [{"@type": "WebApplication", "@id": "https://www.shiptolive.com/line-ai/demo
     <div class="ld-edit" id="ld-edit">
       <h2 class="h2" id="e-h"><span class="ld-n">3</span>改成您的內容<small>選填</small></h2>
       <p class="ld-help ld-lead">AI 只根據這裡的內容回答。改完按「開始體驗」，新的內容才會生效。</p>
-      <div class="ld-card">
-        <label class="fld"><span>店家簡介</span><input id="ld-business" maxlength="300"></label>
+      <div class="ld-card ld-panel ld-one">
+        <label class="ld-f"><span class="ld-fl">店家簡介</span><textarea id="ld-business" rows="1" maxlength="300"></textarea></label>
       </div>
 
       <div class="ld-card">
         <div class="ld-card-h"><h3>常見問題和答案</h3><span class="ld-count" id="ld-qa-count"></span></div>
-        <p class="ld-help">客人可能怎麼問，以及您希望 AI 怎麼回答。勾選「轉真人」的題目（例如報價、客訴），AI 會先回覆客人，再通知您親自回覆。</p>
-        <div class="ld-qa" id="ld-qa" role="list"></div>
-        <button class="pill ghost sm" type="button" id="ld-qa-add">＋ 新增一題</button>
+        <p class="ld-help">客人可能怎麼問，以及您希望 AI 怎麼回答。點一下文字就能修改。切到「轉真人」的題目（例如報價、客訴），AI 會先回覆客人，再通知您親自回覆。</p>
+        <div class="ld-panel ld-qa-list">
+          <div class="ld-qa-cols" aria-hidden="true"><span>#</span><span>客人問</span><span>標準答案</span><span>轉真人</span></div>
+          <ol class="ld-qa" id="ld-qa"></ol>
+        </div>
+        <button class="ld-add" type="button" id="ld-qa-add">＋ 新增一題</button>
       </div>
 
       <div class="ld-card">
         <div class="ld-card-h"><h3>回覆語氣</h3></div>
-        <label class="fld"><span>怎麼跟客人說話</span><textarea id="ld-style" rows="2" maxlength="300"></textarea></label>
+        <div class="ld-panel ld-one">
+          <label class="ld-f"><span class="ld-fl">怎麼跟客人說話</span><textarea id="ld-style" rows="1" maxlength="300"></textarea></label>
+        </div>
         <div class="ld-ex-h"><b>範例回覆</b><span class="ld-count" id="ld-ex-count"></span></div>
         <p class="ld-help">AI 會參考這些回覆的口吻。正式上線時，標準方案用您自己寫過的 20–50 則回覆。</p>
-        <div class="ld-ex" id="ld-ex"></div>
-        <button class="pill ghost sm" type="button" id="ld-ex-add">＋ 新增範例</button>
+        <div class="ld-panel ld-ex" id="ld-ex"></div>
+        <button class="ld-add" type="button" id="ld-ex-add">＋ 新增範例</button>
       </div>
 
       <div class="ld-card">
         <div class="ld-card-h"><h3>示範庫存／預約空檔</h3><span class="ld-count" id="ld-inv-count"></span></div>
         <p class="ld-help">客人問「還有貨嗎？」「週六還有空位嗎？」時，AI 查這張表回答。數量 0 代表售完或額滿；留空代表要請負責人確認。正式上線時，輕量以上方案含 Google 試算表即時資料；串接 POS 或預約系統是加購項目。</p>
-        <div class="ld-inv" id="ld-inv"></div>
-        <button class="pill ghost sm" type="button" id="ld-inv-add">＋ 新增品項</button>
+        <div class="ld-panel ld-inv-list">
+          <div class="ld-inv-cols" aria-hidden="true"><span>品項</span><span>數量</span><span>價格</span><span>備註</span></div>
+          <div class="ld-inv" id="ld-inv"></div>
+        </div>
+        <button class="ld-add" type="button" id="ld-inv-add">＋ 新增品項</button>
       </div>
       <p class="ld-again"><a class="tlink" href="#ld-start" id="ld-again">改好了？回到「開始體驗」</a></p>
     </div>

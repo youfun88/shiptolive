@@ -95,31 +95,39 @@ ld: [{"@type": "WebApplication", "@id": "https://www.shiptolive.com/en/line-ai/d
     <div class="ld-edit" id="ld-edit">
       <h2 class="h2" id="e-h"><span class="ld-n">3</span>Make it yours<small>Optional</small></h2>
       <p class="ld-help ld-lead">The AI answers only from what's here. After editing, press "Start the demo" again to use the new content.</p>
-      <div class="ld-card">
-        <label class="fld"><span>About the business</span><input id="ld-business" maxlength="300"></label>
+      <div class="ld-card ld-panel ld-one">
+        <label class="ld-f"><span class="ld-fl">About the business</span><textarea id="ld-business" rows="1" maxlength="300"></textarea></label>
       </div>
 
       <div class="ld-card">
         <div class="ld-card-h"><h3>Common questions and answers</h3><span class="ld-count" id="ld-qa-count"></span></div>
-        <p class="ld-help">How customers might ask, and how you want the AI to answer. For questions marked "Hand off" (quotes or complaints, for example), the AI replies to the customer first, then notifies you to reply yourself.</p>
-        <div class="ld-qa" id="ld-qa" role="list"></div>
-        <button class="pill ghost sm" type="button" id="ld-qa-add">+ Add a question</button>
+        <p class="ld-help">How customers might ask, and how you want the AI to answer. Click any text to edit it. For questions switched to "Person" (quotes or complaints, for example), the AI replies to the customer first, then notifies you to reply yourself.</p>
+        <div class="ld-panel ld-qa-list">
+          <div class="ld-qa-cols" aria-hidden="true"><span>#</span><span>Customer asks</span><span>Standard answer</span><span>Hand-off</span></div>
+          <ol class="ld-qa" id="ld-qa"></ol>
+        </div>
+        <button class="ld-add" type="button" id="ld-qa-add">+ Add a question</button>
       </div>
 
       <div class="ld-card">
         <div class="ld-card-h"><h3>Tone</h3></div>
-        <label class="fld"><span>How to talk to customers</span><textarea id="ld-style" rows="2" maxlength="300"></textarea></label>
+        <div class="ld-panel ld-one">
+          <label class="ld-f"><span class="ld-fl">How to talk to customers</span><textarea id="ld-style" rows="1" maxlength="300"></textarea></label>
+        </div>
         <div class="ld-ex-h"><b>Example replies</b><span class="ld-count" id="ld-ex-count"></span></div>
         <p class="ld-help">The AI copies the voice of these replies. When you go live on the Standard plan, we use 20 to 50 replies you've written yourself.</p>
-        <div class="ld-ex" id="ld-ex"></div>
-        <button class="pill ghost sm" type="button" id="ld-ex-add">+ Add an example</button>
+        <div class="ld-panel ld-ex" id="ld-ex"></div>
+        <button class="ld-add" type="button" id="ld-ex-add">+ Add an example</button>
       </div>
 
       <div class="ld-card">
         <div class="ld-card-h"><h3>Demo inventory / open slots</h3><span class="ld-count" id="ld-inv-count"></span></div>
         <p class="ld-help">When a customer asks "Do you still have any?" or "Any openings Saturday?", the AI checks this table. 0 means sold out or full. Leave the number empty if the owner needs to check. When you go live, Light and above include live data from a Google Sheet; connecting a POS or booking system is an add-on.</p>
-        <div class="ld-inv" id="ld-inv"></div>
-        <button class="pill ghost sm" type="button" id="ld-inv-add">+ Add an item</button>
+        <div class="ld-panel ld-inv-list">
+          <div class="ld-inv-cols" aria-hidden="true"><span>Item</span><span>Qty</span><span>Price</span><span>Note</span></div>
+          <div class="ld-inv" id="ld-inv"></div>
+        </div>
+        <button class="ld-add" type="button" id="ld-inv-add">+ Add an item</button>
       </div>
       <p class="ld-again"><a class="tlink" href="#ld-start" id="ld-again">Done editing? Back to "Start the demo"</a></p>
     </div>
