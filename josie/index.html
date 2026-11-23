@@ -57,7 +57,7 @@
   a.choice { text-decoration: none; }
   .meta { display: block; color: var(--muted); font-size: 15px; }
   .ask { color: var(--muted); font-size: 16px; margin-bottom: 6px; }
-  .passage { margin: 4px 0 10px; padding: 14px 16px; background: #fff8e6; border-left: 4px solid #e0a526; border-radius: 8px; font-size: 19px; line-height: 1.65; }
+  .passage { white-space: pre-line; margin: 4px 0 10px; padding: 14px 16px; background: #fff8e6; border-left: 4px solid #e0a526; border-radius: 8px; font-size: 19px; line-height: 1.65; }
   .hint { color: var(--muted); font-size: 18px; letter-spacing: 1px; margin: -8px 0 14px; word-break: break-all; }
   .speak {
     display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 6px 14px; margin-bottom: 14px;
@@ -1458,7 +1458,144 @@ var ZH7_P50 = [
   ] }
 ];
 
+/* ---------- English Workbook Plus (Grade 2, Unit 5 Verbs) pages 72–75: is/are and was/were ---------- */
+// Same sections as the pages (A write it correctly, B proofreading, Challenge story, Writing Application),
+// plus a proofreading passage and the verbs in new sentences.
+var IA = ['is', 'are'], WW = ['was', 'were'], NOWTHEN = ['is', 'are', 'was', 'were'];
+var IA_TIP = 'Use is for one. Use are for more than one.';
+var WW_TIP = 'Use was for one. Use were for more than one.';
+var FIX = ['It is right.', 'Change is to are.', 'Change are to is.'];
+var FIXW = ['It is right.', 'Change was to were.', 'Change were to was.'];
+function wbType(rows, ask, o) { return rows.map(function (r) { return S(r[0], r[1], extend({ tip: r[2], ask: ask }, o)); }); }
+function wbPick(rows, opts, ask, o) { return rows.map(function (r) { return P(r[0], opts, r[1], extend({ tip: r[2], ask: ask }, o)); }); }
+function fixAll(items) { items.forEach(function (x) { x.fixed = true; }); return items; }
+
+var WB72_REPORT = 'There are a traffic jam on Highway 29. Some trees is down from the storm. Cars is stopped going both ways. The storm are gone. The traffic is still bad.';
+var WB72_PARK = 'The park is open today. The swings is wet. The slides are slippery. Two ducks is in the pond. The sun are coming out.';
+var WB72_PARTS = [
+  { title: 'Part A. Write each sentence correctly', items: wbType([
+    ['The winds (is, are) gone now.', 'The winds are gone now.', 'Winds = more than one wind, so are.'],
+    ['Many branches (is, are) broken.', 'Many branches are broken.', 'Branches = more than one, so are.'],
+    ['The birdbath (is, are) full of rainwater.', 'The birdbath is full of rainwater.', 'One birdbath, so is.'],
+    ['The sky (is, are) gray today.', 'The sky is gray today.', 'One sky, so is.'],
+    ['My boots (is, are) wet.', 'My boots are wet.', 'Boots = more than one, so are.'],
+    ['Mom and Dad (is, are) in the kitchen.', 'Mom and Dad are in the kitchen.', 'Mom and Dad are two people, so are.']
+  ], 'Choose is or are. Then type the whole sentence correctly.') },
+  { title: 'Part B. Proofreading: the traffic report', items: fixAll(wbType([
+    ['There are a traffic jam on Highway 29.', 'There is a traffic jam on Highway 29.', 'One traffic jam, so is.'],
+    ['Some trees is down from the storm.', 'Some trees are down from the storm.', 'Trees = more than one, so are.'],
+    ['Cars is stopped going both ways.', 'Cars are stopped going both ways.', 'Cars = more than one, so are.'],
+    ['The storm are gone.', 'The storm is gone.', 'One storm, so is.'],
+    ['The traffic is still bad.', 'The traffic is still bad.', 'This one was already right. The report had four mistakes, and you fixed them in the first four sentences.']
+  ], 'Proofread. If the sentence has a mistake with is or are, type it fixed. If it is already right, type it the same. (Example: The car are off the road. → The car is off the road.)', { passage: WB72_REPORT })) },
+  { title: 'Part B2. Proofreading: park news (new)', items: fixAll(wbPick([
+    ['The park is open today.', FIX[0], 'One park, so is. It is right.'],
+    ['The swings is wet.', FIX[1], 'Swings = more than one, so are: The swings are wet.'],
+    ['The slides are slippery.', FIX[0], 'Slides = more than one, so are. It is right.'],
+    ['Two ducks is in the pond.', FIX[1], 'Two ducks = more than one, so are: Two ducks are in the pond.'],
+    ['The sun are coming out.', FIX[2], 'One sun, so is: The sun is coming out.']
+  ], FIX, 'Proofread this park news. Is the sentence right, or does it need a fix?', { passage: WB72_PARK })) },
+  { title: 'Challenge. A story about the picture', items: fixAll(dragList(IA, [
+    ['It ___ a rainy day.', 'is', null, 'One day, so is.'],
+    ['The girl ___ outside.', 'is', null, 'One girl, so is.'],
+    ['She ___ knocking on the door.', 'is', null, 'She is one person, so is.'],
+    ['The boy ___ on the steps.', 'is', null, 'One boy, so is.'],
+    ['His toys ___ in a bag.', 'are', null, 'Toys = more than one, so are.'],
+    ['The two children ___ friends.', 'are', null, 'Two children, so are.']
+  ], 'Think of the picture on page 73: a girl knocks on the door, and a boy sits on the steps with a bag of toys. Drag is or are into the story.').concat([
+    W('Write your own sentence about the girl. Use is.', { end: ['.', '!'], uses: ['is'], sample: 'The girl is knocking on the door.' }),
+    W('Write your own sentence about the toys. Use are.', { end: ['.', '!'], uses: ['are'], sample: 'There are a lot of toys in the boy’s bag.' })
+  ])) },
+  { title: 'Writing Application. Playing in the rain', items: fixAll([
+    W('Sentence 1 about playing in the rain. Use is.', { end: ['.', '!'], uses: ['is'], sample: 'The rain is cold on my face.' }),
+    W('Sentence 2 about playing in the rain. Use are.', { end: ['.', '!'], uses: ['are'], sample: 'My boots are full of water.' }),
+    W('Sentence 3 about playing in the rain. Use is.', { end: ['.', '!'], uses: ['is'], sample: 'The big puddle is fun to jump in.' }),
+    W('Sentence 4 about playing in the rain. Use are.', { end: ['.', '!'], uses: ['are'], sample: 'My friends are splashing with me.' })
+  ]) },
+  { title: 'Part E. is or are in new sentences', items: wbPick([
+    ['Use ___ when the naming part is ONE person or thing.', 'is', IA_TIP],
+    ['Use ___ when the naming part is MORE THAN ONE.', 'are', IA_TIP],
+    ['My cat ___ asleep on the bed.', 'is', 'One cat, so is.'],
+    ['The cookies ___ hot.', 'are', 'Cookies = more than one, so are.'],
+    ['There ___ three eggs in the nest.', 'are', 'Three eggs, so are.'],
+    ['There ___ a bug on my arm!', 'is', 'One bug, so is.'],
+    ['Grandma ___ at the store.', 'is', 'Grandma is one person, so is.'],
+    ['The children ___ in the gym.', 'are', 'Children = more than one child, so are.'],
+    ['This book ___ funny.', 'is', 'One book, so is.'],
+    ['Ben and Amy ___ twins.', 'are', 'Ben and Amy are two people, so are.'],
+    ['We ___ ready to go.', 'are', 'We is more than one person, so are.'],
+    ['You ___ my best friend.', 'are', 'Special rule: always say you are, even for one person.'],
+    ['It ___ raining again.', 'is', 'It is one thing, so is.'],
+    ['The flowers in the yard ___ pretty.', 'are', 'Flowers = more than one, so are.']
+  ], IA, 'New sentence. Which word fits: is or are?') }
+];
+
+var WB74_POEM = 'The stars was out, the moon were bright.\nThe boys and girls was tucked in tight.\nAnd up above a shooting star\nWere flying, flying oh so far.';
+var WB74_BEACH = 'Yesterday we went to the beach. The water were cold. The sand was hot. My brothers was building a castle. A crab were under a rock. We were very happy.';
+var WB74_PARTS = [
+  { title: 'Part A. Write each sentence correctly', items: wbType([
+    ['The night sky (was, were) black.', 'The night sky was black.', 'One sky, so was.'],
+    ['Soon Pedro (was, were) tired.', 'Soon Pedro was tired.', 'Pedro is one person, so was.'],
+    ['The stars (was, were) bright.', 'The stars were bright.', 'Stars = more than one, so were.'],
+    ['My feet (was, were) cold.', 'My feet were cold.', 'Feet = more than one foot, so were.'],
+    ['The tent (was, were) green.', 'The tent was green.', 'One tent, so was.']
+  ], 'Choose was or were. Then type the whole sentence correctly.') },
+  { title: 'Part B. Proofreading: the poem', items: fixAll(wbType([
+    ['The stars was out, the moon were bright.', 'The stars were out, the moon was bright.', 'Two mistakes in this line! Stars = more than one, so were. One moon, so was.'],
+    ['The boys and girls was tucked in tight.', 'The boys and girls were tucked in tight.', 'Boys and girls = more than one, so were.'],
+    ['And up above a shooting star', 'And up above a shooting star', 'This line was already right.'],
+    ['Were flying, flying oh so far.', 'Was flying, flying oh so far.', 'One shooting star, so was.']
+  ], 'Proofread the poem line by line. If the line has a mistake with was or were, type it fixed. If it is already right, type it the same. (Example: Pedro were saying this poem. → Pedro was saying this poem.)', { passage: WB74_POEM })) },
+  { title: 'Part B2. Proofreading: a day at the beach (new)', items: fixAll(wbPick([
+    ['The water were cold.', FIXW[2], 'Water is one thing, so was: The water was cold.'],
+    ['The sand was hot.', FIXW[0], 'Sand is one thing, so was. It is right.'],
+    ['My brothers was building a castle.', FIXW[1], 'Brothers = more than one, so were: My brothers were building a castle.'],
+    ['A crab were under a rock.', FIXW[2], 'One crab, so was: A crab was under a rock.'],
+    ['We were very happy.', FIXW[0], 'We is more than one person, so were. It is right.']
+  ], FIXW, 'Proofread the beach story. Is the sentence right, or does it need a fix?', { passage: WB74_BEACH })) },
+  { title: 'Challenge. Finish the storm story', items: fixAll(dragList(WW, [
+    ['The thunder ___ loud.', 'was', null, 'Thunder is one thing, so was.'],
+    ['The lightning ___ very close.', 'was', null, 'Lightning is one thing, so was.'],
+    ['Suddenly the house ___ dark.', 'was', null, 'One house, so was.'],
+    ['All the lights ___ out!', 'were', null, 'All the lights = more than one, so were.']
+  ], 'Drag was or were into the storm story.').concat([
+    W('Write a sentence of your own to finish the story. Use was.', { end: ['.', '!'], uses: ['was'], sample: 'The rain was crashing on the window.' }),
+    W('Write one more sentence to finish the story. Use were.', { end: ['.', '!'], uses: ['were'], sample: 'We were hiding under a blanket.' })
+  ])) },
+  { title: 'Writing Application. Outside in the dark', items: fixAll([
+    W('Have you ever played or camped outside at night? Write a sentence about it. Use was.', { end: ['.', '!'], uses: ['was'], sample: 'The moon was big and bright.' }),
+    W('Write one more sentence about being outside in the dark. Use were.', { end: ['.', '!'], uses: ['were'], sample: 'The stars were all over the sky.' })
+  ]) },
+  { title: 'Part E. was or were in new sentences', items: wbPick([
+    ['Use ___ when the naming part is ONE person or thing.', 'was', WW_TIP],
+    ['Use ___ when the naming part is MORE THAN ONE.', 'were', WW_TIP],
+    ['Yesterday the sky ___ gray.', 'was', 'One sky, so was.'],
+    ['Last night the dogs ___ barking.', 'were', 'Dogs = more than one, so were.'],
+    ['My sister ___ sick on Monday.', 'was', 'One sister, so was.'],
+    ['The cookies ___ yummy, so we ate them all.', 'were', 'Cookies = more than one, so were.'],
+    ['We ___ late for school yesterday.', 'were', 'We is more than one person, so were.'],
+    ['I ___ so happy at my party.', 'was', 'Special rule: I was (not I were).'],
+    ['You ___ a great helper last week.', 'were', 'Special rule: always say you were, even for one person.'],
+    ['There ___ two rainbows after the storm.', 'were', 'Two rainbows, so were.'],
+    ['The bus ___ late this morning.', 'was', 'One bus, so was.']
+  ], WW, 'New sentence. Which word fits: was or were?') },
+  { title: 'Part F. Now or before? is, are, was, were', items: wbPick([
+    ['Today the sun ___ hot.', 'is', 'Today = now, and one sun, so is.'],
+    ['Yesterday the sun ___ hot.', 'was', 'Yesterday = before, and one sun, so was.'],
+    ['Now the kittens ___ asleep.', 'are', 'Now, and more than one kitten, so are.'],
+    ['Last week the kittens ___ tiny.', 'were', 'Last week = before, and more than one kitten, so were.'],
+    ['Right now my hands ___ cold.', 'are', 'Right now, and two hands, so are.'],
+    ['Last night the moon ___ full.', 'was', 'Last night = before, and one moon, so was.'],
+    ['is becomes ___ when it already happened.', 'was', 'is (now) → was (before).'],
+    ['are becomes ___ when it already happened.', 'were', 'are (now) → were (before).']
+  ], NOWTHEN, 'Look for the clue word (today, now, yesterday, last night). Which word fits?') }
+];
+
 var MENU = [
+  { group: 'English Workbook Plus', top: true, tests: [
+    { id: 'wbp-74', title: 'English Workbook Plus p. 74–75: was and were', sub: 'The same parts as the pages (write it correctly, proofread the poem, the storm story, writing), plus was and were in new sentences', parts: WB74_PARTS },
+    { id: 'wbp-72', title: 'English Workbook Plus p. 72–73: is and are', sub: 'The same parts as the pages (write it correctly, proofread the traffic report, the picture story, writing), plus is and are in new sentences', parts: WB72_PARTS }
+  ] },
   { group: 'Social Studies · Chapter 3', tests: [
     { id: 'ss-ch3-l1', title: 'Chapter 3 Lesson 1: Rights, Rules, and Laws', sub: 'The same parts as the worksheet (A to E), plus the words in new sentences', parts: SS3_PARTS }
   ] },
@@ -1602,6 +1739,7 @@ function writeCheck(item, text) {
   add(s.split(' ').length >= item.min, 'Is long enough to have a naming part and an action part');
   if (item.start) add(low.indexOf(item.start.toLowerCase()) === 0, 'Begins with “' + item.start + '”');
   if (item.after) add(low.indexOf(item.after) > 0, 'Uses “' + item.after + '”');
+  if (item.uses) item.uses.forEach(function (w) { add(new RegExp('\\b' + w + '\\b', 'i').test(s), 'Uses “' + w + '”'); });
   return notes;
 }
 function grade(item, resp) {
