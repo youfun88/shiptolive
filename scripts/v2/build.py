@@ -91,6 +91,10 @@ def header(lang, slug, other_href=None):
 LINE_URL = 'https://line.me/R/ti/p/@680uqtou'
 LINE_ICON = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11.1c0 4 3.6 7.4 8.4 8 .3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.5-1.6 2.2-3.2 2.2-4.9C22 6.6 17.5 3 12 3zM8.3 13.4H6.3c-.3 0-.5-.2-.5-.5V9c0-.3.2-.5.5-.5s.5.2.5.5v3.4h1.5c.3 0 .5.2.5.5s-.2.5-.5.5zm2.1-.5c0 .3-.2.5-.5.5s-.5-.2-.5-.5V9c0-.3.2-.5.5-.5s.5.2.5.5v3.9zm4.8 0c0 .2-.1.4-.3.5h-.2c-.2 0-.3-.1-.4-.2l-2-2.7v2.4c0 .3-.2.5-.5.5s-.5-.2-.5-.5V9c0-.2.1-.4.3-.5h.2c.2 0 .3.1.4.2l2 2.7V9c0-.3.2-.5.5-.5s.5.2.5.5v3.9zm3.2-2.5c.3 0 .5.2.5.5s-.2.5-.5.5h-1.5v.9h1.5c.3 0 .5.2.5.5s-.2.5-.5.5h-2c-.3 0-.5-.2-.5-.5V9c0-.3.2-.5.5-.5h2c.3 0 .5.2.5.5s-.2.5-.5.5h-1.5v.9h1.5z"/></svg>'
 
+# Hatchy (養成蛋), Yufan's kids app test project on admin: one quiet footer link, kept out of the link graph (nofollow), not in nav, llms.txt or the sitemap.
+HATCHY = {lang: f'<a href="https://admin.shiptolive.com/hatchy" rel="nofollow noopener">{label}</a>'
+          for lang, label in (('zh', '養成蛋 Hatchy'), ('en', 'Hatchy (kids app, beta)'))}
+
 
 def footer(lang, meta=None):
     t = L[lang]
@@ -117,7 +121,7 @@ def footer(lang, meta=None):
     <div class="cols">
       <div><b>{t['brand']}</b>{t['f_company']}<br>{t['f_tax']}<br>{t['f_loc']}<p class="motto">{t['motto']}</p></div>
       <nav aria-label="{t['f_svc']}"><b>{t['f_svc']}</b><a href="{p(lang,'seo-aeo-geo')}">{t['ai']}</a><a href="{p(lang,'website')}">{t['web']}</a><a href="{p(lang,'software')}">{t['sw']}</a><a href="{p(lang,'line-ai')}">{t['line']}</a><a href="{p(lang,'engine')}">{t['engine']}</a></nav>
-      <nav aria-label="{t['f_more']}"><b>{t['f_more']}</b><a href="{p(lang,'about')}">{t['about']}</a><a href="{pre}/geo-guide/">{t['f_guide']}</a>{'<a href="/ai-search/">AI 搜尋優化知識庫</a>' if lang == 'zh' else ''}<a href="{pre}/privacy/">{t['f_privacy']}</a>{legal}</nav>
+      <nav aria-label="{t['f_more']}"><b>{t['f_more']}</b><a href="{p(lang,'about')}">{t['about']}</a><a href="{pre}/geo-guide/">{t['f_guide']}</a>{'<a href="/ai-search/">AI 搜尋優化知識庫</a>' if lang == 'zh' else ''}<a href="{pre}/privacy/">{t['f_privacy']}</a>{legal}{HATCHY[lang]}</nav>
       <nav aria-label="{t['contact']}"><b>{t['contact']}</b><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a>{f'<a href="{LINE_URL}" target="_blank" rel="noopener">LINE 官方帳號</a>' if lang == 'zh' else ''}<a href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">{t['f_book']}</a><a href="https://admin.shiptolive.com/card{'?lang=en' if lang == 'en' else ''}">{'電子名片' if lang == 'zh' else 'Business card'}</a><a href="{p(lang,'engine')}#check">{t['cta']}</a></nav>
     </div>
     <div class="legal"><span>© 2026 {t['f_company']}</span><span><a href="{'/en/' if lang=='zh' else '/'}" style="display:inline">{t['other_label']}</a></span></div>
