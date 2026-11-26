@@ -1,0 +1,399 @@
+/* product */
+.part-product-b h5 {
+  margin: 0 0 .2rem;
+  padding: 0;
+}
+
+.part-product-b p {
+  margin: 0;
+  padding: 0;
+}
+
+.mfgm-item {
+  background: url(/namyang/images/bg-product-b.gif) no-repeat calc(100% - 50px) calc(0% - -40px);
+  background-size: 92.5%;
+  height: 600px;
+}
+
+.mfgm-item-list>div {
+  margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .mfgm-item {
+    background: url(/namyang/images/bg-product-b.gif) no-repeat calc(100% - 50px) calc(0% - 0px);
+    background-size: contain;
+    height: auto;
+  }
+
+  .mfgm-item-list>div {
+    margin-bottom: 1rem;
+  }
+
+  .mfgm-item-list h5 {
+    font-size: 1rem;
+  }
+
+  .mfgm-item-list p {
+    font-size: 12px;
+  }
+}
+
+
+@media screen and (max-width: 1023px) {
+  .mfgm-item {
+    height: 450px;
+  }
+
+  .mfgm-item img {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .mfgm-item {
+    height: 450px;
+  }
+
+  .mfgm-item {
+    background: url(/namyang/images/bg-product-b.gif) no-repeat calc(100% - -50px) top;
+    background-size: 90%;
+    height: auto;
+  }
+
+  .mfgm-item img {
+    height: auto;
+    position: relative;
+    left: -10%;
+    top: 30px;
+  }
+
+  .mfgm-item-list {
+    text-align: center;
+    background: url(/namyang/images/bg-mfgm-item-list.webp) no-repeat center top,
+      linear-gradient(0deg, rgba(250, 213, 202, .6)0%, rgba(254, 247, 246, 0)100%);
+    /* -moz-linear-gradient(0deg, rgba(254, 247, 246, 1)0%, rgba(254, 247, 246, 0)80%),
+    -webkit-linear-gradient(0deg, rgba(254, 247, 246, 1)0%, rgba(254, 247, 246, 0)80%),
+    -o-linear-gradient(0deg, rgba(254, 247, 246, 1)0%, rgba(254, 247, 246, 0)80%), */
+    /* #fef7f6; */
+
+    background-size: cover;
+    border-radius: 1rem;
+    margin: 6rem auto 0;
+    padding: 2rem 2rem .65rem;
+    border-radius: 0;
+  }
+
+  .mfgm-item-list .row {
+    border-bottom: 1px dashed #eaa3b5;
+    padding-bottom: .25rem;
+  }
+
+  .mfgm-item-list .row:last-child {
+    border: none;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .mfgm-item {
+    background: url(/namyang/images/bg-product-b.gif) no-repeat calc(100% - 50px) calc(0% - -30px);
+    background-size: 92.5%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .part-product-b .mplusn {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .mfgm-item {
+    background: url(/namyang/images/bg-product-b.gif) no-repeat calc(100% - 50px) calc(0% - -30px);
+    background-size: 88%;
+  }
+}
+
+@media screen and (min-width: 1681px) {
+  .part-product-b .mplusn {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .mfgm-item {
+    background: url(/namyang/images/bg-product-b.gif) no-repeat left center;
+    background-size: 90%;
+  }
+}
+
+@media screen and (min-width:1921px) {
+  .part-product-b .mplusn {
+    width: 55%;
+    margin: 0 auto;
+  }
+}
+
+
+.part-product-c.new h5,
+.part-product-d.new h5 {
+  line-height: 2rem !important;
+}
+
+
+/* neurons-group */
+
+.neurons-group {
+  background: url(/namyang/images/bg-product-b2.webp) no-repeat right top;
+  background-size: contain;
+  position: relative;
+}
+
+.neurons-item {
+  padding: 2rem 0 0;
+}
+
+.neurons-group .pic {
+  position: absolute;
+  top: -15%;
+  left: 38%;
+  width: 400px;
+}
+
+.neurons-box {
+  background: url(/namyang/images/bg-neurons-box.svg) no-repeat left center;
+  background-size: 270px;
+  padding: 1.1rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.neurons-group .neurons-box:nth-child(3) {
+  margin-top: 5rem;
+}
+
+@media screen and (min-width: 1400px) {
+  .neurons-group .pic {
+    top: -28%;
+    left: 35%;
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .neurons-group {
+    padding-top: 3rem;
+    margin-bottom: -6.5rem;
+    overflow: hidden;
+  }
+
+  .neurons-group .pic {
+    top: -5%;
+    right: -5%;
+    width: 300px;
+    margin: 0 auto 0rem;
+  }
+
+  .neurons-group h5 {
+    font-size: 1rem
+  }
+
+  .neurons-group p {
+    font-size: 12px
+  }
+
+  .neurons-group .neurons-box:nth-child(3) {
+    margin-top: 0;
+  }
+
+  .neurons-item {
+    position: relative;
+    top: -4rem;
+  }
+
+  .neurons-box {
+    background: url(/namyang/images/bg-neurons-box.svg) no-repeat left center;
+    background-size: 220px;
+    padding: 1.1rem 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+}
+
+@media screen and (max-width: 1023px) {
+  .neurons-group {
+    padding-top: 5rem;
+  }
+
+  .neurons-group .pic {
+    position: absolute;
+    top: 0;
+    right: -10%;
+    width: 400px;
+    margin: 0 auto;
+  }
+
+  .neurons-item {
+    margin-left: 5rem;
+  }
+
+  .neurons-group .neurons-box:nth-child(3) {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .neurons-group {
+    padding-top: 0rem;
+    margin-bottom: -3rem;
+  }
+
+  .neurons-group h5 {
+    font-size: 1.25rem
+  }
+
+  .neurons-group p {
+    font-size: 1rem
+  }
+
+  .neurons-group .pic {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 300px;
+    left: auto;
+    margin: 0 auto;
+  }
+
+  .neurons-item {
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+
+  .neurons-box {
+    background: url(/namyang/images/bg-neurons-box.svg) no-repeat center center;
+    background-size: 80%;
+    margin-bottom: 0.25rem;
+    text-align: center;
+  }
+
+}
+
+/* part-product-c */
+.part-product-c h5 {
+  margin: 0 0 .2rem;
+  padding: 0;
+}
+
+.part-product-c p {
+  margin: 0;
+  padding: 0;
+}
+
+.snpa-group {
+  background: url(/namyang/images/pic-sn2b.png) no-repeat center center;
+  background-size: contain;
+  height: 350px;
+  margin-top: 5rem;
+}
+
+.snpa-item .line {
+  background: url(/namyang/images/line-sn2.svg) no-repeat calc(100% - 1px) center;
+  background-size: contain;
+  height: 20px;
+  width: 120px;
+}
+
+@media screen and (min-width: 1681px) {
+  .snpa-group {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .part-product-c .pic img {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .snpa-group {
+    background: url(/namyang/images/pic-sn2b.png) no-repeat center top;
+    background-size: 290px;
+    height: auto;
+    margin-top: 2.5rem;
+  }
+
+  .snpa-item .line {
+    width: 80px;
+  }
+
+  .part-product-c p {
+    font-size: 12px;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .part-product-c .pic img {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .snpa-group {
+    background: url(/namyang/images/pic-sn2b.png) no-repeat center top;
+    background-size: 290px;
+    height: auto;
+    margin-top: 2.5rem;
+    padding-top: 20rem;
+  }
+
+  .snpa-item {
+    text-align: center;
+  }
+
+  .snpa-item .line {
+    width: 80px;
+  }
+
+  .part-product-c p {
+    font-size: 12px;
+  }
+}
+
+
+
+
+/* part-product-d */
+.part-product-d h5 {
+  margin: 0 0 .2rem;
+  padding: 0;
+}
+
+.part-product-d p {
+  margin: 0;
+  padding: 0 0 0 2rem;
+}
+
+.part-product-e h5 {
+  margin: 0 0 .2rem;
+  padding: 0;
+}
+
+.part-product-e p {
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .part-product-d .box {
+    margin: 0 2rem;
+  }
+
+  .part-product-d .container:last-child .pic {
+    margin-top: 2rem;
+  }
+
+  .part-product-d p {
+    margin: 0 0 2rem;
+    padding: 0;
+  }
+}

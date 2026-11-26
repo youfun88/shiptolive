@@ -1,0 +1,72 @@
+/* quality */
+
+.part-quality-a h5,
+.part-quality-b h5,
+.part-quality-c h5,
+.part-quality-d h5{
+    font-size: 1.1rem;
+}
+
+.part-quality-a .video-line,
+.part-quality-b .video-line,
+.part-quality-c .video-line,
+.part-quality-d .video-line{
+    position: relative;
+}
+
+.part-quality-a .video-line img,
+.part-quality-b .video-line img,
+.part-quality-c .video-line img,
+.part-quality-d .video-line img {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    cursor: pointer;
+}
+
+
+.part-quality-a .video-line iframe,
+.part-quality-b .video-line iframe,
+.part-quality-c .video-line iframe,
+.part-quality-d .video-line iframe { 
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+} 
+
+
+@media screen and (min-width: 1200px) {
+    .part-quality-a .video-line img,
+    .part-quality-b .video-line img,
+    .part-quality-c .video-line img,
+    .part-quality-d .video-line img{
+        display: none;
+    }
+}
+
+
+
+
+.part-quality-a ul {
+	margin: 0;
+	padding: 0 0 0 25px;
+	list-style: none;
+	/* Remove default bullets */
+}
+
+.part-quality-a ul li::before {
+	content: "\2022";
+	color: #601040;
+	font-weight: bold;
+	display: inline-block;
+	width: 1em;
+	margin-left: -1em;
+}

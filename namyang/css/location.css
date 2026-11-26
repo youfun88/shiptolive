@@ -1,0 +1,159 @@
+/* assist */
+@media screen and (min-width: 1024px) {
+  .part-location .box {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+select.form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-border-radius: 0px;
+  background: url(/namyang/images/arrow-down.svg) no-repeat calc(100% - 10px) center #ededed;
+  background-size: 15px;
+  border: none;
+}
+.pagination{
+  font-size: 1.55rem;
+  color: #666666;
+}
+.pagination .prev {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  color: #FFF;
+  background-color: #ff8c89;
+  text-align: center;
+  box-shadow: 0px 5px 0px 0px rgba(96, 16, 64, 1);
+}
+
+.pagination .next {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  color: #FFF;
+  background-color: #ff8c89;
+  text-align: center;
+  box-shadow: 0px 5px 0px 0px rgba(96, 16, 64, 1);
+}
+
+.shop-group {
+  border: 3px solid #ededed;
+  color: #666666;
+}
+
+.shop-group:active,
+.shop-group.active,
+.shop-group:focus,
+.shop-group:hover {
+  border: 3px solid #ffb7af;
+  transition: .5s;
+}
+
+.shop-group:nth-child(even) {
+  background-color: #ededed;
+}
+
+.shop-group h4 {
+  margin: 0 0 .5rem;
+  padding: 0;
+  color: #666666;
+}
+
+.shop-group p {
+  margin: 0;
+  padding: 0;
+  color: #666666;
+}
+
+.shop-group .info-shop {
+
+  /* flex-grow: 1;
+  flex-shrink: 1; */
+}
+.shop-group .info-shop ul{
+  margin: 0; padding: 0;
+}
+.shop-group .info-shop li{
+  padding-left: 25px;
+  line-height: 1.5rem;
+  margin-bottom: .5rem;
+  text-align: left!important;
+}
+.shop-group .info-shop li:nth-child(1){
+  background: url(/namyang/images/icon-phone.svg) no-repeat left center;
+  background-size: 20px;
+}
+.shop-group .info-shop li:nth-child(2){
+  background: url(/namyang/images/icon-location.svg) no-repeat left top;
+  background-size: 18px;
+  margin:0 .5rem;
+}
+.shop-group .info-shop .pic-mobile img{
+  width: 50px;
+}
+
+.icon-group{
+  text-align: right;
+}
+.shop-group .img-shop {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 90px;
+  /* border-radius: 50%; */
+
+}
+.shop-group .img-shop img {
+  /* border-radius: 50%; */
+  padding: .1rem;
+  background-color: #FFF;
+  border: 1px solid #ededed;
+}
+
+.icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  top: -2px;
+  margin-right: 5px;
+  text-align: center;
+}
+
+.icon-location {
+  background: url(/namyang/images/icon-location.svg) no-repeat left top;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px 0 0;
+}
+
+.icon-phone {
+  background: url(/namyang/images/icon-phone.svg) no-repeat left top;
+  background-size: contain;
+  width: 18px;
+  height: 18px;
+  margin: 0 5px 0 0;
+}
+
+.icon-milk {
+  background: url(/namyang/images/icon-milk.svg) no-repeat center center #ffb7af;
+  background-size: 10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
+.icon-food {
+  background: url(/namyang/images/icon-food.svg) no-repeat center center #ffb7af;
+  background-size: 15px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}

@@ -1,0 +1,724 @@
+@charset "UTF-8";
+/* kv.index */
+
+
+
+.part-index-a {
+  background-color: #fff;
+}
+
+.part-index-b {
+  background: url(/namyang/images/bg-wave-w2.svg) repeat-x center calc(0% - 1px),
+    url(/namyang/images/bg-wave-skin2.svg) repeat-x center calc(100% - -1px),
+    url(/namyang/images/bg-index-part2.webp) no-repeat top;
+  background-size: 105%, 105%, cover;
+}
+
+.part-index-c {
+  background-color: #fff2ea;
+  letter-spacing: .15rem
+}
+
+/* kv.nanyang */
+
+.kv.nanyang {
+  background: url(/namyang/images/bg-wave-skin2.svg) repeat-x center calc(100% - -1px),
+    url(/namyang/images/kv-nanyang.webp) no-repeat center bottom;
+  background-size: 105%, cover;
+  height: 45vh;
+}
+
+.part-nanyang-a {
+  background: url(/namyang/images/bg-wave-w.svg) repeat-x center calc(100% - -2px),
+    #fff2ea;
+  background-size: 105%;
+}
+
+/* kv.research */
+.kv.research {
+  background: url(/namyang/images/bg-wave-skin2.svg) repeat-x center calc(100% - -1px),
+    url(/namyang/images/kv-research.webp) no-repeat center top;
+  background-size: 105%, cover;
+  height: 75vh;
+}
+
+.part-research-a {
+  background: url(/namyang/images/bg-wave-w.svg)repeat-x center calc(100% - -2px),
+    url(/namyang/images/bg-research-a.svg) no-repeat calc(0% - 50px) bottom,
+    url(/namyang/images/bg-research-b.svg) no-repeat calc(100% - -50px) top,
+    #fff2ea;
+  background-size: 105%, 20%, 20%;
+}
+
+
+/* kv.product */
+.kv.product {
+  background: url(/namyang/images/bg-wave-skin.svg) repeat-x center calc(100% - -1px),
+    url(/namyang/images/kv-product.webp) no-repeat center top;
+  background-size: 105%, cover;
+  height: 75vh;
+}
+
+.kv.product-baby {
+  background: url(/namyang/images/bg-wave-skin.svg) repeat-x center calc(100% - -1px),
+    url(/namyang/images/bg-product-baby.jpg) no-repeat center top;
+  background-size: 100%, cover;
+}
+
+.part-product-a {
+  background: url(/namyang/images/bg-wave-w.svg)repeat-x center calc(100% - -1px),
+    url(/namyang/images/bg-product-a.webp) no-repeat center center,
+    #ffe6d5;
+  background-size: 105%, 90%;
+}
+
+.part-product-b {
+  background: url(/namyang/images/bg-wave-skin.svg)repeat-x center calc(100% - -1px),
+    #fff;
+  background-size: 105%;
+}
+
+.part-product-c {
+  background: url(/namyang/images/bg-wave-w.svg)repeat-x center calc(100% - -1px) #ffe6d5;
+  background-size: 105%;
+}
+
+.part-product-d {
+  background: url(/namyang/images/bg-wave-skin.svg)repeat-x center calc(100% - -1px),
+    #fff;
+  background-size: 105%;
+}
+
+.part-product-e {
+  /* background-color: #ffe6d5; */
+}
+
+/* kv.assist */
+.kv.assist {
+  background: url(/namyang/images/bg-wave-skin.svg) repeat-x center calc(100% - -1px),
+    url(/namyang/images/kv-prod-assist.webp) no-repeat center center;
+  background-size: 105%, cover;
+  height: 75vh;
+}
+
+.bg-svg {
+  background: url(/namyang/images/bg-wave-skin.svg) repeat-x center calc(100% - -1px);
+  background-size: 100%;
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+}
+
+.kv.assist-a {
+  background: url(/namyang/images/bg-wave-skin.svg) repeat-x center calc(100% - -1px),
+    url(/namyang/images/kv-prod-assist-a.webp) no-repeat center top;
+  background-size: 105%, cover;
+  height: 83vh;
+}
+
+.kv.assist-b {
+  background: url(/namyang/images/bg-wave-pink.svg) repeat-x center calc(100% - -1px),
+    url(/namyang/images/kv-prod-assist-b.webp) no-repeat center top;
+  background-size: 105%, cover;
+  height: 83vh;
+}
+
+.kv.assist-c {
+  background: url(/namyang/images/bg-wave-w.svg) repeat-x center calc(100% - -1px),
+    url(/namyang/images/kv-prod-assist-c.webp) no-repeat center top;
+  background-size: 105%, cover;
+  height: 83vh;
+}
+
+.kv.assist-d {
+  background: url(/namyang/images/bg-wave-green.svg) repeat-x center calc(100% - -1px),
+    url(/namyang/images/kv-prod-assist-d.webp) no-repeat center center;
+  background-size: 105%, cover;
+  height: 83vh;
+}
+
+.kv.assist-e {
+  background: url(/namyang/images/bg-wave-w.svg) repeat-x center calc(100% - -1px),
+    url(/namyang/images/kv-prod-assist-e.webp) no-repeat center top;
+  background-size: 105%, cover;
+  height: 83vh;
+}
+
+@media screen and (max-width: 1024px) {
+
+  .kv-item-group,
+  .kv {
+    margin-top: 60px;
+  }
+
+  .kv.assist-a,
+  .kv.assist-b,
+  .kv.assist-c,
+  .kv.assist-d,
+  .kv.assist-e {
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .kv.assist-a,
+  .kv.assist-b,
+  .kv.assist-c,
+  .kv.assist-d,
+  .kv.assist-e {
+    height: 350px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+
+  .kv.assist-a,
+  .kv.assist-b,
+  .kv.assist-c,
+  .kv.assist-d .kv.assist-e {
+    height: 85vh;
+  }
+}
+
+
+
+/* assist-lis */
+.part-assist-aa {
+  background: url(/namyang/images/bg-wave-y.svg)repeat-x center calc(100% - -2px) #ffe6d5;
+  background-size: 105%, cover;
+}
+
+.part-assist-list-a {
+  background: url(/namyang/images/bg-wave-w.svg)repeat-x center calc(100% - -2px) #ffe6d5;
+  background-size: 105%, cover;
+}
+
+.part-assist-ab {
+  background: url(/namyang/images/bg-wave-w.svg)repeat-x center calc(100% - -2px) #fffeb6;
+  background-size: 105%, cover;
+}
+
+
+
+.part-assist-ba {
+  background: url(/namyang/images/bg-wave-y.svg)repeat-x center calc(100% - -2px) #ffdfe9;
+  background-size: 105%, cover;
+}
+
+.part-assist-bb {
+  background: url(/namyang/images/bg-wave-w.svg)repeat-x center calc(100% - -2px) #fffeb6;
+  background-size: 105%, cover;
+}
+
+.part-assist-ca {
+  background: url(/namyang/images/bg-wave-g.svg)repeat-x center calc(100% - -2px) #FFF;
+  background-size: 105%, cover;
+}
+
+.part-assist-cb {
+  background: url(/namyang/images/bg-wave-w.svg)repeat-x center calc(100% - -2px) #f2f6d8;
+  background-size: 105%, cover;
+}
+
+.part-assist-da {
+  background: url(/namyang/images/bg-wave-pink.svg)repeat-x center calc(100% - -2px) #fffce7;
+  background-size: 105%;
+}
+
+.part-assist-db {
+  background: url(/namyang/images/bg-wave-w.svg)repeat-x center calc(100% - -2px) #ffdfe9;
+  background-size: 105%, cover;
+}
+
+.part-assist-ea {
+  background: url(/namyang/images/bg-wave-e.svg)repeat-x center calc(100% - -2px) #FFF;
+  background-size: 105%, cover;
+}
+
+.part-assist-eb {
+  background: url(/namyang/images/bg-wave-w.svg)repeat-x center calc(100% - -2px) #feeede;
+  background-size: 105%, cover;
+}
+
+/* kv.quality */
+.kv.quality {
+  background: url(/namyang/images/bg-wave-w.svg) repeat-x center calc(100% - -1px),
+    url(/namyang/images/kv-quality.webp) no-repeat center top;
+  background-size: 105%, cover;
+  height: 45vh;
+}
+
+.part-quality-a {
+  background: url(/namyang/images/bg-wave-skin2.svg)repeat-x center calc(100% - -1px),
+    url(/namyang/images/bg-product-a.webp) no-repeat center center,
+    #fff;
+  background-size: 105%, 90%;
+}
+
+.part-quality-b {
+  background: url(/namyang/images/bg-wave-w.svg)repeat-x center calc(100% - -1px),
+    #fff2ea;
+  background-size: 105%;
+}
+
+.part-quality-c {
+  background: url(/namyang/images/bg-wave-skin2.svg)repeat-x center calc(100% - -1px),
+    #fff;
+  background-size: 105%;
+}
+
+.part-quality-d {
+  background: #fff2ea;
+}
+
+
+/* kv.news */
+.kv.news {
+  background: url(/namyang/images/bg-wave-w.svg) repeat-x center calc(100% - -1px),
+    url(/namyang/images/kv-news.webp) no-repeat center top;
+  background-size: 105%, cover;
+  height: 45vh;
+}
+
+
+/* kv.location */
+.kv.location {
+  background: url(/namyang/images/bg-wave-w.svg) repeat-x center calc(100% - -1px),
+    url(/namyang/images/kv-location.webp) no-repeat center center;
+  background-size: 105%, cover;
+  height: 45vh;
+}
+
+
+/* ---------------- media screen */
+@media screen and (min-width: 1681px) {
+
+  .kv.nanyang,
+  .kv.quality,
+  .kv.news,
+  .kv.location {
+    background-size: 105%, cover;
+    height: 40vh;
+  }
+}
+
+/* ipad-pro Portrait */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-min-device-pixel-ratio: 2) {
+
+  .kv.research,
+  .kv.product,
+  .kv.assist {
+    height: 55vh;
+  }
+
+  .kv.nanyang,
+  .kv.quality,
+  .kv.news,
+  .kv.location {
+    height: 30vh;
+  }
+
+}
+
+/* ipad-pro Landscape */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-min-device-pixel-ratio: 2) {
+
+  .kv.research,
+  .kv.product,
+  .kv.assist {
+    height: 55vh;
+  }
+
+  .kv.nanyang,
+  .kv.quality,
+  .kv.news,
+  .kv.location {
+    height: 42.5vh;
+  }
+}
+
+/* ipad Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-min-device-pixel-ratio: 2) {
+
+  .kv.research,
+  .kv.product,
+  .kv.assist {
+    height: 35vh;
+  }
+
+  .kv.nanyang,
+  .kv.quality,
+  .kv.news,
+  .kv.location {
+    height: 28.5vh;
+  }
+}
+
+/* ipad Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-min-device-pixel-ratio: 2) {
+
+  .kv.research,
+  .kv.product,
+  .kv.assist {
+    height: 60vh;
+  }
+
+  .kv.nanyang,
+  .kv.quality,
+  .kv.news,
+  .kv.location {
+    height: 40vh;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  .part-index-b {
+    background: url(/namyang/images/bg-wave-w2.svg) repeat-x center calc(0% - 1px),
+      url(/namyang/images/bg-wave-skin2.svg) repeat-x center calc(100% - -1px),
+      url(/namyang/images/bg-index-part2-xs.webp) no-repeat top,
+      #fec5c1;
+    background-size: 250%, 250%, cover;
+  }
+
+  .kv.nanyang {
+    background: url(/namyang/images/bg-wave-skin2.svg) repeat-x center calc(100% - -1px),
+      url(/namyang/images/kv-nanyang-xs.webp) no-repeat center bottom;
+    background-size: 250%, cover;
+    height: 45vh;
+  }
+
+  .part-nanyang-a {
+    background: url(/namyang/images/bg-wave-w.svg) repeat-x center calc(100% - -2px),
+      #fff2ea;
+    background-size: 250%;
+  }
+
+
+  /* kv.research */
+  .kv.research {
+    background: url(/namyang/images/bg-wave-skin2.svg) repeat-x center calc(100% - -1px),
+      url(/namyang/images/kv-research-xs.webp) no-repeat center top;
+    background-size: 250%, cover;
+    height: 57.5vh;
+  }
+
+  .part-research-a {
+    background: url(/namyang/images/bg-wave-w.svg)repeat-x center calc(100% - -1px),
+      url(/namyang/images/bg-research-a.svg) no-repeat calc(0% - 50px) bottom,
+      url(/namyang/images/bg-research-b.svg) no-repeat calc(100% - -50px) top,
+      #fff2ea;
+    background-size: 250%, 80%, 80%;
+  }
+
+  /* kv.product */
+  .kv.product {
+    background: url(/namyang/images/bg-wave-skin.svg) repeat-x center calc(100% - -2px),
+      url(/namyang/images/kv-product-xs.webp) no-repeat center top;
+    background-size: 250%, cover;
+    height: 57.5vh;
+  }
+
+.kv.product-baby {
+  background: url(/namyang/images/bg-wave-skin.svg) repeat-x center calc(100% - -1px),
+    url(/namyang/images/bg-product-baby.jpg) no-repeat center top;
+  background-size: 250%, cover;
+}
+
+  .part-product-a {
+    background: url(/namyang/images/bg-wave-w.svg)repeat-x center calc(100% - -2px),
+      url(/namyang/images/bg-product-a.webp) no-repeat center center,
+      #ffe6d5;
+    background-size: 250%, 90%;
+  }
+
+  .part-product-b {
+    background: url(/namyang/images/bg-wave-skin.svg)repeat-x center calc(100% - -2px),
+      #fff;
+    background-size: 250%;
+  }
+
+  .part-product-c {
+    background: url(/namyang/images/bg-wave-w.svg)repeat-x center calc(100% - -2px) #ffe6d5;
+    background-size: 250%;
+  }
+
+  .part-product-d {
+    background: url(/namyang/images/bg-wave-skin.svg)repeat-x center calc(100% - -1px),
+      #fff;
+    background-size: 250%;
+  }
+
+
+  /* kv.assist */
+  .kv.assist {
+    background: url(/namyang/images/bg-wave-skin.svg) repeat-x center calc(100% - -1px),
+      url(/namyang/images/kv-prod-assist-xs.webp) no-repeat center top;
+    background-size: 250%, cover;
+    height: 57.5vh;
+  }
+
+  .bg-svg {
+    background: url(/namyang/images/bg-wave-skin.svg) repeat-x center calc(100% - -1px);
+    background-size: 250%;
+
+  }
+
+  /* assist-lis */
+  .part-assist-list-a {
+    background: url(/namyang/images/bg-wave-w.svg)repeat-x center calc(100% - -2px) #ffe6d5;
+    background-size: 250%, cover;
+  }
+
+  .part-assist-list-b {
+    background: url(/namyang/images/bg-wave-w.svg)repeat-x center calc(100% - -2px) #fff;
+    background-size: 250%, cover;
+  }
+
+  .part-assist-aa {
+    background: url(/namyang/images/bg-wave-y.svg)repeat-x center calc(100% - -2px) #ffe6d5;
+    background-size: 250%, cover;
+  }
+
+  .part-assist-ab {
+    background: url(/namyang/images/bg-wave-w.svg)repeat-x center calc(100% - -2px) #fffeb6;
+    background-size: 250%, cover;
+  }
+
+
+  .part-assist-ba {
+    background: url(/namyang/images/bg-wave-y.svg)repeat-x center calc(100% - -2px) #ffdfe9;
+    background-size: 250%, cover;
+  }
+
+  .part-assist-bb {
+    background: url(/namyang/images/bg-wave-w.svg)repeat-x center calc(100% - -2px) #fffeb6;
+    background-size: 250%, cover;
+  }
+
+  .part-assist-ca {
+    background: url(/namyang/images/bg-wave-g.svg)repeat-x center calc(100% - -2px) #FFF;
+    background-size: 250%, cover;
+  }
+
+  .part-assist-cb {
+    background: url(/namyang/images/bg-wave-w.svg)repeat-x center calc(100% - -2px) #f2f6d8;
+    background-size: 250%, cover;
+  }
+
+  .part-assist-da {
+    background: url(/namyang/images/bg-wave-pink.svg)repeat-x center calc(100% - -2px) #fffce7;
+    background-size: 250%;
+  }
+
+  .part-assist-db {
+    background: url(/namyang/images/bg-wave-w.svg)repeat-x center calc(100% - -2px) #ffdfe9;
+    background-size: 250%, cover;
+  }
+
+  .part-assist-ea {
+    background: url(/namyang/images/bg-wave-e.svg)repeat-x center calc(100% - -2px) #FFF;
+    background-size: 250%, cover;
+  }
+
+  .part-assist-eb {
+    background: url(/namyang/images/bg-wave-w.svg)repeat-x center calc(100% - -2px) #feeede;
+    background-size: 250%, cover;
+  }
+
+  /* quality */
+  .kv.quality {
+    background: url(/namyang/images/bg-wave-w.svg) repeat-x center calc(100% - -1px),
+      url(/namyang/images/kv-quality-xs.webp) no-repeat center top;
+    background-size: 250%, cover;
+    height: 45vh;
+  }
+
+  .part-quality-a {
+    background: url(/namyang/images/bg-wave-skin2.svg)repeat-x center calc(100% - -1px),
+      #fff;
+    background-size: 250%;
+  }
+
+  .part-quality-b {
+    background: url(/namyang/images/bg-wave-w.svg)repeat-x center calc(100% - -1px),
+      #fff2ea;
+    background-size: 250%;
+  }
+
+  .part-quality-c {
+    background: url(/namyang/images/bg-wave-skin2.svg)repeat-x center calc(100% - -1px),
+      #fff;
+    background-size: 250%;
+  }
+
+
+  /* news */
+  .kv.news {
+    background: url(/namyang/images/bg-wave-w.svg) repeat-x center calc(100% - -1px),
+      url(/namyang/images/kv-news-xs.webp) no-repeat center center;
+    background-size: 250%, cover;
+    height: 45vh;
+  }
+
+  /* location */
+  .kv.location {
+    background: url(/namyang/images/bg-wave-w.svg) repeat-x center calc(100% - -1px),
+      url(/namyang/images/kv-location-xs.webp) no-repeat center center;
+    background-size: 250%, cover;
+    height: 45vh;
+  }
+}
+
+
+
+
+
+@media screen and (max-width: 567px) {
+  .kv.assist-a {
+    background: url(/namyang/images/bg-wave-skin.svg) repeat-x center calc(100% - -1px),
+      url(/namyang/images/kv-prod-assist-a-xs.webp) no-repeat center center;
+    background-size: 250%, cover;
+    height: 680px;
+  }
+
+  .kv.assist-b {
+    background: url(/namyang/images/bg-wave-pink.svg) repeat-x center calc(100% - -1px),
+      url(/namyang/images/kv-prod-assist-b-xs.webp) no-repeat center top;
+    background-size: 250%, cover;
+    height: 680px;
+  }
+
+  .kv.assist-c {
+    background: url(/namyang/images/bg-wave-w.svg) repeat-x center calc(100% - -1px),
+      url(/namyang/images/kv-prod-assist-c-xs.webp) no-repeat center top;
+    background-size: 250%, cover;
+    height: 680px;
+  }
+
+  .kv.assist-d {
+    background: url(/namyang/images/bg-wave-green.svg) repeat-x center calc(100% - -1px),
+      url(/namyang/images/kv-prod-assist-d-xs.webp) no-repeat center top;
+    background-size: 250%, cover;
+    height: 680px;
+  }
+
+  .kv.assist-e {
+    background: url(/namyang/images/bg-wave-w.svg) repeat-x center calc(100% - -1px),
+      url(/namyang/images/kv-prod-assist-e-xs.webp) no-repeat center top;
+    background-size: 250%, cover;
+    height: 680px;
+  }
+
+  .kv.quality {
+    background: url(/namyang/images/bg-wave-w.svg) repeat-x center calc(100% - -1px),
+      url(/namyang/images/kv-quality-xs.webp) no-repeat center top;
+    background-size: 250%, cover;
+    height: 20vh;
+  }
+
+  .kv.news {
+    background: url(/namyang/images/bg-wave-w.svg) repeat-x center calc(100% - -1px),
+      url(/namyang/images/kv-news-xs.webp) no-repeat center center;
+    background-size: 250%, cover;
+    height: 20vh;
+  }
+
+  .kv.location {
+    background: url(/namyang/images/bg-wave-w.svg) repeat-x center calc(100% - -1px),
+      url(/namyang/images/kv-location-xs.webp) no-repeat center center;
+    background-size: 250%, cover;
+    height: 20vh;
+  }
+}
+
+@media screen and (max-width: 375px) {
+
+  .kv.assist-a,
+  .kv.assist-b,
+  .kv.assist-c,
+  .kv.assist-d,
+  .kv.assist-e {
+    height: 600px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+
+  .kv.assist-a,
+  .kv.assist-b,
+  .kv.assist-c,
+  .kv.assist-d,
+  .kv.assist-e {
+    height: 550px;
+  }
+}
+
+
+
+.rounded-25 {
+  border-radius: 25px;
+}
+
+.milk-license ul {
+  margin: 1rem 0 0 1.5rem;
+}
+
+.milk-license ul li {
+  font-size: 24px;
+  font-weight: 700;
+  color: #824c20;
+}
+
+.main-title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 60px;
+  margin-bottom: 1rem;
+  color: #824c20;
+}
+
+.sub-title span {
+  font-size: 18px;
+  background-color: #824c20;
+  color: #fff;
+}
+
+@media screen and (max-width: 1023px) {
+  .product-baby .info-box h5 {
+    font-size: 1rem;
+  }
+
+  .product-baby .info-box p {
+    font-size: .9rem;
+  }
+
+  .main-title,
+  .sub-title {
+    text-align: center;
+  }
+
+  .img-babymilk {
+    margin: auto;
+    text-align: center;
+  }
+
+  .img-babymilk img {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .main-title {
+    font-size: 1.5rem;
+    line-height: 1.85rem;
+  }
+
+  .milk-license ul li {
+    font-size: 18px;
+  }
+}

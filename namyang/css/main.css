@@ -1,0 +1,923 @@
+@charset "UTF-8";
+@import url(/namyang/css/index.css);
+@import url(/namyang/css/nanyang.css);
+@import url(/namyang/css/product.css);
+@import url(/namyang/css/quality.css);
+@import url(/namyang/css/location.css);
+@import url(/namyang/css/news.css);
+@import url(/namyang/css/research.css);
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cabin&display=swap');
+
+/* CSS Document */
+body {
+  letter-spacing: 1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  overflow: hidden;
+}
+
+#part-b:target {
+  top: -130px;
+  position: relative;
+}
+
+#quality-b:target {
+  top: -100px;
+  position: relative;
+}
+
+#quality-c:target {
+  top: -100px;
+  position: relative;
+}
+
+#quality-d:target {
+  top: -100px;
+  position: relative;
+}
+
+#assist-list {
+  top: -100px;
+  position: relative;
+}
+
+
+@media screen and (min-width: 1200px) and (max-width: 1500px) {
+  .container {
+    max-width: 1000px !important;
+  }
+
+  .footer .container {
+    max-width: 1140px !important;
+  }
+}
+
+@media (min-width: 1501px) {
+  .container {
+    max-width: 1140px !important;
+  }
+}
+
+.main-bg-color {
+  background: rgba(72, 10, 45, 1);
+  color: #fff;
+}
+
+.main-color {
+  color: rgba(96, 16, 64, 1);
+}
+
+.main-bg-color-sec {
+  background: rgba(96, 16, 64, 1);
+  color: #fff;
+}
+
+.main-bg-color-sec a {
+  color: #fff;
+}
+
+.color-coffee {
+  color: #6f451a;
+}
+
+.color-deepcoffee {
+  color: #4b280c;
+}
+
+.color-purple {
+  color: #3e207e;
+}
+.color-gery {
+  color:#666666;
+}
+.bg-color-white {
+  background: rgba(255, 255, 255, 1);
+}
+
+.bg-color-skin {
+  background: #ffe6d5;
+}
+
+.bg-color-skin2 {
+  background-color: #fff2ea;
+}
+
+.bg-color-yellow {
+  background-color: #fffeb6;
+}
+
+.bg-color-pink {
+  background-color: #ffdfe9;
+}
+
+.bg-color-green {
+  background-color: #f2f6d8;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+
+body {
+  font-family: Arial, 'Noto Sans TC', sans-serif, '微軟正黑體', 'Microsoft JhengHei';
+}
+
+html {
+  font-size: 100%;
+}
+
+a {
+  text-decoration: none
+}
+
+a:hover {
+  text-decoration: none
+}
+
+/* nav */
+header {
+  position: fixed;
+  min-width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 11;
+  background: url(/namyang/images/bg-nav.svg) no-repeat center top;
+}
+
+.navbar {
+  padding: 0 .5rem;
+}
+
+/* header */
+header {
+  padding-top: 3px;
+}
+
+header .brand-logo img {
+  height: 40px;
+}
+
+header .navbar-nav {
+  margin: 0;
+  padding: 0 0 0 5rem;
+  color: rgba(96, 16, 64, 1);
+  font-size: 16px;
+}
+
+header .navbar-nav a {
+  color: rgba(96, 16, 64, 1);
+}
+
+header .navbar-nav li.nav-item {
+  margin: 0 15px;
+}
+
+header .nav-link {
+  padding: 0 0 5px;
+}
+
+.hvr-underline-from-center:before {
+  background: rgba(96, 16, 64, 1);
+  height: 2px;
+}
+
+.navbar-collapse {
+  margin-top: 8px
+}
+
+.dropdown-menu {
+  min-width: 10rem;
+  font-size: 1rem;
+  color: rgba(96, 16, 64, 1);
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 0;
+  padding: 15px 25px;
+}
+
+@media screen and (min-width: 1024px) {
+  header .brand-logo img {
+    height: 50px;
+  }
+
+  .dropdown-menu {
+    border-top: 2px solid rgba(96, 16, 64, 1);
+    border-bottom: 5px solid rgba(96, 16, 64, 1);
+    background-color: rgba(255, 255, 255, .85);
+    border-radius: 3px;
+  }
+
+  .nav-item:nth-child(1) .dropdown-menu {
+    margin: -1px 0 0 -45%;
+  }
+
+  .nav-item:nth-child(2) .dropdown-menu {
+    margin: -1px 0 0 -85%;
+  }
+
+  .nav-item:nth-child(3) .dropdown-menu {
+    margin: -1px 0 0 -58%;
+  }
+}
+
+.dropdown-item {
+  display: block;
+  width: calc(100% - 20px);
+  margin: 0 10px 5px;
+  padding: 8px 0 3px;
+  clear: both;
+  /* font-size: 12px; */
+  font-weight: 400;
+  color: rgba(96, 16, 64, 1);
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, .8);
+  border-radius: 0;
+  letter-spacing: 1px;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  color: rgba(96, 16, 64, 1);
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.dropdown-item.disabled,
+.dropdown-item:disabled {
+  color: rgba(96, 16, 64, 1);
+  background-color: transparent;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background: transparent !important;
+}
+
+.navbar-toggler {
+  border: none;
+  background: transparent !important;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  background: transparent !important;
+}
+
+.navbar-toggler .icon-bar {
+  background-color: #fff;
+  transform: rotate(0deg) translate(0px, 0px);
+  transition: ease all .2s;
+}
+
+.navbar-toggler .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+}
+
+.navbar-toggler .icon-bar+.icon-bar {
+  margin-top: 4px;
+}
+
+.icon-bar:nth-child(2) {
+  width: 16px;
+  transition: ease all .2s;
+}
+
+.navbar-toggler:hover>.icon-bar:nth-child(2) {
+  width: 22px;
+  transition: ease all .2s;
+}
+
+.navbar-toggler:active>.icon-bar:nth-child(2) {
+  width: 22px;
+  transition: ease all .2s;
+}
+
+.navbar-toggler:not(.collapsed) .icon-bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 4px);
+  transition: ease all .2s;
+}
+
+.navbar-toggler:not(.collapsed) .icon-bar:nth-child(2) {
+  opacity: 0;
+  transition: ease all .2s;
+}
+
+.navbar-toggler:not(.collapsed) .icon-bar:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -4px);
+  transition: ease all .2s;
+}
+
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(96, 16, 64, 1);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+  color: rgba(96, 16, 64, 1);
+}
+
+.navbar-dark .navbar-nav .nav-link.disabled {
+  color: rgba(96, 16, 64, 1);
+}
+
+.navbar-dark .navbar-nav .show>.nav-link,
+.navbar-dark .navbar-nav .active>.nav-link,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: rgba(96, 16, 64, 1);
+  border-bottom: 2px solid rgba(96, 16, 64, 1);
+}
+
+.navbar-dark .navbar-toggler {
+  color: rgba(96, 16, 64, 1);
+  border-color: rgba(72, 10, 45, 1);
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-dark .navbar-text {
+  color: rgba(96, 16, 64, 1);
+}
+
+.navbar-dark .navbar-text a {
+  color: rgba(96, 16, 64, 1);
+}
+
+.navbar-dark .navbar-text a:hover,
+.navbar-dark .navbar-text a:focus {
+  color: rgba(96, 16, 64, 1);
+}
+
+
+
+.nav-item.icon .nav-link {
+  width: 43px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(96, 16, 64, 1);
+}
+
+.nav-item.icon .nav-link i {
+  width: 22px;
+  height: 22px;
+  display: block;
+  background-size: contain;
+}
+
+.nav-item.icon .nav-link i.fb {
+  background: url(/namyang/images/icon-2-light.svg) no-repeat center center;
+  background-size: contain;
+}
+
+.nav-item.icon .nav-link i.line {
+  background: url(/namyang/images/icon-3-light.svg) no-repeat left center;
+}
+
+.nav-item.icon .nav-link i.ig {
+  background: url(/namyang/images/icon-4-light.svg) no-repeat left center;
+}
+
+@media screen and (max-width: 1023px) {
+  .nav-item.icon .nav-link {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(255, 230, 213, 1);
+  }
+
+  .hvr-underline-from-center {
+    display: none;
+  }
+}
+
+
+/* .sticky.navbar */
+@media screen and (min-width: 1024px) {
+  header {
+    transition: background 500ms ease;
+    -webkit-transition: background 500ms ease;
+    z-index: 1000;
+  }
+
+  header.scrolled {
+    position: fixed;
+    top: -80px;
+    background: rgba(255, 230, 213, 1);
+    border-bottom: 2px solid rgba(72, 10, 45, 1);
+    -webkit-box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.25);
+    transform: translateY(80px);
+    transition: transform 500ms ease, background 900ms ease;
+    -webkit-transition: transform 500ms ease, background 900ms ease;
+  }
+
+  .bg-main {
+    background-color: rgba(96, 16, 64, 0) !important;
+  }
+
+  a.bg-main:hover,
+  a.bg-main:focus {
+    background-color: rgba(96, 16, 64, 0) !important;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  header {
+    position: fixed;
+    width: 100vw;
+    /* border-bottom:1px solid rgba(72, 10, 45, 1); */
+  }
+
+  header .navbar-nav {
+    padding: 0;
+  }
+
+
+  .navbar-toggler {
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+    line-height: 1;
+    background: #601040 !important;
+    border: 1px solid #601040 !important;
+    border-radius: 50%;
+    margin-right: .5rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-toggler:focus {
+    background: #601040 !important;
+    border: 1px solid #601040 !important;
+  }
+
+  .bg-main {
+    background: url(/namyang/images/bg-nav.svg) no-repeat center top rgba(255, 230, 213, 1) !important;
+    background-size: 300px 5px !important;
+    margin-top: -3px;
+    padding: .75rem 0;
+  }
+
+  a.bg-main:hover,
+  a.bg-main:focus {
+    background-color: rgba(255, 230, 213, 1) !important;
+  }
+
+  .dropdown-menu {
+    background-color: rgba(96, 16, 64, 0);
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+
+  ul.navbar-nav {
+    background: #ffe6d5;
+    border-radius: 3px;
+  }
+
+
+  .nav-item {
+    text-align: center;
+    margin: 20px 0 0 0;
+    padding: 30px 0 5px 0;
+    border-bottom: 1px solid rgba(72, 10, 45, 1);
+    font-size: 18px;
+    letter-spacing: 5px !important;
+  }
+
+  .nav-item.icon {
+    border-bottom: none;
+  }
+
+  .nav-link {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .nav-item {
+    margin: 10px 0 0 0;
+    padding: 20px 0 0px 0;
+  }
+
+  header .navbar-nav li.nav-item {
+    margin: 0;
+  }
+
+  header .nav-link {
+    padding: 0 0 .25rem;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .dropdown-menu {
+    min-width: 100%;
+    padding: 15px 10px;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .dropdown-menu {
+    min-width: 100%;
+    padding: 15px 5px;
+    margin: 0;
+  }
+}
+
+.video .video-line {
+  background-color: #fff;
+  border: 10px solid #ffb4b2 !important;
+  padding: 1rem;
+  box-shadow: 0px 5px 15px 10px rgba(0, 0, 0, .1);
+}
+
+
+/* footer------------------------------------------------------- */
+footer,
+.footer {
+  font-family: Arial, \5FAE\8EDF\6B63\9ED1\9AD4, '微軟正黑體', 'Microsoft JhengHei';
+  letter-spacing: .045rem;
+  text-align: center;
+}
+
+address {
+  background: url(/namyang/images/bg-address.svg) repeat-x;
+  color: #fff;
+  background-size: 2900px;
+  padding: 8.5rem 0 2rem;
+  margin: 0;
+}
+
+footer p,
+.footer p {
+  margin: 0;
+  padding: 0;
+}
+
+.footer p {
+  display: inline;
+}
+
+.footer .logo {
+  width: 95px;
+  height: 65px;
+  display: block;
+  background: url(/namyang/images/ficon-logo-korea.svg) no-repeat left center;
+  background-size: cover;
+}
+
+.footer .customer .icon,
+.footer .icon-group li {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffe6d5;
+}
+
+.footer i {
+  width: 30px;
+  height: 30px;
+  display: block;
+  background-size: contain;
+}
+
+.footer .phone {
+  background: url(/namyang/images/ficon-1.svg) no-repeat left center;
+}
+
+.fb {
+  background: url(/namyang/images/ficon-2.svg) no-repeat center center;
+  background-size: contain;
+}
+
+.line {
+  background: url(/namyang/images/ficon-3.svg) no-repeat left center;
+}
+
+.ig {
+  background: url(/namyang/images/ficon-4.svg) no-repeat left center;
+}
+
+.mail {
+  background: url(/namyang/images/ficon-5.svg) no-repeat left center;
+}
+
+.korea {
+  background: url(/namyang/images/ficon-6.svg) no-repeat left center;
+}
+
+.footer .crop p {
+  font-size: .8125rem;
+  letter-spacing: .12rem;
+}
+
+.footer .phone-text h4 {
+  letter-spacing: 0rem;
+}
+
+.footer .phone-text p {
+  font-size: .8125rem;
+  letter-spacing: .06rem;
+}
+
+@media (min-width: 769px) {
+  footer br {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+  .footer .customer .icon,
+  .footer .icon-group li {
+    width: 30px;
+    height: 30px;
+  }
+
+  .footer i {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer p {
+    display: block;
+  }
+
+  .border-left,
+  .border-right {
+    border: none !important;
+  }
+
+  .footer .crop h5 {
+    font-size: 1.5rem;
+    padding: 1.5rem 0 .3rem;
+  }
+
+  .footer .phone-text h4 {
+    font-size: 2rem;
+  }
+
+  .footer .crop p {
+    font-size: 1rem;
+    letter-spacing: .12rem;
+
+  }
+
+  .footer .phone-text p {
+    font-size: 1rem;
+    letter-spacing: .13rem;
+  }
+
+  .footer .icon {
+    margin-top: .5rem;
+  }
+
+  address {
+    background: url(/namyang/images/bg-address.svg) repeat-x;
+    background-size: 1500px;
+    padding: 5rem 0 2rem;
+  }
+
+  .footer .customer .icon,
+  .footer .icon-group li {
+    width: 48px;
+    height: 48px;
+  }
+
+  .footer i {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .footer .crop h5 {
+    font-size: 1.6rem;
+  }
+
+  .footer .phone-text h4 {
+    font-size: 1.5rem;
+    letter-spacing: .28rem;
+    text-align: left;
+  }
+
+  .footer .crop p {
+    font-size: 1.05rem;
+    letter-spacing: .12rem;
+  }
+
+  .footer .phone-text p {
+    font-size: 1rem;
+    letter-spacing: .13rem;
+    text-align: left;
+  }
+
+  footer p {
+    letter-spacing: 0;
+    line-height: 1rem;
+  }
+}
+
+/*  gotop ------------------------------------------*/
+#gotop {
+  display: none;
+  position: fixed;
+  right: 30px;
+  bottom: 60px;
+  cursor: pointer;
+  background: #611141;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  z-index: 10;
+  border-radius: 50%;
+  padding-top: 10px;
+  padding-left: 3px;
+  font-size: 12px;
+  line-height: 12px;
+  border: 3px solid #ff9999;
+}
+
+#gotop:hover {
+  bottom: 65px;
+  transition: .5s;
+}
+
+#gotop i {
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 12px;
+}
+
+@media only screen and (max-width: 767px) {
+  #gotop {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  #gotop:hover {
+    right: 10px;
+    bottom: 15px;
+    transition: .5s;
+  }
+}
+
+
+
+/* section-title */
+.section-title h4 {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  padding-bottom: 1.25rem;
+  margin-bottom: 2rem;
+  background: url(/namyang/images/bg-section-titlle.svg) no-repeat center bottom;
+  line-height: 1.5rem;
+}
+
+.section-title span {
+  /* padding-bottom: .5rem;
+  margin-bottom: .5rem;
+  border-bottom: 5px solid rgba(72, 10, 45, 1); */
+}
+
+h6 {
+  line-height: 1.5rem;
+}
+
+.section-title h4 small {
+  font-size: 1rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .section-title h4 {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .section-title h4 {
+    font-size: 1.5rem;
+  }
+
+  h6 br {
+    display: none;
+  }
+}
+
+/* animate */
+@-webkit-keyframes fadeInUp_5 {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 5%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp_5 {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 5%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp_5 {
+  -webkit-animation-name: fadeInUp_5;
+  animation-name: fadeInUp_5;
+}
+
+
+/* modal */
+#notification .modal-header {
+  border-bottom: none;
+}
+
+#notification .modal-header .close {
+  float: right;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 1;
+  background-color: #611141;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+#notification .modal-body .notification-box {
+  background: url(/namyang/images/notification.jpg) no-repeat center bottom;
+  background-size: cover;
+  height: 350px;
+  width: 100%;
+  border-radius: 5px;
+  line-height: 26px;
+}
+
+/* @media only screen and (max-width: 767px) {
+  #notification .modal-body .notification-box{
+    height: 400px;
+  }
+} */

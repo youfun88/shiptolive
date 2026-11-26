@@ -55,3 +55,4 @@ These 12 pages are **generated**. Do not edit their `index.html` directly; the n
 - Older hand-written pages (geo-guide, projects, tools, ai-video, ideas, privacy and others) are still plain HTML and can be edited directly.
 
 - Visual rules (DESIGN.md): read DESIGN.md before changing layout or styles; keep the signature tag, labeled demo data, and the no-kicker / no-marquee rules.
+- `/namyang/` is a client demo: a static copy of www.namyang.com.tw (林貝兒) for a rebuild pitch, built 2026-11-26. Every page is noindex with a 示範網站 label, trackers (GTM, UA, FB pixel) removed, images converted to WebP, store finder reads `namyang/demo/stores-data.js` (534 stores crawled 2026-11-26). Not in the sitemap, llms.txt or /log; AI crawlers disallowed in robots.txt. Rebuild script lives outside the repo; delete the folder when the pitch is over.

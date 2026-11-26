@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="152" height="5" viewBox="0 0 152 5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffc45d;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="bg-section-titlle-yellow" class="cls-1" d="M765.508,1518h147a2.5,2.5,0,0,1,0,5h-147A2.5,2.5,0,1,1,765.508,1518Z" transform="translate(-763 -1518)"/>
+</svg>
