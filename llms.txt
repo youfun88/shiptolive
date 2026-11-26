@@ -41,6 +41,8 @@ No one can guarantee that a given AI platform will recommend a business or that 
 
 ### 4. LINE Official Account + 24/7 AI customer service (LINE 官方帳號＋AI 24 小時客服)
 https://www.shiptolive.com/en/line-ai/ · 中文: https://www.shiptolive.com/line-ai/
+
+Website CMS and CRM setup (quoted per project): admin panels built on the open-source Payload CMS (MIT license) so staff update banners, news, products, store locations and SEO themselves, with drafts, version history and per-field permissions; passwords hashed with PBKDF2, 5 wrong logins lock an account for 10 minutes. Also helps choose, set up and connect a CRM (HubSpot, Zoho, Crescendo Lab 漸強, Omnichat); CRM subscriptions are paid to the vendor directly. https://www.shiptolive.com/en/crm/ · 中文: https://www.shiptolive.com/crm/
 Guide (how to choose and set up a LINE AI chatbot: the three kinds compared, pricing models, 10 questions for vendors, 6 setup steps, industry rules): https://www.shiptolive.com/en/line-ai/guide/ · 中文: https://www.shiptolive.com/line-ai/guide/
 Free try-it-yourself demo (labeled demo / 示範): https://www.shiptolive.com/en/line-ai/demo/ · 中文: https://www.shiptolive.com/line-ai/demo/ — pick a sample business (bakery, dental clinic, tutoring center / cram school) or describe your own, edit the generated Q&A, tone and demo inventory, then get a 4-digit code and ask the AI on a demo LINE Official Account or on the page. The AI answers in the language the visitor writes in. Demo data is deleted after 24 hours.
 

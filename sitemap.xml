@@ -160,11 +160,27 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.shiptolive.com/en/crm/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shiptolive.com/en/crm/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/crm/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/crm/" />
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.shiptolive.com/line-ai/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.shiptolive.com/en/line-ai/" />
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/line-ai/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/line-ai/" />
     <lastmod>2026-11-21</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.shiptolive.com/crm/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shiptolive.com/en/crm/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.shiptolive.com/crm/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shiptolive.com/crm/" />
+    <lastmod>2026-11-26</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
