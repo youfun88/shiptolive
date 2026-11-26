@@ -30,3 +30,14 @@
   .la-oa.la-ent { padding: 24px 20px 20px; }
   .la-oa.la-oas { padding: 22px 20px; }
 }
+
+/* zh year-end offer (banner + countdown + struck normal price); JS removes it after the deadline */
+.la-launch.la-promo { background: #fdf3e2; border-color: #f1cf9c; align-items: center; gap: 8px 16px; }
+.la-launch.la-promo > b { color: var(--accent-ink); font-size: 17px; }
+.la-cd { display: inline-flex; align-items: baseline; gap: 3px; font-size: 14px; color: var(--ink2); white-space: nowrap; }
+.la-cd[hidden] { display: none; }
+.la-cd i { font: 800 18px/1 var(--sans); font-style: normal; font-variant-numeric: tabular-nums; color: #fff; background: var(--accent-ink); border-radius: 6px; padding: 5px 6px; min-width: 2.1em; text-align: center; margin-left: 4px; }
+.la-cd i:first-child { margin-left: 6px; }
+.la-launch.la-promo > span:last-child { flex: 1 1 100%; }
+.la-price[data-promo] { flex-wrap: wrap; }
+.la-price .la-was { flex: 1 0 100%; color: var(--ink3); font: 600 17px/1.3 var(--sans); text-decoration-thickness: 2px; margin-bottom: 2px; }
