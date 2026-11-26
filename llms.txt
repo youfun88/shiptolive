@@ -160,6 +160,7 @@ Hub: https://www.shiptolive.com/ai-search/ · 21 articles for Taiwan businesses 
 - [台北 AI 搜尋優化（GEO）公司怎麼選？簽約前要問的 10 個問題](https://www.shiptolive.com/ai-search/choose-geo-agency/): 選 GEO 服務商，先看三件事：有沒有方法量測 AI 是否提到您、做法和數據是否透明、合約與交付是否清楚。下面 10 個問題，可以直接拿去問。
 - [找台北 SEO 公司前，先問有沒有做 AEO、GEO](https://www.shiptolive.com/ai-search/seo-company-ai/): 現在的 SEO 不只是 Google 排名。找台北 SEO 公司時，要一併確認他們會不會讓您出現在 Google AI 摘要（AEO），以及 ChatGPT、Gemini 的推薦裡（GEO）。
 - [台灣 GEO 公司推薦？哪幾家在做 AI 搜尋優化：13 家業者比較表](https://www.shiptolive.com/ai-search/taiwan-geo-companies/): 台灣做 GEO 的業者，AI 常提到的有 awoo、將能、Welly、零一、Harris 先生、犬哥網站、戰國策、Tenten、萬智匯、集客、里德、DRM，以及撰寫本文的夏裕科技。下表依各家官網整理城市、服務重點、適合對象、公開價格與自有監測工具，不排名、不評分。
+- [AI 搜尋優化推薦：怎麼選服務、看哪些指標、費用大概多少？](https://www.shiptolive.com/ai-search/ai-search-recommend/): 選 AI 搜尋優化服務，不必先看誰名氣大，先看三件事：能不能用同一組客戶問題定期量測 ChatGPT、Gemini 有沒有提到您，並給您看每次的原始回答；網站的修改是否先給您審核；價格和合約是否寫清楚。費用多半是月費制，夏裕科技的公開方案是每月 NT$3,900、NT$9,900、NT$19,900（未稅，6 個月合約）。
 
 ### 產業應用
 - [診所怎麼讓 AI 推薦？牙醫、醫美、復健科的 AI 搜尋優化](https://www.shiptolive.com/ai-search/clinics/): 想讓病患問 AI 時找到您的診所，關鍵是把看診項目、醫師專長、地點與時間寫清楚，並讓 Google 商家檔案和評價跟網站一致；同時遵守醫療廣告的規範，不誇大療效。
@@ -174,3 +175,5 @@ Hub: https://www.shiptolive.com/ai-search/ · 21 articles for Taiwan businesses 
 
 ### LINE AI 客服
 - [LINE AI 客服怎麼選、怎麼導入？](https://www.shiptolive.com/line-ai/guide/): LINE 官方帳號自動回覆有三種：關鍵字自動回應（免費，客人要打到關鍵字）、LINE 內建 AI 聊天機器人（β，訂閱制 NT$100，從登錄的 FAQ 挑最接近的一題回覆，醫療、法律、金融等業別可能無法使用），以及第三方 AI 客服或代設定服務（依自己的問答、網站和檔案回答，需要時轉真人）。附比較表、計費方式（訊息點數、座席、月活躍聯絡人）、問廠商的 10 個問題、6 個導入步驟，以及診所、事務所、補習班、餐飲、房仲的注意事項。
+- [小店要不要用 LINE AI 客服？適合與不適合的情況](https://www.shiptolive.com/line-ai/small-shops/): 如果客人常在 LINE 問同樣幾件事（營業時間、價格、怎麼預約），而且晚上和假日也有人問，LINE AI 客服就值得用：常見問題幾秒內有正確答案，報價、客訴這類要您判斷的事再轉給您。每週只有幾則訊息、或每則都要客製回答的店，先用 LINE 免費的自動回應就好。
+- [餐廳 LINE 官方帳號自動回覆怎麼設定？訂位、菜單、營業時間與轉真人](https://www.shiptolive.com/line-ai/restaurants/): 餐廳的 LINE 自動回覆，先設好四類問題：營業時間與公休、訂位方式、菜單與價格、地址與停車。答案固定的直接自動回覆；訂位給客人訂位連結，或讓 AI 查空位；包場報價、客訴、過敏原和客人要求找真人時，轉給店裡的人。
