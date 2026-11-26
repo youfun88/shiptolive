@@ -172,6 +172,22 @@ var f=document.querySelector('.post-body .faq'),pb=document.querySelector('.post
         print('wrote', out)
 
 
+# Hub FAQ (2026-11-26): visible on /ai-search/ and the same text as its FAQPage JSON-LD. Each answer is
+# the short version of that article; keep them in step when an article's answer changes.
+HUB_FAQ = [
+    ('what-is-geo', 'GEO（生成式引擎優化）是什麼？',
+     'GEO 是讓 ChatGPT、Gemini、Claude 等 AI 在回答客戶問題時，提到並推薦您的公司。它和 SEO 相輔相成：SEO 讓您出現在搜尋結果，GEO 讓 AI 在回答裡直接說出您的名字。'),
+    ('get-recommended-by-chatgpt', '怎麼讓 ChatGPT 推薦我的公司？',
+     '先確認 ChatGPT 搜尋讀得到您的網站，再把服務、地區與價格寫清楚，並在 AI 常引用的外部網站（例如名錄與推薦文章）建立正確資料，最後定期檢測 AI 有沒有提到您。'),
+    ('google-ai-overviews', '怎麼讓公司出現在 Google 的 AI 摘要裡？',
+     '依 Google 的說明，AI 摘要沒有額外的特殊條件：網頁要能被 Google 索引、能出現在一般搜尋結果，內容清楚回答使用者的問題。重點是寫好直接回答問題的內容，並讓 Google 讀得到。'),
+    ('check-ai-visibility', '怎麼檢查 ChatGPT、Gemini 有沒有提到我的公司？',
+     '用沒有登入紀錄的新對話，問 5 個客戶真正會問的問題，記錄 AI 有沒有提到您、推薦了哪些同業。也可以申請夏裕科技的免費 AI 曝光檢測，一次問多個 AI 平台。'),
+    ('geo-cost', 'AI 搜尋優化（GEO）費用怎麼算？',
+     '主要看檢測的問題數、AI 平台數，以及是否由服務商動手改網站。夏裕科技公開月費：監測 NT$3,900、成長 NT$9,900、進階 NT$19,900（6 個月合約）。'),
+]
+
+
 def run(b):
     run_en(b)
     src = b.HERE / 'bodies' / 'zh' / 'articles'
@@ -265,12 +281,18 @@ var f=document.querySelector('.post-body .faq'),pb=document.querySelector('.post
         items = [a for a in arts if a.get('category', '') == c]
         if items:
             groups += f'\n    <h2 class="h2 hub-cat">{c}</h2>\n    <ul class="aindex">{"".join(row(a) for a in items)}</ul>'
+    faq_items = [(s, q, a) for s, q, a in HUB_FAQ if any(x['slug'] == s for x in arts)]
+    faq_ld = {"@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for _, q, a in faq_items]}
+    faq_html = ''.join(
+        f'<details{" open" if i == 0 else ""}><summary>{q}</summary><p>{a} <a class="tlink" href="{HUB}{s}/">閱讀全文</a></p></details>'
+        for i, (s, q, a) in enumerate(faq_items))
     item_list = {"@type": "ItemList", "itemListElement": [
         {"@type": "ListItem", "position": i + 1, "url": b.BASE + url_of(a), "name": a['h1']} for i, a in enumerate(arts)]}
     meta = {
         'title': 'AI 搜尋優化知識庫：GEO、AEO 教學與實作｜夏裕科技',
         'description': '什麼是 GEO、AEO？怎麼讓 ChatGPT、Gemini 和 Google AI 摘要推薦您的公司？夏裕科技整理給台灣企業的 AI 搜尋優化教學、實作步驟與產業做法。',
-        'path': HUB, 'zh_only': True, 'draft': all_draft, 'crumbs': [('首頁', '/'), (HUB_NAME, HUB)], 'ld': [item_list],
+        'path': HUB, 'zh_only': True, 'draft': all_draft, 'crumbs': [('首頁', '/'), (HUB_NAME, HUB)], 'ld': [item_list, faq_ld],
         'og': '/assets/v2/img/ai-search/hub.png',
     }
     body = f'''<section class="hero inner hub-hero" aria-labelledby="h1">
@@ -333,6 +355,12 @@ var f=document.querySelector('.post-body .faq'),pb=document.querySelector('.post
       <a href="{HUB}sme-30-day-plan/"><span class="q">中小企業要怎麼提升在 AI 搜尋的曝光？</span><span class="go">30 天行動清單</span></a>
       <a href="{HUB}geo-cost/"><span class="q">AI 搜尋優化（GEO）費用大概怎麼算？</span><span class="go">影響報價的因素</span></a>
     </div>
+  </div>
+</section>
+<section class="sec faq" id="faq" aria-labelledby="faq-h">
+  <div class="wrap faqx">
+    <div class="faq-l"><div class="sec-head"><h2 class="h2" id="faq-h">常見問題</h2></div><p class="faq-lead">最常被問到的 5 個問題，先看簡短答案，想了解再點進全文。</p></div>
+    <div class="faq-r">{faq_html}</div>
   </div>
 </section>
 <section class="sec alt hub">
