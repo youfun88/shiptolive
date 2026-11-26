@@ -39,6 +39,7 @@ Disallow: /card/
 Disallow: /zh/card/
 Disallow: /old-2026-11/
 Disallow: /namyang/
+Disallow: /crm/
 Disallow: /scripts/
 
 # Plain-text summary for language models: https://www.shiptolive.com/llms.txt
