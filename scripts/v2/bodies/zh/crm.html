@@ -6,7 +6,8 @@ css: x-crm.css
 ld: [{"@type": "Service", "name": "網站後台與 CRM 建置", "serviceType": "Website CMS and CRM setup", "provider": {"@id": "https://www.shiptolive.com/#org"}, "areaServed": [{"@type": "Country", "name": "Taiwan"}, {"@type": "Country", "name": "United States"}], "url": "https://www.shiptolive.com/crm/", "description": "用開源的 Payload CMS 建置網站後台，讓員工自己更新內容；並協助挑選、導入與串接 CRM。依專案報價。", "@id": "https://www.shiptolive.com/crm/#service"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "CMS 和 CRM 有什麼不同？", "acceptedAnswer": {"@type": "Answer", "text": "CMS 管網站內容，例如 Banner、最新消息、商品和門市；CRM 管客戶，例如會員資料、聯絡紀錄和行銷名單。很多企業兩個都需要，我們可以讓兩邊互相串接。"}}, {"@type": "Question", "name": "Payload CMS 安全嗎？", "acceptedAnswer": {"@type": "Answer", "text": "Payload 是 MIT 授權的開源軟體，程式碼公開。密碼以 PBKDF2 加鹽雜湊儲存，連續輸錯 5 次會鎖定 10 分鐘，每種內容、甚至每個欄位都能設定誰可以看、誰可以改。沒有系統是百分之百安全，我們也會協助管理帳號、權限與更新。"}}, {"@type": "Question", "name": "不會寫程式的員工也能用嗎？", "acceptedAnswer": {"@type": "Answer", "text": "可以。後台是中文介面，像填表單一樣更新內容，圖片上傳後自動壓縮。交付時我們會做教育訓練。"}}, {"@type": "Question", "name": "舊網站的資料可以搬過來嗎？", "acceptedAnswer": {"@type": "Answer", "text": "可以。文章、圖片、商品和門市資料都能整批搬入，不用一筆一筆重打。"}}, {"@type": "Question", "name": "費用怎麼算？", "acceptedAnswer": {"@type": "Answer", "text": "Payload 本身免授權費。建置依內容種類與搬家的資料量報價，上線後另有主機與維護月費。CRM 的訂閱費由您直接付給 CRM 廠商，我們收導入與串接費用。"}}]}]
 -->
 <section class="hero page hx" aria-labelledby="h1">
-  <div class="wrap">
+  <div class="wrap g">
+    <div>
     <p class="crumbs"><a href="/">首頁</a> / 服務項目 / 網站後台與 CRM 建置</p>
     <h1 id="h1">網站後台與 CRM 建置</h1>
     <p class="sub2">網站內容自己改，不用每次找工程師。</p>
@@ -15,6 +16,30 @@ ld: [{"@type": "Service", "name": "網站後台與 CRM 建置", "serviceType": "
       <a class="pill orange" href="#contact">討論您的後台需求 <span class="arr" aria-hidden="true">→</span></a>
       <a class="pill ghost" href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">預約 20 分鐘免費諮詢</a>
     </div>
+      </div>
+    <figure class="crm-hero rv" aria-label="示範畫面：在後台改好按發佈，網站馬上更新（示範資料）">
+      <div class="crm-win">
+        <div class="wb-bar" aria-hidden="true"><i></i><i></i><i></i><span>admin.yourcompany.com</span></div>
+        <div class="crm-app" aria-hidden="true">
+          <ul class="crm-side"><li>首頁 Banner</li><li class="on">品牌資訊</li><li>商品</li><li>門市據點</li><li>網站設定</li></ul>
+          <div class="crm-main">
+            <div class="crm-lbl">標題</div>
+            <div class="crm-input"><span class="crm-type">週年慶活動開跑</span><i class="crm-caret"></i></div>
+            <div class="crm-lbl">發布日期</div>
+            <div class="crm-input crm-muted">2026-12-01 10:00</div>
+            <div class="crm-img"><span></span><span></span><span></span></div>
+            <div class="crm-actions"><span class="crm-pub">發佈</span><span class="crm-toast">✓ 已發佈</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="crm-phone" aria-hidden="true">
+        <div class="crm-notch"></div>
+        <div class="crm-site-h">最新消息</div>
+        <div class="crm-card crm-new"><span class="crm-thumb"></span><b>週年慶活動開跑</b><small>2026-12-01</small></div>
+        <div class="crm-card"><span class="crm-thumb t2"></span><b>新品上市</b><small>2026-11-20</small></div>
+      </div>
+      <figcaption>示範畫面：在後台改好按發佈，網站馬上更新（示範資料）</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -46,10 +71,33 @@ ld: [{"@type": "Service", "name": "網站後台與 CRM 建置", "serviceType": "
   </div>
 </section>
 
+<section class="sec" id="connect" aria-labelledby="cn-h">
+  <div class="wrap crm-cn">
+    <div class="rv"><h2 class="h2" id="cn-h">一個後台，串起所有工具</h2><p class="lede">Payload 內建 API。內容改一次，網站、LINE、CRM 都同步，不用複製貼上。</p></div>
+    <div class="crm-hub rv" role="img" aria-label="一個後台，串起所有工具：網站、LINE 官方帳號、CRM 客戶管理、AI 曝光引擎、POS／ERP、網站表單">
+      <svg viewBox="0 0 680 400" aria-hidden="true"><path class="crm-flow" d="M280 200 L170 92" style="--d:0.0s"/><path class="crm-flow" d="M280 200 L510 92" style="--d:0.45s"/><path class="crm-flow" d="M280 200 L620 222" style="--d:0.9s"/><path class="crm-flow" d="M280 200 L510 352" style="--d:1.35s"/><path class="crm-flow" d="M280 200 L170 352" style="--d:1.8s"/><path class="crm-flow" d="M280 200 L60 222" style="--d:2.25s"/><circle class="crm-dot" r="4" style="--d:0.0s"><animateMotion dur="2.7s" begin="-0.0s" repeatCount="indefinite" path="M280 200 L170 92"/></circle><circle class="crm-dot" r="4" style="--d:0.45s"><animateMotion dur="2.7s" begin="-0.45s" repeatCount="indefinite" path="M280 200 L510 92"/></circle><circle class="crm-dot" r="4" style="--d:0.9s"><animateMotion dur="2.7s" begin="-0.9s" repeatCount="indefinite" path="M280 200 L620 222"/></circle><circle class="crm-dot" r="4" style="--d:1.35s"><animateMotion dur="2.7s" begin="-1.35s" repeatCount="indefinite" path="M280 200 L510 352"/></circle><circle class="crm-dot" r="4" style="--d:1.8s"><animateMotion dur="2.7s" begin="-1.8s" repeatCount="indefinite" path="M280 200 L170 352"/></circle><circle class="crm-dot" r="4" style="--d:2.25s"><animateMotion dur="2.7s" begin="-2.25s" repeatCount="indefinite" path="M280 200 L60 222"/></circle></svg>
+      <div class="crm-node" style="left:16.18%;top:17.50%">網站</div><div class="crm-node" style="left:66.18%;top:17.50%">LINE 官方帳號</div><div class="crm-node" style="left:82.35%;top:50.00%">CRM 客戶管理</div><div class="crm-node" style="left:66.18%;top:82.50%">AI 曝光引擎</div><div class="crm-node" style="left:16.18%;top:82.50%">POS／ERP</div><div class="crm-node" style="left:0.00%;top:50.00%">網站表單</div>
+      <div class="crm-core">Payload<br>後台</div>
+    </div>
+  </div>
+</section>
+
 <section class="sec alt" id="security" aria-labelledby="sec-h">
   <div class="wrap">
+   <div class="crm-sec-g">
+    <figure class="crm-lock rv" aria-label="輸錯 5 次自動鎖定（示範）">
+      <div class="crm-lockbox" aria-hidden="true">
+        <svg class="crm-shield" viewBox="0 0 64 72"><path d="M32 4 58 14v20c0 17-11 29-26 34C17 63 6 51 6 34V14Z"/><rect x="22" y="33" width="20" height="16" rx="3"/><path d="M26 33v-5a6 6 0 0 1 12 0v5"/></svg>
+        <div class="crm-lbl">密碼</div>
+        <div class="crm-input crm-pw">••••••••</div>
+        <div class="crm-tries"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="crm-msg"><span class="m1">密碼錯誤</span><span class="m2">帳號已鎖定 10 分鐘</span></div>
+      </div>
+      <figcaption>輸錯 5 次自動鎖定（示範）</figcaption>
+    </figure>
+   <div>
     <div class="sec-head rv"><h2 class="h2" id="sec-h">Payload 安全嗎？</h2><p class="lede">安全的做法，是讓每個環節都有把關。以下是 Payload 內建的，加上我們會幫您做的。</p></div>
-    <ul class="svc-list rv">
+    <ul class="svc-list crm-sec-list rv">
       <li><b>程式碼公開</b><p>Payload 是開源軟體，程式碼放在 GitHub 上，全世界的開發者都能檢查、回報問題。</p></li>
       <li><b>密碼不存明碼</b><p>密碼以 PBKDF2 加鹽雜湊後才儲存，連我們也看不到員工的密碼。</p></li>
       <li><b>防止猜密碼</b><p>同一個帳號連續輸錯 5 次，會自動鎖定 10 分鐘。</p></li>
@@ -57,6 +105,8 @@ ld: [{"@type": "Service", "name": "網站後台與 CRM 建置", "serviceType": "
       <li><b>外掛少，漏洞少</b><p>WordPress 網站常見的資安問題多半來自外掛。Payload 的功能直接寫在系統裡，需要裝的第三方外掛少很多。</p></li>
       <li><b>全程加密連線與更新</b><p>後台、網站與資料庫之間都走加密連線。我們定期更新套件、套用安全修補，並設定資料備份。</p></li>
     </ul>
+   </div>
+   </div>
     <p class="crm-note rv">老實說，沒有任何系統能保證百分之百安全。帳號管理也很重要：每人一組帳號、離職就停用、不共用密碼，這些我們都會幫您設定好。</p>
   </div>
 </section>
