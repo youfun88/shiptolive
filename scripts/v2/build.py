@@ -40,14 +40,14 @@ L = {
                web='網站建置與數位行銷', web_s='企業網站、SEO、多語言網站', sw='客製化軟體開發', sw_s='企業系統、App、系統整合',
                ai='AI 搜尋優化（AEO／GEO）', ai_s='讓 ChatGPT、Gemini 提到您', engine='夏裕 AI 曝光引擎', line='LINE 官方帳號＋AI 客服', line_s='AI 24 小時回覆客人訊息', crm='網站後台與 CRM 建置', crm_s='Payload CMS、會員與客戶管理', about='關於我們',
                contact='聯絡我們', cta='免費 AI 曝光檢測', other='EN', other_label='English version', menu='選單', skip='跳到主要內容',
-               f_company='夏裕科技股份有限公司 Ship to Live', f_tax='統一編號 90173045・可開統一發票', f_loc='總部：台北・服務台灣與歐美',
+               f_company='夏裕科技股份有限公司 Ship to Live', f_tax='統一編號 90173045・可開統一發票', f_loc='總部：台北・服務台灣與歐美', f_parent='母公司：QY LLC（美國加州聖地牙哥，2016 年成立）',
                f_svc='服務', f_more='更多', f_guide='AI 搜尋優化指南', f_work='過往作品', f_tools='免費工具', f_privacy='隱私權政策',
                f_book='預約免費諮詢', motto='敢想。敢作。敢創新。', locale='zh_TW', alt_locale='en_US'),
     'en': dict(htmllang='en', brand='Ship to Live', brand_sub='夏裕科技 · TAIPEI', place='TAIPEI · SAN DIEGO', home='Home', services='Services',
                web='Website Design & Digital Marketing', web_s='Company sites, SEO, multilingual', sw='Custom Software Development', sw_s='Business systems, apps, integration',
                ai='AI Search Optimization (AEO/GEO)', ai_s='Get named by ChatGPT and Gemini', engine='AI Visibility Engine', line='LINE AI customer service', line_s='AI answers customer messages 24/7', crm='CMS and CRM setup', crm_s='Payload CMS, customer data', about='About',
                contact='Contact', cta='Free AI visibility check', other='中文', other_label='中文版', menu='Menu', skip='Skip to content',
-               f_company='Ship to Live (夏裕科技股份有限公司)', f_tax='Taiwan tax ID 90173045', f_loc='Headquartered in Taipei, serving Taiwan, Europe and North America',
+               f_company='Ship to Live (夏裕科技股份有限公司)', f_tax='Taiwan tax ID 90173045', f_loc='Headquartered in Taipei, serving Taiwan, Europe and North America', f_parent='Parent company: QY LLC, San Diego, California (founded 2016)',
                f_svc='Services', f_more='More', f_guide='AI search optimization guide', f_work='Past work', f_tools='Free tools', f_privacy='Privacy policy',
                f_book='Book a free consultation', motto='Dare to think. Dare to build. Dare to innovate.', locale='en_US', alt_locale='zh_TW'),
 }
@@ -121,7 +121,7 @@ def footer(lang, meta=None):
     return fab + mcta + f'''<footer class="foot">
   <div class="wrap">
     <div class="cols">
-      <div><b>{t['brand']}</b>{t['f_company']}<br>{t['f_tax']}<br>{t['f_loc']}<p class="motto">{t['motto']}</p></div>
+      <div><b>{t['brand']}</b>{t['f_company']}<br>{t['f_tax']}<br>{t['f_loc']}<br>{t['f_parent']}<p class="motto">{t['motto']}</p></div>
       <nav aria-label="{t['f_svc']}"><b>{t['f_svc']}</b><a href="{p(lang,'seo-aeo-geo')}">{t['ai']}</a><a href="{p(lang,'website')}">{t['web']}</a><a href="{p(lang,'software')}">{t['sw']}</a><a href="{p(lang,'line-ai')}">{t['line']}</a><a href="{p(lang,'crm')}">{t['crm']}</a><a href="{p(lang,'engine')}">{t['engine']}</a></nav>
       <nav aria-label="{t['f_more']}"><b>{t['f_more']}</b><a href="{p(lang,'about')}">{t['about']}</a><a href="{pre}/geo-guide/">{t['f_guide']}</a>{'<a href="/ai-search/">AI 搜尋優化知識庫</a>' if lang == 'zh' else ''}<a href="{pre}/privacy/">{t['f_privacy']}</a>{legal}{HATCHY[lang]}</nav>
       <nav aria-label="{t['contact']}"><b>{t['contact']}</b><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a>{f'<a href="{LINE_URL}" target="_blank" rel="noopener">LINE 官方帳號</a>' if lang == 'zh' else ''}<a href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">{t['f_book']}</a><a href="https://admin.shiptolive.com/card{'?lang=en' if lang == 'en' else ''}">{'電子名片' if lang == 'zh' else 'Business card'}</a><a href="{p(lang,'engine')}#check">{t['cta']}</a></nav>
@@ -144,6 +144,9 @@ def head(lang, slug, meta):
         "logo": BASE + "/assets/logo/logo-512.png", "slogan": "敢想。敢作。敢創新。",
         "description": "Taipei software company serving Taiwan, Europe and North America: websites and digital marketing, custom software development, and AI search optimization (AEO/GEO) on its own Ship to Live AI Visibility Engine (夏裕 AI 曝光引擎).",
         "address": {"@type": "PostalAddress", "addressLocality": "Taipei", "addressRegion": "Taipei City", "addressCountry": "TW"},
+        # Parent company (Yufan, 2026-11-27): QY LLC, San Diego, founded 2016. Matches the directory profiles (Clutch, GoodFirms, DesignRush, Sortlist).
+        "parentOrganization": {"@type": "Organization", "@id": BASE + "/#entity-us", "name": "QY LLC", "legalName": "QY LLC", "foundingDate": "2016",
+                               "address": {"@type": "PostalAddress", "addressLocality": "San Diego", "addressRegion": "CA", "addressCountry": "US"}},
         "areaServed": [{"@type": "Country", "name": "Taiwan"}, {"@type": "Place", "name": "Europe"}, {"@type": "Country", "name": "United States"}, {"@type": "Country", "name": "Canada"}],
         "knowsLanguage": ["zh-Hant", "en"],
         "knowsAbout": ["Website design and development", "Search engine optimization (SEO)", "Answer engine optimization (AEO)",
