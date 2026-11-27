@@ -147,6 +147,11 @@ def head(lang, slug, meta):
         # Parent company (Yufan, 2026-11-27): QY LLC, San Diego, founded 2016. Matches the directory profiles (Clutch, GoodFirms, DesignRush, Sortlist).
         "parentOrganization": {"@type": "Organization", "@id": BASE + "/#entity-us", "name": "QY LLC", "legalName": "QY LLC", "foundingDate": "2016",
                                "address": {"@type": "PostalAddress", "addressLocality": "San Diego", "addressRegion": "CA", "addressCountry": "US"}},
+        # Profiles of this same company elsewhere (2026-11-27). Only live ones: add GoodFirms
+        # (goodfirms.co/company/ship-to-live-qy-llc) and DesignRush once approved, and LinkedIn once the company page exists.
+        "sameAs": ["https://clutch.co/profile/ship-live", "https://www.sortlist.com/agency/ship-to-live",
+                   "https://vocus.cc/salon/6b097db8f516c90449a786cd", "https://vocus.cc/user/6b097db8f516c90449a786ca",
+                   LINE_URL],
         "areaServed": [{"@type": "Country", "name": "Taiwan"}, {"@type": "Place", "name": "Europe"}, {"@type": "Country", "name": "United States"}, {"@type": "Country", "name": "Canada"}],
         "knowsLanguage": ["zh-Hant", "en"],
         "knowsAbout": ["Website design and development", "Search engine optimization (SEO)", "Answer engine optimization (AEO)",
@@ -156,7 +161,6 @@ def head(lang, slug, meta):
                     "sameAs": ["https://www.linkedin.com/in/yufanchen8/"]},
         "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "email": "yufan@shiptolive.com", "availableLanguage": ["zh-Hant", "en"],
                          "url": BASE + "/#contact"},
-        "sameAs": [LINE_URL],
         "hasOfferCatalog": {"@type": "OfferCatalog", "name": "夏裕科技 services", "itemListElement": [
             {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": BASE + "/seo-aeo-geo/#service", "name": "AI 搜尋優化（AEO／GEO）",
                                                 "alternateName": "AI Search Optimization (AEO/GEO)", "url": BASE + "/seo-aeo-geo/"}},
