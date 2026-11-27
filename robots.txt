@@ -37,7 +37,6 @@ Disallow: /pending
 Disallow: /log
 Disallow: /card/
 Disallow: /zh/card/
-Disallow: /old-2026-11/
 Disallow: /namyang/
 Disallow: /crm/
 Disallow: /scripts/
