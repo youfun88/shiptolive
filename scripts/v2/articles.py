@@ -189,8 +189,8 @@ def run_en_hub(b, arts):
     if not arts:
         return
     groups = ''
-    for name, key in (('AI search for small businesses', ''), ('LINE AI customer service', 'line')):
-        items = [a for a in arts if a.get('section', '') == key]
+    for name, key, ind in (('AI search for small businesses', '', False), ('Industry guides', '', True), ('LINE AI customer service', 'line', False)):
+        items = [a for a in arts if a.get('section', '') == key and (a.get('category') == 'Industry guides') == ind]
         if items:
             groups += (f'\n    <h2 class="h2 hub-cat">{name}</h2>\n    <ul class="aindex">' +
                        ''.join(f'<li><a href="{url_of(a, "en")}"><b>{a["h1"]}</b><span>{a.get("dek", "")}</span></a></li>' for a in items) + '</ul>')

@@ -1,0 +1,132 @@
+<!--
+slug: structured-data
+pair: /ai-search/structured-data/
+title: Does Structured Data (Schema) Help AEO and GEO? | Ship to Live
+description: Structured data (schema) describes your business, services and address in a format machines read. Which types to add first, how to check them, and its limits.
+h1: How does structured data (schema) help AEO and GEO? A small business guide
+dek: Structured data tells search engines in a fixed format who your business is, where it is and what it offers. It reduces misunderstandings, but it is not a shortcut to getting recommended by AI. What counts most is the content people can see on your pages.
+category: AI search for small businesses
+order: 18
+date: 2026-11-28
+ld: [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I add structured data without a developer?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Common website platforms such as WordPress and Shopify have plugins or built-in settings that create structured data. On a custom-built website, you add a block of JSON-LD to the HTML. Either way, check it with Google's Rich Results Test after adding it."}}, {"@type": "Question", "name": "If I add structured data, will Google always show special results?", "acceptedAnswer": {"@type": "Answer", "text": "Not always. Structured data makes a page eligible for some special results, but Google doesn't guarantee to show them. Google's search systems decide whether to show them."}}, {"@type": "Question", "name": "Should I use Organization or LocalBusiness?", "acceptedAnswer": {"@type": "Answer", "text": "Businesses with a physical location that people search for on maps, such as clinics, restaurants and professional firms, should use LocalBusiness or a more specific subtype. Companies that mainly work online and don't receive visitors can use Organization."}}, {"@type": "Question", "name": "Does structured data affect ChatGPT?", "acceptedAnswer": {"@type": "Answer", "text": "There is no public data so far showing that ChatGPT relies on structured data to recommend businesses. What is clearer is that it helps machines understand your basic details correctly. What really affects recommendations is still whether your website content is clear, and whether other sites mention you with consistent information."}}]}]
+-->
+<div class="tldr">
+  <b>Key points</b>
+  <ul>
+    <li><strong>Structured data</strong> is a short description inside a web page, written for machines. The common format is JSON-LD.</li>
+    <li>Its value is that <strong>machines understand you correctly</strong>: your business name, address, services and page content. That makes it less likely AI gets them wrong.</li>
+    <li>Google says clearly that you <strong>don't need special structured data</strong> to appear in AI Overviews. It's groundwork, not a shortcut.</li>
+    <li>A small business only needs three types to start: <strong>Organization or LocalBusiness, Service, and BreadcrumbList</strong>. And they must match what the page says.</li>
+  </ul>
+</div>
+
+<nav class="toc" aria-label="Contents">
+  <b>On this page</b>
+  <ol>
+    <li><a href="#what">What structured data is</a></li>
+    <li><a href="#help">How it helps AEO and GEO</a></li>
+    <li><a href="#types">Which types to add first</a></li>
+    <li><a href="#how">How to add and check it</a></li>
+    <li><a href="#limits">What it can't do</a></li>
+    <li><a href="#fields">LocalBusiness field checklist</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ol>
+</nav>
+
+<h2 id="what">What is structured data?</h2>
+<p>Structured data is a description written in a fixed format and placed in a page's code. It tells search engines and other programs what the page is about. Google defines it as a standardized format for providing information about a page and classifying the page content. The vocabulary comes from schema.org, for example Organization, LocalBusiness and Service.</p>
+<p>Visitors don't see it, but machines can read it. A page that says "our office is in Springfield" is clear to people. Structured data writes the same fact as <code>"addressLocality": "Springfield"</code>, so machines don't have to guess. Google recommends the JSON-LD format, because it sits apart from the page's HTML and is easier to maintain.</p>
+
+<h2 id="help">How does structured data actually help AEO and GEO?</h2>
+<p>Its biggest help is that <strong>machines get a consistent, correct picture of your basic details</strong>. When AI answers "which companies do X in my city?", it needs to know who you are, where you are and what you do. If your name and address differ between your website, your Google Business Profile and industry directories, AI is more likely to get confused, or even state your details wrong.</p>
+<figure>
+  <svg viewBox="0 0 760 300" role="img" aria-label="Diagram: when page content, structured data and outside sources match, AI understands the business correctly" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+    <rect width="760" height="300" fill="#f7f5f2"/>
+    <g font-size="17">
+      <rect x="30" y="40" width="190" height="90" rx="14" fill="#fff" stroke="#d9d3cb"/><text x="54" y="80" font-weight="700" fill="#161513">Page content</text><text x="54" y="108" fill="#4a4743">Text for people</text>
+      <rect x="30" y="170" width="190" height="90" rx="14" fill="#161513"/><text x="54" y="210" font-weight="700" fill="#f08a55">Structured data</text><text x="54" y="238" fill="#efebe6">For machines</text>
+      <rect x="290" y="105" width="190" height="90" rx="14" fill="#fff" stroke="#d9d3cb"/><text x="314" y="145" font-weight="700" fill="#161513">Outside sources</text><text x="314" y="173" fill="#4a4743">Profiles, listings</text>
+      <path d="M220 85 L 550 150 M220 215 L 550 150 M480 150 L 550 150" stroke="#d7612a" stroke-width="3" fill="none" stroke-dasharray="7 6"/>
+      <circle cx="620" cy="150" r="70" fill="#d7612a"/><text x="620" y="144" text-anchor="middle" font-size="20" font-weight="800" fill="#fff">AI gets</text><text x="620" y="172" text-anchor="middle" font-size="20" font-weight="800" fill="#fff">you right</text>
+    </g>
+  </svg>
+  <figcaption>Structured data is one of three sources of information. When all three match, AI is less likely to get your name, location or services wrong.</figcaption>
+</figure>
+<p>In practice, structured data can help with:</p>
+<ul>
+  <li><strong>Who you are:</strong> your legal business name, brand name, business registration number, address and contact details.</li>
+  <li><strong>What you offer:</strong> which service each service page is about, and which areas it covers.</li>
+  <li><strong>Linking your profiles:</strong> use sameAs to connect your website with your Google Business Profile, LinkedIn and other official pages.</li>
+</ul>
+
+<h2 id="types">Which types of structured data should a small business add first?</h2>
+<p>You don't need many types at once. Get these three done, and done right:</p>
+<table>
+  <thead><tr><th>Type</th><th>Where it goes</th><th>What it says</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Organization</strong> or <strong>LocalBusiness</strong></td><td>Home page (or a shared block on every page)</td><td>Business name, logo, address, phone, email, opening hours, official social links (sameAs). If you have a shop or clinic customers visit, use LocalBusiness or a more specific subtype.</td></tr>
+    <tr><td><strong>Service</strong></td><td>Each service page</td><td>Service name, description, area served, provider (linking back to your business).</td></tr>
+    <tr><td><strong>BreadcrumbList</strong></td><td>Every page except the home page</td><td>Where the page sits on your site, for example "Home › Services › AI search optimization".</td></tr>
+  </tbody>
+</table>
+<p>If your site has articles or FAQs, you can also add Article and FAQPage. For how to write the FAQ itself, see <a href="/en/ai-search/faq-for-ai/">how to write an FAQ that AI will cite</a>.</p>
+
+<h2 id="how">How do you add structured data and check it?</h2>
+<p>The most common way is to add a block of JSON-LD to the page's HTML. Here is an example for a local business (replace the example values with your own):</p>
+<pre class="code"><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Example Business Name",
+  "url": "https://www.example.com/",
+  "telephone": "+1-555-000-0000",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Springfield",
+    "addressCountry": "US"
+  },
+  "sameAs": ["https://www.facebook.com/example-business"]
+}
+&lt;/script&gt;</code></pre>
+<p>Once it's added, check it in this order:</p>
+<ol class="steps-n">
+  <li><strong>Use Google's Rich Results Test.</strong> Paste in your URL and make sure the data can be read and has no errors.</li>
+  <li><strong>Use the schema.org validator</strong> to check the format and field names.</li>
+  <li><strong>Compare it with the page, item by item.</strong> Name, address, phone and service descriptions must match the text visible on the page.</li>
+  <li><strong>Compare it with outside sources.</strong> The name and address on your Google Business Profile and directory listings should be exactly the same.</li>
+</ol>
+<div class="callout">
+  <p><strong>Not sure whether your site's structured data has problems?</strong> A <a href="/en/ai-visibility-engine/#check">free AI visibility check</a> also checks whether AI can read your website, and shows how AI describes you today and what to fix first.</p>
+  <p class="c-act"><a class="cbtn" href="/en/ai-visibility-engine/#check">Request a free AI visibility check</a></p>
+</div>
+
+<h2 id="limits">What can't structured data do?</h2>
+<p>Structured data can't make AI recommend you for certain, and it can't replace page content. In its guidance on AI Overviews and AI Mode, Google says clearly that there is no special schema.org structured data you need to add, and no special files to create for AI. Whether you appear still depends on the basics of normal search, such as the page being indexed, content being shown as text, and structured data matching the visible text.</p>
+<p>So the order matters. First <strong>write clear answers on the page</strong>, then use structured data to label the key details correctly. If the structured data says something the page doesn't, for example reviews or prices that aren't on the page, it may even be treated as misleading. For the full picture of AI search optimization, see Ship to Live's <a href="/en/seo-aeo-geo/">AI search optimization service</a> or our <a href="/en/ai-search/what-is-geo/">plain-language guide to GEO</a>.</p>
+
+<h2 id="fields">LocalBusiness field checklist</h2>
+<p>Local businesses most often use the LocalBusiness type. Google's documentation lists <code>name</code> and <code>address</code> as required fields. The others are recommended. Use this table to check your own website:</p>
+<table>
+  <thead><tr><th>Field</th><th>Google documentation</th><th>What to fill in</th></tr></thead>
+  <tbody>
+    <tr><td><code>name</code></td><td>Required</td><td>Business or shop name, the same as on your sign and your business profile</td></tr>
+    <tr><td><code>address</code></td><td>Required</td><td>Full address, including district and postal code</td></tr>
+    <tr><td><code>telephone</code></td><td>Recommended</td><td>Main contact phone number</td></tr>
+    <tr><td><code>url</code></td><td>Recommended</td><td>The web page for this location</td></tr>
+    <tr><td><code>openingHoursSpecification</code></td><td>Recommended</td><td>Opening days and hours</td></tr>
+    <tr><td><code>geo</code></td><td>Recommended</td><td>Latitude and longitude</td></tr>
+    <tr><td><code>priceRange</code></td><td>Recommended</td><td>A short description of your price range</td></tr>
+  </tbody>
+</table>
+<figure class="dg"><svg viewBox="0 0 860 274" role="img" aria-label="Structured data checklist: four items" font-family="Inter, sans-serif" xmlns="http://www.w3.org/2000/svg"><rect x="24" y="20" width="812" height="234" rx="16" fill="#fff"/><text x="52" y="60" font-size="17" fill="#161513" font-weight="700" text-anchor="start">Checks after adding structured data</text><rect x="52" y="88" width="24" height="24" rx="6" fill="#fbeee6" stroke="#d7612a"/><path d="M57 100 l5 5 9-10" fill="none" stroke="#d7612a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="90" y="106" font-size="15" fill="#161513" font-weight="400" text-anchor="start">Check for errors with Google's Rich Results Test</text><rect x="52" y="132" width="24" height="24" rx="6" fill="#fbeee6" stroke="#d7612a"/><path d="M57 144 l5 5 9-10" fill="none" stroke="#d7612a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="90" y="150" font-size="15" fill="#161513" font-weight="400" text-anchor="start">Structured data matches the text visible on the page</text><rect x="52" y="176" width="24" height="24" rx="6" fill="#fbeee6" stroke="#d7612a"/><path d="M57 188 l5 5 9-10" fill="none" stroke="#d7612a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="90" y="194" font-size="15" fill="#161513" font-weight="400" text-anchor="start">Name, address and phone match your business profile</text><rect x="52" y="220" width="24" height="24" rx="6" fill="#fbeee6" stroke="#d7612a"/><path d="M57 232 l5 5 9-10" fill="none" stroke="#d7612a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="90" y="238" font-size="15" fill="#161513" font-weight="400" text-anchor="start">Update it whenever your opening hours change</text></svg><figcaption>Structured data must match the page content, or it may be ignored.</figcaption></figure>
+<p class="src">Source: Google Search Central, <a href="https://developers.google.com/search/docs/appearance/structured-data/local-business" rel="noopener">Local business (LocalBusiness) structured data</a>.</p>
+
+<section class="faq" id="faq" aria-labelledby="faq-h">
+  <h2 id="faq-h">FAQ</h2>
+  <details><summary>Can I add structured data without a developer?</summary><p>Yes. Common website platforms such as WordPress and Shopify have plugins or built-in settings that create structured data. On a custom-built website, you add a block of JSON-LD to the HTML. Either way, check it with Google's Rich Results Test after adding it.</p></details>
+  <details><summary>If I add structured data, will Google always show special results?</summary><p>Not always. Structured data makes a page eligible for some special results, but Google doesn't guarantee to show them. Google's search systems decide whether to show them.</p></details>
+  <details><summary>Should I use Organization or LocalBusiness?</summary><p>Businesses with a physical location that people search for on maps, such as clinics, restaurants and professional firms, should use LocalBusiness or a more specific subtype. Companies that mainly work online and don't receive visitors can use Organization.</p></details>
+  <details><summary>Does structured data affect ChatGPT?</summary><p>There is no public data so far showing that ChatGPT relies on structured data to recommend businesses. What is clearer is that it helps machines understand your basic details correctly. What really affects recommendations is still whether your website content is clear, and whether other sites mention you with consistent information.</p></details>
+</section>
+
+<p class="src">Sources: <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data">Google Search Central: Introduction to structured data markup</a>; <a href="https://developers.google.com/search/docs/appearance/ai-features">Google Search Central: AI features and your website</a>; <a href="https://schema.org/LocalBusiness">schema.org/LocalBusiness</a>.</p>
