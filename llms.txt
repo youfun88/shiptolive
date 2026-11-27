@@ -82,12 +82,13 @@ Send the website and the main city served; optionally the customers' 3 most comm
 ## About 夏裕科技
 https://www.shiptolive.com/en/about/ · 中文: https://www.shiptolive.com/about/
 
-- Legal name: 夏裕科技股份有限公司, unified business number (統一編號) 90173045; can issue Taiwanese 統一發票. US engagements are contracted through QY LLC (San Diego, California); LINE AI USD card payments (Stripe) are billed by River City Holdings LLC, a US company.
+- Legal name: 夏裕科技股份有限公司, unified business number (統一編號) 90173045; can issue Taiwanese 統一發票. Parent company: QY LLC (San Diego, California, founded 2016), which also contracts US engagements; LINE AI USD card payments (Stripe) are billed by River City Holdings LLC, a US company.
 - Founded 2022 in Taiwan. Headquarters: Taipei. Clients in Taiwan, Europe and North America.
 - In-house R&D: besides client projects, the company designs, builds and maintains its own software products; the AI Visibility Engine is the lead product.
 - Team: software developers, AI engineers, system engineers, software architects, design (UI/UX) and content and marketing, combining staff and long-term partners as each project needs.
 - Capabilities: business systems, websites, apps, membership and booking platforms; AI search analysis, AI agents, RAG, workflow automation; software architecture, databases, APIs, integrating existing systems; GCP, Docker, cloud deployment, system maintenance; UI/UX, SEO, AEO/GEO, website content optimization.
 - Languages: Traditional Chinese (中文) and English.
+- Profiles: Clutch https://clutch.co/profile/ship-live · Sortlist https://www.sortlist.com/agency/ship-to-live · vocus (方格子) https://vocus.cc/salon/6b097db8f516c90449a786cd · LINE Official Account https://line.me/R/ti/p/@680uqtou
 
 ## Founder
 
@@ -150,7 +151,7 @@ Own products: Tally (https://www.tallybillable.com/), a billable-time and invoic
 
 ## AI 搜尋優化知識庫 (AI search optimization guides, 繁體中文)
 
-Hub: https://www.shiptolive.com/ai-search/ · 21 articles for Taiwan businesses on GEO (getting recommended by ChatGPT, Gemini, Claude, Perplexity) and AEO (being cited in Google AI Overviews and AI Mode), written by 夏裕科技 (Ship to Live), Taipei. Each answers the question first, then explains how to do it.
+Hub: https://www.shiptolive.com/ai-search/ · 25 articles for Taiwan businesses on GEO (getting recommended by ChatGPT, Gemini, Claude, Perplexity) and AEO (being cited in Google AI Overviews and AI Mode), written by 夏裕科技 (Ship to Live), Taipei. Each answers the question first, then explains how to do it.
 
 ### 入門
 - [GEO 是什麼？讓 AI 推薦您的公司：生成式引擎優化完整入門](https://www.shiptolive.com/ai-search/what-is-geo/): GEO（Generative Engine Optimization，生成式引擎優化）是調整網站內容與網路上的品牌資訊，讓 ChatGPT、Gemini 等 AI 回答客戶問題時，提到並推薦您的公司。
