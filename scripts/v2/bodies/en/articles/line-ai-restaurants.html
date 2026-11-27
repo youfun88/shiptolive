@@ -1,0 +1,120 @@
+<!--
+slug: line-ai-restaurants
+section: line
+path: /en/line-ai/restaurants/
+pair: /line-ai/restaurants/
+title: LINE Auto-Replies for Restaurants: Bookings, Menu, Hours | Ship to Live
+description: Restaurants get asked about hours, bookings, the menu and parking on LINE. How to set up auto-replies for each, handle bookings, and hand over to a person.
+h1: How should a restaurant set up LINE auto-replies? Bookings, menu, hours and hand-off
+dek: Set up four groups of questions first: hours and closed days, bookings, menu and prices, and address and parking. Fixed answers can go out automatically. For bookings, send your booking link, or let the AI read open tables. Hand private events, complaints, allergies and "I want a person" to your staff.
+category: Setup guide
+order: 52
+date: 2026-11-27
+ld: [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can a restaurant's LINE Official Account auto-reply to bookings?", "acceptedAnswer": {"@type": "Answer", "text": "It can answer booking questions. Most restaurants have the AI send their existing online booking link, or explain how to book by phone. For the AI to answer \"do you have a table for 4 at 7 tonight?\", open tables must be somewhere it can read, like a Google Sheet, or a booking system connected for read-only lookups. The AI doesn't make bookings itself, so it can't clash with the booking list at the restaurant."}}, {"@type": "Question", "name": "Keyword auto-replies or AI auto-replies: which should a restaurant use?", "acceptedAnswer": {"@type": "Answer", "text": "If you only want to answer a few things like \"address\" and \"hours\", LINE's keyword auto-replies are free and enough, but the customer has to type your keyword. If customers word things differently, ask several things at once (\"Are you open Saturday night? Can I bring my dog?\"), or message a lot in the evening, AI auto-replies fit better."}}, {"@type": "Question", "name": "Can the AI answer allergen questions?", "acceptedAnswer": {"@type": "Answer", "text": "Only by repeating what the menu says, for example \"this dish contains peanuts\". The AI should never promise that a dish is completely free of an allergen, because of possible cross-contact in the kitchen. It asks the customer to confirm with staff when ordering, and serious allergy questions go to your staff."}}, {"@type": "Question", "name": "Will the AI know if we close early or sell out?", "acceptedAnswer": {"@type": "Answer", "text": "Only if you tell it. On Ship to Live's plans you can write \"Closing early at 8 pm today\" or \"Beef noodle soup sold out today\" in today's notices, and the AI takes it into account. On Light and above, the AI can also read a Google Sheet: change the sheet and the answers change with it."}}, {"@type": "Question", "name": "How much does it cost to set up LINE AI auto-replies for a restaurant?", "acceptedAnswer": {"@type": "Answer", "text": "If you only use your LINE Official Account to answer customers, most businesses stay on LINE's free plan. LINE's built-in AI chatbot is a NT$100 subscription in Taiwan. Ship to Live's plans start at $39 a month (Starter, no setup fee), billed monthly with no contract. To have the AI read open tables or stock from a Google Sheet, choose Light ($79 a month) or above. Details are on plans and prices."}}]}]
+-->
+<div class="tldr">
+  <b>Key points</b>
+  <ul>
+    <li>Start with four groups: <strong>hours and closed days, bookings, menu and prices, and address and parking</strong>. These are what diners ask most.</li>
+    <li>Bookings: the AI <strong>sends your booking link or phone number</strong>. To answer "any tables tonight?", open tables must be somewhere the AI can read, like a Google Sheet or your booking system.</li>
+    <li>Always hand over: <strong>private events and large orders, complaints, serious allergies, and customers who ask for a person</strong>.</li>
+    <li>Closing early or sold out? Post it as a notice for today and the AI uses it the same day.</li>
+  </ul>
+</div>
+
+<nav class="toc" aria-label="Contents">
+  <b>On this page</b>
+  <ol>
+    <li><a href="#questions">What diners ask on LINE</a></li>
+    <li><a href="#ways">Three ways to auto-reply</a></li>
+    <li><a href="#booking">Booking questions</a></li>
+    <li><a href="#menu">Menu, prices and allergens</a></li>
+    <li><a href="#hours">Hours and last-minute closures</a></li>
+    <li><a href="#handoff">When to hand over to a person</a></li>
+    <li><a href="#sample">Sample restaurant Q&amp;A</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ol>
+</nav>
+
+<h2 id="questions">What do restaurant customers ask most on LINE?</h2>
+<p>Scroll through your LINE Official Account chats and most messages fall into a few groups:</p>
+<ul>
+  <li><strong>Hours:</strong> "Are you open today?" "Are you closed on Mondays?" "When are last orders?"</li>
+  <li><strong>Bookings:</strong> "Saturday at 6 pm, 4 adults and 1 child, do you have a table?" "Can we book a private room?" "Do I need to pay a deposit?"</li>
+  <li><strong>Menu and prices:</strong> "Do you have vegetarian dishes?" "How much is the set menu?" "Is there a minimum spend or a service charge?"</li>
+  <li><strong>Address, getting there, parking:</strong> "Is there parking nearby?" "How far is it from the station?"</li>
+  <li><strong>House rules:</strong> "Can I bring my dog?" "Can we bring our own cake?" "Is there a time limit?"</li>
+</ul>
+<p>Most of these have a fixed answer. Writing them down as questions and answers is the first step to auto-replies.</p>
+
+<h2 id="ways">What are the ways to auto-reply on a restaurant's LINE account?</h2>
+<table>
+  <thead><tr><th>Option</th><th>How it works</th><th>Good for</th></tr></thead>
+  <tbody>
+    <tr><td>Keyword auto-replies</td><td>Built into LINE Official Accounts and free. When a message matches a keyword, LINE sends the answer you wrote.</td><td>A few questions like "address" and "hours". The customer has to type the right keyword.</td></tr>
+    <tr><td>LINE's built-in AI chatbot (beta)</td><td>A NT$100 subscription, as LINE words it. It replies with the closest FAQ you registered, so a reworded question can still match. There is a monthly reply cap.</td><td>A few dozen fixed questions, and you want to set it up yourself.</td></tr>
+    <tr><td>Third-party AI assistant</td><td>Writes answers from your Q&amp;A, menu files and website, can read live data, and tells your staff when a person needs to step in.</td><td>Customers who ask several things at once, lots of evening messages, checking open tables, or hand-off alerts.</td></tr>
+  </tbody>
+</table>
+<p>Facts about LINE's built-in features come from <a href="https://tw.linebiz.com/column/oa-aichatbot/" target="_blank" rel="noopener">LINE Biz</a> (Taiwan), checked November 2026. Beta features can change at any time; LINE's latest notice applies. For the full comparison, read <a href="/en/line-ai/guide/">how to choose and set up a LINE AI chatbot</a>.</p>
+<p>Whichever you use, check your old keyword auto-replies before launch, so a customer doesn't get two answers to one message.</p>
+
+<h2 id="booking">How do you auto-reply to booking questions?</h2>
+<p>Bookings are the most common question for a restaurant, and the easiest to get wrong. There are three ways to set it up, depending on how you take bookings now:</p>
+<ol class="steps-n">
+  <li><strong>You already have an online booking page.</strong> The AI explains your booking rules (from what party size you need to book, how long you hold a table, whether there's a deposit), then sends the booking link. This is the simplest, and it can't clash with your booking list.</li>
+  <li><strong>You take bookings by phone or by hand.</strong> The AI explains the rules and says "please call us to book" or "leave the date, time and party size and our staff will confirm", then lets your staff know. The AI never says "you're booked".</li>
+  <li><strong>You want the AI to answer "any tables left tonight?"</strong> Open tables must be somewhere the AI can read. The simplest is a Google Sheet that your staff update, and the AI answers from it (included on our Light plan and above). You can also connect a booking or POS system for read-only lookups (an add-on). To actually book, the customer still uses your booking link or a staff member confirms.</li>
+</ol>
+<p>Why not let the AI book tables itself? Because bookings already come in at the door, by phone and through booking platforms. Adding the AI as one more channel is the easiest way to give the same table away twice. Having the AI place bookings directly needs a full connection to your booking system, and we scope that separately.</p>
+
+<h2 id="menu">How should the AI answer about the menu, prices and allergens?</h2>
+<ul>
+  <li><strong>Upload your menu and price list.</strong> PDFs, photos or documents can all be turned into information the AI can read. The menu sets the price, and the AI doesn't work out discounts on its own.</li>
+  <li><strong>Say clearly what you do and don't offer:</strong> vegan or vegetarian options, kids' meals, minimum spend, service charge, whether guests can bring their own wine or cake. These are the questions people often decide on before they come.</li>
+  <li><strong>Allergens: only what the menu says.</strong> In Taiwan, the allergen labelling rules in the <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=L0040001&amp;flno=22" target="_blank" rel="noopener">Food Safety and Sanitation Act, Article 22</a> mainly cover packaged food, so made-to-order dishes may not be covered. Elsewhere, follow your local labelling rules. Either way, a wrong answer can hurt someone. The AI can say "this dish contains peanuts", but never "completely peanut-free". It asks the customer to confirm with staff when ordering, and serious allergy questions go to your staff.</li>
+</ul>
+
+<h2 id="hours">How do you update hours and last-minute closures?</h2>
+<p>Regular hours, closed days and last orders just go into your Q&amp;A. The harder part is last-minute changes: closing for a storm, a private event, closing early, or your signature dish selling out.</p>
+<ul>
+  <li><strong>In LINE Official Accounts itself:</strong> keyword auto-replies have to be edited one by one, and you have to remember to change them back.</li>
+  <li><strong>On Ship to Live's plans:</strong> write one line in today's notices, like "Closing early at 8 pm today" or "Beef noodle soup sold out today", and the AI takes it into account. On Light and above, the AI can also read a Google Sheet: you edit the sheet and the answers follow.</li>
+</ul>
+<p>Change the hours on your Google Business Profile and your website at the same time. Both customers and AI assistants look there, and three places saying different things is a sure way to get complaints.</p>
+
+<h2 id="handoff">When should the AI hand over to a person?</h2>
+<p>In these cases the AI tells the customer that someone from the restaurant will reply soon, and lets the person in charge know:</p>
+<ul>
+  <li><strong>Private events, company parties, large takeout or catering orders:</strong> these need a quote based on the date, party size and budget.</li>
+  <li><strong>Complaints:</strong> a problem with the food or the service. The AI apologizes, asks for the visit date and name, and your team handles it.</li>
+  <li><strong>Serious allergies or special diets:</strong> the kitchen has to confirm before anyone answers.</li>
+  <li><strong>Changing or cancelling a booking with a deposit:</strong> this involves refunds, so staff handle it under your rules.</li>
+  <li><strong>Anything not in your information, or a customer who says "I want a person."</strong></li>
+</ul>
+<p>On Ship to Live's plans, a hand-off sends you an email with the conversation. You reply to the customer from the LINE Official Account app on your phone or from chat.line.biz on a computer.</p>
+
+<h2 id="sample">Sample restaurant Q&amp;A table</h2>
+<p>Below is the Q&amp;A for a sample restaurant (demo data, not a real restaurant). You can use the same format for your own:</p>
+<table>
+  <thead><tr><th>Question</th><th>Standard answer</th><th>Hand over?</th></tr></thead>
+  <tbody>
+    <tr><td>Are you open today?</td><td>Tuesday to Sunday, 11:30 am–2:30 pm and 5:30–9:00 pm, last orders 8:30 pm. Closed Mondays.</td><td>No</td></tr>
+    <tr><td>Can I book for 4 on Saturday evening?</td><td>Yes, please use the booking link to pick the date and party size. For 6 or more, or a private room, leave the date, time and party size and our staff will confirm.</td><td>6 or more: yes</td></tr>
+    <tr><td>Do you have vegetarian dishes?</td><td>Yes, a vegetarian set (with egg and dairy) and 3 vegetarian dishes, marked "V" on the menu. For vegan, please tell staff when ordering.</td><td>No</td></tr>
+    <tr><td>Is there a minimum spend or service charge?</td><td>One main dish per person, plus a 10% service charge.</td><td>No</td></tr>
+    <tr><td>Is parking easy?</td><td>There's no parking in front of the restaurant. The nearest paid parking is about a 3-minute walk.</td><td>No</td></tr>
+    <tr><td>Can we book the whole place for a 30-person company party?</td><td>The owner quotes private events. We've let the owner know, and they'll reply to you here on LINE.</td><td>Yes: quote</td></tr>
+    <tr><td>Does this dish have peanuts?</td><td>According to our menu, the kung pao chicken contains peanuts. Our kitchen uses peanuts, so if you have a serious allergy please tell staff when ordering.</td><td>Serious allergy: yes</td></tr>
+  </tbody>
+</table>
+<p>Excel, a Google Sheet or a plain document all work. Want to try it now? On the <a href="/en/line-ai/demo/">free demo page</a>, choose "Other: describe my business", enter your Q&amp;A, get a code and ask the AI on LINE. No sign-up.</p>
+
+<section class="faq" id="faq" aria-labelledby="faq-h">
+  <h2 id="faq-h">FAQ</h2>
+  <details><summary>Can a restaurant's LINE Official Account auto-reply to bookings?</summary><p>It can answer booking questions. Most restaurants have the AI send their existing online booking link, or explain how to book by phone. For the AI to answer "do you have a table for 4 at 7 tonight?", open tables must be somewhere it can read, like a Google Sheet, or a booking system connected for read-only lookups. The AI doesn't make bookings itself, so it can't clash with the booking list at the restaurant.</p></details>
+  <details><summary>Keyword auto-replies or AI auto-replies: which should a restaurant use?</summary><p>If you only want to answer a few things like "address" and "hours", LINE's keyword auto-replies are free and enough, but the customer has to type your keyword. If customers word things differently, ask several things at once ("Are you open Saturday night? Can I bring my dog?"), or message a lot in the evening, AI auto-replies fit better.</p></details>
+  <details><summary>Can the AI answer allergen questions?</summary><p>Only by repeating what the menu says, for example "this dish contains peanuts". The AI should never promise that a dish is completely free of an allergen, because of possible cross-contact in the kitchen. It asks the customer to confirm with staff when ordering, and serious allergy questions go to your staff.</p></details>
+  <details><summary>Will the AI know if we close early or sell out?</summary><p>Only if you tell it. On Ship to Live's plans you can write "Closing early at 8 pm today" or "Beef noodle soup sold out today" in today's notices, and the AI takes it into account. On Light and above, the AI can also read a Google Sheet: change the sheet and the answers change with it.</p></details>
+  <details><summary>How much does it cost to set up LINE AI auto-replies for a restaurant?</summary><p>If you only use your LINE Official Account to answer customers, most businesses stay on LINE's free plan. LINE's built-in AI chatbot is a NT$100 subscription in Taiwan. Ship to Live's plans start at $39 a month (Starter, no setup fee), billed monthly with no contract. To have the AI read open tables or stock from a Google Sheet, choose Light ($79 a month) or above. Details are on <a href="/en/line-ai/#pricing">plans and prices</a>.</p></details>
+</section>

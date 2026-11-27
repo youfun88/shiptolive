@@ -32,7 +32,7 @@ PAGES = {  # slug -> (zh path, en path)
     'line-terms': ('/line-ai/terms/', '/en/line-ai/terms/'),  # LINE AI 服務條款 (online subscription terms; not in the main nav)
     'line-refund': ('/line-ai/refund/', '/en/line-ai/refund/'),  # LINE AI 退款與取消
     'crm': ('/crm/', '/en/crm/'),  # 網站後台與 CRM 建置 (Payload CMS); /crm/namyang/ is a separate client demo redirect
-    'articles': ('/ai-search/', '/en/'),
+    'articles': ('/ai-search/', '/en/ai-search/'),
     'about': ('/about/', '/en/about/'),
 }
 L = {
@@ -123,7 +123,7 @@ def footer(lang, meta=None):
     <div class="cols">
       <div><b>{t['brand']}</b>{t['f_company']}<br>{t['f_tax']}<br>{t['f_loc']}<br>{t['f_parent']}<p class="motto">{t['motto']}</p></div>
       <nav aria-label="{t['f_svc']}"><b>{t['f_svc']}</b><a href="{p(lang,'seo-aeo-geo')}">{t['ai']}</a><a href="{p(lang,'website')}">{t['web']}</a><a href="{p(lang,'software')}">{t['sw']}</a><a href="{p(lang,'line-ai')}">{t['line']}</a><a href="{p(lang,'crm')}">{t['crm']}</a><a href="{p(lang,'engine')}">{t['engine']}</a></nav>
-      <nav aria-label="{t['f_more']}"><b>{t['f_more']}</b><a href="{p(lang,'about')}">{t['about']}</a><a href="{pre}/geo-guide/">{t['f_guide']}</a>{'<a href="/ai-search/">AI 搜尋優化知識庫</a>' if lang == 'zh' else ''}<a href="{pre}/privacy/">{t['f_privacy']}</a>{legal}{HATCHY[lang]}</nav>
+      <nav aria-label="{t['f_more']}"><b>{t['f_more']}</b><a href="{p(lang,'about')}">{t['about']}</a><a href="{pre}/geo-guide/">{t['f_guide']}</a>{'<a href="/ai-search/">AI 搜尋優化知識庫</a>' if lang == 'zh' else '<a href="/en/ai-search/">AI search guides</a>'}<a href="{pre}/privacy/">{t['f_privacy']}</a>{legal}{HATCHY[lang]}</nav>
       <nav aria-label="{t['contact']}"><b>{t['contact']}</b><a href="mailto:yufan@shiptolive.com">yufan@shiptolive.com</a>{f'<a href="{LINE_URL}" target="_blank" rel="noopener">LINE 官方帳號</a>' if lang == 'zh' else ''}<a href="https://calendly.com/yufansapp/20min" target="_blank" rel="noopener">{t['f_book']}</a><a href="https://admin.shiptolive.com/card{'?lang=en' if lang == 'en' else ''}">{'電子名片' if lang == 'zh' else 'Business card'}</a><a href="{p(lang,'engine')}#check">{t['cta']}</a></nav>
     </div>
     <div class="legal"><span>© 2026 {t['f_company']}</span><span><a href="{'/en/' if lang=='zh' else '/'}" style="display:inline">{t['other_label']}</a></span></div>

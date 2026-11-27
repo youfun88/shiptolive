@@ -97,7 +97,8 @@ def run_en(b):
     src = b.HERE / 'bodies' / 'en' / 'articles'
     if not src.exists():
         return
-    for a in sorted((parse(f) for f in src.glob('*.html')), key=lambda a: (a['order'], a['slug'])):
+    arts = sorted((parse(f) for f in src.glob('*.html')), key=lambda a: (a['order'], a['slug']))
+    for a in arts:
         url = url_of(a, 'en')
         sec = SECTIONS.get(a.get('section', ''), {}).get('en')
         mins = reading_minutes(a['body'])
@@ -133,7 +134,14 @@ def run_en(b):
         d = a['date'] if not a.get('updated') else a['updated']
         import datetime
         dtxt = datetime.date.fromisoformat(d).strftime('%B %-d, %Y')
-        rel = ''.join(f'<li><a href="{u}"><b>{n}</b><span>{s}</span></a></li>' for u, n, s in (sec['related'] if sec else EN_RELATED))
+        # related: other published en articles in the same section (next in hub order, wrapping), then the service pages
+        sib = [x for x in arts if x.get('section', '') == a.get('section', '') and not x['draft']]
+        if a in sib:
+            i = sib.index(a)
+            sib = sib[i + 1:] + sib[:i]
+        rel_rows = [(url_of(x, 'en'), x['h1'], re.split(r'(?<=[.?!])\s', x.get('dek', ''), maxsplit=1)[0]) for x in sib]
+        rel_rows = (sec['related'][:2] + rel_rows[:2]) if sec else (rel_rows[:3] + EN_RELATED[:1])
+        rel = ''.join(f'<li><a href="{u}"><b>{n}</b><span>{s}</span></a></li>' for u, n, s in rel_rows)
         cta_h, cta_p, cta_btns = sec['cta'] if sec else (
             'Does AI recommend <span class="you-tag">your business</span>?',
             "A free check: we ask ChatGPT, Gemini and other AI assistants your customers' questions and tell you whether they name you, which competitors they recommend, and what to fix first. Reply in 1–2 business days, or book a 20-minute call.",
@@ -170,6 +178,50 @@ var f=document.querySelector('.post-body .faq'),pb=document.querySelector('.post
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(html)
         print('wrote', out)
+    run_en_hub(b, [a for a in arts if not a['draft']])
+
+
+EN_HUB = '/en/ai-search/'
+
+
+def run_en_hub(b, arts):
+    """/en/ai-search/: plain list of the published English articles (2026-11-27), paired with the zh hub /ai-search/."""
+    if not arts:
+        return
+    groups = ''
+    for name, key in (('AI search for small businesses', ''), ('LINE AI customer service', 'line')):
+        items = [a for a in arts if a.get('section', '') == key]
+        if items:
+            groups += (f'\n    <h2 class="h2 hub-cat">{name}</h2>\n    <ul class="aindex">' +
+                       ''.join(f'<li><a href="{url_of(a, "en")}"><b>{a["h1"]}</b><span>{a.get("dek", "")}</span></a></li>' for a in items) + '</ul>')
+    item_list = {"@type": "ItemList", "itemListElement": [
+        {"@type": "ListItem", "position": i + 1, "url": b.BASE + url_of(a, 'en'), "name": a['h1']} for i, a in enumerate(arts)]}
+    name = 'AI search guides for small businesses'
+    meta = {
+        'title': 'AI Search Guides for Small Businesses: GEO and AEO | Ship to Live',
+        'description': 'How to get ChatGPT, Gemini and Google AI Overviews to recommend your business: guides on GEO and AEO, checking where you stand, costs and choosing an agency.',
+        'path': EN_HUB, 'en_only': True, 'pair': HUB, 'draft': False, 'crumbs': [('Home', '/en/'), (name, EN_HUB)], 'ld': [item_list],
+        'og': '/assets/img/og-en.png?v=1',
+    }
+    body = f'''<section class="hero inner" aria-labelledby="h1">
+  <div class="wrap">
+    <p class="crumbs"><a href="/en/">Home</a> / {name}</p>
+    <h1 id="h1">{name}</h1>
+    <p class="sub2">Customers now ask AI which business to hire. These guides show how to make sure AI can find you and recommend you.</p>
+    <p class="lede">From what GEO and AEO mean, to what to change on your website, how to check where you stand, and how to choose an agency. Each guide gives the answer first, then how to do it.</p>
+    <div class="btns"><a class="pill orange" href="/en/ai-visibility-engine/#check">Free AI visibility check</a><a class="pill ghost" href="/en/seo-aeo-geo/">AI search optimization service</a></div>
+  </div>
+</section>
+<section class="sec alt hub">
+  <div class="wrap">{groups}
+  </div>
+</section>'''
+    html = b.head('en', 'articles', meta) + b.header('en', 'articles', HUB) + '\n<main id="main">\n' + body + '\n</main>\n' + b.footer('en') + \
+        f'\n<script src="/assets/v2/all.js?v={b.V}" defer></script>\n</body>\n</html>\n'
+    out = b.ROOT / EN_HUB.strip('/') / 'index.html'
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(html)
+    print('wrote', out, f'({len(arts)} en articles)')
 
 
 # Hub FAQ (2026-11-26): visible on /ai-search/ and the same text as its FAQPage JSON-LD. Each answer is
@@ -292,7 +344,7 @@ var f=document.querySelector('.post-body .faq'),pb=document.querySelector('.post
     meta = {
         'title': 'AI 搜尋優化知識庫：GEO、AEO 教學與實作｜夏裕科技',
         'description': '什麼是 GEO、AEO？怎麼讓 ChatGPT、Gemini 和 Google AI 摘要推薦您的公司？夏裕科技整理給台灣企業的 AI 搜尋優化教學、實作步驟與產業做法。',
-        'path': HUB, 'zh_only': True, 'draft': all_draft, 'crumbs': [('首頁', '/'), (HUB_NAME, HUB)], 'ld': [item_list, faq_ld],
+        'path': HUB, 'zh_only': True, 'pair': EN_HUB, 'draft': all_draft, 'crumbs': [('首頁', '/'), (HUB_NAME, HUB)], 'ld': [item_list, faq_ld],
         'og': '/assets/v2/img/ai-search/hub.png',
     }
     body = f'''<section class="hero inner hub-hero" aria-labelledby="h1">
@@ -367,7 +419,7 @@ var f=document.querySelector('.post-body .faq'),pb=document.querySelector('.post
   <div class="wrap">{groups}
   </div>
 </section>'''
-    html = b.head('zh', 'articles', meta) + b.header('zh', 'articles') + '\n<main id="main">\n' + body + '\n</main>\n' + b.footer('zh') + \
+    html = b.head('zh', 'articles', meta) + b.header('zh', 'articles', EN_HUB) + '\n<main id="main">\n' + body + '\n</main>\n' + b.footer('zh') + \
         f'\n<script src="/assets/v2/all.js?v={css_v}" defer></script>\n</body>\n</html>\n'
     out = b.ROOT / HUB.strip('/') / 'index.html'
     out.parent.mkdir(parents=True, exist_ok=True)
