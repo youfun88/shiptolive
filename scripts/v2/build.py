@@ -72,10 +72,10 @@ def header(lang, slug, other_href=None):
       <div class="dd"><button type="button" aria-expanded="false" aria-haspopup="true">{t['services']}</button>
         <div class="menu">
           <a href="{p(lang,'seo-aeo-geo')}"{cur('seo-aeo-geo')}>{t['ai']}<small>{t['ai_s']}</small></a>
-          <a href="{p(lang,'website')}"{cur('website')}>{t['web']}<small>{t['web_s']}</small></a>
           <a href="{p(lang,'software')}"{cur('software')}>{t['sw']}<small>{t['sw_s']}</small></a>
           <a href="{p(lang,'line-ai')}"{cur('line-ai')}>{t['line']}<small>{t['line_s']}</small></a>
           <a href="{p(lang,'crm')}"{cur('crm')}>{t['crm']}<small>{t['crm_s']}</small></a>
+          <a href="{p(lang,'website')}"{cur('website')}>{t['web']}<small>{t['web_s']}</small></a>
         </div>
       </div>
       <a href="{p(lang,'engine')}"{cur('engine')}>{t['engine']}</a>
