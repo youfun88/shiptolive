@@ -149,7 +149,7 @@ def head(lang, slug, meta):
                                "address": {"@type": "PostalAddress", "addressLocality": "San Diego", "addressRegion": "CA", "addressCountry": "US"}},
         # Profiles of this same company elsewhere (2026-11-27). Only live ones: add GoodFirms
         # (goodfirms.co/company/ship-to-live-qy-llc) and DesignRush once approved, and LinkedIn once the company page exists.
-        "sameAs": ["https://clutch.co/profile/ship-live", "https://www.sortlist.com/agency/ship-to-live",
+        "sameAs": ["https://www.linkedin.com/company/shiptolive/", "https://clutch.co/profile/ship-live", "https://www.sortlist.com/agency/ship-to-live",
                    "https://vocus.cc/salon/6b097db8f516c90449a786cd", "https://vocus.cc/user/6b097db8f516c90449a786ca",
                    LINE_URL],
         "areaServed": [{"@type": "Country", "name": "Taiwan"}, {"@type": "Place", "name": "Europe"}, {"@type": "Country", "name": "United States"}, {"@type": "Country", "name": "Canada"}],
