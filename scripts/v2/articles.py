@@ -189,7 +189,7 @@ def run_en_hub(b, arts):
     if not arts:
         return
     groups = ''
-    for name, key, ind in (('AI search for small businesses', '', False), ('Industry guides', '', True), ('LINE AI customer service', 'line', False)):
+    for name, key, ind in (('How do small businesses get found by AI?', '', False), ('How does AI search work in my industry?', '', True), ('How does LINE AI customer service work?', 'line', False)):
         items = [a for a in arts if a.get('section', '') == key and (a.get('category') == 'Industry guides') == ind]
         if items:
             groups += (f'\n    <h2 class="h2 hub-cat">{name}</h2>\n    <ul class="aindex">' +
@@ -197,10 +197,17 @@ def run_en_hub(b, arts):
     item_list = {"@type": "ItemList", "itemListElement": [
         {"@type": "ListItem", "position": i + 1, "url": b.BASE + url_of(a, 'en'), "name": a['h1']} for i, a in enumerate(arts)]}
     name = 'AI search guides for small businesses'
+    have = {a['slug'] for a in arts}
+    faq_items = [(sl, q, ans) for sl, q, ans in EN_HUB_FAQ if sl in have]
+    faq_ld = {"@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": ans}} for _, q, ans in faq_items]}
+    faq_html = ''.join(
+        f'<details{" open" if i == 0 else ""}><summary>{q}</summary><p>{ans} <a class="tlink" href="{EN_HUB}{sl}/">Read the guide</a></p></details>'
+        for i, (sl, q, ans) in enumerate(faq_items))
     meta = {
-        'title': 'AI Search Guides for Small Businesses: GEO and AEO | Ship to Live',
+        'title': 'AI Search Guides for Small Businesses | Ship to Live',
         'description': 'How to get ChatGPT, Gemini and Google AI Overviews to recommend your business: guides on GEO and AEO, checking where you stand, costs and choosing an agency.',
-        'path': EN_HUB, 'en_only': True, 'pair': HUB, 'draft': False, 'crumbs': [('Home', '/en/'), (name, EN_HUB)], 'ld': [item_list],
+        'path': EN_HUB, 'en_only': True, 'pair': HUB, 'draft': False, 'crumbs': [('Home', '/en/'), (name, EN_HUB)], 'ld': [item_list] + ([faq_ld] if faq_items else []),
         'og': '/assets/img/og-en.png?v=1',
     }
     body = f'''<section class="hero inner" aria-labelledby="h1">
@@ -215,13 +222,34 @@ def run_en_hub(b, arts):
 <section class="sec alt hub">
   <div class="wrap">{groups}
   </div>
-</section>'''
+</section>''' + (f'''
+<section class="sec faq" id="faq" aria-labelledby="faq-h">
+  <div class="wrap faqx">
+    <div class="faq-l"><div class="sec-head"><h2 class="h2" id="faq-h">Frequently asked questions</h2></div><p class="faq-lead">The short answers. Each links to the full guide.</p></div>
+    <div class="faq-r">{faq_html}</div>
+  </div>
+</section>''' if faq_items else '')
     html = b.head('en', 'articles', meta) + b.header('en', 'articles', HUB) + '\n<main id="main">\n' + body + '\n</main>\n' + b.footer('en') + \
         f'\n<script src="/assets/v2/all.js?v={b.V}" defer></script>\n</body>\n</html>\n'
     out = b.ROOT / EN_HUB.strip('/') / 'index.html'
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html)
     print('wrote', out, f'({len(arts)} en articles)')
+
+
+# English hub FAQ (2026-11-28): same idea as HUB_FAQ, visible and in FAQPage JSON-LD; only for articles published in English.
+EN_HUB_FAQ = [
+    ('what-is-geo', 'What is GEO (generative engine optimization)?',
+     'GEO is making ChatGPT, Gemini, Claude and other AI assistants mention and recommend your business when they answer customer questions. It works alongside SEO: SEO gets you into search results, GEO gets AI to say your name in its answer.'),
+    ('get-recommended-by-chatgpt', 'How do I get ChatGPT to recommend my business?',
+     'Make sure ChatGPT search can read your website, describe your services, area and pricing clearly, keep your details correct on the outside sites AI cites (directories and review sites), and check regularly whether AI mentions you.'),
+    ('google-ai-overviews', 'How do I get my business into Google AI Overviews?',
+     'Google says AI Overviews have no extra requirements: the page must be indexed and eligible to show in Search, and answer the question clearly. Focus on content that answers questions directly, and make sure Google can read it.'),
+    ('check-ai-visibility', 'How can I check whether ChatGPT or Gemini mentions my business?',
+     "In a fresh chat with no history, ask 5 questions your customers really ask, and note whether AI names you and which competitors it recommends. Or request Ship to Live's free AI visibility check, which asks several AI assistants at once."),
+    ('geo-cost', 'How much does AI search optimization (GEO) cost?',
+     'It mostly depends on how many questions are tracked, which AI platforms are checked, how much content is written each month, your website and the contract length. Ship to Live quotes per project, after a free AI visibility check.'),
+]
 
 
 # Hub FAQ (2026-11-26): visible on /ai-search/ and the same text as its FAQPage JSON-LD. Each answer is
@@ -236,7 +264,7 @@ HUB_FAQ = [
     ('check-ai-visibility', '怎麼檢查 ChatGPT、Gemini 有沒有提到我的公司？',
      '用沒有登入紀錄的新對話，問 5 個客戶真正會問的問題，記錄 AI 有沒有提到您、推薦了哪些同業。也可以申請夏裕科技的免費 AI 曝光檢測，一次問多個 AI 平台。'),
     ('geo-cost', 'AI 搜尋優化（GEO）費用怎麼算？',
-     '主要看檢測的問題數、AI 平台數，以及是否由服務商動手改網站。夏裕科技公開月費：監測 NT$3,900、成長 NT$9,900、進階 NT$19,900（6 個月合約）。'),
+     '主要看追蹤的問題數、檢查的 AI 平台、每月內容量、網站現況，以及合約長度。夏裕科技依需求報價：先做免費 AI 曝光檢測，簡短通話後提供方案與報價。'),
 ]
 
 
