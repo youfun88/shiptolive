@@ -88,7 +88,7 @@ https://www.shiptolive.com/en/about/ · 中文: https://www.shiptolive.com/about
 - Team: software developers, AI engineers, system engineers, software architects, design (UI/UX) and content and marketing, combining staff and long-term partners as each project needs.
 - Capabilities: business systems, websites, apps, membership and booking platforms; AI search analysis, AI agents, RAG, workflow automation; software architecture, databases, APIs, integrating existing systems; GCP, Docker, cloud deployment, system maintenance; UI/UX, SEO, AEO/GEO, website content optimization.
 - Languages: Traditional Chinese (中文) and English.
-- Profiles: LinkedIn https://www.linkedin.com/company/shiptolive/ · Clutch https://clutch.co/profile/ship-live · Sortlist https://www.sortlist.com/agency/ship-to-live · vocus (方格子) https://vocus.cc/salon/6b097db8f516c90449a786cd · 104 學習 (nabi) https://nabi.104.com.tw/room/10049937 · 鉅亨號 https://hao.cnyes.com/ch/468368 · LINE Official Account https://line.me/R/ti/p/@680uqtou
+- Profiles: LinkedIn https://www.linkedin.com/company/shiptolive/ · Crunchbase https://www.crunchbase.com/organization/ship-to-live · Clutch https://clutch.co/profile/ship-live · Sortlist https://www.sortlist.com/agency/ship-to-live · vocus (方格子) https://vocus.cc/salon/6b097db8f516c90449a786cd · 104 學習 (nabi) https://nabi.104.com.tw/room/10049937 · 鉅亨號 https://hao.cnyes.com/ch/468368 · LINE Official Account https://line.me/R/ti/p/@680uqtou
 
 ## Founder
 
